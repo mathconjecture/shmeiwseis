@@ -1,0 +1,62 @@
+\input{$HOME/Desktop/preamble/preamble.tex}
+\input{$HOME/Desktop/preamble/definitions.tex}
+
+
+\everymath{\displaystyle}
+
+
+
+\begin{document}
+
+
+
+\section{Όριο συνάρτησης}
+
+\begin{dfn}
+	Έστω συνάρτηση $ y=f(x) $ η οποία είναι ορισμένη σε μια περιοχή $\delta$ του σημείου
+	$x_{0}$, πιθανώς εξαιρουμένου του ίδιου του σημείου $x_{0}$. Θα λέμε ότι ο
+	αριθμός $ l \in \mathbb{R} $ είναι το \textbf{όριο} της $ f(x) $ καθώς το $x$ τείνει
+	στο $x_{0}$ και θα το συμβολίζουμε με $ \lim_{x\to x_{0}} f(x) = l $ αν για
+	κάθε θετικό αριθμό $ \varepsilon $ υπάρχει θετικός αριθμός $ \delta = \delta
+	(\varepsilon)$ τέτοιον ώστε αν $ \abs{x-x_{0}} < \delta $ τότε $ \abs{f(x)-
+	l} < \varepsilon $.
+\end{dfn}
+
+Σε πιο συνεκτική μορφή ο παραπάνω ορισμός γράφεται ως
+
+\[
+	\lim_{x\to x_{0}} = l \overset{\text{ορ}}{\Leftrightarrow} 	\forall \varepsilon > 0,\, \exists \delta = \delta(\varepsilon) > 0 \, : \, \abs{x-x_{0}} < \delta
+	\Rightarrow \abs{f(x) - l} < \varepsilon.
+\] 
+
+\begin{remarks}
+	\begin{enumerate}
+		\mbox{}
+		\item Όταν $ l = \pm \infty $ τότε λέμε ότι το όριο δεν υπάρχει
+		\item Για το $ x_{0} $ ισχύει ότι $ x_{0} \in \mathbb{R} $ ή ότι $ x_{0}
+			= \pm \infty $.
+		\item Ορίζουμε τα πλευρικά όρια $ \lim_{x\to x_{0}^{-}} = l_1 $ και $
+			\lim_{x\to x_{0}^{+}} = l_{2} $. Το όριο υπάρχει μόνο όταν $ l_{1},
+			l_{2} \in \mathbb{R}$ και $ l_{1} = l_{2} $.
+	\end{enumerate}
+\end{remarks}	
+
+\section{Ιδιότητες των Ορίων}
+
+
+Έστω $ k, x_{0} \in \mathbb{R} $, $ \lim_{x\to x_{0}} f(x) = l$ και $ \lim_{x\to x_{0}} g(x) = m$.
+
+
+\begin{enumerate}
+	\item $ \lim_{x\to x_{0}} k = k $, $ \forall k \in \mathbb{R} $
+	\item $ \lim_{x\to x_{0}} x = x_{0} $
+	\item $ \lim_{x\to x_{0}} f(x) \pm g(x) = l \pm m $
+	\item $ \lim_{x\to x_{0}} k \cdot f(x) = k\cdot l $
+	\item $ \lim_{x\to x_{0}} (f(x) \cdot g(x)) = l\cdot m $
+	\item $ \lim_{x\to x_{0}} \left(\frac{f(x)}{g(x)}\right) = \frac{l}{m} $, $ m\neq 0 $
+	\item $ \lim_{x\to x_{0}} (f(x))^{n} = l^{n} $ , $ n\in \mathbb{N} $ 
+	\item $ \lim_{x\to x_{0}} \sqrt[n]{f(x)} = \sqrt[n]{l} $, $ n \in \mathbb{N^{*}} $
+\end{enumerate}
+
+	
+\end{document}

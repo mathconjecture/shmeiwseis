@@ -1,0 +1,99 @@
+\input{$HOME/Desktop/preamble/preamble.tex}
+\input{$HOME/Desktop/preamble/definitions.tex}
+
+\usepackage{tikz} 
+\usetikzlibrary{decorations.pathreplacing,}
+\newcommand{\tikzmark}[1]{\tikz[baseline={(#1.base)},overlay,remember picture]
+\node[outer sep=0pt, inner sep=0pt] (#1) {\phantom{A}};}
+
+\everymath{\displaystyle}
+\thispagestyle{empty}
+
+\begin{document}
+
+\chapter{Θεωρήματα Διαφορικού Λογισμού}
+
+
+\vspace{\baselineskip}
+
+\begin{thmbreak}[\textlatin{\bfseries Bolzano}]
+\begin{minipage}[t]{0.24\textwidth}
+	\begin{enumerate}[i)]
+	\item $f$ συνεχής στο $ [a,b] $ \hfill \tikzmark{a} 
+	\item $ f(a)\cdot f(b) < 0 $ \hfill \tikzmark{b}
+\end{enumerate}
+\end{minipage}
+\end{thmbreak}
+
+\begin{tikzpicture}[overlay, remember picture,decoration={brace,amplitude=4pt}]
+	\draw[decorate,thick] (a.north east) -- (b.south east) node[midway,
+	right=0.1cm] {$\Rightarrow$}node[midway, right=0.5cm,text=black,text width = 2in,]
+	{$\quad \exists x_{0} \in (a,b) \; : \; f(x_{0}) = 0$};
+\end{tikzpicture}
+
+
+\begin{thmbreak}[\textlatin{\bfseries Rolle }]
+	\begin{minipage}[t]{0.29\textwidth}
+		\begin{enumerate}[i)]
+			\item $f$ συνεχής στο $ [a,b] $ \hfill \tikzmark{a}
+			\item $f$ παραγωγίσιμη στο $ (a,b) $ 
+			\item $ f(a) = f(b) $ \hfill  \tikzmark{b}
+		\end{enumerate}
+	\end{minipage}
+\end{thmbreak}
+
+\begin{tikzpicture}[overlay, remember picture,decoration={brace,amplitude=4pt}]
+	\draw[decorate,thick] (a.north east) -- (b.south east) node[midway,
+	right=0.1cm] {$\Rightarrow$}node[midway, right=0.5cm,text=black,text width = 2in,]
+	{$\quad \exists x_{0} \in (a,b) \; : \; f'(x_{0}) = 0$};
+\end{tikzpicture}
+
+\begin{thmbreak}[{\bfseries  Μέσης Τιμής}] 
+	\begin{minipage}[t]{0.30\textwidth}
+		\begin{enumerate}[i)]
+			\item $f$ συνεχής στο $ [a,b] $ \hfill \tikzmark{a}
+			\item $f$ παραγωγίσιμη στο $ (a,b) $ \hfill \tikzmark{b}
+		\end{enumerate}
+	\end{minipage}
+\end{thmbreak}
+
+\begin{tikzpicture}[overlay, remember picture,decoration={brace,amplitude=4pt}]
+	\draw[decorate,thick] (a.north east) -- (b.south east) node[midway,
+	right=0.1cm] {$\Rightarrow$}node[midway, right=0.5cm,text=black,text width = 3in,]
+	{$\quad \exists \xi \in (a,b) \; : \; f'(\xi) = \frac{f(b) - f(a)}{b - a}$};
+\end{tikzpicture}
+
+\begin{thmbreak}[{\bfseries Θεώρημα Μέσης Τιμής \textlatin{Cauchy}}]
+	\begin{minipage}[t]{0.32\textwidth}
+	\begin{enumerate}[i)]
+		\item $f, g$ συνεχείς στο $ [a,b] $ \hfill \tikzmark{a}
+		\item $f, g$ παραγωγίσιμες στο $ (a,b) $
+		\item $ g'(x) \neq 0 $, $ \forall x \in (a,b) $ \hfill \tikzmark{b}
+	\end{enumerate}	
+	\end{minipage}
+\end{thmbreak}
+
+\begin{tikzpicture}[overlay, remember picture,decoration={brace,amplitude=4pt}]
+	\draw[decorate,thick] (a.north east) -- (b.south east) node[midway,
+	right=0.1cm] {$\Rightarrow$}node[midway, right=0.5cm,text=black,text width = 3in,]
+	{$\quad \exists \xi \in (a,b) \; : \; \frac{f'(\xi)}{g'(\xi)} =
+	\frac{f(b) - f(a)}{b - a}$};
+	\end{tikzpicture}
+
+	\begin{thmbreak}[\textlatin{\bfseries Fermat}]
+		\begin{minipage}[t]{0.25\textwidth}
+			\begin{enumerate}[i)]
+				\item $f(x_{0})$ τοπικό ακότατο \hfill \tikzmark{a}
+				\item $ \exists $ η $ f'(x_{0}) $ \hfill \tikzmark{b}
+			\end{enumerate}
+		\end{minipage}
+	\end{thmbreak}
+	
+\begin{tikzpicture}[overlay, remember picture,decoration={brace,amplitude=4pt}]
+	\draw[decorate,thick] (a.north east) -- (b.south east) node[midway,
+	right=0.1cm] {$\Rightarrow$}node[midway, right=0.5cm,text=black,text width = 3in,]
+	{$\quad  f'(x_{0}) = 0 $};
+\end{tikzpicture}
+
+
+\end{document}

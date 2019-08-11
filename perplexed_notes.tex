@@ -1,0 +1,186 @@
+\input{$HOME/Desktop/preamble/preamble.tex}
+\input{$HOME/Desktop/preamble/definitions.tex}
+
+\usepackage{qtree}
+%\usepackage{booktabs}
+\usepackage{xcolor}
+
+%\renewcommand{\baselinestretch}{1.2}
+
+\everymath{\displaystyle}
+
+\begin{document}
+
+\chapter{Πεπλεγμένες Συναρτήσεις}
+
+
+\section{Θεωρήματα Πεπλεγμένων συναρτήσεων}
+
+\vspace{\baselineskip}
+
+\subsection{Η εξίσωση $ F(x,y) = 0 $}
+
+Έστω $ F(x,y) = 0 $, όπου $ F\colon D \to \mathbb{R} $ μια συνάρτηση με πεδίο
+ορισμού ένα ανοιχτό υποσύνολο $D$ του $\mathbb{R}^{2}$ και $ (x_0,y_0) $ ένα εσωτερικό σημείο του $D$.
+Αν 
+
+\begin{enumerate}[(i)]
+	\item $F(x_0,y_0) = 0$ 
+	\item $ F_x, F_y$ συνεχείς σε περιοχή του σημείου $ (x_0,y_0) $ 
+	\item $ F_y(x_0,y_0) \neq 0 $
+\end{enumerate}
+τότε υπάρχει μοναδική συνάρτηση $ y=y(x) $ ορισμένη στο $ I_0 \subseteq \mathbb{R} $  τέτοια ώστε:
+\begin{enumerate}[(i)]
+	\item $y_0 = y(x_0)$
+	\item $F(x,y(x)) = 0 \quad \forall x \in I_0$
+	\item $ \dv{y}{x} = - \frac{F_x}{F_y} \quad \forall x \in I_0  $
+\end{enumerate}
+
+\begin{rem}
+	Ο παραπάνω τύπος για την παράγωγο $ \dv{y}{x} $ προκύπτει ως λύση της εξίσωσης
+	\[
+	\pdv{F}{x} + \pdv{F}{y}\dv{y}{x} = 0 
+	\] 
+	η οποία προκύπτει με παραγώγιση της $ F(x,y) = 0$, αν θεωρήσουμε ότι $ y=y(x) $.
+	
+\end{rem}
+
+\subsection{Η εξίσωση $ F(x,y,z) = 0 $}
+
+
+Έστω $ F(x,y,z) = 0 $, όπου $F\colon D \to \mathbb{R}$ μια συνάρτηση με πεδίο ορισμού ένα ανοικτό
+υποσύνολο $ D $ του $ \mathbb{R}^{3}  $ και $ (x_0,y_0,z_0) $ ένα εσωτερικό σημείο του $ D $. Αν
+\begin{enumerate}[(i)]
+	\item $ F(x_0,y_0,z_0) $
+	\item $ F_x, F_y, F_z $ συνεχείς σε περιοχή του σημείου $ (x_0,y_0,z_0) $
+	\item $ F_z(x_0,y_0,z_0) \neq 0 $
+\end{enumerate}
+τότε υπάρχει μοναδική συνάρτηση, $ z=z(x,y) $ ορισμένη στο $ D_0 \subseteq \mathbb{R}^{2} $ τέτοια
+ώστε:
+\begin{enumerate}[(i)]
+	\item $ z_0 = z(x_0,y_0) $
+	\item $ F(x,y,z(x,y)) = 0  \quad \forall (x,y)\in  D_0 $
+	\item $ \pdv{z}{x} = - \frac{F_x}{F_z} $, $ \pdv{z}{y} = - \frac{F_y}{Fz}\quad \forall (x,y) \in
+		D_0$
+\end{enumerate}
+
+\begin{rem}
+	Οι παραπάνω τύποι για τις παραγώγους $ \pdv{z}{x}, \pdv{z}{y} $ προκύπτουν ως λύσεις των 
+	εξισώσεων  
+	\begin{align*}	
+	\pdv{F}{x} + \pdv{F}{z}\pdv{z}{x} &= 0 \\
+	\pdv{F}{y} + \pdv{F}{z}\pdv{z}{x} &= 0 
+\end{align*}
+	οι οποίες προκύπτουν με παραγώγιση της $ F(x,y,z) = 0 $, ως προς $x$ και $y$ αντίστοιχα και  αν θεωρήσουμε ότι $ z=z(x,y) $.
+	
+\end{rem}
+
+\subsection{Σύστημα Εξισώσεων}
+
+\subsubsection{1η περίπτωση}
+
+Έστω το σύστημα εξισώσεων $(\Sigma):
+	\begin{cases}
+		F(x,y,z) = 0  \\
+		G(x,y,z) = 0
+	\end{cases}$
+	και έστω το σημείο $ P_0(x_0,y_0,z_0) $, όπου ισχύει:
+	\begin{enumerate}[(i)]
+		\item  \begin{tabular}{l}
+				$F(x_0,y_0,z_0) = 0$ \\
+				$G(x_0,y_0,z_0) = 0$
+			\end{tabular}
+		\item Οι συναρτήσεις $ F, G $ είναι $ C^{1} $ τάξης 
+		\item $ \left.\pdv{(F,G)}{(y,z)}\right|_{P_0} \neq 0 $ 
+	\end{enumerate}
+	τότε υπάρχουν μοναδικές συναρτήσεις $ y = y(x) $ και $ z = z(x) $ τάξης $ C^{1} $ τέτοιες
+	ώστε:
+	\begin{enumerate}[(i)]
+		\item \begin{tabular}{l}
+				$ y_0 = y(x_0) $ \\
+				$ z_0 = z(x_0) $
+			\end{tabular}
+		\item \begin{tabular}{l}
+				$ F(x,y(x),z(x)) = 0 $ \\
+				$ G(x,y(x),z(x)) = 0 $
+		\end{tabular}
+	\item $ \dv{y}{x} = - \frac{\pdv{(F,G)}{(x,z)}}{\pdv{(F,G)}{(y,z)}} $, $ \pdv{z}{z} = -
+		\frac{\pdv{(F,G)}{(y,x)}}{\pdv{(F,G)}{(y,z)}} $
+	\end{enumerate}
+
+\begin{rem}
+	Οι παραπάνω τύποι για τις τιμές των μερικών παραγώγων $ \dv{y}{x}, \dv{z}{x}$ προκύπτουν ως
+	λύσεις του ακόλουθου $ 2 \times 2 $ συστήματος εξισώσεων οι οποίες προκύπτουν με παραγώγιση των
+	εξισώσεων του συστήματος $ (\Sigma) $, ως προς $x$.
+	\renewcommand{\arraystretch}{2}
+	\[
+	\begin{aligned}
+		(\Sigma_x): \left\{\begin{tabular}{l}
+	$\pdv{F}{x} + \pdv{F}{y}\dv{y}{x} + \pdv{F}{z}\dv{z}{x} = 0$ \\
+	$\pdv{G}{x} + \pdv{G}{y}\dv{y}{x} + \pdv{G}{z}\dv{z}{x} = 0$
+	\end{tabular}
+	\right.
+\end{aligned}
+	\]
+\end{rem}
+
+\subsubsection{2η περίπτωση}
+
+Έστω το σύστημα εξισώσεων $(\Sigma):
+	\begin{cases}
+		F(x,y,z,w) = 0  \\
+		G(x,y,z,w) = 0
+	\end{cases}$
+	και έστω το σημείο $ P_0(x_0,y_0,z_0,w_0) $, όπου ισχύει:
+	\begin{enumerate}[(i)]
+		\item  \begin{tabular}{l}
+				$F(x_0,y_0,z_0,w_0) = 0$ \\
+				$G(x_0,y_0,z_0,w_0) = 0$
+			\end{tabular}
+		\item Οι συναρτήσεις $ F, G $ είναι $ C^{1} $ τάξης 
+		\item $ \left.\pdv{(F,G)}{(z,w)}\right|_{P_0} \neq 0 $ 
+	\end{enumerate}
+	τότε υπάρχουν μοναδικές συναρτήσεις $ z = z(x,y) $ και $ w = w(x,y) $ τάξης $ C^{1} $ τέτοιες
+	ώστε:
+	\begin{enumerate}[(i)]
+		\item \begin{tabular}{l}
+				$ z_0 = z(x_0,y_0) $ \\
+				$ w_0 = w(x_0,y_0) $
+			\end{tabular}
+		\item \begin{tabular}{l}
+				$ F(x,y,x(x,y), w(x,y) = 0 $ \\
+			$ G(x,y,z(x,y), w(x,y)) = 0 $
+		\end{tabular}
+	\item $ \pdv{z}{x} = - \frac{\pdv{(F,G)}{(x,w)}}{\pdv{(F,G)}{(x,w)}} $, $ \pdv{z}{y} = -
+		\frac{\pdv{(F,G)}{(y,w)}}{\pdv{(F,G)}{(z,w)}} $, $ \pdv{w}{x} = -
+		\frac{\pdv{(F,G)}{(z,x)}}{\pdv{(F,G)}{(z,w)}} $, $ \pdv{w}{y} = -
+		\frac{\pdv{(F,G)}{(z,y)}}{\pdv{(F,G)}{(z,w)}} $
+	\end{enumerate}
+
+\begin{rem}
+	Οι παραπάνω τύποι για τις τιμές των μερικών παραγώγων $ \pdv{z}{x}, \pdv{z}{y}, \pdv{w}{x},
+	\pdv{w}{y} $ προκύπτουν ως λύσεις των ακόλουθων $ 2 \times 2 $ γραμμικών συστημάτων τα οποία προκύπτουν με παραγώγιση των εξισώσεων του συστήματος $ (\Sigma) $, ως προς $x$ και $y$
+αντίαντίστοιχα.
+	\renewcommand{\arraystretch}{2}
+	\[
+	\begin{aligned}
+		(\Sigma_x): \left\{\begin{tabular}{l}
+	$\pdv{F}{x} + \pdv{F}{z}\pdv{z}{x} + \pdv{F}{w}\pdv{w}{x} = 0$ \\
+	$\pdv{G}{x} + \pdv{G}{z}\pdv{z}{x} + \pdv{G}{w}\pdv{w}{x} = 0$
+	\end{tabular}
+	\right.
+&\quad \text{και} \quad&
+		(\Sigma_y): \left\{\begin{tabular}{l}
+	$\pdv{F}{y} + \pdv{F}{z}\pdv{z}{y} + \pdv{F}{w}\pdv{w}{y} = 0$ \\
+	$\pdv{G}{y} + \pdv{G}{z}\pdv{z}{y} + \pdv{G}{w}\pdv{w}{y} = 0$
+	\end{tabular}
+	\right.
+\end{aligned}
+	\]
+
+\end{rem}
+
+
+
+
+\end{document}

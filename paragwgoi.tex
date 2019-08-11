@@ -1,0 +1,67 @@
+\input{$HOME/Desktop/preamble/preamble.tex}
+\input{$HOME/Desktop/preamble/definitions.tex}
+
+
+
+
+\begin{document}
+
+
+
+
+\section{Παράγωγος Αντίστροφης Συνάρτησης}
+
+\begin{thm}
+	Έστω $ f\colon A\subseteq \mathbb{R} \to \mathbb{R} $ με τύπο $ y = f(x) $.  
+	\[
+	\left.
+	\begin{tabular}{l}		
+		 $f$ συνεχής στο $ A $ \\
+		 $f$ γν. μονότονη στο $ A $ \\
+		 $f$ παραγωγίσιμη στο $ x_{0} \in A $ \\
+		 $ f'(x_{0}) \neq 0 $
+	\end{tabular}
+\right\} 
+\Rightarrow x = f^{-1}(y) \: \text{παραγωγίσιμη στο} \: y_{0} = f(x_{0})
+\]
+
+και ισχύει
+
+\[
+	\left[f^{-1}(y_{0})\right]' = \frac{1}{f'(x_{0})} \Leftrightarrow
+	\left.\dv{f^{-1}(y)}{y}\right|_{y=y_{0}} 
+		= \frac{1}{\left.\dv{f(x)}{x}\right|_{\mathrlap{x=x_{0}}}}
+\]
+\end{thm}
+
+Γενικεύοντας, έχουμε:
+
+\[
+	\dv{x}{y} = \frac{1}{\dv{y}{x}} 	
+\]
+
+
+
+\section{Παράγωγος Σύνθετης Εκθετικής Συνάρτησης}
+
+
+Έστω $ y = [f(x)]^{g(x)} $. Για να βρούμε την παράγωγο αυτής της συνάρτησης,
+έχουμε:
+
+\[
+	 y = [f(x)]^{g(x)} \Leftrightarrow  y = e^{g(x) \ln{f(x)}} 
+\]
+
+και αν παραγωγίσουμε, τότε:
+
+\[
+	y' = e^{g(x)\ln{f(x)}}\cdot\left[g'(x)\ln{f(x)} + g(x)\frac{f'(x)}{f(x)}\right]	
+\]
+
+ή ισοδύναμα
+
+\[
+	y' = [f(x)]^{g(x)}\cdot\left[g'(x)\ln{f(x)} + \frac{f'(x)}{f(x)} g(x)\right]
+\]
+	
+\end{document}

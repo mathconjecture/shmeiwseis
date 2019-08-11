@@ -1,0 +1,49 @@
+\input{$HOME/Desktop/preamble/preamble.tex}
+\input{$HOME/Desktop/preamble/definitions.tex}
+
+
+
+\everymath{\displaystyle}
+
+
+\begin{document}
+
+\begin{center}
+\fbox{\large\bf Εφαπτόμενο Επίπεδο μιας επιφάνειας }
+\end{center}
+
+\vspace{\baselineskip}
+
+\begin{itemize}
+	\item Αν $S: F(x,y,z)=0$ τότε η διανυσματική εξίσωση του εφαπτόμενου επιπέδου της $S$ στο σημείο
+		της $ P(x_{0}, y_{0}, z_{0}) $ είναι
+		\begin{equation}\label{eq:tan}
+			(\mathbf{r} - \mathbf{r}_{0})\cdot \grad F(P_{0})=0 
+		\end{equation} 
+		όπου $ \mathbf{r}=x \mathbf{i}+y \mathbf{j}+z \mathbf{k} $ και $ r_{0}=x_{0} \mathbf{i}+ y
+	_{0} \mathbf{j}+ z_{0} \mathbf{k} $.
+
+	Σε καρτεσιανές συντεταγμένες η εξίσωση ~\eqref{eq:tan} γράφεται:
+
+	\[
+		\boxed{		
+			\pdv{F}{x}\eval_{P_{0}} (x-x_{0}) + \pdv{F}{y}\eval_{P_{0}} (y-y_{0}) +
+			\pdv{F}{z}\eval_{P_{0}} (z-z_{0}) =0 
+		}
+	\]
+\item Ένα κάθετο διάνυσμα στην επιφάνεια $ S $ στο σημείο $ P_{0} $ είναι το διάνυσμα της κλίσης της
+	συνάρτησης 
+	\[
+		\grad F{(P_{0})} = \left(\pdv{f}{x}, \pdv{f}{y}, \pdv{f}{z}\right)_{P_{0}}
+	\] 
+
+\item Αν $ S: z=f(x,y) $ τότε θέτουμε $ F(x,y,z) = z - f(x,y) = 0 $. Οπότε σε
+	αυτήν την περίπτωση η εξίσωση ~\eqref{eq:tan} γράφεται
+	\[
+		\boxed{
+			-\pdv{f}{x}\eval_{P_{0}} (x - x_{0}) - \pdv{f}{y}\eval_{P_{0}} (y - y_{0}) + (z - z_{0})
+		}
+	\] 
+\end{itemize}
+
+\end{document}

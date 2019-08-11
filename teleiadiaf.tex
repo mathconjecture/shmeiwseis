@@ -1,0 +1,61 @@
+\input{$HOME/Desktop/preamble/preamble.tex}
+\input{$HOME/Desktop/preamble/definitions.tex}
+
+
+
+
+\begin{document}
+
+\chapter{Μερική Παράγωγος}
+
+\section{Ολικά Διαφορικά}
+
+\begin{dfn}
+	Η παράσταση  $ P(x,y)dx + Q(x,y)dy $ είναι ολικό (ή τέλειο) διαφορικό αν υπάρχει συνάρτηση  $
+	f(x,y) $ τέτοια ώστε $ df = P(x,y)dx + Q(x,y)dy $. Τότε ισχύουν οι παρακάτω σχέσεις:
+	 \[
+		 \pdv{f}{x} = P(x,y) \quad \text{και} \quad \pdv{f}{y} = Q(x,y)
+	 \] 
+\end{dfn}
+
+\begin{prop}
+	Αν οι  $ P(x,y) $  και  $ Q(x,y) $  είναι συνεχείς συναρτήσεις και έχουν συνεχείς παραγώγους
+	πρώτης τάξης τότε η  παράσταση  $ P(x,y)dx + Q(x,y)dy $ είναι τέλειο διαφορικό αν 
+	\[ 
+		\pdv{P}{y} = \pdv{Q}{x} 
+\]
+\end{prop}
+
+\begin{dfn}
+	Η παράσταση  $ P(x,y,z)dx + Q(x,y,z)dy + R(x,y,z)dz $ είναι τέλειο διαφορικό αν υπάρχει
+	συνάρτηση  $ f(x,y,z) $  τέτοια ώστε  $ df = P(x,y,z)dx + Q(x,y,z)dy + R(x,y,z)dz $.  Τότε
+	ισχύουν οι παρακάτω σχέσεις:
+	 \[
+		 \pdv{f}{x} = P(x,y,z) \quad \text{και} \quad \pdv{f}{y} = Q(x,y,z) \quad \text{και} \quad
+		 \pdv{f}{z} = R(x,y,z) 
+	 \] 
+\end{dfn}
+
+\begin{prop}
+	
+	Αν οι  $ P(x,y,z) $, $ Q(x,y,z) $  και  $ R(x,y,z) $ είναι συνεχείς συναρτήσεις και έχουν
+	συνεχείς παραγώγους πρώτης τάξης τότε η  παράσταση $ P(x,y,z)dx + Q(x,y,z)dy + R(x,y,z)dz $   είναι τέλειο διαφορικό αν 
+	  \[
+		  \pdv{P}{y} = \pdv{Q}{x} \quad \text{και} \quad \pdv{Q}{z} = \pdv{R}{y} \quad \text{και}
+		  \quad  \pdv{P}{z} = \pdv{R}{x}
+	  \] 
+\end{prop}
+
+\begin{rem}
+	Οι συναρτήσεις  $ f(x,y) $  και  $ f(x,y,z) $ υπολογίζονται επίσης από τις παρακάτω σχέσεις:
+	\begin{align*} 
+	f(x,y) &= \int_{x_{0}}^{x} P(t,y) \,{dt} + \int_{y_{0}}^{y} Q(x_{0},t) \,{dt} \\
+	f(x,y,z) &= \int_{x_{0}}^{x} P(t,y,z) \,{dt} + \int_{y_{0}}^{y} Q(x_{0},t,z) \,{dt} + \int
+		 _{z_{0}}^{z} R(x_{0},y_{0},t) \,{dt}  
+\end{align*} 
+όπου τα   $ x_{0} $, $ y_{0} $  και  $ z_{0} $  επιλέγονται αυθαίρετα στο πεδίο ορισμού των  $ P
+$, $ Q $  και  $ R $.
+\end{rem}
+
+\end{document}
+	
