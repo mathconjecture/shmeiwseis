@@ -1,14 +1,14 @@
-\input{$HOME/Desktop/preamble/preamble.tex}
-\input{$HOME/Desktop/preamble/definitions.tex}
+\input{preamble/preamble_ask.tex}
+\input{preamble/definitions_ask.tex}
 
 \everymath{\displaystyle}
+\pagestyle{vangelis}
 
 \begin{document}
 
 % \begin{center}
 %     \fbox{\large\bfseries  Τοπικά και Απόλυτα ακρότατα}
 % \end{center}
-
 
 \chapter*{Τοπικά και Ολικά Ακρότατα}
 
@@ -19,8 +19,8 @@
 \begin{dfn}
     Έστω $ x_{0} \in A $.  Λέμε ότι η τιμή $ f(x_{0}) $ είναι:
     \begin{itemize}
-        \item \textcolor{magenta}{τοπικό μέγιστο}\phantom{a} της συνάρτησης $f$, αν $ f(x_{0}) \geq f(x) $, κοντά στο $ x_{0} $.
-        \item \textcolor{magenta}{τοπικό ελάχιστο} της συνάρτησης $f$, αν $ f(x_{0}) \leq f(x) $, κοντά στο $ x_{0} $.
+        \item \textcolor{Col1}{τοπικό μέγιστο}\phantom{a} της συνάρτησης $f$, αν $ f(x_{0}) \geq f(x) $, κοντά στο $ x_{0} $.
+        \item \textcolor{Col1}{τοπικό ελάχιστο} της συνάρτησης $f$, αν $ f(x_{0}) \leq f(x) $, κοντά στο $ x_{0} $.
     \end{itemize}
 \end{dfn}
 
@@ -29,8 +29,8 @@
 \begin{dfn}
     Έστω $ x_{0} \in A $.  Λέμε ότι η τιμή $ f(x_{0}) $ είναι:
     \begin{itemize}
-        \item \textcolor{magenta}{ολικό μέγιστο}\phantom{a} της συνάρτησης $f$ στο $ A $, αν $ f(x_{0}) \geq f(x),\quad \forall x \in A $
-        \item \textcolor{magenta}{ολικό ελάχιστο} της συνάρτησης $f$ στο $ A $, an $ f(x_{0}) \leq f(x),\quad \forall x
+        \item \textcolor{Col1}{ολικό μέγιστο}\phantom{a} της συνάρτησης $f$ στο $ A $, αν $ f(x_{0}) \geq f(x),\quad \forall x \in A $
+        \item \textcolor{Col1}{ολικό ελάχιστο} της συνάρτησης $f$ στο $ A $, an $ f(x_{0}) \leq f(x),\quad \forall x
             \in A $
     \end{itemize}
 \end{dfn}
@@ -45,13 +45,13 @@
     των ολικών ακροτάτων της, εφόσον αυτά υπάρχουν.
 \end{rem}
 
-\begin{thm}[\textlatin{Fermat}]
+\begin{thm}[Fermat]
     Αν μια συνάρτηση $f$ έχει τοπικό μέγιστο ή ελάχιστο στο $ x_{0} $ του
     πεδίου ορισμού της και ορίζεται η τιμή $ f'(x_{0}) $, τότε $ f'(x_{0}) = 0 $.
 \end{thm}
 
 \begin{rem}
-    Το αντίστροφο του θεωρήματος του \textlatin{Fermat} δεν ισχύει. Για παράδειγμα για τη συνάρτηση
+    Το αντίστροφο του θεωρήματος του Fermat δεν ισχύει. Για παράδειγμα για τη συνάρτηση
     $ f(x)=x^{3} $, ισχύει ότι $ f'(0)=0 $, όμως στο σημείο $ x_{0} = 0 $ η συνάρτηση δεν έχει
     κάποιο ακρότατο, αλλά αντίθετα παρουσιάζει σημείο καμπής. Επίσης η συνάρτηση $ f(x) = \abs{x} $
     παρόλο που δεν ορίζεται η παράγωγός της στο σημείο $ x_{0} = 0 $, αυτή έχει ολικό ελάχιστο στο
@@ -59,7 +59,7 @@
 \end{rem}
 
 \begin{rem}
-    Επομένως αυτό που μας λέει το θεώρημα \textlatin{Fermat} είναι ότι τα μόνα σημεία τα οποία
+    Επομένως αυτό που μας λέει το θεώρημα Fermat είναι ότι τα μόνα σημεία τα οποία
     μπορεί να είναι ακρότατα (τοπικά ή ολικά) για μια συνάρτηση $f$ είναι 
 
     \begin{enumerate}
@@ -72,7 +72,7 @@
 
 \begin{dfn}
     Έστω $ x_{0} $ εσωτερικό σημείο του $A$ . Αν $ f'(x_{0}) = 0 $ ή $ f'(x_{0}) $ δεν ορίζεται τότε
-    το σημείο $ x_{0} $ λέγεται \textcolor{magenta}{κρίσιμο} σημείο της συνάρτησης $f$. 
+    το σημείο $ x_{0} $ λέγεται \textcolor{Col1}{κρίσιμο} σημείο της συνάρτησης $f$. 
 \end{dfn}
 
 
