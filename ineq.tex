@@ -1,0 +1,55 @@
+\input{preamble/preamble.tex}
+\input{preamble/definitions.tex}
+
+
+\everymath{\displaystyle}
+\pagestyle{vangelis}
+
+\begin{document}
+
+\setcounter{chapter}{1}
+
+\begin{center}
+    \minibox{\Large\bfseries \textcolor{Col1}{Απειροστικός Ι}}
+\end{center}
+
+\vspace{2\baselineskip}
+
+\begin{minipage}[t]{0.45\textwidth}
+    \minibox{\bfseries \large \textcolor{Col2}{Χρήσιμες Ανισότητες}}
+
+\begin{myitemize}
+    \item $|\sin x|\leq 1, \quad \forall x\in \mathbb{R}$
+    \item $|\sin x|\leq |x|, \quad \forall x\in \mathbb{R}$
+    \item $|\cos x|\leq 1, \quad \forall x\in \mathbb{R}$
+    \item $e^x\geq 1+x, \quad \forall x\in \mathbb{R}$
+    \item $1-\frac{1}{x}\leq \frac{\ln x}{x}\leq x-1, \quad \forall x>1$
+    \item $n!\leq n^n, \quad \forall n\in \mathbb{N}$
+    \item $n!\geq 2^{n-1}, \quad \forall n\in \mathbb{N}$
+\end{myitemize}
+\end{minipage}\hfill\begin{minipage}[t]{0.45\textwidth}
+
+\minibox{\bfseries \large \textcolor{Col2}{Χρήσιμα Όρια Ακολουθιών}}
+
+\begin{myitemize}
+    \item $ \lim_{n\to \infty} \frac{1}{n^{a}} = 0, \quad  a > 0 $ 
+    \item $ \lim_{n\to \infty} a^{n} =
+        \begin{cases} 
+            0, &  \abs{a} < 1 \\
+            +\infty, & a>1 
+        \end{cases}$
+    \item $ \lim_{n\to \infty} \sqrt[n]{a} = 1, \quad  a>0 $
+    \item $ \lim_{n\to \infty} \sqrt[n]{n} = 1 $
+    \item $ \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^{n} = e $
+    \item $ \lim_{n\to \infty} \left(1 + \frac{a}{n}\right)^{n} = e^{a}, 
+        \quad a \in \mathbb{R} \setminus \{0\} $
+    \item $ \lim_{n\to \infty} \frac{n}{a^{n}} = 0, \quad  a>1, \quad a \in \mathbb{R} $
+    \item $ \lim_{n\to \infty} \frac{a^{n}}{n!} = 0, \quad  a \in \mathbb{R} $
+    \item $ \lim_{n\to \infty} \frac{n!}{n^{n}} = 0 $
+    \item $ \lim_{n\to \infty} \sqrt[n]{n!} = + \infty $
+    \item $ \lim_{n\to \infty} \frac{\ln n}{n} = 0 $
+\end{myitemize}
+\end{minipage}
+
+\end{document}
+
