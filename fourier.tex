@@ -1,13 +1,11 @@
-\input{$HOME/Desktop/tufte/preamble.tex}
-\input{$HOME/Desktop/preamble/definitions.tex}
+\input{preamble/preamble.tex}
+\input{preamble/definitions.tex}
 
-\pagestyle{vangelis}
-\everymath{\displaystyle}
 
 
 \begin{document}
 
-\chapter{Σειρές \textlatin{Fourier}}
+\chapter{Σειρές Fourier}
 
 
 \section{Περιοδικές Συναρτήσεις}
@@ -15,38 +13,45 @@
 \vspace{\baselineskip}
 
 \begin{dfn}
-    Μια συνάρτηση $ f \colon \mathbb{R} \to \mathbb{R} $ λέγεται \textcolor{magenta}{περιοδική} αν 
+    Μια συνάρτηση $ f \colon \mathbb{R} \to \mathbb{R} $ λέγεται 
+    \textcolor{Col1}{περιοδική} αν 
     \[
         f(x+T)=f(x),\quad \forall x \in \mathbb{R} 
     \] 
-    όπου $ T>0 $, ονομάζεται \textcolor{magenta}{περίοδος} της συνάρτησης.
+    όπου $ T>0 $, ονομάζεται \textcolor{Col1}{περίοδος} της συνάρτησης.
 \end{dfn}
 
 \begin{rem}
-    Κάθε περιοδική συνάρτηση $ f(x) $ με περίοδo $ 2L>0 $ μπορεί να μετασχηματιστεί σε μια συνάρτηση
-    με περίοδο $ 2 \pi $. Πράγματι, θέτωντας 
+    Κάθε περιοδική συνάρτηση $ f(x) $ με περίοδo $ 2L>0 $ μπορεί να 
+    μετασχηματιστεί σε μια συνάρτηση με περίοδο $ 2 \pi $. Πράγματι, θέτωντας 
     \[ 
         \frac{x}{t} = \frac{2L}{2 \pi} \Leftrightarrow x= t \frac{L}{\pi} 
     \]
-    η συνάρτηση $ g(t) = f\Bigl(t \frac{L}{\pi}\Bigr) $ που προκύπτει έχει περίοδο $ 2 \pi $.
+    η συνάρτηση $ g(t) = f\Bigl(t \frac{L}{\pi}\Bigr) $ που προκύπτει 
+    έχει περίοδο $ 2 \pi $.
 \end{rem}
 
 \begin{dfn}
-    Μια συνάρτηση $ f \colon [a,b] \to \mathbb{R} $ λέγεται \textcolor{magenta}{τμηματικά συνεχής},
-    αν η  $f$ έχει πεπερασμένου πλήθους σημεία ασυνέχειας, στα οποία υπάρχουν τα πλευρικά όρια και
-    είναι πεπερασμένα.
+    Μια συνάρτηση $ f \colon [a,b] \to \mathbb{R} $ λέγεται 
+    \textcolor{Col1}{τμηματικά συνεχής}, αν η  $f$ έχει πεπερασμένου πλήθους 
+    σημεία ασυνέχειας, στα οποία υπάρχουν τα πλευρικά όρια και είναι πεπερασμένα.
 \end{dfn}
 
 \begin{dfn}
-    Μια συνάρτηση  $ f \colon [a,b] \to \mathbb{R} $  λέγεται  \textcolor{magenta}{τμηματικά λεία}
-    αν η $f$ και η $f$' είναι τμηματικά συνεχείς στο $ [a,b] $.     
+    Μια συνάρτηση  $ f \colon [a,b] \to \mathbb{R} $  λέγεται  
+    \textcolor{Col1}{τμηματικά λεία} αν η $f$ και η $f$' είναι τμηματικά συνεχείς 
+    στο $ [a,b] $.     
 \end{dfn}
 
 \begin{dfn}
     Μια συνάρτηση $ f(x) $ θα λέγεται:
     \begin{alignat*}{4}
-        &\textcolor{magenta}{\text{άρτια}}   & \quad &\overset{\text{ορ.}}{\Leftrightarrow} & \quad f(-x) &= f(x), & &\quad \forall x \in \mathbb{R} \\
-        &\textcolor{magenta}{\text{περιττή}}  & \quad &\overset{\text{ορ.}}{\Leftrightarrow} & \quad f(-x) &= -f(x), & &\quad \forall x \in \mathbb{R}. \\
+        &\textcolor{Col1}{\text{άρτια}}   & \quad 
+        &\overset{\text{ορ.}}{\Leftrightarrow} & \quad f(-x) &= f(x), & 
+        &\quad \forall x \in \mathbb{R} \\
+        &\textcolor{Col1}{\text{περιττή}}  & \quad 
+        &\overset{\text{ορ.}}{\Leftrightarrow} & \quad f(-x) &= -f(x), & 
+        &\quad \forall x \in \mathbb{R}. \\
     \end{alignat*}
 \end{dfn}
 
@@ -62,16 +67,16 @@
         \[
             F(x) = f(x), \; -L \leq x \leq L \quad \text{και} \quad F(x+2L)=F(x)
         \]
-        με περίοδο $ 2L $ λέγεται \textcolor{magenta}{περιοδική επέκταση} της $f$. 
+        με περίοδο $ 2L $ λέγεται \textcolor{Col1}{περιοδική επέκταση} της $f$. 
 
-    \item Αν $ f(x) $ ορισμένη στο $ [0,L] $, τότε μπορεί να επεκταθεί κατά άπειρους τρόπους 
-        σε μια περιοδική συνάρτηση 
+    \item Αν $ f(x) $ ορισμένη στο $ [0,L] $, τότε μπορεί να επεκταθεί 
+        κατά άπειρους τρόπους σε μια περιοδική συνάρτηση 
         \begin{alignat*}{4}
             &F(x) = 
             \begin{cases}  
-            f(x), & \phantom{-} 0 \leq x \leq L \\
-            \phi(x) & -L < x < 0
-        \end{cases}  & \quad & \text{και} \quad F(x+2L)=F(x)
+                f(x), & \phantom{-} 0 \leq x \leq L \\
+                \phi(x) & -L < x < 0
+            \end{cases}  & \quad & \text{και} \quad F(x+2L)=F(x)
         \end{alignat*}
         με περίοδο $ 2L $, όπου $ \phi(x) $ αυθαίρετη συνάρτηση. 
 
@@ -79,30 +84,243 @@
         \begin{alignat*}{4}
             &F(x) = 
             \begin{cases}  
-            f(x), & \phantom{-} 0 \leq x \leq L \\
-            f(-x), & -L \leq x \leq 0
-        \end{cases}  & \quad & \text{και} \quad F(x+2L)=F(x)
+                f(x), & \phantom{-} 0 \leq x \leq L \\
+                f(-x), & -L \leq x \leq 0
+            \end{cases}  & \quad & \text{και} \quad F(x+2L)=F(x)
         \end{alignat*}
-        με περίοδο $ 2L $ λέγεται \textcolor{magenta}{άρτια περιοδική επέκταση} της $f$.
+        με περίοδο $ 2L $ λέγεται \textcolor{Col1}{άρτια περιοδική επέκταση} της $f$.
 
-    \item \label{peritth} Αν $ f(x) $ ορισμένη στο $ [0,L] $, με $ f(0)=f(L)=0 $ τότε η συνάρτηση
+    \item \label{peritth} Αν $ f(x) $ ορισμένη στο $ [0,L] $, με $ f(0)=f(L)=0 $ 
+        τότε η συνάρτηση
         \begin{alignat*}{4}
             &F(x) = 
             \begin{cases}  
-            \phantom{-} f(x), & \phantom{-} 0 \leq x \leq L \\
-            -f(-x), & -L \leq x \leq 0
-        \end{cases}  & \quad & \text{και} \quad F(x+2L)=F(x)
+                \phantom{-} f(x), & \phantom{-} 0 \leq x \leq L \\
+                -f(-x), & -L \leq x \leq 0
+            \end{cases}  & \quad & \text{και} \quad F(x+2L)=F(x)
         \end{alignat*}
-        με περίοδο $ 2L $ λέγεται \textcolor{magenta}{περιττή περιοδική επέκταση} της $f$.
+        με περίοδο $ 2L $ λέγεται \textcolor{Col1}{περιττή περιοδική επέκταση} της $f$.
 
-    \item Αν $ f(x) $ ορισμένη στο $ (0,L) $, τότε επεκτείνεται σε άρτια (αντ. περιττή) περιοδική
-        συνάρτηση $ F(x) $ θέτωντας $ F(0) $, $ F(L) $ οποιαδήποτε τιμή (αντ. $F(0)=F(L)$) και στη
-        συνέχεια εφαρμόσουμε τις επεκτάσεις \ref{artia} και \ref{peritth}.
-
+    \item Αν $ f(x) $ ορισμένη στο $ (0,L) $, τότε επεκτείνεται σε 
+        άρτια (αντ. περιττή) περιοδική συνάρτηση $ F(x) $ θέτωντας $ F(0) $, 
+        $ F(L) $ οποιαδήποτε τιμή (αντ. $F(0)=F(L)$) και στη συνέχεια εφαρμόσουμε 
+        τις επεκτάσεις~\ref{artia} και~\ref{peritth}.
 \end{enumerate}
 
 
+\section{Τριγωνομετρικές Σειρές}
+
+Έστω $ f \colon \mathbb{R} \to \mathbb{R} $ μια περιοδική συνάρτηση, με περίοδο 
+$ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ μπορεί να αναπαρασταθεί ως 
+\textcolor{Col1}{τριγωνομετρική} σειρά της μορφής:
+
+\begin{equation}\label{eq:trigser}
+    f(x) = \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{nx}  + b_{n} \sin{nx}]
+\end{equation} 
+
+Αν υποθέσουμε ότι υπάρχει η αναπαράσταση της $f$ ως τριγωνομετρική σειρά και ότι 
+η σύγκλιση της σειράς είναι ομοιόμορφη, τότε αν πολλαπλασιάσουμε την~\eqref{eq:trigser}
+με $ \sin{mx} $ και ολοκληρώσουμε σε διάστημα μίας περιόδου: 
+
+\begin{gather*}
+    f(x) = \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{nx} + b_{n} \sin{nx}]  \\
+    f(x) \sin{mx} = \frac{a_{0}}{2} \sin{mx} + \sum_{n=1}^{\infty} 
+    [a_{n} \cos{nx} = \sin{mx} + b_{n} \sin{nx} \sin{mx}]   \\
+    \int _{- \pi} ^{\pi} f(x) \sin{mx} \,{dx} = \frac{a_{0}}{2} \int _{- \pi}^{\pi} 
+    \sin{mx} \,{dx} + \sum_{n=1}^{\infty} [a_{n} \int _{- \pi}^{\pi}
+    \cos{nx} \sin{mx}  \,{dx} + b_{n} \int _{- \pi }^{\pi} \sin{nx} \sin{mx} \,{dx}] \\
+    \int _{- \pi }^{\pi} f(x) \sin{nx} \,{dx} = \frac{a_{0}}{2} \cdot 0 + 
+    a_{n}\cdot 0 + b_{n} \cdot \int _{- \pi}^{\pi } \sin^{2}{nx} \,{dx} \\
+    \int _{- \pi }^{\pi} f(x) \sin{nx} \,{dx} =  b_{n} \cdot \pi 
+\end{gather*}   
+
+Οπότε 
+\[
+    \boxed{b_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi} f(x) \sin{nx} \,{dx}}
+\] 
+
+Ομοίως αν πολλαπλασιάσουμε την~\eqref{eq:trigser} με $ \cos{mx} $ και ολοκληρώσουμε 
+σε διάστημα μιας περιόδου, έχουμε:
+
+\begin{gather*}
+    f(x) = \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{nx} + b_{n} \sin{nx}]  \\
+    f(x) \cos{mx} = \frac{a_{0}}{2} \cos{mx} + \sum_{n=1}^{\infty} 
+    [a_{n} \cos{nx} \cos{mx} + b_{n} \sin{nx} \cos{mx}]   \\
+    \int _{- \pi} ^{\pi} f(x) \cos{mx} \,{dx} = \frac{a_{0}}{2} \int _{- \pi}^{\pi} 
+    \cos{mx} \,{dx} + \sum_{n=1}^{\infty} [a_{n} \int _{- \pi}^{\pi}
+    \cos{nx} \cos{mx}  \,{dx} + b_{n} \int _{- \pi }^{\pi} \sin{nx} \cos{mx} \,{dx}] \\
+\end{gather*}
+
+και από τις συνθήκες ορθογωνιότητας για τις διάφορες περιπτώσεις του $ m $, προκύπτει
+
+\begin{gather*}
+    \begin{cases} 
+        \displaystyle{\int _{- \pi }^{\pi} f(x) \cos{mx} \,{dx} = 
+            \frac{a_{0}}{2} \cdot 0 + a_{m} \int _{- \pi }^{\pi } \cos^{2}{mx} 
+        \,{dx} + b_{m} \cdot 0}, 
+         & m = 1,2,3, \ldots \\
+         \displaystyle{\int _{- \pi }^{\pi} f(x) \,{dx} = \frac{a_{0}}{2}} 
+         \int _{- \pi}^{\pi} \,{dx}, 
+         & m=0 \\
+    \end{cases} 
+    \intertext{άρα}
+    \begin{cases} 
+        \displaystyle{\int _{- \pi }^{\pi} f(x) \cos{nx} \,{dx} = 
+        a_{n}\cdot \pi } \\
+        \displaystyle{\int _{- \pi }^{\pi} f(x) \,{dx} = \frac{a_{0}}{2}
+        2 \pi } 
+    \end{cases} 
+    \Leftrightarrow 
+    \begin{cases} 
+        \displaystyle{a_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi } f(x) \cos{nx} 
+        \,{dx}} \\
+        \displaystyle{a_{0} = \frac{1}{\pi} \int _{- \pi}^{\pi} f(x) \,{dx}}
+    \end{cases}
+    \intertext{ή ισοδύναμα, μαζεύοντας}
+    \boxed{a_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi} f(x) \cos{nx} \,{dx}, 
+    n = 0,1,2,3, \ldots}
+\end{gather*}
+
+\begin{thm}
+    Έστω $ f \colon \mathbb{R} \to \mathbb{R} $ μια περιοδική συνάρτηση με περίοδο 
+    $ 2 \pi $ και τμηματικά λεία. Τότε η σειρά Fourier της $f$ συγκλίνει για κάθε 
+    $ x \in \mathbb{R} $, στην τιμή
+    \[
+        \frac{f(x^{-}) + f(x^{+})}{2} 
+    \] 
+\end{thm}
+
+\begin{rem}
+\item {}
+    \begin{myitemize}
+    \item Αν $f$ συνεχής στο $x$, τότε η σειρά Fourier συγκλίνει στο f(x), γιατί 
+        $ f(x^{-}) = f(x^{+}) $.
+    \item Αν $f$ συνεχής για κάθε $x \in \mathbb{R} $, τότε η σειρά Fourier 
+        συγκλίνει απόλυτα και ομοιόμορφα στην $f$ στο $ \mathbb{R} $.
+    \end{myitemize}
+\end{rem}
+
+\section{Ορθογωνιότητα}
+
+\begin{dfn}
+    Έστω δυο πραγματικές συναρτήσεις $ f(x), g(x) $ ορισμένες σ᾽ ένα διάστημα 
+    $ [a,b] \subseteq \mathbb{R} $. Ορίζουμε ως \textcolor{Col1}{εσωτερικό γινόμενο} 
+    των $ f(x) $ και $ g(x) $ και το συμβολίζουμε με $ <f,g> $ το ολοκλήρωμα
+    \[
+        <f,g> = \int _{a}^{b} w(x) f(x)g(x) \,{dx} 
+    \] 
+    όπου $ w(x) $ γνωστή θετική συνάρτηση, $ \forall x \in [a,b] $, η οποία 
+    ονομάζεται \textcolor{Col1}{συνάρτηση βάρους}.
+\end{dfn}
+
+\begin{rem}
+    Τα όρια ολοκλήρωσης στο παραπάνω ολοκλήρωμα μπορεί να είναι και $ \infty $.
+\end{rem}
+
+\begin{dfn}
+    Δυο πραγματικές συναρτήσεις $ f(x), g(x) $ είναι \textcolor{Col1}{ορθογώνιες} 
+    στο διάστημα $ [a,b] \subseteq \mathbb{R} $ ως προς τη συνάρτηση βάρους $ w(x) $, 
+    αν το εσωτερικό του γινόμενο είναι μηδέν, δηλαδή:
+    \[
+        \int _{a}^{b} w(x)f(x)g(x) \,{dx} = 0
+    \] 
+\end{dfn}
+
+\begin{dfn}
+    Μια ακολουθία πραγματικών συναρτήσεων $ \{ f_{n}(x) \}_{n=1}^{\infty} $ αποτελεί 
+    ένα σύστημα ορθογώνιων συναρτήσεων στο διάστημα $ [a,b] $, ως προς τη 
+    συνάρτηση βάρους $ w(x) $, αν τα μέλη της είναι ανα δύο ορθογώνια, δηλαδή:
+    \[
+        \int _{a}^{b} w(x) f_{n}(x)f_{m}(x) \,{dx} = 0 \quad \forall n \neq m, \; n,m = 
+        1,2,3, \ldots
+    \] 
+\end{dfn}
+
+\begin{prop}
+    Το σύστημα των συναρτήσεων $ \{ \cos{(nx)} \}_{n=1}^{\infty} $ είναι ορθογώνιο 
+    στο διάστημα $ [0, \pi] $, ως προς τη συνάρτηση βάρους $ w(x)=1 $.
+
+    \begin{proof}
+    \item {}
+        \begin{myitemize}
+        \item Αν $ n \neq m $, τότε:
+            \begin{align*}
+                \int _{0}^{\pi} \cos{nx} \cdot \cos{mx} \,{dx} &= \frac{1}{2} 
+                \int _{0}^{\pi} [\cos{(nx+mx)} + \cos{(nx - mx)}] \,{dx} = 
+                \frac{1}{2} 
+                \left[\frac{\sin{(n+m)x}}{n+m} + \frac{\sin{(n-m)x}}{n-m}
+                \right]_{0}^{\pi} = 0 \\
+            \end{align*} 
+
+        \item Αν $ n = m $, τότε:
+            \begin{align*}
+                \int _{0}^{\pi} cos^{2}(nx) \,{dx} = 
+                \int _{0}^{\pi} \frac{1+ \cos{2nx}}{2}
+                \,{dx} = 
+                \frac{1}{2} \left[x + \frac{\sin{2nx}}{2n}\right]_{0}^{\pi} =
+                \frac{\pi}{2} 
+            \end{align*}
+        \end{myitemize}
+    \end{proof}
+\end{prop}
 
 
+\begin{prop}
+    Το σύστημα των συναρτήσεων $ \{ \sin{(nx)} \} _{n=1}^{\infty} $ είναι ορθογώνιο
+    στο διάστημα $ [0, \pi] $, ως προς τη συνάρτηση βάρους $ w(x)=1 $.
+\end{prop}
+
+\begin{proof}
+\item {}
+    Ομοίως
+\end{proof}
+
+\begin{prop}
+    Το σύστημα των συναρτήσεων Bessel 1ου είδους $ \{ J_{n}(x) \} _{n=1}^{\infty} $ 
+    είναι ορθογώνιο στο διάστημα $ [0,a] $, ως προς τη συνάρτηση βάρους $ w(x)=x $.
+\end{prop}
+
+\begin{prop}
+    Το σύστημα των πραγματικών συναρτήσεων 
+    $ \{ 1, \sin{\frac{n \pi x}{L}, \cos{\frac{n \pi x}{L} } } \}_{n=1}^{\infty} $ 
+    είναι ορθογώνιο στο $ [-L,L] $, με $ L>0 $, ως προς τη συνάρτηση βάρους 
+    $ w(x)=1 $.
+\end{prop}
+
+\begin{proof}
+\item {}
+    \begin{myitemize}
+    \item 
+        \[
+            \int _{-L}^{L} \sin{\frac{n \pi x}{L}} \,{dx} =  
+            \left[\frac{- \cos{\frac{n \pi x}{L}}}{\frac{n \pi }{L}} \right]_{-L}^{L} 
+            = - \frac{L}{n \pi} \left[\cos{\frac{n \pi x}{L}} \right]_{-L}^{L} = 
+            - \frac{L}{n \pi} [ \cos{n \pi} - \cos{(- n \pi)}] = - \frac{L}{n \pi } 
+            [ \cos{n \pi}- \cos{n \pi}] = 0 
+        \] 
+
+    \item 
+        \[
+            \int _{-L}^{L} \cos{\frac{n \pi x}{L}} \,{dx} =  
+            \left[\frac{\sin{\frac{n \pi x}{L}}}{\frac{n \pi }{L}} \right]_{-L}^{L} 
+            = \frac{L}{n \pi} \left[\sin{\frac{n \pi x}{L}} \right]_{-L}^{L} = 
+            \frac{L}{n \pi} [ \sin{n \pi} - \sin{(- n \pi)}] =  \frac{2L}{n \pi } 
+            \sin{n \pi} = 0 
+        \]
+
+    \item 
+        \begin{align*}
+            \int _{-L}^{L} \sin{\frac{n \pi x }{L}} \sin{\frac{m \pi x}{L}} \,{dx} 
+            &= \frac{1}{2} \int _{-L}^{L} \left[\cos{\frac{(n-m) \pi x}{L}} - 
+            \cos{\frac{(n+m) \pi x}{L}} \right] \,{dx} = 
+            \frac{1}{2} \left[\frac{\sin{\frac{(n-m) \pi x}{L}}}
+                {\frac{(n-m) \pi}{L}} - \frac{\sin{\frac{(n+m) \pi x}{L}}}
+            {\frac{(n+m) \pi x}{L}}\right]_{-L}^{L} \\ 
+            &= \frac{L}{2 \pi} \left[\frac{1}{n-m} \sin{\frac{(n-m) \pi x}{L} - 
+            \frac{1}{n+m} \sin{\frac{(n+m) \pi x}{L}}}\right]_{-L}^{L} = \frac{L}{2 \pi}
+            [\frac{1}{n-m} \sin{(n-m) \pi} - \frac{1}{n+m} \sin{(n+m) \pi}] = 
+        \end{align*} 
+    \end{myitemize}
+\end{proof}
 
 \end{document}
