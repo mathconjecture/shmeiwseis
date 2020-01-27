@@ -82,11 +82,11 @@
 
     \item \label{artia} Αν $ f(x) $ ορισμένη στο $ [0,L] $ τότε η συνάρτηση 
         \begin{alignat*}{4}
-            &F(x) = 
+            & F(x) = 
             \begin{cases}  
                 f(x), & \phantom{-} 0 \leq x \leq L \\
                 f(-x), & -L \leq x \leq 0
-            \end{cases}  & \quad & \text{και} \quad F(x+2L)=F(x)
+            \end{cases}  & \quad \text{και} \quad F(x+2L)=F(x)
         \end{alignat*}
         με περίοδο $ 2L $ λέγεται \textcolor{Col1}{άρτια περιοδική επέκταση} της $f$.
 
@@ -97,7 +97,7 @@
             \begin{cases}  
                 \phantom{-} f(x), & \phantom{-} 0 \leq x \leq L \\
                 -f(-x), & -L \leq x \leq 0
-            \end{cases}  & \quad & \text{και} \quad F(x+2L)=F(x)
+            \end{cases}  & \quad \text{και} \quad F(x+2L)=F(x)
         \end{alignat*}
         με περίοδο $ 2L $ λέγεται \textcolor{Col1}{περιττή περιοδική επέκταση} της $f$.
 
@@ -127,8 +127,9 @@ $ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ 
     f(x) \sin{mx} = \frac{a_{0}}{2} \sin{mx} + \sum_{n=1}^{\infty} 
     [a_{n} \cos{nx} = \sin{mx} + b_{n} \sin{nx} \sin{mx}]   \\
     \int _{- \pi} ^{\pi} f(x) \sin{mx} \,{dx} = \frac{a_{0}}{2} \int _{- \pi}^{\pi} 
-    \sin{mx} \,{dx} + \sum_{n=1}^{\infty} [a_{n} \int _{- \pi}^{\pi}
-    \cos{nx} \sin{mx}  \,{dx} + b_{n} \int _{- \pi }^{\pi} \sin{nx} \sin{mx} \,{dx}] \\
+    \sin{mx} \,{dx} + \sum_{n=1}^{\infty} \left[a_{n} \int _{- \pi}^{\pi} 
+        \cos{nx} \sin{mx}  \,{dx} + b_{n} \int _{- \pi }^{\pi} \sin{nx} \sin{mx} 
+    \,{dx}\right] \\
     \int _{- \pi }^{\pi} f(x) \sin{nx} \,{dx} = \frac{a_{0}}{2} \cdot 0 + 
     a_{n}\cdot 0 + b_{n} \cdot \int _{- \pi}^{\pi } \sin^{2}{nx} \,{dx} \\
     \int _{- \pi }^{\pi} f(x) \sin{nx} \,{dx} =  b_{n} \cdot \pi 
@@ -147,8 +148,9 @@ $ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ 
     f(x) \cos{mx} = \frac{a_{0}}{2} \cos{mx} + \sum_{n=1}^{\infty} 
     [a_{n} \cos{nx} \cos{mx} + b_{n} \sin{nx} \cos{mx}]   \\
     \int _{- \pi} ^{\pi} f(x) \cos{mx} \,{dx} = \frac{a_{0}}{2} \int _{- \pi}^{\pi} 
-    \cos{mx} \,{dx} + \sum_{n=1}^{\infty} [a_{n} \int _{- \pi}^{\pi}
-    \cos{nx} \cos{mx}  \,{dx} + b_{n} \int _{- \pi }^{\pi} \sin{nx} \cos{mx} \,{dx}] \\
+    \cos{mx} \,{dx} + \sum_{n=1}^{\infty} \left[a_{n} \int _{- \pi}^{\pi}
+        \cos{nx} \cos{mx}  \,{dx} + b_{n} \int _{- \pi }^{\pi} \sin{nx} \cos{mx} 
+    \,{dx}\right] \\
 \end{gather*}
 
 και από τις συνθήκες ορθογωνιότητας για τις διάφορες περιπτώσεις του $ m $, προκύπτει
@@ -317,9 +319,10 @@ $ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ 
                 {\frac{(n-m) \pi}{L}} - \frac{\sin{\frac{(n+m) \pi x}{L}}}
             {\frac{(n+m) \pi x}{L}}\right]_{-L}^{L} \\ 
             &= \frac{L}{2 \pi} \left[\frac{1}{n-m} \sin{\frac{(n-m) \pi x}{L} - 
-            \frac{1}{n+m} \sin{\frac{(n+m) \pi x}{L}}}\right]_{-L}^{L} = \frac{L}{2 \pi}
+            \frac{1}{n+m} \sin{\frac{(n+m) \pi x}{L}}}\right]_{-L}^{L} \\ 
+            &= \frac{L}{2 \pi}
             [\frac{1}{n-m} \sin{(n-m) \pi} - \frac{1}{n+m} \sin{(n+m) \pi}] = 
-        \end{align*} 
+\end{align*} 
     \end{myitemize}
 \end{proof}
 
