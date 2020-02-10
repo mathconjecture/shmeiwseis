@@ -1,9 +1,8 @@
-\input{$HOME/Desktop/preamble/preamble.tex}
-\input{$HOME/Desktop/preamble/definitions.tex}
+\input{preamble/preamble.tex}
+\input{preamble/definitions.tex}
 
-\usepackage{qtree}
+% \usepackage{qtree}
 %\usepackage{booktabs}
-\usepackage{xcolor}
 
 %\renewcommand{\baselinestretch}{1.2}
 
@@ -104,7 +103,7 @@
 				$ F(x,y(x),z(x)) = 0 $ \\
 				$ G(x,y(x),z(x)) = 0 $
 		\end{tabular}
-	\item $ \dv{y}{x} = - \frac{\pdv{(F,G)}{(x,z)}}{\pdv{(F,G)}{(y,z)}} $, $ \pdv{z}{z} = -
+	\item $ \dv{y}{x} = - \frac{\pdv{(F,G)}{(x,z)}}{\pdv{(F,G)}{(y,z)}} $, $ \dv{z}{x} = -
 		\frac{\pdv{(F,G)}{(y,x)}}{\pdv{(F,G)}{(y,z)}} $
 	\end{enumerate}
 
@@ -148,7 +147,7 @@
 				$ w_0 = w(x_0,y_0) $
 			\end{tabular}
 		\item \begin{tabular}{l}
-				$ F(x,y,x(x,y), w(x,y) = 0 $ \\
+				$ F(x,y,z(x,y), w(x,y) = 0 $ \\
 			$ G(x,y,z(x,y), w(x,y)) = 0 $
 		\end{tabular}
 	\item $ \pdv{z}{x} = - \frac{\pdv{(F,G)}{(x,w)}}{\pdv{(F,G)}{(x,w)}} $, $ \pdv{z}{y} = -
@@ -180,7 +179,107 @@
 
 \end{rem}
 
+     \section{Ιακωβιανές Ορίζουσες}
 
+     \subsection{Ορισμός}
 
+     Έστω $ \begin{cases} f^{1}=f^{1}(x_{1},\ldots,x_{n}) \\
+     f^{2}=f^{2}(x_{1},\ldots,x_{n}) \\
+ \vdots \\
+ f^{n} = f^{n}(x_{1}\ldots,x_{n}) 
+ \end{cases} $, τότε η Ιακωβιανή ορίζουσα, είναι $ J = \pdv{(f^{1},\ldots,f^{n})}{(x_{1}\ldots,x_{n})} = \begin{vmatrix}
+ f^{1}_{x_{1}} & f^{1}_{x_{2}} & \cdots & f^{1}_{x_{n}} \\
+ f^{2}_{x_{1}} & f^{2}_{x_{2}} & \cdots & f^{2}_{x_{n}} \\
+ \vdots & \vdots & \cdots & \vdots \\
+ f^{n}_{x_{1}} & f^{n}_{x_{2}} & \cdots & f^{n}_{x_{n}} \\
+ \end{vmatrix}$
+
+ Η κύρια χρησιμότητά τους είναι στην εύρεση των μερικών 
+ παραγώγων πεπλεγμένων συναρτήσεων, όπως εξηγείται στον 
+ παρακάτω γενικό κανόνα.
+
+\subsection{Γενικός Κανόνας}
+
+Όταν ζητάμε την μερική Παράγωγο μιας εξαρτημένης μεταβλητής 
+$ (\text{Ε.Μ.$^{*}$}) $, ως προς κάποια ανεξάρτητη 
+μεταβλητή $ (\text{Α.Μ.$^{*}$}) $, τότε αυτή είναι 
+ίση με μειον το πηλίκο της Ιακωβιανής ορίζουσας 
+των Πεπλεγμένων συναρτήσων 
+ως προς τις εξαρτημένες μεταβλητές όπου όμως έχουμε αντικαταστήσει την εξαρτημένη μεταβλητή 
+$ (\text{Ε.Μ.$^{*}$}) $ με την ανεξάρτητη μεταβλητή 
+$ (\text{Α.Μ.$^{*}$}) $ προς την Ιακωβιανή ορίζουσα των 
+Πεπλεγμένων συναρτήσεων ως προς τις εξαρτημένες μεταβλητές.
+
+\[
+    \pdv{(\text{Ε.Μ.}^{*})}{(\text{Α.Μ.}^{*})} = - 
+    \frac{J \; (\text{Πεπλ. ως προς E.M.}^{*} 
+    \to A.M.^{*})}{J \; (\text{Πεπλεγμένων ως προς E.M.)}} 
+ \] 
+
+ \begin{example}
+ \item {}
+     \begin{enumerate}
+         \item Έστω το σύστημα
+             $ \begin{cases}
+                 F(u,v,w,x,y)  = 0 \\
+                 G(u,v,w,x,y)  = 0 \\
+                 H(u,v,w,x,y)  = 0
+             \end{cases} $. Τότε έχουμε Ε.Μ.:3 (όσες και οι 
+             εξισώσεις) και Α.Μ.:2 (οι υπόλοιπες). 
+             Οπότε:
+             \[
+             \left.\pdv{u}{x}\right)_{y} = - \frac{\pdv{(F,G,H)}{(x,v,w)}}{\pdv{(F,G,H)}{(u,v,w)}}  \quad
+             \text{και} \quad \left.\pdv{w}{y}\right)_{x} = - \frac{\pdv{(F,G,H)}{(u,v,y)}}{\pdv{(F,G,H)}{(u,v,w)}} 
+              \] 
+              και
+              \[
+                  \left. \pdv{v}{y} \right)_{x} = - 
+                  \frac{\pdv{(F,G,H)}{(u,y,w)}}{\pdv{(F,G,H)}{(u,v,w)}} \quad \text{και} \quad \left.
+                  \pdv{x}{v} \right)_{w} = - 
+                  \frac{\pdv{(F,G,H)}{(u,v,y)}}{\pdv{(F,G,H)}{(u,x,y)}} \quad \text{και} \quad \left.
+                  \pdv{w}{u} \right)_{y} = - 
+                  \frac{\pdv{(F,G,H)}{(v,u,x)}}{\pdv{(F,G,H)}{ (v,w,x)}} 
+               \] 
+     \end{enumerate}
+
+ \subsection{Θεωρήματα για Ιακωβιανές Ορίζουσες}
+ 
+ \begin{enumerate}
+     \item Μια ικανή και αναγκαία συνθήκη ώστε το σύστημα, 
+        \[
+             \begin{cases}
+                 F(u,v,x,y,z) = 0 \\
+                 G(u,v,x,y,z) = 0
+             \end{cases}
+         \]
+         να μπορεί να λυθεί, για παράδειγμα, ως προς 
+         $u$ και $v$, είναι η Ιακωβιανή Ορίζουσα
+         \[
+             J = \pdv{(F,G)}{(u,v)} \neq 0 
+          \] 
+
+      \item Ο κανόνας που χρησιμοποιούμε για την εύρεση 
+          Ιακωβιανών οριζουσών σύνθετων συναρτήσεων είναι 
+          ίδιος με τον κανόνα αλυσίδας μερικών παραγώγων.
+
+          Έστω 
+          \[
+              \begin{cases} x=x(u,v) \\
+              y=y(u,v)\end{cases} \quad \text{και} \quad 
+              \begin{cases} u = u(r,s) \\
+              v=v(r,s) \end{cases} 
+           \] 
+           Τότε
+           \[
+               J = \pdv{(x,y)}{(r,s)} = \pdv{(x,y)}{(u,v)} \cdot \pdv{(u,v)}{(r,s)}  
+            \] 
+        \item Αν $ \begin{cases} u=u(x,y) \\ v=v(x,y) \end{cases} $ τότε μια ικανή και αναγκαία
+            συνθήκη ώστε να υπάρχει μια συναρτησιακή σχέση μεταξύ των $ u $ και $v $ είναι η
+            ικανωβιανή ορίζουσα $ J = \pdv{(u,v)}{(x,y)} = 0 $. Δηλαδή:
+            \[
+                F(u,v)=0 \Leftrightarrow J = \pdv{(u,v)}{(x,y)} = 0 
+             \] 
+ \end{enumerate}
+ \end{example}
 
 \end{document}
