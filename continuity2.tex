@@ -33,7 +33,7 @@ $ \lim\limits_{(x,y)\to (x_{0}, y_{0})} f(x,y) = f(x_{0}, y_{0}) $.}
         \item Να εξετάσετε αν οι παρακάτω συναρτήσεις μπορούν να οριστούν στην αρχή των αξόνων, ώστε να είναι συνεχείς σε αυτήν.
             \begin{enumerate}[i)]
                 \item $ f(x,y) = \frac{x^{2}+y^{4}}{x^{4}+y^{2}} $
-                    \begin{proof}
+                    \begin{solution}
                     \item {}
                         Προφανώς η $f$ είναι συνεχής, ως ρητή σε κάθε σημείο $ (x_{0}, y_{0}) \neq (0,0) $.
 
@@ -50,10 +50,10 @@ $ \lim\limits_{(x,y)\to (x_{0}, y_{0})} f(x,y) = f(x_{0}, y_{0}) $.}
                         $\theta$, άρα η $f$ δεν είναι 
                         συνεχής στο $ (0,0) $.
 
-                    \end{proof}
+                    \end{solution}
 
                 \item $ g(x,y) = \frac{x^{2}y^{2}}{x^{2}y^{2}+ (x+y)^{2}} $
-                    \begin{proof}
+                    \begin{solution}
                     \item {}
                         Προφανώς η $g$ είναι συνεχής, ως ρητή σε κάθε σημείο $ (x_{0}, y_{0}) \neq (0,0) $.
 
@@ -73,14 +73,14 @@ $ \lim\limits_{(x,y)\to (x_{0}, y_{0})} f(x,y) = f(x_{0}, y_{0}) $.}
                                 (0,0) \\ 
                             0, & (x,y) = (0,0)\end{cases}  
                         \] είναι συνεχής.
-                            \end{proof}
+                            \end{solution}
                     \end{enumerate}
                 \item Να μελετηθεί πλήρως ως προς τη συνέχεια η συνάρτηση 
                     \[
                         f(x,y) = \begin{cases} \frac{xy}{x^{2}+y^{2}}, & (x,y) \neq (0,0) \\ 0, & (x,y) =
                         (0,0) \end{cases}  
                     \]
-                    \begin{proof}
+                    \begin{solution}
                     \item {}              
                         Αν $ (x,y) \neq (0,0) $ τότε η $f$ είναι συνεχής 
                         ως ρητή συνάρτηση.
@@ -93,14 +93,14 @@ $ \lim\limits_{(x,y)\to (x_{0}, y_{0})} f(x,y) = f(x_{0}, y_{0}) $.}
                         \] 
                         Επομένως δεν υπάρχει το όριο της $f$ στο σημείο $ (0,0) $, άρα η $f$ δεν είναι συνεχής
                         στο $ (0,0) $.
-                    \end{proof}
+                    \end{solution}
 
                 \item Να μελετηθεί πλήρως ως προς τη συνέχεια η συνάρτηση 
                     \[
                         g(x,y) = \begin{cases} y^{2}x \sin{\frac{1}{x^{2}+y^{2}}}, & (x,y) \neq (0,0) \\ 0, & (x,y)
                         = (0,0)\end{cases}  
                     \] 
-                    \begin{proof}
+                    \begin{solution}
                     \item {}
                         Αν $ (x,y) \neq (0,0) $ τότε η $g$ είναι συνεχής 
                         ως ρητή συνάρτηση.
@@ -117,15 +117,13 @@ $ \lim\limits_{(x,y)\to (x_{0}, y_{0})} f(x,y) = f(x_{0}, y_{0}) $.}
                         \] 
                         επομένως από το θεώρημα, έχουμε ότι $ \lim\limits_{\substack{x\to 0 \\y \to 0}} y^{2}x
                         \sin{\frac{1}{x^{2}+y^{2}}} = 0 = f(0,0) $. Άρα η $f$ είναι συνεχής.
-                    \end{proof}
-
-                \item 
+                    \end{solution}
 
                 \item Να εξεταστεί πλήρως ως προς τη συνέχεια η συνάρτηση 
                 \[
                     f(x,y) = \begin{cases} e^{-\frac{x^{2}}{y}}, & y \neq 0 \\ 0, & y= 0 \end{cases}  
                  \] 
-                 \begin{proof}
+                 \begin{solution}
                  \item {}
                     Για $ y \neq 0 $ η $f$ είναι συνεχής ως σύνθεση και πράξεις συνεχών συναρτήσεων. 
 
@@ -145,7 +143,34 @@ $ \lim\limits_{(x,y)\to (x_{0}, y_{0})} f(x,y) = f(x_{0}, y_{0}) $.}
                            \] 
                            Άρα η $f$ δεν είναι συνεχής στον άξονα $x$, δηλαδή για $ y=0 $.
                     \end{myitemize}
-                 \end{proof}
+                 \end{solution}
+
+             \item Να δείξετε ότι η συνάρτηση 
+                 \[
+                     f(x,y) = \begin{cases} \frac{1 - \cos{\sqrt{xy}}}{x}, & x \neq 0 \\
+                     \frac{y}{2}, & x=0 \end{cases} 
+                  \] 
+                  είναι συνεχής σε όλα τα σημεία του άξονα $y$.
+                  \begin{solution}
+                  \item {}
+                      Έστω $ (0, y_{0}) $ ένα τυχαίο σημείο 
+                      του άξονα $y$. 
+                      \[
+                          \lim\limits_{\substack{x\to 0 \\y \to y_0}} \frac{1 - \cos{\sqrt{xy}}}{x} =
+                          \lim\limits_{\substack{x\to 0 \\y \to y_0}} \frac{2
+                          \sin^{2}{\frac{\sqrt{xy}}{2}}}{x} = \lim\limits_{\substack{x\to 0 \\y
+                      \to y_0}} \frac{y}{2} \frac{2\sin^{2}{\frac{\sqrt{xy}}{2}}}{\frac{xy}{2}} =
+                      \lim\limits_{\substack{x\to 0 \\y \to y_0}} \frac{y}{2} \cdot
+                      \lim\limits_{\substack{x\to 0 \\y \to y_0}} \left(\frac{\sin^{2}{\frac{\sqrt{xy} }{2}
+                      }}{\frac{\sqrt{xy}}{2}} \right)^{2} = \frac{y_0}{2} \cdot (1)^{2} =
+                      \frac{y_{0}}{2} 
+                  \] 
+                  και 
+                  $ f(0, y_{0}) = \frac{y_{0}}{2} $.
+
+                  Επομένως η $f$ είναι συνεχής σε κάθε σημείο του άξονα $y$.
+
+                  \end{solution}
                     \end{enumerate}
                         \end{examples}
 

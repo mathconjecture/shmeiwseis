@@ -34,7 +34,7 @@
             \frac{xy}{x^{2}+y^{2}+1} = 0 $.
     \end{enumerate}
 
-    \begin{proof}
+    \begin{solution}
     \item {}
         \begin{description}
             \item [Δοκιμή:]
@@ -64,7 +64,7 @@
                     \abs{\frac{xy}{x^{2}+y^{2}+1}-0} < \varepsilon
                 \] 
         \end{description}
-    \end{proof}
+    \end{solution}
 \end{examples}
 
 \section{Βασικά Θεωρήματα}
@@ -112,7 +112,7 @@
 \begin{example}
     Να υπολογίσετε το όριο $ \lim\limits_{(x,y)\to (0, 0)} xy \sin{\frac{1}{x}} $. 
 
-    \begin{proof}
+    \begin{solution}
     \item {}
         \begin{minipage}{0.4\textwidth}
             \begin{enumerate}[i)]
@@ -125,7 +125,7 @@
 
         \mybrace{a}{b}[$ \lim\limits_{(x,y)\to (0, 0)} xy 
         \sin{\frac{1}{x}} = 0$]
-    \end{proof}
+    \end{solution}
 \end{example}
 
 \mythm{%
@@ -143,7 +143,7 @@
     Να υπολογίσετε το όριο $ \lim\limits_{(x,y)\to (0, 0)} (x^{2}+y^{2}) 
     \sin{\frac{1}{y}} $.  
 
-    \begin{proof}
+    \begin{solution}
     \item {}
         \begin{minipage}{0.4\textwidth}
             \begin{enumerate}[i)]
@@ -154,7 +154,7 @@
         \end{minipage}
         \mybrace{a}{b}[$ \lim\limits_{(x,y)\to (0, 0)} (x^{2}+y^{2}) \sin{\frac{1}{y}} 
         = 0$]
-    \end{proof}
+    \end{solution}
 \end{example}
 
 
@@ -187,10 +187,21 @@
 \begin{examples}
 \item {}  
     \begin{enumerate}
+        \item Να υπολογιστεί το όριο $ \lim\limits_{(x,y)\to (0, 0)} \frac{x-y}{x+y} $
+            \begin{solution}
+            \begin{align*}
+                L_{1}&= \lim_{x \to 0} \left(\lim_{y \to 0} \frac{x-y}{x+y}\right) = \lim_{x \to 0}
+                \frac{x}{x} = \lim_{x \to 0} 1 = 1 
+                \intertext{και}
+                L_{2}&= \lim_{y \to 0} \left(\lim_{x \to 0} \frac{x-y}{x+y} \right) = \lim_{y \to 0}
+                \frac{-y}{y} = \lim_{y \to 0}(-1) = -1
+            \end{align*}
+                 Επομένως αφού $ L_{1} \neq L_{2} \Rightarrow \not \exists L $ 
+            \end{solution}
         \item Να υπολογιστεί το όριο $ \lim\limits_{(x,y)\to (0, 0)}
             \frac{x^{2}-y^{2}+x^{3}+y^{3}}{x^{2}+y^{2}} $
 
-            \begin{proof}
+            \begin{solution}
                 \begin{align*}
                     L_{1} &= \lim_{x \to 0} \left(\lim_{y \to 0}
                     \frac{x^{2}-y^{2}+x^{3}+y^{3}}{x^{2}+y^{2}}\right) = 
@@ -202,12 +213,12 @@
                         \lim_{y \to 0} (y - 1) = -1
                         \end{align*} 
                  Επομένως αφού $ L_{1} \neq L_{2} \Rightarrow \not \exists L $ 
-            \end{proof}
+            \end{solution}
 
         \item Να υπολογιστεί το όριο $ \lim\limits_{(x,y)\to (0, 0)} 
             \frac{xy}{x^{2}+y^{2}} $.
 
-            \begin{proof}
+            \begin{solution}
                 \begin{align*}
                     L_{1} &= \lim_{x \to 0} \left(\lim_{y \to 0} 
                     \frac{xy}{x^{2}+y^{2}}\right) = \lim_{x \to 0} \frac{0}{x^{2}} = 
@@ -217,23 +228,9 @@
                         \frac{xy}{x^{2}+y^{2}}\right) = \lim_{y \to 0} 
                         \frac{0}{y^{2}} = \lim_{y \to 0} 0 = 0
                         \end{align*}
-            \end{proof}
+            \end{solution}
             Παρατηρούμε ότι $ L_{1} = L_{2} $, όμως δεν γνωρίζουμε αν υπάρχει το $L$, 
             οπότε δεν μπορούμε να ισχυριστούμε ότι $ L=0 $.
-
-            \begin{description}
-                \item [Β᾽ Τρόπος: (Καμπύλες)]
-                    \[
-                        \lim\limits_{(x,y)\to (0, 0)} \frac{xy}{x^{2}+y^{2}} 
-                        \xlongequal[\lambda \in \mathbb{R}]{y= \lambda x} \lim_{x \to 0}
-                        \frac{\lambda x^{2}}{x^{2}+ \lambda^{2} x^{2}} = \lim_{x \to 0} 
-                        \frac{\lambda x^{2}}{x^{2}(\lambda ^{2}+1)} = \lim_{x \to 0} 
-                        \frac{\lambda}{\lambda ^{2}+1} 
-                    \]
-                    Οπότε δεν υπάρχει το όριο, γιατί εξαρτάται από την τιμή του 
-                    $ \lambda $ και άρα από την καμπύλη προσέγγισης του σημείου 
-                    $ (0,0) $.
-            \end{description}
     \end{enumerate}
 \end{examples}
 
@@ -255,10 +252,26 @@
 \begin{examples}
 \item {}
     \begin{enumerate}
+
+        \item Να υπολογιστεί το όριο $ \lim\limits_{(x,y)\to (0, 0)} 
+            \frac{xy}{x^{2}+y^{2}} $.
+            \begin{description}
+                \item [Β᾽ Τρόπος: (Καμπύλες)]
+                    \[
+                        \lim\limits_{(x,y)\to (0, 0)} \frac{xy}{x^{2}+y^{2}} 
+                        \xlongequal[\lambda \in \mathbb{R}]{y= \lambda x} \lim_{x \to 0}
+                        \frac{\lambda x^{2}}{x^{2}+ \lambda^{2} x^{2}} = \lim_{x \to 0} 
+                        \frac{\lambda x^{2}}{x^{2}(\lambda ^{2}+1)} = \lim_{x \to 0} 
+                        \frac{\lambda}{\lambda ^{2}+1} 
+                    \]
+                    Οπότε δεν υπάρχει το όριο, γιατί εξαρτάται από την τιμή του 
+                    $ \lambda $ και άρα από την καμπύλη προσέγγισης του σημείου 
+                    $ (0,0) $.
+            \end{description}
         \item Να υπολογιστεί το όριο $ \lim\limits_{\substack{x\to 0 \\y \to 0}}
             \frac{x^{2}y}{x^{4}+y^{2}} $.
 
-            \begin{proof}
+            \begin{solution}
                 \[
                     \lim\limits_{\substack{x\to 0 \\y \to 0}} 
                     \frac{x^{2}y}{x^{2}+y^{2}} 
@@ -270,12 +283,12 @@
                 \] 
                 Οπότε δεν υπάρχει το όριο, γιατί εξαρτάται από την τιμή του $ \lambda $ 
                 και άρα από την καμπύλη προσέγγισης του σημείου $ (0,0) $.
-            \end{proof}
+            \end{solution}
 
         \item Να υπολογιστεί το όριο $ \lim\limits_{(x,y)\to (0, 0)} \frac{x^{2}-y^{4}}
             {2x^{2}+y^{4}} $. 
 
-            \begin{proof}
+            \begin{solution}
                 \[
                     \lim\limits_{(x,y)\to (0, 0)} \frac{x^{2}-y^{4}}
                     {2x^{2}+y^{4}} \xlongequal[\lambda \in \mathbb{R}]
@@ -287,13 +300,13 @@
                 \] 
                 Οπότε δεν υπάρχει το όριο, γιατί εξαρτάται από την τιμή του $ \lambda $ 
                 και άρα από την καμπύλη προσέγγισης του σημείου $ (0,0) $.
-            \end{proof}
+            \end{solution}
     \end{enumerate}
 \end{examples}
 
 \begin{example}[Θέμα Εξετάσεων]
     Να υπολογιστεί το όριο $ \lim\limits_{(x,y)\to (0, 0)} \frac{x^{3}y^{3}}{x^{3}y^{3}+ (x-y)^{3}} $ 
-    \begin{proof}
+    \begin{solution}
     \item {}
         \begin{align*}
             \lim\limits_{\substack{x \to 0\\ y \to 0}} 
@@ -312,7 +325,7 @@
         Οπότε δεν υπάρχει το όριο, γιατί εξαρτάται από την τιμή του 
         $ \lambda $ και άρα από την καμπύλη προσέγγισης του σημείου 
         $ (0,0) $.
-    \end{proof}
+    \end{solution}
 \end{example}
 
 \section{Υπολογισμός Ορίων με χρήση Πολικών Συντεταγμένων}
@@ -442,11 +455,42 @@ $ (x_{0}, y_{0}) $, στο οποίο θέλουμε να υπολογίσουμ
         \begin{align*} \lim\limits_{(x,y)\to (0, 0)} \left(\frac{1- \cos{xy}}{x^{2}}\right) &=
         \lim\limits_{(x,y)\to (0, 0)} \left( \frac{2 \sin^{2}{\frac{xy}{2}}}{x^{2}} \right) =
         \lim\limits_{(x,y)\to (0, 0)} \left( \frac{y^{2}}{2}\frac{\sin^{2}{\frac{xy}{2}}}{\frac{x^{2}y^{2}}{4}}
-            \right) = \lim\limits_{(x,y)\to (0, 0)} \frac{y^{2}}{2} \cdot \lim\limits_{(x,y)\to
-            (0, 0)} \left(\frac{\sin{\frac{xy}{2}}}{\frac{xy}{2}}\right)^{2} \\ 
-            &\overset{\frac{xy}{2}
+            \right) 
+            = \lim\limits_{(x,y)\to (0, 0)} \frac{y^{2}}{2} \cdot \lim\limits_{(x,y)\to
+            (0, 0)} \left(\frac{\sin{\frac{xy}{2}}}{\frac{xy}{2}}\right)^{2} \\ &\overset{\frac{xy}{2}
    \to 0 }{=}
           0 \cdot 1^{2} = 1 \end{align*}
+
+       \item Να υπολογιστεί το $
+               \lim\limits_{(x,y)\to (0, 0)} \frac{x^{2}y^{3}}{x^{2}+y^{4}} $.
+               \begin{solution}
+                   \[
+                       \abs{\frac{x^{2}y^{3}}{x^{2}+y^{4}}} \leq \abs{\frac{x^{2}y^{3}}{2xy^{2}}} =
+                       \frac{1}{2} \abs{xy}
+                    \] 
+                    και $ \lim\limits_{(x,y)\to (0, 0)} xy = 0 $, οπότε από θεώρημα έχουμε ότι και 
+                    \[
+                        \lim\limits_{(x,y)\to (0, 0)} \frac{x^{2}y^{3}}{x^{2}+y^{4}} = 0 
+                     \] 
+                   
+               \end{solution}
+      \item Να υπολογιστεί το όριο της συνάρτησης
+          \[
+              f(x,y) = \begin{cases} \frac{1 - \cos{\sqrt{xy}}}{y}, & y \neq 0 \\ 0, & y =0 \end{cases}  
+           \] 
+           \begin{solution}
+              \begin{align*}
+                  \lim\limits_{\substack{x\to 0 \\y \to 0}} \frac{1- \cos{\sqrt{xy}}}{y} =
+                  \lim\limits_{\substack{x\to 0 \\y \to 0}} \frac{2
+                  \sin^{2}{\frac{\sqrt{xy}}{2}}}{y} = 
+                  \lim\limits_{\substack{x\to 0 \\y \to 0}} \frac{x}{2} \frac{2
+                  \sin^{2}{\frac{\sqrt{xy}}{2}}}{\frac{xy}{2}} =
+                  \lim\limits_{\substack{x\to 0 \\y \to 0}} \frac{x}{2} \cdot\lim\limits_{\substack{x\to 0 \\y \to 0}}
+                  \left(\frac{\sin{\frac{\sqrt{xy}}{2}}}{\frac{\sqrt{xy}}{2}} \right)^{2} 
+                  = 0 \cdot 1^{2} = 0 
+               \end{align*} 
+           \end{solution}
+
 \end{enumerate}
 
 \end{document}
