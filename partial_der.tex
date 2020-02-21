@@ -7,6 +7,267 @@
 
 \begin{document}
 
+\chapter{Μερικές Παράγωγοι}
+
+\section{Ορισμός}
+
+\subsection{Δύο Μεταβλητών}
+
+Έστω $ f \colon A \subseteq \mathbb{R}^{2} \to \mathbb{R} $
+και $ (x_{0}, y_{0}) \in A $. Τότε η μερική παράγωγος της 
+$f$ ως προς $x$ είναι:
+\begin{align*}
+    \eval{\pdv{f}{x}}_{(x_{0}, y_{0})} = \lim_{x \to x_{0}} 
+    \frac{f(x, y_{0}) - f(x_{0}, y_{0})}{x - x_{0}} \overset{h=x- x_{0}}{=} \lim_{h \to 0}
+    \frac{f(x_{0}+h, y_{0}) - f(x_{0}, y_{0})}{h}  
+ \intertext{και η μερική παράγωγος της $f$ ως προς $y$ είναι:}
+    \eval{\pdv{f}{y}}_{(x_{0}, y_{0})} = \lim_{y \to y_{0}} 
+    \frac{f(x_{0}, y) - f(x_{0}, y_{0})}{y - y_{0}} \overset{k=y- y_{0}}{=} \lim_{k \to 0}
+    \frac{f(x_{0}, y_{0}+k) - f(x_{0}, y_{0})}{k}  
+ \end{align*}
+
+ \subsection{Τριών Μεταβλητών}
+ Έστω $ f \colon A \subseteq \mathbb{R}^{3} \to \mathbb{R} $ και $ (x_{0}, y_{0}, z_{0}) \in A $.
+ Τότε η μερική παράγωγος της $f$ ως προς $x$ είναι :
+\begin{align*}
+    \eval{\pdv{f}{x}}_{(x_{0}, y_{0}, z_{0})} = \lim_{x \to x_{0}} 
+    \frac{f(x, y_{0}, z_{0}) - f(x_{0}, y_{0}, z_{0})}{x - x_{0}} \overset{h=x- x_{0}}{=} \lim_{h \to 0}
+    \frac{f(x_{0}+h, y_{0}, z_{0}) - f(x_{0}, y_{0}, z_{0})}{h}  
+ \intertext{και η μερική παράγωγος της $f$ ως προς $y$ είναι:}
+    \eval{\pdv{f}{y}}_{(x_{0}, y_{0}, z_{0})} = \lim_{y \to y_{0}} 
+    \frac{f(x_{0}, y, z_{0}) - f(x_{0}, y_{0}, z_{0})}{y - y_{0}} \overset{k=y- y_{0}}{=} \lim_{k \to 0}
+    \frac{f(x_{0}, y_{0}+k, z_{0}) - f(x_{0}, y_{0}, z_{0})}{k}  
+ \intertext{και η μερική παράγωγος της $f$ ως προς $y$ είναι:}
+    \eval{\pdv{f}{z}}_{(x_{0}, y_{0}, z_{0})} = \lim_{z \to z_{0}} 
+    \frac{f(x_{0}, y_{0}, z) - f(x_{0}, y_{0}, z_{0})}{z - z_{0}} \overset{s=z- z_{0}}{=} \lim_{s \to 0}
+    \frac{f(x_{0}, y_{0}, z_{0}+s) - f(x_{0}, y_{0}, z_{0})}{s}  
+ \end{align*}
+
+\section{Συμβολισμός}
+
+Συμβολισμοί για τις μερικές παραγώγους της $f(x,y)$ ως 
+προς $x$ και ως προς $y$ είναι:
+\begin{align*}
+    \eval{\pdv{f}{x} }_{(x_{0}, y_{0})} = \pdv{f(x_{0}, y_{0})}{x} = f_{x}(x_{0}, y_{0}) =
+    {f'}_{x}(x_{0}, y_{0} ) \quad \text{και} \quad
+    \eval{\pdv{f}{y} }_{(x_{0}, y_{0})} = \pdv{f(x_{0}, y_{0})}{y} = f_{y}(x_{0}, y_{0}) =
+    {f'}_{y}(x_{0}, y_{0} ) 
+\end{align*} 
+
+\begin{examples}
+\item {}
+    \begin{enumerate}
+        \item Δίνεται η $ f(x,y)=3xy^{2}-2x^{3} $. Να 
+            βρεθούν οι $ f_{x}(0,1) $ και $ f_{y}(2,1) $.
+            \begin{solution}
+      \begin{align*}
+          f_{x}(0,1) &= \lim_{x \to 0} \frac{f(x,1)-f(0,1)}{x-0} = \lim_{x \to 0}
+          \frac{3x1^{2}-2x^{3}-0}{x} = \lim_{x \to 0} (3-2x^{2}) = 3
+          \intertext{και}
+          f_{y}(2,1) &= \lim_{y \to 1} \frac{f(2,y)-f(2,1)}{y-1} = \lim_{y \to 0} \frac{3\cdot
+          2y^{2}-2\cdot 2^{3}-3\cdot 2\cdot 1^{2}+2\cdot 2^{3}}{y-1} = \lim_{y \to 1}
+          \frac{6y^{2}-16-6+16}{y-1} \\ 
+                     &= \lim_{y \to 1} \frac{6(y^{2}-1)}{y-1} = \lim_{y \to 1}
+                     \frac{6(y-1)(y+1)}{y-1} = \lim_{y \to 1}[6(y+1)] = 12
+      \end{align*}          
+            \end{solution}
+    \end{enumerate}
+\end{examples}
+
+\section{Συναρτήσεις Μερικών Παραγώγων}
+
+Έστω $ f(x,y) $ συνάρτηση δύο μεταβλητών. 
+\begin{myitemize}
+\item Η μερική παράγωγος της $f$ ως προς $x$ υπολογίζεται 
+    παραγωγίζοντας την συνάρτηση $ f(x,y) $ ως προς $x$, 
+    θεωρώντας το $y$ σταθερό. 
+\item Η μερική παράγωγος της $f$ ως προς $y$ υπολογίζεται 
+    παραγωγίζοντας την συνάρτηση $ f(x,y) $ ως προς $y$, 
+    θεωρώντας το $x$ σταθερό. 
+\end{myitemize}
+
+\begin{examples}
+\item {}
+    \begin{enumerate}
+        \item Έστω $ f(x,y)=x^{2}y^{3}+4xy^{2}+4y+5 $. Να 
+            υπολογιστούν οι μερικές παράγωγοι $ f_{x} $ και 
+            $ f_{y} $.
+            \begin{solution}
+                \begin{align*}
+                    f_{x} &= (x^{2}y^{3}+4xy^{2}+4y+5)_{x} =
+                    (x^{2}y^{3})_{x}+(4xy^{2})_{x}+(4y)_{x}+(5)_{x} = 2xy^{3} + 4y^{2}
+                    \intertext{και}
+                    f_{y}&=(x^{2}y^{3}+4xy^{2}+4y+5)_{y} = 
+                    (x^{2}y^{3})_{y}+(4xy^{2})_{y}+(4y)_{y}+(5)_{y} = 3x^{2}y^{2} + 8xy + 4
+                 \end{align*} 
+            \end{solution}
+        \item Έστω $ f(x,y)=2x^{2}y+3 \cos{3y} +1 $. Να υπολογιστούν οι μερικές παράγωγοι $ f_{x}$
+            και $ f_{y} $.
+            \begin{solution}
+                \[
+                    f_{x}=4xy \quad \text{και} \quad f_{y}=2x^{2}-3 \sin{3y} (3y)_{y} = 2x^{2}-9 \sin{3y}
+                \] 
+            \end{solution}
+            \item Έστω $ f(x,y,z)=x^{2}yz - y \cos{(xy)} $. Να
+                υπολογιστούν οι μερικές παράγωγοι $ f_{x}, f_{y}, f_{z} $. 
+                \begin{solution}
+                \item {}
+                    \begin{align*}
+                        f_{x}&=2xyz- \cos{(xy)}(xy)_{x} = 2xyz-y \cos{xy} \\
+                        f_{y}&=x^{2}z- \cos{xy}(xy)_{y}=x^{2}z - x \cos{xy} \\
+                        f_{z}&=x^{2}z
+                    \end{align*}
+                \end{solution}
+    \end{enumerate}
+\end{examples}
+
+\section{Μερικές Παράγωγοι Ανώτερης Τάξης}
+
+\begin{example}
+    Έστω $ f(x,y,z) = 3x^{2}y^{2} + xy^{3} + 3x +1 $. 
+    Να υπολογιστούν οι μερικές παράγωγοι 1ης και 2ης τάξης.
+    \begin{solution}
+    \item {} 
+        \begin{align*}
+            \text{\bfseries 1ης τάξης:} \quad f_{x} &= 6xy^{2}+y^{3}+3 \quad \text{και} \quad 
+            f_{y} = 6x^{2}y+3xy^{2} \\
+            \text{\bfseries 2ης τάξης:} \quad f_{xx} &= (f_{x})_{x} = (6xy^{2}+y^{3}+3)_{x} =
+            6y^{2} \\
+            f_{yy} &= (f_{y})_{y} = (6x^{2}y+3xy^{2})_{y} = 
+            6x^{2}+6xy \\
+            f_{xy} &= (f_{x})_{y} = (6xy^{2}+y^{3}+3)_{y} = 
+            12xy = 3y^{2} \tikzmark{a} \\
+            f_{yx} &= (f_{y})_{x} = (6x^{2}y+3xy^{2})_{x} = 
+            12xy+3y^{2} \; \; \, \tikzmark{b}
+            \mybrace{a}{b}[\text{Μικτές Παράγωγοι}]
+        \end{align*}
+    \end{solution}
+\end{example}
+
+\begin{rem}
+    Για τις μικτές παραγώγους $ f_{xy} $ και $ f_{yx} $ 
+    ισχύει:
+    \begin{align*}
+        \pdv[2]{f}{x}{y} = \pdv{}{x} \left(\pdv{f}{y}\right) = \pdv{}{x} (f_{y}) = (f_{y})_{x} =
+        f_{yx}
+        \intertext{και}
+        \pdv[2]{f}{y}{x} = \pdv{}{y} \left(\pdv{f}{x}\right) = \pdv{}{y} (f_{x}) = (f_{x})_{y} =
+        f_{xy}
+     \end{align*} 
+\end{rem}
+
+\begin{thm}[Schwarz]
+\item {}
+    Αν για τη συνάρτηση $ f(x,y) $ υπάρχουν οι μερικές παράγωγοι $ f_{xy} $ και $ f_{yx} $ και είναι συνεχείς σε μια περιοχή του σημείου $ (x_{0}, y_{0}) $, τότε $ f_{xy}=f_{yx} $ στην περιοχή αυτή.
+\end{thm}
+
+\begin{thm}
+\item {}
+    Αν για τη συνάρτηση $ f(x,y) $ υπάρχουν οι μερικές παράγωγοι $ f_{x}, f_{y} $ και $ f_{xy} $ και
+    είναι συνεχείς σε μια περιοχή του σημείου $ (x_{0}, y_{0}) $, τότε υπάρχει και η $
+    f_{yx} $ και
+    ισχύει $ f_{xy}=f_{yx} $ στην περιοχή αυτή.
+\end{thm}
+
+
+
+\begin{rem}
+    Οι πολυωνυμικές συναρτήσεις δύο (ή περισσότερων) μεταβλητών, 
+    έχουν μερικές παραγώγους σε κάθε σημείο του $ \mathbb{R}^{2} $ (ή $\mathbb{R}^{n}$). Οι λοιπές
+    στοιχειώδεις συναρτήσεις $ \sin{f(x,y)}, \cos{f(x,y)}, a^{f(x,y)}, \ln{f(x,y)} $ κ.λ.π. όπου $
+    f(x,y) $ πολυωνυμική συνάρτηση, έχουν μερικές παραγώγους σε κάθε σημείο του πεδίου ορισμού τους.
+    Για αυτές τις συναρτήσεις ισχύει $ f_{xy}=f_{yx} $.
+\end{rem}
+
+\begin{prop}
+    Αν για μια συνάρτηση $ f(x,y)$ υπάρχουν οι μερικές παράγωγοι 1ης τάξης στο σημείο $ (x_{0},
+    y_{0}) $ και είναι συνεχείς, τότε η συνάρτηση $f$ είναι συνεχής στο σημείο $ (x_{0}, y_{0}) $.
+\end{prop}
+
+
+
+\section{Μερική Ολοκλήρωση}
+
+\begin{rem}
+    Αν $ f_{x}(x,y) = g(x,y)$ και $ f_{y}(x,y)=h(x,y) $ τότε ισχύει:
+    \begin{align*}
+        f(x,y) = \int g(x,y) \,{dx} + c(y) \quad \text{και} \quad f(x,y) = \int h(x,y) \,{dy} + c(x) 
+     \end{align*} 
+\end{rem}
+
+\begin{example}
+    Έστω $ f(x,y)$ με $ f_{x}=e^{x+y} $ και $ f(0,y)=e^{y} $. Να βρεθεί ο τύπος της $f$.
+    \begin{solution}
+        \begin{align*}
+            f(x,y) = \int e^{x+y} \,{dx} = e^{x+y} + c(y) \; \tikzmark{a} \\ 
+            f(0,y) = e^{y} \Leftrightarrow e^{y}+ c(y) = e^{y} \Rightarrow c(y) = 0 \; \tikzmark{b}
+         \end{align*}
+         \mybrace{a}{b}[ $f(x,y) = e^{x+y}$ ]
+    \end{solution}
+\end{example}
+
+\section{Ασκήσεις}
+
+\begin{example}
+    Να εξετάσετε την ύπαρξη των μερικών παραγώγων της συνάρτησης 
+    \[
+        f(x,y) = \begin{cases} x \frac{x^{2}-y^{2}}{x^{2}+y^{2}}, & (x,y) \neq (0,0) \\ 0, & (x,y) =
+        (0,0) \end{cases}  
+    \] 
+    \begin{solution}
+    \item {}
+        \begin{myitemize}
+        \item Αν $ (x,y) \neq (0,0) $ τότε 
+            \[ f_{x} = \left(x
+                \frac{x^{2}-y^{2}}{x^{2}+y^{2}}\right)_{x}
+                = \cdots = \frac{x^{4}+4x^{2}y^{2}-y^{4}}{(x^{2}+y^{2})^{2}} \quad \text{και} \quad f_{y} = \left(x
+                \frac{x^{2}-y^{2}}{x^{2}+y^{2}}\right)_{y} = \cdots - \frac{4x^{3}y}{(x^{2}+y^{2})^{2}}
+            \]
+        \item Αν $ (x,y) = (0,0) $ τότε εξετάζουμε τα όρια:
+            \begin{align*}
+                f_{x}(0,0) = \lim_{x \to 0} \frac{f(x,0)-f(0,0)}{x-0} = \lim_{x \to 0}
+                \frac{x}{x} = \lim_{x \to 0} 1 = 1
+                \intertext{και}
+                f_{y}(0,0) = \lim_{y \to 0} \frac{f(0,y)-f(0,0)}{y-0} = \lim_{y \to 0} 0 = 0 
+             \end{align*} 
+             Άρα $ f_{x}= \begin{cases} \frac{x^{4}+4x^{2}y^{2}-y^{4}}{(x^{2}+y^{2})^{2}}, &(x,y)
+                 \neq (0,0) \\ , &(x,y)=(0,0) \end{cases} $ και $ f_{y} = \begin{cases} -
+                 \frac{4x^{3}y}{(x^{2}+y^{2})^{2}}, &(x,y) \neq (0,0) \\ 0, &(x,y)=(0,0)
+             \end{cases}  $
+        \end{myitemize}
+    \end{solution}
+\end{example}
+
+\begin{rem}
+    Η ύπαρξη των μερικών παραγώγων 1ης τάξης μιας συνάρτησης σε ένα σημείο, δεν σημαίνει ότι η
+    συνάρτηση είναι συνεχής στο σημείο αυτό.
+\end{rem}
+
+\begin{example}
+    Να εξετάσετε ως προς την ύπαρξη των μερικών παραγώγων και τη συνέχεια την συνάρτηση
+    \[
+        f(x,y) = \begin{cases} \frac{xy}{x^{2}+y^{2}}, &(x,y) \neq (0,0) \\ 0, &(x,y) = (0,0) \end{cases}  
+    \]
+    \begin{solution}
+            \begin{align*}
+                f_{x}(0,0) &= \lim_{x \to 0} \frac{f(x,0)-f(0,0)}{x-0} = \lim_{x \to 0}
+                \frac{0}{x} = \lim_{x \to 0} 0 = 0 \quad \text{(υπάρχει)}
+                \intertext{και}
+                f_{y}(0,0) &= \lim_{y \to 0} \frac{f(0,y)-f(0,0)}{y-0} = \lim_{y \to 0}
+                \frac{0}{y} = \lim_{y \to 0} = 0 \quad \text{(υπάρχει)}
+                \intertext{όμως}
+                \lim\limits_{\substack{x\to 0 \\y \to 0}} f(x,y) &= \lim\limits_{\substack{x\to 0
+                \\y \to 0}} \frac{xy}{x^{2}+y^{2}} \overset{y=\lambda x}{=} \lim_{x \to 0}
+                \frac{\lambda x^{2}}{x^{2}+ \lambda ^{2}x^{2}} = \lim_{x \to 0} \frac{\lambda
+                x^{2}}{x^{2}(1+ \lambda ^{2})} = \lim_{x \to 0} \frac{\lambda}{1 + \lambda ^{2}} =
+                \frac{\lambda}{1 + \lambda ^{2}} \quad \text{(δεν υπάρχει)}
+             \end{align*} 
+             Επομένως παρόλο που υπάρχουν οι μερικές παράγωγοι της συνάρτησης στο $ (0,0) $, η
+             συνάρτηση δεν είναι συνεχής στο $ (0,9) $, 
+             γιατί δεν υπάρχει το όριο της εκεί.
+    \end{solution}
+ 
+    \end{example}
 
 
 \end{document}
