@@ -1,0 +1,44 @@
+\input{preamble/preamble.tex}
+\input{preamble/definitions.tex}
+
+
+
+\everymath{\displaystyle}
+
+\begin{document}
+
+\chapter{Ομογενείς Συναρτήσεις}
+
+\section{Ορισμός}
+
+\begin{dfn}
+\item {}
+    \begin{enumerate}[i)]
+        \item $ f(x,y) $ ομογενής βαθμού $ \rho \Leftrightarrow f(\lambda x, \lambda y), \; \forall \lambda \in \mathbb{R} $ 
+        \item $ f(x,y,z) $ ομογενής βαθμού $ \rho \Leftrightarrow f(\lambda x, \lambda y, \lambda z), \; \forall \lambda \in \mathbb{R} $ 
+    \end{enumerate}
+\end{dfn}
+
+\begin{thm}[Euler]
+    $ f(x,y) $ ομογενής βαρμού $ \rho \Rightarrow x f_{x} + y f_{y} = \rho f $
+\end{thm}
+\begin{prop}
+    $ f(x,y) $ ομογενής βαρμού $ \rho \Rightarrow f_{x}, f_{y} $ ομογενείς βαρμού $ \rho -1 $.
+\end{prop}
+
+\begin{proof}
+\item {}
+    $ f $ ομογενής βαθμού $ \rho \overset{\text{Euler}}{\Rightarrow} xf_{x}+yf_{y}= \rho f
+    \xRightarrow[\text{ως προς $x$}]{\text{παρ/ζω}} f_{x} + x f_{xx} + y f_{yx} = \rho f_{x}
+    \Rightarrow xf_{xx} + yf_{xy} = (\rho -1)f_{x} $
+
+    $ f $ ομογενής βαθμού $ \rho \overset{\text{Euler}}{\Rightarrow} xf_{x}+yf_{y}= \rho f
+    \xRightarrow[\text{ως προς $y$}]{\text{παρ/ζω}} xf_{xy} + f_{y} + y f_{yy} = \rho f_{y}
+    \Rightarrow xf_{yx} + yf_{yy} = (\rho -1)f_{y} $
+\end{proof}
+
+
+
+
+\end{document}
+
