@@ -279,8 +279,10 @@ $f$ ως προς $x$ είναι:
 
             \section{Ορισμός}
             \begin{dfn}
-                Μια συνάρτηση $ f(x,y) $ λέγεται διαφορίσιμη αν ισχύει η παρακάτω συνθήκη
-                διαφορισιμότητας σε κάθε σημείο του πεδίου ορισμού της συνάρτησης: 
+            \item {}
+                Μια συνάρτηση $ f(x,y) $ λέγεται διαφορίσιμη στο σημείο 
+                $ P_{0}(x_{0}, y_{0}) $ αν ισχύει η παρακάτω συνθήκη
+                διαφορισιμότητας: 
                 \[
                     \eval{\Delta f(x,y)}_{P_{0}} = f(x,y)-f(x_{0}, y_{0}) \xlongequal[k=\underbrace{y-
                     y_{0}}_{\Delta y=dy}]{h=\overbrace{x-
@@ -294,6 +296,8 @@ $f$ ως προς $x$ είναι:
         }}                 \]
 
             \end{dfn}
+
+
             \begin{rem}
                 Η συνάρτηση $ G(h,k) = \eval{\Delta f(x,y)}_{P_{0}} - \eval{df(x,y)}_{P_{0}} $
             \end{rem}
@@ -305,12 +309,11 @@ $f$ ως προς $x$ είναι:
                 \begin{enumerate}[i)]
                     \item Υπάρχουν οι μερικές παράγωγοι $ \eval{\pdv{f}{x}}_{P_{0}},
                         \eval{\pdv{f}{y}}_{P_{0}} $
-                    \item Η συνάρτηση $ G(h,k) $ είναι πολύ μικρή $ \Leftrightarrow $  
-                        $
-                            \lim\limits_{\substack{h\to 0 \\k \to 0}} \frac{G(h,k)}{\sqrt{h^{2}+k^{2}}
-                        } = 0
-                        $, δηλαδή ότι η $ G $ τείνει στο 0 πιο γρήγορα από τα $ h,k
-                        $. 
+                    \item $ \lim\limits_{\substack{h\to 0 \\k \to 0}} \varepsilon _{1}(h,k) = 0 \quad 
+                        \text{και} \quad \lim\limits_{\substack{h\to 0 \\k \to 0}} \varepsilon _{2}(h,k)=0
+                        \overset{\text{ή}}{\Leftrightarrow} 
+                            \lim\limits_{\substack{h\to 0 \\k \to 0}} 
+                            \frac{G(h,k)}{\sqrt{h^{2}+k^{2}}} = 0 $.
                 \end{enumerate}
         \end{dfn}
             
@@ -327,8 +330,9 @@ $f$ ως προς $x$ είναι:
         \end{enumerate}
     \end{rem}
         \begin{thm}
-            Μια συνάρτηση $ f(x,y) $ είναι διαφορίσιμη αν υπάρχουν οι μερικές παράγωγοι και μία από
-            αυτές είναι συνεχής.
+        \item {}
+            Μια συνάρτηση $ f(x,y) $ είναι διαφορίσιμη στο $ P_{0}(x_{0}, y_{0}) $ 
+            αν υπάρχουν οι μερικές παράγωγοι και είναι συνεχείς στο $ P_{0} $.
         \end{thm}
 
 \newpage
@@ -480,5 +484,22 @@ $f$ ως προς $x$ είναι:
                     \end{solution}
             \end{enumerate}
         \end{examples}
+
+        \section{Ολικό Διαφορικό}
+
+        \begin{dfn}
+        \item {}
+            Η συνάρτηση $ \pdv{f}{x}\cdot h + \pdv{f}{y} \cdot k = f_{x} \Delta x 
+            + f_{y} \Delta y $ ονομάζεται ολικό διαφορικό της συνάρτησης $f$ και συμβολίζεται με $
+            df $. Οπότε 
+            \[
+                df = f_{x} \Delta x + f_{y} \Delta y \quad \text{ή} \quad df = f_{x}dx + f_{y}dy 
+             \] 
+             Στην περίπτωση όπου $ f= f(x_{1}, x_{2}, \ldots, x_{n}) $, έχουμε
+             \[
+                 df = f_{x_{1}}d{x_{1}} + f_{x_{2}}d{x_{2}} + \cdots f_{x_{n}} dx_{n}
+              \]
+
+        \end{dfn}
 
     \end{document} 
