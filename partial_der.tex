@@ -502,4 +502,88 @@ $f$ ως προς $x$ είναι:
 
         \end{dfn}
 
+        \section{Αρμονικές Συναρτήσεις}
+
+        \begin{dfn}
+            Η συνάρτηση $ f(x,y) $ λέγεται αρμονική αν ικανοποιεί την εξίσωση 
+            $ \pdv[2]{f}{x} + \pdv[2]{f}{y} = 0 $ 
+        \end{dfn}
+
+        \begin{rem}
+        \item {}
+            \begin{enumerate}
+                \item Η παραπάνω εξίσωση, ονομάζεται εξίσωση Laplace.
+                \item Ο τελεστής $ \pdv[2]{}{x} + \pdv[2]{}{y} $ λέγεται τελεστής 
+                    Laplace.
+                \item Η εξίσωση Laplace για συναρτήσεις πολλών μεταβλητών παίρνει τη 
+                    μορφή
+                    \[
+                        \pdv[2]{f}{x_{1}} + \pdv[2]{f}{x_{2}} + \cdots + 
+                        \pdv[2]{f}{x_{n}}=0 
+                     \] 
+            \end{enumerate}
+        \end{rem}
+
+        \begin{prop}
+        \item {}
+            Αν $ f(x,y) $ συνεχής, έχει συνεχείς μερικές παραγώγους 1ης τάξης 
+            και είναι αρμονική, τότε και οι συναρτήσεις $ f_{x} $ και $ f_{y} $
+            είναι αρμονικές. 
+        \end{prop}
+        \begin{proof}
+        \item {}
+            $f$ αρμονική $ \Rightarrow f_{xx}+f_{yy}=0 $.
+
+            Θέτουμε $ g(x,y)=f_{x}(x,y) $. Για να δείξουμε ότι $ f_{x} $ αρμονική, 
+            αρκεί να δείξουμε ότι $ g(x,y) $ είναι αρμονική. Πράγματι:
+            \begin{align*}
+                g_{x} &= f_{xx} \quad \text{και} \quad g_{xx} = (f_{xx})_{x} \\ 
+                g_{y} &= f_{xy} \quad \text{και} \quad g_{yy} = (f_{xy})_{y} =
+                (f_{yx})_{y} = f_{yxy} = f_{yyx} = (f_{yy})_{x}
+            \end{align*}
+            Άρα 
+            \[
+                g_{xx}+g_{yy} = (f_{xx})_{x} + (f_{yy})_{x} = 
+                (f_{xx}+f_{yy})_{x}= (0)_{x} =0
+             \] 
+        \end{proof}
+
+        \begin{examples}
+        \item {}
+            \begin{enumerate}
+                \item 
+            Να εξεταστεί αν η συνάρτηση $ f(x,y)= \ln{\sqrt{x^{2}+y^{2}}} $ είναι 
+            αρμονική.
+            \begin{solution}
+              \begin{align*}
+                  \pdv{f}{x} &= f_{x} = \left(\ln{\sqrt{x^{2}+y^{2}}} \right)_{x} = 
+                  \frac{1}{\sqrt{x^{2}+y^{2}}} \cdot 
+                  \left(\sqrt{x^{2}+y^{2}}\right)_{x} = 
+                  \frac{1}{\sqrt{x^{2}+y^{2}}} \cdot \frac{\cancel{2}x}{\cancel{2} 
+                  \sqrt{x^{2}+y^{2}}} = \frac{x}{x^{2}+y^{2}} \\
+                  \pdv[2]{f}{x} &= f_{xx} = \left(\frac{x}{x^{2}+y^{2}}\right)_{x} = 
+                  \frac{x^{2}+y^{2}-2x^{2}}{(x^{2}+y^{2})^{2}} = 
+                  \frac{y^{2}-x^{2}}{(x^{2}+y^{2})^{2}} 
+                  \intertext{και}
+                  \pdv{f}{y} &= f_{y} = \left(\ln{\sqrt{x^{2}+y^{2}}} \right)_{y} = 
+                  \frac{1}{\sqrt{x^{2}+y^{2}}} \cdot 
+                  \left(\sqrt{x^{2}+y^{2}}\right)_{y} = 
+                  \frac{1}{\sqrt{x^{2}+y^{2}}} \cdot \frac{\cancel{2}y}{\cancel{2} 
+                  \sqrt{x^{2}+y^{2}}} = \frac{y}{x^{2}+y^{2}} \\
+                  \pdv[2]{f}{y} &= f_{yy} = \left(\frac{y}{x^{2}+y^{2}}\right)_{y} = 
+                  \frac{x^{2}+y^{2}-2y^{2}}{(x^{2}+y^{2})^{2}} = 
+                  \frac{x^{2}-y^{2}}{(x^{2}+y^{2})^{2}} 
+              \end{align*}  
+              Προφανώς έχουμε ότι
+              \[
+                  \pdv[2]{f}{x} + \pdv[2]{f}{y} = f_{xx}+f_{yy} =
+                  \frac{y^{2}-x^{2}}{(x^{2}+y^{2})^{2}} + 
+                  \frac{x^{2}-y^{2}}{(x^{2}+y^{2})^{2}} = 0  
+               \] 
+
+            \end{solution}
+            \end{enumerate}
+        \end{examples}
+
+
     \end{document} 
