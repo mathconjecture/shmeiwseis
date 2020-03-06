@@ -2,15 +2,19 @@
 \input{preamble/definitions.tex}
 
 
+\let\oldhat\hat
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\renewcommand{\hat}[1]{\oldhat{\mathbf{#1}}} 
 
 \begin{document}
 
 
 \chapter{Διανυσματικοί Χώροι}
 
+
 \begin{dfn}
 \item {}
-	Έστω $V$ σύνολο και $\mathbb{K}$ ένα σώμα αντιμεταθετικό 
+	Έστω $V$, μή κενό σύνολο και $\mathbb{K}$ ένα σώμα αντιμεταθετικό 
     (συνήθως θεωρούμε ότι $ \mathbb{K} = \mathbb{R} $ ή $\mathbb{C}$ ). 
     Το σύνολο $V$ μαζί με τις πράξεις:
 	\begin{alignat*}{2}
@@ -23,7 +27,8 @@
 
     \begin{minipage}{0.3\textwidth}
 \begin{enumerate}
-    \item $ \vec{u} + \vec{v} = \vec{v} + \vec{u} $ \hfill\tikzmark{a}
+    \item $ \vec{u} + \vec{v} = \vec{v} + \vec{u}, \; \forall u,v \in V $ 
+        \hfill\tikzmark{a}
 	\item $ ( \vec{u} + \vec{v} ) + \vec{w} = \vec{u} + ( \vec{v} + \vec{w}) $ 
 	\item $ \vec{u} + \vec{0} = \vec{0} + \vec{u} = \vec{u} $ 
 	\item $ \vec{u} + ( - \vec{u} ) = ( - \vec{u} ) + \vec{u} = \vec{0} $ \hfill\tikzmark{b}
@@ -35,10 +40,14 @@
 \mybrace{a}{b}[ομάδα αντιμεταθετική]
 \end{minipage}
 
-ονομάζεται διανυσματικός χώρος πάνω στο σώμα $\mathbb{K}$, τα στοιχεία του οποίου
-καλούμε διανύσματα.
-
+ονομάζεται διανυσματικός χώρος επί του $\mathbb{K}$, (ή απλά $ \mathbb{K} $ - χώρος).
 \end{dfn}
+
+\begin{dfn}
+Αν $ (V,+,\cdot) $ είναι ένας $ \mathbb{K} $ - χώρος, τότε τα στοιχεία του καλούνται 
+διανύσματα.
+\end{dfn}
+
 
 
 \end{document}
