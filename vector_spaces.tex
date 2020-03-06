@@ -1,5 +1,5 @@
-\input{$HOME/Desktop/preamble/preamble.tex}
-\input{$HOME/Desktop/preamble/definitions.tex}
+\input{preamble/preamble.tex}
+\input{preamble/definitions.tex}
 
 
 
@@ -9,25 +9,33 @@
 \chapter{Διανυσματικοί Χώροι}
 
 \begin{dfn}
-	Έστω $V \neq \emptyset$ σύνολο και $\mathbb{K}$ ένα σώμα (συνήθως θεωρούμε ότι $ \mathbb{K} =
-	\mathbb{R} $ ή $\mathbb{C}$ ). Το σύνολο $V$ μαζί με τις πράξεις:
+\item {}
+	Έστω $V$ σύνολο και $\mathbb{K}$ ένα σώμα αντιμεταθετικό 
+    (συνήθως θεωρούμε ότι $ \mathbb{K} = \mathbb{R} $ ή $\mathbb{C}$ ). 
+    Το σύνολο $V$ μαζί με τις πράξεις:
 	\begin{alignat*}{2}
-		+ \colon V \times V &\to V & \qquad \text{και} \qquad \cdot \colon V \times V &\to V \\
-		( \vec{u}, \vec{v} ) &\mapsto \vec{u} + \vec{v} & ( \lambda, \vec{u} ) &\mapsto \lambda \vec{u} 
+        + \colon V \times V &\to V & \qquad \text{και} \qquad \cdot \colon \mathbb{K} 
+        \times V &\to V \\ ( \vec{u}, \vec{v} ) &\mapsto \vec{u} + \vec{v} 
+                 & ( \lambda, \vec{u} ) &\mapsto \lambda \vec{u} 
 	\end{alignat*}
+    \vspace{\baselineskip}
 που ικανοποιούν τις ιδιότητες 
 
+    \begin{minipage}{0.3\textwidth}
 \begin{enumerate}
-	\item $ \vec{u} + \vec{v} = \vec{v} + \vec{u} $ 
+    \item $ \vec{u} + \vec{v} = \vec{v} + \vec{u} $ \hfill\tikzmark{a}
 	\item $ ( \vec{u} + \vec{v} ) + \vec{w} = \vec{u} + ( \vec{v} + \vec{w}) $ 
 	\item $ \vec{u} + \vec{0} = \vec{0} + \vec{u} = \vec{u} $ 
-	\item $ \vec{u} + ( - \vec{u} ) = ( - \vec{u} ) + \vec{u} = \vec{0} $ 
+	\item $ \vec{u} + ( - \vec{u} ) = ( - \vec{u} ) + \vec{u} = \vec{0} $ \hfill\tikzmark{b}
 	\item $ ( \lambda + \mu ) \vec{u} = \lambda \vec{u} + \mu \vec{u} $ 
 	\item $ ( \lambda \mu ) \vec{u} = \lambda ( \mu) \vec{u} $ 
 	\item $ \lambda ( \vec{u} + \vec{v} ) = \lambda \vec{u} + \lambda \vec{v} $ 
 	\item $ 1 \vec{u} = \vec{u} $ 
 \end{enumerate}
-ονομάζεται \textcolor{blue}{διανυσματικός χώρος} πάνω στο σώμα $\mathbb{K}$, τα στοιχεία του οποίου
+\mybrace{a}{b}[ομάδα αντιμεταθετική]
+\end{minipage}
+
+ονομάζεται διανυσματικός χώρος πάνω στο σώμα $\mathbb{K}$, τα στοιχεία του οποίου
 καλούμε διανύσματα.
 
 \end{dfn}
