@@ -14,33 +14,45 @@
 
 \begin{dfn}
 \item {}
-	Έστω $V$, μή κενό σύνολο και $\mathbb{K}$ ένα σώμα αντιμεταθετικό 
+    Έστω $V$, μή κενό σύνολο και $\mathbb{K}$ ένα σώμα αντιμεταθετικό 
     (συνήθως θεωρούμε ότι $ \mathbb{K} = \mathbb{R} $ ή $\mathbb{C}$ ). 
     Το σύνολο $V$ μαζί με τις πράξεις:
-	\begin{alignat*}{2}
+    \begin{alignat*}{2}
         + \colon V \times V &\to V & \qquad \text{και} \qquad \cdot \colon \mathbb{K} 
         \times V &\to V \\ ( \vec{u}, \vec{v} ) &\mapsto \vec{u} + \vec{v} 
                  & ( \lambda, \vec{u} ) &\mapsto \lambda \vec{u} 
-	\end{alignat*}
+    \end{alignat*}
     \vspace{\baselineskip}
-που ικανοποιούν τις ιδιότητες 
+    που ικανοποιούν τις ιδιότητες 
 
-    \begin{minipage}{0.3\textwidth}
-\begin{enumerate}
-    \item $ \vec{u} + \vec{v} = \vec{v} + \vec{u}, \; \forall u,v \in V $ 
-        \hfill\tikzmark{a}
-	\item $ ( \vec{u} + \vec{v} ) + \vec{w} = \vec{u} + ( \vec{v} + \vec{w}) $ 
-	\item $ \vec{u} + \vec{0} = \vec{0} + \vec{u} = \vec{u} $ 
-	\item $ \vec{u} + ( - \vec{u} ) = ( - \vec{u} ) + \vec{u} = \vec{0} $ \hfill\tikzmark{b}
-	\item $ ( \lambda + \mu ) \vec{u} = \lambda \vec{u} + \mu \vec{u} $ 
-	\item $ ( \lambda \mu ) \vec{u} = \lambda ( \mu) \vec{u} $ 
-	\item $ \lambda ( \vec{u} + \vec{v} ) = \lambda \vec{u} + \lambda \vec{v} $ 
-	\item $ 1 \vec{u} = \vec{u} $ 
-\end{enumerate}
-\mybrace{a}{b}[ομάδα αντιμεταθετική]
-\end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        \begin{enumerate}
+            \item $ \vec{u} + \vec{v} = \vec{v} + \vec{u}, \quad \forall \mathbf{u}, 
+                \mathbf{v} \in V $ 
+                \hfill\tikzmark{a}
+            \item $ ( \vec{u} + \vec{v} ) + \vec{w} = \vec{u} + ( \vec{v} + \vec{w}),
+                \quad \forall \mathbf{u}, \mathbf{v}, \mathbf{w} \in V $ 
+            \item $ \exists \vec{0} \in V, \; \forall \mathbf{u} \in V \quad 
+                \vec{u} + \vec{0} = \vec{0} + \vec{u} = \vec{u} $ 
+            \item $ \forall \mathbf{u} \in V, \; \exists (- \mathbf{u}) \in V \quad  
+                \vec{u} + ( - \vec{u} ) = ( - \vec{u} ) + \vec{u} = \vec{0} $ 
+                \hfill\tikzmark{b}
+            \item $ ( \lambda + \mu ) \vec{u} = \lambda \vec{u} + \mu \vec{u}, \quad 
+                \forall \mathbf{u} \in V \; \text{και} \; \forall \lambda, \mu \in 
+                \mathbb{K} $ 
+            \item $ ( \lambda \mu ) \vec{u} = \lambda ( \mu) \vec{u}, \quad  
+                \forall \mathbf{u} \in V \; \text{και} \; \forall \lambda, \mu \in 
+                \mathbb{K} $ 
+            \item $ \lambda ( \vec{u} + \vec{v} ) = \lambda \vec{u} + \lambda \vec{v}, 
+                \quad \forall \mathbf{u}, \mathbf{v} \in V \; \text{και} \; \forall  
+                \lambda \in \mathbb{K} $ 
+            \item $ 1 \vec{u} = \vec{u}, \quad \forall \mathbf{u} \in V $ 
+        \end{enumerate}
+        \mybrace{a}{b}[ομάδα αντιμεταθετική]
+    \end{minipage}
 
-ονομάζεται διανυσματικός χώρος επί του $\mathbb{K}$, (ή απλά $ \mathbb{K} $ - χώρος).
+    ονομάζεται διανυσματικός χώρος επί του $\mathbb{K}$, 
+    (ή απλά $ \mathbb{K} $ - χώρος).
 \end{dfn}
 
 \begin{dfn}
@@ -49,5 +61,12 @@
 \end{dfn}
 
 
+\begin{examples}
+\item {}
+    \begin{enumerate}
+        \item Ο διανυσματικός χώρος $ \mathbb{K}^{n} $ επί του $ \mathbb{K} $.
+            Αν $ \mathbb{K} $ ένα σώμα, τότε το σύνολο $ \mathbb{K}^{n} $
+    \end{enumerate}
+\end{examples}
 
 \end{document}
