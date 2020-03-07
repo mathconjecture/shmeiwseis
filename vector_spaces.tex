@@ -1,10 +1,9 @@
 \input{preamble/preamble.tex}
 \input{preamble/definitions.tex}
 
+\let\vec\mathbf
 
-\let\oldhat\hat
-\renewcommand{\vec}[1]{\mathbf{#1}}
-\renewcommand{\hat}[1]{\oldhat{\mathbf{#1}}} 
+
 
 \begin{document}
 
@@ -51,21 +50,131 @@
         \mybrace{a}{b}[ομάδα αντιμεταθετική]
     \end{minipage}
 
-    ονομάζεται διανυσματικός χώρος επί του $\mathbb{K}$, 
+    ονομάζεται \textcolor{Col2}{διανυσματικός χώρος} επί του $\mathbb{K}$, 
     (ή απλά $ \mathbb{K} $ - χώρος).
 \end{dfn}
 
 \begin{dfn}
 Αν $ (V,+,\cdot) $ είναι ένας $ \mathbb{K} $ - χώρος, τότε τα στοιχεία του καλούνται 
-διανύσματα.
+\textcolor{Col2}{διανύσματα}.
 \end{dfn}
 
 
 \begin{examples}
 \item {}
     \begin{enumerate}
-        \item Ο διανυσματικός χώρος $ \mathbb{K}^{n} $ επί του $ \mathbb{K} $.
-            Αν $ \mathbb{K} $ ένα σώμα, τότε το σύνολο $ \mathbb{K}^{n} $
+        \item \label{ex:Rn}\textcolor{Col2}{Ο διανυσματικός χώρος $ \mathbb{K}^{n} $ 
+                επί του $ \mathbb{K} \quad (n \geq 1) $}
+
+            Αν $ \mathbb{K} $ ένα σώμα, τότε το σύνολο $ \mathbb{K}^{n} = 
+            \{ \mathbf{u} = (x_{1},\ldots,x_{n}) \; : \; x_{i} \in \mathbb{K}\} $ 
+            μαζί με τις πράξεις 
+            \[
+                \mathbf{u}+ \mathbf{v} = (x_{1}+ y_{1}, \ldots , x_{n}+y_{n}) 
+                \quad \text{και} \quad \lambda \mathbf{u} = 
+                ( \lambda x_{1}, \ldots, \lambda x_{n})
+            \]
+            είναι ένας διανυσματικός χωϱος επί του $ \mathbb{K} $. 
+
+            Το μηδέν του χώρου 
+            είναι $ \vec{0} = (0,\ldots,0) $, όπου 0 είναι το μηδέν του σώματος 
+            $ \mathbb{K} $ και το αντίθετο του $ \mathbf{u} $ είναι το $ - \mathbf{u} =
+            (- x_{1}, \ldots, - x_{n}) $.
+
+        \item\label{ex:funs} \textcolor{Col2}{Ο χώρος των συναρτήσεων $\mathbb{R} ^{A}$ 
+            (ή $\mathbf{F}(A, \mathbb{R}$)}.
+
+            Αν $ A \subseteq \mathbb{R} $, τότε το σύνολο $ \mathbb{R}^{A} = 
+            \{ f \colon A \to \mathbb{R} \; : \; f \; \text{συνάρτηση} \} $, μαζί με 
+            τις πράξεις
+            \[
+                (f+g)(x) = f(x) +g(x), \; \forall x \in A \quad \text{και} 
+                \quad (\lambda f)(x)= \lambda f(x), \; \forall x \in A
+            \] 
+            είναι ένας διανυσματικός χώρος επί του $ \mathbb{R} $.
+
+            Το μηδέν του χώρου είναι η μηδενική συνάρτηση $ \vec{0} $ και το 
+            αντίθετο της $f$ είναι η συνάρτηση $ -f $ με τιμή $ (-f)(x) = 
+            - f(x), \; \forall x \in A $.
+
+        \item \textcolor{Col2}{Ο χώρος των συνεχών συναρτήσεων $ \mathbf{C}[a,b] $}
+
+            Έστω $ V = \mathbf{C}{[a,b]} = \{ f \colon [a,b] \to \mathbb{R} \; 
+            : \; f \; \text{συνεχής συνάρτηση} \}  $. 
+
+            Τότε ως προς τις πράξεις του 
+            παραδείγματος~\ref{ex:funs}, ο $V$ είναι ένας διανυσματικός χωϱος 
+            επί του $ \mathbb{R} $, 
+            γιατί το άθροισμα $ f+g $ δύο συνεχών συναρτήσεων $ f,g $ είναι 
+            συνεχής συνάρτηση καθώς και το γινόμενο 
+            $ \lambda f, \; \lambda \in \mathbb{R} $, μιας συνεχής συνάρτησης 
+            $f$ είναι επίσης συνεχής συνάρτηση. 
+
+        \item \textcolor{Col2}{Ο χώρος των πολυωνύμων $ P_{n}[x] $}.
+
+            Έστω $ V = P_{n}[x] $ το σύνολο των πολυωνύμων βαθμού 
+            $ \leq n, \; n \in \mathbb{N}  $ με συντελεστές πραγματικούς. Τότε αν 
+            \begin{align*}
+                \mathbf{a} \in P_{n}[x] \Rightarrow \mathbf{a}  
+                     &= a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots + a_{0} \\
+                     \mathbf{b} \in P_{n}[x] \Rightarrow \mathbf{b}  
+                     &= b_{n}x^{n}+b_{n-1}x^{n-1}+\cdots + b_{0} 
+            \end{align*} 
+            έχουμε, ότι το σύνολο $ V $ μαζί με τις πράξεις 
+            \begin{align*}
+                \mathbf{a}+ \mathbf{b}&= (a_{n}+ b_{n})x^{n} + 
+                (a_{n-1}+b_{n-1})x^{n-1}+ \cdots + (a_{0}+ b_{0}) \\
+                \lambda \mathbf{a} &= (\lambda a_{n})x^{n}+
+                ( \lambda a_{n-1})x^{n-1}+ \cdots + ( \lambda a_{0})
+            \end{align*} 
+            είναι ένας διανυσματικός χώρος επί του $ \mathbb{R} $.
+
+        \item \textcolor{Col2}{Ο χώρος των λύσεων μιας γραμμικής, ομογενούς 
+            διαφορικής εξίσωσης}
+
+            Έστω μια γραμμική, ομογενής διαφορική εξίσωση
+            \begin{equation}\label{eq:diff}
+                f''(x)+5f'(x)+6f(x)=0 
+            \end{equation} 
+            Τότε, ως προς τις πράξεις του παραδείγματος~\ref{ex:funs} το 
+            σύνολο $ V $ των λύσεων είναι ένας διανυσματικός χώρος επί του
+            $ \mathbb{R} $. Πράγματι, αν $ f,g $ λύσεις της~\eqref{eq:diff},
+            δηλαδή αν $ f,g \in V $, έχουμε:
+            \begin{align*}
+                (f+g)''(x)+5(f+g)'(x)+6(f+g)(x) &= [f''(x)+5f'(x)+6f(x)] 
+                + [g''(x)+5g'(x)+6g(x)] = 0+0=0
+                \intertext{\centering και}
+                (\lambda f)''(x) + 5(\lambda f)'(x)+6(\lambda f)(x)&= \lambda
+                [f''(x)+5f'(x)+6f(x)] = \lambda \cdot 0=0
+            \end{align*}
+            Συνεπώς $ f+g \in V $ και $ \lambda f \in V $. 
+
+        \item \textcolor{Col2}{Ο χώρος των λύσεων ενός γραμμικού, ομογενούς 
+            συστήματος}
+
+            Έστω το σύστημα των ομογενών εξισώσεων
+
+            \begin{equation}
+                % no need to use "align*" env.
+                \setlength\arraycolsep{1.5pt} % default value: 5pt
+                \left.
+                    \begin{array}{ccc ccc c @{\extracolsep{2.5pt}}c
+                        @{\extracolsep{2.5pt}}c}
+                        a_{11}x_{1} & + & a_{12}x_{2} & + & \cdots & + & a_{1n}x_{n} & =
+                                    & 0 \\
+                        a_{21}x_{1} & + & a_{22}x_{2} & + & \cdots & + & a_{2n}x_{n} & =
+                                    & 0 \\
+                        \vdots & & \vdots & & \ddots & &  \vdots & &  \vdots \\
+                        a_{m1}x_{1} & + & a_{m2}x_{2} & + & \cdots & + & a_{mn}x_{n} & =
+                                    & 0 \\
+                    \end{array}
+                \right\}
+            \end{equation}
+            Λύση του είναι ένα στοιχείο $ \mathbf{u} = (x_{1}, x_{2}, \ldots x_{n}) 
+            \in \mathbb{R}^{n} $.  Τότε, ως προς τις πράξεις τους χώρουν 
+            $ \mathbb{R}^{n} $, του παραδείγματος~\ref{ex:Rn}, το σύνολο των 
+            λύσεων είναι ένας διανυσματικός χώρος (που περιέχεται στο χώρο 
+            $ \mathbb{R}^{n} $).
     \end{enumerate}
 \end{examples}
 
