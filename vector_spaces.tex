@@ -3,7 +3,7 @@
 
 \let\vec\mathbf
 
-
+\pagestyle{vangelis}
 
 \begin{document}
 
@@ -13,7 +13,7 @@
 
 \begin{dfn}
 \item {}
-    Έστω $V$, μή κενό σύνολο και $\mathbb{K}$ ένα σώμα αντιμεταθετικό 
+    Έστω $V$, μη κενό σύνολο και $\mathbb{K}$ ένα σώμα αντιμεταθετικό 
     (συνήθως θεωρούμε ότι $ \mathbb{K} = \mathbb{R} $ ή $\mathbb{C}$ ). 
     Το σύνολο $V$ μαζί με τις πράξεις:
     \begin{alignat*}{2}
@@ -22,40 +22,41 @@
                  & ( \lambda, \vec{u} ) &\mapsto \lambda \vec{u} 
     \end{alignat*}
     \vspace{\baselineskip}
-    που ικανοποιούν τις ιδιότητες 
+    που ικανοποιούν τα παρακάτω αξιώματα:
 
-    \begin{minipage}{0.5\textwidth}
+    \twocolumnside{%
+        \textbf{Το $V$ είναι ομάδα αντιμεταθετική}
         \begin{enumerate}
             \item $ \vec{u} + \vec{v} = \vec{v} + \vec{u}, \quad \forall \mathbf{u}, 
                 \mathbf{v} \in V $ 
-                \hfill\tikzmark{a}
             \item $ ( \vec{u} + \vec{v} ) + \vec{w} = \vec{u} + ( \vec{v} + \vec{w}),
                 \quad \forall \mathbf{u}, \mathbf{v}, \mathbf{w} \in V $ 
             \item $ \exists \vec{0} \in V, \; \forall \mathbf{u} \in V \quad 
                 \vec{u} + \vec{0} = \vec{0} + \vec{u} = \vec{u} $ 
             \item $ \forall \mathbf{u} \in V, \; \exists (- \mathbf{u}) \in V \quad  
                 \vec{u} + ( - \vec{u} ) = ( - \vec{u} ) + \vec{u} = \vec{0} $ 
-                \hfill\tikzmark{b}
-            \item $ ( \lambda + \mu ) \vec{u} = \lambda \vec{u} + \mu \vec{u}, \quad 
-                \forall \mathbf{u} \in V \; \text{και} \; \forall \lambda, \mu \in 
-                \mathbb{K} $ 
-            \item $ ( \lambda \mu ) \vec{u} = \lambda ( \mu) \vec{u}, \quad  
-                \forall \mathbf{u} \in V \; \text{και} \; \forall \lambda, \mu \in 
-                \mathbb{K} $ 
-            \item $ \lambda ( \vec{u} + \vec{v} ) = \lambda \vec{u} + \lambda \vec{v}, 
-                \quad \forall \mathbf{u}, \mathbf{v} \in V \; \text{και} \; \forall  
-                \lambda \in \mathbb{K} $ 
-            \item $ 1 \vec{u} = \vec{u}, \quad \forall \mathbf{u} \in V $ 
         \end{enumerate}
-        \mybrace{a}{b}[ομάδα αντιμεταθετική]
-    \end{minipage}
+        }{%
+        \textbf{και επίσης ισχύει}
+        \begin{enumerate}
+            \setcounter{enumi}{4}
+        \item $ ( \lambda + \mu ) \vec{u} = \lambda \vec{u} + \mu \vec{u}, \quad 
+            \forall \mathbf{u} \in V \; \text{και} \; \forall \lambda, \mu \in 
+            \mathbb{K} $ 
+        \item $ ( \lambda \mu ) \vec{u} = \lambda ( \mu) \vec{u}, \quad  
+            \forall \mathbf{u} \in V \; \text{και} \; \forall \lambda, \mu \in 
+            \mathbb{K} $ 
+        \item $ \lambda ( \vec{u} + \vec{v} ) = \lambda \vec{u} + \lambda \vec{v}, 
+            \quad \forall \mathbf{u}, \mathbf{v} \in V \; \text{και} \; \forall  
+            \lambda \in \mathbb{K} $ 
+        \item $ 1 \vec{u} = \vec{u}, \quad \forall \mathbf{u} \in V $ 
+    \end{enumerate}
+}
 
-    ονομάζεται \textcolor{Col2}{διανυσματικός χώρος} επί του $\mathbb{K}$, 
-    (ή απλά $ \mathbb{K} $ - χώρος).
-\end{dfn}
+\vspace{\baselineskip}
 
-\begin{dfn}
-Αν $ (V,+,\cdot) $ είναι ένας $ \mathbb{K} $ - χώρος, τότε τα στοιχεία του καλούνται 
+ονομάζεται \textcolor{Col2}{διανυσματικός χώρος} επί του $\mathbb{K}$, 
+(ή απλά $ \mathbb{K} $ - χώρος). Τα στοιχεία του συνόλου $V$ καλούνται 
 \textcolor{Col2}{διανύσματα}.
 \end{dfn}
 
@@ -64,7 +65,7 @@
 \item {}
     \begin{enumerate}
         \item \label{ex:Rn}\textcolor{Col2}{Ο διανυσματικός χώρος $ \mathbb{K}^{n} $ 
-                επί του $ \mathbb{K} \quad (n \geq 1) $}
+            επί του $ \mathbb{K} \quad (n \geq 1) $}
 
             Αν $ \mathbb{K} $ ένα σώμα, τότε το σύνολο $ \mathbb{K}^{n} = 
             \{ \mathbf{u} = (x_{1},\ldots,x_{n}) \; : \; x_{i} \in \mathbb{K}\} $ 
@@ -74,7 +75,7 @@
                 \quad \text{και} \quad \lambda \mathbf{u} = 
                 ( \lambda x_{1}, \ldots, \lambda x_{n})
             \]
-            είναι ένας διανυσματικός χωϱος επί του $ \mathbb{K} $. 
+            είναι ένας διανυσματικός χώϱος επί του $ \mathbb{K} $. 
 
             Το μηδέν του χώρου 
             είναι $ \vec{0} = (0,\ldots,0) $, όπου 0 είναι το μηδέν του σώματος 
@@ -103,7 +104,7 @@
             : \; f \; \text{συνεχής συνάρτηση} \}  $. 
 
             Τότε ως προς τις πράξεις του 
-            παραδείγματος~\ref{ex:funs}, ο $V$ είναι ένας διανυσματικός χωϱος 
+            παραδείγματος~\ref{ex:funs}, ο $V$ είναι ένας διανυσματικός χώϱος 
             επί του $ \mathbb{R} $, 
             γιατί το άθροισμα $ f+g $ δύο συνεχών συναρτήσεων $ f,g $ είναι 
             συνεχής συνάρτηση καθώς και το γινόμενο 
@@ -114,19 +115,19 @@
 
             Έστω $ V = P_{n}[x] $ το σύνολο των πολυωνύμων βαθμού 
             $ \leq n, \; n \in \mathbb{N}  $ με συντελεστές πραγματικούς. Τότε αν 
-            \begin{align*}
+            \begin{gather*}
                 \mathbf{a} \in P_{n}[x] \Rightarrow \mathbf{a}  
-                     &= a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots + a_{0} \\
-                     \mathbf{b} \in P_{n}[x] \Rightarrow \mathbf{b}  
-                     &= b_{n}x^{n}+b_{n-1}x^{n-1}+\cdots + b_{0} 
-            \end{align*} 
+                = a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots + a_{0} \quad \text{και} 
+                \quad \mathbf{b} \in P_{n}[x] \Rightarrow \mathbf{b}  
+                = b_{n}x^{n}+b_{n-1}x^{n-1}+\cdots + b_{0} 
+            \end{gather*} 
             έχουμε, ότι το σύνολο $ V $ μαζί με τις πράξεις 
-            \begin{align*}
-                \mathbf{a}+ \mathbf{b}&= (a_{n}+ b_{n})x^{n} + 
+            \begin{gather*}
+                \mathbf{a}+ \mathbf{b}= (a_{n}+ b_{n})x^{n} + 
                 (a_{n-1}+b_{n-1})x^{n-1}+ \cdots + (a_{0}+ b_{0}) \\
-                \lambda \mathbf{a} &= (\lambda a_{n})x^{n}+
+                \lambda \mathbf{a} = (\lambda a_{n})x^{n}+
                 ( \lambda a_{n-1})x^{n-1}+ \cdots + ( \lambda a_{0})
-            \end{align*} 
+            \end{gather*} 
             είναι ένας διανυσματικός χώρος επί του $ \mathbb{R} $.
 
         \item \textcolor{Col2}{Ο χώρος των λύσεων μιας γραμμικής, ομογενούς 
@@ -140,21 +141,33 @@
             σύνολο $ V $ των λύσεων είναι ένας διανυσματικός χώρος επί του
             $ \mathbb{R} $. Πράγματι, αν $ f,g $ λύσεις της~\eqref{eq:diff},
             δηλαδή αν $ f,g \in V $, έχουμε:
-            \begin{align*}
-                (f+g)''(x)+5(f+g)'(x)+6(f+g)(x) &= [f''(x)+5f'(x)+6f(x)] 
-                + [g''(x)+5g'(x)+6g(x)] = 0+0=0
-                \intertext{\centering και}
-                (\lambda f)''(x) + 5(\lambda f)'(x)+6(\lambda f)(x)&= \lambda
+            \begin{gather*}
+                (f+g)''(x)+5(f+g)'(x)+6(f+g)(x) = [f''(x)+5f'(x)+6f(x)] 
+                + [g''(x)+5g'(x)+6g(x)] = 0+0=0 \\
+                (\lambda f)''(x) + 5(\lambda f)'(x)+6(\lambda f)(x)= \lambda
                 [f''(x)+5f'(x)+6f(x)] = \lambda \cdot 0=0
-            \end{align*}
+            \end{gather*}
             Συνεπώς $ f+g \in V $ και $ \lambda f \in V $. 
+
+        \item \label{ex:mat} \textcolor{Col2}{Το σύνολο $ M_{m \times n}(\mathbb{K}) $ 
+            των $ m \times n $ πινάκων με στοιχεία από το σώμα $ \mathbb{K} $}
+
+            Το σύνολο $ M_{m \times n}(\mathbb{K}) $ των $ m \times n $ πινάκων 
+            με στοιχεία από το σώμα $ \mathbb{K} $ είναι διανυσματικός χώρος 
+            με πράξεις τη γνωστή πρόσθεση πινάκων και τον πολλαπλασιασμό 
+            αριθμού επί πίνακα.
+
+            Το μηδέν του χώρου είναι ο μηδενικός πίνακας, $ \mathbf{0} $ όπου 
+            όλα του τα στοιχεία είναι μηδέν και αντίθετο του πίνακα $A$ είναι 
+            ο πίνακας $ -A $.
 
         \item \textcolor{Col2}{Ο χώρος των λύσεων ενός γραμμικού, ομογενούς 
             συστήματος}
 
-            Έστω το σύστημα των ομογενών εξισώσεων
+            Έστω το ομογενές σύστημα $ A\cdot X = \mathbf{0} $, όπου 
+            $ A \in M_{m \times n}( \mathbb{R}) $ πίνακας
 
-            \begin{equation}
+            \begin{equation*}
                 % no need to use "align*" env.
                 \setlength\arraycolsep{1.5pt} % default value: 5pt
                 \left.
@@ -168,13 +181,46 @@
                         a_{m1}x_{1} & + & a_{m2}x_{2} & + & \cdots & + & a_{mn}x_{n} & =
                                     & 0 \\
                     \end{array}
-                \right\}
-            \end{equation}
-            Λύση του είναι ένα στοιχείο $ \mathbf{u} = (x_{1}, x_{2}, \ldots x_{n}) 
-            \in \mathbb{R}^{n} $.  Τότε, ως προς τις πράξεις τους χώρουν 
-            $ \mathbb{R}^{n} $, του παραδείγματος~\ref{ex:Rn}, το σύνολο των 
-            λύσεων είναι ένας διανυσματικός χώρος (που περιέχεται στο χώρο 
-            $ \mathbb{R}^{n} $).
+                \right\} \Leftrightarrow 
+                \underbrace{\begin{pmatrix}
+                        a_{11} & a_{12} & \cdots & a_{1n} \\
+                        a_{21} & a_{22} & \cdots & a_{2n} \\
+                        \vdots & \vdots & \ddots & \vdots \\
+                        a_{m1} & a_{m2} & \cdots & a_{mn} 
+                \end{pmatrix}}_{A_{m \times n}}
+                \cdot 
+                \underbrace{\begin{pmatrix*}
+                        x_{1} \\
+                        x_{2} \\
+                        \vdots \\
+                        x_{n}
+                \end{pmatrix*}}_{X} = 
+                \begin{pmatrix*}[r]
+                    0 \\
+                    0 \\
+                    \vdots \\
+                    0
+                \end{pmatrix*}
+            \end{equation*} 
+            Λύση του είναι ένα στοιχείο $ \mathbf{u} = 
+            \begin{pmatrix*}[r]
+                x_{1} & x_{2} & \cdots & x_{n} 
+            \end{pmatrix*}^{T} \in M_{n \times 1}(\mathbb{R}) $.  Τότε, ως 
+            προς τις πράξεις τους χώρου 
+            $ M_{n \times 1}(\mathbb{R}) $, του παραδείγματος~\ref{ex:mat}, 
+            το σύνολο των λύσεων είναι ένας διανυσματικός χώρος 
+            (που περιέχεται στο χώρο $ M_{n \times 1}(\mathbb{R}) $). Πράγματι, 
+            αν $ X =\begin{pmatrix*}[r]
+                x_{1} & x_{2} & \cdots & x_{n} 
+                \end{pmatrix*}^{T} $ και $ Y = \begin{pmatrix*}[r]
+                y_{1} & y_{2} & \cdots & y_{n} 
+            \end{pmatrix*}^{T} $ είναι λύσεις του συστήματος, τότε
+            \begin{gather*}
+                A \cdot (X+Y) = A \cdot X + A \cdot Y = \mathbf{0}+ \mathbf{0} = 
+                \mathbf{0} \\
+                A \cdot (\lambda X) = \lambda (A \cdot X) = \lambda \mathbf{0} = 
+                \mathbf{0}
+            \end{gather*} 
     \end{enumerate}
 \end{examples}
 
