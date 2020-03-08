@@ -226,6 +226,14 @@
     \end{enumerate}
 \end{examples}
 
+\begin{rem}
+\item {}
+    Αν $ \mathbf{u}, \mathbf{v} \in V $ τότε θα γράφουμε ότι 
+    $ \mathbf{u} + (- \mathbf{v}) = \mathbf{u} - \mathbf{v} $, 
+    όπου $ - \mathbf{v} $ είναι το αντίθετο του $ \mathbf{v} $.
+\end{rem}
+
+
 \begin{prop}
 \item {}
     \begin{enumerate}[i)]
@@ -234,12 +242,13 @@
             \item {}
             Έστω ότι υπάρχουν δύο ουδέτερα $ \mathbf{0} $ και $ \mathbf{0}' $. 
              Τότε από το αξίωμα 3 έχουμε:
-            \begin{align*}
-                \mathbf{0}+ \mathbf{0}' = \mathbf{0} \quad \text{αφού $ \mathbf{0}'$ 
-                είναι ουδέτερο} \tikzmark{a} \\
-                    \mathbf{0}'+ \mathbf{0} = \mathbf{0}' \quad 
-                    \text{αφού $ \mathbf{0} $ είναι ουδέτερο}\tikzmark{b} 
-             \end{align*} 
+                 \begin{align*}
+                     \mathbf{0}+ \mathbf{0}' = \mathbf{0} \quad 
+                     \text{αφού $ \mathbf{0}'$ 
+                     είναι ουδέτερο} \hfill\tikzmark{a} \\
+                     \mathbf{0}'+ \mathbf{0} = \mathbf{0}' \quad 
+                     \text{αφού $ \mathbf{0} $ είναι ουδέτερο}\hfill\tikzmark{b} 
+                 \end{align*} 
              \mybrace{a}{b}[$ \mathbf{0} = \mathbf{0}' $]
         \end{proof}
         \item Το αντίθετο στοιχείο ενός διανυσματικού χώρου είναι μοναδικό.
@@ -282,6 +291,7 @@
             \quad \forall \mathbf{u} \in V $ και $ \lambda \in \mathbb{K} $
     \end{enumerate}
 \end{thm}
+
 \begin{proof}
 \item {}
     \begin{enumerate}[i)]
@@ -289,9 +299,111 @@
             (\mathbf{v} + (- \mathbf{v})) = (\mathbf{u} + \mathbf{v}) + (- \mathbf{v}) =
             (\mathbf{w} + \mathbf{v}) + (- \mathbf{v}) = \mathbf{w} + 
             (\mathbf{v} + (- \mathbf{v})) = \mathbf{w} + \mathbf{0} = \mathbf{w}$
+        \item Έχουμε $ 0\cdot \mathbf{u} = (0 + 0) 
+            \cdot \mathbf{u}= 0\cdot \mathbf{u}+ 0\cdot \mathbf{u} $, άρα
+            \begin{align*}
+                0\cdot \mathbf{u} = 0\cdot \mathbf{u} + 0\cdot
+                \mathbf{u}\tikzmark{a} \\
+                0\cdot \mathbf{u} = \mathbf{0} + 0\cdot \mathbf{u} 
+                \tikzmark{b}
+            \end{align*} 
+            \mybrace{a}{b}[$ 0\cdot \mathbf{u} + 0\cdot \mathbf{u} = 
+            \mathbf{0}+ 0\cdot \mathbf{u} \overset{\text{i)}}{\Rightarrow}  
+            0\cdot \mathbf{u} = \mathbf{0}$]
+        \item Έχουμε $ \lambda \cdot \mathbf{0} = \lambda \cdot 
+            (\mathbf{0} + \mathbf{0}) = \lambda \cdot \mathbf{0} + \lambda 
+            \cdot \mathbf{0}$, άρα 
+            \begin{align*}
+                \lambda \cdot \mathbf{0} = \lambda \cdot \mathbf{0} + \lambda \cdot 
+                \mathbf{0} \tikzmark{a} \\
+                \lambda \cdot \mathbf{0} = \mathbf{0} + \lambda \cdot \mathbf{0}
+                \tikzmark{b}
+            \end{align*}
+            \mybrace{a}{b}[$ \lambda \cdot \mathbf{0}+ \lambda \cdot \mathbf{0} = 
+            \mathbf{0} + \lambda \cdot \mathbf{0} \Rightarrow \lambda 
+            \cdot \mathbf{0} = \mathbf{0}$]
+        \item Έχουμε $ \mathbf{u} + (-1)\cdot \mathbf{u} = 1\cdot 
+            \mathbf{u} + (-1)\cdot \mathbf{u} = [1+(-1)] \cdot \mathbf{u}= 0 
+            \cdot \mathbf{u} = \mathbf{0} $. 
+
+            Όμως το αντίθετο του $ \mathbf{u} $ είναι μοναδικό. Επομένως 
+            $ (-1)\cdot \mathbf{u} = - \mathbf{u}$.
+
+        \item Έχουμε $ \lambda\cdot (\mathbf{u} - \mathbf{v}) + \lambda \cdot 
+            \mathbf{v} = \lambda \cdot [(\mathbf{u} - \mathbf{v}) + \mathbf{v}] = 
+            \lambda \cdot [\mathbf{u} + (- \mathbf{v}+ \mathbf{v})] = \lambda \cdot 
+            ( \mathbf{u} + \mathbf{0}) = \lambda \cdot \mathbf{u} $, αρα 
+            \begin{gather*}
+                \lambda \cdot (\mathbf{u} - \mathbf{v}) + \lambda \cdot \mathbf{v} = 
+                \lambda \cdot \mathbf{u} \Leftrightarrow \\ 
+                [\lambda \cdot (\mathbf{u} - \mathbf{v}) + \lambda \cdot \mathbf{v}] -
+                (\lambda \cdot \mathbf{v})= 
+                \lambda \cdot \mathbf{u} - \lambda \cdot \mathbf{v} \Leftrightarrow \\
+                \lambda \cdot (\mathbf{u} - \mathbf{v}) + 
+                [\lambda \cdot \mathbf{v} - \lambda \cdot \mathbf{v}] =
+                \lambda \cdot \mathbf{u} - \lambda \cdot \mathbf{v} \Leftrightarrow \\
+                \lambda \cdot (\mathbf{u}- \mathbf{v}) + \mathbf{0} = \lambda \cdot 
+                \mathbf{u} - \lambda \cdot \mathbf{v} \Leftrightarrow \\
+                \lambda \cdot (\mathbf{u} - \mathbf{v}) = \lambda \cdot \mathbf{u} - 
+                \lambda \cdot \mathbf{v}
+            \end{gather*}
+
+        \item Έχουμε $ (\lambda - \mu ) \cdot \mathbf{u} + \mu \cdot \mathbf{u} = 
+            (\lambda - \mu + \mu )\cdot \mathbf{u} = \lambda \cdot \mathbf{u}$, άρα 
+            \begin{gather*}
+                [(\lambda - \mu )\cdot \mathbf{u} + \mu \cdot \mathbf{u}] - 
+                \mu \cdot \mathbf{u} = \lambda \cdot \mathbf{u}- \mu \cdot 
+                \mathbf{u} \Leftrightarrow \\
+                (\lambda - \mu ) \cdot \mathbf{u} + (\mu \cdot \mathbf{u} - 
+                \mu \cdot \mathbf{u}) = \lambda \cdot \mathbf{u}- \mu \cdot 
+                \mathbf{u} \Leftrightarrow \\
+                (\lambda - \mu )\cdot \mathbf{u} + \mathbf{0} = 
+                \lambda \cdot \mathbf{u}- \mu \cdot \mathbf{u} \Leftrightarrow \\
+                (\lambda - \mu )\cdot \mathbf{u} = 
+                \lambda \cdot \mathbf{u}- \mu \cdot \mathbf{u} \Leftrightarrow \\
+            \end{gather*}
+
+        \item $ -(- \mathbf{u}) = -1\cdot [(-1)\cdot \mathbf{u}] = [(-1)(-1)] \cdot 
+            \mathbf{u}= 1 \cdot \mathbf{u} = \mathbf{u} $
     \end{enumerate}
 \end{proof}
 
+\begin{prop}
+\item {}
+    Αν $ \lambda \in \mathbb{K}, \; \mathbf{u} \in V $ και $ \lambda \cdot \mathbf{u} =
+    \mathbf{0} $ τότε $ \lambda = 0 $ ή $ \mathbf{u} = \mathbf{0} $. 
+\end{prop}
+
+\begin{proof}
+\item {}
+    Έστω $ \lambda \neq 0 $. Θα δείξουμε ότι αναγκαστικά $ \mathbf{u} = \mathbf{0} $. 
+
+    Πράγματι, αφού $ \lambda \neq 0 \Rightarrow \exists \lambda ^{-1} \in \mathbb{K} $, 
+    όπου ισχύει ότι $ \lambda \cdot \lambda ^{-1} = 1 $. Οπότε 
+    \begin{gather*}
+        \lambda \cdot \mathbf{u} = \mathbf{0} \Leftrightarrow 
+        \lambda ^{-1}\cdot (\lambda \cdot \mathbf{u}) = \lambda ^{-1} \cdot \mathbf{0}
+        \Leftrightarrow 
+        (\lambda \cdot \lambda ^{-1}) \cdot \mathbf{u} = \mathbf{0} \Leftrightarrow 
+        1 \cdot \mathbf{u} = \mathbf{0} \Leftrightarrow 
+        \mathbf{u} = \mathbf{0} 
+     \end{gather*} 
+\end{proof}
+
+\begin{exercises}
+\item {}
+    \begin{enumerate}
+        \item Να δείξετε ότι $ - ( \mathbf{u}+ \mathbf{v} ) = - \mathbf{u} - 
+            \mathbf{v} $.
+        \item Αν $ \lambda \in \mathbb{K}, \; \lambda \neq 0 $ και 
+            $ \lambda \cdot \mathbf{u}= \lambda \cdot \mathbf{v}$, τότε να 
+            δείξετε ότι $ \mathbf{u} = \mathbf{v} $.
+        \item Αν $ \lambda_{1}, \; \lambda _{2} \in \mathbb{K} $ και 
+            $ \mathbf{u} \in V, \; \mathbf{u} \neq \mathbf{0} $ με 
+            $ \lambda _{1}\cdot \mathbf{u} = \lambda _{2} \cdot \mathbf{u}$, 
+            τότε να δείξετε ότι $ \lambda _{1} = \lambda _{2} $.
+    \end{enumerate}
+\end{exercises}
 
 
 \end{document}
