@@ -10,6 +10,7 @@
 
 \chapter{Διανυσματικοί Χώροι}
 
+\section{Ορισμός}
 
 \begin{dfn}
 \item {}
@@ -43,7 +44,7 @@
         \item $ ( \lambda + \mu ) \vec{u} = \lambda \vec{u} + \mu \vec{u}, \quad 
             \forall \mathbf{u} \in V \; \text{και} \; \forall \lambda, \mu \in 
             \mathbb{K} $ 
-        \item $ ( \lambda \mu ) \vec{u} = \lambda ( \mu) \vec{u}, \quad  
+        \item $ ( \lambda \mu ) \vec{u} = \lambda ( \mu \vec{u}), \quad  
             \forall \mathbf{u} \in V \; \text{και} \; \forall \lambda, \mu \in 
             \mathbb{K} $ 
         \item $ \lambda ( \vec{u} + \vec{v} ) = \lambda \vec{u} + \lambda \vec{v}, 
@@ -60,6 +61,7 @@
 \textcolor{Col2}{διανύσματα}.
 \end{dfn}
 
+\section{Παραδείγματα}
 
 \begin{examples}
 \item {}
@@ -223,5 +225,73 @@
             \end{gather*} 
     \end{enumerate}
 \end{examples}
+
+\begin{prop}
+\item {}
+    \begin{enumerate}[i)]
+        \item Το ουδέτερο στοιχείο ενός διανυσματικού χώρου είναι μοναδικό.
+            \begin{proof}
+            \item {}
+            Έστω ότι υπάρχουν δύο ουδέτερα $ \mathbf{0} $ και $ \mathbf{0}' $. 
+             Τότε από το αξίωμα 3 έχουμε:
+            \begin{align*}
+                \mathbf{0}+ \mathbf{0}' = \mathbf{0} \quad \text{αφού $ \mathbf{0}'$ 
+                είναι ουδέτερο} \tikzmark{a} \\
+                    \mathbf{0}'+ \mathbf{0} = \mathbf{0}' \quad 
+                    \text{αφού $ \mathbf{0} $ είναι ουδέτερο}\tikzmark{b} 
+             \end{align*} 
+             \mybrace{a}{b}[$ \mathbf{0} = \mathbf{0}' $]
+        \end{proof}
+        \item Το αντίθετο στοιχείο ενός διανυσματικού χώρου είναι μοναδικό.
+            \begin{proof}
+            \item {}
+                Έστω ότι υπάρχουν δύο αντίθετα $ \mathbf{u}' $ και $ \mathbf{u}''$. 
+                Τότε από το αξίωμα 4 έχουμε:
+                \begin{align*}
+                    \mathbf{u} + \mathbf{u}' = \mathbf{0} \quad 
+                    \text{αφού $ \mathbf{u}'$ είναι αντίθετο} \\
+                    \mathbf{u} +  \mathbf{u}''= \mathbf{0} \quad 
+                    \text{αφού $ \mathbf{u}'' $ είναι αντίθετο}
+                \end{align*} 
+                Άρα
+                \[
+                    \mathbf{u}' = \mathbf{u}' + \mathbf{0}= \mathbf{u}' + (\mathbf{u} 
+                    + \mathbf{u}'') = (\mathbf{u}' + \mathbf{u}) + \mathbf{u}'' = 
+                    \mathbf{0} + \mathbf{u}'' = \mathbf{u}'' 
+                \] 
+            \end{proof}
+    \end{enumerate}
+\end{prop}
+
+\begin{thm}
+\item {}
+    \begin{enumerate}[i)]
+        \item $ \mathbf{u} + \mathbf{v} = \mathbf{w} + \mathbf{v} 
+            \Rightarrow \mathbf{u} = \mathbf{w} $ \quad (νόμος διαγραφής)
+        \item $ 0 \cdot \mathbf{u} = \mathbf{0}, \quad \forall \mathbf{u} \in V $
+        \item $ \lambda \cdot \mathbf{0} = \mathbf{0}, \quad \forall \lambda \in 
+            \mathbb{K} $
+        \item $ (-1)\cdot \mathbf{u} = - \mathbf{u}, \quad \forall \mathbf{u} \in V $ 
+        \item $ \lambda \cdot (\mathbf{u} - \mathbf{v}) = 
+            \lambda \mathbf{u} - \lambda \mathbf{v}, \quad \forall \mathbf{u}, 
+            \mathbf{v} \in V $ και $ \lambda \in \mathbb{K} $
+        \item $ (\lambda - \mu ) \cdot \mathbf{u} = \lambda \mathbf{u} - 
+            \mu \mathbf{u}, \quad \forall \mathbf{u} \in V $ και $ \lambda, 
+            \mu \in \mathbb{K} $
+        \item $ -(- \lambda ) \cdot \mathbf{u} = \lambda \mathbf{u}, 
+            \quad \forall \mathbf{u} \in V $ και $ \lambda \in \mathbb{K} $
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+\item {}
+    \begin{enumerate}[i)]
+        \item $ \mathbf{u} = \mathbf{u} + \mathbf{0} = \mathbf{u} + 
+            (\mathbf{v} + (- \mathbf{v})) = (\mathbf{u} + \mathbf{v}) + (- \mathbf{v}) =
+            (\mathbf{w} + \mathbf{v}) + (- \mathbf{v}) = \mathbf{w} + 
+            (\mathbf{v} + (- \mathbf{v})) = \mathbf{w} + \mathbf{0} = \mathbf{w}$
+    \end{enumerate}
+\end{proof}
+
+
 
 \end{document}
