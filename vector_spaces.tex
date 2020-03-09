@@ -57,9 +57,10 @@
 \vspace{\baselineskip}
 
 ονομάζεται \textcolor{Col2}{διανυσματικός χώρος} επί του $\mathbb{K}$, 
-(ή απλά $ \mathbb{K} $ - χώρος). Τα στοιχεία του συνόλου $V$ καλούνται 
-\textcolor{Col2}{διανύσματα}.
+(ή απλά $ \mathbb{K} $ - χώρος) και συμβολίζεται με $ (V(\mathbb{K}), +, \cdot) $. Τα 
+στοιχεία του συνόλου $V$ καλούνται \textcolor{Col2}{διανύσματα}.
 \end{dfn}
+
 
 \section{Παραδείγματα}
 
@@ -240,17 +241,17 @@
         \item Το ουδέτερο στοιχείο ενός διανυσματικού χώρου είναι μοναδικό.
             \begin{proof}
             \item {}
-            Έστω ότι υπάρχουν δύο ουδέτερα $ \mathbf{0} $ και $ \mathbf{0}' $. 
-             Τότε από το αξίωμα 3 έχουμε:
-                 \begin{align*}
-                     \mathbf{0}+ \mathbf{0}' = \mathbf{0} \quad 
-                     \text{αφού $ \mathbf{0}'$ 
-                     είναι ουδέτερο} \hfill\tikzmark{a} \\
-                     \mathbf{0}'+ \mathbf{0} = \mathbf{0}' \quad 
-                     \text{αφού $ \mathbf{0} $ είναι ουδέτερο}\hfill\tikzmark{b} 
-                 \end{align*} 
-             \mybrace{a}{b}[$ \mathbf{0} = \mathbf{0}' $]
-        \end{proof}
+                Έστω ότι υπάρχουν δύο ουδέτερα $ \mathbf{0} $ και $ \mathbf{0}' $. 
+                Τότε από το αξίωμα 3 έχουμε:
+                \begin{align*}
+                    \mathbf{0}+ \mathbf{0}' = \mathbf{0} \quad 
+                    \text{αφού $ \mathbf{0}'$ 
+                    είναι ουδέτερο} \hfill\tikzmark{a} \\
+                    \mathbf{0}'+ \mathbf{0} = \mathbf{0}' \quad 
+                    \text{αφού $ \mathbf{0} $ είναι ουδέτερο}\hfill\tikzmark{b} 
+                \end{align*} 
+                \mybrace{a}{b}[$ \mathbf{0} = \mathbf{0}' $]
+            \end{proof}
         \item Το αντίθετο στοιχείο ενός διανυσματικού χώρου είναι μοναδικό.
             \begin{proof}
             \item {}
@@ -387,7 +388,7 @@
         (\lambda \cdot \lambda ^{-1}) \cdot \mathbf{u} = \mathbf{0} \Leftrightarrow 
         1 \cdot \mathbf{u} = \mathbf{0} \Leftrightarrow 
         \mathbf{u} = \mathbf{0} 
-     \end{gather*} 
+    \end{gather*} 
 \end{proof}
 
 \begin{exercises}
@@ -405,5 +406,69 @@
     \end{enumerate}
 \end{exercises}
 
+\section{Υπόχωροι}
+
+\begin{dfn}
+\item {}
+    \textcolor{Col2}{Υπόχωρος} ενός διανυσματικού χώρου $ (V(\mathbb{K}), +, \cdot) $, 
+    λέγεται ένα μη-κενό υποσύνολο $W$ του $V$, που είναι διανυσματικός χώρος επί του 
+    $ \mathbb{K} $, ως προς τις πράξεις του $V$. Αν $W$ υπόχωρος τους $V$, 
+    τότε αυτό συμβολίζεται ως $ W \leq V $.
+\end{dfn}
+
+\begin{prop}\label{prop:subsp}
+\item {}
+    Έστω $ (V(\mathbb{K}),+,\cdot) $ ένας διανυσματικός χώρος και $ W \subseteq V $ 
+    μη-κενό.  Τότε το $ W $ είναι υπόχωρος του $V$ ανν ικανοποιούνται οι 
+    παρακάτω συνθήκες:
+    \begin{enumerate}[i)]
+        \item $ \mathbf{u}+ \mathbf{v} \in W, \quad \forall \mathbf{u}, 
+            \mathbf{v} \in W $ \quad ( $W$ κλειστό ως προς $ + $)
+        \item $ \lambda \mathbf{u} \in W, \quad \forall \mathbf{u} \in W \; 
+            \text{και} \; \lambda \in \mathbb{K} $ \quad ( $W$ κλειστό ως προς 
+            $ \cdot $)
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+\item {}
+    \begin{description}
+        \item [($ \Rightarrow $)] Αν $W \leq V$ τότε $W$ είναι $ \mathbb{K} $ - χώρος
+            οπότε ικανοποιούνται αυτόματα οι συνθήκες $ \rm{i)} $ και $ \rm{ii)} $.
+        \item [($ \Leftarrow $)] Αντίστροφα, αν ισχύουν οι συνθήκες $ \rm{i)} $ και 
+            $ \rm{ii)} $, και από το γεγονός ότι $ W \subseteq V $, όπου $V$ είναι 
+            διανυσματικός χώρος, έπεται ότι προφανώς ικανοποιούνται τα αξιώματα του 
+            ορισμού, για το $W$, εκτός ίσως από το $ 3 $ και το $ 4 $, για τα
+            οποία έχουμε:
+            
+            \begin{description}
+                \item [Για το 3:] 
+                    $ W \neq \emptyset \Rightarrow \mathbf{u} \in W 
+                    \overset{\rm{ii)}}{\Rightarrow} 0\cdot \mathbf{u} = 
+                    \mathbf{0} \in W $. Αφού $ \mathbf{0} + \mathbf{u} = \mathbf{u}, 
+                    \; \forall \mathbf{u} \in V \Rightarrow \mathbf{0} + \mathbf{u} 
+                    = \mathbf{u}, \; \forall \mathbf{u} \in W $. Άρα $ 
+                    \mathbf{0}$, είναι το μηδενική στοιχείο του $W$.
+
+
+                \item [Για το 4:]
+                    Έστω $ \mathbf{u} \in W  $. Τότε το $ - \mathbf{u} \in V $, 
+                    γιατί ο $V$ ίναι διανυσματικό χώρος θα ανήκει και στον $ W $, 
+                    γιατί:
+                    \[
+                        - \mathbf{u} = (-1)\cdot \mathbf{u} \in W \quad 
+                        \text{λόγω του ii)} \; \text{γιατί $-1 \in \mathbb{K}$ 
+                        \; και \; $ \mathbf{u} \in W$ } 
+                    \]
+            \end{description}
+            \end{description}
+\end{proof}
+
+\begin{rem}
+\item {}
+    Από το $ \rm{ii)} $ της πρότασης~\ref{prop:subsp} προκύπτει ότι αν $ W \leq V $, 
+    τότε $ \mathbf{0}_{V} \in W $. Οπότε το να περιέχει ο $ W $ το μηδέν του χώρου 
+    $V$ είναι αναγκαία συνθήκη για να είναι υπόχωρος.
+\end{rem}
 
 \end{document}
