@@ -85,8 +85,8 @@
             $ \mathbb{K} $ και το αντίθετο του $ \mathbf{u} $ είναι το $ - \mathbf{u} =
             (- x_{1}, \ldots, - x_{n}) $.
 
-        \item\label{ex:funs} \textcolor{Col2}{Ο χώρος των συναρτήσεων $\mathbb{R} ^{A}$ 
-            (ή $\mathbf{F}(A, \mathbb{R}$)}.
+        \item\label{ex:funs} \textcolor{Col2}{Ο χώρος των πραγματικών συναρτήσεων 
+            $\mathbb{R} ^{A}$ ή $\mathbf{F}(A, \mathbb{R})$}
 
             Αν $ A \subseteq \mathbb{R} $, τότε το σύνολο $ \mathbb{R}^{A} = 
             \{ f \colon A \to \mathbb{R} \; : \; f \; \text{συνάρτηση} \} $, μαζί με 
@@ -97,11 +97,12 @@
             \] 
             είναι ένας διανυσματικός χώρος επί του $ \mathbb{R} $.
 
-            Το μηδέν του χώρου είναι η μηδενική συνάρτηση $ \vec{0} $ και το 
-            αντίθετο της $f$ είναι η συνάρτηση $ -f $ με τιμή $ (-f)(x) = 
-            - f(x), \; \forall x \in A $.
+            Το μηδέν του χώρου είναι η μηδενική συνάρτηση $ \mathbf{0} $, με τιμή 
+            $ \vec{0}(x)=0, \; \forall x \in A $ και το αντίθετο της $f$ είναι 
+            η συνάρτηση $ -f $ με τιμή $ (-f)(x) = - f(x), \; \forall x \in A $.
 
-        \item \textcolor{Col2}{Ο χώρος των συνεχών συναρτήσεων $ \mathbf{C}[a,b] $}
+        \item \textcolor{Col2}{Ο χώρος των συνεχών πραγματικών συναρτήσεων 
+            $ \mathbf{C}[a,b] $} 
 
             Έστω $ V = \mathbf{C}{[a,b]} = \{ f \colon [a,b] \to \mathbb{R} \; 
             : \; f \; \text{συνεχής συνάρτηση} \}  $. 
@@ -114,35 +115,28 @@
             $ \lambda f, \; \lambda \in \mathbb{R} $, μιας συνεχής συνάρτησης 
             $f$ είναι επίσης συνεχής συνάρτηση. 
 
-        \item \textcolor{Col2}{Ο χώρος των πολυωνύμων $ P_{n}[x] $}.
+        \item \label{ex:c1} \textcolor{Col2}{Ο χώρος των διαφορίσιμων με 
+            συνεχή παράγωγο πραγματικών συναρτήσεων $ \mathbf{C^{1}}[a,b] $} 
 
-            Έστω $ V = P_{n}[x] $ το σύνολο των πολυωνύμων βαθμού 
-            $ \leq n, \; n \in \mathbb{N}  $ με συντελεστές πραγματικούς. Τότε αν 
-            \begin{gather*}
-                \mathbf{a} \in P_{n}[x] \Rightarrow \mathbf{a}  
-                = a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots + a_{0} \quad \text{και} 
-                \quad \mathbf{b} \in P_{n}[x] \Rightarrow \mathbf{b}  
-                = b_{n}x^{n}+b_{n-1}x^{n-1}+\cdots + b_{0} 
-            \end{gather*} 
-            έχουμε, ότι το σύνολο $ V $ μαζί με τις πράξεις 
-            \begin{gather*}
-                \mathbf{a}+ \mathbf{b}= (a_{n}+ b_{n})x^{n} + 
-                (a_{n-1}+b_{n-1})x^{n-1}+ \cdots + (a_{0}+ b_{0}) \\
-                \lambda \mathbf{a} = (\lambda a_{n})x^{n}+
-                ( \lambda a_{n-1})x^{n-1}+ \cdots + ( \lambda a_{0})
-            \end{gather*} 
-            είναι ένας διανυσματικός χώρος επί του $ \mathbb{R} $.
+            Έστω $ V = \mathbf{C^{1}}{[a,b]} = \{ f \colon [a,b] \to \mathbb{R} \; 
+            : \; f \; \text{διαφορίσιμη με συνεχή παράγωγο} \}  $. 
+
+            Τότε ως προς τις πράξεις του 
+            παραδείγματος~\ref{ex:funs}, ο $V$ είναι ένας διανυσματικός χώϱος 
+            επί του $ \mathbb{R} $. 
 
         \item \textcolor{Col2}{Ο χώρος των λύσεων μιας γραμμικής, ομογενούς 
             διαφορικής εξίσωσης}
 
-            Έστω μια γραμμική, ομογενής διαφορική εξίσωση
-            \begin{equation}\label{eq:diff}
-                f''(x)+5f'(x)+6f(x)=0 
-            \end{equation} 
-            Τότε, ως προς τις πράξεις του παραδείγματος~\ref{ex:funs} το 
+            Έστω μια γραμμική, ομογενής διαφορική εξίσωση $ f''(x)+5f'(x)+6f(x)=0 $ 
+            και έστω 
+            \[
+                V = \{ f \in \mathbf{C^{1}}(\mathbb{R}) \; : \; 
+                \text{$f$ λύση της διαφ. εξίσωσης} \} 
+            \] 
+            Τότε, ως προς τις πράξεις του παραδείγματος~\ref{ex:c1} το 
             σύνολο $ V $ των λύσεων είναι ένας διανυσματικός χώρος επί του
-            $ \mathbb{R} $. Πράγματι, αν $ f,g $ λύσεις της~\eqref{eq:diff},
+            $ \mathbb{R} $. Πράγματι, αν $ f,g $ λύσεις της διαφ. εξίσωσης
             δηλαδή αν $ f,g \in V $, έχουμε:
             \begin{gather*}
                 (f+g)''(x)+5(f+g)'(x)+6(f+g)(x) = [f''(x)+5f'(x)+6f(x)] 
@@ -151,6 +145,67 @@
                 [f''(x)+5f'(x)+6f(x)] = \lambda \cdot 0=0
             \end{gather*}
             Συνεπώς $ f+g \in V $ και $ \lambda f \in V $. 
+
+        \item \textcolor{Col2}{Ο χώρος $ P_{n}[x] $ των πολυωνύμων βαθμού 
+            $ \leq n $}.
+
+            Έστω $ V = \mathbf{P}_{n}(\mathbb{K}) $ το σύνολο των πολυωνύμων βαθμού 
+            $ \leq n, \; n \in \mathbb{N}  $ με συντελεστές από ένα σώμα 
+            $ \mathbb{K} $. Δηλαδή 
+            \[
+                \mathbf{P}_{n}(\mathbb{K}) = \{ a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots +
+                a_{0} \; : \; a_{i} \in \mathbb{K} \}  
+            \]
+            Τότε αν 
+            \begin{gather*}
+                p \in \mathbf{P}_{n}(\mathbb{K}) \Rightarrow p(x)
+                = a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots + a_{0} \quad \text{και} 
+                \quad q \in \mathbf{P}_{n}(\mathbb{K}) \Rightarrow 
+                q(x) = b_{n}x^{n}+b_{n-1}x^{n-1}+\cdots + b_{0} 
+            \end{gather*} 
+            έχουμε, ότι το σύνολο $ V $ μαζί με τις πράξεις 
+            \begin{gather*}
+                (p+q)(x) = (a_{n}+ b_{n})x^{n} + 
+                (a_{n-1}+b_{n-1})x^{n-1}+ \cdots + (a_{0}+ b_{0}) \\
+                (\lambda p)(x) = (\lambda a_{n})x^{n}+
+                ( \lambda a_{n-1})x^{n-1}+ \cdots + ( \lambda a_{0})
+            \end{gather*} 
+            είναι ένας διανυσματικός χώρος επί του $ \mathbb{K} $.
+
+            Το μηδέν του χώρου είναι $ \mathbf{0} $, με τιμή 
+            $ \vec{0}(x)=0+0x+\cdots +0x^{n} $ και το αντίθετο του $p$ είναι 
+            το $ - p $ με τιμή $ (- p)(x) = 
+            (-a_{n})x^{n}+(-a_{n-1})x^{n-1}+\cdots + (-a_{0}), \; \forall x \in A $.  
+
+        \item \textcolor{Col2}{Ο χώρος $ \mathbf{P}(\mathbb{K}) $ των πολυωνύμων}.
+
+            Έστω $ V = \mathbf{P}(\mathbb{K}) $ το σύνολο των πολυωνύμων  
+            με συντελεστές από ένα σώμα $ \mathbb{K} $. Δηλαδή 
+            \[
+                \mathbf{P}(\mathbb{K}) = \{ a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots + a_{0} \; 
+                : \; \text{για κάποιο} \; n \in \mathbb{N}, \; a_{i} \in \mathbb{K}\}  
+            \] 
+            Τότε αν 
+            \begin{gather*}
+                p \in \mathbf{P}(\mathbb{K}) \Rightarrow p(x)
+                = a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots + a_{0} \quad \text{και} 
+                \quad q \in \mathbf{P}(\mathbb{K}) \Rightarrow 
+                q(x) = b_{m}x^{m}+b_{m-1}x^{m-1}+\cdots + b_{0} 
+            \end{gather*} 
+            και άν θέτωντας $ k = \max \{ n,m \} $ ξαναγράψουμε 
+            \begin{gather*}
+                p(x) = a_{k}x^{k}+a_{k-1}x^{k-1}+\cdots + a_{0} \quad \text{και} \quad
+                q(x) = b_{k}x^{k}+b_{k-1}x^{k-1}+\cdots + b_{0} 
+            \end{gather*}
+            όπου οι επιπλέον όροι που προστέθηκαν έχουν συντελεστή 0, τότε έχουμε, 
+            ότι το σύνολο $ V $ μαζί με τις πράξεις 
+            \begin{gather*}
+                (p+q)(x) = (a_{k}+ b_{k})x^{k} + 
+                (a_{k-1}+b_{k-1})x^{k-1}+ \cdots + (a_{0}+ b_{0}) \\
+                (\lambda p)(x) = (\lambda a_{k})x^{k}+
+                ( \lambda a_{k-1})x^{k-1}+ \cdots + ( \lambda a_{0})
+            \end{gather*} 
+            είναι ένας διανυσματικός χώρος επί του $ \mathbb{K} $.
 
         \item \label{ex:mat} \textcolor{Col2}{Το σύνολο $ M_{m \times n}(\mathbb{K}) $ 
             των $ m \times n $ πινάκων με στοιχεία από το σώμα $ \mathbb{K} $}
@@ -410,10 +465,9 @@
 
 \begin{dfn}
 \item {}
-    \textcolor{Col2}{Υπόχωρος} ενός διανυσματικού χώρου $ (V(\mathbb{K}), +, \cdot) $, 
-    λέγεται ένα μη-κενό υποσύνολο $W$ του $V$, που είναι διανυσματικός χώρος επί του 
-    $ \mathbb{K} $, ως προς τις πράξεις του $V$. Αν $W$ υπόχωρος τους $V$, 
-    τότε αυτό συμβολίζεται ως $ W \leq V $.
+    Έστω $V(\mathbb{K}) $ διανυσματικός χώρος. Ένα υποσύνολο $W$ του $V$ λεγεται 
+    \textcolor{Col2}{υπόχωρος} του $ V $, αν είναι διανυσματικός χώρος επί του 
+    $ \mathbb{K} $, ως προς τις πραξεις του $V$ και το συμβολίζουμε ως $ W \leq V $.
 \end{dfn}
 
 \begin{prop}\label{prop:subsp}
