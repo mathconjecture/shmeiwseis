@@ -15,7 +15,7 @@
 
 \begin{dfn}
 \item {}
-    Έστω $V$, μη κενό σύνολο και $\mathbb{K}$ ένα σώμα αντιμεταθετικό 
+    Έστω $V \neq \emptyset $, σύνολο και $\mathbb{K}$ ένα σώμα αντιμεταθετικό 
     (συνήθως θεωρούμε ότι $ \mathbb{K} = \mathbb{R} $ ή $\mathbb{C}$ ). 
     Το σύνολο $V$ μαζί με τις πράξεις:
     \begin{alignat*}{2}
@@ -58,10 +58,24 @@
 \vspace{\baselineskip}
 
 ονομάζεται \textcolor{Col2}{διανυσματικός χώρος} επί του $\mathbb{K}$, 
-(ή απλά $ \mathbb{K} $ - χώρος) και συμβολίζεται με $ (V(\mathbb{K}), +, \cdot) $. Τα 
+(ή απλά $ \mathbb{K} $ - χώρος).  Τα 
 στοιχεία του συνόλου $V$ καλούνται \textcolor{Col2}{διανύσματα}.
 \end{dfn}
 
+\begin{rem}
+\item {}
+    \begin{enumerate}
+        \item Μερικές φορές γράφουμε $V = (V(\mathbb{K}), +, \cdot) $.
+        \item Είναι σημαντικό να προσέξουμε ότι στον ορισμό του διανυσματικού χώρου 
+            ορίσαμε τις πράξεις έτσι ώστε να ικανοποιούνται οι συνθήκες κλειστότητας:
+            \begin{enumerate}[i)]
+                \item $ \forall \mathbf{u}, \mathbf{v} \in V \quad \mathbf{u} + \mathbf{v} \in V \quad
+                    \text{(κλειστότητα πρόσθεσης)} $ 
+                \item $ \forall \mathbf{u} \in V \; \text{και} \; \lambda \in \mathbb{K} \quad \lambda
+                    \mathbf{u} \in V \quad \text{(κλειστότητα βαθμωτού πολ/σμού)} $
+            \end{enumerate}
+    \end{enumerate}
+\end{rem}
 
 
 \begin{examples}
@@ -287,7 +301,7 @@
     \end{enumerate}
 \end{examples}
 
-\begin{rem}
+\begin{rem}\label{rem:lines}
     Οι εξισώσεις $ ax + by = 0 $ και $ ax + by + cz = 0 $ είναι ειδικές 
     περιπτώσεις ομογενούς συστήματος. Οπότε σύμφωνα με το παράδειγμα~\ref{ex:omsy} 
     οι λύσεις τους, δηλαδή τα σύνολα των σημείων όπου επαληθεύουν αυτές τις εξισώσεις, 
@@ -486,13 +500,15 @@
     $ \mathbb{K} $, ως προς τις πραξεις του $V$ και το συμβολίζουμε ως $ W \leq V $.
 \end{dfn}
 
+
+
 \begin{prop}\label{prop:subsp}
 \item {}
     Έστω $ (V(\mathbb{K}),+,\cdot) $ ένας διανυσματικός χώρος και $ W \subseteq V $.  
     Τότε το $ W $ είναι υπόχωρος του $V$ αν και μόνον αν ικανοποιούνται οι 
     παρακάτω συνθήκες:
     \begin{enumerate}[i)]
-        \item $ W \neq \emptyset $
+        \item $ \mathbf{0}_{V} \in W $
         \item $ \mathbf{u}+ \mathbf{v} \in W, \quad \forall \mathbf{u}, 
             \mathbf{v} \in W $ \quad ( $W$ κλειστό ως προς $ + $)
         \item $ \lambda \mathbf{u} \in W, \quad \forall \mathbf{u} \in W \; 
@@ -505,44 +521,37 @@
 \item {}
     \begin{description}
         \item [($ \Rightarrow $)] Αν $W \leq V$ τότε $W$ είναι $ \mathbb{K} $ - χώρος
-            οπότε ικανοποιούνται αυτόματα οι συνθήκες $ \mathrm{i)} $ και 
-            $ \mathrm{ii)} $ και επίσης, ο $ W $ έχει μηδενικό στοιχείο, 
-            άρα είναι μη-κενός.
-        \item [($ \Leftarrow $)] Αντίστροφα, αν ισχύουν οι συνθήκες $ \mathrm{i)} $ και 
-            $ \mathrm{ii)} $, και από το γεγονός ότι $ W \subseteq V $, όπου $V$ είναι 
-            διανυσματικός χώρος, έπεται ότι προφανώς ικανοποιούνται τα αξιώματα του 
-            ορισμού, για το $W$, εκτός ίσως από το $ 3 $ και το $ 4 $, για τα
-            οποία έχουμε:
+            οπότε ικανοποιούνται αυτόματα οι συνθήκες $ \mathrm{ii)} $ και 
+            $ \mathrm{iii)} $ και επίσης, ο $ W $ έχει μηδενικό στοιχείο, 
+            άρα είναι μη-κενός. 
+            Για το $ \mathrm{i)} $ θα δείξουμε ότι $ \mathbf{0}_{W} = \mathbf{0}_{V} $.
+            Πράγματι
+            \begin{align*}
+                \mathbf{0}_{W} &= \mathbf{0}_{W} + \mathbf{0}_{W} 
+                \quad (W \; \text{διαν. χώρος}) \\
+                \mathbf{0}_{W} &= \mathbf{0}_{W} + \mathbf{0}_{V} 
+                \; \quad (V \; \text{διαν. χώρος και $ \mathbf{0}_{w} \in V $})
+            \end{align*}
+            Άρα $ \mathbf{0}_{W} + \mathbf{0}_{W} = \mathbf{0}_{W} + \mathbf{0}_{V} 
+            \Rightarrow
+            \mathbf{0}_{W} = \mathbf{0}_{V} $. Άρα $ \mathbf{0}_{V} \in W $.
 
-            \begin{description}
-                \item [Για το 3:] 
-                    $ W \neq \emptyset \Rightarrow \mathbf{u} \in W 
-                    \overset{\mathrm{ii)}}{\Rightarrow} 0\cdot \mathbf{u} = 
-                    \mathbf{0} \in W $. Αφού $ \mathbf{0} + \mathbf{u} = \mathbf{u}, 
-                    \; \forall \mathbf{u} \in V \Rightarrow \mathbf{0} + \mathbf{u} 
-                    = \mathbf{u}, \; \forall \mathbf{u} \in W $. Άρα $ 
-                    \mathbf{0}$, είναι το μηδενική στοιχείο του $W$.
-
-
-                \item [Για το 4:]
-                    Έστω $ \mathbf{u} \in W  $. Τότε το $ - \mathbf{u} \in V $, 
-                    γιατί ο $V$ ίναι διανυσματικό χώρος θα ανήκει και στον $ W $, 
-                    γιατί:
-                    \[
-                        - \mathbf{u} = (-1)\cdot \mathbf{u} \in W \quad 
-                        \text{λόγω του ii)} \; \text{γιατί $-1 \in \mathbb{K}$ 
-                        \; και \; $ \mathbf{u} \in W$ } 
-                    \]
-            \end{description}
+        \item [($ \Leftarrow $)] Αντίστροφα, αν ισχύουν οι συνθήκες 
+            $ \mathrm{i)}, \mathrm{ii)} $ και $ \mathrm{iii)} $, και από το 
+            γεγονός ότι $ W \subseteq V $, όπου $V$ είναι διανυσματικός χώρος, 
+            έπεται ότι προφανώς ικανοποιούνται τα αξιώματα του ορισμού, για το $W$, 
+            εκτός ίσως από το $ 4 $, για το οποίο έχουμε:
+            Έστω $ \mathbf{u} \in W  $. Τότε το $ - \mathbf{u} \in V $, 
+            γιατί ο $V$ είναι διανυσματικός χώρος, θα ανήκει και στον $ W $, 
+            γιατί:
+            \[
+                - \mathbf{u} = (-1)\cdot \mathbf{u} \in W \quad 
+                \text{λόγω του iii)} \; \text{γιατί $-1 \in \mathbb{K}$ 
+                \; και \; $ \mathbf{u} \in W$ } 
+            \]
     \end{description}
 \end{proof}
 
-\begin{rem}
-\item {}
-    Από το $ \mathrm{ii)} $ της πρότασης~\ref{prop:subsp} προκύπτει ότι αν $ W \leq V $,
-    τότε $ \mathbf{0}_{V} \in W $. Οπότε το να περιέχει ο $ W $ το μηδέν του χώρου 
-    $V$ είναι αναγκαία συνθήκη για να είναι υπόχωρος.
-\end{rem}
 
 \begin{prop}
     Τα σύνολα $ \{ \mathbf{0} \} $ και $V$ είναι υπόχωροι του $V$.
@@ -554,20 +563,48 @@
         \item \textcolor{Col2}{Το σύνολο των συμμετρικών πινάκων}
 
             Έστω $ V = M_{n}(\mathbb{K}) $ και $ W = \{ A \in M_{n}(\mathbb{K}) \;
-            : \; A \; A^{T}=A \}  $. Τότε $ W \leq V $.
+            : \; A^{T}=A \}  $. Τότε $ W \leq V $.
             \begin{proof}
             \item {}
-                Έχουμε $ W \neq \emptyset $, γιατί $ \mathbf{0} \in W $, αφού 
-                $ \mathbf{0}^{T}= \mathbf{0} $
                 \begin{description}
-                    \item [i)]
-                        Αν $ A, B \in W \Rightarrow A^{T}=A $ και $ B^{T}=B $, οπότε
-                        $ (A+B)^{T}= A^{T}+B^{T}=A+B $, άρα $A+B \in W$
-                    \item[ii)] Αν $ A \in W $ και $ \lambda \in \mathbb{K} $, τότε 
-                        $A^{T}=A$, οπότε $(\lambda A)^{T} = \lambda A^{T} = \lambda A  $
-                        , άρα $ \lambda A \in W $
+                    \item [i)] $ \mathbf{0} \in W $, αφού $ \mathbf{0}^{T}= 
+                        \mathbf{0} $
+                    \item[ii)] Αν $ A, B \in W \Rightarrow A^{T}=A $ και $ B^{T}=B $, 
+                        οπότε $ (A+B)^{T}= A^{T}+B^{T}=A+B $, άρα $A+B \in W$
+                    \item[iii)] Αν $ A \in W $ και $ \lambda \in \mathbb{K} $, τότε 
+                        $A^{T}=A$, οπότε $(\lambda A)^{T} = \lambda A^{T} = 
+                        \lambda A  $ , άρα $ \lambda A \in W $
                 \end{description}
             \end{proof}
+
+        \item \textcolor{Col2}{Ευθείες και επίπεδα}
+
+            Όπως είδαμε στην παρατήρηση~\ref{rem:lines} δοθέντων 
+            $ a,b \in \mathbb{R} $ το  σύνολο 
+            $
+            W = \{(x,y)\in \mathbb{R}^{2} \; : \; ax+by=0 \} 
+            $
+            των ευθειών του $ \mathbb{R}^{2} $ που διέρχονται από την αρχή των 
+            αξόνων είναι διανυσματικός χώρος, υπόχωρος τους $ \mathbb{R}^{2} $.
+
+            Επίσης, δοθέντων $ a,b,c \in \mathbb{R}^{3} $, τα σύνολα  
+            \begin{align*}
+                W &= 
+                \{
+                    (x,y,z) \in \mathbb{R}^{3} \; : \; ax+by+cz=0 
+                \} 
+                \quad (\text{επίπεδα του $ \mathbb{R}^{3}$ που διέρχονται από 
+                $(0,0,0)$}) \\
+                W &= 
+                \{
+                    (x,y,z) \in \mathbb{R}^{3} \; : \; ax+by+cz=0, 
+                    \; \text{και} \; a'x+b'y+c'z=0 
+                \} 
+                \quad (\text{ευθείες του $ \mathbb{R}^{3}$ που διέρχονται από 
+                $(0,0,0)$}) 
+            \end{align*}
+            είναι διανυσματικοί χώροι, υπόχωροι του $ \mathbb{R}^{3} $.
+
 
         \item \textcolor{Col2}{Το σύνολο των άντι-συμμετρικών πινάκων}
 
@@ -575,13 +612,13 @@
             : \; A \; A^{T}=-A \}  $. Τότε $ W \leq V $.
             \begin{proof}
             \item {}
-                Έχουμε $ W \neq \emptyset $, γιατί $ \mathbf{0} \in W $, αφού 
-                $ \mathbf{0}^{T}= \mathbf{0} = - \mathbf{0} $
                 \begin{description}
-                    \item [i)]
+                    \item [i)] $ \mathbf{0} \in W $, αφού $ \mathbf{0}^{T}= 
+                        \mathbf{0} = - \mathbf{0} $
+                    \item [ii)]
                         Αν $ A, B \in W \Rightarrow A^{T}=-A $ και $ B^{T}=-B $, οπότε
                         $ (A+B)^{T}= A^{T}+B^{T}=-A-B = - (A+B) $, άρα $A+B \in W$
-                    \item[ii)] Αν $ A \in W $ και $ \lambda \in \mathbb{K} $, τότε 
+                    \item[iii)] Αν $ A \in W $ και $ \lambda \in \mathbb{K} $, τότε 
                         $A^{T}=-A$, οπότε $(\lambda A)^{T} = \lambda A^{T} =
                         -\lambda A  $, άρα $ \lambda A \in W $
                 \end{description}
@@ -594,12 +631,11 @@
 
             \begin{proof}
             \item {}
-                Έχουμε $ W \neq \emptyset $, γιατί $ \mathbf{0} \in W $, αφού 
-                $ \mathbf{0} $ προφανώς είναι άνω τριγωνικός.
                 \begin{description}
-                    \item [i)]
-                        Αν $ A, B \in W \Rightarrow a_{ij} = b_{ij} = 0, \; i>j$, οπότε
-                        $a_{ij} + b_{ij} = 0, \; i>j$, άρα $A+B \in W$
+                    \item [i)] $ \mathbf{0} \in W $, αφού $ \mathbf{0} $ 
+                        προφανώς είναι άνω τριγωνικός.
+                    \item [ii)] Αν $ A, B \in W \Rightarrow a_{ij} = b_{ij} = 0, 
+                        \; i>j$, οπότε $a_{ij} + b_{ij} = 0, \; i>j$, άρα $A+B \in W$
                     \item[ii)] Αν $ A \in W $ και $ \lambda \in \mathbb{K} $, τότε 
                         $a_{ij} = 0, \; i>j$, οπότε $ \lambda a_{ij} = 0, \; i>j$, 
                         άρα $ \lambda A \in W $
@@ -617,16 +653,18 @@
                 Ομοίως
             \end{proof}
 
-        \item Έστω $ V = \mathbf{P}(\mathbb{K}) $ και $ W = \mathbf{P_{n}}(\mathbb{K})$.
-            Τότε $ W \leq V $.  
+        \item Έστω $ V = \mathbf{P}(\mathbb{K}) $ και 
+            $ W = \mathbf{P_{n}}(\mathbb{K})$.  Τότε $ W \leq V $.  
             \begin{proof}
-                Έχουμε $ W \neq \emptyset $, γιατί $ \mathbf{0} \in W $.
+            \item {}
                 \begin{description}
-                    \item [i)]
+                    \item [i)]  $ \mathbf{0} \in W $, γιατί προφανώς 
+                        $ \mathbf{0} = 0 x_{n} + 0 x^{n-1} + \cdots + 0 $
+                    \item [ii)]
                         Αν $ p, q \in W $, δηλαδή $ p,q $ πολυώνυμα βαθμού $ \leq n $, 
                         τότε και $ p+q $ είναι πολυώνυμο βαθμού $ \leq n $, άρα 
                         $p+q \in W$
-                    \item[ii)] Αν $ p \in W $ και $ \lambda \in \mathbb{K} $, τότε 
+                    \item[iii)] Αν $ p \in W $ και $ \lambda \in \mathbb{K} $, τότε 
                         $p$, πολυώνυμο βαθμού $ \leq n $ οπότε $ \lambda p$ πολυώνυμο 
                         βαθμού $ \leq n $, άρα $ \lambda p \in W $
                 \end{description}
@@ -635,13 +673,14 @@
         \item Έστω $ V = \mathbf{F}(A, \mathbb{R}) $ και $ W = 
             \mathbf{C}(A, \mathbb{R}) $.  Τότε $ W \leq V $.  
             \begin{proof}
-                Έχουμε $ W \neq \emptyset $, γιατί $ \mathbf{0} \in W $, αφού 
-                η μηδενική συνάρτηση είναι συνεχής.
+            \item {}
                 \begin{description}
-                    \item [i)]
+                    \item [i)] $ \mathbf{0} \in W $, αφού η μηδενική συνάρτηση 
+                        είναι συνεχής.
+                    \item [ii)]
                         Αν $ f, g \in W $, δηλαδή $ f,g $ συνεχείς συναρτήσεις, 
                         τότε και $ f+g $ είναι συνεχής συνάρτηση, άρα $f+g \in W$
-                    \item[ii)] Αν $ f \in W $ και $ \lambda \in \mathbb{K} $, τότε 
+                    \item[iii)] Αν $ f \in W $ και $ \lambda \in \mathbb{K} $, τότε 
                         $f$ συνεχής συνάρτηση, οπότε $ \lambda f$ είναι 
                         συνεχής συνάρτηση, άρα $ \lambda f \in W $
                 \end{description}
@@ -730,8 +769,9 @@
 \begin{proof}
 \item {}
     \begin{description}
-        \item [$(\Leftarrow)$] Αν $ W_{1} \leq W_{2} $ τότε $ W_{1} \cup W_{2} = W_{2} $
-            και αν $ W_{2} \leq W_{1} $ τότε $ W_{1} \cup W_{2} = W_{1} $. 
+        \item [$(\Leftarrow)$] Αν $ W_{1} \leq W_{2} $ τότε 
+            $ W_{1} \cup W_{2} = W_{2} $ και αν $ W_{2} \leq W_{1} $ τότε 
+            $ W_{1} \cup W_{2} = W_{1} $. 
             Σε κάθε περίπτωση $ W_{1} \cup W_{2} $ είναι υπόχωρος του $V$.
         \item [$(\Rightarrow)$ (Με άτοπο)]  Έστω ότι $ W_{1} \cup W_{2} $ είναι 
             υπόχωρος του $V$ και $ W_{1} \not \leq W_{2} $ και $ W_{2} \not \leq 
@@ -749,11 +789,16 @@
 
 \begin{dfn}
     Έστω $V$ διανυσματικός χώρος και $ W_{1}, W_{2} \leq V $. Το άθροισμα των 
-    $ W_{1} $ και $ W_{2} $ είναι το σύνολο 
+    $ W_{1} $ και $ W_{2} $ ορίζουμε να είναι το σύνολο 
     \[
-        W_{1}+W_{2} = \{ w_{1}+w_{2} \; : \; w_{1} \in W_{1} \; \text{και} \; w_{2} \in
-        W_{2} \} 
+        W_{1}+W_{2} = \{ \mathbf{w}_{1}+ \mathbf{w}_{2} \; : \; \mathbf{w}_{1} 
+        \in W_{1} \; \text{και} \; \mathbf{w}_{2} \in W_{2} \} 
     \]
+    Πιο γενικά, αν $ n \in \mathbb{N} $ και $ W_{1}, \ldots, W_{n} \leq V $, ορίζουμε
+    \[
+        W_{1}+\cdots +W_{n} = \{ \mathbf{w_{1}}+\cdots + \mathbf{w}_{n} \; : \; 
+            \mathbf{w}_{i} \in W_{i}, \; \forall i, \; 1 \leq i \leq n \} 
+     \] 
 \end{dfn}
 
 \begin{prop}
@@ -902,58 +947,306 @@
             \frac{y}{3} = \frac{z}{5} = \lambda$ και $ W_{2} $ η ευθεία $ x = -y = 
             \frac{z}{2} = \mu $, υπόχωροι του $ V $. Έχουμε
             \begin{align*}
-                W_{1}+W_{2} &= \{ \mathbf{w_{1}}+ \mathbf{w_{2}} \; : \; 
-                \mathbf{w_{1}} \in W_{1}, \mathbf{w_{2}} \in W_{2} \} 
-                \Leftrightarrow \\
-                            &= \{ (2 \lambda, 3 \lambda, 5 \lambda ) + 
-                                (\mu, - \mu, 2 \mu) \; : \; \lambda, \mu \in 
-                            \mathbb{R} \}  \\ 
-                            &= \{ (2 \lambda + \mu, 3 \lambda - \mu, 5 \lambda + 2 
-                            \mu) \; : \; \lambda, \mu \in \mathbb{R} ) \} 
-                \end{align*}
-                Γεωμετρικά, αυτό είναι επίπεδο, το επίπεδο που περιέχει τα σημεία 
-                $ (0,0,0), (2,3,5) $ και $ (1,-1,2) $. Εναλλακτικά για να βρούμε την 
-                εξίσωση του επιπέδου που έχει ως λύση το σύνολο 
-                $ \{ (2 \lambda + \mu , 3 \lambda - \mu, 5 \lambda + 2 \mu) \; : \; 
-                \lambda, \mu \in \mathbb{R} \} $. Ψάχνουμε σταθερές 
-                $ a,b,c \in \mathbb{R} $ έτσι ώστε 
-                \begin{align*}
-                    a(2 \lambda + \mu ) + b(3 \lambda - \mu )+ c (5 \lambda + 2 \mu ) =
-                    0, \quad \forall \lambda, \mu \in \mathbb{R} \\
-                    \lambda (2a +3b+5c) + \mu (a-b+2c) = 0, \quad \forall \lambda, \mu 
-                    \in \mathbb{R}
-                \end{align*} 
-                Θέτουμε $ \lambda =1, \mu = 0 $ και παίρνουμε $ 2a+3b+5c =0 $ και 
-                $ \lambda = 0, \mu =1 $ και παίρνουμε $ a-b+2c=0 $. Οπότε έχουμε
-                \begin{align*}
-                \sysdelim.\}\systeme*{2a+3b+5c=0,a-b+2c=0} \Leftrightarrow 
-            \sysdelim.\}\systeme*{2(b-2c)+3b+5c=0,a=b-2c} \Leftrightarrow 
-        \sysdelim.\}\systeme*{2b-4c+3b+5c=0,a=b-2c} \Leftrightarrow 
-    \sysdelim.\}\systeme*{c=-5b,a=11b} \Leftrightarrow 
-\end{align*}  
-Άρα για $ b=1, c=-5 $ και $ a=11 $ έχουμε το επίπεδο $ 11x+y-5z=0 $.
+                W_{1}+W_{2} 
+                &= \{ 
+                    \mathbf{w_{1}}+ \mathbf{w_{2}} \; : \; 
+                    \mathbf{w_{1}} \in W_{1}, \mathbf{w_{2}} \in W_{2} 
+                \} \Leftrightarrow \\
+                &= \{ 
+                    (2 \lambda, 3 \lambda, 5 \lambda ) + 
+                    (\mu, - \mu, 2 \mu) \; : \; \lambda, \mu \in 
+                    \mathbb{R} 
+                \} \Leftrightarrow   \\ 
+                &= \{ 
+                    (2 \lambda + \mu, 3 \lambda - \mu, 5 \lambda + 2 
+                    \mu) \; : \; \lambda, \mu \in \mathbb{R} ) 
+                \} 
+            \end{align*}
+            Γεωμετρικά, αυτό είναι επίπεδο, το επίπεδο που περιέχει τα σημεία 
+            $ (0,0,0), (2,3,5) $ και $ (1,-1,2) $. Εναλλακτικά για να βρούμε την 
+            εξίσωση του επιπέδου που έχει ως λύση το σύνολο 
+            $ \{ (2 \lambda + \mu , 3 \lambda - \mu, 5 \lambda + 2 \mu) \; : \; 
+            \lambda, \mu \in \mathbb{R} \} $. Ψάχνουμε σταθερές 
+            $ a,b,c \in \mathbb{R} $ έτσι ώστε 
+            \begin{align*}
+                a(2 \lambda + \mu ) + b(3 \lambda - \mu )+ c (5 \lambda + 2 \mu ) =
+                0, \quad \forall \lambda, \mu \in \mathbb{R} \\
+                \lambda (2a +3b+5c) + \mu (a-b+2c) = 0, \quad \forall \lambda, \mu 
+                \in \mathbb{R}
+            \end{align*} 
+            Θέτουμε $ \lambda =1, \mu = 0 $ και παίρνουμε $ 2a+3b+5c =0 $ και 
+            $ \lambda = 0, \mu =1 $ και παίρνουμε $ a-b+2c=0 $. Οπότε έχουμε
+            \[
+                \left.
+                    \begin{matrix*}[r]
+                        2a+3b+5c=0 \\
+                        a-b+2c=0
+                    \end{matrix*}
+                \right\} \Leftrightarrow 
+                \left.
+                    \begin{matrix*}[r]
+                        2a+3b+5c=0 \\
+                        a=b-2c
+                    \end{matrix*}
+                \right\} \Leftrightarrow
+                \left.
+                    \begin{matrix*}[r]
+                        5b+c=0 \\
+                        a=b-2c
+                    \end{matrix*}
+                \right\} \Leftrightarrow
+                \left.
+                    \begin{matrix*}[r]
+                        c=-5b \\
+                        a=b-2c
+                    \end{matrix*}
+                \right\} \Leftrightarrow
+                \left.
+                    \begin{matrix*}[r]
+                        c=-5b \\
+                        a=11b
+                    \end{matrix*}
+                \right\}
+            \]
 
-Επομένως έχουμε ότι το επίπεδο $ V: 11x+y-5z=0 $ είναι το 
-ευθύ άθροισμα των ευθειών $ W_{1}: \frac{x}{2} = \frac{y}{3} = 
-\frac{z}{5}$ και $ W_{2}: x=-y= \frac{z}{2} $, καθώς 
-$ V = W_{1}+W_{2} $ και $ W_{1}\cap W_{2} = \{ \mathbf{0} \} $.
+            Άρα για $ b=1, c=-5 $ και $ a=11 $ έχουμε το επίπεδο $ 11x+y-5z=0 $.
 
-            \item Για το παράδειγμα~\ref{ex:sym} έχουμε ότι $ V = W_{1} \oplus W_{2} $, 
-                γιατί δείξαμε ότι $ V= W_{1}+W_{2} $ και επίσης έχουμε 
-                $ W_{1} \cap W_{2} = \{ \mathbf{0} \} $, 
-                αφού αν $A \in W_{1} \cap W_{2}$, δηλαδή $ A $ συμμετρικός και 
-                αντι-συμμετρικός ταυτόχρονα, μας δίνει ότι $ A^{T} = A $ και 
-                $ A^{T}=-A $ και άρα $ 2A = \mathbf{0} \Rightarrow A= \mathbf{0} $.
+            Επομένως έχουμε ότι το επίπεδο $ V: 11x+y-5z=0 $ είναι το 
+            ευθύ άθροισμα των ευθειών $ W_{1}: \frac{x}{2} = \frac{y}{3} = 
+            \frac{z}{5}$ και $ W_{2}: x=-y= \frac{z}{2} $, καθώς 
+            $ V = W_{1}+W_{2} $ και $ W_{1}\cap W_{2} = \{ \mathbf{0} \} $.
 
-            \item Για το παράδειγμα~\ref{ex:art} έχουμε ότι $ V = W_{1} \oplus W_{2} $, 
-                γιατί δείξαμε ότι $ V= W_{1}+W_{2} $ και επίσης έχουμε 
-                $ W_{1} \cap W_{2} = \{ \mathbf{0} \} $, 
-                αφού αν $f \in W_{1} \cap W_{2}$, δηλαδή $ f $ άρτια και περιττή 
-                ταυτόχρονα, μας δίνει ότι $ f(-x)=f(x)=-f(x), \; \forall x \in 
-                \mathbb{R} $ και άρα $ 2f(x) = 0, \; \forall x \in 
-                \mathbb{R} \Rightarrow f(x)=0, \; \forall x \in \mathbb{R} 
-                \Rightarrow f = \mathbf{0} $.
-        \end{enumerate}
-    \end{examples}
+        \item Για το παράδειγμα~\ref{ex:sym} έχουμε ότι $ V = W_{1} \oplus W_{2} $, 
+            γιατί δείξαμε ότι $ V= W_{1}+W_{2} $ και επίσης έχουμε 
+            $ W_{1} \cap W_{2} = \{ \mathbf{0} \} $, 
+            αφού αν $A \in W_{1} \cap W_{2}$, δηλαδή $ A $ συμμετρικός και 
+            αντι-συμμετρικός ταυτόχρονα, μας δίνει ότι $ A^{T} = A $ και 
+            $ A^{T}=-A $ και άρα $ 2A = \mathbf{0} \Rightarrow A= \mathbf{0} $.
 
-    \end{document}
+        \item Για το παράδειγμα~\ref{ex:art} έχουμε ότι $ V = W_{1} \oplus W_{2} $, 
+            γιατί δείξαμε ότι $ V= W_{1}+W_{2} $ και επίσης έχουμε 
+            $ W_{1} \cap W_{2} = \{ \mathbf{0} \} $, 
+            αφού αν $f \in W_{1} \cap W_{2}$, δηλαδή $ f $ άρτια και περιττή 
+            ταυτόχρονα, μας δίνει ότι $ f(-x)=f(x)=-f(x), \; \forall x \in 
+            \mathbb{R} $ και άρα $ 2f(x) = 0, \; \forall x \in 
+            \mathbb{R} \Rightarrow f(x)=0, \; \forall x \in \mathbb{R} 
+            \Rightarrow f = \mathbf{0} $.
+    \end{enumerate}
+\end{examples}
+
+\section{Γραμμική ανεξαρτησία}
+
+\begin{dfn}
+    Έστω $ V $ ένας διανυσματικός χώρος επί του σώματος $ \mathbb{K} $ και έστω 
+    $ \mathbf{v} \in V $. Λέμε ότι το διάνυσμα $ \mathbf{v}$ είναι γραμμικός 
+    συνδυασμός των διανυσμάτων 
+    $ \mathbf{u_{1}}, \mathbf{u_{2}}, \ldots \mathbf{u}_{n} $, αν υπάρχουν 
+    $ \lambda _{1}, \lambda _{2}, \ldots, \lambda _{n} \in \mathbb{K} $ τέτοιοι ώστε 
+    \[
+        \mathbf{v} = \lambda _{1} \mathbf{u_{1}}+ \lambda_{2} \mathbf{u_{2}}+ 
+        \cdots \lambda _{k} \mathbf{u}_{k} \Leftrightarrow \mathbf{v} = 
+        \sum_{i=1}^{k} \lambda _{i} \mathbf{u}_{i} 
+    \]
+    Τα στοιχεία $ \lambda _{1}, \lambda _{2}, \ldots, \lambda _{k} $ ονομάζονται 
+    συντελεστές τους γραμμικού συνδυασμόυ.
+\end{dfn}
+
+\begin{thm}
+    Έστω $ V $ ένας διανυσματικός χώρος επί του σώματος $ \mathbb{K} $ και έστω 
+    $ S = \{ \mathbf{u_{1}}, \mathbf{u_{2}}, \ldots, \mathbf{u}_{k}\} \subseteq V $.
+    Θέτουμε $ W = \{ w \in V \; : \; \exists \lambda _{1}, \ldots, \lambda _{k} \in 
+        \mathbb{K} \; \text{ώστε} \; \mathbf{w} = \lambda _{1} \mathbf{u_{1}}+ \cdots 
+    \lambda _{k} \mathbf{u}_{k}\} $. Τότε
+    \begin{enumerate}[i)]
+        \item $ S \subseteq W $
+        \item $ W \leq V $ 
+        \item $ W $ είναι ο μικρότερος υπόχωρος του $V$ που περιέχει το $S$.
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+\item {}
+    \begin{enumerate}[i)]
+        \item Πράγματι, έστω $i$ με $ 1 \leq i \leq k $. Τότε  έχουμε
+            \[ \mathbf{u}_{i} = 0 \mathbf{u}_{1}+ 0 \mathbf{u_{2}} + 
+                \cdots + 0 \mathbf{u}_{i-1} + 1 \mathbf{u}_{i} + 0 \mathbf{u}_{i+1} + 
+            \cdots + \mathbf{u}_{k}  \]
+        \item Καταρχάς $ \mathbf{0} \in W $, γιατί $ \mathbf{0} = 0 \mathbf{u}_{1} + 
+            0\mathbf{u_{2}} + \cdots 0 \mathbf{u}_{k}$.
+
+            Έστω 
+            \[
+                \left. 
+                    \begin{matrix}
+                        \mathbf{w_{1}} \in W \\
+                        \mathbf{w_{2}} \in W 
+                    \end{matrix}
+                \right\}
+                \Rightarrow 
+                \left. 
+                    \begin{matrix}
+                        \exists \lambda _{1}, \ldots, \lambda _{k} \in \mathbb{K} \; 
+                        \text{ώστε} \; \mathbf{w_{1}} = \comb{u}{k} \\
+                        \exists \mu _{1}, \ldots, \mu _{k} \in \mathbb{K} \; 
+                        \text{ώστε} \; \mathbf{w_{2}} = \combc{u}{\mu}{k}
+                    \end{matrix}
+                \right\}
+                \Rightarrow 
+            \]
+            \[
+                \mathbf{w}_{1} + \mathbf{w_{2}} = (\comb{u}{k}) + (\combc{u}{\mu}{k}) 
+                = (\lambda _{1}+ \mu _{1}) \mathbf{u_{1}}+ \cdots + (\lambda _{k}+ 
+                \mu _{k}) \mathbf{u}_{k} \in W 
+            \] 
+
+            Έστω $ \mathbf{w} \in W $ και $ \lambda \in \mathbb{K} $, τότε 
+            $ \mathbf{w} = \comb{u}{k} $ και έχουμε
+            \[ \lambda \mathbf{w} = \lambda (\comb{u}{k}) =
+                \lambda (\lambda _{1} \mathbf{u_{1}}) + \cdots \lambda (\lambda _{k}) 
+                \mathbf{u}_{k} = (\lambda \lambda _{1}) 
+                \mathbf{u_{1}} + \cdots + (\lambda \lambda _{k}) \mathbf{u}_{k} \in W 
+            \]
+        \item Έστω $ U \leq V $, τέτοιος ώστε $ S \subseteq U $. Θα δείξουμε ότι 
+            $ W \leq $. Πράγματι
+            \[
+                \mathbf{w} \in W \Rightarrow \exists \lambda _{1}, 
+                \cdots \lambda _{k} \in \mathbb{K} \; \text{ώστε} \; \mathbf{w} = 
+                \comb{u}{k} 
+            \] 
+            Όμως $ S \subseteq U \Rightarrow \mathbf{u}_{1}, \ldots \mathbf{u}_{k} 
+            \in U \overset{U \leq V}{ \Rightarrow } \lambda _{1} \mathbf{u_{1}}, 
+            \ldots, \lambda \mathbf{u}_{k} \in U \overset{U \leq V}{ \Rightarrow } 
+            \mathbf{w} = \comb{u}{k} \in U $. Άρα $ W \leq U $.
+    \end{enumerate}
+\end{proof}
+
+\begin{dfn}
+    Έστω $ V $ ένας διανυσματικός χώρος επί του $ \mathbb{K} $ και έστω $ S = 
+    \{ \mathbf{u}_{1}, \ldots, \mathbf{u}_{k} \} \subseteq V$. Τότε ο υπόχωρος $ W $ 
+    του προηγούμενου θεωϱηματος ονομάζεται ο υπόχωρος του $V$ που παράγεται 
+    από το $ S $, ή γραμμική θήκη του $S$ και συμβολίζεται με 
+    $ < S > $ ή $ \Span \{ v_{1},\ldots,v_{n}  \}  $. 
+    Λέμε επίσης ότι το σύνολο $S$ παράγει τον υπόχωρο $W$ του $V$. 
+    Επειδή $S$  πεπερασμένο λέμε ότι $W$ είναι πεπερασμένα 
+    γεννώμενος υπόχωρος του  $V$.
+\end{dfn}
+
+\begin{rem}
+\item {}
+    \begin{enumerate}
+        \item Ορίζουμε $ < \emptyset > = \{ \mathbf{0} \}  $. 
+        \item Ο παραπάνω ορισμός γενικεύεται και για άπειρα σύνολα $ S \subseteq V $. 
+            Στην περίπτωση αυτή 
+            \[ 
+                < S > = \{ \mathbf{v} \in V \; : \; \exists \lambda _{1}, 
+                    \ldots, \lambda _{k} \in \mathbb{K} \; \text{και} \; 
+                    \mathbf{u_{1}}, \ldots \mathbf{u}_{k} \in V \; 
+                    \text{ώστε} \; \mathbf{v} = \lambda _{1} \mathbf{u_{1}} + 
+                \cdots + \lambda _{k} \mathbf{u}_{k}\}.
+            \]
+    \end{enumerate}
+\end{rem}
+
+
+\begin{examples}
+\item {}
+    \begin{enumerate}
+        \item Έστω ο $ \mathbb{R} $-χώρος $ \mathbb{R}^{n} $ και για $ i= 1,\ldots,n $
+            έστω $ \mathbf{e}_{i} $ το διάνυσμα του $ \mathbb{R}^{n} $ το οποίο έχει 
+            1 στην $ i $-θέση και 0 στις υπόλοιπες. Τότε $ \mathbb{R}^{n} = 
+            < \mathbf{e}_{1}, \mathbf{e}_{2}, \ldots \mathbf{e}_{n} >  $. 
+            Πράγματι, έστω $ \mathbf{u} = (u_{1},u_{2},\ldots,u_{n}) \in 
+            \mathbb{R}^{n} $. Τότε 
+            \begin{align*}
+                \mathbf{u} = (u_{1},u_{2},\ldots,u_{n}) 
+                &=  u_{1} (1,0,\ldots,0) + u_{2} (0,1,\ldots,0) + 
+                \cdots + u_{n} (0,0,\ldots,1) \\
+                &= u_{1} \mathbf{e}_{1} + u_{2} \mathbf{e}_{2} + \cdots + u_{n} 
+                \mathbf{e}_{n} \in < \mathbf{e}_{1}, \mathbf{e}_{2}, 
+                \ldots, \mathbf{e}_{n} >  
+            \end{align*} 
+            Άρα $ \mathbb{R}^{n} = < \mathbf{e}_{1}, \mathbf{e}_{2}, 
+            \ldots, \mathbf{e}_{n} >  $.
+        \item Έστω $ A \in \textbf{M}_{m \times n}(\mathbb{R}) $ και έστω 
+            $ \mathbf{r}_{1}, \ldots \mathbf{r}_{m} $ οι $m$ - γραμμές του $A$.  
+            Ο υπόχωρος $ < \mathbf{r}_{1}, \ldots, \mathbf{r}_{m} >  $ του 
+            $ \mathbb{R}^{n} $ που παράγεται από τις γραμμές του $A$ ονομάζεται 
+            χώρος γραμμών του $A$ και συμβολίζεται με $ R(A) $ ή $ \Gamma_{A} $.
+        \item Έστω $ A \in \textbf{M}_{m \times n}(\mathbb{R}) $ και έστω 
+            $ \mathbf{c}_{1}, \ldots \mathbf{c}_{n} $ οι $n$ - στήλες του $A$.  
+            Ο υπόχωρος $ < \mathbf{c}_{1}, \ldots, \mathbf{c}_{n} >  $ του 
+            $ \mathbb{R}^{m} $ που παράγεται από τις στήλες του $A$ ονομάζεται 
+            χώρος στήλών του $A$ και συμβολίζεται με $ C(A) $ ή $ \Sigma_{A} $.
+        \item Έστω $ \mathbf{P}_{n}(\mathbb{R}) $ ο $ \mathbb{R} $ - χώρος των 
+            πολυωνύμων βαθμού $ \leq n $ και έστω $ p_{0} = 1, p_{1}=x, p_{2}=x^{2}, 
+            \ldots, p_{n}=x^{n} $. Τότε $ \mathbf{P}_{n}(\mathbb{R}) = 
+            < p_{0}, p_{1}, \ldots, p_{n} > $.
+    \end{enumerate}
+\end{examples}
+
+\begin{thm}
+    Έστω $V$ ένας διανυσματικός χώρος επί του $ \mathbb{K} $ και έστω $ S, S' $ δύο 
+    μη-κενά, πεπερασμένα υποσύνολα του $V$. Τότε 
+    \[ < S > = < S' > \Leftrightarrow S \subseteq < S' >  \; \text{και} \; 
+     S' \subseteq < S >  \]
+\end{thm}
+\begin{proof}
+\item {}
+    \begin{description}
+        \item[($\Rightarrow$)] Έστω ότι $ < S > = < S' >   $. Γνωρίζουμε από το προηγούμενο θεώρημα
+            ότι $ S \subseteq < S >  $ και $ S' \subseteq < S' >  $. Άρα από την 
+            υπόθεση έχουμε ότι και $ S \subseteq < S' >  $ και $ S' \subseteq < S >  $.
+        \item[($\Leftarrow$)] Έστω ότι $ S \subseteq < S' >  $ και $ S' \subseteq < S >  $. Επειδή $
+            < S >  $ είναι ο μικρότερος υπόχωρος του $V$ που περιέχει το $S$ και 
+            $ S \subseteq < S' >  $ έπεται ότι $ < S > \leq < S' >   $. Ομοίως 
+            $ < S' > \leq < S >   $, οπότε $ < S > = < S' >   $.
+             \end{description}
+\end{proof}
+
+\begin{rem}
+    Από το θεώρημα καταλαβαίνουμε ότι είναι δυνατόν περισσότερα από ένα υποσύνολα του 
+    $V$ να παϱάγουν τον ίδιο υπόχωρο του $V$. Για παράδειγμα, για τον 
+    $ \mathbb{R} $- χώρο $ \mathbb{R} $ έχουμε ότι $ \mathbb{R} = < x > , 
+    \; \forall x \in  \mathbb{R} \setminus \{ 0 \} $.
+\end{rem}
+
+\section{Γραμμική Ανεξαρτησία}
+
+\begin{dfn}
+    Έστω $ (V,+,\cdot) $ ένας $ \mathbb{K} $- χώρος και έστω 
+    $ S = \{ \mathbf{v_{1}}, \ldots, \mathbf{v}_{n} \} \subseteq V $. Λέμε ότι 
+    τα διανύσματα $ \mathbf{v_{1}}, \ldots, \mathbf{v_{n}} $ είναι 
+    γραμμικώς ανεξάρτητα ή ότι το σύνολο $ S $ είναι γραμμικώς ανεξάρτητο, 
+    αν οποτεδήποτε έχουμε
+    \[
+        \comb{v}{k} = \mathbf{0} \; \text{τότε} \; \lambda _{1} = 
+        \lambda _{2} = \cdots = \lambda _{n} = 0
+    \]
+    Αν τα διανύσματα $ \mathbf{v_{1}}, \ldots, \mathbf{v_{n}} $ δεν είναι γραμμικώς 
+    ανεξάρτητα τότε λέγονται γραμμικώς εξαρτημένα και ισχύει ότι
+    \[
+        \exists  \lambda _{1}, \ldots, \lambda _{k} \in \mathbb{K} \; 
+        \text{όχι όλα μηδέν, ώστε} \; \comb{u}{k} = \mathbf{0}
+    \]
+\end{dfn}
+
+\begin{examples}
+    \begin{enumerate}
+        \item Στον $ \mathbb{R}^{2} $ δύο διανύσματα $ \mathbf{u} $ και $ \mathbf{v} $ 
+            είναι γραμμικώς ανεξάρτητα αν και μόνον αν δεν είναι παράλληλα. Πράγματι 
+            έστω ότι $ \mathbf{u}, \mathbf{v} $ είναι γραμμικώς εξαρτημένα. Τότε 
+            \[
+                \exists \lambda _{1}, \lambda _{2} \in \mathbb{R} \; 
+                \text{όχι και τα δύο μηδέν, ώστε} 
+                \; \lambda_{1} \mathbf{u} + \lambda_{2} \mathbf{v} = \mathbf{0} 
+            \]
+            Έτσι, αν έστω ότι $ \lambda_{1} \neq 0 $, έχουμε 
+            \[
+                \mathbf{u} = - \frac{\lambda _{2}}{\lambda _{1}} \mathbf{v} \quad  
+                \text{(παράλληλα)}
+            \] 
+    \end{enumerate}
+\end{examples}
+
+
+
+\end{document}
