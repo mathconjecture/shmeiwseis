@@ -1,0 +1,716 @@
+\input{preamble/preamble.tex}
+\input{preamble/definitions.tex}
+
+\let\vec\mathbf
+
+\pagestyle{vangelis}
+
+\begin{document}
+
+\chapter{Γραμμική Ανεξαρτησία, Βάση, Διάσταση}
+
+\section{Γραμμική ανεξαρτησία}
+
+\begin{dfn}
+    Έστω $ V $ ένας διανυσματικός χώρος επί του σώματος $ \mathbb{K} $ και έστω 
+    $ \mathbf{v} \in V $. Λέμε ότι το διάνυσμα $ \mathbf{v}$ είναι 
+    \textcolor{Col2}{γραμμικός συνδυασμός} των διανυσμάτων 
+    $ \mathbf{u_{1}}, \mathbf{u_{2}}, \ldots \mathbf{u}_{n} $, αν υπάρχουν 
+    $ \lambda _{1}, \lambda _{2}, \ldots, \lambda _{n} \in \mathbb{K} $ τέτοιοι ώστε 
+    \[
+        \mathbf{v} = \lambda _{1} \mathbf{u_{1}}+ \lambda_{2} \mathbf{u_{2}}+ 
+        \cdots \lambda _{k} \mathbf{u}_{k} \Leftrightarrow \mathbf{v} = 
+        \sum_{i=1}^{k} \lambda _{i} \mathbf{u}_{i} 
+    \]
+    Τα στοιχεία $ \lambda _{1}, \lambda _{2}, \ldots, \lambda _{k} $ ονομάζονται 
+    \textcolor{Col2}{συντελεστές} τους γραμμικού συνδυασμόυ.
+\end{dfn}
+
+\begin{thm}
+    Έστω $ V $ ένας διανυσματικός χώρος επί του σώματος $ \mathbb{K} $ και έστω 
+    $ S = \{ \mathbf{u_{1}}, \mathbf{u_{2}}, \ldots, \mathbf{u}_{k}\} \subseteq V $.
+    Θέτουμε $ W $ να είναι το σύνολο όλων των γραμμικών συνδυασμών των στοιχείων του 
+    $S$, με συντελεστές από το σώμα $ \mathbb{K} $.  Δηλαδή 
+    \[
+        W = \{ w \in V \; : \; \exists \lambda _{1}, \ldots, \lambda _{k} \in 
+            \mathbb{K} \; \text{ώστε} \; \mathbf{w} = \lambda _{1} 
+            \mathbf{u_{1}}+ \cdots \lambda _{k} \mathbf{u}_{k}\} 
+    \] 
+    Τότε
+    \begin{enumerate}[i)]
+        \item $ S \subseteq W $
+        \item $ W \leq V $ 
+        \item $ W $ είναι ο μικρότερος υπόχωρος του $V$ που περιέχει το $S$.
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+\item {}
+    \begin{enumerate}[i)]
+        \item Πράγματι, έστω $i$ με $ 1 \leq i \leq k $. Τότε  έχουμε
+            \[ \mathbf{u}_{i} = 0 \mathbf{u}_{1}+ 0 \mathbf{u_{2}} + 
+                \cdots + 0 \mathbf{u}_{i-1} + 1 \mathbf{u}_{i} + 0 \mathbf{u}_{i+1} + 
+            \cdots + \mathbf{u}_{k}  \]
+        \item Καταρχάς $ \mathbf{0} \in W $, γιατί $ \mathbf{0} = 0 \mathbf{u}_{1} + 
+            0\mathbf{u_{2}} + \cdots 0 \mathbf{u}_{k}$.
+
+            Έστω 
+            \[
+                \left. 
+                    \begin{matrix}
+                        \mathbf{w_{1}} \in W \\
+                        \mathbf{w_{2}} \in W 
+                    \end{matrix}
+                \right\}
+                \Rightarrow 
+                \left. 
+                    \begin{matrix}
+                        \exists \lambda _{1}, \ldots, \lambda _{k} \in \mathbb{K} \; 
+                        \text{ώστε} \; \mathbf{w_{1}} = \comb{u}{k} \\
+                        \exists \mu _{1}, \ldots, \mu _{k} \in \mathbb{K} \; 
+                        \text{ώστε} \; \mathbf{w_{2}} = \combc{u}{\mu}{k}
+                    \end{matrix}
+                \right\}
+                \Rightarrow 
+            \]
+            \[
+                \mathbf{w}_{1} + \mathbf{w_{2}} = (\comb{u}{k}) + (\combc{u}{\mu}{k}) 
+                = (\lambda _{1}+ \mu _{1}) \mathbf{u_{1}}+ \cdots + (\lambda _{k}+ 
+                \mu _{k}) \mathbf{u}_{k} \in W 
+            \] 
+
+            Έστω $ \mathbf{w} \in W $ και $ \lambda \in \mathbb{K} $, τότε 
+            $ \mathbf{w} = \comb{u}{k} $ και έχουμε
+            \[ \lambda \mathbf{w} = \lambda (\comb{u}{k}) =
+                \lambda (\lambda _{1} \mathbf{u_{1}}) + \cdots \lambda (\lambda _{k}) 
+                \mathbf{u}_{k} = (\lambda \lambda _{1}) 
+                \mathbf{u_{1}} + \cdots + (\lambda \lambda _{k}) \mathbf{u}_{k} \in W 
+            \]
+        \item Έστω $ U \leq V $, τέτοιος ώστε $ S \subseteq U $. Θα δείξουμε ότι 
+            $ W \leq $. Πράγματι
+            \[
+                \mathbf{w} \in W \Rightarrow \exists \lambda _{1}, 
+                \cdots \lambda _{k} \in \mathbb{K} \; \text{ώστε} \; \mathbf{w} = 
+                \comb{u}{k} 
+            \] 
+            Όμως $ S \subseteq U \Rightarrow \mathbf{u}_{1}, \ldots \mathbf{u}_{k} 
+            \in U \overset{U \leq V}{ \Rightarrow } \lambda _{1} \mathbf{u_{1}}, 
+            \ldots, \lambda \mathbf{u}_{k} \in U \overset{U \leq V}{ \Rightarrow } 
+            \mathbf{w} = \comb{u}{k} \in U $. Άρα $ W \leq U $.
+    \end{enumerate}
+\end{proof}
+
+\begin{dfn}
+    Έστω $ V $ ένας διανυσματικός χώρος επί του $ \mathbb{K} $ και έστω $ S = 
+    \{ \mathbf{u}_{1}, \ldots, \mathbf{u}_{k} \} \subseteq V$. Τότε ο υπόχωρος $ W $ 
+    του προηγούμενου θεωϱηματος ονομάζεται ο υπόχωρος του $V$ που 
+    \textcolor{Col2}{παράγεται} από το $ S $, ή γραμμική θήκη του $S$ και 
+    συμβολίζεται με $ W = < S > $ ή $ W = \Span \{ v_{1},\ldots,v_{n}  \}  $.  
+    Λέμε επίσης ότι το σύνολο $S$ \textcolor{Col2}{παράγει} τον υπόχωρο $W$. 
+    Επειδή $S$  πεπερασμένο λέμε ότι $W$ είναι \textcolor{Col2}{πεπερασμένα 
+    γεννώμενος} υπόχωρος του  $V$ και τα στοιχεία 
+    $ \mathbf{u_{1}}, \ldots, \mathbf{u_{n}} $ του $S$ λέγονται 
+    \textcolor{Col2}{γεννήτορες} του $W$.
+\end{dfn}
+
+\begin{prop}
+\item {}
+    Αν $ S \subseteq V $ και $ W_{i}, \; i \in I $ 
+    υπόχωροι του $V$ που περιέχουν το $S$, τότε $ < S > = \bigcap_{i \in I} W_{i} $. 
+\end{prop}
+\begin{proof}
+\item {}
+    Έστω $ S \subseteq W_{i} $. Τότε $ S \subseteq \bigcap_{i \in I} W_{i} $. Επειδή 
+    η τομή $  \bigcap_{i \in I} W_{i} $ είναι υπόχωρος και $ < S >  $ είναι ο 
+    μικρότερος υπόχωρος που περιέχει το $S$, έχουμε ότι 
+    $ < S > \leq \bigcap_{i \in I} W_{i}   $. Όμως και $ < S > = W_{i}  $ για κάποιο 
+    $i$, άρα και $ \bigcap_{i \in Ι} W_{i} \subseteq < S >  $, οπότε προκύπτει το 
+    ζητούμενο.
+\end{proof}
+
+\begin{rem}
+\item {}
+    \begin{enumerate}
+        \item Ορίζουμε $ < \emptyset > = \{ \mathbf{0} \}  $. 
+        \item Ο παραπάνω ορισμός γενικεύεται και για άπειρα σύνολα $ S \subseteq V $. 
+            Στην περίπτωση αυτή 
+            \[ 
+                < S > = \{ \mathbf{v} \in V \; : \; \exists \lambda _{1}, 
+                    \ldots, \lambda _{k} \in \mathbb{K} \; \text{και} \; 
+                    \mathbf{u_{1}}, \ldots \mathbf{u}_{k} \in V \; 
+                    \text{ώστε} \; \mathbf{v} = \lambda _{1} \mathbf{u_{1}} + 
+                \cdots + \lambda _{k} \mathbf{u}_{k}\}.
+            \]
+    \end{enumerate}
+\end{rem}
+
+
+\begin{examples}
+\item {}
+    \begin{enumerate}
+        \item Έστω ο $ \mathbb{R} $-χώρος $ \mathbb{R}^{n} $ και για $ i= 1,\ldots,n $
+            έστω $ \mathbf{e_{i}} $ το διάνυσμα του $ \mathbb{R}^{n} $ το οποίο έχει 
+            1 στην $ i $-θέση και 0 στις υπόλοιπες. Τότε $ \mathbb{R}^{n} = 
+            < \mathbf{e_{1}}, \mathbf{e_{2}}, \ldots \mathbf{e_{n}} >  $. 
+            Πράγματι, έστω $ \mathbf{u} = (u_{1},u_{2},\ldots,u_{n}) \in 
+            \mathbb{R}^{n} $. Τότε 
+            \begin{align*}
+                \mathbf{u} = (u_{1},u_{2},\ldots,u_{n}) 
+                &=  u_{1} (1,0,\ldots,0) + u_{2} (0,1,\ldots,0) + 
+                \cdots + u_{n} (0,0,\ldots,1) \\
+                &= u_{1} \mathbf{e_{1}} + u_{2} \mathbf{e_{2}} + \cdots + u_{n} 
+                \mathbf{e_{n}} \in < \mathbf{e_{1}}, \mathbf{e_{2}}, 
+                \ldots, \mathbf{e_{n}} >  
+            \end{align*} 
+            Άρα $ \mathbb{R}^{n} = < \mathbf{e_{1}}, \mathbf{e_{2}}, 
+            \ldots, \mathbf{e_{n}} >  $.
+        \item Έστω $ A \in \textbf{M}_{m \times n}(\mathbb{R}) $ και έστω 
+            $ \mathbf{r}_{1}, \ldots \mathbf{r}_{m} $ οι $m$ - γραμμές του $A$.  
+            Ο υπόχωρος $ < \mathbf{r}_{1}, \ldots, \mathbf{r}_{m} >  $ του 
+            $ \mathbb{R}^{n} $ που παράγεται από τις γραμμές του $A$ ονομάζεται 
+            χώρος γραμμών του $A$ και συμβολίζεται με $ R(A) $ ή $ \Gamma_{A} $.
+        \item Έστω $ A \in \textbf{M}_{m \times n}(\mathbb{R}) $ και έστω 
+            $ \mathbf{c}_{1}, \ldots \mathbf{c}_{n} $ οι $n$ - στήλες του $A$.  
+            Ο υπόχωρος $ < \mathbf{c}_{1}, \ldots, \mathbf{c}_{n} >  $ του 
+            $ \mathbb{R}^{m} $ που παράγεται από τις στήλες του $A$ ονομάζεται 
+            χώρος στήλών του $A$ και συμβολίζεται με $ C(A) $ ή $ \Sigma_{A} $.
+        \item Έστω $ \mathbf{P_{n}}(\mathbb{R}) $ ο $ \mathbb{R} $ - χώρος των 
+            πολυωνύμων βαθμού $ \leq n $ και έστω $ p_{0} = 1, p_{1}=x, p_{2}=x^{2}, 
+            \ldots, p_{n}=x^{n} $. Τότε $ \mathbf{P_{n}}(\mathbb{R}) = 
+            < p_{0}, p_{1}, \ldots, p_{n} > $.
+    \end{enumerate}
+\end{examples}
+
+\begin{thm}
+    Έστω $V$ ένας διανυσματικός χώρος επί του $ \mathbb{K} $ και έστω $ S, S' $ δύο 
+    μη-κενά, πεπερασμένα υποσύνολα του $V$. Τότε 
+    \[ < S > = < S' > \Leftrightarrow S \subseteq < S' >  \; \text{και} \; 
+     S' \subseteq < S >  \]
+\end{thm}
+\begin{proof}
+\item {}
+    \begin{description}
+        \item[($\Rightarrow$)] Έστω ότι $ < S > = < S' >   $. Γνωρίζουμε από το προηγούμενο θεώρημα
+            ότι $ S \subseteq < S >  $ και $ S' \subseteq < S' >  $. Άρα από την 
+            υπόθεση έχουμε ότι και $ S \subseteq < S' >  $ και $ S' \subseteq < S >  $.
+        \item[($\Leftarrow$)] Έστω ότι $ S \subseteq < S' >  $ και $ S' \subseteq < S >  $. Επειδή $
+            < S >  $ είναι ο μικρότερος υπόχωρος του $V$ που περιέχει το $S$ και 
+            $ S \subseteq < S' >  $ έπεται ότι $ < S > \leq < S' >   $. Ομοίως 
+            $ < S' > \leq < S >   $, οπότε $ < S > = < S' >   $.
+             \end{description}
+\end{proof}
+
+\begin{rem}
+    Από το θεώρημα καταλαβαίνουμε ότι είναι δυνατόν περισσότερα από ένα υποσύνολα του 
+    $V$ να παϱάγουν τον ίδιο υπόχωρο του $V$. Για παράδειγμα, για τον 
+    $ \mathbb{R} $- χώρο $ \mathbb{R} $ έχουμε ότι $ \mathbb{R} = < x > , 
+    \; \forall x \in  \mathbb{R} \setminus \{ 0 \} $.
+\end{rem}
+
+\section{Γραμμική Ανεξαρτησία}
+
+\begin{dfn}
+    Έστω $ (V,+,\cdot) $ ένας $ \mathbb{K} $- χώρος και έστω 
+    $ S = \{ \mathbf{v_{1}}, \ldots, \mathbf{v}_{n} \} \subseteq V $. Λέμε ότι 
+    τα διανύσματα $ \mathbf{v_{1}}, \ldots, \mathbf{v_{n}} $ είναι 
+    \textcolor{Col2}{γραμμικώς ανεξάρτητα} ή ότι το σύνολο $ S $ είναι 
+    \textcolor{Col2}{γραμμικώς ανεξάρτητο}, αν οποτεδήποτε έχουμε
+    \[
+        \comb{v}{k} = \mathbf{0} \; \text{τότε} \; \lambda _{1} = 
+        \lambda _{2} = \cdots = \lambda _{n} = 0
+    \]
+    Αν τα διανύσματα $ \mathbf{v_{1}}, \ldots, \mathbf{v_{n}} $ δεν είναι γραμμικώς 
+    ανεξάρτητα τότε λέγονται \textcolor{Col2}{γραμμικώς εξαρτημένα} και ισχύει 
+    ότι υπάρχει μη τετριμμένος γραμμικός συνδυασμός στοιχείων του $S$ που είναι 
+    ίσος με $ \mathbf{0} $, δηλαδή
+    \[
+        \exists  \lambda _{1}, \ldots, \lambda _{k} \in \mathbb{K} \; 
+        \text{όχι όλα μηδέν, ώστε} \; \comb{u}{k} = \mathbf{0}
+    \]
+\end{dfn}
+
+\begin{examples}
+\item {}
+    \begin{enumerate}
+        \item Στον $ \mathbb{R}^{2} $ δύο διανύσματα $ \mathbf{u} $ και $ \mathbf{v} $ 
+            είναι γραμμικώς ανεξάρτητα αν και μόνον αν δεν είναι παράλληλα. Πράγματι 
+            έστω ότι $ \mathbf{u}, \mathbf{v} $ είναι γραμμικώς εξαρτημένα. Τότε 
+            \[
+                \exists \lambda _{1}, \lambda _{2} \in \mathbb{R} \; 
+                \text{όχι και τα δύο μηδέν, ώστε} 
+                \; \lambda_{1} \mathbf{u} + \lambda_{2} \mathbf{v} = \mathbf{0} 
+            \]
+            Έτσι, αν έστω ότι $ \lambda_{1} \neq 0 $, έχουμε 
+            \[
+                \mathbf{u} = - \frac{\lambda _{2}}{\lambda _{1}} \mathbf{v} \quad  
+                \text{(παράλληλα)}
+            \] 
+    \end{enumerate}
+\end{examples}
+
+\begin{prop}
+   Το $ \emptyset $ είναι γραμμικώς ανεξάρτητο. 
+\end{prop}
+\begin{proof}
+    Έστω ότι το $ \emptyset $ είναι γραμμικώς εξαρτημένο. Άρα υπάρχει μη τετριμμένος 
+    γραμμικός συνδυασμός στοιχείων του $ \emptyset $ που να είναι 
+    $ \mathbf{0} $. Άτοπο, γιατί το $ \emptyset $ δεν έχει στοιχεία.
+\end{proof}
+
+\begin{prop}
+    Κάθε μη-μηδενικό διάνυσμα ένος $ \mathbb{K} $- χώρου $V$ είναι γραμμικώς 
+    ανεξάρτητο.
+\end{prop}
+\begin{proof}
+    Πράγματι. Έστω $ \mathbf{u} \in V $ και $ \lambda \in \mathbb{K} $ με 
+    $ \lambda \mathbf{u} = \mathbf{0} $. Τότε από την πρόταση~\ref{prop:prod}  
+    έχουμε $ \lambda = 0 $, αφού $ \mathbf{u} \neq \mathbf{0} $.
+\end{proof}
+
+\begin{prop}
+    Έστω $V$ ένας $ \mathbb{K} $- χώρος και 
+    $ S = \{ \mathbf{v_{1}}, \mathbf{v_{2}}, \ldots, \mathbf{v_{n}}  \} \subseteq V $.
+    Αν $ \mathbf{0} \in S $ τότε το $S$ είναι γραμμικώς εξαρτημένο. Συγκεκριμένα 
+    $ \{ \mathbf{0} \} $ είναι γραμμικώς εξαρτημένο.
+\end{prop}
+\begin{proof}
+    Πράγματι, έστω ότι $ \mathbf{u}_{i} = \mathbf{0} $, για κάποιο $ i $ με 
+    $ 1 \leq i \leq k $. Τότε
+    \[
+        0 \mathbf{u_{1}}+ \cdots + 0 \mathbf{u}_{i-1} + 1 \mathbf{u}_{i} + 0 
+        \mathbf{u}_{i+1} + \cdots + 0 \mathbf{u}_{k} = \mathbf{0}  
+     \]
+     είναι ένας γραμμικός συνδυασμός στοιχειών του $S$ που είναι $ \mathbf{0} $, 
+     χωρίς να μηδέν όλοι οι συντελεστές.
+\end{proof}
+
+
+
+\begin{examples}
+\item {}
+    \begin{enumerate}
+        \item 
+            Έστω $ \mathbb{R} $- χώρος $ \mathbb{R}^{n} $. Τότε οποιαδήποτε $ k $ 
+            το πλήθος διανύσματα του $ \mathbb{R}^{n} $ με $ k >n $ είναι 
+            γραμμικώς εξαρτημένα. Πράγματι έστω $ k>n $ και έστω $k$ διανύσματα του 
+            $ \mathbb{R}^{n} $: 
+            $ \mathbf{u}_{1} = (u_{11}, u_{12}, \ldots, v_{1n}), 
+            \mathbf{u_{2}}=(u_{21},u_{22},\ldots,u_{2n}), \ldots, 
+            \mathbf{u}_{k}= (u_{k1}, u_{k2}, \ldots, u_{kn}) $. Θα δείξουμε 
+            ότι υπάρχουν 
+            $ \lambda _{1}, \lambda _{2}, \ldots, \lambda _{k} $ όχι όλοι μηδέν, 
+            ώστε
+            \[ 
+                \lambda _{1} \mathbf{u_{1}}+ \lambda _{2} \mathbf{u_{2}}+\cdots+ 
+                \lambda _{k} \mathbf{u}_{k} = \mathbf{0} 
+            \] 
+            Πράγματι 
+            \[
+                \lambda_{1} 
+                \begin{pmatrix*} 
+                    u_{11} \\ u_{12} \\ \vdots \\ u_{1n} 
+                \end{pmatrix*} + 
+                \lambda _{2} 
+                \begin{pmatrix*} 
+                    u_{21} \\ u_{22} \\ \vdots \\ u_{2n} 
+                \end{pmatrix*} + \cdots + 
+                \lambda _{k} 
+                \begin{pmatrix*} 
+                    u_{k1} \\ u_{k2} \\ \vdots \\ u_{kn} 
+                \end{pmatrix*} 
+                = \begin{pmatrix*} 0 \\ 0 \\ \vdots \\ 0 \end{pmatrix*} 
+            \]
+            αν το παρακάτω $ n \times k $ ομογενές σύστημα με αγνώστους τα 
+            $ \lambda _{1}, \lambda _{2}, \ldots, \lambda _{k} $ 
+            \begin{equation*}
+                % no need to use "align*" env.
+                \setlength\arraycolsep{1.5pt} % default value: 5pt
+                \left.
+                    \begin{array}{ccc ccc c @{\extracolsep{2.5pt}}c
+                        @{\extracolsep{2.5pt}}c}
+                        u_{11} \lambda _{1} & + & u_{21} \lambda _{2} & + & 
+                        \cdots & + & u_{k1}\lambda_{k} & = & 0 \\
+                        u_{12}\lambda_{1} & + & u_{22}\lambda_{2} & + & \cdots & 
+                        + & u_{k2}\lambda_{k} & = & 0 \\
+                        \vdots & & \vdots & & \ddots & &  \vdots & &  \vdots \\
+                        u_{1n}\lambda_{1} & + & u_{2n}\lambda_{2} & + & \cdots & 
+                        + & u_{kn}\lambda_{k} & = & 0 \\
+                    \end{array}
+                \right\} _{n \times k}
+            \end{equation*}    
+            έχει τουλάχιστον μια μη μηδενική λύση, το οποίο προφανώς ισχύει 
+            (από γνωστό θεώρημα), αφού λόγω ότι $ n<k $ το σύστημα έχει 
+            περισσότερους αγνώστους από εξισώσεις και λόγω ότι είναι και 
+            ομογενές θα έχει άπειρες λύσεις.
+        \item Έστω ο $ \mathbb{R} $-χώρος $ \mathbb{R}^{n} $ και για $ i= 1,\ldots,n $
+            έστω $ \mathbf{e_{i}} $ το διάνυσμα του $ \mathbb{R}^{n} $ το οποίο έχει 
+            1 στην $ i $-θέση και 0 στις υπόλοιπες. Τότε τα διανύσματα 
+            $ \mathbf{e_{1}}, \mathbf{e_{2}}, \ldots, \mathbf{e_{n}} $ είναι 
+            γραμμικώς ανεξάρτητα. Πράγματι, έστω 
+            $ \lambda _{1}, \lambda _{2}, \ldots, \lambda _{n} \in \mathbb{R} $ 
+            τέτοια ώστε 
+            \[
+                \lambda _{1} \mathbf{e_{1}}+ \lambda _{2} \mathbf{e_{2}} 
+                + \cdots + \lambda _{n} \mathbf{e_{n}}= \mathbf{0}  
+            \]
+            Τότε έχουμε
+            \[
+                \lambda _{1} 
+                \begin{pmatrix*} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix*} 
+                + \lambda _{2} 
+                \begin{pmatrix*} 0 \\ 1 \\ \vdots \\ 0 \end{pmatrix*}
+                + \cdots + \lambda _{n} 
+                \begin{pmatrix*} 0 \\ 0 \\ \vdots \\ 1 \end{pmatrix*}
+                = 
+                \begin{pmatrix*} 0 \\ 0 \\ \vdots \\ 0 \end{pmatrix*} 
+                \Leftrightarrow 
+                \begin{pmatrix*} \lambda _{1} \\ \lambda _{2} \\ \vdots \\ 
+                \lambda _{n} \end{pmatrix*} = 
+                \begin{pmatrix*} 0 \\ 0 \\ \vdots \\ 0 \end{pmatrix*}
+                \Leftrightarrow 
+                \lambda _{1} = \lambda _{2} = \dots = \lambda _{n} = 0 
+            \]
+            Δηλαδή τα διανύσματα $ \mathbf{e_{1}}, \mathbf{e_{2}}, \ldots, 
+        \mathbf{e_{n}} $ είναι γραμμικώς ανεξάρτητα.
+        \item Έστω $ \mathbb{R} $- χώρος $ \mathbf{P_{n}}(\mathbb{R}), \; n 
+            \in \mathbb{N} $. Τότε το σύνολο $ \{1,x,x^{2}, \ldots,x^{n} \} $ 
+            είναι γραμμικώς ανεξάρτητο. Πράγματι, έστω (προς άτοπο) ότι το 
+            $S$ είναι γραμμικώς εξαρτημένο. Τότε υπάρχουν 
+            $ \lambda _{0}, \lambda _{1}, \ldots, \lambda _{n} \in \mathbb{R} $, 
+            όχι όλοι μηδέν, ώστε
+            \[
+                \lambda _{0} \cdot 1 + \lambda _{1} \cdot x + \lambda _{2} 
+                \cdot x^{2} + \cdots + \lambda _{n} \cdot x^{n} = \mathbf{0}, \; 
+                \forall x \in \mathbb{R} \quad \text{(ισότητα πολυωννύμων)}   
+            \]
+            Δηλαδή, κάθε πραγματικός αριθμός είναι ρίζα του μη μηδενικού πολυωνύμου 
+            $ \lambda _{0} \cdot 1 + \lambda _{1} \cdot x + \lambda _{2} 
+            \cdot x^{2} + \cdots + \lambda _{n} \cdot x^{n} $. Άτοπο, γιατί από 
+            το θεμελιώδες θεώρημα της Άλγεβρας, το παραπάνω πολυώνυμο έχει το 
+            πολύ $ n $ το πλήθος διακεκριμένες ρίζες.
+    \end{enumerate}
+\end{examples}
+
+\begin{thm}\label{thm:s1s2depend}
+    Έστω $V$ ένας $ \mathbb{K} $- χώρος και έστω 
+    $ S = \{ \mathbf{u}_{1}, \ldots, \mathbf{u_{n}} \} $ μη μηδενικό σύνολο 
+    διανυσμάτων του $V$. Τότε το $S$ είναι γραμμικώς εξαρτημένο αν και μόνον αν 
+    κάποιο από τα διανύσματα του $S$ είναι γραμμικώς συνδυασμός των υπολοίπων. 
+\end{thm}
+\begin{proof}
+\item {}
+    \begin{description}
+        \item [($ \Rightarrow $)] Έστω ότι το $S$ είναι γραμμικώς εξαρτημένο. Τότε 
+            υπάρχουν $ \lambda _{1}, \ldots, \lambda_{n} \in \mathbb{K} $ όχι 
+            όλα μηδέν, ώστε 
+            \[
+                \lambda _{1} \mathbf{u_{1}} + \cdots + \lambda _{n} \mathbf{u}_{n} = 
+                \mathbf{0}  
+            \] 
+            Έστω ότι $ \lambda _{i} \neq 0 $ με $ 1 \leq i \leq n $. Τότε έχουμε
+            \begin{align*}
+                \lambda _{1} \mathbf{u}_{1} + \cdots + \lambda _{i-1} 
+                \mathbf{u}_{i-1} + \lambda _{i} \mathbf{u}_{i} + \lambda _{i+1} 
+                \mathbf{u}_{i+1} + \cdots + \lambda _{n}
+                \mathbf{u}_{n} = \mathbf{0} \Leftrightarrow  \\
+                \mathbf{u}_{i} = - \frac{\lambda _{1}}{\lambda _{i}} \mathbf{u}_{1} +
+                \cdots - \frac{\lambda _{i-1}}{\lambda _{i}} \mathbf{u}_{i-1} - 
+                \frac{\lambda _{i+1}}{\lambda _{i}} \mathbf{u}_{i+1} - 
+                \cdots - \frac{\lambda _{n}}{\lambda _{i}} \mathbf{u}_{n} 
+             \end{align*} 
+             Δηλαδή το διάνυσμα $ \mathbf{u}_{i} $ είναι γραμμικός συνδυασμός των 
+             υπολόιπων.
+         \item [($\Leftarrow$)] 
+             Έστω ότι για κάποιο $ i $ με $ 1 \leq i \leq n $ το διάνυσμα 
+             $ \mathbf{u}_{i} $ είναι γραμμικός συνδυασμός των υπολοίπων διανυσμάτων.
+             Άρα υπάρχουν $ \lambda _{1}, \ldots, \lambda _{n} \in \mathbb{K} $ 
+             ώστε 
+             \begin{gather*}
+                 \mathbf{u}_{i} = \lambda _{1} \mathbf{u}_{1} + \cdots + 
+                 \lambda _{n} \mathbf{u}_{n} \Leftrightarrow \\
+                 \mathbf{u}_{i} = \lambda _{1} \mathbf{u_{1}} + \cdots + 
+                 \lambda _{i-1}
+                 \mathbf{u}_{i-1} + \lambda _{i+1} \mathbf{u}_{i+1} + \cdots + 
+                 \lambda _{n} \mathbf{u}_{n} \Leftrightarrow \\
+                 \lambda _{1} \mathbf{u_{1}} + \cdots + \lambda _{i-1}
+                 \mathbf{u}_{i-1} + (-1) \cdot \mathbf{u}_{i} + \lambda _{i+1} 
+                 \mathbf{u}_{i+1} + \cdots + \lambda _{n} \mathbf{u}_{n} = \mathbf{0}
+             \end{gather*}
+             Επομένως υπάρχει μη τετριμμένος γραμμικός συνδυασμός των στοιχειών του 
+             $S$ που ειναι ο μηδενικός, άρα το $S$ είναι γραμμικώς εξαρτημένο.
+    \end{description}
+\end{proof}
+
+
+\begin{thm}
+    Έστω $V$ ένας $ \mathbb{K} $- χώρος και έστω $ S_{1}, S_{2} $ δύο μη κενά, 
+    πεπερασμένα υποσύνολα του $V$ με $ S_{1} \subseteq S_{2} $. 
+    Τότε, αν $ S_{1} $ είναι γραμμικώς εξαρτημένο, τότε και το $ S_{2} $ 
+    είναι γραμμικώς εξαρτημένο.
+\end{thm}
+\begin{proof}
+    Έστω $ S_{1} $ γραμμικώς εξαρτημένο και έστω ότι $ S_{1} = \{ \mathbf{u_{1}},
+        \ldots, \mathbf{u}_{k} \} $ και έστω $ S_{2} = \{ \mathbf{u_{1}}, \ldots, 
+    \mathbf{u}_{k}, \mathbf{u}_{k+1}, \ldots, \mathbf{u}_{n} \} $. 
+    Εφόσον το $ S_{1} $ ειναι γραμμικώς εξαρτημένο, τότε για κάποιο $ i $ με 
+    $ 1 \leq i \leq k $ το διάνυσμα $ \mathbf{u}_{i} $ γράφεται 
+    ως γραμμικός συνδυασμός των υπολοίπων, δηλαδή υπάρχουν $ \lambda _{1}, \ldots, 
+    \lambda _{k} \in \mathbb{K} $ ώστε
+    \[
+        \mathbf{u}_{i} = \lambda _{1} \mathbf{u_{1}}+ \cdots \lambda _{i-1} 
+        \mathbf{u}_{i-1} + \lambda _{i+1} \mathbf{u}_{i+1} + \cdots + 
+        \lambda _{k} \mathbf{u}_{k}
+    \] 
+    Όμως τότε έχουμε 
+    \[
+        \mathbf{u}_{i} = \lambda _{1} \mathbf{u_{1}}+ \cdots \lambda _{i-1} 
+        \mathbf{u}_{i-1} + \lambda _{i+1} \mathbf{u}_{i+1} + \cdots + 
+        \lambda _{k} \mathbf{u}_{k} + 0 \mathbf{u}_{k+1} + \cdots + 0 \mathbf{u}_{n}
+    \] 
+    Δηλαδή το $ S_{2} $ είναι γραμμικώς εξαρτημένο.
+\end{proof}
+
+\section{Βάση και Διάσταση Διανυσματικού Χώρου}
+
+\begin{dfn}
+    Έστω $ V $ ένας $ \mathbb{K} $- χώρος πεπερασμένης διάστασης.
+
+Ένα υποσύνολο $ B = \{ \mathbf{u}_{1} , \ldots, \mathbf{u}_{n} \} \subseteq V $ 
+ονομάζεται  {\color {Col2} $ \mathbb{K} $- βάση} του $V$, ή απλώς 
+\textcolor{Col2}{βάση} του $V$, αν 
+\begin{enumerate}[i)]
+    \item Το σύνολο $B$ παράγει το χώρο $V$, δηλαδή $ V = < B >  $ 
+    \item Το $B$ είναι γραμμικώς ανεξάρτητο υποσύνολο του $V$
+\end{enumerate}
+\end{dfn}
+
+\begin{rems}
+\item {}
+    \begin{enumerate}
+        \item Αν $B$ είναι μια βάση ενός διανυσματικού χώρου $V$ τότε 
+            $ \mathbf{0}_{V} \not \in B $, γιατί αλλιώς το $B$ θα ήταν γραμμικώς 
+            εξαρτημένο.
+        \item $ \emptyset $ είναι βάση του τετριμμένου χώρου $ \{ \mathbf{0}_{V} \} $.
+    \end{enumerate}
+\end{rems}
+
+\begin{examples}
+\item {}
+    \begin{enumerate}
+        \item Έστω ο $ \mathbb{R} $- χώρος $ \mathbb{R}^{n} $. Τότε το σύνολο 
+            $ B = \{ \mathbf{e_{1}}, \ldots, \mathbf{e_{n}} \} $ είναι βάση του και 
+            ονομάζεται η συνήθης ή η κανονική βάση του $ \mathbb{R}^{n} $.
+        \item Έστω ο $ \mathbb{R} $- χώρος $ \mathbf{P_{n}}(\mathbb{R}) $. Τότε το 
+            σύνολο $ B = \{ 1, x, x^{2}, \ldots, x^{n} \} $ είναι βάση του και 
+            ονομάζεται η συνήθης ή η κανονική βάση του $ \mathbf{P_{n}}(\mathbb{R}) $.
+        \item Έστω ο $ \mathbb{R} $- χώρος $ \textbf{M}_{m \times n}(\mathbb{R}) $. 
+            Τότε το σύνολο 
+            $ B = \{ E_{ij} \in \textbf{M}_{m \times n}(\mathbb{R}) \; : \; 1 \leq i
+            \leq m \; \text{και} \; 1 \leq j \leq n\}  $, όπου $ E _{ij} $ είναι ο 
+            $ m \times n $ πίνακας ο οποίος έχει 1 στην $ ij $- θέση και 0 στις άλλες 
+            είναι βάση του και ονομάζεται η συνήθης ή η κανονική βάση του 
+            $ \textbf{M}_{m \times n}(\mathbb{R}) $.
+    \end{enumerate}
+\end{examples}
+
+\begin{thm}[Χαρακτηρισμός των Βάσεων]
+\item {}
+    Έστω $V$ ένας $ \mathbb{K} $- χώρος πεπερασμένης διάστασης και έστω 
+    $ B = \{ \mathbf{u_{1}}, \ldots, \mathbf{u}_{n} \} $ ένα υποσύνολο του V. Τότε 
+    το $B$ είναι βάση του $V$ αν και μόνον αν κάθε διάνυσμα του $V$ γράφεται 
+    κατά μοναδικό τϱόπο ως γραμμικός συνδυασμός των στοιχείων του $B$.
+\end{thm}
+\begin{proof}
+\item {}
+    \begin{description}
+        \item [($ \Rightarrow $)]
+            Έστω ότι το σύνολο $B$ είναι βάση του $V$ και έστω ότι για το 
+            τυχαίο διάνυσμα $ \mathbf{v} \in V $, έχουμε ότι 
+            \begin{align*} 
+                \mathbf{v} &= \lambda _{1} \mathbf{u_{1}}+ \cdots + \lambda _{n} 
+                \mathbf{u}_{n}, \quad \text{για κάποια} \;  \lambda _{1}, \ldots, 
+                \lambda _{n} \in \mathbb{K}  \\
+                \mathbf{v} &= \mu_{1} \mathbf{u_{1}}+ \cdots + \mu _{n} 
+                \mathbf{u}_{n}, \quad \text{για κάποια} \;  \mu _{1}, \ldots, 
+                \mu _{k} \in \mathbb{K}
+            \end{align*}
+            Τότε 
+            \begin{gather*}
+                \lambda _{1} \mathbf{u_{1}}+ \cdots + \lambda _{n} \mathbf{u}_{n} = 
+                \mu_{1} \mathbf{u_{1}}+ \cdots + \mu _{n} \mathbf{u}_{n} 
+                \Leftrightarrow \\
+                (\lambda _{1}- \mu _{1}) \mathbf{u}_{1} + \cdots + (\lambda _{n} - 
+                \mu _{n}) \mathbf{u}_{n} = \mathbf{0}
+            \end{gather*}
+            Όμως το σύνολο $B$ είναι βάση του $V$, άρα γραμμικώς ανεξάρτητο, άρα 
+            \[
+                \lambda _{1} = \mu _{1}, \ldots, \lambda _{n} = \mu _{n} 
+            \] 
+            και επομένως ο γραμμικός συνδυασμός είναι μοναδικός.
+        \item [($ \Leftarrow $)] 
+            Έστω ότι κάθε $ \mathbf{v} \in V $ γράφεται ως γραμμικώς συνδυασμός 
+            στοιχείων του $B$ κατά μοναδικό τρόπο. Άρα το $B$ παράγει το χώρο $V$. 
+            Το $B$ είναι επίσης γραμμικώς ανεξάρτητο υποσύνολο του $V$, γιατί 
+            \[
+                \comb{\mathbf{e}}{n} \mathbf{0} \Rightarrow \lambda _{i} = 0, \; 
+                \forall i=1,\ldots, n
+            \] 
+            αφού επίσης $ \mathbf{0} = 0 \mathbf{e_{1}}+\cdots + 0 \mathbf{e}_{n} $ 
+            και από υπόθεση το $ \mathbf{0} $ γράφεται με μοναδικό τρόπο ως γραμμικός 
+            συνδυασμός στοιχείων του $B$.
+    \end{description} 
+\end{proof}
+
+\begin{rem}
+    Αν $B = \{ \mathbf{u}_{1}, \ldots, \mathbf{u_{n}} \} $ είναι μια διατεταγμένη 
+    βάση ενός $ \mathbb{K} $ - χώρου $V$, τότε από το προηγούμενο θεώρημα έχουμε ότι 
+    $ \forall \mathbf{u} \in V, \; \exists $ μοναδικό διάνυσμα 
+    $ (u_{1}, \ldots, u_{n}) \in \mathbb{K}^{n} $ τέτοιο ώστε 
+    $ \mathbf{u} = u_{1} \mathbf{u_{1}} + \cdots u_{n} \mathbf{u}_{n} $. 
+    Το διάνυσμα $ (u_{1}, \ldots, u_{n}) \in \mathbb{K}^{n} $ λέγεται 
+    \textcolor{Col2}{διάνυσμα συντεταγμένων} του $ \mathbf{u} $ και γράφουμε 
+    \[ 
+        [\mathbf{u}]_{B} = (u_{1}, \ldots, u_{n})
+    \] 
+    και  
+    οι συντελεστές $ u_{1}, \ldots, u_{n} \in \mathbb{K} $ λέγονται 
+    \textcolor{Col2}{συντεταγμένες} του διανύσματος $ \mathbf{u} $ ως προς τη βάση $B$.
+\end{rem}
+
+\begin{lem}
+    Έστω $V$ ένας $ \mathbb{K} $- χώρος πεπερασμένης διάστασης και έστω 
+    $ S = \{ \mathbf{u_{1}}, \ldots, \mathbf{u_{n}} \} $ ένα σύνολο γεννητόρων του 
+    $V$. Τότε 
+    \begin{enumerate}[i)]
+        \item Αν $ \mathbf{w} \in V $ τότε το σύνολο $ S \cup \{ \mathbf{w} \} $ είναι 
+            γραμμικώς εξαρτημένο και ισχύει $ V = < S \cup \{ \mathbf{w} \} >  $.
+        \item Αν για κάποιο $ i $ με $ 1 \leq i \leq n $ το διάνυσμα 
+            $ \mathbf{u}_{i} $ είναι γραμμικός συνδυασμός των υπολοίπων διανυσμάτων 
+            του $S$, τότε το σύνολο $ S - \{ \mathbf{u}_{i} \} $ παράγει τον $V$. 
+    \end{enumerate}
+\end{lem}
+\begin{proof}
+\item {}
+    \begin{enumerate}[i)]
+        \item Αφού $S$ είναι ένα σύνολο γεννητόρων του $V$, έχουμε ότι 
+            $ V = < S >  $.
+            Άρα $ \mathbf{w} \in V \Rightarrow \mathbf{w} \in < S >  $, άρα το 
+            $ \mathbf{w} $ είναι γραμμικός συνδυασμός των στοιχείων του $S$, 
+            άρα σύμφωνα με το θεώρημα~\ref{thm:s1s2depend}, το σύνολο 
+            $ S \cup \{ \mathbf{w} \} $ θα είναι γραμμικώς εξαρτημένο.
+            Έστω τώρα  $ \mathbf{v} \in V = < S >  $. Τότε υπάρχουν 
+            $ \lambda _{1}, \ldots, \lambda _{n} \in \mathbb{K} $ ώστε 
+            $ \mathbf{v} = \lambda _{1} \mathbf{u}_{1}+ \cdots + \lambda _{n} 
+            \mathbf{u}_{n} = \lambda _{1} \mathbf{u}_{1}+ \cdots + \lambda _{n} 
+            \mathbf{u}_{n} + 0 \mathbf{w} \in < S  \cup \{ \mathbf{w}  \} > $. Άρα 
+            $ V = < S \cup \{ \mathbf{w} \} >  $.
+        \item Έστω ότι για κάποιο $ i $ με $ 1 \leq i \leq n $ υπάρχουν 
+            $ \lambda _{1}, \ldots, \lambda _{n} \in \mathbb{K} $ ώστε 
+            \begin{equation*}
+                \label{eq:combi}
+                \mathbf{u}_{i} = \lambda _{1} \mathbf{u_{1}} + \cdots \lambda _{i-1}
+                \mathbf{u}_{i-1} + \lambda _{i+1} \mathbf{u}_{i+1} + \cdots + 
+                \lambda _{n} \mathbf{u}_{n} 
+            \end{equation*}
+            Έστω $ \mathbf{v} \in V = < S > $. Τότε υπάρχουν $ \mu _{1}, \ldots, 
+            \mu _{n} \in \mathbb{K} $ ώστε 
+            \begin{align*} 
+                \mathbf{v} &= 
+                \mu _{1} \mathbf{u}_{1} + \cdots + \mu _{i} \mathbf{u}_{i} + \cdots + 
+                \mu _{n} \mathbf{u}_{n} \\ 
+                           &\overset{\ref{eq:combi}}{=} 
+                           \mu _{1} \mathbf{u}_{1} + \cdots + \mu _{i} (\lambda _{1} 
+                           \mathbf{u_{1}} + \cdots \lambda _{i-1}
+                           \mathbf{u}_{i-1} + \lambda _{i+1} \mathbf{u}_{i+1} + 
+                           \cdots + \lambda _{n} \mathbf{u}_{n}) + \cdots + \mu _{n} 
+                           \mathbf{u}_{n} \\
+                           &=(\mu _{1}+ \mu _{i}\lambda_{1}) \mathbf{u}_{1} + \cdots + 
+                           (\mu _{i} \lambda _{i-1}) \mathbf{u}_{i-1} + (\mu _{i} 
+                           \lambda _{i+1}) \mathbf{u}_{i+1} + \cdots + (\mu _{n} + 
+                           \mu _{i} \lambda _{n}) \mathbf{u}_{n} \in 
+                           < S - \{ \mathbf{u}_{i} \} >  
+            \end{align*}
+            Άρα $ v = < S - \{ \mathbf{u}_{i} \} >  $
+    \end{enumerate}
+\end{proof}
+
+\begin{cor}
+    Έστω $V$ ένας $ \mathbb{K} $- χώρος και έστω $ S_{1}, S_{2} $ μή κενά, 
+    πεπερασμένα υποσύνολα του $V$, με $ S_{1} \subseteq S_{2} $. Τότε αν 
+    $ S_{2} $ είναι γραμμικώς ανεξάρτητο τότε και το $ S_{1} $ είναι γραμμικώς 
+    ανεξάρτητο.
+\end{cor}
+
+\begin{prop}
+    Αν το σύνολο $ S = \{ \mathbf{u}_{1}, \ldots, \mathbf{u_{n}} \} $ παράγει 
+    το χώρο $V$, τότε κάποιο υποσύνολο του $S$ είναι βάση του $V$.
+\end{prop}
+
+\begin{thm}
+    Έστω $ B = \{ \mathbf{e_{1}}, \ldots, \mathbf{e_{n}} \} $ μια βάση του $V$. 
+    Τότε 
+    \begin{enumerate}[i)]
+        \item Οποιαδήποτε $ n+1 $ στοιχεία του $V$ είναι γραμμικώς εξαρτημένα.
+        \item Όλες οι βάσεις του χώρου $V$ έχουν το ίδιο πλήθος στοιχείων.
+    \end{enumerate}
+\end{thm}
+
+\begin{dfn}
+    Όπως είδαμε, αν ένας $ \mathbb{K} $ - χώρος $V$ έχει μια βάση με 
+    $ n $ στοιχεία, τότε και κάθε άλλη βάση του, θα έχει επίσης $n$ στοιχεία. 
+    Ο αριθμός $n$ λέγεται \textcolor{Col2}{διάσταση} του χώρου $V$ επί του 
+    $ \mathbb{K} $ και γράφουμε $ \dim V = n $.
+\end{dfn}
+
+\begin{prop}
+\item {}
+    Έστω $V$ ένας $ \mathbb{K} $ - χώρος διάστασης $n$. Τότε
+    \begin{enumerate}[i)]
+        \item $n$ γραμμικώς ανεξάρτητα στοιχεία του $V$, αποτελούν βάση αυτού.
+        \item Οποιαδήποτε $ n-1 $ στοιχεία του $V$ δεν παράγουν τον χώρο $V$.
+        \item Οποιαδήποτε $ m < n $ γραμμικώς ανεξάρτητα στοιχεία του $V$, 
+            συμπληρώνονται με $ n-m $ άλλα στοιχεία, ώστε να προκύψει μια 
+            βάση του χώρου.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    Έστω $V$ ένας διανυσματικός χώρος πεπερασμένης διάστασης. Έστω $ W $ ένας 
+    υπόχωρος του $V$ με βάση $ \{ \mathbf{e_{1}}, \ldots, \mathbf{e_{m}} \} $. 
+    Τότε υπάρχει βάση του χώρου $ V $ της μορφής 
+    $ \{ \mathbf{e_{1}}, \ldots, \mathbf{e_{m}}, \mathbf{e_{m+1}}, \ldots, 
+    \mathbf{e_{n}} \} $, με $ n \geq m $.
+\end{prop}
+\begin{proof}
+
+\end{proof}
+
+\begin{cor}
+    Αν $W$ υπόχωρος του $V$ και $ \dim W = dim V $, τότε $ W=v $.
+\end{cor}
+\begin{proof}
+    Γιατί, αν $ \{ \mathbf{e_{1}}, \ldots, \mathbf{e_{m}}\}  $ είναι βάση του 
+    $ W $, θα είναι και βάση του $V$. Έτσι ο 
+    $ V = < \mathbf{e_{1}}, \ldots, \mathbf{e}_{m} > = W$.
+\end{proof}
+
+\begin{prop}
+    Εστω $ A = (a_{ij}) \in \textbf{M}_{n}(\mathbb{R}) $. Τότε 
+    \begin{enumerate}[i)]
+        \item Οι στήλες $ \mathbf{c}_{1}, \ldots, \mathbf{c}_{n} $ είναι γραμμικώς 
+            εξαρτημένα διανύσματα του $ \mathbb{R}^{n} $ αν $ \abs{A} = 0 $.
+        \item Οι γραμμές $ \mathbf{r}_{1}, \ldots, \mathbf{r}_{n} $ είναι γραμμικώς 
+            εξαρτημένα διανύσματα του $ \mathbb{R}^{n} $ αν $ \abs{A} = 0 $.
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+
+\end{proof}
+
+\begin{rem}
+    Από το θεώρημα έπεται ότι για να ελέγξουμε αν $ n $ το πλήθος διανύσματα 
+    του $ \mathbb{R}^{n} $ είναι γραμμικώς ανεξάρτητα, τότε αρκεί να ελέγξω την 
+    ορίζουσα του πίνακα $A$ που έχει τα διανύσματα αυτά ως στήλες ή ως γραμμές. 
+    Αν $ \abs{A} = 0 $, τότε θα είναι γραμμικώς εξαρτημένα.
+\end{rem}
+
+\end{document}

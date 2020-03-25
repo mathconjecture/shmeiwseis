@@ -35,8 +35,8 @@
                 \quad \forall \mathbf{u}, \mathbf{v}, \mathbf{w} \in V $ 
             \item $ \exists \vec{0} \in V, \; \forall \mathbf{u} \in V \quad 
                 \vec{u} + \vec{0} = \vec{0} + \vec{u} = \vec{u} $ 
-            \item $ \forall \mathbf{u} \in V, \; \exists (- \mathbf{u}) \in V \quad  
-                \vec{u} + ( - \vec{u} ) = ( - \vec{u} ) + \vec{u} = \vec{0} $ 
+            \item $ \forall \mathbf{u} \in V, \; \exists \mathbf{v} \in V \quad  
+                \vec{u} + \mathbf{v} = \mathbf{v} + \vec{u} = \vec{0} $ 
         \end{enumerate}
         }{%
         \textbf{και επίσης ισχύει}
@@ -65,241 +65,214 @@
 \begin{rem}
 \item {}
     \begin{enumerate}
-        \item Μερικές φορές γράφουμε $V = (V(\mathbb{K}), +, \cdot) $.
+        \item Συνήθως για έναν διανυσματικό χώρο $V$ γράφουμε 
+            $V = (V(\mathbb{K}), +, \cdot) $.
+        \item Το διάνυσμα $ \mathbf{v} $ στο αξίωμα 4, λέγεται 
+            \textcolor{Col2}{αντίθετο} του $ \mathbf{u} $ και συμβολίζεται με 
+            $ \mathbf{v} = - \mathbf{u} $.
         \item Είναι σημαντικό να προσέξουμε ότι στον ορισμό του διανυσματικού χώρου 
             ορίσαμε τις πράξεις έτσι ώστε να ικανοποιούνται οι συνθήκες κλειστότητας:
-            \begin{enumerate}[i)]
-                \item $ \forall \mathbf{u}, \mathbf{v} \in V \quad \mathbf{u} + \mathbf{v} \in V \quad
-                    \text{(κλειστότητα πρόσθεσης)} $ 
-                \item $ \forall \mathbf{u} \in V \; \text{και} \; \lambda \in \mathbb{K} \quad \lambda
-                    \mathbf{u} \in V \quad \text{(κλειστότητα βαθμωτού πολ/σμού)} $
-            \end{enumerate}
+            \begin{myitemize}
+            \item $ \forall \mathbf{u}, \mathbf{v} \in V \quad \mathbf{u} + 
+                \mathbf{v} \in V \quad \text{(κλειστότητα πρόσθεσης)} $ 
+            \item $ \forall \mathbf{u} \in V \; \text{και} \; \lambda \in \mathbb{K} 
+                \quad \lambda \mathbf{u} \in V \quad 
+                \text{(κλειστότητα βαθμωτού πολ/σμού)} $
+            \end{myitemize}
     \end{enumerate}
 \end{rem}
 
 
-\begin{examples}
-\item {}
-    \begin{enumerate}
-        \item \label{ex:Rn}\textcolor{Col2}{Ο διανυσματικός χώρος $ \mathbb{K}^{n} $ 
-            επί του $ \mathbb{K} \quad (n \geq 1) $}
+\section{Παραδείγματα}
+\begin{example} \label{ex:Rn}
+    \textcolor{Col2}{Ο διανυσματικός χώρος $ \mathbb{K}^{n} $ 
+    επί του $ \mathbb{K} \quad (n \geq 1) $}
 
-            Αν $ \mathbb{K} $ ένα σώμα, τότε το σύνολο $ \mathbb{K}^{n} = 
-            \{ \mathbf{u} = (x_{1},\ldots,x_{n}) \; : \; x_{i} \in \mathbb{K}\} $ 
-            μαζί με τις πράξεις 
-            \[
-                \mathbf{u}+ \mathbf{v} = (x_{1}+ y_{1}, \ldots , x_{n}+y_{n}) 
-                \quad \text{και} \quad \lambda \mathbf{u} = 
-                ( \lambda x_{1}, \ldots, \lambda x_{n})
-            \]
-            είναι ένας διανυσματικός χώϱος επί του $ \mathbb{K} $. 
+    Αν $ \mathbb{K} $ ένα σώμα, τότε το σύνολο $ \mathbb{K}^{n} = 
+    \{ \mathbf{u} = (x_{1},\ldots,x_{n}) \; : \; x_{i} \in \mathbb{K}\} $ 
+    μαζί με τις πράξεις 
+    \[
+        \mathbf{u}+ \mathbf{v} = (x_{1}+ y_{1}, \ldots , x_{n}+y_{n}) 
+        \quad \text{και} \quad \lambda \mathbf{u} = 
+        ( \lambda x_{1}, \ldots, \lambda x_{n})
+    \]
+    είναι ένας διανυσματικός χώϱος επί του $ \mathbb{K} $. 
 
-            Το μηδέν του χώρου 
-            είναι $ \vec{0} = (0,\ldots,0) $, όπου 0 είναι το μηδέν του σώματος 
-            $ \mathbb{K} $ και το αντίθετο του $ \mathbf{u} $ είναι το $ - \mathbf{u} =
-            (- x_{1}, \ldots, - x_{n}) $.
+    Το μηδέν του χώρου 
+    είναι $ \vec{0} = (0,\ldots,0) $, όπου 0 είναι το μηδέν του σώματος 
+    $ \mathbb{K} $ και το αντίθετο του $ \mathbf{u} $ είναι το $ - \mathbf{u} =
+    (- x_{1}, \ldots, - x_{n}) $.
 
-            Άρα ως ειδικές περιπτώσεις παίρνουμε για $ n=1 $ ότι το $ \mathbb{R} $ 
-            είναι διανυσματικός χώρος επί του $ \mathbb{R} $, όπως επίσης και ότι το 
-            $ \mathbb{C} $ είναι διανυσματικός χώρος επί του $ \mathbb{C} $.
+    Άρα ως ειδικές περιπτώσεις παίρνουμε για $ n=1 $ ότι το $ \mathbb{R} $ 
+    είναι διανυσματικός χώρος επί του $ \mathbb{R} $, όπως επίσης και ότι το 
+    $ \mathbb{C} $ είναι διανυσματικός χώρος επί του $ \mathbb{C} $.
+\end{example} 
 
-        \item\label{ex:funs} \textcolor{Col2}{Ο χώρος των πραγματικών συναρτήσεων 
-            $\mathbb{R} ^{A}$ ή $\mathbf{F}(A, \mathbb{R})$}
+\begin{example} \label{ex:funs} 
+    \textcolor{Col2}{Ο χώρος των πραγματικών συναρτήσεων 
+    $\mathbf{F}(A, \mathbb{R})$ ή $\mathbb{R} ^{A}$}
 
-            Αν $ A \subseteq \mathbb{R} $, τότε το σύνολο $ \mathbb{R}^{A} = 
-            \{ f \colon A \to \mathbb{R} \; : \; f \; \text{συνάρτηση} \} $, μαζί με 
-            τις πράξεις
-            \[
-                (f+g)(x) = f(x) +g(x), \; \forall x \in A \quad \text{και} 
-                \quad (\lambda f)(x)= \lambda f(x), \; \forall x \in A
-            \] 
-            είναι ένας διανυσματικός χώρος επί του $ \mathbb{R} $.
+    Αν $ A \subseteq \mathbb{R} $, τότε το σύνολο 
+    $ \mathbf{F}{(A, \mathbb{R})} = 
+    \{ f \colon A \to \mathbb{R} \; : \; f \; \text{συνάρτηση} \} $, μαζί με 
+    τις πράξεις
+    \[
+        (f+g)(x) = f(x) +g(x), \; \forall x \in A \quad \text{και} 
+        \quad (\lambda f)(x)= \lambda f(x), \; \forall x \in A
+    \] 
+    είναι ένας διανυσματικός χώρος επί του $ \mathbb{R} $.
 
-            Το μηδέν του χώρου είναι η μηδενική συνάρτηση $ \mathbf{0} $, με τιμή 
-            $ \vec{0}(x)=0, \; \forall x \in A $ και το αντίθετο της $f$ είναι 
-            η συνάρτηση $ -f $ με τιμή $ (-f)(x) = - f(x), \; \forall x \in A $.
+    Το μηδέν του χώρου είναι η μηδενική συνάρτηση $ \mathbf{0} $, με τιμή 
+    $ \vec{0}(x)=0, \; \forall x \in A $ και το αντίθετο της $f$ είναι 
+    η συνάρτηση $ -f $ με τιμή $ (-f)(x) = - f(x), \; \forall x \in A $.
+\end{example}
 
-        \item \textcolor{Col2}{Ο χώρος των συνεχών πραγματικών συναρτήσεων 
-            $ \mathbf{C}[a,b] $} 
+\begin{example}
+    \textcolor{Col2}{Ο χώρος $\mathbf{P_{n}(\mathbb{K})}$ των 
+    πολυωνύμων βαθμού $ \leq n $}.
 
-            Έστω $ V = \mathbf{C}{[a,b]} = \{ f \colon [a,b] \to \mathbb{R} \; 
-            : \; f \; \text{συνεχής συνάρτηση} \}  $. 
+    Έστω $ V = \mathbf{P_{n}}(\mathbb{K}) $ το σύνολο των πολυωνύμων βαθμού 
+    $ \leq n, \; n \in \mathbb{N}  $ με συντελεστές από ένα σώμα 
+    $ \mathbb{K} $. Δηλαδή 
+    \[
+        \mathbf{P_{n}}(\mathbb{K}) = \{ a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots +
+        a_{0} \; : \; a_{i} \in \mathbb{K} \}  
+    \]
+    Τότε αν 
+    \begin{gather*}
+        p \in \mathbf{P_{n}}(\mathbb{K}) \Rightarrow p(x)
+        = a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots + a_{0} \quad \text{και} 
+        \quad q \in \mathbf{P_{n}}(\mathbb{K}) \Rightarrow 
+        q(x) = b_{n}x^{n}+b_{n-1}x^{n-1}+\cdots + b_{0} 
+    \end{gather*} 
+    έχουμε, ότι το σύνολο $ V $ μαζί με τις πράξεις 
+    \begin{gather*}
+        (p+q)(x) = (a_{n}+ b_{n})x^{n} + 
+        (a_{n-1}+b_{n-1})x^{n-1}+ \cdots + (a_{0}+ b_{0}) \\
+        (\lambda p)(x) = (\lambda a_{n})x^{n}+
+        ( \lambda a_{n-1})x^{n-1}+ \cdots + ( \lambda a_{0})
+    \end{gather*} 
+    είναι ένας διανυσματικός χώρος επί του $ \mathbb{K} $.
 
-            Τότε ως προς τις πράξεις του 
-            παραδείγματος~\ref{ex:funs}, ο $V$ είναι ένας διανυσματικός χώϱος 
-            επί του $ \mathbb{R} $, 
-            γιατί το άθροισμα $ f+g $ δύο συνεχών συναρτήσεων $ f,g $ είναι 
-            συνεχής συνάρτηση καθώς και το γινόμενο 
-            $ \lambda f, \; \lambda \in \mathbb{R} $, μιας συνεχής συνάρτησης 
-            $f$ είναι επίσης συνεχής συνάρτηση. 
+    Το μηδέν του χώρου είναι το μηδενικό πολυώνυμο $ \mathbf{0} $, 
+    με τιμή $ \vec{0}(x)=0+0x+\cdots +0x^{n} $ και το αντίθετο του 
+    $p$ είναι το $ - p $ με τιμή $ (- p)(x) = 
+    (-a_{n})x^{n}+(-a_{n-1})x^{n-1}+\cdots + (-a_{0}), \; \forall x \in A $.  
+\end{example}
 
-        \item \label{ex:c1} \textcolor{Col2}{Ο χώρος των διαφορίσιμων με 
-            συνεχή παράγωγο πραγματικών συναρτήσεων $ \mathbf{C^{1}}[a,b] $} 
+\begin{example}
+    \textcolor{Col2}{Ο χώρος $ \mathbf{P}(\mathbb{K}) $ των πολυωνύμων}.
 
-            Έστω $ V = \mathbf{C^{1}}{[a,b]} = \{ f \colon [a,b] \to \mathbb{R} \; 
-            : \; f \; \text{διαφορίσιμη με συνεχή παράγωγο} \}  $. 
+    Έστω $ V = \mathbf{P}(\mathbb{K}) $ το σύνολο των πολυωνύμων  
+    με συντελεστές από ένα σώμα $ \mathbb{K} $. Δηλαδή 
+    \[
+        \mathbf{P}(\mathbb{K}) = \{ a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots + a_{0} \; 
+        : \; \text{για κάποιο} \; n \in \mathbb{N}, \; a_{i} \in \mathbb{K}\}  
+    \] 
+    Τότε αν 
+    \begin{gather*}
+        p \in \mathbf{P}(\mathbb{K}) \Rightarrow p(x)
+        = a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots + a_{0} \quad \text{και} 
+        \quad q \in \mathbf{P}(\mathbb{K}) \Rightarrow 
+        q(x) = b_{m}x^{m}+b_{m-1}x^{m-1}+\cdots + b_{0} 
+    \end{gather*} 
+    και αν θέτωντας $ k = \max \{ n,m \} $ ξαναγράψουμε 
+    \begin{gather*}
+        p(x) = a_{k}x^{k}+a_{k-1}x^{k-1}+\cdots + a_{0} \quad \text{και} \quad
+        q(x) = b_{k}x^{k}+b_{k-1}x^{k-1}+\cdots + b_{0} 
+    \end{gather*}
+    όπου οι επιπλέον όροι που προστέθηκαν έχουν συντελεστή 0, τότε έχουμε, 
+    ότι το σύνολο $ V $ μαζί με τις πράξεις 
+    \begin{gather*}
+        (p+q)(x) = (a_{k}+ b_{k})x^{k} + 
+        (a_{k-1}+b_{k-1})x^{k-1}+ \cdots + (a_{0}+ b_{0}) \\
+        (\lambda p)(x) = (\lambda a_{k})x^{k}+
+        ( \lambda a_{k-1})x^{k-1}+ \cdots + ( \lambda a_{0})
+    \end{gather*} 
+    είναι ένας διανυσματικός χώρος επί του $ \mathbb{K} $.
+\end{example}
 
-            Τότε ως προς τις πράξεις του 
-            παραδείγματος~\ref{ex:funs}, ο $V$ είναι ένας διανυσματικός χώϱος 
-            επί του $ \mathbb{R} $. 
+\begin{example}
+    \label{ex:mat} \textcolor{Col2}{Το σύνολο $ M_{m \times n}(\mathbb{K}) $ 
+    των $ m \times n $ πινάκων με στοιχεία από το σώμα $ \mathbb{K} $}
 
-        \item \textcolor{Col2}{Ο χώρος των λύσεων μιας γραμμικής, ομογενούς 
-            διαφορικής εξίσωσης}
+    Το σύνολο $ M_{m \times n}(\mathbb{K}) $ των $ m \times n $ πινάκων 
+    με στοιχεία από το σώμα $ \mathbb{K} $ είναι διανυσματικός χώρος 
+    με πράξεις τη γνωστή πρόσθεση πινάκων και τον πολλαπλασιασμό 
+    αριθμού επί πίνακα.
 
-            Έστω μια γραμμική, ομογενής διαφορική εξίσωση $ f''(x)+5f'(x)+6f(x)=0 $ 
-            και έστω 
-            \[
-                V = \{ f \in \mathbf{C^{1}}(\mathbb{R}) \; : \; 
-                \text{$f$ λύση της διαφ. εξίσωσης} \} 
-            \] 
-            Τότε, ως προς τις πράξεις του παραδείγματος~\ref{ex:c1} το 
-            σύνολο $ V $ των λύσεων είναι ένας διανυσματικός χώρος επί του
-            $ \mathbb{R} $. Πράγματι, αν $ f,g $ λύσεις της διαφ. εξίσωσης
-            δηλαδή αν $ f,g \in V $, έχουμε:
-            \begin{gather*}
-                (f+g)''(x)+5(f+g)'(x)+6(f+g)(x) = [f''(x)+5f'(x)+6f(x)] 
-                + [g''(x)+5g'(x)+6g(x)] = 0+0=0 \\
-                (\lambda f)''(x) + 5(\lambda f)'(x)+6(\lambda f)(x)= \lambda
-                [f''(x)+5f'(x)+6f(x)] = \lambda \cdot 0=0
-            \end{gather*}
-            Συνεπώς $ f+g \in V $ και $ \lambda f \in V $. 
+    Το μηδέν του χώρου είναι ο μηδενικός πίνακας, $ \mathbf{0} $ όπου 
+    όλα του τα στοιχεία είναι μηδέν και αντίθετο του πίνακα $A$ είναι 
+    ο πίνακας $ -A $.
+\end{example}
 
-        \item \textcolor{Col2}{Ο χώρος $ P_{n}[x] $ των πολυωνύμων βαθμού 
-            $ \leq n $}.
+\begin{example} \label{ex:omsy} 
+    \textcolor{Col2}{Ο χώρος των λύσεων ενός γραμμικού, ομογενούς 
+    συστήματος}
 
-            Έστω $ V = \mathbf{P}_{n}(\mathbb{K}) $ το σύνολο των πολυωνύμων βαθμού 
-            $ \leq n, \; n \in \mathbb{N}  $ με συντελεστές από ένα σώμα 
-            $ \mathbb{K} $. Δηλαδή 
-            \[
-                \mathbf{P}_{n}(\mathbb{K}) = \{ a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots +
-                a_{0} \; : \; a_{i} \in \mathbb{K} \}  
-            \]
-            Τότε αν 
-            \begin{gather*}
-                p \in \mathbf{P}_{n}(\mathbb{K}) \Rightarrow p(x)
-                = a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots + a_{0} \quad \text{και} 
-                \quad q \in \mathbf{P}_{n}(\mathbb{K}) \Rightarrow 
-                q(x) = b_{n}x^{n}+b_{n-1}x^{n-1}+\cdots + b_{0} 
-            \end{gather*} 
-            έχουμε, ότι το σύνολο $ V $ μαζί με τις πράξεις 
-            \begin{gather*}
-                (p+q)(x) = (a_{n}+ b_{n})x^{n} + 
-                (a_{n-1}+b_{n-1})x^{n-1}+ \cdots + (a_{0}+ b_{0}) \\
-                (\lambda p)(x) = (\lambda a_{n})x^{n}+
-                ( \lambda a_{n-1})x^{n-1}+ \cdots + ( \lambda a_{0})
-            \end{gather*} 
-            είναι ένας διανυσματικός χώρος επί του $ \mathbb{K} $.
+    Έστω το ομογενές σύστημα $ A\cdot X = \mathbf{0} $, όπου 
+    $ A \in M_{m \times n}( \mathbb{R}) $ πίνακας
 
-            Το μηδέν του χώρου είναι $ \mathbf{0} $, με τιμή 
-            $ \vec{0}(x)=0+0x+\cdots +0x^{n} $ και το αντίθετο του $p$ είναι 
-            το $ - p $ με τιμή $ (- p)(x) = 
-            (-a_{n})x^{n}+(-a_{n-1})x^{n-1}+\cdots + (-a_{0}), \; \forall x \in A $.  
-
-        \item \textcolor{Col2}{Ο χώρος $ \mathbf{P}(\mathbb{K}) $ των πολυωνύμων}.
-
-            Έστω $ V = \mathbf{P}(\mathbb{K}) $ το σύνολο των πολυωνύμων  
-            με συντελεστές από ένα σώμα $ \mathbb{K} $. Δηλαδή 
-            \[
-                \mathbf{P}(\mathbb{K}) = \{ a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots + a_{0} \; 
-                : \; \text{για κάποιο} \; n \in \mathbb{N}, \; a_{i} \in \mathbb{K}\}  
-            \] 
-            Τότε αν 
-            \begin{gather*}
-                p \in \mathbf{P}(\mathbb{K}) \Rightarrow p(x)
-                = a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots + a_{0} \quad \text{και} 
-                \quad q \in \mathbf{P}(\mathbb{K}) \Rightarrow 
-                q(x) = b_{m}x^{m}+b_{m-1}x^{m-1}+\cdots + b_{0} 
-            \end{gather*} 
-            και άν θέτωντας $ k = \max \{ n,m \} $ ξαναγράψουμε 
-            \begin{gather*}
-                p(x) = a_{k}x^{k}+a_{k-1}x^{k-1}+\cdots + a_{0} \quad \text{και} \quad
-                q(x) = b_{k}x^{k}+b_{k-1}x^{k-1}+\cdots + b_{0} 
-            \end{gather*}
-            όπου οι επιπλέον όροι που προστέθηκαν έχουν συντελεστή 0, τότε έχουμε, 
-            ότι το σύνολο $ V $ μαζί με τις πράξεις 
-            \begin{gather*}
-                (p+q)(x) = (a_{k}+ b_{k})x^{k} + 
-                (a_{k-1}+b_{k-1})x^{k-1}+ \cdots + (a_{0}+ b_{0}) \\
-                (\lambda p)(x) = (\lambda a_{k})x^{k}+
-                ( \lambda a_{k-1})x^{k-1}+ \cdots + ( \lambda a_{0})
-            \end{gather*} 
-            είναι ένας διανυσματικός χώρος επί του $ \mathbb{K} $.
-
-        \item \label{ex:mat} \textcolor{Col2}{Το σύνολο $ M_{m \times n}(\mathbb{K}) $ 
-            των $ m \times n $ πινάκων με στοιχεία από το σώμα $ \mathbb{K} $}
-
-            Το σύνολο $ M_{m \times n}(\mathbb{K}) $ των $ m \times n $ πινάκων 
-            με στοιχεία από το σώμα $ \mathbb{K} $ είναι διανυσματικός χώρος 
-            με πράξεις τη γνωστή πρόσθεση πινάκων και τον πολλαπλασιασμό 
-            αριθμού επί πίνακα.
-
-            Το μηδέν του χώρου είναι ο μηδενικός πίνακας, $ \mathbf{0} $ όπου 
-            όλα του τα στοιχεία είναι μηδέν και αντίθετο του πίνακα $A$ είναι 
-            ο πίνακας $ -A $.
-
-        \item\label{ex:omsy} 
-            \textcolor{Col2}{Ο χώρος των λύσεων ενός γραμμικού, ομογενούς 
-            συστήματος}
-
-            Έστω το ομογενές σύστημα $ A\cdot X = \mathbf{0} $, όπου 
-            $ A \in M_{m \times n}( \mathbb{R}) $ πίνακας
-
-            \begin{equation*}
-                % no need to use "align*" env.
-                \setlength\arraycolsep{1.5pt} % default value: 5pt
-                \left.
-                    \begin{array}{ccc ccc c @{\extracolsep{2.5pt}}c
-                        @{\extracolsep{2.5pt}}c}
-                        a_{11}x_{1} & + & a_{12}x_{2} & + & \cdots & + & a_{1n}x_{n} & =
-                                    & 0 \\
-                        a_{21}x_{1} & + & a_{22}x_{2} & + & \cdots & + & a_{2n}x_{n} & =
-                                    & 0 \\
-                        \vdots & & \vdots & & \ddots & &  \vdots & &  \vdots \\
-                        a_{m1}x_{1} & + & a_{m2}x_{2} & + & \cdots & + & a_{mn}x_{n} & =
-                                    & 0 \\
-                    \end{array}
-                \right\} \Leftrightarrow 
-                \underbrace{\begin{pmatrix}
-                        a_{11} & a_{12} & \cdots & a_{1n} \\
-                        a_{21} & a_{22} & \cdots & a_{2n} \\
-                        \vdots & \vdots & \ddots & \vdots \\
-                        a_{m1} & a_{m2} & \cdots & a_{mn} 
-                \end{pmatrix}}_{A_{m \times n}}
-                \cdot 
-                \underbrace{\begin{pmatrix*}
-                        x_{1} \\
-                        x_{2} \\
-                        \vdots \\
-                        x_{n}
-                \end{pmatrix*}}_{X} = 
-                \begin{pmatrix*}[r]
-                    0 \\
-                    0 \\
-                    \vdots \\
-                    0
-                \end{pmatrix*}
-            \end{equation*} 
-            Λύση του είναι ένα στοιχείο $ \mathbf{u} = 
-            \begin{pmatrix*}[r]
-                x_{1} & x_{2} & \cdots & x_{n} 
-            \end{pmatrix*}^{T} \in M_{n \times 1}(\mathbb{R}) $.  Τότε, ως 
-            προς τις πράξεις τους χώρου 
-            $ M_{n \times 1}(\mathbb{R}) $, του παραδείγματος~\ref{ex:mat}, 
-            το σύνολο των λύσεων είναι ένας διανυσματικός χώρος 
-            (που περιέχεται στο χώρο $ M_{n \times 1}(\mathbb{R}) $). Πράγματι, 
-            αν $ X =\begin{pmatrix*}[r]
-                x_{1} & x_{2} & \cdots & x_{n} 
-                \end{pmatrix*}^{T} $ και $ Y = \begin{pmatrix*}[r]
-                y_{1} & y_{2} & \cdots & y_{n} 
-            \end{pmatrix*}^{T} $ είναι λύσεις του συστήματος, τότε
-            \begin{gather*}
-                A \cdot (X+Y) = A \cdot X + A \cdot Y = \mathbf{0}+ \mathbf{0} = 
-                \mathbf{0} \\
-                A \cdot (\lambda X) = \lambda (A \cdot X) = \lambda \mathbf{0} = 
-                \mathbf{0}
-            \end{gather*} 
-    \end{enumerate}
-\end{examples}
+    \begin{equation*}
+        \setlength\arraycolsep{1.5pt} 
+        \left.
+            \begin{array}{ccc ccc c @{\extracolsep{2.5pt}}c
+                @{\extracolsep{2.5pt}}c}
+                a_{11}x_{1} & + & a_{12}x_{2} & + & \cdots & + & a_{1n}x_{n} & =
+                            & 0 \\
+                a_{21}x_{1} & + & a_{22}x_{2} & + & \cdots & + & a_{2n}x_{n} & =
+                            & 0 \\
+                \vdots & & \vdots & & \ddots & &  \vdots & &  \vdots \\
+                a_{m1}x_{1} & + & a_{m2}x_{2} & + & \cdots & + & a_{mn}x_{n} & =
+                            & 0 \\
+            \end{array}
+        \right\} \Leftrightarrow 
+        \underbrace{\begin{pmatrix}
+                a_{11} & a_{12} & \cdots & a_{1n} \\
+                a_{21} & a_{22} & \cdots & a_{2n} \\
+                \vdots & \vdots & \ddots & \vdots \\
+                a_{m1} & a_{m2} & \cdots & a_{mn} 
+        \end{pmatrix}}_{A_{m \times n}}
+        \cdot 
+        \underbrace{\begin{pmatrix*}
+                x_{1} \\
+                x_{2} \\
+                \vdots \\
+                x_{n}
+        \end{pmatrix*}}_{X} = 
+        \begin{pmatrix*}[r]
+            0 \\
+            0 \\
+            \vdots \\
+            0
+        \end{pmatrix*}
+    \end{equation*} 
+    Λύση του είναι ένα στοιχείο $ \mathbf{X} = 
+    \begin{pmatrix*}[r]
+        x_{1} & x_{2} & \cdots & x_{n} 
+    \end{pmatrix*}^{T} \in M_{n \times 1}(\mathbb{R}) \cong \mathbb{R}^{n} $.
+    Τότε, ως προς τις πράξεις τους χώρου 
+    $ M_{n \times 1}(\mathbb{R}) $, του παραδείγματος~\ref{ex:mat}, 
+    το σύνολο των λύσεων είναι ένας διανυσματικός χώρος 
+    (που περιέχεται στο χώρο $ M_{n \times 1}(\mathbb{R}) \cong 
+    \mathbb{R}^{n} $), ονομάζεται \textcolor{Col2}{Μηδενόχωρος} του πίνακα 
+    $A$ και συμβολίζεται με $ N(A) $. Δηλαδή
+    \[
+        N(A) = \{ \mathbf{X} \in \mathbb{R}^{n} \; : \; A \cdot \mathbf{X} = 
+        \mathbf{0} \}  
+    \] 
+    Πράγματι, αν $ \mathbf{X} =\begin{pmatrix*}[r]
+        x_{1} & x_{2} & \cdots & x_{n} 
+        \end{pmatrix*}^{T} $ και $ \mathbf{Y} = \begin{pmatrix*}[r]
+        y_{1} & y_{2} & \cdots & y_{n} 
+    \end{pmatrix*}^{T} $ είναι λύσεις του συστήματος, τότε
+    \begin{gather*}
+        A \cdot (\mathbf{X}+\mathbf{Y}) = A \cdot \mathbf{X} + A 
+        \cdot \mathbf{Y} = \mathbf{0}+ \mathbf{0} = \mathbf{0} \\
+        A \cdot (\lambda \mathbf{X}) = \lambda (A \cdot \mathbf{X}) = 
+        \lambda \mathbf{0} = \mathbf{0}
+    \end{gather*} 
+\end{example}
 
 \begin{rem}\label{rem:lines}
     Οι εξισώσεις $ ax + by = 0 $ και $ ax + by + cz = 0 $ είναι ειδικές 
@@ -308,14 +281,13 @@
     είναι διανυσματικοί χώροι. Επομένως ευθείες του επιπέδου $ \mathbb{R}^{2} $ 
     όπου περνούν από την αρχή των αξόνων, αλλά και ευθείες και επίπεδα του χώρου 
     $ \mathbb{R}^{3} $ που επίσης περνούν από την αρχή των αξόνων είναι 
-    διανυσματικοί χώροι.
+    διανυσματικοί χώροι).
 \end{rem}
 
 \begin{rem}
-\item {}
     Αν $ \mathbf{u}, \mathbf{v} \in V $ τότε θα γράφουμε ότι 
-    $ \mathbf{u} + (- \mathbf{v}) = \mathbf{u} - \mathbf{v} $, 
-    όπου $ - \mathbf{v} $ είναι το αντίθετο του $ \mathbf{v} $.
+    $ \mathbf{u} - \mathbf{v} = \mathbf{u} + (- \mathbf{v}) $, 
+    όπου $ - \mathbf{v} $ είναι το \textcolor{Col2}{αντίθετο} του $ \mathbf{v} $.
 \end{rem}
 
 
@@ -361,7 +333,8 @@
 \item {}
     \begin{enumerate}[i)]
         \item $ \mathbf{u} + \mathbf{v} = \mathbf{w} + \mathbf{v} 
-            \Rightarrow \mathbf{u} = \mathbf{w} $ \quad (νόμος διαγραφής)
+            \Rightarrow \mathbf{u} = \mathbf{w}, \quad \forall \mathbf{u}, 
+            \mathbf{v}, \mathbf{w} \in V $ \quad (νόμος διαγραφής)
         \item $ 0 \cdot \mathbf{u} = \mathbf{0}, \quad \forall \mathbf{u} \in V $
         \item $ \lambda \cdot \mathbf{0} = \mathbf{0}, \quad \forall \lambda \in 
             \mathbb{K} $
@@ -381,8 +354,8 @@
 \item {}
     \begin{enumerate}[i)]
         \item $ \mathbf{u} = \mathbf{u} + \mathbf{0} = \mathbf{u} + 
-            (\mathbf{v} + (- \mathbf{v})) = (\mathbf{u} + \mathbf{v}) + (- \mathbf{v}) =
-            (\mathbf{w} + \mathbf{v}) + (- \mathbf{v}) = \mathbf{w} + 
+            (\mathbf{v} + (- \mathbf{v})) = (\mathbf{u} + \mathbf{v}) + 
+            (- \mathbf{v}) = (\mathbf{w} + \mathbf{v}) + (- \mathbf{v}) = \mathbf{w} + 
             (\mathbf{v} + (- \mathbf{v})) = \mathbf{w} + \mathbf{0} = \mathbf{w}$
         \item Έχουμε $ 0\cdot \mathbf{u} = (0 + 0) 
             \cdot \mathbf{u}= 0\cdot \mathbf{u}+ 0\cdot \mathbf{u} $, άρα
@@ -405,8 +378,8 @@
                 \tikzmark{b}
             \end{align*}
             \mybrace{a}{b}[$ \lambda \cdot \mathbf{0}+ \lambda \cdot \mathbf{0} = 
-            \mathbf{0} + \lambda \cdot \mathbf{0} \Rightarrow \lambda 
-            \cdot \mathbf{0} = \mathbf{0}$]
+            \mathbf{0} + \lambda \cdot \mathbf{0} \overset{\text{i)}}{\Rightarrow}  
+            \lambda \cdot \mathbf{0} = \mathbf{0}$]
         \item Έχουμε $ \mathbf{u} + (-1)\cdot \mathbf{u} = 1\cdot 
             \mathbf{u} + (-1)\cdot \mathbf{u} = [1+(-1)] \cdot \mathbf{u}= 0 
             \cdot \mathbf{u} = \mathbf{0} $. 
@@ -417,7 +390,7 @@
         \item Έχουμε $ \lambda\cdot (\mathbf{u} - \mathbf{v}) + \lambda \cdot 
             \mathbf{v} = \lambda \cdot [(\mathbf{u} - \mathbf{v}) + \mathbf{v}] = 
             \lambda \cdot [\mathbf{u} + (- \mathbf{v}+ \mathbf{v})] = \lambda \cdot 
-            ( \mathbf{u} + \mathbf{0}) = \lambda \cdot \mathbf{u} $, αρα 
+            ( \mathbf{u} + \mathbf{0}) = \lambda \cdot \mathbf{u} $, άρα 
             \begin{gather*}
                 \lambda \cdot (\mathbf{u} - \mathbf{v}) + \lambda \cdot \mathbf{v} = 
                 \lambda \cdot \mathbf{u} \Leftrightarrow \\ 
@@ -436,11 +409,13 @@
         \item Έχουμε $ (\lambda - \mu ) \cdot \mathbf{u} + \mu \cdot \mathbf{u} = 
             (\lambda - \mu + \mu )\cdot \mathbf{u} = \lambda \cdot \mathbf{u}$, άρα 
             \begin{gather*}
+                (\lambda - \mu ) \cdot \mathbf{u} + \mu \cdot \mathbf{u} = 
+                \lambda \cdot \mathbf{u} \Leftrightarrow \\
                 [(\lambda - \mu )\cdot \mathbf{u} + \mu \cdot \mathbf{u}] - 
                 \mu \cdot \mathbf{u} = \lambda \cdot \mathbf{u}- \mu \cdot 
                 \mathbf{u} \Leftrightarrow \\
-                (\lambda - \mu ) \cdot \mathbf{u} + (\mu \cdot \mathbf{u} - 
-                \mu \cdot \mathbf{u}) = \lambda \cdot \mathbf{u}- \mu \cdot 
+                (\lambda - \mu ) \cdot \mathbf{u} + [\mu \cdot \mathbf{u} - 
+                \mu \cdot \mathbf{u}] = \lambda \cdot \mathbf{u}- \mu \cdot 
                 \mathbf{u} \Leftrightarrow \\
                 (\lambda - \mu )\cdot \mathbf{u} + \mathbf{0} = 
                 \lambda \cdot \mathbf{u}- \mu \cdot \mathbf{u} \Leftrightarrow \\
@@ -453,7 +428,7 @@
     \end{enumerate}
 \end{proof}
 
-\begin{prop}
+\begin{prop} \label{prop:prod}
 \item {}
     Αν $ \lambda \in \mathbb{K}, \; \mathbf{u} \in V $ και $ \lambda \cdot \mathbf{u} =
     \mathbf{0} $ τότε $ \lambda = 0 $ ή $ \mathbf{u} = \mathbf{0} $. 
@@ -475,34 +450,22 @@
     \end{gather*} 
 \end{proof}
 
-\begin{exercises}
-\item {}
-    \begin{enumerate}
-        \item Να δείξετε ότι $ - ( \mathbf{u}+ \mathbf{v} ) = - \mathbf{u} - 
-            \mathbf{v} $.
-        \item Αν $ \lambda \in \mathbb{K}, \; \lambda \neq 0 $ και 
-            $ \lambda \cdot \mathbf{u}= \lambda \cdot \mathbf{v}$, τότε να 
-            δείξετε ότι $ \mathbf{u} = \mathbf{v} $.
-        \item Αν $ \lambda_{1}, \; \lambda _{2} \in \mathbb{K} $ και 
-            $ \mathbf{u} \in V, \; \mathbf{u} \neq \mathbf{0} $ με 
-            $ \lambda _{1}\cdot \mathbf{u} = \lambda _{2} \cdot \mathbf{u}$, 
-            τότε να δείξετε ότι $ \lambda _{1} = \lambda _{2} $.
-    \end{enumerate}
-\end{exercises}
+
 
 \section{Υπόχωροι}
 
 
 \begin{dfn}
 \item {}
-    Έστω $V(\mathbb{K}) $ διανυσματικός χώρος. Ένα υποσύνολο $W$ του $V$ λεγεται 
+    Έστω $V(\mathbb{K}) $ διανυσματικός χώρος. Ένα υποσύνολο $W$ του $V$ λέγεται 
     \textcolor{Col2}{υπόχωρος} του $ V $, αν είναι διανυσματικός χώρος επί του 
-    $ \mathbb{K} $, ως προς τις πραξεις του $V$ και το συμβολίζουμε ως $ W \leq V $.
+    $ \mathbb{K} $, ως προς τις πράξεις του $V$ και το συμβολίζουμε με $ W \leq V $.
 \end{dfn}
 
 
 
-\begin{prop}\label{prop:subsp}
+\begin{prop}
+    \label{prop:subsp}
 \item {}
     Έστω $ (V(\mathbb{K}),+,\cdot) $ ένας διανυσματικός χώρος και $ W \subseteq V $.  
     Τότε το $ W $ είναι υπόχωρος του $V$ αν και μόνον αν ικανοποιούνται οι 
@@ -530,7 +493,7 @@
                 \mathbf{0}_{W} &= \mathbf{0}_{W} + \mathbf{0}_{W} 
                 \quad (W \; \text{διαν. χώρος}) \\
                 \mathbf{0}_{W} &= \mathbf{0}_{W} + \mathbf{0}_{V} 
-                \; \quad (V \; \text{διαν. χώρος και $ \mathbf{0}_{w} \in V $})
+                \; \quad (V \; \text{διαν. χώρος και $ \mathbf{0}_{W} \in V $})
             \end{align*}
             Άρα $ \mathbf{0}_{W} + \mathbf{0}_{W} = \mathbf{0}_{W} + \mathbf{0}_{V} 
             \Rightarrow
@@ -546,170 +509,213 @@
             γιατί:
             \[
                 - \mathbf{u} = (-1)\cdot \mathbf{u} \in W \quad 
-                \text{λόγω του iii)} \; \text{γιατί $-1 \in \mathbb{K}$ 
+                \text{λόγω του $\mathrm{iii)}$} \; \text{γιατί $-1 \in \mathbb{K}$ 
                 \; και \; $ \mathbf{u} \in W$ } 
             \]
     \end{description}
 \end{proof}
 
 
-\begin{prop}
-    Τα σύνολα $ \{ \mathbf{0} \} $ και $V$ είναι υπόχωροι του $V$.
-\end{prop}
+\section{Παραδείγματα}
 
-\begin{examples}
-\item {}
-    \begin{enumerate}
-        \item \textcolor{Col2}{Το σύνολο των συμμετρικών πινάκων}
+\begin{example}
+    Το σύνολο $ \{ \mathbf{0}_{V} \} $ είναι υπόχωρος του $V$, 
+    για κάθε $V$ διανυσματικό χώρο.
+\end{example}
 
-            Έστω $ V = M_{n}(\mathbb{K}) $ και $ W = \{ A \in M_{n}(\mathbb{K}) \;
-            : \; A^{T}=A \}  $. Τότε $ W \leq V $.
-            \begin{proof}
-            \item {}
-                \begin{description}
-                    \item [i)] $ \mathbf{0} \in W $, αφού $ \mathbf{0}^{T}= 
-                        \mathbf{0} $
-                    \item[ii)] Αν $ A, B \in W \Rightarrow A^{T}=A $ και $ B^{T}=B $, 
-                        οπότε $ (A+B)^{T}= A^{T}+B^{T}=A+B $, άρα $A+B \in W$
-                    \item[iii)] Αν $ A \in W $ και $ \lambda \in \mathbb{K} $, τότε 
-                        $A^{T}=A$, οπότε $(\lambda A)^{T} = \lambda A^{T} = 
-                        \lambda A  $ , άρα $ \lambda A \in W $
-                \end{description}
-            \end{proof}
+\begin{example}\label{ex:linesplanes} 
+    \textcolor{Col2}{Ευθείες και επίπεδα}
 
-        \item \textcolor{Col2}{Ευθείες και επίπεδα}
+    Όπως είδαμε στην παρατήρηση~\ref{rem:lines} δοθέντων 
+    $ a,b \in \mathbb{R} $ το  σύνολο 
+    $
+    W = \{(x,y)\in \mathbb{R}^{2} \; : \; ax+by=0 \} 
+    $
+    των ευθειών του $ \mathbb{R}^{2} $ που διέρχονται από την αρχή των 
+    αξόνων είναι διανυσματικός χώρος, υπόχωρος τους $ \mathbb{R}^{2} $.
 
-            Όπως είδαμε στην παρατήρηση~\ref{rem:lines} δοθέντων 
-            $ a,b \in \mathbb{R} $ το  σύνολο 
-            $
-            W = \{(x,y)\in \mathbb{R}^{2} \; : \; ax+by=0 \} 
-            $
-            των ευθειών του $ \mathbb{R}^{2} $ που διέρχονται από την αρχή των 
-            αξόνων είναι διανυσματικός χώρος, υπόχωρος τους $ \mathbb{R}^{2} $.
+    Επίσης, δοθέντων $ a,b,c \in \mathbb{R}^{3} $, τα σύνολα  
+    \begin{align*}
+        W &= 
+        \{
+            (x,y,z) \in \mathbb{R}^{3} \; : \; ax+by+cz=0 
+        \} 
+        \quad (\text{επίπεδα του $ \mathbb{R}^{3}$ που διέρχονται από 
+        $(0,0,0)$}) \\
+        W &= 
+        \{
+            (x,y,z) \in \mathbb{R}^{3} \; : \; ax+by+cz=0, 
+            \; \text{και} \; a'x+b'y+c'z=0 
+        \} 
+        \quad (\text{ευθείες του $ \mathbb{R}^{3}$ που διέρχονται από 
+        $(0,0,0)$}) 
+    \end{align*}
+    είναι διανυσματικοί χώροι, υπόχωροι του $ \mathbb{R}^{3} $.
+\end{example}
 
-            Επίσης, δοθέντων $ a,b,c \in \mathbb{R}^{3} $, τα σύνολα  
-            \begin{align*}
-                W &= 
-                \{
-                    (x,y,z) \in \mathbb{R}^{3} \; : \; ax+by+cz=0 
-                \} 
-                \quad (\text{επίπεδα του $ \mathbb{R}^{3}$ που διέρχονται από 
-                $(0,0,0)$}) \\
-                W &= 
-                \{
-                    (x,y,z) \in \mathbb{R}^{3} \; : \; ax+by+cz=0, 
-                    \; \text{και} \; a'x+b'y+c'z=0 
-                \} 
-                \quad (\text{ευθείες του $ \mathbb{R}^{3}$ που διέρχονται από 
-                $(0,0,0)$}) 
-            \end{align*}
-            είναι διανυσματικοί χώροι, υπόχωροι του $ \mathbb{R}^{3} $.
+\begin{example}
+    \textcolor{Col2}{Ο χώρος των συνεχών πραγματικών συναρτήσεων 
+    $ \mathbf{C}[a,b] $} 
 
+    Έστω $ W = \mathbf{C}{[a,b]} = \{ f \colon [a,b] \to \mathbb{R} \; 
+    : \; f \; \text{συνεχής συνάρτηση} \} \subseteq 
+    \mathbf{F}(A, \mathbb{R}) $. 
 
-        \item \textcolor{Col2}{Το σύνολο των άντι-συμμετρικών πινάκων}
+    Τότε ως προς τις πράξεις του 
+    παραδείγματος~\ref{ex:funs}, των διανυσματικών χώρων ο $W$ 
+    είναι ένας διανυσματικός χώϱος επί του $ \mathbb{R} $, υπόχωρος του 
+    $\mathbf{F}(A, \mathbb{R})$,
+    γιατί το άθροισμα $ f+g $ δύο συνεχών συναρτήσεων $ f,g $ είναι 
+    συνεχής συνάρτηση καθώς και το βαθμωτό γινόμενο 
+    $ \lambda f, \; \lambda \in \mathbb{R} $, μιας συνεχούς συνάρτησης 
+    $f$ είναι επίσης συνεχής συνάρτηση. 
+\end{example}
 
-            Έστω $ V = M_{n}(\mathbb{K}) $ και $ W = \{ A \in M_{n}(\mathbb{K}) \;
-            : \; A \; A^{T}=-A \}  $. Τότε $ W \leq V $.
-            \begin{proof}
-            \item {}
-                \begin{description}
-                    \item [i)] $ \mathbf{0} \in W $, αφού $ \mathbf{0}^{T}= 
-                        \mathbf{0} = - \mathbf{0} $
-                    \item [ii)]
-                        Αν $ A, B \in W \Rightarrow A^{T}=-A $ και $ B^{T}=-B $, οπότε
-                        $ (A+B)^{T}= A^{T}+B^{T}=-A-B = - (A+B) $, άρα $A+B \in W$
-                    \item[iii)] Αν $ A \in W $ και $ \lambda \in \mathbb{K} $, τότε 
-                        $A^{T}=-A$, οπότε $(\lambda A)^{T} = \lambda A^{T} =
-                        -\lambda A  $, άρα $ \lambda A \in W $
-                \end{description}
-            \end{proof}
+\begin{example}\label{ex:c1} 
+    \textcolor{Col2}{Ο χώρος των διαφορίσιμων με 
+    συνεχή παράγωγο πραγματικών συναρτήσεων $ \mathbf{C^{1}}[a,b] $} 
 
-        \item \textcolor{Col2}{Το σύνολο των άνω τριγωνικών πινάκων}
+    Έστω $ W = \mathbf{C^{1}}{[a,b]} = \{ f \colon [a,b] \to \mathbb{R} \; 
+    : \; f \; \text{διαφορίσιμη με συνεχή παράγωγο} \} \subseteq 
+    \mathbf{C}[a,b] $. 
 
-            Έστω $ V = M_{n}(\mathbb{K}) $ και $ W = \{ A \in M_{n}(\mathbb{K}) \;
-            : \; \; a_{ij} = 0, \; i>j \}  $. Τότε $ W \leq V $.
+    Τότε ως προς τις πράξεις του 
+    παραδείγματος~\ref{ex:funs}, των διανυσματικών χώρων ο $W$ 
+    είναι ένας διανυσματικός χώϱος επί του $ \mathbb{R} $, υπόχωρος του 
+    $ \mathbf{C}[a,b] $.
+\end{example}
 
-            \begin{proof}
-            \item {}
-                \begin{description}
-                    \item [i)] $ \mathbf{0} \in W $, αφού $ \mathbf{0} $ 
-                        προφανώς είναι άνω τριγωνικός.
-                    \item [ii)] Αν $ A, B \in W \Rightarrow a_{ij} = b_{ij} = 0, 
-                        \; i>j$, οπότε $a_{ij} + b_{ij} = 0, \; i>j$, άρα $A+B \in W$
-                    \item[ii)] Αν $ A \in W $ και $ \lambda \in \mathbb{K} $, τότε 
-                        $a_{ij} = 0, \; i>j$, οπότε $ \lambda a_{ij} = 0, \; i>j$, 
-                        άρα $ \lambda A \in W $
-                \end{description}
-            \end{proof}
+\begin{example}
+    \textcolor{Col2}{Ο χώρος των λύσεων μιας γραμμικής, ομογενούς 
+    διαφορικής εξίσωσης}
 
-        \item \textcolor{Col2}{Το σύνολο των κάτω τριγωνικών πινάκων}
-            \begin{proof}
-                Ομοίως
-            \end{proof}
+    Έστω μια γραμμική, ομογενής διαφορική εξίσωση $ f''(x)+5f'(x)+6f(x)=0 $ 
+    και έστω 
+    \[
+        W = \{ f \in \mathbf{C^{2}}(\mathbb{R}) \; : \; 
+        \text{$f$ λύση της διαφ. εξίσωσης} \} \subseteq \mathbf{C}[a,b]
+    \] 
+    Τότε, ως προς τις πράξεις του παραδείγματος~\ref{ex:funs}, των 
+    διανυσματικών χώρων, το 
+    σύνολο $ W $ των λύσεων είναι ένας διανυσματικός χώρος επί του
+    $ \mathbb{R} $, υπόχωρος του $ \mathbf{C}[a,b] $. 
+    Πράγματι, αν $ f,g $ λύσεις της διαφ. εξίσωσης δηλαδή αν 
+    $ f,g \in V $, έχουμε:
+    \begin{gather*}
+        (f+g)''(x)+5(f+g)'(x)+6(f+g)(x) = [f''(x)+5f'(x)+6f(x)] 
+        + [g''(x)+5g'(x)+6g(x)] = 0+0=0 \\
+        (\lambda f)''(x) + 5(\lambda f)'(x)+6(\lambda f)(x)= \lambda
+        [f''(x)+5f'(x)+6f(x)] = \lambda \cdot 0=0
+    \end{gather*}
+    Συνεπώς $ f+g \in V $ και $ \lambda f \in V $. 
+\end{example}
 
-        \item \textcolor{Col2}{Το σύνολο των διαγώνιων πινάκων}
+\begin{example}
+    \textcolor{Col2}{Το σύνολο των συμμετρικών πινάκων}
 
-            \begin{proof}
-                Ομοίως
-            \end{proof}
+    Έστω $ V = M_{n}(\mathbb{K}) $ και $ W = \{ A \in M_{n}(\mathbb{K}) \;
+    : \; A^{T}=A \}  $. Τότε $ W \leq V $.
+    \begin{proof}
+    \item {}
+        \begin{enumerate}[i)]
+            \item  $ \mathbf{0} \in W $, αφού $ \mathbf{0}^{T}= 
+                \mathbf{0} $
+            \item Αν $ A, B \in W \Rightarrow A^{T}=A $ και $ B^{T}=B $, 
+                οπότε $ (A+B)^{T}= A^{T}+B^{T}=A+B $, άρα $A+B \in W$
+            \item Αν $ A \in W $ και $ \lambda \in \mathbb{K} $, τότε 
+                $A^{T}=A$, οπότε $(\lambda A)^{T} = \lambda A^{T} = 
+                \lambda A  $ , άρα $ \lambda A \in W $
+        \end{enumerate}
+    \end{proof}
+\end{example}
 
-        \item Έστω $ V = \mathbf{P}(\mathbb{K}) $ και 
-            $ W = \mathbf{P_{n}}(\mathbb{K})$.  Τότε $ W \leq V $.  
-            \begin{proof}
-            \item {}
-                \begin{description}
-                    \item [i)]  $ \mathbf{0} \in W $, γιατί προφανώς 
-                        $ \mathbf{0} = 0 x_{n} + 0 x^{n-1} + \cdots + 0 $
-                    \item [ii)]
-                        Αν $ p, q \in W $, δηλαδή $ p,q $ πολυώνυμα βαθμού $ \leq n $, 
-                        τότε και $ p+q $ είναι πολυώνυμο βαθμού $ \leq n $, άρα 
-                        $p+q \in W$
-                    \item[iii)] Αν $ p \in W $ και $ \lambda \in \mathbb{K} $, τότε 
-                        $p$, πολυώνυμο βαθμού $ \leq n $ οπότε $ \lambda p$ πολυώνυμο 
-                        βαθμού $ \leq n $, άρα $ \lambda p \in W $
-                \end{description}
-            \end{proof}
+\begin{example}
+    \textcolor{Col2}{Το σύνολο των αντι-συμμετρικών πινάκων}
 
-        \item Έστω $ V = \mathbf{F}(A, \mathbb{R}) $ και $ W = 
-            \mathbf{C}(A, \mathbb{R}) $.  Τότε $ W \leq V $.  
-            \begin{proof}
-            \item {}
-                \begin{description}
-                    \item [i)] $ \mathbf{0} \in W $, αφού η μηδενική συνάρτηση 
-                        είναι συνεχής.
-                    \item [ii)]
-                        Αν $ f, g \in W $, δηλαδή $ f,g $ συνεχείς συναρτήσεις, 
-                        τότε και $ f+g $ είναι συνεχής συνάρτηση, άρα $f+g \in W$
-                    \item[iii)] Αν $ f \in W $ και $ \lambda \in \mathbb{K} $, τότε 
-                        $f$ συνεχής συνάρτηση, οπότε $ \lambda f$ είναι 
-                        συνεχής συνάρτηση, άρα $ \lambda f \in W $
-                \end{description}
-            \end{proof}
+    Έστω $ V = M_{n}(\mathbb{K}) $ και $ W = \{ A \in M_{n}(\mathbb{K}) \;
+    : \; A^{T}=-A \}  $. Τότε $ W \leq V $.
+    \begin{proof}
+    \item {}
+        \begin{enumerate}[i)]
+            \item  $ \mathbf{0} \in W $, αφού $ \mathbf{0}^{T}= 
+                \mathbf{0} = - \mathbf{0} $
+            \item 
+                Αν $ A, B \in W \Rightarrow A^{T}=-A $ και $ B^{T}=-B $, οπότε
+                $ (A+B)^{T}= A^{T}+B^{T}=-A-B = - (A+B) $, άρα $A+B \in W$
+            \item Αν $ A \in W $ και $ \lambda \in \mathbb{K} $, τότε 
+                $A^{T}=-A$, οπότε $(\lambda A)^{T} = \lambda A^{T} =
+                -\lambda A  $, άρα $ \lambda A \in W $
+        \end{enumerate}
+    \end{proof}
+\end{example}
 
-        \item Έστω $ V = \mathbf{F}(A, \mathbb{R}) $ και $ W = 
-            \mathbf{C^{1}}(A, \mathbb{R}) $.  Τότε $ W \leq V $.  
+\begin{example}
+    \textcolor{Col2}{Το σύνολο των άνω τριγωνικών πινάκων}
 
-            \begin{proof}
-                Ομοίως
-            \end{proof}
+    Έστω $ V = M_{n}(\mathbb{K}) $ και $ W = \{ A \in M_{n}(\mathbb{K}) \;
+    : \; \; a_{ij} = 0, \; i>j \}  $. Τότε $ W \leq V $.
 
-        \item Έστω $ V = \mathbf{C}(A, \mathbb{R}) $ και $ W = 
-            \mathbf{C^{1}}(A, \mathbb{R}) $.  Τότε $ W \leq V $.  
+    \begin{proof}
+    \item {}
+        \begin{enumerate}[i)]
+            \item  $ \mathbf{0} \in W $, αφού $ \mathbf{0} $ 
+                προφανώς είναι άνω τριγωνικός.
+            \item  Αν $ A, B \in W \Rightarrow a_{ij} = b_{ij} = 0, 
+                \; i>j$, οπότε $a_{ij} + b_{ij} = 0, \; i>j$, άρα $A+B \in W$
+            \item Αν $ A \in W $ και $ \lambda \in \mathbb{K} $, τότε 
+                $a_{ij} = 0, \; i>j$, οπότε $ \lambda a_{ij} = 0, \; i>j$, 
+                άρα $ \lambda A \in W $
+        \end{enumerate}
+    \end{proof}
+\end{example}
 
-            \begin{proof}
-                Ομοίως
-            \end{proof}
-    \end{enumerate}
-\end{examples}
+\begin{example}
+    \textcolor{Col2}{Το σύνολο των κάτω τριγωνικών πινάκων}
+    \begin{proof}
+        Ομοίως
+    \end{proof}
+\end{example}
+
+\begin{example}
+    \textcolor{Col2}{Το σύνολο των διαγώνιων πινάκων}
+
+    \begin{proof}
+        Ομοίως
+    \end{proof}
+\end{example}
+
+\begin{example}
+\item Έστω $ V = \mathbf{P}(\mathbb{K}) $ και 
+    $ W = \mathbf{P_{n}}(\mathbb{K})$.  Τότε $ W \leq V $.  
+    \begin{proof}
+    \item {}
+        \begin{enumerate}[i)]
+            \item   $ \mathbf{0} \in W $, γιατί προφανώς 
+                $ \mathbf{0} = 0 x_{n} + 0 x^{n-1} + \cdots + 0 $
+            \item 
+                Αν $ p, q \in W $, δηλαδή $ p,q $ πολυώνυμα βαθμού $ \leq n $, 
+                τότε και $ p+q $ είναι πολυώνυμο βαθμού $ \leq n $, άρα 
+                $p+q \in W$
+            \item Αν $ p \in W $ και $ \lambda \in \mathbb{K} $, τότε 
+                $p$, πολυώνυμο βαθμού $ \leq n $ οπότε $ \lambda p$ πολυώνυμο 
+                βαθμού $ \leq n $, άρα $ \lambda p \in W $
+        \end{enumerate}
+    \end{proof}
+\end{example}
 
 \begin{prop}
     Ισχύουν οι ιδιότητες:
     \begin{enumerate}[i)]
         \item $ V \leq V $
-        \item Αν $ U \leq W $ και $ W \leq V $, τότε $ U \leq V $.
         \item Αν $ W \leq V $ και $ V \leq W $, τότε $ V = W $.
+        \item Αν $ U \leq W $ και $ W \leq V $, τότε $ U \leq V $.
     \end{enumerate}
 \end{prop}
+
+\begin{rem}
+    Οι υπόχωροι $ \{ \mathbf{0}_{V} \} $ και $V$, ενός διανυσματικού χώρου $V$, 
+    λέγονται \textcolor{Col2}{τετριμμένοι υπόχωροι}.
+\end{rem}
 
 
 \begin{prop}[Τομή 2 υποχώρων] \item {}
@@ -728,37 +734,45 @@
     \begin{description}
         \item [i)] Έχουμε
             \begin{align*}
-                w_{1} \in W_{1} \cap W_{2} \Rightarrow w_{1} \in W_{1} \; 
-                \text{και} \; w_{1} \in W_{2} \tikzmark{a} \\
-                w_{2} \in W_{1} \cap W_{2} \Rightarrow w_{2} \in W_{1} \; 
-                \text{και} \; w_{2} \in W_{2} \tikzmark{b} 
-                \mybrace{a}{b}[$ w_{1}+w_{2} \in W_{1} \; \text{και} \; 
-                w_{1}+w_{2} \in W_{2} $] 
+                \mathbf{w}_{1} \in W_{1} \cap W_{2} \Rightarrow 
+                \mathbf{w}_{1} \in W_{1} \; 
+                \text{και} \; \mathbf{w}_{1} \in W_{2} \tikzmark{a} \\
+                \mathbf{w}_{2} \in W_{1} \cap W_{2} \Rightarrow 
+                \mathbf{w}_{2} \in W_{1} \; 
+                \text{και} \; \mathbf{w}_{2} \in W_{2} \tikzmark{b} 
+                \mybrace{a}{b}[$ \mathbf{w}_{1}+ \mathbf{w}_{2} \in W_{1} 
+                \; \text{και} \; \mathbf{w}_{1}+ \mathbf{w}_{2} \in W_{2} $] 
             \end{align*}
-            άρα $ w_{1}+w_{2} \in W_{1} \cap W_{2}$ 
+            άρα $ \mathbf{w}_{1}+ \mathbf{w}_{2} \in W_{1} \cap W_{2}$ 
         \item [ii)]
-            Αν $ w \in W_{1} \cap W_{2} $ και $ \lambda \in \mathbb{K} $, τότε 
-            $ w \in W_{1} $ και $ w \in W_{2} $, οπότε $ \lambda w \in W_{1} $ και 
-            $ \lambda w \in W_{2} $, άρα $ \lambda w \in W_{1} \cap W_{2} $
+            Αν $ \mathbf{w} \in W_{1} \cap W_{2} $ και $ \lambda \in \mathbb{K} $, 
+            τότε 
+            $ \mathbf{w} \in W_{1} $ και $ \mathbf{w} \in W_{2} $, 
+            οπότε $ \lambda \mathbf{w} \in W_{1} $ και 
+            $ \lambda \mathbf{w} \in W_{2} $, άρα $ \lambda \mathbf{w} \in W_{1} 
+            \cap W_{2} $
     \end{description}
 \end{proof}
 
 \begin{prop}[Τομή οποιουδήποτε πλήθους υποχώρων]
 \item {}
     Έστω $ I $ σύνολο και $ \{ W_{i} \; : \; i \in I \}$ οικογένεια υποχώρων του $V$. 
-    Τότε το σύνολο $ W = \smash{\bigcap\limits_{i \in I}} W_{i} = \{ v \in V \; : \; v \in W_{i}, \; \forall i \in I \} $ είναι υπόχωρος του $V$.
+    Τότε το σύνολο $ W = \smash{\bigcap\limits_{i \in I}} W_{i} = 
+    \{ \mathbf{v} \in V \; : \; \mathbf{v} \in W_{i}, \; \forall i \in I \} $ 
+    είναι υπόχωρος του $V$.
 \end{prop}
 
 \begin{rem}
-\item {}
     Η ένωση 2 υποχώρων $ W_{1} $ και $ W_{2} $ ενός διανυσματικού χώρου $V$ δεν είναι 
     απαραίτητα υπόχωρος του $V$. Πράγματι, αν $ W_{1} $ είναι ο άξονας $x$ και 
-    $ W_{2} $ ο άξονας $y$, υπόχωροι του $ \mathbb{R}^{2} $, τότε έχουμε
+    $ W_{2} $ ο άξονας $y$, υπόχωροι του $ \mathbb{R}^{2} $ 
+    (ως ευθείες που διέρχονται από το (0,0)), τότε έχουμε
     \begin{align*}
-        (2,0) \in W_{1} \tikzmark{a} \\
-        (0,3) \in W_{2} \tikzmark{b} 
+        \mathbf{w}_{1} = (2,0) \in W_{1} \tikzmark{a} \\
+        \mathbf{w}_{2} = (0,3) \in W_{2} \tikzmark{b} 
     \end{align*} 
-    \mybrace{a}{b}[$ w_{1}+w_{2} = (2,3) \not \in W_{1} \cup W_{2} $]
+    \mybrace{a}{b}[$ \mathbf{w}_{1}+ \mathbf{w}_{2} = (2,3) \not \in W_{1} 
+    \cup W_{2} $]
 \end{rem}
 
 \begin{prop}
@@ -775,21 +789,22 @@
             Σε κάθε περίπτωση $ W_{1} \cup W_{2} $ είναι υπόχωρος του $V$.
         \item [$(\Rightarrow)$ (Με άτοπο)]  Έστω ότι $ W_{1} \cup W_{2} $ είναι 
             υπόχωρος του $V$ και $ W_{1} \not \leq W_{2} $ και $ W_{2} \not \leq 
-            W_{1}$. Τότε υπάρχει $ v_{2} \in W_{2} \setminus W_{1} $ και $ v_{1} \in 
-            W_{1} \setminus W_{2}$. Όμως $ v = v_{1}+v_{2} \in W_{1} \cup W_{2} $, 
+            W_{1}$. Τότε υπάρχει $ \mathbf{v}_{2} \in W_{2} \setminus W_{1} $ και 
+            $ \mathbf{v}_{1} \in W_{1} \setminus W_{2}$. 
+            Όμως $ \mathbf{v} = \mathbf{v}_{1}+ \mathbf{v}_{2} \in W_{1} \cup W_{2} $, 
             αφού $ W_{1} \cup W_{2} $ υπόχωρος. Τότε έχουμε 
             \begin{align*}
-                \text{Αν $v \in W_{1}$ τότε} \; v_{2}=v-v_{1} \in W_{1} 
-                \quad \text{άτοπο} \\
-                \text{Αν $v \in W_{2}$ τότε} \; v_{1}=v-v_{2} \in W_{2} 
-                \quad \text{άτοπο}  
+                \text{Αν $ \mathbf{v} \in W_{1}$ τότε} \; \mathbf{v}_{2}= 
+                \mathbf{v}- \mathbf{v}_{1} \in W_{1} \quad \text{άτοπο} \\
+                \text{Αν $ \mathbf{v} \in W_{2}$ τότε} \; \mathbf{v}_{1}= 
+                \mathbf{v}- \mathbf{v}_{2} \in W_{2} \quad \text{άτοπο}  
             \end{align*}
     \end{description}
 \end{proof}
 
-\begin{dfn}
-    Έστω $V$ διανυσματικός χώρος και $ W_{1}, W_{2} \leq V $. Το άθροισμα των 
-    $ W_{1} $ και $ W_{2} $ ορίζουμε να είναι το σύνολο 
+\begin{dfn}[Άθροισμα Υποχώρων]
+    Έστω $V$ διανυσματικός χώρος και $ W_{1}, W_{2} \leq V $. Το 
+    \textcolor{Col2}{άθροισμα} των $ W_{1} $ και $ W_{2} $ ορίζουμε να είναι το σύνολο 
     \[
         W_{1}+W_{2} = \{ \mathbf{w}_{1}+ \mathbf{w}_{2} \; : \; \mathbf{w}_{1} 
         \in W_{1} \; \text{και} \; \mathbf{w}_{2} \in W_{2} \} 
@@ -797,18 +812,32 @@
     Πιο γενικά, αν $ n \in \mathbb{N} $ και $ W_{1}, \ldots, W_{n} \leq V $, ορίζουμε
     \[
         W_{1}+\cdots +W_{n} = \{ \mathbf{w_{1}}+\cdots + \mathbf{w}_{n} \; : \; 
-            \mathbf{w}_{i} \in W_{i}, \; \forall i, \; 1 \leq i \leq n \} 
-     \] 
+        \mathbf{w}_{i} \in W_{i}, \; \forall i, \; 1 \leq i \leq n \} 
+    \] 
 \end{dfn}
 
 \begin{prop}
     Το άθροισμα $ W_{1}+W_{2} $ είναι υπόχωρος του $V$ και ισχύει ότι είναι ο 
-    ελάχιστος υπόχωρος του $V$ που περιέχει την ένωση $ W_{1} \cup W_{2} $, των 
-    υποχώρων $ W_{1} $ και $ W_{2} $. 
+    \textbf{ελάχιστος} υπόχωρος του $V$ που περιέχει την ένωση 
+    $ W_{1} \cup W_{2} $, των υποχώρων $ W_{1} $ και $ W_{2} $. 
 \end{prop}
 
 \begin{proof}
 \item {}
+    Καταρχάς δείχνουμε ότι $ W_{1} \cup W_{2} \subseteq W_{1}+W_{2} $. Πράγματι
+    \begin{gather*}
+        \mathbf{w} \in W_{1} \cup W_{2} \Rightarrow \mathbf{w} \in W_{1} \; \text{ή} \; 
+        \mathbf{w} \in W_{2} 
+    \end{gather*}
+    Τότε αν
+    \begin{gather*}
+        \mathbf{w} \in W_{1} \Rightarrow \mathbf{w} + \mathbf{0} \in W_{1}+W_{2} 
+        \tikzmark{a} \\
+        \mathbf{w} \in W_{2} \Rightarrow \mathbf{0} + \mathbf{w} \in W_{1}+W_{2} 
+        \tikzmark{b}
+    \end{gather*}
+    \mybrace{a}{b}[$ \mathbf{w} \in W_{1}+W_{2} $]
+    Άρα $ W_{1} \cup W_{2} \leq W_{1}+W_{2} $.
     \begin{myitemize}
     \item 
         Έχουμε ότι $ W_{1}+W_{2} \leq V $, γιατί
@@ -835,9 +864,11 @@
                     \underbrace{\lambda \mathbf{w_{2}}}_{\in W_{2}} \in W_{1}+W_{2}
                 \] 
         \end{enumerate}
-    \item 
-        Έστω $ W \leq V $ με $ W_{1} \cup W_{2} \subseteq W $. Θα δείξουμε ότι 
-        $ W_{1}+W_{2} \leq W $.  Πράγματι
+
+    \item Θα δείξουμε ότι $ W_{1}+W_{2} $ είναι ο μικρότερος υπόχωρος που περιέχει 
+        την ένωση $ W_{1} \cup W_{2} $. Πράγματι
+        έστω $ W \leq V $ με $ W_{1} \cup W_{2} \subseteq W $. Θα δείξουμε ότι 
+        $ W_{1}+W_{2} \leq W $.
 
         Έχουμε $ \forall \mathbf{v} \in W_{1} + W_{2}, \; \exists \mathbf{w_{1}} 
         \in W_{1}  $ και $ \mathbf{w_{2}} \in W_{2} $ με $ \mathbf{v} = 
@@ -850,7 +881,7 @@
     \end{myitemize}
 \end{proof} 
 
-\begin{examples}
+\begin{examples}\label{ex:sums}
 \item {}
     \begin{enumerate}
         \item \label{ex:r2} Έστω $ V = \mathbb{R}^{2} $ και $ W_{1} = 
@@ -927,21 +958,35 @@
 \end{enumerate}
 \end{examples}
 
-\begin{dfn}
+\begin{dfn}[Ευθύ Άθροισμα Υποχώρων]
 \item {}
-    Έστω $ W_{1}, W_{2} \leq V $. Λέμε ότι ο $V$ είναι ευθύ άθροισμα των $W_{1}$ και 
-    $ W_{2} $ και γράφουμε $ V = W_{1} \oplus W_{2} $ αν:
+    Έστω $ W_{1}, W_{2} \leq V $. Λέμε ότι ο $V$ είναι \textcolor{Col2}{ευθύ άθροισμα}
+    των $W_{1}$ και $ W_{2} $ και γράφουμε $ V = W_{1} \oplus W_{2} $ αν:
     \begin{enumerate}[i)]
         \item $ W_{1}+W_{2} = V $ και 
         \item $ W_{1} \cap W_{2} = \{ \mathbf{0} \} $
     \end{enumerate}
 \end{dfn}
 
-\begin{examples}
+\begin{examples}\label{ex:directsums}
 \item {}
     \begin{enumerate}
-        \item Από το παράδειγμα~\ref{ex:r2} έχουμε ότι $ \mathbb{R}^{2} = W_{1}+W_{2} $ 
-            και επίσης, προφανώς ισχύει ότι $ W_{1} \cap W_{2} = \{ \mathbf{0} \} $. 
+        \item Έστω $ V = \mathbb{R}^{2} $ και $ W_{1} = 
+            \{(x,y)\in \mathbb{R}^{2} \; : \; y =0 \} $ και 
+            $ W_{2} = \{(x,y)\in \mathbb{R}^{2} \mid x=0 \}$. 
+            Τότε $ \mathbb{R}^{2} = W_{1} \oplus W_{2} $. Πράγματι
+            \begin{gather*} 
+                \text{Έστω} \; (x,y) \in \mathbb{R}^{2} 
+                \Rightarrow (x,y) = \underbrace{(x,0)}_{\in W_{1}}+
+                \underbrace{(0,y)}_{\in W_{2}} \in W_{1} + W_{2} \\
+                \text{Έστω} \; (x,y) \in W_{1} \cap W_{2} \Rightarrow (x,y) 
+                \in W_{1} \; \text{και} \; (x,y) \in W_{2} \Rightarrow y=0 \; 
+                \text{και} \; x=0 \Rightarrow (x,y) = (0,0) 
+                \Rightarrow W_{1} \cap W_{2} = \{ \mathbf{0} \}.
+            \end{gather*} 
+        \item Από το παράδειγμα~\ref{ex:sums} -~\ref{ex:r2} έχουμε ότι 
+            $ \mathbb{R}^{2} = W_{1}+W_{2} $ και επίσης, προφανώς ισχύει ότι 
+            $ W_{1} \cap W_{2} = \{ \mathbf{0} \} $. 
             Επομένως $ \mathbb{R}^{2} = W_{1} \oplus W_{2} $.
         \item Έστω $ V = \mathbb{R}^{3} $ και $ W_{1} $ είναι η ευθεία $ \frac{x}{2} = 
             \frac{y}{3} = \frac{z}{5} = \lambda$ και $ W_{2} $ η ευθεία $ x = -y = 
@@ -1016,14 +1061,14 @@
             \frac{z}{5}$ και $ W_{2}: x=-y= \frac{z}{2} $, καθώς 
             $ V = W_{1}+W_{2} $ και $ W_{1}\cap W_{2} = \{ \mathbf{0} \} $.
 
-        \item Για το παράδειγμα~\ref{ex:sym} έχουμε ότι $ V = W_{1} \oplus W_{2} $, 
+        \item Για το παράδειγμα\ref{ex:sums} -~\ref{ex:sym} έχουμε ότι $ V = W_{1} \oplus W_{2} $, 
             γιατί δείξαμε ότι $ V= W_{1}+W_{2} $ και επίσης έχουμε 
             $ W_{1} \cap W_{2} = \{ \mathbf{0} \} $, 
             αφού αν $A \in W_{1} \cap W_{2}$, δηλαδή $ A $ συμμετρικός και 
             αντι-συμμετρικός ταυτόχρονα, μας δίνει ότι $ A^{T} = A $ και 
             $ A^{T}=-A $ και άρα $ 2A = \mathbf{0} \Rightarrow A= \mathbf{0} $.
 
-        \item Για το παράδειγμα~\ref{ex:art} έχουμε ότι $ V = W_{1} \oplus W_{2} $, 
+        \item Για το παράδειγμα\ref{ex:sums} -~\ref{ex:art} έχουμε ότι $ V = W_{1} \oplus W_{2} $, 
             γιατί δείξαμε ότι $ V= W_{1}+W_{2} $ και επίσης έχουμε 
             $ W_{1} \cap W_{2} = \{ \mathbf{0} \} $, 
             αφού αν $f \in W_{1} \cap W_{2}$, δηλαδή $ f $ άρτια και περιττή 
@@ -1034,219 +1079,5 @@
     \end{enumerate}
 \end{examples}
 
-\section{Γραμμική ανεξαρτησία}
-
-\begin{dfn}
-    Έστω $ V $ ένας διανυσματικός χώρος επί του σώματος $ \mathbb{K} $ και έστω 
-    $ \mathbf{v} \in V $. Λέμε ότι το διάνυσμα $ \mathbf{v}$ είναι γραμμικός 
-    συνδυασμός των διανυσμάτων 
-    $ \mathbf{u_{1}}, \mathbf{u_{2}}, \ldots \mathbf{u}_{n} $, αν υπάρχουν 
-    $ \lambda _{1}, \lambda _{2}, \ldots, \lambda _{n} \in \mathbb{K} $ τέτοιοι ώστε 
-    \[
-        \mathbf{v} = \lambda _{1} \mathbf{u_{1}}+ \lambda_{2} \mathbf{u_{2}}+ 
-        \cdots \lambda _{k} \mathbf{u}_{k} \Leftrightarrow \mathbf{v} = 
-        \sum_{i=1}^{k} \lambda _{i} \mathbf{u}_{i} 
-    \]
-    Τα στοιχεία $ \lambda _{1}, \lambda _{2}, \ldots, \lambda _{k} $ ονομάζονται 
-    συντελεστές τους γραμμικού συνδυασμόυ.
-\end{dfn}
-
-\begin{thm}
-    Έστω $ V $ ένας διανυσματικός χώρος επί του σώματος $ \mathbb{K} $ και έστω 
-    $ S = \{ \mathbf{u_{1}}, \mathbf{u_{2}}, \ldots, \mathbf{u}_{k}\} \subseteq V $.
-    Θέτουμε $ W = \{ w \in V \; : \; \exists \lambda _{1}, \ldots, \lambda _{k} \in 
-        \mathbb{K} \; \text{ώστε} \; \mathbf{w} = \lambda _{1} \mathbf{u_{1}}+ \cdots 
-    \lambda _{k} \mathbf{u}_{k}\} $. Τότε
-    \begin{enumerate}[i)]
-        \item $ S \subseteq W $
-        \item $ W \leq V $ 
-        \item $ W $ είναι ο μικρότερος υπόχωρος του $V$ που περιέχει το $S$.
-    \end{enumerate}
-\end{thm}
-\begin{proof}
-\item {}
-    \begin{enumerate}[i)]
-        \item Πράγματι, έστω $i$ με $ 1 \leq i \leq k $. Τότε  έχουμε
-            \[ \mathbf{u}_{i} = 0 \mathbf{u}_{1}+ 0 \mathbf{u_{2}} + 
-                \cdots + 0 \mathbf{u}_{i-1} + 1 \mathbf{u}_{i} + 0 \mathbf{u}_{i+1} + 
-            \cdots + \mathbf{u}_{k}  \]
-        \item Καταρχάς $ \mathbf{0} \in W $, γιατί $ \mathbf{0} = 0 \mathbf{u}_{1} + 
-            0\mathbf{u_{2}} + \cdots 0 \mathbf{u}_{k}$.
-
-            Έστω 
-            \[
-                \left. 
-                    \begin{matrix}
-                        \mathbf{w_{1}} \in W \\
-                        \mathbf{w_{2}} \in W 
-                    \end{matrix}
-                \right\}
-                \Rightarrow 
-                \left. 
-                    \begin{matrix}
-                        \exists \lambda _{1}, \ldots, \lambda _{k} \in \mathbb{K} \; 
-                        \text{ώστε} \; \mathbf{w_{1}} = \comb{u}{k} \\
-                        \exists \mu _{1}, \ldots, \mu _{k} \in \mathbb{K} \; 
-                        \text{ώστε} \; \mathbf{w_{2}} = \combc{u}{\mu}{k}
-                    \end{matrix}
-                \right\}
-                \Rightarrow 
-            \]
-            \[
-                \mathbf{w}_{1} + \mathbf{w_{2}} = (\comb{u}{k}) + (\combc{u}{\mu}{k}) 
-                = (\lambda _{1}+ \mu _{1}) \mathbf{u_{1}}+ \cdots + (\lambda _{k}+ 
-                \mu _{k}) \mathbf{u}_{k} \in W 
-            \] 
-
-            Έστω $ \mathbf{w} \in W $ και $ \lambda \in \mathbb{K} $, τότε 
-            $ \mathbf{w} = \comb{u}{k} $ και έχουμε
-            \[ \lambda \mathbf{w} = \lambda (\comb{u}{k}) =
-                \lambda (\lambda _{1} \mathbf{u_{1}}) + \cdots \lambda (\lambda _{k}) 
-                \mathbf{u}_{k} = (\lambda \lambda _{1}) 
-                \mathbf{u_{1}} + \cdots + (\lambda \lambda _{k}) \mathbf{u}_{k} \in W 
-            \]
-        \item Έστω $ U \leq V $, τέτοιος ώστε $ S \subseteq U $. Θα δείξουμε ότι 
-            $ W \leq $. Πράγματι
-            \[
-                \mathbf{w} \in W \Rightarrow \exists \lambda _{1}, 
-                \cdots \lambda _{k} \in \mathbb{K} \; \text{ώστε} \; \mathbf{w} = 
-                \comb{u}{k} 
-            \] 
-            Όμως $ S \subseteq U \Rightarrow \mathbf{u}_{1}, \ldots \mathbf{u}_{k} 
-            \in U \overset{U \leq V}{ \Rightarrow } \lambda _{1} \mathbf{u_{1}}, 
-            \ldots, \lambda \mathbf{u}_{k} \in U \overset{U \leq V}{ \Rightarrow } 
-            \mathbf{w} = \comb{u}{k} \in U $. Άρα $ W \leq U $.
-    \end{enumerate}
-\end{proof}
-
-\begin{dfn}
-    Έστω $ V $ ένας διανυσματικός χώρος επί του $ \mathbb{K} $ και έστω $ S = 
-    \{ \mathbf{u}_{1}, \ldots, \mathbf{u}_{k} \} \subseteq V$. Τότε ο υπόχωρος $ W $ 
-    του προηγούμενου θεωϱηματος ονομάζεται ο υπόχωρος του $V$ που παράγεται 
-    από το $ S $, ή γραμμική θήκη του $S$ και συμβολίζεται με 
-    $ < S > $ ή $ \Span \{ v_{1},\ldots,v_{n}  \}  $. 
-    Λέμε επίσης ότι το σύνολο $S$ παράγει τον υπόχωρο $W$ του $V$. 
-    Επειδή $S$  πεπερασμένο λέμε ότι $W$ είναι πεπερασμένα 
-    γεννώμενος υπόχωρος του  $V$.
-\end{dfn}
-
-\begin{rem}
-\item {}
-    \begin{enumerate}
-        \item Ορίζουμε $ < \emptyset > = \{ \mathbf{0} \}  $. 
-        \item Ο παραπάνω ορισμός γενικεύεται και για άπειρα σύνολα $ S \subseteq V $. 
-            Στην περίπτωση αυτή 
-            \[ 
-                < S > = \{ \mathbf{v} \in V \; : \; \exists \lambda _{1}, 
-                    \ldots, \lambda _{k} \in \mathbb{K} \; \text{και} \; 
-                    \mathbf{u_{1}}, \ldots \mathbf{u}_{k} \in V \; 
-                    \text{ώστε} \; \mathbf{v} = \lambda _{1} \mathbf{u_{1}} + 
-                \cdots + \lambda _{k} \mathbf{u}_{k}\}.
-            \]
-    \end{enumerate}
-\end{rem}
-
-
-\begin{examples}
-\item {}
-    \begin{enumerate}
-        \item Έστω ο $ \mathbb{R} $-χώρος $ \mathbb{R}^{n} $ και για $ i= 1,\ldots,n $
-            έστω $ \mathbf{e}_{i} $ το διάνυσμα του $ \mathbb{R}^{n} $ το οποίο έχει 
-            1 στην $ i $-θέση και 0 στις υπόλοιπες. Τότε $ \mathbb{R}^{n} = 
-            < \mathbf{e}_{1}, \mathbf{e}_{2}, \ldots \mathbf{e}_{n} >  $. 
-            Πράγματι, έστω $ \mathbf{u} = (u_{1},u_{2},\ldots,u_{n}) \in 
-            \mathbb{R}^{n} $. Τότε 
-            \begin{align*}
-                \mathbf{u} = (u_{1},u_{2},\ldots,u_{n}) 
-                &=  u_{1} (1,0,\ldots,0) + u_{2} (0,1,\ldots,0) + 
-                \cdots + u_{n} (0,0,\ldots,1) \\
-                &= u_{1} \mathbf{e}_{1} + u_{2} \mathbf{e}_{2} + \cdots + u_{n} 
-                \mathbf{e}_{n} \in < \mathbf{e}_{1}, \mathbf{e}_{2}, 
-                \ldots, \mathbf{e}_{n} >  
-            \end{align*} 
-            Άρα $ \mathbb{R}^{n} = < \mathbf{e}_{1}, \mathbf{e}_{2}, 
-            \ldots, \mathbf{e}_{n} >  $.
-        \item Έστω $ A \in \textbf{M}_{m \times n}(\mathbb{R}) $ και έστω 
-            $ \mathbf{r}_{1}, \ldots \mathbf{r}_{m} $ οι $m$ - γραμμές του $A$.  
-            Ο υπόχωρος $ < \mathbf{r}_{1}, \ldots, \mathbf{r}_{m} >  $ του 
-            $ \mathbb{R}^{n} $ που παράγεται από τις γραμμές του $A$ ονομάζεται 
-            χώρος γραμμών του $A$ και συμβολίζεται με $ R(A) $ ή $ \Gamma_{A} $.
-        \item Έστω $ A \in \textbf{M}_{m \times n}(\mathbb{R}) $ και έστω 
-            $ \mathbf{c}_{1}, \ldots \mathbf{c}_{n} $ οι $n$ - στήλες του $A$.  
-            Ο υπόχωρος $ < \mathbf{c}_{1}, \ldots, \mathbf{c}_{n} >  $ του 
-            $ \mathbb{R}^{m} $ που παράγεται από τις στήλες του $A$ ονομάζεται 
-            χώρος στήλών του $A$ και συμβολίζεται με $ C(A) $ ή $ \Sigma_{A} $.
-        \item Έστω $ \mathbf{P}_{n}(\mathbb{R}) $ ο $ \mathbb{R} $ - χώρος των 
-            πολυωνύμων βαθμού $ \leq n $ και έστω $ p_{0} = 1, p_{1}=x, p_{2}=x^{2}, 
-            \ldots, p_{n}=x^{n} $. Τότε $ \mathbf{P}_{n}(\mathbb{R}) = 
-            < p_{0}, p_{1}, \ldots, p_{n} > $.
-    \end{enumerate}
-\end{examples}
-
-\begin{thm}
-    Έστω $V$ ένας διανυσματικός χώρος επί του $ \mathbb{K} $ και έστω $ S, S' $ δύο 
-    μη-κενά, πεπερασμένα υποσύνολα του $V$. Τότε 
-    \[ < S > = < S' > \Leftrightarrow S \subseteq < S' >  \; \text{και} \; 
-     S' \subseteq < S >  \]
-\end{thm}
-\begin{proof}
-\item {}
-    \begin{description}
-        \item[($\Rightarrow$)] Έστω ότι $ < S > = < S' >   $. Γνωρίζουμε από το προηγούμενο θεώρημα
-            ότι $ S \subseteq < S >  $ και $ S' \subseteq < S' >  $. Άρα από την 
-            υπόθεση έχουμε ότι και $ S \subseteq < S' >  $ και $ S' \subseteq < S >  $.
-        \item[($\Leftarrow$)] Έστω ότι $ S \subseteq < S' >  $ και $ S' \subseteq < S >  $. Επειδή $
-            < S >  $ είναι ο μικρότερος υπόχωρος του $V$ που περιέχει το $S$ και 
-            $ S \subseteq < S' >  $ έπεται ότι $ < S > \leq < S' >   $. Ομοίως 
-            $ < S' > \leq < S >   $, οπότε $ < S > = < S' >   $.
-             \end{description}
-\end{proof}
-
-\begin{rem}
-    Από το θεώρημα καταλαβαίνουμε ότι είναι δυνατόν περισσότερα από ένα υποσύνολα του 
-    $V$ να παϱάγουν τον ίδιο υπόχωρο του $V$. Για παράδειγμα, για τον 
-    $ \mathbb{R} $- χώρο $ \mathbb{R} $ έχουμε ότι $ \mathbb{R} = < x > , 
-    \; \forall x \in  \mathbb{R} \setminus \{ 0 \} $.
-\end{rem}
-
-\section{Γραμμική Ανεξαρτησία}
-
-\begin{dfn}
-    Έστω $ (V,+,\cdot) $ ένας $ \mathbb{K} $- χώρος και έστω 
-    $ S = \{ \mathbf{v_{1}}, \ldots, \mathbf{v}_{n} \} \subseteq V $. Λέμε ότι 
-    τα διανύσματα $ \mathbf{v_{1}}, \ldots, \mathbf{v_{n}} $ είναι 
-    γραμμικώς ανεξάρτητα ή ότι το σύνολο $ S $ είναι γραμμικώς ανεξάρτητο, 
-    αν οποτεδήποτε έχουμε
-    \[
-        \comb{v}{k} = \mathbf{0} \; \text{τότε} \; \lambda _{1} = 
-        \lambda _{2} = \cdots = \lambda _{n} = 0
-    \]
-    Αν τα διανύσματα $ \mathbf{v_{1}}, \ldots, \mathbf{v_{n}} $ δεν είναι γραμμικώς 
-    ανεξάρτητα τότε λέγονται γραμμικώς εξαρτημένα και ισχύει ότι
-    \[
-        \exists  \lambda _{1}, \ldots, \lambda _{k} \in \mathbb{K} \; 
-        \text{όχι όλα μηδέν, ώστε} \; \comb{u}{k} = \mathbf{0}
-    \]
-\end{dfn}
-
-\begin{examples}
-    \begin{enumerate}
-        \item Στον $ \mathbb{R}^{2} $ δύο διανύσματα $ \mathbf{u} $ και $ \mathbf{v} $ 
-            είναι γραμμικώς ανεξάρτητα αν και μόνον αν δεν είναι παράλληλα. Πράγματι 
-            έστω ότι $ \mathbf{u}, \mathbf{v} $ είναι γραμμικώς εξαρτημένα. Τότε 
-            \[
-                \exists \lambda _{1}, \lambda _{2} \in \mathbb{R} \; 
-                \text{όχι και τα δύο μηδέν, ώστε} 
-                \; \lambda_{1} \mathbf{u} + \lambda_{2} \mathbf{v} = \mathbf{0} 
-            \]
-            Έτσι, αν έστω ότι $ \lambda_{1} \neq 0 $, έχουμε 
-            \[
-                \mathbf{u} = - \frac{\lambda _{2}}{\lambda _{1}} \mathbf{v} \quad  
-                \text{(παράλληλα)}
-            \] 
-    \end{enumerate}
-\end{examples}
-
-
-
 \end{document}
+
