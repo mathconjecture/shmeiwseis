@@ -40,7 +40,7 @@
         \end{enumerate}
         }{%
         \textbf{και επίσης ισχύει}
-        \begin{enumerate}
+        \begin{enumerate}[resume]
             \setcounter{enumi}{4}
         \item $ ( \lambda + \mu ) \vec{u} = \lambda \vec{u} + \mu \vec{u}, \quad 
             \forall \mathbf{u} \in V \; \text{και} \; \forall \lambda, \mu \in 
@@ -84,6 +84,7 @@
 
 
 \section{Παραδείγματα}
+
 \begin{example} \label{ex:Rn}
     \textcolor{Col2}{Ο διανυσματικός χώρος $ \mathbb{K}^{n} $ 
     επί του $ \mathbb{K} \quad (n \geq 1) $}
@@ -96,7 +97,7 @@
         \quad \text{και} \quad \lambda \mathbf{u} = 
         ( \lambda x_{1}, \ldots, \lambda x_{n})
     \]
-    είναι ένας διανυσματικός χώϱος επί του $ \mathbb{K} $. 
+    είναι ένας διανυσματικός χώρος επί του $ \mathbb{K} $. 
 
     Το μηδέν του χώρου 
     είναι $ \vec{0} = (0,\ldots,0) $, όπου 0 είναι το μηδέν του σώματος 
@@ -247,8 +248,7 @@
             0
         \end{pmatrix*}
     \end{equation*} 
-    Λύση του είναι ένα στοιχείο $ \mathbf{X} = 
-    \begin{pmatrix*}[r]
+    με $ \begin{pmatrix*}[r]
         x_{1} & x_{2} & \cdots & x_{n} 
     \end{pmatrix*}^{T} \in M_{n \times 1}(\mathbb{R}) \cong \mathbb{R}^{n} $.
     Τότε, ως προς τις πράξεις τους χώρου 
@@ -281,7 +281,7 @@
     είναι διανυσματικοί χώροι. Επομένως ευθείες του επιπέδου $ \mathbb{R}^{2} $ 
     όπου περνούν από την αρχή των αξόνων, αλλά και ευθείες και επίπεδα του χώρου 
     $ \mathbb{R}^{3} $ που επίσης περνούν από την αρχή των αξόνων είναι 
-    διανυσματικοί χώροι).
+    διανυσματικοί χώροι.
 \end{rem}
 
 \begin{rem}
@@ -290,6 +290,42 @@
     όπου $ - \mathbf{v} $ είναι το \textcolor{Col2}{αντίθετο} του $ \mathbf{v} $.
 \end{rem}
 
+\begin{exercise}
+    Έστω $ V = \mathbb{R}_{+} $, το σύνολο των θετικών πραγματικών αριθμών, με 
+    πράξεις
+    \begin{gather*}
+         x \oplus y = xy \\
+         \lambda \odot x = x^{\lambda}
+     \end{gather*} 
+     Να εξετάσετε αν ο $V$ με τις πράξεις αυτές είναι διανυσματικός χώρος επί του 
+     $ \mathbb{R} $.
+\end{exercise}
+
+\begin{solution}
+\item {}
+    \begin{enumerate}[i)]
+        \item $ x \oplus y = xy = yx = y \oplus x $
+        \item $ (x \oplus y) \oplus z = (xy) \oplus z = (xy)z = x(yz) = x \oplus (yz) 
+            = x \oplus (y \oplus z) $
+        \item Έχουμε $x \oplus 1 = x\cdot 1= 1 \cdot x = 1 \oplus x = x, \; 
+            \forall x \in V $, άρα το μηδενικό στοιχείο του $V$ είναι το 1.
+        \item Έχουμε $ x \in V $ τότε $ x \oplus \frac{1}{x} = x \cdot \frac{1}{x} = 
+            \frac{1}{x} \cdot x = \frac{1}{x} \oplus x = 1, \; \forall x \in V $, άρα 
+            το αντίθετο του $x$ είναι το $ \frac{1}{x} $.
+        \item Αν $ x,y \in V $ και $ \lambda \in \mathbb{R} $ τότε $ \lambda \odot 
+            (x \oplus y) = \lambda \odot (xy) = (xy)^{\lambda} = 
+            x^{\lambda } y^{\lambda} = x^{\lambda } \oplus y^{\lambda } = 
+            (\lambda \odot x) \oplus (\lambda \odot y ) $
+        \item Αν $ \lambda , \mu \in \mathbb{R} $ και $ x \in V $, τότε 
+            $ (\lambda + \mu ) \odot x = x^{\lambda + \mu } = 
+            x^{\lambda } x^{\mu} = x^{\lambda} \oplus x^{\mu } = 
+            (\lambda \odot x) \oplus (\mu \odot x)  $ 
+        \item Αν $ \lambda , \mu \in \mathbb{R} $ και $ x \in V $, τότε 
+            $ (\lambda \mu ) \odot x = x^{\lambda \mu } = (x^{\mu })^{\lambda } = 
+            (\mu \odot x)^{\lambda } = \lambda \odot (\mu \odot x)  $
+        \item Αν $ x \in V $, τότε $ 1 \odot x = x^{1} = x $
+    \end{enumerate}
+\end{solution}
 
 \begin{prop}
 \item {}
@@ -498,7 +534,6 @@
             Άρα $ \mathbf{0}_{W} + \mathbf{0}_{W} = \mathbf{0}_{W} + \mathbf{0}_{V} 
             \Rightarrow
             \mathbf{0}_{W} = \mathbf{0}_{V} $. Άρα $ \mathbf{0}_{V} \in W $.
-
         \item [($ \Leftarrow $)] Αντίστροφα, αν ισχύουν οι συνθήκες 
             $ \mathrm{i)}, \mathrm{ii)} $ και $ \mathrm{iii)} $, και από το 
             γεγονός ότι $ W \subseteq V $, όπου $V$ είναι διανυσματικός χώρος, 
@@ -563,7 +598,7 @@
 
     Τότε ως προς τις πράξεις του 
     παραδείγματος~\ref{ex:funs}, των διανυσματικών χώρων ο $W$ 
-    είναι ένας διανυσματικός χώϱος επί του $ \mathbb{R} $, υπόχωρος του 
+    είναι ένας διανυσματικός χώρος επί του $ \mathbb{R} $, υπόχωρος του 
     $\mathbf{F}(A, \mathbb{R})$,
     γιατί το άθροισμα $ f+g $ δύο συνεχών συναρτήσεων $ f,g $ είναι 
     συνεχής συνάρτηση καθώς και το βαθμωτό γινόμενο 
@@ -581,7 +616,7 @@
 
     Τότε ως προς τις πράξεις του 
     παραδείγματος~\ref{ex:funs}, των διανυσματικών χώρων ο $W$ 
-    είναι ένας διανυσματικός χώϱος επί του $ \mathbb{R} $, υπόχωρος του 
+    είναι ένας διανυσματικός χώρος επί του $ \mathbb{R} $, υπόχωρος του 
     $ \mathbf{C}[a,b] $.
 \end{example}
 
@@ -1061,14 +1096,16 @@
             \frac{z}{5}$ και $ W_{2}: x=-y= \frac{z}{2} $, καθώς 
             $ V = W_{1}+W_{2} $ και $ W_{1}\cap W_{2} = \{ \mathbf{0} \} $.
 
-        \item Για το παράδειγμα\ref{ex:sums} -~\ref{ex:sym} έχουμε ότι $ V = W_{1} \oplus W_{2} $, 
+        \item Για το παράδειγμα\ref{ex:sums} -~\ref{ex:sym} έχουμε ότι 
+            $ V = W_{1} \oplus W_{2} $, 
             γιατί δείξαμε ότι $ V= W_{1}+W_{2} $ και επίσης έχουμε 
             $ W_{1} \cap W_{2} = \{ \mathbf{0} \} $, 
             αφού αν $A \in W_{1} \cap W_{2}$, δηλαδή $ A $ συμμετρικός και 
             αντι-συμμετρικός ταυτόχρονα, μας δίνει ότι $ A^{T} = A $ και 
             $ A^{T}=-A $ και άρα $ 2A = \mathbf{0} \Rightarrow A= \mathbf{0} $.
 
-        \item Για το παράδειγμα\ref{ex:sums} -~\ref{ex:art} έχουμε ότι $ V = W_{1} \oplus W_{2} $, 
+        \item Για το παράδειγμα\ref{ex:sums} -~\ref{ex:art} έχουμε ότι 
+            $ V = W_{1} \oplus W_{2} $, 
             γιατί δείξαμε ότι $ V= W_{1}+W_{2} $ και επίσης έχουμε 
             $ W_{1} \cap W_{2} = \{ \mathbf{0} \} $, 
             αφού αν $f \in W_{1} \cap W_{2}$, δηλαδή $ f $ άρτια και περιττή 
@@ -1079,5 +1116,5 @@
     \end{enumerate}
 \end{examples}
 
-\end{document}
 
+\end{document}
