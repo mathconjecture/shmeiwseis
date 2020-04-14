@@ -16,12 +16,12 @@
 $f$ ως προς $x$ είναι:
 \begin{align*}
     \eval{\pdv{f}{x}}_{(x_{0}, y_{0})} = \lim_{x \to x_{0}} 
-    \frac{f(x, y_{0}) - f(x_{0}, y_{0})}{x - x_{0}} \overset{h=x- x_{0}}{=} \lim_{h \to 0}
-    \frac{f(x_{0}+h, y_{0}) - f(x_{0}, y_{0})}{h}  
+    \frac{f(x, y_{0}) - f(x_{0}, y_{0})}{x - x_{0}} \overset{h=x- x_{0}}{=} 
+    \lim_{h \to 0} \frac{f(x_{0}+h, y_{0}) - f(x_{0}, y_{0})}{h}  
     \intertext{και η μερική παράγωγος της $f$ ως προς $y$ είναι:}
     \eval{\pdv{f}{y}}_{(x_{0}, y_{0})} = \lim_{y \to y_{0}} 
-    \frac{f(x_{0}, y) - f(x_{0}, y_{0})}{y - y_{0}} \overset{k=y- y_{0}}{=} \lim_{k \to 0}
-    \frac{f(x_{0}, y_{0}+k) - f(x_{0}, y_{0})}{k}  
+    \frac{f(x_{0}, y) - f(x_{0}, y_{0})}{y - y_{0}} \overset{k=y- y_{0}}{=} 
+    \lim_{k \to 0} \frac{f(x_{0}, y_{0}+k) - f(x_{0}, y_{0})}{k}  
 \end{align*}
 
 \subsection{Τριών Μεταβλητών}
@@ -29,15 +29,18 @@ $f$ ως προς $x$ είναι:
 Τότε η μερική παράγωγος της $f$ ως προς $x$ είναι :
 \begin{align*}
     \eval{\pdv{f}{x}}_{(x_{0}, y_{0}, z_{0})} = \lim_{x \to x_{0}} 
-    \frac{f(x, y_{0}, z_{0}) - f(x_{0}, y_{0}, z_{0})}{x - x_{0}} \overset{h=x- x_{0}}{=} \lim_{h \to 0}
+    \frac{f(x, y_{0}, z_{0}) - f(x_{0}, y_{0}, z_{0})}{x - x_{0}} 
+    \overset{h=x- x_{0}}{=} \lim_{h \to 0}
     \frac{f(x_{0}+h, y_{0}, z_{0}) - f(x_{0}, y_{0}, z_{0})}{h}  
     \intertext{και η μερική παράγωγος της $f$ ως προς $y$ είναι:}
     \eval{\pdv{f}{y}}_{(x_{0}, y_{0}, z_{0})} = \lim_{y \to y_{0}} 
-    \frac{f(x_{0}, y, z_{0}) - f(x_{0}, y_{0}, z_{0})}{y - y_{0}} \overset{k=y- y_{0}}{=} \lim_{k \to 0}
+    \frac{f(x_{0}, y, z_{0}) - f(x_{0}, y_{0}, z_{0})}{y - y_{0}} 
+    \overset{k=y- y_{0}}{=} \lim_{k \to 0}
     \frac{f(x_{0}, y_{0}+k, z_{0}) - f(x_{0}, y_{0}, z_{0})}{k}  
     \intertext{και η μερική παράγωγος της $f$ ως προς $y$ είναι:}
     \eval{\pdv{f}{z}}_{(x_{0}, y_{0}, z_{0})} = \lim_{z \to z_{0}} 
-    \frac{f(x_{0}, y_{0}, z) - f(x_{0}, y_{0}, z_{0})}{z - z_{0}} \overset{s=z- z_{0}}{=} \lim_{s \to 0}
+    \frac{f(x_{0}, y_{0}, z) - f(x_{0}, y_{0}, z_{0})}{z - z_{0}} 
+    \overset{s=z- z_{0}}{=} \lim_{s \to 0}
     \frac{f(x_{0}, y_{0}, z_{0}+s) - f(x_{0}, y_{0}, z_{0})}{s}  
 \end{align*}
 
@@ -46,557 +49,676 @@ $f$ ως προς $x$ είναι:
 Συμβολισμοί για τις μερικές παραγώγους της $f(x,y)$ ως 
 προς $x$ και ως προς $y$ είναι:
 \begin{align*}
-    \eval{\pdv{f}{x} }_{(x_{0}, y_{0})} = \pdv{f(x_{0}, y_{0})}{x} = f_{x}(x_{0}, y_{0}) =
-    {f'}_{x}(x_{0}, y_{0} ) \quad \text{και} \quad
-    \eval{\pdv{f}{y} }_{(x_{0}, y_{0})} = \pdv{f(x_{0}, y_{0})}{y} = f_{y}(x_{0}, y_{0}) =
-    {f'}_{y}(x_{0}, y_{0} ) 
+    \eval{\pdv{f}{x} }_{(x_{0}, y_{0})} = \pdv{f(x_{0}, y_{0})}{x} = 
+    f_{x}(x_{0}, y_{0}) = f'_{x}(x_{0}, y_{0} ) \quad \text{και} \quad
+    \eval{\pdv{f}{y} }_{(x_{0}, y_{0})} = \pdv{f(x_{0}, y_{0})}{y} = 
+    f_{y}(x_{0}, y_{0}) = f'_{y}(x_{0}, y_{0} ) 
 \end{align*} 
+
+\begin{example}
+\item {}
+    Δίνεται η $ f(x,y)=3xy^{2}-2x^{3} $. Να 
+    βρεθούν με τον ορισμό οι $ f_{x}(0,1) $ και $ f_{y}(2,1) $.
+    \begin{solution}
+        \begin{align*}
+            f_{x}(0,1) &= \lim_{x \to 0} \frac{f(x,1)-f(0,1)}{x-0} = 
+            \lim_{x \to 0} \frac{3x1^{2}-2x^{3}-0}{x} = 
+            \lim_{x \to 0} (3-2x^{2}) = 3
+            \intertext{και} f_{y}(2,1) 
+                       &= \lim_{y \to 1} \frac{f(2,y)-f(2,1)}{y-1} = 
+                       \lim_{y \to 0} \frac{3\cdot 2y^{2}-2\cdot 2^{3}-3\cdot 
+                       2\cdot 1^{2}+2\cdot 2^{3}}{y-1} = 
+                       \lim_{y \to 1} \frac{6y^{2}-16-6+16}{y-1} \\ 
+                       &= \lim_{y \to 1} \frac{6(y^{2}-1)}{y-1} = \lim_{y \to 1}
+                       \frac{6(y-1)(y+1)}{y-1} = \lim_{y \to 1}[6(y+1)] = 12
+        \end{align*}          
+    \end{solution}
+\end{example}
+
+\section{Συναρτήσεις Μερικών Παραγώγων}
+
+Έστω $ f(x,y) $ συνάρτηση δύο μεταβλητών. 
+\begin{myitemize}
+    \item Η μερική παράγωγος της $f$ ως προς $x$ υπολογίζεται παραγωγίζοντας 
+        την συνάρτηση $ f(x,y) $ ως προς $x$, θεωρώντας το $y$ σταθερό. 
+    \item Η μερική παράγωγος της $f$ ως προς $y$ υπολογίζεται παραγωγίζοντας 
+        την συνάρτηση $ f(x,y) $ ως προς $y$, θεωρώντας το $x$ σταθερό. 
+\end{myitemize}
+
+\section{Κανόνες Παραγώγισης}
+
+Έστω $ f(x,y) $ και $ g(x,y) $ συναρτήσεις δύο μεταβλητών, που ορίζονται στο 
+ανοικτό υποσύνολο $ A $ του $ \mathbb{R}^{2} $, και έστω ότι οι μερικές παράγωγοι 
+$ \pdv{f}{x} $ και $ \pdv{g}{x} $ υπάρχουν για κάθε $ (x,y) \in A $, τότε:
+\begin{myitemize}
+    \item $ \pdv{x}(f+g) = \pdv{f}{x} + \pdv{g}{x} $
+    \item $ \pdv{x}(af) = a \pdv{f}{x} $ 
+    \item $ \pdv{x}(f\cdot g) = \pdv{f}{x} \cdot g + f \cdot \pdv{g}{x} $
+    \item $ \pdv{x}(\frac{f}{g}) = \frac{\pdv{f}{x} \cdot g - f \cdot 
+        \pdv{g}{x}}{g^{2}} $
+\end{myitemize}
 
 \begin{examples}
 \item {}
     \begin{enumerate}
-        \item Δίνεται η $ f(x,y)=3xy^{2}-2x^{3} $. Να 
-            βρεθούν οι $ f_{x}(0,1) $ και $ f_{y}(2,1) $.
+        \item Έστω $ f(x,y)=x^{2}y^{3}+4xy^{2}+4y+5 $. Να 
+            υπολογιστούν οι μερικές παράγωγοι $ f_{x} $ και 
+            $ f_{y} $.
             \begin{solution}
                 \begin{align*}
-                    f_{x}(0,1) &= \lim_{x \to 0} \frac{f(x,1)-f(0,1)}{x-0} = \lim_{x \to 0}
-                    \frac{3x1^{2}-2x^{3}-0}{x} = \lim_{x \to 0} (3-2x^{2}) = 3
+                    f_{x} &= (x^{2}y^{3}+4xy^{2}+4y+5)_{x} =
+                    (x^{2}y^{3})_{x}+(4xy^{2})_{x}+(4y)_{x}+(5)_{x} = 2xy^{3} + 4y^{2}
                     \intertext{και}
-                    f_{y}(2,1) &= \lim_{y \to 1} \frac{f(2,y)-f(2,1)}{y-1} = \lim_{y \to 0} \frac{3\cdot
-                    2y^{2}-2\cdot 2^{3}-3\cdot 2\cdot 1^{2}+2\cdot 2^{3}}{y-1} = \lim_{y \to 1}
-                    \frac{6y^{2}-16-6+16}{y-1} \\ 
-                               &= \lim_{y \to 1} \frac{6(y^{2}-1)}{y-1} = \lim_{y \to 1}
-                               \frac{6(y-1)(y+1)}{y-1} = \lim_{y \to 1}[6(y+1)] = 12
-                    \end{align*}          
-                \end{solution}
-        \end{enumerate}
-    \end{examples}
+                    f_{y}&=(x^{2}y^{3}+4xy^{2}+4y+5)_{y} = 
+                    (x^{2}y^{3})_{y}+(4xy^{2})_{y}+(4y)_{y}+(5)_{y} = 3x^{2}y^{2} + 
+                    8xy + 4
+                \end{align*} 
+            \end{solution}
+        \item Έστω $ f(x,y)=2x^{2}y+3 \cos{3y} +1 $. Να υπολογιστούν οι 
+            μερικές παράγωγοι $ f_{x}$ και $ f_{y} $.
+            \begin{solution}
+                \[
+                    f_{x}=4xy \quad \text{και} \quad f_{y}=2x^{2}-3 \sin{3y} (3y)_{y} 
+                    = 2x^{2}-9 \sin{3y}
+                \] 
+            \end{solution}
+        \item Έστω $ f(x,y,z)=x^{2}yz - y \cos{(xy)} $. Να υπολογιστούν οι 
+            μερικές παράγωγοι $ f_{x}, f_{y}, f_{z} $. 
+            \begin{solution}
+            \item {}
+                \begin{align*}
+                    f_{x}&=2xyz- \cos{(xy)}(xy)_{x} = 2xyz-y \cos{xy} \\
+                    f_{y}&=x^{2}z- \cos{xy}(xy)_{y}=x^{2}z - x \cos{xy} \\
+                    f_{z}&=x^{2}z
+                \end{align*}
+            \end{solution}
+    \end{enumerate}
+\end{examples}
 
-    \section{Συναρτήσεις Μερικών Παραγώγων}
+\section{Μερικές Παράγωγοι Ανώτερης Τάξης}
 
-    Έστω $ f(x,y) $ συνάρτηση δύο μεταβλητών. 
-    \begin{myitemize}
-    \item Η μερική παράγωγος της $f$ ως προς $x$ υπολογίζεται 
-        παραγωγίζοντας την συνάρτηση $ f(x,y) $ ως προς $x$, 
-        θεωρώντας το $y$ σταθερό. 
-    \item Η μερική παράγωγος της $f$ ως προς $y$ υπολογίζεται 
-        παραγωγίζοντας την συνάρτηση $ f(x,y) $ ως προς $y$, 
-        θεωρώντας το $x$ σταθερό. 
-    \end{myitemize}
-
-    \begin{examples}
-    \item {}
-        \begin{enumerate}
-            \item Έστω $ f(x,y)=x^{2}y^{3}+4xy^{2}+4y+5 $. Να 
-                υπολογιστούν οι μερικές παράγωγοι $ f_{x} $ και 
-                $ f_{y} $.
-                \begin{solution}
-                    \begin{align*}
-                        f_{x} &= (x^{2}y^{3}+4xy^{2}+4y+5)_{x} =
-                        (x^{2}y^{3})_{x}+(4xy^{2})_{x}+(4y)_{x}+(5)_{x} = 2xy^{3} + 4y^{2}
-                        \intertext{και}
-                        f_{y}&=(x^{2}y^{3}+4xy^{2}+4y+5)_{y} = 
-                        (x^{2}y^{3})_{y}+(4xy^{2})_{y}+(4y)_{y}+(5)_{y} = 3x^{2}y^{2} + 8xy + 4
-                    \end{align*} 
-                \end{solution}
-            \item Έστω $ f(x,y)=2x^{2}y+3 \cos{3y} +1 $. Να υπολογιστούν οι μερικές παράγωγοι $ f_{x}$
-                και $ f_{y} $.
-                \begin{solution}
-                    \[
-                        f_{x}=4xy \quad \text{και} \quad f_{y}=2x^{2}-3 \sin{3y} (3y)_{y} = 2x^{2}-9 \sin{3y}
-                    \] 
-                \end{solution}
-            \item Έστω $ f(x,y,z)=x^{2}yz - y \cos{(xy)} $. Να
-                υπολογιστούν οι μερικές παράγωγοι $ f_{x}, f_{y}, f_{z} $. 
-                \begin{solution}
-                \item {}
-                    \begin{align*}
-                        f_{x}&=2xyz- \cos{(xy)}(xy)_{x} = 2xyz-y \cos{xy} \\
-                        f_{y}&=x^{2}z- \cos{xy}(xy)_{y}=x^{2}z - x \cos{xy} \\
-                        f_{z}&=x^{2}z
-                    \end{align*}
-                \end{solution}
-        \end{enumerate}
-    \end{examples}
-
-    \section{Μερικές Παράγωγοι Ανώτερης Τάξης}
-
-    \begin{example}
-    \item {}
-        \begin{enumerate}
-            \item 
-                Έστω $ f(x,y,z) = 3x^{2}y^{2} + xy^{3} + 3x +1 $. 
-                Να υπολογιστούν οι μερικές παράγωγοι 1ης και 2ης τάξης.
-                \begin{solution}
-                \item {} 
-                    \begin{align*}
-                        \text{\bfseries 1ης τάξης:} \quad f_{x} &= 6xy^{2}+y^{3}+3 \quad \text{και} \quad 
-                        f_{y} = 6x^{2}y+3xy^{2} \\
-                        \text{\bfseries 2ης τάξης:} \quad f_{xx} &= (f_{x})_{x} = (6xy^{2}+y^{3}+3)_{x} =
-                        6y^{2} \\
-                        f_{yy} &= (f_{y})_{y} = (6x^{2}y+3xy^{2})_{y} = 
-                        6x^{2}+6xy \\
-                        f_{xy} &= (f_{x})_{y} = (6xy^{2}+y^{3}+3)_{y} = 
-                        12xy = 3y^{2} \tikzmark{a} \\
-                        f_{yx} &= (f_{y})_{x} = (6x^{2}y+3xy^{2})_{x} = 
-                        12xy+3y^{2} \; \; \, \tikzmark{b}
-                        \mybrace{a}{b}[\text{Μικτές Παράγωγοι}]
-                    \end{align*}
-                \end{solution}
-        \end{enumerate}
-    \end{example}
-
-    \begin{rem}
-    \item {}
-        Για τις μικτές παραγώγους $ f_{xy} $ και $ f_{yx} $ 
-        ισχύει:
+\begin{example}
+\item {}
+    Έστω $ f(x,y,z) = 3x^{2}y^{2} + xy^{3} + 3x +1 $. 
+    Να υπολογιστούν οι μερικές παράγωγοι 1ης και 2ης τάξης.
+    \begin{solution}
+    \item {} 
         \begin{align*}
-            \pdv[2]{f}{x}{y} = \pdv{}{x} \left(\pdv{f}{y}\right) = \pdv{}{x} (f_{y}) = (f_{y})_{x} =
-            f_{yx}
-            \intertext{και}
-            \pdv[2]{f}{y}{x} = \pdv{}{y} \left(\pdv{f}{x}\right) = \pdv{}{y} (f_{x}) = (f_{x})_{y} = f_{xy}
-        \end{align*} 
-    \end{rem}
+            f_{x} &= 6xy^{2}+y^{3}+3 \quad \text{και} \quad 
+            f_{y} = 6x^{2}y+3xy^{2} \\
+            f_{xx} &= (f_{x})_{x} = (6xy^{2}+y^{3}+3)_{x} =
+            6y^{2} \\
+            f_{yy} &= (f_{y})_{y} = (6x^{2}y+3xy^{2})_{y} = 
+            6x^{2}+6xy \\
+            f_{xy} &= (f_{x})_{y} = (6xy^{2}+y^{3}+3)_{y} = 
+            12xy = 3y^{2} \tikzmark{a} \\
+            f_{yx} &= (f_{y})_{x} = (6x^{2}y+3xy^{2})_{x} = 
+            12xy+3y^{2} \; \; \, \tikzmark{b}
+            \mybrace{a}{b}[\text{Μικτές Παράγωγοι}]
+        \end{align*}
+    \end{solution}
+\end{example}
 
-    \begin{thm}[Schwarz]
-    \item {}
-        Αν για τη συνάρτηση $ f(x,y) $ υπάρχουν οι μερικές παράγωγοι $ f_{xy} $ και $ f_{yx} $ και είναι συνεχείς σε μια περιοχή του σημείου $ (x_{0}, y_{0}) $, τότε $ f_{xy}=f_{yx} $ στην περιοχή αυτή.
-    \end{thm}
+\begin{rem}
+\item {}
+    Για τις μικτές παραγώγους $ f_{xy} $ και $ f_{yx} $ 
+    ισχύει:
+    \begin{align*}
+        \pdv[2]{f}{x}{y} = \pdv{}{x} \left(\pdv{f}{y}\right) = \pdv{}{x} (f_{y}) 
+        = (f_{y})_{x} = f_{yx}
+        \intertext{και}
+        \pdv[2]{f}{y}{x} = \pdv{}{y} \left(\pdv{f}{x}\right) = \pdv{}{y} (f_{x}) = 
+        (f_{x})_{y} = f_{xy}
+    \end{align*} 
+\end{rem}
 
-    \begin{thm}
-    \item {}
-        Αν για τη συνάρτηση $ f(x,y) $ υπάρχουν οι μερικές παράγωγοι $ f_{x}, f_{y} $ και $ f_{xy} $ και
-        είναι συνεχείς σε μια περιοχή του σημείου $ (x_{0}, y_{0}) $, τότε υπάρχει και η $
-        f_{yx} $ και
-        ισχύει $ f_{xy}=f_{yx} $ στην περιοχή αυτή.
-    \end{thm}
+\begin{thm}[Schwarz]
+\item {}
+    Αν για τη συνάρτηση $ f(x,y) $ υπάρχουν οι μερικές παράγωγοι $ f_{xy} $ και 
+    $ f_{yx} $ και είναι συνεχείς σε μια περιοχή του σημείου $ (x_{0}, y_{0}) $, τότε 
+    $ f_{xy}=f_{yx} $ στην περιοχή αυτή.
+\end{thm}
+
+\begin{thm}
+\item {}
+    Αν για τη συνάρτηση $ f(x,y) $ υπάρχουν οι μερικές παράγωγοι $ f_{x}, f_{y} $ και 
+    $ f_{xy} $ και είναι συνεχείς σε μια περιοχή του σημείου $ (x_{0}, y_{0}) $, 
+    τότε υπάρχει και η $ f_{yx} $ και ισχύει $ f_{xy}=f_{yx} $ στην περιοχή αυτή.
+\end{thm}
+
+\begin{rem}
+\item {}
+    Οι πολυωνυμικές συναρτήσεις δύο (ή περισσότερων) μεταβλητών, 
+    έχουν μερικές παραγώγους σε κάθε σημείο του $ \mathbb{R}^{2} $ (ή $\mathbb{R}^{n}$).
+    Οι λοιπές στοιχειώδεις συναρτήσεις $ \sin{f(x,y)}, \cos{f(x,y)}, a^{f(x,y)}, 
+    \ln{f(x,y)} $ κ.λ.π. όπου $ f(x,y) $ πολυωνυμική συνάρτηση, έχουν 
+    μερικές παραγώγους σε κάθε σημείο του πεδίου ορισμού τους.
+    Για αυτές τις συναρτήσεις ισχύει $ f_{xy}=f_{yx} $.
+\end{rem}
+
+\begin{prop}
+    Αν για μια συνάρτηση $ f(x,y)$ υπάρχουν οι μερικές παράγωγοι 1ης τάξης στο σημείο 
+    $ (x_{0}, y_{0}) $ και είναι συνεχείς, τότε η συνάρτηση $f$ είναι συνεχής στο 
+    σημείο $ (x_{0}, y_{0}) $.
+\end{prop}
 
 
+\section{Μερική Ολοκλήρωση}
 
-    \begin{rem}
-    \item {}
-        Οι πολυωνυμικές συναρτήσεις δύο (ή περισσότερων) μεταβλητών, 
-        έχουν μερικές παραγώγους σε κάθε σημείο του $ \mathbb{R}^{2} $ (ή $\mathbb{R}^{n}$). Οι λοιπές
-        στοιχειώδεις συναρτήσεις $ \sin{f(x,y)}, \cos{f(x,y)}, a^{f(x,y)}, \ln{f(x,y)} $ κ.λ.π. όπου $
-        f(x,y) $ πολυωνυμική συνάρτηση, έχουν μερικές παραγώγους σε κάθε σημείο του πεδίου ορισμού τους.
-        Για αυτές τις συναρτήσεις ισχύει $ f_{xy}=f_{yx} $.
-    \end{rem}
+\begin{rem}
+\item {}
+    Αν $ f_{x}(x,y) = g(x,y)$ και $ f_{y}(x,y)=h(x,y) $ τότε ισχύει:
+    \begin{align*}
+        f(x,y) = \int g(x,y) \,{dx} + c(y) \quad \text{και} \quad f(x,y) = 
+        \int h(x,y) \,{dy} + c(x) 
+    \end{align*} 
+\end{rem}
 
-    \begin{prop}
-        Αν για μια συνάρτηση $ f(x,y)$ υπάρχουν οι μερικές παράγωγοι 1ης τάξης στο σημείο $ (x_{0},
-        y_{0}) $ και είναι συνεχείς, τότε η συνάρτηση $f$ είναι συνεχής στο σημείο $ (x_{0}, y_{0}) $.
-    \end{prop}
-
-
-
-    \section{Μερική Ολοκλήρωση}
-
-    \begin{rem}
-    \item {}
-        Αν $ f_{x}(x,y) = g(x,y)$ και $ f_{y}(x,y)=h(x,y) $ τότε ισχύει:
+\begin{example}
+\item {}
+    Έστω $ f(x,y)$ με $ f_{x}=e^{x+y} $ και $ f(0,y)=e^{y} $. Να βρεθεί ο τύπος της $f$.
+    \begin{solution}
         \begin{align*}
-            f(x,y) = \int g(x,y) \,{dx} + c(y) \quad \text{και} \quad f(x,y) = \int h(x,y) \,{dy} + c(x) 
-        \end{align*} 
-    \end{rem}
+            f(x,y) = \int e^{x+y} \,{dx} = e^{x+y} + c(y) \; \tikzmark{a} \\ 
+            f(0,y) = e^{y} \Leftrightarrow e^{y}+ c(y) = e^{y} \Rightarrow c(y) = 0 
+            \; \tikzmark{b}
+        \end{align*}
+        \mybrace{a}{b}[ $f(x,y) = e^{x+y}$ ]
+    \end{solution}
+\end{example}
 
-    \begin{example}
-    \item {}
-        Έστω $ f(x,y)$ με $ f_{x}=e^{x+y} $ και $ f(0,y)=e^{y} $. Να βρεθεί ο τύπος της $f$.
-        \begin{solution}
-            \begin{align*}
-                f(x,y) = \int e^{x+y} \,{dx} = e^{x+y} + c(y) \; \tikzmark{a} \\ 
-                f(0,y) = e^{y} \Leftrightarrow e^{y}+ c(y) = e^{y} \Rightarrow c(y) = 0 \; \tikzmark{b}
-            \end{align*}
-            \mybrace{a}{b}[ $f(x,y) = e^{x+y}$ ]
-        \end{solution}
-    \end{example}
+\section{Ασκήσεις}
 
-    \section{Ασκήσεις}
-
-    \begin{example}
-    \item {}
-        Να εξετάσετε την ύπαρξη των μερικών παραγώγων της συνάρτησης 
-        \[
-            f(x,y) = 
-            \begin{cases} 
-                x \frac{x^{2}-y^{2}}{x^{2}+y^{2}}, & (x,y) \neq (0,0) \\ 
-                0, & (x,y) = (0,0) 
-            \end{cases}  
-        \] 
-        \begin{solution}
-        \item {}
-            \begin{myitemize}
+\begin{example}
+    Να εξετάσετε την ύπαρξη των μερικών παραγώγων της συνάρτησης.
+    \[
+        f(x,y) = 
+        \begin{cases}
+            x \frac{x^{2}-y^{2}}{x^{2}+y^{2}}, & (x,y) \neq (0,0) \\ 
+            0, & (x,y) = (0,0) 
+        \end{cases}
+    \] 
+    \begin{solution}
+        \begin{myitemize}
             \item Αν $ (x,y) \neq (0,0) $ τότε 
-                \[ f_{x} = \left(x
-                    \frac{x^{2}-y^{2}}{x^{2}+y^{2}}\right)_{x}
-                    = \cdots = \frac{x^{4}+4x^{2}y^{2}-y^{4}}{(x^{2}+y^{2})^{2}} \quad \text{και} \quad f_{y} = \left(x
-                    \frac{x^{2}-y^{2}}{x^{2}+y^{2}}\right)_{y} = \cdots - \frac{4x^{3}y}{(x^{2}+y^{2})^{2}}
-                \]
+                \begin{align*}
+                    f_{x} = 
+                    \left( 
+                        x \frac{x^{2}-y^{2}}{x^{2}+y^{2}} 
+                    \right)_{x} = \cdots = 
+                    \frac{x^{4}+4x^{2}y^{2}-y^{4}}{(x^{2}+y^{2})^{2}} 
+                    \intertext{και}
+                    \left(
+                        x \frac{x^{2}-y^{2}}{x^{2}+y^{2}} 
+                    \right)_{y} = \cdots - \frac{4x^{3}y}{(x^{2}+y^{2})^{2}}
+                \end{align*}
             \item Αν $ (x,y) = (0,0) $ τότε εξετάζουμε τα όρια:
                 \begin{align*}
-                    f_{x}(0,0) = \lim_{x \to 0} \frac{f(x,0)-f(0,0)}{x-0} = \lim_{x \to 0}
-                    \frac{x}{x} = \lim_{x \to 0} 1 = 1
+                    f_{x}(0,0) = \lim_{x \to 0} \frac{f(x,0)-f(0,0)}{x-0} = 
+                    \lim_{x \to 0} \frac{x}{x} = \lim_{x \to 0} 1 = 1
                     \intertext{και}
-                    f_{y}(0,0) = \lim_{y \to 0} \frac{f(0,y)-f(0,0)}{y-0} = \lim_{y \to 0} 0 = 0 
+                    f_{y}(0,0) = \lim_{y \to 0} \frac{f(0,y)-f(0,0)}{y-0} = 
+                    \lim_{y \to 0} 0 = 0 
                 \end{align*} 
                 Άρα $ f_{x}= 
-                \begin{cases} 
-                    \frac{x^{4}+4x^{2}y^{2}-y^{4}}{(x^{2}+y^{2})^{2}}, &(x,y)
-                    \neq (0,0) \\1 , &(x,y)=(0,0) 
-                \end{cases} $ \quad και \quad $ f_{y} = 
-                \begin{cases} -
-                    \frac{4x^{3}y}{(x^{2}+y^{2})^{2}}, &(x,y) \neq (0,0) \\ 0, &(x,y)=(0,0)
-                \end{cases}  $
-            \end{myitemize}
-        \end{solution}
-    \end{example}
-    \begin{rem}
-    \item {}
-        Η ύπαρξη των μερικών παραγώγων 1ης τάξης μιας συνάρτησης σε ένα σημείο, δεν σημαίνει ότι η
-        συνάρτηση είναι συνεχής στο σημείο αυτό.
-    \end{rem}
+                \begin{cases}
+                    \frac{x^{4}+4x^{2}y^{2}-y^{4}}{(x^{2}+y^{2})^{2}}, &(x,y) 
+                    \neq (0,0) \\ 1 , &(x,y)=(0,0) 
+                \end{cases}
+                \quad \text{και} \quad f_{y} = 
+                \begin{cases}
+                    - \frac{4x^{3}y}{(x^{2}+y^{2})^{2}}, &(x,y) \neq (0,0) \\ 
+                    0, &(x,y)=(0,0) 
+                \end{cases}
+                $  
+        \end{myitemize}
+    \end{solution}
+\end{example}
 
-    \begin{example}
-    \item {}
-        Να εξετάσετε ως προς την ύπαρξη των μερικών παραγώγων και τη συνέχεια την συνάρτηση
-        \[
-            f(x,y) = 
-            \begin{cases} 
-                \frac{xy}{x^{2}+y^{2}}, &(x,y) \neq (0,0) \\ 0, &(x,y) = (0,0) 
-            \end{cases}  
-        \]
-        \begin{solution}
-            \begin{align*}
-                f_{x}(0,0) &= \lim_{x \to 0} \frac{f(x,0)-f(0,0)}{x-0} = \lim_{x \to 0}
-                \frac{0}{x} = \lim_{x \to 0} 0 = 0 \quad \text{(υπάρχει)}
-                \intertext{και}
-                f_{y}(0,0) &= \lim_{y \to 0} \frac{f(0,y)-f(0,0)}{y-0} = \lim_{y \to 0}
-                \frac{0}{y} = \lim_{y \to 0} = 0 \quad \text{(υπάρχει)}
-                \intertext{όμως}
-                \lim\limits_{\substack{x\to 0 \\y \to 0}} f(x,y) &= \lim\limits_{\substack{x\to 0
-                \\y \to 0}} \frac{xy}{x^{2}+y^{2}} \overset{y=\lambda x}{=} \lim_{x \to 0}
-                \frac{\lambda x^{2}}{x^{2}+ \lambda ^{2}x^{2}} = \lim_{x \to 0} \frac{\lambda
-                x^{2}}{x^{2}(1+ \lambda ^{2})} = \lim_{x \to 0} \frac{\lambda}{1 + \lambda ^{2}} =
-                \frac{\lambda}{1 + \lambda ^{2}} \quad \text{(δεν υπάρχει)}
-                    \end{align*} 
-                    Επομένως παρόλο που υπάρχουν οι μερικές παράγωγοι της συνάρτησης στο $ (0,0) $, η
-                    συνάρτηση δεν είναι συνεχής στο $ (0,9) $, 
-                    γιατί δεν υπάρχει το όριο της εκεί.
-                \end{solution}
-            \end{example}
+\begin{rem}
+\item {}
+    Η ύπαρξη των μερικών παραγώγων 1ης τάξης μιας συνάρτησης σε ένα σημείο, 
+    δεν σημαίνει ότι η συνάρτηση είναι συνεχής στο σημείο αυτό.
+\end{rem}
 
-            \chapter{Διαφορισιμότητα}
+\begin{example}
+\item {}
+    Να εξετάσετε ως προς την ύπαρξη των μερικών παραγώγων και τη συνέχεια την συνάρτηση
+    \[
+        f(x,y) = 
+        \begin{cases}
+            \frac{xy}{x^{2}+y^{2}}, &(x,y) \neq (0,0) \\ 0, &(x,y) = (0,0) 
+        \end{cases}
+    \]
+    \begin{solution}
+        \begin{align*}
+            f_{x}(0,0) &= \lim_{x \to 0} \frac{f(x,0)-f(0,0)}{x-0} = \lim_{x \to 0}
+            \frac{0}{x} = \lim_{x \to 0} 0 = 0 \quad \text{(υπάρχει)}
+            \intertext{και}
+            f_{y}(0,0) &= \lim_{y \to 0} \frac{f(0,y)-f(0,0)}{y-0} = \lim_{y \to 0}
+            \frac{0}{y} = \lim_{y \to 0} = 0 \quad \text{(υπάρχει)}
+            \intertext{όμως}
+            \lim\limits_{\substack{x\to 0 \\y \to 0}} f(x,y) &= 
+            \lim\limits_{\substack{x\to 0 \\y \to 0}} \frac{xy}{x^{2}+y^{2}} 
+            \overset{y=\lambda x}{=} \lim_{x \to 0} 
+            \frac{\lambda x^{2}}{x^{2}+ \lambda ^{2}x^{2}} = 
+            \lim_{x \to 0} \frac{\lambda x^{2}}{x^{2}(1+ \lambda ^{2})} = 
+            \lim_{x \to 0} \frac{\lambda}{1 + \lambda ^{2}} =
+            \frac{\lambda}{1 + \lambda ^{2}} \quad \text{(δεν υπάρχει)}
+        \end{align*} 
+        Επομένως παρόλο που υπάρχουν οι μερικές παράγωγοι της συνάρτησης στο 
+        $ (0,0) $, η συνάρτηση δεν είναι συνεχής στο $ (0,9) $, 
+        γιατί δεν υπάρχει το όριο της εκεί.
+    \end{solution}
+\end{example}
 
-            \section{Ορισμός}
-            \begin{dfn}
-            \item {}
-                Μια συνάρτηση $ f(x,y) $ λέγεται διαφορίσιμη στο σημείο 
-                $ P_{0}(x_{0}, y_{0}) $ αν ισχύει η παρακάτω συνθήκη
-                διαφορισιμότητας: 
-                \[
-                    \eval{\Delta f(x,y)}_{P_{0}} \!\!= f(x,y)-f(x_{0}, y_{0}) \xlongequal[k=\underbrace{y-
-                    y_{0}}_{\Delta y=dy}]{h=\overbrace{x-
-                    x_{0}}^{\Delta x=dx}}  f(x_{0}+h, y_{0}+k)-f(x_{0}, y_{0}) =
-                    \underbrace{\eval{\pdv{f}{x}
-                            }_{P_{0}}\cdot h + \eval{\pdv{f}{y} }_{P_{0}}\cdot
-                            k}_{\minibox[c]{$\eval{df(x,y)}_{P_{0}}$ \\ Πρωτεύον
-                μέρος: \\ Γραμμικό ως προς $h,k$}} +
-                \!\!\!\! 
-                \underbrace{\varepsilon _{1}(h,k)h+
-                        \varepsilon _{2}(h,k)k}_{\minibox[c]{$G(h,k)$ : (πολύ μικρό) \\ Δευτερεύον μέρος: \\
-                        Μη γραμμικό ως προς $h,k$
-        }}                 \]
+\chapter{Διαφορισιμότητα}
 
-            \end{dfn}
+\section{Ορισμός}
+\begin{dfn}
+\item {}
+    Μια συνάρτηση $ f(x,y) $ λέγεται διαφορίσιμη στο σημείο 
+    $ P_{0}(x_{0}, y_{0}) $ αν ισχύει η παρακάτω συνθήκη
+    διαφορισιμότητας: 
+    \[
+        \eval{\Delta f(x,y)}_{P_{0}} \!\!= f(x,y)-f(x_{0}, y_{0}) 
+        \xlongequal[k=\underbrace{y- y_{0}}_{\Delta y=dy}]{h=\overbrace{x-
+        x_{0}}^{\Delta x=dx}}  f(x_{0}+h, y_{0}+k)-f(x_{0}, y_{0}) =
+        \underbrace{\eval{\pdv{f}{x}} _{P_{0}}\cdot h + 
+        \eval{\pdv{f}{y} }_{P_{0}}\cdot k}_
+        {\minibox[c]{$\eval{df(x,y)}_{P_{0}}$ \\ Πρωτεύον
+        μέρος: \\ Γραμμικό ως προς $h,k$}} + \!\!\!\!  
+        \underbrace{\varepsilon _{1}(h,k)h+ 
+            \varepsilon _{2}(h,k)k}_{\minibox[c]{$G(h,k)$ : (πολύ μικρό) 
+        \\ Δευτερεύον μέρος: \\ Μη γραμμικό ως προς $h,k$}}                 
+    \]
+\end{dfn}
 
+\begin{rem}
+\item {}
+    Η συνάρτηση $ G(h,k) = \eval{\Delta f(x,y)}_{P_{0}} - \eval{df(x,y)}_{P_{0}} $
+\end{rem}
 
-            \begin{rem}
-            \item {}
-                Η συνάρτηση $ G(h,k) = \eval{\Delta f(x,y)}_{P_{0}} - \eval{df(x,y)}_{P_{0}} $
-            \end{rem}
+\begin{dfn}[Επαναδιατύπωση]
+\item {}
+    Μια συνάρτηση $ f(x,y) $ είναι διαφορίσιμη σε ένα σημείο $ P_{0}(x_{0}, y_{0}) $ αν
+    και μόνον αν
+    \begin{enumerate}[i)]
+        \item Υπάρχουν οι μερικές παράγωγοι $ \eval{\pdv{f}{x}}_{P_{0}},
+            \eval{\pdv{f}{y}}_{P_{0}} $
+        \item $ \lim\limits_{\substack{h\to 0 \\k \to 0}} \varepsilon _{1}(h,k) = 
+            0 \quad \text{και} \quad \lim\limits_{\substack{h\to 0 \\k \to 0}} 
+            \varepsilon _{2}(h,k)=0 \overset{\text{ή}}{\Leftrightarrow} 
+            \lim\limits_{\substack{h\to 0 \\k \to 0}} 
+            \frac{G(h,k)}{\sqrt{h^{2}+k^{2}}} = 0 $.
+    \end{enumerate}
+\end{dfn}
 
-            \begin{dfn}[Επαναδιατύπωση]
-            \item {}
-                Μια συνάρτηση $ f(x,y) $ είναι διαφορίσιμη σε ένα σημείο $ P_{0}(x_{0}, y_{0}) $ αν
-                και μόνον αν
-                \begin{enumerate}[i)]
-                    \item Υπάρχουν οι μερικές παράγωγοι $ \eval{\pdv{f}{x}}_{P_{0}},
-                        \eval{\pdv{f}{y}}_{P_{0}} $
-                    \item $ \lim\limits_{\substack{h\to 0 \\k \to 0}} \varepsilon _{1}(h,k) = 0 \quad 
-                        \text{και} \quad \lim\limits_{\substack{h\to 0 \\k \to 0}} \varepsilon _{2}(h,k)=0
-                        \overset{\text{ή}}{\Leftrightarrow} 
-                            \lim\limits_{\substack{h\to 0 \\k \to 0}} 
-                            \frac{G(h,k)}{\sqrt{h^{2}+k^{2}}} = 0 $.
-                \end{enumerate}
-        \end{dfn}
-            
-    \begin{prop}
-        Κάθε διαφορίσιμη συνάρτηση είναι και συνεχής.
-    \end{prop}
+\begin{prop}
+    Κάθε διαφορίσιμη συνάρτηση είναι και συνεχής.
+\end{prop}
 
-    \begin{rem}
-    \item {}
-        \begin{enumerate}[i)]
-            \item Το αντίστροφο της παραπάνω πρότασης δεν ισχύει.
-            \item Το αντιθετοαντίστροφο της πρότασης μας λέει, ότι αν μια συνάρτηση, 
-                δεν είναι συνεχής, τότε δεν είναι διαφορίσιμη.
-        \end{enumerate}
-    \end{rem}
-        \begin{thm}
-        \item {}
-            Μια συνάρτηση $ f(x,y) $ είναι διαφορίσιμη στο $ P_{0}(x_{0}, y_{0}) $ 
-            αν υπάρχουν οι μερικές παράγωγοι και είναι συνεχείς στο $ P_{0} $.
-        \end{thm}
+\begin{rem}
+\item {}
+    \begin{enumerate}[i)]
+        \item Το αντίστροφο της παραπάνω πρότασης δεν ισχύει.
+        \item Το αντιθετοαντίστροφο της πρότασης μας λέει, ότι αν μια συνάρτηση, 
+            δεν είναι συνεχής, τότε δεν είναι διαφορίσιμη.
+    \end{enumerate}
+\end{rem}
+\begin{thm}
+\item {}
+    Μια συνάρτηση $ f(x,y) $ είναι διαφορίσιμη στο $ P_{0}(x_{0}, y_{0}) $ 
+    αν υπάρχουν οι μερικές παράγωγοι και είναι συνεχείς στο $ P_{0} $.
+\end{thm}
 
 \newpage
 
-        \begin{examples}
-        \item {}
-            \begin{enumerate}
-                \item Να εξεταστεί ως προς τη διαφορισιμότητα στο σημείο $(0,0)$ 
-                    η συνάρτηση 
-                    $ f(x,y) = \begin{cases} \frac{xy}{x^{2}+y^{2}}, &(x,y) \neq (0,0) \\ 0, & (x,y)
-                    = (0,0) \end{cases} $
-                    \begin{solution}
-                    \item {}
-                        Έχουμε
-                        $ \lim\limits_{\substack{x\to 0 \\y \to 0}} f(x,y) =
-                        \lim\limits_{\substack{x\to 0 \\y \to 0}} \frac{xy}{x^{2}+y^{2}} =
-                        \lim_{r \to 0} \frac{r^{2} \cos{\theta} \sin{\theta}}{r^{2}} =
-                        \cos{\theta} \sin{\theta} $, άρα δεν υπάρχει το όριο, επομένως η συνάρτηση
-                        δεν είναι συνεχής, άρα ούτε κ παραγωγίσιμη στο $ (0,0) $.
-                    \end{solution}
+\begin{example}
+    Να εξεταστεί ως προς τη διαφορισιμότητα στο σημείο $(0,0)$ 
+    η συνάρτηση 
+    \[ f(x,y) = \begin{cases} \frac{xy}{x^{2}+y^{2}}, &(x,y) \neq (0,0) \\ 0, & (x,y)
+    = (0,0) \end{cases} \]
+    \begin{solution}
+    \item {}
+        Έχουμε
+        $ \lim\limits_{\substack{x\to 0 \\y \to 0}} f(x,y) =
+        \lim\limits_{\substack{x\to 0 \\y \to 0}} \frac{xy}{x^{2}+y^{2}} =
+        \lim_{r \to 0} \frac{r^{2} \cos{\theta} \sin{\theta}}{r^{2}} =
+        \cos{\theta} \sin{\theta} $, άρα δεν υπάρχει το όριο, επομένως η συνάρτηση
+        δεν είναι συνεχής, άρα ούτε κ παραγωγίσιμη στο $ (0,0) $.
+    \end{solution}
+\end{example}
 
-                \item Να εξεταστεί ως προς τη διαφορισιμότητα στο σημείο $(0,0)$ 
-                    η συνάρτηση 
-                    \[
-                        f(x,y) = \begin{cases} x \frac{x^{2}-y^{2}}{x^{2}+y^{2}}, &(x,y) \neq (0,0)
-                    \\ 0, & (x,y) = (0,0)  \end{cases} 
-                     \] 
-                     \begin{solution}
-                     \item {}
-                         \begin{description}
-                             \item [Α΄ Τρόπος: (Με το θεώρημα)]
-                             \item {}
-                                 Εξετάζουμε την ύπαρξη των μερικών παραγώγων της $f$ στο $ (0,0) $.
-                         \begin{myitemize}
-                         \item Αν $ (x,y) \neq (0,0) $ έχουμε:
-                             \[
-                                 f_{x} = \left(x \frac{x^{2}-y^{2}}{x^{2}+y^{2}}\right)_{x} = \cdots =
-                                 \frac{x^{4}+4x^{2}y^{2}-y^{4}}{(x^{2}+y^{2})^{2}} \quad \text{και}
-                                 \quad f_{y} = \left(x\frac{x^{2}-y^{2}}{x^{2}+y^{2}}\right)_{y} = \cdots = -
-                                 \frac{4x^{3}y}{(x^{2}+y^{2})^{2}} 
-                              \] 
-
-                         \item Αν $ (x,y) = (0,0) $ έχουμε:
-                            \begin{align*}
-                                f_{x}(0,0) = \lim_{x \to 0} \frac{f(x,0)-f(0,0)}{x-0} = 
-                                \lim_{x \to 0} = \lim_{x \to 0} \frac{x}{x} = 1
-                                \quad \text{και} \quad
-                                f_{y}(0,0) = \lim_{y \to 0} \frac{f(0,y)-f(0,0)}{y-0} = 
-                                \lim_{y \to 0} 0 = 0
-                            \end{align*} 
-                            Επομένως υπάρχουν οι μερικές παράγωγοι της $f$ στο $ (0,0) $και έχουμε:
-                            \[
-                                f_{x}(x,y) = \begin{cases}
-                                \frac{x^{4}+4x^{2}y^{2}-y^{4}}{(x^{2}+y^{2})^{2}}, & (x,y) \neq
-                            (0,0) \\ 1, & (x,y) = (0,0) \end{cases} \quad \text{και} \quad
-                            f_{y}(x,y) = \begin{cases} - \frac{4x^{3}y}{(x^{2}+y^{2})^{2}}, &(x,y)
-                            \neq (0,0) \\ 0, & (x,y) = (0,0) \end{cases} 
-                          \]
-                         \end{myitemize}
-                         Εξετάζουμε ως προς τη συνέχεια τις μερικές παραγώγους.
-                         \begin{myitemize}
-                         \item Για την $ f_{x} $
-                             \begin{align*}
-                                 L_{1} = \lim_{x \to 0} \left(\lim_{y \to 0}
-                                 \frac{x^{4}+4x^{2}y^{2}-y^{4}}{(x^{2}+y^{2})^{2}}\right) = 
-                                 \lim_{x \to 0} 1 = 1
-                                 \intertext{και}
-                                 L_{2}= \lim_{y \to 0} \left(\lim_{x \to 0}
-                                 \frac{x^{4}+4x^{2}y^{2}-y^{4}}{(x^{2}+y^{2})^{2}}\right) = 
-                                 \lim_{y \to 0} (-1) = -1
-                             \end{align*}
-                         \item Για την $ f_{y} $
-                             \begin{align*}
-                                 \lim\limits_{\substack{x\to 0 \\y \to 0}} -
-                                 \frac{4x^{3}y}{(x^{2}+y^{2})^{2}} = \lim_{r \to 0} -
-                                 \frac{4r^{4} \cos^{3}{\theta} \sin{\theta}}{(r^{2})^{2}} = 
-                                 \lim_{r \to 0} (-4 \cos^{3}{\theta} \sin{\theta}) = 
-                                 -4 \cos^{3}{\theta} \sin{\theta} \quad \text{(δεν υπάρχει)}
-                             \end{align*}
-                         \end{myitemize}
-                          
-                         Επομένως καμία από τις μερικές παραγώγους της $f$ δεν είναι συνεχής στο
-                         $(0,0)$, άρα η $f$ δεν είναι διαφορίσιμη σύμφωνα με το θεώρημα.
-                            \item [Β᾽ Τρόπος: (Με ορισμό)]
-                            \item {}
-                                Εξετάζουμε με τον ορισμός την ύπαρξη των μερικών παραγώγων της $f$
-                                και αν η $ G(h,k) $ είναι πολύ μικρή.
-                                \begin{enumerate}[i)]
-                                    \item Υπάρχουν οι μερικές παράγωγοι της $f$ στο $ (0,0) $.
-                                    \item Εύρεση της $ G(h,k) $.
-                                        \[
-                                            G(h,k) = \Delta f(0,0) - df(0,0) 
-                                         \] 
-                                \end{enumerate}
-                                         \begin{myitemize}
-                                         \item $ \Delta f(0,0) = f(0+h,0+k) - f(0,0) = 
-                                             h \frac{h^{2}-k^{2}}{h^{2}+k^{2}} - 0 = h\frac{h^{2}-k^{2}}{h^{2}+k^{2}} $
-                                         \item $ df(0,0) = f_{x}(0,0)h+f_{y}(0,0)k = 1h+0k= h $
-                                         \end{myitemize}
-                                         Επομένως $ G(h,k) = h \frac{h^{2}-k^{2}}{h^{2}+k^{2}} - h =
-                                         - \frac{2hk^{2}}{h^{2}+k^{2}}$
-                                         \[
-                                             \lim\limits_{\substack{h\to 0 \\k \to 0}} 
-                                             \frac{G(h,k)}{\sqrt{h^{2}+k^{2}}} =
-                                             \lim\limits_{\substack{h\to 0 \\k \to 0}} 
-                                             \frac{-\frac{2hk^{2}}{h^{2}+k^{2}}}{\sqrt{h^{2}+k^{2}}}
-                                             = \lim\limits_{\substack{h\to 0 \\k \to 0}}-
-                                             \frac{2hk^{2}}{(h^{2}+k^{2})^{\frac{3}{2}}} =
-                                             -2 \lim_{r \to 0} \frac{4r^{3} \cos{\theta}
-                                             \sin^{2}{\theta}}{(r^{2})^{\frac{3}{2}}} =
-                                              -2 \cos{\theta} \sin^{2}{\theta}  
-                                        \]
-                                        Επομένως η $f$ δεν είναι διαφορίσιμη στο $ (0,0) $.  
-                         \end{description}
-                     \end{solution}
-                 \item Να εξετάσετε ως προς τη διαφορισιμότητα τη συνάρτηση:
-                     \[
-                         f(x,y) = \begin{cases} y^{2} \sin{\frac{x}{y}}, &y \neq 0 \\0, &y=0 \end{cases}  
-                    \]
-                    \begin{solution}{(Με θεώρημα)}
-                    \item {}
-                        Ελέγχουμε την ύπαρξη των μερικών παραγώγων της $f$.
-                        \begin{myitemize}
-                        \item Για $ y \neq 0 $ η $f$ είναι διαφορίσιμη ως σύνθεση διαφορίσιμων
-                            συναρτήσεων και έχουμε: 
-                            \[ f_{x} = y \cos{\frac{x}{y}}  \quad \text{και} \quad  f_{y} = 2y
-                                \sin{\frac{x}{y}} - x \cos{\frac{x}{y}} 
-                            \]
-                        \item Για $ y = 0 $, έχουμε
-                            \begin{align*}
-                                f_{x}(x,0) = \lim_{h \to 0} \frac{f(x+h,0)-f(x,0)}{h} = 
-                                \lim_{h \to 0} \frac{0 - 0}{h} = \lim_{h \to 0} 0 = 0
-                                \intertext{και}
-                                f_{y}(x,0) = \lim_{k \to 0} \frac{f(x,0+k)-f(x,0)}{k} = \lim_{k \to
-                                0} \frac{k^{2} \sin{\frac{x}{k}} - 0}{k} = \lim_{k \to 0}
-                                k \sin{\frac{x}{k}} = 0
-                            \end{align*}
-                        \end{myitemize}
-                        Επομένως υπάρχουν οι μερικές παράγωγοι της $ f $.
-
-                        Ελέγχουμε τη συνέχεια της $ f_{x} $ στο $ y=0 $. Παρατηρούμε:
+\begin{example}
+\item Να εξεταστεί ως προς τη διαφορισιμότητα στο σημείο $(0,0)$ 
+    η συνάρτηση 
+    \[
+        f(x,y) = \begin{cases} x \frac{x^{2}-y^{2}}{x^{2}+y^{2}}, &(x,y) \neq (0,0)
+    \\ 0, & (x,y) = (0,0)  \end{cases} 
+    \] 
+    \begin{solution}
+    \item {}
+        \begin{description}
+            \item [Α΄ Τρόπος: (Με το θεώρημα)]
+            \item {}
+                Εξετάζουμε την ύπαρξη των μερικών παραγώγων της $f$ στο $ (0,0) $.
+                \begin{myitemize}
+                    \item Αν $ (x,y) \neq (0,0) $ έχουμε:
                         \[
-                            f_{x}(x,y) = \begin{cases} y \cos{\frac{x}{y}}, & y \neq 0 \\ 0, & y=0 \end{cases}  
-                         \] 
-                         είναι συνεχής στο $ y=0 $, γιατί $ \lim_{y \to 0} y \cos{\frac{x}{y}
-                         } = 0 = f_{x}(0,0) $
-                         
-                         Άρα η $f$ είναι διαφορίσιμη.
-                    \end{solution}
-            \end{enumerate}
-        \end{examples}
+                            f_{x} = \left(x \frac{x^{2}-y^{2}}{x^{2}+y^{2}}\right)_
+                            {x} = \cdots = \frac{x^{4}+4x^{2}y^{2}-y^{4}}{(x^{2}+
+                            y^{2})^{2}} \quad \text{και} \quad f_{y} = 
+                            \left(x\frac{x^{2}-y^{2}}{x^{2}+y^{2}}\right)_{y} = 
+                            \cdots = - \frac{4x^{3}y}{(x^{2}+y^{2})^{2}} 
+                        \] 
 
-        \section{Ολικό Διαφορικό}
+                    \item Αν $ (x,y) = (0,0) $ έχουμε:
+                        \begin{align*}
+                            f_{x}(0,0) = \lim_{x \to 0} \frac{f(x,0)-f(0,0)}{x-0} = 
+                            \lim_{x \to 0} = \lim_{x \to 0} \frac{x}{x} = 1
+                            \quad \text{και} \quad
+                            f_{y}(0,0) = \lim_{y \to 0} \frac{f(0,y)-f(0,0)}{y-0} = 
+                            \lim_{y \to 0} 0 = 0
+                        \end{align*} 
+                        Επομένως υπάρχουν οι μερικές παράγωγοι της $f$ στο $ (0,0) $
+                        και έχουμε:
+                        \[
+                            f_{x}(x,y) = 
+                            \begin{cases}
+                                \frac{x^{4}+4x^{2}y^{2}-y^{4}}{(x^{2}+y^{2})^{2}}, 
+                                    & (x,y) \neq (0,0) \\ 1, & (x,y) = (0,0) 
+                            \end{cases} \quad \text{και} \quad
+                            f_{y}(x,y) = \begin{cases} - 
+                            \frac{4x^{3}y}{(x^{2}+y^{2})^{2}}, &(x,y)
+                        \neq (0,0) \\ 0, & (x,y) = (0,0) \end{cases} 
+                        \]
+                \end{myitemize}
+                Εξετάζουμε ως προς τη συνέχεια τις μερικές παραγώγους.
+                \begin{myitemize}
+                    \item Για την $ f_{x} $
+                        \begin{align*}
+                            L_{1} = \lim_{x \to 0} 
+                            \left(\lim_{y \to 0}
+                                \frac{x^{4}+4x^{2}y^{2}-y^{4}}{(x^{2}+y^{2})^{2}}
+                            \right) = 
+                            \lim_{x \to 0} 1 = 1
+                            \intertext{και}
+                            L_{2}= \lim_{y \to 0} \left(\lim_{x \to 0}
+                            \frac{x^{4}+4x^{2}y^{2}-y^{4}}{(x^{2}+y^{2})^{2}}\right) = 
+                            \lim_{y \to 0} (-1) = -1
+                        \end{align*}
+                    \item Για την $ f_{y} $
+                        \begin{align*}
+                            \lim\limits_{\substack{x\to 0 \\y \to 0}} -
+                            \frac{4x^{3}y}{(x^{2}+y^{2})^{2}} = \lim_{r \to 0} -
+                            \frac{4r^{4} \cos^{3}{\theta} \sin{\theta}}{(r^{2})^{2}} = 
+                            \lim_{r \to 0} (-4 \cos^{3}{\theta} \sin{\theta}) = 
+                            -4 \cos^{3}{\theta} \sin{\theta} \quad \text{(δεν υπάρχει)}
+                        \end{align*}
+                \end{myitemize}
 
-        \begin{dfn}
-        \item {}
-            Η συνάρτηση $ \pdv{f}{x}\cdot h + \pdv{f}{y} \cdot k = f_{x} \Delta x 
-            + f_{y} \Delta y $ ονομάζεται ολικό διαφορικό της συνάρτησης $f$ και συμβολίζεται με $
-            df $. Οπότε 
+                Επομένως καμία από τις μερικές παραγώγους της $f$ δεν είναι συνεχής στο
+                $(0,0)$, άρα η $f$ δεν είναι διαφορίσιμη σύμφωνα με το θεώρημα.
+            \item [Β᾽ Τρόπος: (Με ορισμό)]
+            \item {}
+                Εξετάζουμε με τον ορισμός την ύπαρξη των μερικών παραγώγων της $f$
+                και αν η $ G(h,k) $ είναι πολύ μικρή.
+                \begin{enumerate}[i)]
+                    \item Υπάρχουν οι μερικές παράγωγοι της $f$ στο $ (0,0) $.
+                    \item Εύρεση της $ G(h,k) $.
+                        \[
+                            G(h,k) = \Delta f(0,0) - df(0,0) 
+                        \] 
+                \end{enumerate}
+                \begin{myitemize}
+                    \item $ \Delta f(0,0) = f(0+h,0+k) - f(0,0) = 
+                        h \frac{h^{2}-k^{2}}{h^{2}+k^{2}} - 0 = h
+                        \frac{h^{2}-k^{2}}{h^{2}+k^{2}} $
+                    \item $ df(0,0) = f_{x}(0,0)h+f_{y}(0,0)k = 1h+0k= h $
+                \end{myitemize}
+                Επομένως $ G(h,k) = h \frac{h^{2}-k^{2}}{h^{2}+k^{2}} - h =
+                - \frac{2hk^{2}}{h^{2}+k^{2}}$
+                \[
+                    \lim\limits_{\substack{h\to 0 \\k \to 0}} 
+                    \frac{G(h,k)}{\sqrt{h^{2}+k^{2}}} =
+                    \lim\limits_{\substack{h\to 0 \\k \to 0}} 
+                    \frac{-\frac{2hk^{2}}{h^{2}+k^{2}}}{\sqrt{h^{2}+k^{2}}}
+                    = \lim\limits_{\substack{h\to 0 \\k \to 0}}-
+                    \frac{2hk^{2}}{(h^{2}+k^{2})^{\frac{3}{2}}} =
+                    -2 \lim_{r \to 0} \frac{4r^{3} \cos{\theta}
+                    \sin^{2}{\theta}}{(r^{2})^{\frac{3}{2}}} =
+                    -2 \cos{\theta} \sin^{2}{\theta}  
+                \]
+                Επομένως η $f$ δεν είναι διαφορίσιμη στο $ (0,0) $.  
+        \end{description}
+    \end{solution}
+\end{example}
+
+\begin{example}
+    Να εξετάσετε ως προς τη διαφορισιμότητα τη συνάρτηση:
+    \[
+        f(x,y) = 
+        \begin{cases}
+            y^{2} \sin{\frac{x}{y}}, &y \neq 0 \\0, &y=0 
+        \end{cases}
+    \]
+    \begin{solution}
+        Ελέγχουμε την ύπαρξη των μερικών παραγώγων της $f$.
+        \begin{myitemize}
+            \item Για $ y \neq 0 $ η $f$ είναι διαφορίσιμη ως σύνθεση διαφορίσιμων
+                συναρτήσεων και έχουμε: 
+                \[
+                    f_{x} = y \cos{\frac{x}{y}}  \quad \text{και} \quad  f_{y} = 2y
+                    \sin{\frac{x}{y}} - x \cos{\frac{x}{y}} 
+                \]
+            \item Για $ y = 0 $, έχουμε
+                \begin{align*}
+                    f_{x}(x,0) = \lim_{h \to 0} \frac{f(x+h,0)-f(x,0)}{h} = 
+                    \lim_{h \to 0} \frac{0 - 0}{h} = \lim_{h \to 0} 0 = 0
+                    \intertext{και}
+                    f_{y}(x,0) = \lim_{k \to 0} \frac{f(x,0+k)-f(x,0)}{k} = \lim_{k \to
+                    0} \frac{k^{2} \sin{\frac{x}{k}} - 0}{k} = \lim_{k \to 0}
+                    k \sin{\frac{x}{k}} = 0
+                \end{align*}
+        \end{myitemize}
+        Επομένως υπάρχουν οι μερικές παράγωγοι της $ f $.  
+
+        Ελέγχουμε τη συνέχεια της $ f_{x} $ στο $ y=0 $. Παρατηρούμε:
+        \[
+            f_{x}(x,y) = 
+            \begin{cases}
+                y \cos{\frac{x}{y}}, & y \neq 0 \\ 0, & y=0 
+            \end{cases}
+        \] 
+        είναι συνεχής στο $ y=0 $, γιατί 
+        $ \lim_{y \to 0} y \cos{\frac{x}{y}} = 0 = f_{x}(0,0) $. 
+        Άρα η $f$ είναι διαφορίσιμη.
+    \end{solution}
+\end{example}
+
+\section{Ολικό Διαφορικό}
+
+\begin{dfn}
+\item {}
+    Η συνάρτηση $ \pdv{f}{x}\cdot h + \pdv{f}{y} \cdot k = f_{x} \Delta x 
+    + f_{y} \Delta y $ ονομάζεται ολικό διαφορικό της συνάρτησης $f$ 
+    και συμβολίζεται με $ df $. Οπότε 
+    \[
+        df = f_{x} \Delta x + f_{y} \Delta y \quad \text{ή} \quad df = f_{x}dx + f_{y}dy 
+    \] 
+    Στην περίπτωση όπου $ f= f(x_{1}, x_{2}, \ldots, x_{n}) $, έχουμε
+    \[
+        df = f_{x_{1}}d{x_{1}} + f_{x_{2}}d{x_{2}} + \cdots f_{x_{n}} dx_{n}
+    \]
+\end{dfn}
+
+\begin{example}
+    Να βρείτε το ολικό διαφορικό της συνάρτησης $ f(x,y) = xye^{x+2y} $ 
+    \begin{solution}
+    \item {}
+        Το ολικό διαφορικό δίνεται από τη σχέση $ df = f_{x} dx + f_{y} dy $.  
+        Για τις μερικές παραγώγους έχουμε ότι: 
+        \[
+            f_{x} = ye^{x+2y}+xye^{x+2y} \quad \text{και} \quad f_{y} = xe^{x+2y} +
+            2xye^{x+2y}
+        \] 
+        Επομένως
+        \[
+            df = y(1+x)e^{x+2y} dx + x(1+2y)e^{x+2y}dy
+        \]
+    \end{solution}
+
+\end{example}
+
+
+\section{Τέλειο Διαφορικό}
+
+Θεωρούμε τις συναρτήσεις $ P(x,y) $ και $ Q(x,y) $ με πεδίο ορισμού $ A \subseteq
+\mathbb{R}^{2} $.
+\begin{dfn}
+ Η παράσταση $ P(x,y) dx + Q(x,y) dy $ λέγεται \textcolor{Col2}{τέλειο 
+ διαφορικό} αν υπάρχει συνάρτηση $ f(x,y) $ με πεδίο ορισμού το $A$, ώστε 
+\begin{align*}
+    df = P(x,y)dx + Q(x,y)dy \Leftrightarrow \\
+    \pdv{f}{x} dx + \pdv{f}{y} dy = P(x,y)dx + Q(x,y)dy \Leftrightarrow \\
+\boxed{\pdv{f}{x} = P(x,y) \quad \text{και} \quad \pdv{f}{y} = Q(x,y)}
+\end{align*}
+\end{dfn}
+
+
+\begin{prop}
+    Αν οι  $ P(x,y) $  και  $ Q(x,y) $  είναι συνεχείς συναρτήσεις και έχουν συνεχείς 
+    παραγώγους πρώτης τάξης, σε μια ορθογώνια περιοχή $A$ του $ \mathbb{R}^{2} $,  
+    τότε η  παράσταση  $ P(x,y)dx + Q(x,y)dy $ είναι τέλειο διαφορικό αν 
+    \[
+        \pdv{p}{y} = \pdv{q}{x}, \quad \forall (x,y) \in A 
+    \]
+\end{prop}
+
+\begin{dfn}
+	Η παράσταση  $ P(x,y,z)dx + Q(x,y,z)dy + R(x,y,z)dz $ είναι τέλειο διαφορικό 
+    αν υπάρχει συνάρτηση  $ f(x,y,z) $  τέτοια ώστε  $ df = P(x,y,z)dx + Q(x,y,z)dy 
+    + R(x,y,z)dz $.  Τότε ισχύουν οι παρακάτω σχέσεις:
+	 \[
+		 \pdv{f}{x} = P(x,y,z) \quad \text{και} \quad \pdv{f}{y} = Q(x,y,z) 
+         \quad \text{και} \quad \pdv{f}{z} = R(x,y,z) 
+	 \] 
+\end{dfn}
+
+\begin{prop}
+    Αν οι  $ P(x,y,z) $, $ Q(x,y,z) $  και  $ R(x,y,z) $ είναι συνεχείς συναρτήσεις 
+    και έχουν συνεχείς παραγώγους πρώτης τάξης, σε μια ορθογώνια περιοχή Α του 
+    $ \mathbb{R}^{3} $ τότε η  παράσταση 
+    $ P(x,y,z)dx + Q(x,y,z)dy + R(x,y,z)dz $   είναι τέλειο διαφορικό αν 
+    \[
+        \pdv{P}{y} = \pdv{Q}{x} \quad \text{και} \quad \pdv{Q}{z} = 
+        \pdv{R}{y} \quad \text{και} \quad  \pdv{P}{z} = \pdv{R}{x}, 
+        \quad \forall (x,y,z) \in A 
+    \] 
+\end{prop}
+
+\begin{rem}
+    Οι συναρτήσεις  $ f(x,y) $  και  $ f(x,y,z) $ υπολογίζονται επίσης από τις 
+    παρακάτω σχέσεις:
+    \begin{align*}
+        f(x,y) &= \int_{x_{0}}^{x} P(t,y) \,{dt} + \int_{y_{0}}^{y} Q(x_{0},t) \,{dt} \\
+        f(x,y,z) &= \int_{x_{0}}^{x} P(t,y,z) \,{dt} + \int_{y_{0}}^{y} Q(x_{0},t,z) 
+        \,{dt} + \int _{z_{0}}^{z} R(x_{0},y_{0},t) \,{dt}  
+    \end{align*}
+    όπου τα $ x_{0} $, $ y_{0} $  και  $ z_{0} $ επιλέγονται αυθαίρετα στο πεδίο 
+    ορισμού των  $ P $, $ Q $  και  $ R $.
+\end{rem}
+
+\begin{rem}
+    Η συνάρτηση $ f(x,y) $ ή η συνάρτηση $ f(x,y,z) $ του ορισμού του τέλειου διαφορικού
+    λέγεται \textcolor{Col2}{συνάρτηση δυναμικού}.
+\end{rem}
+
+\begin{example}
+    todo
+\end{example}
+
+\section{Αρμονικές Συναρτήσεις}
+
+\begin{dfn}
+    Η συνάρτηση $ f(x,y) $ λέγεται αρμονική αν ικανοποιεί την εξίσωση 
+    $ \pdv[2]{f}{x} + \pdv[2]{f}{y} = 0 $ 
+\end{dfn}
+
+\begin{rem}
+\item {}
+    \begin{enumerate}
+        \item Η παραπάνω εξίσωση, ονομάζεται εξίσωση Laplace.
+        \item Ο τελεστής $ \pdv[2]{}{x} + \pdv[2]{}{y} $ λέγεται τελεστής 
+            Laplace.
+        \item Η εξίσωση Laplace για συναρτήσεις πολλών μεταβλητών παίρνει τη 
+            μορφή
             \[
-                df = f_{x} \Delta x + f_{y} \Delta y \quad \text{ή} \quad df = f_{x}dx + f_{y}dy 
-             \] 
-             Στην περίπτωση όπου $ f= f(x_{1}, x_{2}, \ldots, x_{n}) $, έχουμε
-             \[
-                 df = f_{x_{1}}d{x_{1}} + f_{x_{2}}d{x_{2}} + \cdots f_{x_{n}} dx_{n}
-              \]
+                \pdv[2]{f}{x_{1}} + \pdv[2]{f}{x_{2}} + \cdots + 
+                \pdv[2]{f}{x_{n}}=0 
+            \] 
+    \end{enumerate}
+\end{rem}
 
-        \end{dfn}
+\begin{prop}
+\item {}
+    Αν $ f(x,y) $ συνεχής, έχει συνεχείς μερικές παραγώγους 1ης τάξης 
+    και είναι αρμονική, τότε και οι συναρτήσεις $ f_{x} $ και $ f_{y} $
+    είναι αρμονικές. 
+\end{prop}
+\begin{proof}
+\item {}
+    $f$ αρμονική $ \Rightarrow f_{xx}+f_{yy}=0 $.
 
-        \section{Αρμονικές Συναρτήσεις}
+    Θέτουμε $ g(x,y)=f_{x}(x,y) $. Για να δείξουμε ότι $ f_{x} $ αρμονική, 
+    αρκεί να δείξουμε ότι $ g(x,y) $ είναι αρμονική. Πράγματι:
+    \begin{align*}
+        g_{x} &= f_{xx} \quad \text{και} \quad g_{xx} = (f_{xx})_{x} \\ 
+        g_{y} &= f_{xy} \quad \text{και} \quad g_{yy} = (f_{xy})_{y} =
+        (f_{yx})_{y} = f_{yxy} = f_{yyx} = (f_{yy})_{x}
+    \end{align*}
+    Άρα 
+    \[
+        g_{xx}+g_{yy} = (f_{xx})_{x} + (f_{yy})_{x} = 
+        (f_{xx}+f_{yy})_{x}= (0)_{x} =0
+    \] 
+\end{proof}
 
-        \begin{dfn}
-            Η συνάρτηση $ f(x,y) $ λέγεται αρμονική αν ικανοποιεί την εξίσωση 
-            $ \pdv[2]{f}{x} + \pdv[2]{f}{y} = 0 $ 
-        \end{dfn}
-
-        \begin{rem}
-        \item {}
-            \begin{enumerate}
-                \item Η παραπάνω εξίσωση, ονομάζεται εξίσωση Laplace.
-                \item Ο τελεστής $ \pdv[2]{}{x} + \pdv[2]{}{y} $ λέγεται τελεστής 
-                    Laplace.
-                \item Η εξίσωση Laplace για συναρτήσεις πολλών μεταβλητών παίρνει τη 
-                    μορφή
-                    \[
-                        \pdv[2]{f}{x_{1}} + \pdv[2]{f}{x_{2}} + \cdots + 
-                        \pdv[2]{f}{x_{n}}=0 
-                     \] 
-            \end{enumerate}
-        \end{rem}
-
-        \begin{prop}
-        \item {}
-            Αν $ f(x,y) $ συνεχής, έχει συνεχείς μερικές παραγώγους 1ης τάξης 
-            και είναι αρμονική, τότε και οι συναρτήσεις $ f_{x} $ και $ f_{y} $
-            είναι αρμονικές. 
-        \end{prop}
-        \begin{proof}
-        \item {}
-            $f$ αρμονική $ \Rightarrow f_{xx}+f_{yy}=0 $.
-
-            Θέτουμε $ g(x,y)=f_{x}(x,y) $. Για να δείξουμε ότι $ f_{x} $ αρμονική, 
-            αρκεί να δείξουμε ότι $ g(x,y) $ είναι αρμονική. Πράγματι:
-            \begin{align*}
-                g_{x} &= f_{xx} \quad \text{και} \quad g_{xx} = (f_{xx})_{x} \\ 
-                g_{y} &= f_{xy} \quad \text{και} \quad g_{yy} = (f_{xy})_{y} =
-                (f_{yx})_{y} = f_{yxy} = f_{yyx} = (f_{yy})_{x}
-            \end{align*}
-            Άρα 
-            \[
-                g_{xx}+g_{yy} = (f_{xx})_{x} + (f_{yy})_{x} = 
-                (f_{xx}+f_{yy})_{x}= (0)_{x} =0
-             \] 
-        \end{proof}
-
-        \begin{examples}
-        \item {}
-            \begin{enumerate}
-                \item 
+\begin{examples}
+\item {}
+    \begin{enumerate}
+        \item 
             Να εξεταστεί αν η συνάρτηση $ f(x,y)= \ln{\sqrt{x^{2}+y^{2}}} $ είναι 
             αρμονική.
             \begin{solution}
-              \begin{align*}
-                  \pdv{f}{x} &= f_{x} = \left(\ln{\sqrt{x^{2}+y^{2}}} \right)_{x} = 
-                  \frac{1}{\sqrt{x^{2}+y^{2}}} \cdot 
-                  \left(\sqrt{x^{2}+y^{2}}\right)_{x} = 
-                  \frac{1}{\sqrt{x^{2}+y^{2}}} \cdot \frac{\cancel{2}x}{\cancel{2} 
-                  \sqrt{x^{2}+y^{2}}} = \frac{x}{x^{2}+y^{2}} \\
-                  \pdv[2]{f}{x} &= f_{xx} = \left(\frac{x}{x^{2}+y^{2}}\right)_{x} = 
-                  \frac{x^{2}+y^{2}-2x^{2}}{(x^{2}+y^{2})^{2}} = 
-                  \frac{y^{2}-x^{2}}{(x^{2}+y^{2})^{2}} 
-                  \intertext{και}
-                  \pdv{f}{y} &= f_{y} = \left(\ln{\sqrt{x^{2}+y^{2}}} \right)_{y} = 
-                  \frac{1}{\sqrt{x^{2}+y^{2}}} \cdot 
-                  \left(\sqrt{x^{2}+y^{2}}\right)_{y} = 
-                  \frac{1}{\sqrt{x^{2}+y^{2}}} \cdot \frac{\cancel{2}y}{\cancel{2} 
-                  \sqrt{x^{2}+y^{2}}} = \frac{y}{x^{2}+y^{2}} \\
-                  \pdv[2]{f}{y} &= f_{yy} = \left(\frac{y}{x^{2}+y^{2}}\right)_{y} = 
-                  \frac{x^{2}+y^{2}-2y^{2}}{(x^{2}+y^{2})^{2}} = 
-                  \frac{x^{2}-y^{2}}{(x^{2}+y^{2})^{2}} 
-              \end{align*}  
-              Προφανώς έχουμε ότι
-              \[
-                  \pdv[2]{f}{x} + \pdv[2]{f}{y} = f_{xx}+f_{yy} =
-                  \frac{y^{2}-x^{2}}{(x^{2}+y^{2})^{2}} + 
-                  \frac{x^{2}-y^{2}}{(x^{2}+y^{2})^{2}} = 0  
-               \] 
-
+                \begin{align*}
+                    \pdv{f}{x} &= f_{x} = \left(\ln{\sqrt{x^{2}+y^{2}}} \right)_{x} = 
+                    \frac{1}{\sqrt{x^{2}+y^{2}}} \cdot 
+                    \left(\sqrt{x^{2}+y^{2}}\right)_{x} = 
+                    \frac{1}{\sqrt{x^{2}+y^{2}}} \cdot \frac{\cancel{2}x}{\cancel{2} 
+                    \sqrt{x^{2}+y^{2}}} = \frac{x}{x^{2}+y^{2}} \\
+                    \pdv[2]{f}{x} &= f_{xx} = \left(\frac{x}{x^{2}+y^{2}}\right)_{x} = 
+                    \frac{x^{2}+y^{2}-2x^{2}}{(x^{2}+y^{2})^{2}} = 
+                    \frac{y^{2}-x^{2}}{(x^{2}+y^{2})^{2}} 
+                    \intertext{και}
+                    \pdv{f}{y} &= f_{y} = \left(\ln{\sqrt{x^{2}+y^{2}}} \right)_{y} = 
+                    \frac{1}{\sqrt{x^{2}+y^{2}}} \cdot 
+                    \left(\sqrt{x^{2}+y^{2}}\right)_{y} = 
+                    \frac{1}{\sqrt{x^{2}+y^{2}}} \cdot \frac{\cancel{2}y}{\cancel{2} 
+                    \sqrt{x^{2}+y^{2}}} = \frac{y}{x^{2}+y^{2}} \\
+                    \pdv[2]{f}{y} &= f_{yy} = \left(\frac{y}{x^{2}+y^{2}}\right)_{y} = 
+                    \frac{x^{2}+y^{2}-2y^{2}}{(x^{2}+y^{2})^{2}} = 
+                    \frac{x^{2}-y^{2}}{(x^{2}+y^{2})^{2}} 
+                \end{align*}  
+                Προφανώς έχουμε ότι
+                \[
+                    \pdv[2]{f}{x} + \pdv[2]{f}{y} = f_{xx}+f_{yy} =
+                    \frac{y^{2}-x^{2}}{(x^{2}+y^{2})^{2}} + 
+                    \frac{x^{2}-y^{2}}{(x^{2}+y^{2})^{2}} = 0  
+                \] 
             \end{solution}
-            \end{enumerate}
-        \end{examples}
+    \end{enumerate}
+\end{examples}
 
-
-    \end{document} 
+\end{document}
