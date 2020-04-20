@@ -58,7 +58,7 @@ $f$ ως προς $x$ είναι:
 \begin{example}
 \item {}
     Δίνεται η $ f(x,y)=3xy^{2}-2x^{3} $. Να 
-    βρεθούν με τον ορισμό οι $ f_{x}(0,1) $ και $ f_{y}(2,1) $.
+    υπολογιστούν με τον ορισμό οι $ f_{x}(0,1) $ και $ f_{y}(2,1) $.
     \begin{solution}
         \begin{align*}
             f_{x}(0,1) &= \lim_{x \to 0} \frac{f(x,1)-f(0,1)}{x-0} = 
@@ -72,8 +72,21 @@ $f$ ως προς $x$ είναι:
                        &= \lim_{y \to 1} \frac{6(y^{2}-1)}{y-1} = \lim_{y \to 1}
                        \frac{6(y-1)(y+1)}{y-1} = \lim_{y \to 1}[6(y+1)] = 12
         \end{align*}          
+       Εναλλακτικά μπορούμε να χρησιμοποιήσουμε τα όρια 
+       \begin{align*}
+           f_{x}(0,1) &= \lim_{h \to 0} \frac{f(0+h,1)-f(0,1)}{h} = 
+           \lim_{h \to 0} \frac{3(0+h)1^{2}-2(0+h)^{3}-0}{h} = 
+           \lim_{h \to 0} \frac{3h-2h^{3}}{h} = \lim_{h \to 0} (3-2h^{2}) = 3 
+           \intertext{και}
+           f_{y}(2,1) &= \lim_{k \to 0} \frac{f(2,1+k)-f(2,1)}{k} = 
+           \lim_{k \to 0} \frac{3\cdot 2(1+k)^{2}-2\cdot 2^{3}+10}{k} = 
+           \lim_{k \to 0} \frac{6(1+k)^{2}-6}{k} 
+           \overset{(\frac{0}{0})}{\underset{\text{L H}}{=}} 
+           \lim_{k \to 0} \frac{12(1+k)}{1} = 12
+       \end{align*}
     \end{solution}
 \end{example}
+
 
 \section{Συναρτήσεις Μερικών Παραγώγων}
 
@@ -135,6 +148,118 @@ $ \pdv{f}{x} $ και $ \pdv{g}{x} $ υπάρχουν για κάθε $ (x,y) \i
     \end{enumerate}
 \end{examples}
 
+    Αν η συνάρτηση της οποίας θέλουμε να υπολογίσουμε τις μερικές παραγώγους είναι 
+    δίκλαδη, τότε εργαζόμαστε όπως στα παρακάτω παραδείγματα.
+
+    \begin{examples}
+    \item {}
+        \begin{enumerate}
+
+            \item Να υπολογίσετε τις μερικές παραγώγους 1ης τάξης της συνάρτησης.
+                \[
+                    f(x,y) = 
+                    \begin{cases}
+                        x \frac{x^{2}-y^{2}}{x^{2}+y^{2}}, & (x,y) \neq (0,0) \\ 
+                        0, & (x,y) = (0,0) 
+                    \end{cases}
+                \] 
+                \begin{solution}
+                \item {}
+                    \begin{myitemize}
+                        \item Αν $ (x,y) \neq (0,0) $ τότε 
+                            \[
+                                f_{x} = 
+                                \left( 
+                                    x \frac{x^{2}-y^{2}}{x^{2}+y^{2}} 
+                                \right)_{x} = \cdots = 
+                                \frac{x^{4}+4x^{2}y^{2}-y^{4}}{(x^{2}+y^{2})^{2}} 
+                                \quad \text{και} \quad
+                                f_{y} = 
+                                \left(
+                                    x \frac{x^{2}-y^{2}}{x^{2}+y^{2}} 
+                                \right)_{y} = \cdots - \frac{4x^{3}y}{(x^{2}+y^{2})^{2}}
+                            \]
+                        \item Αν $ (x,y) = (0,0) $ τότε εξετάζουμε τα όρια:
+                            \begin{align*}
+                                f_{x}(0,0) = \lim_{x \to 0} \frac{f(x,0)-f(0,0)}{x-0} = 
+                                \lim_{x \to 0} \frac{x}{x} = \lim_{x \to 0} 1 = 1
+                                \intertext{και}
+                                f_{y}(0,0) = \lim_{y \to 0} \frac{f(0,y)-f(0,0)}{y-0} = 
+                                \lim_{y \to 0} 0 = 0 
+                            \end{align*} 
+                            Άρα $ f_{x}= 
+                            \begin{cases}
+                                \frac{x^{4}+4x^{2}y^{2}-y^{4}}{(x^{2}+y^{2})^{2}}, &(x,y) 
+                                \neq (0,0) \\ 1 , &(x,y)=(0,0) 
+                            \end{cases}
+                            \quad \text{και} \quad f_{y} = 
+                            \begin{cases}
+                                - \frac{4x^{3}y}{(x^{2}+y^{2})^{2}}, &(x,y) \neq (0,0) \\ 
+                                0, &(x,y)=(0,0) 
+                            \end{cases}
+                            $  
+                    \end{myitemize}
+                \end{solution}
+
+
+            \item     Να υπολογίσετε τις μερικές παραγώγους 1ης τάξης της συνάρτησης 
+                \[
+                    f(x,y) = 
+                    \begin{cases}
+                        x^{2} \sin{\frac{y}{x}}, & x \neq 0 \\
+                        0, & x = 0 
+                    \end{cases}
+                \] 
+                \begin{solution}
+                \item {}
+                    \begin{myitemize}
+                        \item Αν $ x \neq 0 $ τότε: 
+
+                            Υπολογίζουμε τις μερικές παραγώγους της συνάρτησης στα σημεία 
+                            $ (x,y) $ με $ x \neq 0 $.
+                            \begin{align*}
+                                f_{x}(x,y) &= \left(x^{2} \sin{\frac{y}{x}}\right)_{x} = 2x 
+                                \sin{\frac{y}{x}} + x^{2} \cos{\frac{y}{x}} 
+                                \left(\frac{y}{x}\right)_{x} = 
+                                2x \sin{\frac{y}{x}} - y \cos{\frac{y}{x}} 
+                                \intertext{και}
+                                f_{y}(x,y) &= \left(x^{2} \sin{\frac{y}{x}}\right)_{y} = 
+                                x^{2} \cos{\frac{y}{x}} \left(\frac{y}{x}\right)_{y} = x 
+                                \cos{\frac{y}{x}} 
+                            \end{align*} 
+
+                        \item Αν $ x = 0 $ τότε: 
+
+                            Υπολογίζουμε την μερική παράγωγο ως προς $x$ στο σημείο 
+                            $ (0, y_{0}) $.
+                            \[
+                                f_{x}(0, y_{0}) = \lim_{x \to 0} \frac{f(x, y_{0}) - 
+                                    f(0, y_{0})}{x-0} = \lim_{x \to 0} \frac{x^{2} 
+                                \sin{\frac{y_{0}}{x} - 0}}{x} = \lim_{x \to 0} x 
+                                \sin{\frac{y_{0}}{x}} = 0 
+                            \] 
+                            Υπολογίζουμε την μερική παράγωγο ως προς $y$ στο σημείο 
+                            $ (0, y_{0}) $.
+                            \[
+                                f_{y}(0, y_{0}) = \lim_{y \to 0} \frac{f(0,y)-
+                                f(0, y_{0})}{y-0} = \lim_{y \to 0} \frac{0-0}{y} = 
+                                \lim_{y \to 0} = 0 
+                            \] 
+                            Άρα $ f_{x}= 
+                            \begin{cases}
+                                2x \sin{\frac{y}{x}} - y \cos{\frac{y}{x}}, & x \neq 0 \\
+                                0, & x = 0
+                            \end{cases}
+                            \quad \text{και} \quad f_{y} = 
+                            \begin{cases}
+                                x \cos{\frac{y}{x}}, & x \neq 0 \\
+                                0, & x = 0
+                            \end{cases} $  
+                    \end{myitemize}
+                \end{solution}
+        \end{enumerate}
+    \end{examples}
+
 \section{Μερικές Παράγωγοι Ανώτερης Τάξης}
 
 \begin{example}
@@ -172,27 +297,14 @@ $ \pdv{f}{x} $ και $ \pdv{g}{x} $ υπάρχουν για κάθε $ (x,y) \i
     \end{align*} 
 \end{rem}
 
-\begin{thm}[Schwarz]
-\item {}
-    Αν για τη συνάρτηση $ f(x,y) $ υπάρχουν οι μερικές παράγωγοι $ f_{xy} $ και 
-    $ f_{yx} $ και είναι συνεχείς σε μια περιοχή του σημείου $ (x_{0}, y_{0}) $, τότε 
-    $ f_{xy}=f_{yx} $ στην περιοχή αυτή.
-\end{thm}
-
-\begin{thm}
-\item {}
-    Αν για τη συνάρτηση $ f(x,y) $ υπάρχουν οι μερικές παράγωγοι $ f_{x}, f_{y} $ και 
-    $ f_{xy} $ και είναι συνεχείς σε μια περιοχή του σημείου $ (x_{0}, y_{0}) $, 
-    τότε υπάρχει και η $ f_{yx} $ και ισχύει $ f_{xy}=f_{yx} $ στην περιοχή αυτή.
-\end{thm}
-
 \begin{rem}
 \item {}
     Οι πολυωνυμικές συναρτήσεις δύο (ή περισσότερων) μεταβλητών, 
-    έχουν μερικές παραγώγους σε κάθε σημείο του $ \mathbb{R}^{2} $ (ή $\mathbb{R}^{n}$).
+    έχουν συνεχείς μερικές παραγώγους σε κάθε σημείο του $ \mathbb{R}^{2} $ 
+    (ή $\mathbb{R}^{n}$).
     Οι λοιπές στοιχειώδεις συναρτήσεις $ \sin{f(x,y)}, \cos{f(x,y)}, a^{f(x,y)}, 
     \ln{f(x,y)} $ κ.λ.π. όπου $ f(x,y) $ πολυωνυμική συνάρτηση, έχουν 
-    μερικές παραγώγους σε κάθε σημείο του πεδίου ορισμού τους.
+    συνεχείς μερικές παραγώγους σε κάθε σημείο του πεδίου ορισμού τους.
     Για αυτές τις συναρτήσεις ισχύει $ f_{xy}=f_{yx} $.
 \end{rem}
 
@@ -201,79 +313,6 @@ $ \pdv{f}{x} $ και $ \pdv{g}{x} $ υπάρχουν για κάθε $ (x,y) \i
     $ (x_{0}, y_{0}) $ και είναι συνεχείς, τότε η συνάρτηση $f$ είναι συνεχής στο 
     σημείο $ (x_{0}, y_{0}) $.
 \end{prop}
-
-
-\section{Μερική Ολοκλήρωση}
-
-\begin{rem}
-\item {}
-    Αν $ f_{x}(x,y) = g(x,y)$ και $ f_{y}(x,y)=h(x,y) $ τότε ισχύει:
-    \begin{align*}
-        f(x,y) = \int g(x,y) \,{dx} + c(y) \quad \text{και} \quad f(x,y) = 
-        \int h(x,y) \,{dy} + c(x) 
-    \end{align*} 
-\end{rem}
-
-\begin{example}
-\item {}
-    Έστω $ f(x,y)$ με $ f_{x}=e^{x+y} $ και $ f(0,y)=e^{y} $. Να βρεθεί ο τύπος της $f$.
-    \begin{solution}
-        \begin{align*}
-            f(x,y) = \int e^{x+y} \,{dx} = e^{x+y} + c(y) \; \tikzmark{a} \\ 
-            f(0,y) = e^{y} \Leftrightarrow e^{y}+ c(y) = e^{y} \Rightarrow c(y) = 0 
-            \; \tikzmark{b}
-        \end{align*}
-        \mybrace{a}{b}[ $f(x,y) = e^{x+y}$ ]
-    \end{solution}
-\end{example}
-
-\section{Ασκήσεις}
-
-\begin{example}
-    Να εξετάσετε την ύπαρξη των μερικών παραγώγων της συνάρτησης.
-    \[
-        f(x,y) = 
-        \begin{cases}
-            x \frac{x^{2}-y^{2}}{x^{2}+y^{2}}, & (x,y) \neq (0,0) \\ 
-            0, & (x,y) = (0,0) 
-        \end{cases}
-    \] 
-    \begin{solution}
-        \begin{myitemize}
-            \item Αν $ (x,y) \neq (0,0) $ τότε 
-                \begin{align*}
-                    f_{x} = 
-                    \left( 
-                        x \frac{x^{2}-y^{2}}{x^{2}+y^{2}} 
-                    \right)_{x} = \cdots = 
-                    \frac{x^{4}+4x^{2}y^{2}-y^{4}}{(x^{2}+y^{2})^{2}} 
-                    \intertext{και}
-                    \left(
-                        x \frac{x^{2}-y^{2}}{x^{2}+y^{2}} 
-                    \right)_{y} = \cdots - \frac{4x^{3}y}{(x^{2}+y^{2})^{2}}
-                \end{align*}
-            \item Αν $ (x,y) = (0,0) $ τότε εξετάζουμε τα όρια:
-                \begin{align*}
-                    f_{x}(0,0) = \lim_{x \to 0} \frac{f(x,0)-f(0,0)}{x-0} = 
-                    \lim_{x \to 0} \frac{x}{x} = \lim_{x \to 0} 1 = 1
-                    \intertext{και}
-                    f_{y}(0,0) = \lim_{y \to 0} \frac{f(0,y)-f(0,0)}{y-0} = 
-                    \lim_{y \to 0} 0 = 0 
-                \end{align*} 
-                Άρα $ f_{x}= 
-                \begin{cases}
-                    \frac{x^{4}+4x^{2}y^{2}-y^{4}}{(x^{2}+y^{2})^{2}}, &(x,y) 
-                    \neq (0,0) \\ 1 , &(x,y)=(0,0) 
-                \end{cases}
-                \quad \text{και} \quad f_{y} = 
-                \begin{cases}
-                    - \frac{4x^{3}y}{(x^{2}+y^{2})^{2}}, &(x,y) \neq (0,0) \\ 
-                    0, &(x,y)=(0,0) 
-                \end{cases}
-                $  
-        \end{myitemize}
-    \end{solution}
-\end{example}
 
 \begin{rem}
 \item {}
@@ -311,6 +350,104 @@ $ \pdv{f}{x} $ και $ \pdv{g}{x} $ υπάρχουν για κάθε $ (x,y) \i
         γιατί δεν υπάρχει το όριο της εκεί.
     \end{solution}
 \end{example}
+
+
+
+\begin{thm}[Schwarz]
+\item {}
+    Αν για τη συνάρτηση $ f(x,y) $ υπάρχουν οι μερικές παράγωγοι $ f_{xy} $ και 
+    $ f_{yx} $ και είναι συνεχείς σε μια περιοχή του σημείου $ (x_{0}, y_{0}) $, τότε 
+    $ f_{xy}=f_{yx} $ στην περιοχή αυτή.
+\end{thm}
+
+\begin{example}
+    Να εξετάσετε αν ισχύει το θεώρημα Schwarz για την συνάρτηση 
+    \[
+        f(x,y) = 
+        \begin{cases}
+            xy \frac{x^{2}-y^{2}}{x^{2}+y^{2}}, &(x,y) \neq (0,0) \\
+            0, & (x,y) = (0,0)
+        \end{cases}
+    \] 
+\end{example}
+\begin{solution}
+\item {}
+    Αν $ (x,y) \neq (0,0) $ τότε έχουμε
+    \begin{align*}
+        f_{x}(x,y) &= \left(xy\frac{x^{2}-y^{2}}{x^{2}+y^{2}}\right)_{x} = \cdots = 
+        y\frac{x^{4}+4x^{2}y^{2}-y^{4}}{(x^{2}+y^{2})^{2}} 
+        \quad \text{και} \quad
+        f_{y}(x,y) &= \left(xy\frac{x^{2}-y^{2}}{x^{2}+y^{2}}\right)_{y} = \cdots = 
+        x\frac{x^{4}-4x^{2}y^{2}-y^{4}}{(x^{2}+y^{2})^{2}} 
+    \end{align*} 
+    Αν $ (x,y) = (0,0) $ τότε έχουμε
+    \[
+        f_{x}(0,0) = \lim_{x \to 0} \frac{f(x,0)-f(0,0)}{x-0} = \lim_{x \to 0}
+        \frac{0-0}{x} = 0 
+        \quad \text{και} \quad
+        f_{y}(0,0) = \lim_{y \to 0} \frac{f(0,y)-f(0,0)}{y-0} = \lim_{y \to 0} 
+        \frac{0-0}{y} = 0 
+    \]
+    Επομένως οι μερικές παράγωγοι 1ης τάξης είναι 
+    \[
+        f_{x}(x,y) = 
+        \begin{cases}
+            \frac{x^{4}y+4x^{2}y^{3}-y^{5}}{(x^{2}+y^{2})^{2}}, & (x,y) \neq (0,0) \\
+            0, & (x,y) = (0,0)
+        \end{cases} \quad \text{και} \quad 
+        f_{y}(x,y) = 
+        \begin{cases}
+            \frac{x^{5}-4x^{3}y^{2}-xy^{4}}{(x^{2}+y^{2})^{2}}, & (x,y) \neq (0,0) \\
+            0, & (x,y) = (0,0)
+        \end{cases}
+    \] 
+    Για τις παραγώγους 2ης τάξης, έχουμε:
+    Αν $ (x,y) = (0,0) $ τότε έχουμε
+    \begin{align*}
+        f_{xy}(0,0) = \lim_{y \to 0} \frac{f_{x}(0,y)-f_{x}(0,0)}{y-0} = 
+        \lim_{y \to 0} \frac{\frac{-y^{5}}{y^{4}} - 0}{y} = \lim_{y \to 0}
+        \frac{-y}{y} = \lim_{y \to 0} -1 = -1
+        \intertext{και}
+        f_{yx}(0,0) = \lim_{x \to 0} \frac{f_{y}(x,0)-f_{x}(0,0)}{x-0} = 
+        \lim_{x \to 0} \frac{\frac{x^{5}}{x^{4}} - 0}{x} = \lim_{x \to 0}
+        \frac{x}{x} = \lim_{x \to 0} 1 = 1 
+    \end{align*} 
+
+    Επομένως, $ f_{xy}(0,0) \neq f_{yx}(0,0) $, άρα για τη συνάρτηση 
+    $ f(x,y) $ δεν ισχύει το θεώρημα Schwarz.
+\end{solution}
+
+
+\section{Μερική Ολοκλήρωση}
+
+\begin{rem}
+\item {}
+    Αν $ f_{x}(x,y) = g(x,y)$ και $ f_{y}(x,y)=h(x,y) $ τότε ισχύει:
+    \begin{align*}
+        f(x,y) = \int g(x,y) \,{dx} + c(y) \quad \text{και} \quad f(x,y) = 
+        \int h(x,y) \,{dy} + c(x) 
+    \end{align*} 
+\end{rem}
+
+\begin{example}
+\item {}
+    Έστω $ f(x,y)$ με $ f_{x}=e^{x+y} $ και $ f(0,y)=e^{y} $. Να βρεθεί ο τύπος της $f$.
+    \begin{solution}
+        \begin{align*}
+            f(x,y) = \int e^{x+y} \,{dx} = e^{x+y} + c(y) \; \tikzmark{a} \\ 
+            f(0,y) = e^{y} \Leftrightarrow e^{y}+ c(y) = e^{y} \Rightarrow c(y) = 0 
+            \; \tikzmark{b}
+        \end{align*}
+        \mybrace{a}{b}[ $f(x,y) = e^{x+y}$ ]
+    \end{solution}
+\end{example}
+
+\begin{rem}
+    Όταν ολοκληρώνουμε μια συνάρτηση πολλών μεταβλητών, ως προς κάποια από τις 
+    μεταβλητές, τότε η σταθερά ολοκλήρωσης είναι συνάρτηση των υπολοίπων μεταβλητών, 
+    οι οποίες θεωρούνται σταθερές κατά την ολοκλήρωση.
+\end{rem}
+
 
 \chapter{Διαφορισιμότητα}
 
@@ -537,6 +674,9 @@ $ \pdv{f}{x} $ και $ \pdv{g}{x} $ υπάρχουν για κάθε $ (x,y) \i
     \end{solution}
 \end{example}
 
+
+\chapter{Παραγωγισιμότητα}
+
 \section{Ολικό Διαφορικό}
 
 \begin{dfn}
@@ -545,7 +685,8 @@ $ \pdv{f}{x} $ και $ \pdv{g}{x} $ υπάρχουν για κάθε $ (x,y) \i
     + f_{y} \Delta y $ ονομάζεται ολικό διαφορικό της συνάρτησης $f$ 
     και συμβολίζεται με $ df $. Οπότε 
     \[
-        df = f_{x} \Delta x + f_{y} \Delta y \quad \text{ή} \quad df = f_{x}dx + f_{y}dy 
+        df = f_{x} \Delta x + f_{y} \Delta y \quad \text{ή} 
+        \quad df = f_{x}dx + f_{y}dy 
     \] 
     Στην περίπτωση όπου $ f= f(x_{1}, x_{2}, \ldots, x_{n}) $, έχουμε
     \[

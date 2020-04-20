@@ -4,6 +4,8 @@
 \pagestyle{vangelis}
 \everymath{\displaystyle}
 
+\usepackage{geometry}
+\geometry{left=15mm,right=15mm,top=30.00mm,bottom=36.00mm,footskip=24.00mm,headsep=24.00mm}
 
 \begin{document}
 
@@ -279,7 +281,7 @@
             \begin{solution}
                 \[
                     \lim\limits_{\substack{x\to 0 \\y \to 0}} 
-                    \frac{x^{2}y}{x^{2}+y^{2}} 
+                    \frac{x^{2}y}{x^{4}+y^{2}} 
                     \xlongequal[\lambda \in \mathbb{R}]{y= \lambda x^{2}} 
                     \lim_{x \to 0} \frac{x^{2} \lambda x^{2}}
                     {x^{4}+\lambda^{2}x^{4}} = \lim_{x\to 0} 
