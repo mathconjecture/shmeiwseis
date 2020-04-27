@@ -1,0 +1,59 @@
+\input{preamble/preamble.tex}
+\input{preamble/definitions_ask.tex}
+
+\everymath{\displaystyle}
+\thispagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+    \minibox[frame]{\large\bfseries Μετασχηματισμός Laplace}
+\end{center}
+
+\vspace{\baselineskip}
+
+\section*{Μετασχηματισμοί Laplace βασικών συναρτήσεων}
+\twocolumnside{
+    \begin{enumerate}
+        \item $ \mathcal{L}\{1\} = \frac{1}{s}$
+        \item $ \mathcal{L}\{t\} = \frac{1}{s^{2}}$
+        \item $ \mathcal{L}\{t^{2}\} = \frac{2}{s^{3}}$
+        \item $ \mathcal{L}\{t^{n}\} = \frac{n!}{s^{n+1}}$
+        \item $ \mathcal{L}\{\mathrm{e}^{at}\} = \frac{1}{s-a}$
+        \item $ \mathcal{L}\{\sin{bt}\} = \frac{b}{s^{2}+b^{2}}$
+        \item $ \mathcal{L}\{\cos{bt}\} = \frac{s}{s^{2}+b^{2}}$
+        \item $ \mathcal{L}\{\sinh{bt}\} = \frac{b}{s^{2}-b^{2}}$
+        \item $ \mathcal{L}\{\cosh{bt}\} = \frac{s}{s^{2}-b^{2}}$
+        \item $ \mathcal{L}\{e^{at}f(t)\} = F(s-a)$
+        \item $ \mathcal{L}\{e^{at} \sin{bt}\} = \frac{b}{(s-a)^{2}+b^{2}}$
+        \item $ \mathcal{L}\{e^{at} \cos{bt}\} = \frac{s-a}{(s-a)^{2}+b^{2}}$
+        \item $ \mathcal{L}\{e^{at} \sinh{bt}\} = \frac{b}{(s-a)^{2}-b^{2}}$
+        \item $ \mathcal{L}\{e^{at} \cosh{bt}\} = \frac{s-a}{(s-a)^{2}-b^{2}}$
+    \end{enumerate}
+    }{
+    \begin{enumerate}
+        \item $ \mathcal{L}\{tf(t)\} = -F'(s) $
+        \item $ \mathcal{L}\{t^{n}f(t)\} = (-1)^{n} F^{(n)}(s) $
+        \item $ \mathcal{L}\{u_{a}(t)\} = \frac{\mathrm{e}^{-as}}{s}$
+        \item $ \mathcal{L}\{u_{a}(t)f(t-a)\} = \mathrm{e}^{-as}F(s)$
+        \item $ \mathcal{L}\{\delta(t-a)\} = \mathrm{e}^{-as} $
+        \item $ \mathcal{L}\{f(at)\} = \frac{1}{a} F\left(\frac{s}{a}\right) $
+        \item $ \mathcal{L}\left\{\frac{f(t)}{t} \right\} = \int\nolimits _{s}^{\infty} 
+            F(u) \,{du} $
+        \item $ \mathcal{L}\left\{\int\nolimits _{0}^{t} f(\tau) \,{d\tau}\right\} = 
+            \frac{F(s)}{s} $
+    \end{enumerate}
+}
+
+\section*{Χρήσιμες Σχέσεις}
+\centering
+\begin{myitemize}
+    \item $ \mathcal{L}\{y'(t)\} = sY(s) - y(0) $
+    \item $ \mathcal{L}\{y''(t)\} = s^{2}Y(s) - sy(0) - y'(0) $
+    \item $ \mathcal{L}\{y'''(t)\} = s^{3}Y(s) - s^{2}y(0) - sy'(0) - y''(0) $
+    \item $ \mathcal{L}\{f^{(n)}(t)\} = s^{n} F(s) - s^{n-1}f(0) - s^{n-2}f'(0) - 
+        \cdots - sf^{(n-2)}(0)- f^{(n-1)}(0) $
+\end{myitemize}
+
+
+\end{document}
