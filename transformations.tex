@@ -2,7 +2,7 @@
 \input{preamble/definitions.tex}
 
 
-
+\pagestyle{vangelis}
 
 
 \begin{document}
@@ -10,26 +10,194 @@
 \chapter{Γραμμικοί Μετασχηματισμοί}
 
 \begin{dfn}
-    Έστω $ (V, \oplus _{v}, \odot _{v}) $ και $ (W, \oplus _{w}, \odot _{w}) $ 
-    δύο $ \mathbb{K} - $χώροι. Μια συνάρτηση $ T \colon V \to W $ λέγεται 
-    \textcolor{Col1}{γραμμικός μετασχηματισμός} αν ικανοποιεί τις παρακάτω συνθήκες:
-    \begin{enumerate}[i)]
-        \item $ T(x \oplus _{V} y) = T(x) \oplus _{W} T(y), \quad \forall x,y \in V $
-        \item $ T(\lambda \odot _{V} x) = \lambda \odot _{W} T(x), \quad \forall \lambda 
-            \in \mathbb{K} $ και $ \forall x \in V $
-    \end{enumerate}
-    Αν $T$ είναι ένας γραμμικός μετασχηματισμός από τον χώρο $V$ στον $V$ τότε λέμε 
-    ότι ο $T$ είναι ένας \textcolor{Col1}{γραμμικός τελεστής} επί του $V$. 
+  Έστω $ (V, \oplus _{V}, \odot _{V}) $ και $ (W, \oplus _{W}, \odot _{W}) $ 
+  δύο $ \mathbb{K} - $χώροι. Μια συνάρτηση $ T \colon V \to W $ λέγεται 
+  \textcolor{Col1}{γραμμικός μετασχηματισμός} αν ικανοποιεί τις παρακάτω συνθήκες:
+  \begin{enumerate}[i)]
+    \item $ T(\mathbf{x} \oplus _{V} \mathbf{y}) = T(\mathbf{x}) \oplus _{W}
+      T(\mathbf{y}), \quad \forall \mathbf{x}, \mathbf{y}  \in V $
+    \item $ T(\lambda \odot _{V} \mathbf{x}) = \lambda \odot _{W} T(\mathbf{x}), 
+      \quad \forall \lambda \in \mathbb{K} $ και $ \forall \mathbf{x} \in V $
+  \end{enumerate}
+  Αν $T$ είναι ένας γραμμικός μετασχηματισμός από τον χώρο $V$ στον $V$ τότε λέμε 
+  ότι ο $T$ είναι ένας \textcolor{Col1}{γραμμικός τελεστής} επί του $V$. 
 \end{dfn}
 
 \begin{rem}
-    Συνήθως, αν δεν υπάρχει σύγχυση, γράφουμε απλώς $ T(x+y) = T(x) + T(y) $ και 
-    $ T(\lambda x) = \lambda T(x) $, για τις δυο συνθήκες του ορισμού.
+  Συνήθως, αν δεν υπάρχει σύγχυση, γράφουμε απλώς $ T(\mathbf{x}+ \mathbf{y}) =
+  T(\mathbf{x}) + T(\mathbf{y}) $ και 
+  $ T(\lambda \mathbf{x}) = \lambda T(\mathbf{x}) $, για τις δυο συνθήκες του ορισμού.
 \end{rem}
+
+\begin{prop}
+  Έστω $ V $ και $W$ δύο $ \mathbb{K}- $χώροι. Τότε 
+  \begin{enumerate}[i)]
+    \item Αν $ T \colon V \to W $ είναι ένας γραμμικός μετασχηματισμός, τότε 
+      $ T(\mathbf{0}_{V}) = \mathbf{0}_{W} $
+    \item $ T \colon V \to W $ γραμμικός μετασχηματισμός $ \Leftrightarrow T(k
+      \mathbf{x} + \lambda \mathbf{y}) = = k T(\mathbf{x}) + \lambda T(\mathbf{y}) $
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+\item 
+  \begin{enumerate}[i)]
+    \item 
+      $ 
+      \left.
+        \begin{matrix*}[l]
+          T(\mathbf{0}_{V}) = T(\mathbf{0}_{V}+ \mathbf{0}_{V}) = 
+          T(\mathbf{0}_{V}) + T(\mathbf{0}_{V})  \\ 
+          T(\mathbf{0}_{V}) = T(\mathbf{0}_{V}) + \mathbf{0}_{W}
+        \end{matrix*} 
+      \right\}
+      \Rightarrow \cancel{T(\mathbf{0}_{V})} + T(\mathbf{0}_{V}) =
+      \cancel{T(\mathbf{0}_{V})} + \mathbf{0}_{W} \Rightarrow  
+      T(\mathbf{0}_{V}) = \mathbf{0}_{W} $
+    \item 
+  \end{enumerate}
+\end{proof}
 
 \begin{rem}
-    Έστω $ V $ και $W$ δύο $ \mathbb{K}- $χώροι 
+  Αν $ T \colon V \to W $ είναι ένας γραμμικός μετασχηματισμός, τότε για κάθε 
+  $ n \in \mathbb{N} $, $ \mathbf{x}_{i} \in V $ και $ \lambda _{i} \in \mathbb{K} $, 
+  $ i = 1,\ldots, n $ ισχύει:
+  \[
+    T\left(\sum_{i=1}^{n} \lambda _{i} \mathbf{x}_{i}\right) = \sum_{i=1}^{n} 
+    \lambda _{i} T(\mathbf{x}_{i}) 
+  \] 
 \end{rem}
 
+\begin{example}[Ταυτοτικός]
+  Έστω $V$ ένας $ \mathbb{K} - $χώρος και έστω $ T \colon V \to V $ η ταυτοτική 
+  συνάρτηση επί του $V$ με 
+  \[
+    T(\mathbf{x}) = \mathbf{x}, \quad \mathbf{x} \in V   
+  \]
+  Τότε η $T$ είναι γραμμικός μετασχηματισμός και λέγεται 
+  \textcolor{Col1}{ταυτοτικός} μετασχηματισμός επί του $V$ και συμβολίζεται με $ I_{V} $.
+\end{example}
 
-\end{document}
+\begin{example}[Μηδενικός]
+  Έστω $V$ και $W$ δυο $ \mathbb{K}- $χώροι και έστω $ T \colon V \to W $ με 
+  \[
+    T(\mathbf{x}) = \mathbf{0}_{W}, \quad \forall \mathbf{x} \in V
+  \]
+  Τότε η $T$ είναι γραμμικός μετασχηματισμός και λέγεται 
+  \textcolor{Col1}{μηδενικός} μετασχηματισμός επί του $V$ και συμβολίζεται με $ T_{0} $.
+\end{example}
+
+\begin{example}[Προβολή επί του άξονα $x$]
+  Έστω ο $ \mathbb{R}- $χώρος $ \mathbb{R}^{2} $ με τις συνήθεις πράξεις και έστω 
+  $ T \colon \mathbb{R}^{2} \to \mathbb{R}^{2} $ με 
+  \[
+    T(\mathbf{x}, \mathbf{y}) = (x, 0) 
+  \] 
+  Τότε η $T$ είναι γραμμικός μετασχηματισμός και λέγεται \textcolor{Col1}{προβολή} επί 
+  του άξονα $x$.
+\end{example}
+
+\begin{example}[Συμμετρία ως προς άξονα $x$]
+  Έστω ο $ \mathbb{R}- $χώρος $ \mathbb{R}^{2} $ με τις συνήθεις πράξεις και έστω 
+  $ T \colon \mathbb{R}^{2} \to \mathbb{R}^{2} $ με 
+  \[
+    T(\mathbf{x}, \mathbf{y}) = (x, -y) 
+  \] 
+  Τότε η $T$ είναι γραμμικός μετασχηματισμός και λέγεται \textcolor{Col1}{συμμετριά} ως 
+  προς τον άξονα $x$.
+\end{example}
+
+\begin{example}
+  Έστω ο $ \mathbb{R}- $χώρος $ \mathbb{R}^{2} $ με τις συνήθεις πράξεις και έστω 
+  $ T \colon \mathbb{R}^{2} \to \mathbb{R}^{2} $ με 
+  \[
+    T(\mathbf{x}, \mathbf{y}) = (x+1, y) 
+  \] 
+  Τότε η $T$ δεν είναι γραμμικός μετασχηματισμός, αφού $ T(0,0) = (1,0) \neq (0,0) $ 
+\end{example}
+
+\begin{example}[Αριστερόστροφη Περιστροφή]
+  Έστω $ \theta \in [0,2 \pi) $. Ορίζουμε $ T_{\theta} \colon \mathbb{R}^{2} \to
+  \mathbb{R}^{2}  $ με 
+  \[
+    T_{\theta}(x,y) = (x \cos{\theta} - y \sin{\theta}, x \sin{\theta}, y \cos{\theta}) 
+  \] 
+  Τότε η $ T_{\theta} $ είναι γραμμικός μετασχηματισμός και γεωμετρικά στρέφει ένα 
+  διάνυσμα $ \mathbf{u} \in \mathbb{R}^{2} $ κατά γωνία $\theta$ με αντι-ωρολογιακή 
+  φορά.
+\end{example}
+
+\begin{rem}[Εξήγηση για τον τύπο της $\theta$]
+  Έστω $\theta \in [0, 2 \pi)$, και έστω τα διανύσματα βάσης του $ \mathbb{R}^{2} $ 
+  $ \mathbf{e_{1}} = (1,0) $ και $ \mathbf{e_{2}} = (0,1) $. Τότε έχουμε:
+  \begin{align*}
+    T_{\theta}(\mathbf{e_{1}}) &= T_{\theta}(1,0) = (\cos{\theta}, \sin{\theta}) \\
+    T_{\theta}(\mathbf{e_{2}}) &= T_{\theta}(0,1) = (- \sin{\theta} , \cos{\theta})
+  \end{align*}
+  Έστω, τώρα $ \mathbf{u} = (x,y) \in \mathbb{R}^{2} $. Τότε 
+  \begin{align*}
+    T_{\theta}(\mathbf{u}) = T_{\theta} (x,y) 
+    &=  T_{\theta} (x \mathbf{e_{1}}+ y \mathbf{e_{2}}) \\
+    &= T_{\theta }(x \mathbf{e_{1}}) + T_{\theta }(y \mathbf{e_{2}}) \\
+    &= x (\cos{\theta}, \sin{\theta}) + y (- \sin{\theta} , \cos{\theta}) \\
+    &= (x \cos{\theta} - y \sin{\theta} , x \sin{\theta} + y \cos{\theta}) \\
+  \end{align*} 
+\end{rem}
+
+\begin{example}
+  Έστω ο $ \mathbb{K}- $χώρος $ \textbf{M}_{m \times n}(\mathbb{K}) $. Ορίζουμε 
+  $ T \colon \textbf{M}_{m \times n}(\mathbb{K}) \to 
+  \textbf{M}_{m \times n}(\mathbb{K}) $ με 
+  \[
+    T(A) = A^{T}, \quad \forall A \in \textbf{M}_{m \times n}(\mathbb{K})
+  \] 
+  Τότε η $T$ είναι γραμμικός μετασχηματισμός, αφού
+  \begin{align*}
+    T(kA+ \lambda B) &= (kA + \lambda B)^{T} \\
+                     &= (kA)^{T} + (\lambda B)^{T} \\
+                     &= k A^{T} + \lambda B^{T} \\
+                     &= k T(A) + \lambda T(B)
+  \end{align*} 
+\end{example}
+
+\begin{example}
+  Έστω ο $ \mathbb{R}- $χώρος $ \mathbb{R}^{2} $ και έστω $ T \colon \mathbb{R}^{2} \to
+  \mathbb{R}^{2} $ με 
+  \[
+    T(x,y) = (\abs{x} , 0) 
+  \] 
+  Τότε η $T$ δεν είναι γραμμικός μετασχηματισμός, αφού 
+  \[
+    \left.
+      \begin{aligned}
+        T((-1)(1,0)) &= T(-1,0) = (\abs{(-1)},0) = (1,0) \\
+        (-1) T(1,0) &= (-1) (\abs{1} , 0) = (-1) (1,0) = (-1,0)
+      \end{aligned}
+    \right\} \Rightarrow Τ((-1)(1,0)) \neq (-1)T(1,0)
+  \]
+\end{example}
+
+\begin{example}
+  Έστω οι $ \mathbb{R} - $χώροι $ \textbf{P}_{n}(\mathbb{R}) $ και $
+  \textbf{P}_{n-1}(\mathbb{R}) $ και έστω $ T \colon \textbf{P}_{n}(\mathbb{R}) \to 
+  \textbf{P}_{n-1}(\mathbb{R}) $ με 
+  $ T(p) = p' $
+  Τότε η $T$ είναι γραμμικός μετασχηματισμός, αφού 
+  \[
+    T(kp + \lambda q) = (kp+ \lambda q)' = kp' + \lambda q' = k T(p) + \lambda T(q)
+  \] 
+\end{example}
+
+\begin{example}
+  Έστω οι $ \mathbb{R} - $χώροι $ C(\mathbb{R}) $ και $ \mathbb{R} $, όπου 
+  $ C(\mathbb{R}) $ είναι ο χώρος των συνεχών συναρτήσεων από το $ \mathbb{R} $ στο 
+  $ \mathbb{R} $. Έστω $ a,b \in \mathbb{R} $ με $ a<b $. Ορίζουμε 
+  $ T \colon C(\mathbb{R}) \to \mathbb{R}$ με 
+  \[
+    T(f) = \int _{a}^{b} f(x) \,{dx}, \quad \forall f \in C(\mathbb{R}) 
+  \] 
+  Τότε από τη γραμμική ιδιότητα του ορισμένου ολοκληρώματος, προκύπτει ότι 
+  η $T$ είναι γραμμικός μετασχηματισμός.
+\end{example}
+
+ \end{document}
