@@ -9,9 +9,11 @@
 
 \chapter{Γραμμικοί Μετασχηματισμοί}
 
+\section{Ορισμός - Παραδείγματα}
+
 \begin{dfn}
-  Έστω $ (V, \oplus _{V}, \odot _{V}) $ και $ (W, \oplus _{W}, \odot _{W}) $ 
-  δύο $ \mathbb{K} - $χώροι. Μια συνάρτηση $ T \colon V \to W $ λέγεται 
+  Έστω $ (V, \oplus _{V}, \odot _{V}) $ και $ (W, \oplus _{W}, \odot _{W}) $ δύο 
+  $ \mathbb{K} - $χώροι. Μια συνάρτηση $ T \colon V \to W $ λέγεται 
   \textcolor{Col1}{γραμμικός μετασχηματισμός} αν ικανοποιεί τις παρακάτω συνθήκες:
   \begin{enumerate}[i)]
     \item $ T(\mathbf{x} \oplus _{V} \mathbf{y}) = T(\mathbf{x}) \oplus _{W}
@@ -111,6 +113,30 @@
   Έστω ο $ \mathbb{R}- $χώρος $ \mathbb{R}^{2} $ με τις συνήθεις πράξεις και έστω 
   $ T \colon \mathbb{R}^{2} \to \mathbb{R}^{2} $ με 
   \[
+    T(\mathbf{x}, \mathbf{y}) = (x,2x+y) 
+  \] 
+  Τότε η $T$ είναι γραμμικός μετασχηματισμός, αφού, αν $ \mathbf{x}=(x_{1}, y_{1}) $ 
+  και $ \mathbf{y}=(x_{2}, y_{2}) $, τότε $ \mathbf{x}+ \mathbf{y} = 
+  (x_{1}+ x_{2}, y_{1}+ y_{2}) $ και $ \lambda \mathbf{x} = 
+  (\lambda x_{1}, \lambda x_{2}) $ έχουμε:
+  \begin{align*}
+    T(\mathbf{x}+ \mathbf{y}) &= T(x_{1}+ x_{2}, y_{1}+ y_{2}) \\
+                              &= (x_{1}+ x_{2}, 2(x_{1}+ x_{2})+ y_{1}+ y_{2}) \\
+                              &= (x_{1}, 2 x_{1}+ y_{1}) + (x_{2}, 2 x_{2}+ y_{2}) \\
+                              &= T(\mathbf{x}) + T(\mathbf{y})
+                              \intertext{και}
+    T(\lambda \mathbf{x}) &= T(\lambda x_{1}, \lambda y_{1}) \\
+                          &= (\lambda x_{1}, 2 \lambda x_{1}+ \lambda y_{1}) \\
+                          &= \lambda (x_{1}, 2 x_{1}+ y_{1}) \\
+                          &= \lambda T(\mathbf{x})
+  \end{align*}
+
+\end{example}
+
+\begin{example}
+  Έστω ο $ \mathbb{R}- $χώρος $ \mathbb{R}^{2} $ με τις συνήθεις πράξεις και έστω 
+  $ T \colon \mathbb{R}^{2} \to \mathbb{R}^{2} $ με 
+  \[
     T(\mathbf{x}, \mathbf{y}) = (x+1, y) 
   \] 
   Τότε η $T$ δεν είναι γραμμικός μετασχηματισμός, αφού $ T(0,0) = (1,0) \neq (0,0) $ 
@@ -199,5 +225,275 @@
   Τότε από τη γραμμική ιδιότητα του ορισμένου ολοκληρώματος, προκύπτει ότι 
   η $T$ είναι γραμμικός μετασχηματισμός.
 \end{example}
+
+
+\section{Πυρήνας και Εικόνα Γραμμικού Μετασχηματισμού}
+
+\begin{dfn}
+  Έστω $V$, $K$ δυο $ \mathbb{K}- $χώροι και έστω $ T \colon V \to W $ ένας 
+  γραμμικός μετασχηματισμός. Τότε 
+  \begin{myitemize}
+    \item Το σύνολο 
+      $ \ker(T) = \{ \mathbf{x} \in V \; : \; T(\mathbf{x}) = \mathbf{0}_{W} \} $ 
+      λέγεται \textcolor{Col1}{πυρήνας} του γραμμικού μετασχηματισμού $T$.
+    \item Το σύνολο 
+      $ \im(T) = \{ T(\mathbf{x}) \; : \; \mathbf{x} \in V \} $ 
+      λέγεται \textcolor{Col1}{εικόνα} του γραμμικού μετασχηματισμού $T$.
+  \end{myitemize}
+\end{dfn}
+
+\begin{example}
+  Έστω $V$ και $W$ δυο $ \mathbb{K}- $χώροι. Τότε για τον ταυτοτικό μετασχηματισμό 
+  ισχύει 
+  \[
+    \ker(I_{V}) = \{ \mathbf{0}_{V} \} \quad \text{και} \quad \im(I_{V}) = V 
+  \]
+  και για τον μηδενικό μετασχηματισμό ισχύει
+  \[
+    \ker(T_{0}) = V  \quad \text{και} \quad \im(T_{0}) = \{ \mathbf{0}_{W} \}   
+  \] 
+\end{example}
+
+\begin{example}
+  Έστω οι $ \mathbb{R}- $χώροι $ \mathbb{R}^{3} $ και $ \mathbb{R}^{2} $ και έστω 
+  $ T \colon \mathbb{R}^{3} \to \mathbb{R}^{2} $ με $ T(x,y,z) = (x-y,2z) $. Η 
+  $T$ είναι γραμμικός μετασχηματισμός και έχουμε:
+  \begin{align*}
+    \ker(T) = \{(x,y,z)\in \mathbb{R}^{3} \; : \; T(x,y,z) = (0,0) \} \\
+    &= \{(x,y,z)\in \mathbb{R}^{3} \; : \; (x-y,2z)=(0,0) \} \\
+    &= \{(x,y,z)\in \mathbb{R}^{3} \; : \; x-y=0 \; \text{και} \; 2z=0 \} \\
+    &= \{(x,y,z)\in \mathbb{R}^{3} \; : \; x=y \; \text{και} \; z=0 \} \\
+    &= \{(x,x,0)\in \mathbb{R}^{3} \; : \; x \in \mathbb{R} \} \\
+    &= < (1,1,0) >  
+  \end{align*}
+  ενώ για την εικόνα της $T$ έχουμε ότι $ \im(T) = \mathbb{R}^{2}  $, αφού αν 
+  $ (a,b) \in \mathbb{R}^{2} $, τότε
+  \[
+    T(2a,a, b/2)= (2a-a,2(b/2)) = (a,b)
+  \] 
+\end{example}
+
+\begin{thm}
+  Έστω $V$ και $W$  δύο  $ \mathbb{K}- $χώροι  και έστω  $ T \colon V \to W $  ένας 
+  γραμμικός μετασχηματισμός. Τότε ισχύουν τα παρακάτω:
+  \begin{myitemize}
+    \item Ο πυρήνας $ \ker(T)  $ του $T$ είναι υπόχωρος του $V$. 
+    \item Η εικόνα $ \im(T)  $ του $T$ είναι υπόχωρος του $W$.
+  \end{myitemize}
+\end{thm}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{thm}
+  Έστω $V$ και $W$ δύο $ \mathbb{K}- $χώροι και έστω $ T \colon V \to W $ ένας 
+  γραμμικός μετασχηματισμός. Αν $ B = \{ \mathbf{v_{1}}, \ldots, \mathbf{v_{n}} \} $ 
+  είναι μια βάση για τον $V$, τότε
+  \[
+    \im(T) = < T(\mathbf{v_{1}}), \ldots, T(\mathbf{v_{n}}) >  
+  \]
+  δηλαδή, $ \im(T) = < T(B) > $.
+\end{thm}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{example}
+  Έστω οι $ \mathbb{R} - $χώροι $ \textbf{P}_{2}(\mathbb{R}) $ και 
+  $ \textbf{M}_{2}(\mathbb{R}) $. Ορίζουμε $ T \colon \textbf{P}_{2}(\mathbb{R}) \to
+  \textbf{M}_{2}(\mathbb{R}) $ με 
+  \[
+    T(p) = 
+    \begin{pmatrix*}
+      p(1)-p(2) & 0 \\
+      0 & p(0)
+    \end{pmatrix*}, \quad p \in \textbf{P}_{2}(\mathbb{R})
+  \] 
+  Η $T$ είναι γραμμικός μετασχηματισμός και για να βρούμε βάση και τη διάσταση του 
+  $ \im(T) $, θεωρούμε τη βάση $ B = \{ 1,x,x^{2} \} $ του $
+  \textbf{P}_{2}(\mathbb{R}) $. Τότε από το προηγούμενο θεώρημα έχουμε
+  \begin{align*}
+    \im(T) = < T(B) > &= < T(1), T(x), T(x^{2}) > \\
+                      &= < 
+                      \begin{pmatrix*}[r]
+                        0 & 0 \\
+                        0 & 1
+                      \end{pmatrix*}, 
+                      \begin{pmatrix*}[r]
+                        -1 & 0 \\
+                        0 & 0 
+                      \end{pmatrix*}, 
+                      \begin{pmatrix*}[r]
+                        -3 & 0 \\
+                        0 & 0
+                      \end{pmatrix*}
+                      > \\
+                      & = 
+                      < 
+                      \begin{pmatrix*}[r]
+                        0 & 0 \\
+                        0 & 1
+                      \end{pmatrix*}
+                      , 
+                      \begin{pmatrix*}[r]
+                        -1 & 0 \\
+                        0 & 0
+                      \end{pmatrix*}
+                      >  
+  \end{align*}
+  γιατί προφανώς $ 
+  \begin{pmatrix*}[r]
+    -3 & 0 \\
+    0 & 0
+  \end{pmatrix*} = -3 
+  \begin{pmatrix*}[r]
+    -1 & 0 \\
+    0 & 0 
+  \end{pmatrix*}
+  $. Οπότε το σύνολο $ <  
+  \begin{pmatrix*}[r]
+    0 & 0 \\
+    0 & 1
+  \end{pmatrix*}
+  , 
+  \begin{pmatrix*}[r]
+    -1 & 0 \\
+    0 & 0
+  \end{pmatrix*}
+  > $ 
+  παράγει το χώρο $ \im(T) $ και επειδή τα στοιχεία του είναι 
+  προφανώς γραμμικώς ανεξάρτητα, αποτελούν βάση του $ \im(T) $.
+  Άρα $ \dim \im(T) = 2 $
+\end{example}
+
+\begin{rem}
+  Το προηγούμενο παράδειγμα δείχνει ότι αν $ B = \{ \mathbf{v_{1}}, \ldots, 
+  \mathbf{v_{n}} \} $ είναι μια βάση για έναν $ \mathbb{K}- $χώρο και 
+  $ T \colon V \to W $ είναι ένας γραμμικός μετασχηματισμός, τότε δεν ισχύει 
+  απαραίτητα ότι το σύνολο $ T(B) = 
+  \{ T(\mathbf{v_{1}}), \ldots, T(\mathbf{v_{n}}) \}$ είναι μια βάση για τον $ \im(T) $.
+\end{rem}
+
+\begin{prop}
+  Το σύνολο $ T(B) $ θα είναι μια βάση για τον $ \im(T) $ αν επιπλέον η $T$ είναι 
+  $ 1-1 $.
+\end{prop}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{dfn}
+  Έστω $V$ και $W$ δύο $ \mathbb{K} - $χώροι και έστω $ T \colon V \to W $ ένας 
+  γραμμικός μετασχηματισμός. Αν οι υπόχωροι $ \ker(T) $ και $ \im(T) $ των $V$ και $W$ 
+  αντίστοιχα είναι πεπερασμένης διάστασης, τότε ορίζουμε 
+  \begin{myitemize}
+    \item την \textcolor{Col1}{μηδενικότητα} του $T$ να είναι η διάσταση 
+      $ \dim \ker(T) $ του $ \ker(T) $ 
+    \item τον \textcolor{Col1}{βαθμό} του $T$ να είναι η διάσταση $ \dim \im(T) $ του 
+      $ \im(T) $.
+  \end{myitemize}
+\end{dfn}
+
+\begin{rem}
+\item {}
+  \begin{myitemize}
+    \item Τη μηδενικότητα ενός γραμμικού μετασχηματισμού $T$, συνήθως τη συμβολίζουμε με 
+      $ \Null(T) $ ή απλώς $ \n(T) $. Πολλές φορές θα χρησιμοποιούμε και το 
+      $ \dim \ker(T) $.
+    \item Το βαθμό ενός γραμμικού μετασχηματισμού $T$, συνήθως τον συμβολίζουμε με 
+      $ \rank(T) $ ή απλώς $ \R(T) $.
+  \end{myitemize}
+\end{rem}
+
+\begin{thm}[Θεώρημα Διάστασης]
+  Έστω $ V $ και $W$ δύο $ \mathbb{K}- $χώροι και έστω $ T \colon V \to W $ ένας 
+  γραμμικός μετασχηματισμός. Αν ο $V$ είναι πεπερασμένης διάστασης, τότε 
+  \[
+    \Null(T) + \rank(T) = \dim (V) 
+  \]
+  ή με άλλα λόγια
+  \begin{center}
+    μηδενικότητα του $T$ $ + $ βαθμός του $T$ $ = \dim (V) $ 
+  \end{center}
+\end{thm}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{thm}
+  Έστω $ V $ και $W$ δύο $ \mathbb{K}- $χώροι και έστω $ T \colon V \to W $ ένας 
+  γραμμικός μετασχηματισμός. Τότε ισχύει ότι 
+  \[
+    T \quad \text{είναι} \quad 1-1 \Leftrightarrow \ker(T) = \{ \mathbf{0}_{V} \} 
+  \] 
+\end{thm}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{thm}
+  Έστω $ V $ και $W$ δύο $ \mathbb{K}- $χώροι και έστω $ T \colon V \to W $ ένας 
+  γραμμικός μετασχηματισμός. Αν $ \dim(V) = \dim(W) = n < \infty $ τότε οι 
+  παρακάτω προτάσεις είναι ισοδύναμες.
+  \begin{enumerate}[i)]
+    \item $T$ είναι $ 1-1 $
+    \item $T$ είναι επί
+    \item $ \rank(T) = \dim(V) $
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{rem}
+  Άρα από το προηγούμενο θεώρημα συμπεραίνουμε ότι αν $ T $ γραμμικός μετασχηματισμός 
+  μεταξύ ίδιων χώρων, τότε αν είναι $ 1-1 $ θα είναι και επί και αντιστρόφως, αν είναι 
+  επί θα είναι και $ 1-1 $.
+\end{rem}
+
+\begin{thm}
+  Έστω $V$ και $W$ δυο $ \mathbb{K}- $χώροι. Υποθέτουμε ότι το σύνολο 
+  $ \{ \mathbf{v_{1}}, \ldots, \mathbf{v_{n}}\} $ είναι μια βάση για τον $V$. 
+  Για οποιαδήποτε $ \mathbf{w_{1}}, \ldots \mathbf{w_{n}} $ στον $W$ υπάρχει 
+  ακριβώς ένας γραμμικός μετασχηματισμός $ T \colon V \to W $ τέτοιος ώστε
+  \[
+    T(\mathbf{v}_{i}) = \mathbf{w}_{i}, \quad \forall i \in \{ 1,2, \ldots \}
+  \] 
+\end{thm}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{cor}
+  Έστω $V$ και $W$ δυο $ \mathbb{K}- $χώροι. Υποθέτουμε ότι ο $V$ έχει μια πεπερασμένη 
+  βάση, έστω την $ B = \{ \mathbf{v_{1}}, \ldots, \mathbf{v_{n}} \} $. Αν 
+  $ S,T \colon V \to W$ είναι δυο γραμμικοί μετασχηματισμοί και 
+  $ S(\mathbf{v}_{i}) = T(\mathbf{v}_{i}) $ για $ i=1,2,\ldots,n $ τότε $ S=T $.
+\end{cor}
+
+\begin{rem}
+  Δηλαδή δυο γραμμικοί γραμμικοί μετασχηματισμοί ταυτίζονται αν ταυτίζονται στα στοιχεία
+  μιας βάσης.
+\end{rem}
+
+\begin{example}
+  Έστω $ T \colon \mathbb{R}^{2} \to \mathbb{R}^{2} $ ο γραμμικός μετασχηματισμός με 
+  τύπο $ T(a_{1}, a_{2}) = (2 a_{2}- a_{1}, 3 a_{1}) $. 
+  Υποθέτουμε ότι $ U \colon \mathbb{R}^{2} \to \mathbb{R}^{2} $ είναι γραμμικός. Αν 
+  γνωρίζουμε ότι $ U(1,2) = (3,3) $ και $ U(1,1) = (1,3) $, τότε $ U=T $. 
+
+  Πράγματι, αυτό προκύπτει από το γεγονός ότι $ \{ (1,2), (3,3) \}  $ είναι μια βάση 
+  του $ \mathbb{R}^{2} $ και από το ότι $ T(1,2)=(3,3) = U(1,2) $ και 
+  $ T(1,1) = (1,3) = U(1,1) $. Τότε σύμφωνα με το πόρισμα, αφού οι δυο μετασχηματισμοί 
+  ταυτίζονται στα στοιχεία μιας βάσης, είναι ίσοι.
+\end{example}
+
 
  \end{document}
