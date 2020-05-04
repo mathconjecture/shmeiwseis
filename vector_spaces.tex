@@ -1,8 +1,7 @@
 \input{preamble/preamble.tex}
 \input{preamble/definitions.tex}
 
-\let\vec\mathbf
-
+\usepackage{xspace}
 \pagestyle{vangelis}
 
 \begin{document}
@@ -17,7 +16,7 @@
 \begin{dfn}
 \item {}
     Έστω $V \neq \emptyset $, σύνολο και $\mathbb{K}$ ένα σώμα αντιμεταθετικό 
-    (συνήθως θεωρούμε ότι $ \mathbb{K} = \mathbb{R} $ ή $\mathbb{C}$ ). 
+    (συνήθως θεωρούμε ότι $ \mathbb{K} = \mathbb{R} $ ή $\mathbb{C}$). 
     Το σύνολο $V$ μαζί με τις πράξεις:
     \begin{alignat*}{2}
         + \colon V \times V &\to V & \qquad \text{και} \qquad \cdot \colon \mathbb{K} 
@@ -59,7 +58,7 @@
 \vspace{\baselineskip}
 
 ονομάζεται \textcolor{Col2}{διανυσματικός χώρος} επί του $\mathbb{K}$, 
-(ή απλά $ \mathbb{K} $ - χώρος).  Τα 
+(ή απλά $ \mathbb{K}-$ χώρος).  Τα 
 στοιχεία του συνόλου $V$ καλούνται \textcolor{Col2}{διανύσματα}.
 \end{dfn}
 
@@ -86,7 +85,7 @@
 
 \section{Παραδείγματα}
 
-\begin{example} \label{ex:Rn}
+\begin{example}\label{ex:Rn}
     \textcolor{Col2}{Ο διανυσματικός χώρος $ \mathbb{K}^{n} $ 
     επί του $ \mathbb{K} \quad (n \geq 1) $}
 
@@ -110,7 +109,7 @@
     $ \mathbb{C} $ είναι διανυσματικός χώρος επί του $ \mathbb{C} $.
 \end{example} 
 
-\begin{example} \label{ex:funs} 
+\begin{example}\label{ex:funs} 
     \textcolor{Col2}{Ο χώρος των πραγματικών συναρτήσεων 
     $\mathbf{F}(A, \mathbb{R})$ ή $\mathbb{R} ^{A}$}
 
@@ -194,8 +193,8 @@
     είναι ένας διανυσματικός χώρος επί του $ \mathbb{K} $.
 \end{example}
 
-\begin{example}
-    \label{ex:mat} \textcolor{Col2}{Το σύνολο $ M_{m \times n}(\mathbb{K}) $ 
+\begin{example}\label{ex:mat} 
+  \textcolor{Col2}{Το σύνολο $ M_{m \times n}(\mathbb{K}) $ 
     των $ m \times n $ πινάκων με στοιχεία από το σώμα $ \mathbb{K} $}
 
     Το σύνολο $ M_{m \times n}(\mathbb{K}) $ των $ m \times n $ πινάκων 
@@ -208,7 +207,7 @@
     ο πίνακας $ -A $.
 \end{example}
 
-\begin{example} \label{ex:omsy} 
+\begin{example}\label{ex:omsy} 
     \textcolor{Col2}{Ο χώρος των λύσεων ενός γραμμικού, ομογενούς 
     συστήματος}
 
@@ -228,7 +227,7 @@
                 a_{m1}x_{1} & + & a_{m2}x_{2} & + & \cdots & + & a_{mn}x_{n} & =
                             & 0 \\
             \end{array}
-        \right\} \Leftrightarrow 
+        \right\} \Leftrightarrow
         \underbrace{\begin{pmatrix}
                 a_{11} & a_{12} & \cdots & a_{1n} \\
                 a_{21} & a_{22} & \cdots & a_{2n} \\
@@ -304,7 +303,7 @@
 
 \begin{solution}
 \item {}
-    \begin{enumerate}[i)]
+  \begin{enumerate}[i)]
         \item $ x \oplus y = xy = yx = y \oplus x $
         \item $ (x \oplus y) \oplus z = (xy) \oplus z = (xy)z = x(yz) = x \oplus (yz) 
             = x \oplus (y \oplus z) $
@@ -314,7 +313,7 @@
             \frac{1}{x} \cdot x = \frac{1}{x} \oplus x = 1, \; \forall x \in V $, άρα 
             το αντίθετο του $x$ είναι το $ \frac{1}{x} $.
         \item Αν $ x,y \in V $ και $ \lambda \in \mathbb{R} $ τότε $ \lambda \odot 
-            (x \oplus y) = \lambda \odot (xy) = (xy)^{\lambda} = 
+            (x \oplus y) = \lambda \odot (xy) = {(xy)}^{\lambda} = 
             x^{\lambda } y^{\lambda} = x^{\lambda } \oplus y^{\lambda } = 
             (\lambda \odot x) \oplus (\lambda \odot y ) $
         \item Αν $ \lambda , \mu \in \mathbb{R} $ και $ x \in V $, τότε 
@@ -322,7 +321,7 @@
             x^{\lambda } x^{\mu} = x^{\lambda} \oplus x^{\mu } = 
             (\lambda \odot x) \oplus (\mu \odot x)  $ 
         \item Αν $ \lambda , \mu \in \mathbb{R} $ και $ x \in V $, τότε 
-            $ (\lambda \mu ) \odot x = x^{\lambda \mu } = (x^{\mu })^{\lambda } = 
+            $ (\lambda \mu ) \odot x = x^{\lambda \mu } = {(x^{\mu })}^{\lambda } = 
             (\mu \odot x)^{\lambda } = \lambda \odot (\mu \odot x)  $
         \item Αν $ x \in V $, τότε $ 1 \odot x = x^{1} = x $
     \end{enumerate}

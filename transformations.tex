@@ -26,19 +26,22 @@
 \end{dfn}
 
 \begin{rem}
-  Συνήθως, αν δεν υπάρχει σύγχυση, γράφουμε απλώς $ T(\mathbf{x}+ \mathbf{y}) =
-  T(\mathbf{x}) + T(\mathbf{y}) $ και 
-  $ T(\lambda \mathbf{x}) = \lambda T(\mathbf{x}) $, για τις δυο συνθήκες του ορισμού.
+\item {}
+  \begin{enumerate}[i)]
+    \item Συνήθως, αν δεν υπάρχει σύγχυση, γράφουμε απλώς $ T(\mathbf{x}+ \mathbf{y}) =
+      T(\mathbf{x}) + T(\mathbf{y}) $ και 
+      $ T(\lambda \mathbf{x}) = \lambda T(\mathbf{x}) $, για τις δυο συνθήκες 
+      του ορισμού.
+    \item Από τη 2η σχέση του ορισμού, για $ \lambda = 0 $ προκύπτει ότι 
+      $ T(\mathbf{0}_{V}) = \mathbf{0}_{W} $ και για $ \lambda = -1 $ ότι 
+      $ T(- \mathbf{x}) = - T(\mathbf{x}) $.
+  \end{enumerate}
 \end{rem}
 
 \begin{prop}
-  Έστω $ V $ και $W$ δύο $ \mathbb{K}- $χώροι. Τότε 
-  \begin{enumerate}[i)]
-    \item Αν $ T \colon V \to W $ είναι ένας γραμμικός μετασχηματισμός, τότε 
-      $ T(\mathbf{0}_{V}) = \mathbf{0}_{W} $
-    \item $ T \colon V \to W $ γραμμικός μετασχηματισμός $ \Leftrightarrow T(k
-      \mathbf{x} + \lambda \mathbf{y}) = = k T(\mathbf{x}) + \lambda T(\mathbf{y}) $
-  \end{enumerate}
+  Έστω $ V $ και $W$ δύο $ \mathbb{K}- $χώροι. Τότε $ T \colon V \to W $ 
+  γραμμικός μετασχηματισμός αν και μόνον αν \[ T(k \mathbf{x} + \lambda \mathbf{y}) = 
+  k T(\mathbf{x}) + \lambda T(\mathbf{y}) \]
 \end{prop}
 
 \begin{proof}
@@ -226,6 +229,70 @@
   η $T$ είναι γραμμικός μετασχηματισμός.
 \end{example}
 
+\begin{prop}
+  Η σύνθεση $ S \circ T $ δύο γραμμικών μετασχηματισμών $ T \colon E \to V $ και 
+  $ S \colon V \to W $ είναι επίσης γραμμικός μετασχηματισμός.
+\end{prop}
+\begin{proof}
+  Αν $ \mathbf{x}, \mathbf{y} \in V $ και $ \lambda \in \mathbb{K} $ τότε
+  \begin{align*}
+    S \circ T (\mathbf{x}+ \mathbf{y}) &= S(T(\mathbf{x}+ \mathbf{y})) =
+    S(T(\mathbf{x})+T(\mathbf{y})) = S(T(\mathbf{x})) + S(T(\mathbf{y})) = 
+    S \circ T (\mathbf{x}) + S \circ T (\mathbf{y}) \\
+    S \circ T(\lambda \mathbf{x}) &= S(T(\lambda \mathbf{x})) = 
+    S(\lambda T(\mathbf{x})) = \lambda S(T(\mathbf{x})) = \lambda S \circ T (\mathbf{x})
+  \end{align*}
+\end{proof}
+
+\begin{prop}
+  Αν ο γραμμικός μετασχηματισμός $ T \colon V \to W $ αντιστρέφεται τότε ο αντίστροφος 
+  μετασχηματισμός $ T^{-1} $ είναι επίσης γραμμικός.
+\end{prop}
+\begin{proof}
+  Έστω $ \mathbf{a}, \mathbf{b} \in W $ και $ \lambda \in \mathbb{K} $. Τότε 
+  $ \mathbf{a} + \mathbf{b}, \lambda \mathbf{a} \in W $ και 
+  $ \mathbf{a}= T(\mathbf{x}) $, $ \mathbf{b} = T(\mathbf{y}) $, με 
+  $ \mathbf{x}, \mathbf{y} \in V $. Έχουμε
+  \begin{align*}
+    \mathbf{a}+ \mathbf{b} &= T(\mathbf{x}) + T(\mathbf{y}) = T(\mathbf{x}+ \mathbf{y})\\
+    \lambda \mathbf{a} &= \lambda T(\mathbf{x}) = T(\lambda \mathbf{x})
+  \end{align*}
+  επομένως
+  \begin{align*}
+    T^{-1} (\mathbf{a}+ \mathbf{b}) &= \mathbf{x} + \mathbf{y} = T^{-1} (\mathbf{a}) 
+    + T^{-1} (\mathbf{b}) \\
+    T^{-1} (\lambda \mathbf{a}) &= \lambda \mathbf{x} = \lambda T^{-1} (\mathbf{a})
+   \end{align*} 
+\end{proof}
+
+\begin{prop}
+  Ένας γραμμικός μετασχηματισμός $ T \colon V \to W $ ορίζεται από τις τιμές της 
+  $ f(\mathbf{e}_{i}) $ στα στοιχεία $ \mathbf{e}_{i} $ μιας βάσης του χώρου $V$.
+\end{prop}
+\begin{proof}
+  Έστω ότι ο $V$ έχει πεπρασμένη διάσταση, επομένως θα έχει πεπερασμένη βάση, 
+  $ B = \{ \mathbf{e}_{1}, \ldots, \mathbf{e_{n}} \} $. 
+  Για κάθε $ \mathbf{v} \in V $ έχουμε ότι 
+  $ \mathbf{v}= x_{1} \mathbf{e_{1}} + x_{2} \mathbf{e_{2}} +  
+  \cdots + x_{n} \mathbf{e_{n}} $ με $ x_{i} \in \mathbb{K} $. Συνεπώς
+  \begin{align*}
+    T(\mathbf{v}) & = T(x_{1} \mathbf{e_{1}}+ x_{2} \mathbf{e_{2}}+ \cdots + x_{n}
+    \mathbf{e}_{n}) \\ 
+                  &= x_{1}T(\mathbf{e_{1}}) + x_{2}T(\mathbf{e_{2}}) + \cdots + x_{n} 
+                  T(\mathbf{e_{n}}) \\ 
+                  &= x_{1} \mathbf{a}_{1} + x_{2} \mathbf{a}_{2} + \cdots + x_{n} 
+                  \mathbf{a}_{n}
+  \end{align*}
+  όπου τα $ \mathbf{a}_{i} = T(\mathbf{e}_{i}) \in W $, είναι οι τιμές του $T$ στα 
+  στοιχεία της βάσης $B$.
+\end{proof}
+
+\begin{rem}
+  Αν ο $V$ δεν έχει πεπερασμένη διάσταση, τότε το στοιχείο $ \mathbf{v} \in V $ 
+  θα γράφεται ως γραμμικός συνδυασμός πεπερασμένου πλήθους στοιχειών της βάσης του, 
+  έστω $ \mathbf{e_{1}}, \mathbf{e_{2}}, \ldots, \mathbf{e_{n}} $ και η απόδειξη 
+  συνεχίζει όπως παραπάνω.
+\end{rem}
 
 \section{Πυρήνας και Εικόνα Γραμμικού Μετασχηματισμού}
 
