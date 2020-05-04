@@ -2,6 +2,7 @@
 \input{preamble/definitions.tex}
 
 
+
 \pagestyle{vangelis}
 
 
@@ -9,13 +10,14 @@
 
 \chapter{Γραμμικοί Μετασχηματισμοί}
 
-\section{Ορισμός - Παραδείγματα}
+\section{Ορισμός--Παραδείγματα}
+
 
 \begin{dfn}
   Έστω $ (V, \oplus _{V}, \odot _{V}) $ και $ (W, \oplus _{W}, \odot _{W}) $ δύο 
   $ \mathbb{K} - $χώροι. Μια συνάρτηση $ T \colon V \to W $ λέγεται 
   \textcolor{Col1}{γραμμικός μετασχηματισμός} αν ικανοποιεί τις παρακάτω συνθήκες:
-  \begin{enumerate}[i)]
+  \begin{enumerate}[(i)]
     \item $ T(\mathbf{x} \oplus _{V} \mathbf{y}) = T(\mathbf{x}) \oplus _{W}
       T(\mathbf{y}), \quad \forall \mathbf{x}, \mathbf{y}  \in V $
     \item $ T(\lambda \odot _{V} \mathbf{x}) = \lambda \odot _{W} T(\mathbf{x}), 
@@ -27,51 +29,31 @@
 
 \begin{rem}
 \item {}
-  \begin{enumerate}[i)]
-    \item Συνήθως, αν δεν υπάρχει σύγχυση, γράφουμε απλώς $ T(\mathbf{x}+ \mathbf{y}) =
-      T(\mathbf{x}) + T(\mathbf{y}) $ και 
-      $ T(\lambda \mathbf{x}) = \lambda T(\mathbf{x}) $, για τις δυο συνθήκες 
-      του ορισμού.
-    \item Από τη 2η σχέση του ορισμού, για $ \lambda = 0 $ προκύπτει ότι 
-      $ T(\mathbf{0}_{V}) = \mathbf{0}_{W} $ και για $ \lambda = -1 $ ότι 
-      $ T(- \mathbf{x}) = - T(\mathbf{x}) $.
-  \end{enumerate}
+  \begin{myitemize}
+    \item Συνήθως, αν δεν υπάρχει σύγχυση, γράφουμε απλώς 
+        \begin{gather*}
+          T(\mathbf{x}+ \mathbf{y}) = T(\mathbf{x}) + T(\mathbf{y}) \\
+          T(\lambda \mathbf{x}) = \lambda T(\mathbf{x}) 
+        \end{gather*}
+    \item Από τη 2η σχέση του ορισμού, προκύπτει ότι
+      \begin{center}
+        αν $ \lambda = 0 $, τότε $ T(\mathbf{0}_{V}) = \mathbf{0}_{W} $ \\
+        αν $ \lambda = -1 $, τότε $T(- \mathbf{x}) = - T(\mathbf{x}) $
+      \end{center}
+    \item Προφανώς $T$ γραμμικός $ \Leftrightarrow  T(k \mathbf{x} + \lambda 
+      \mathbf{y}) =k T(\mathbf{x}) + \lambda T(\mathbf{y}) $
+  \end{myitemize}
 \end{rem}
 
-\begin{prop}
-  Έστω $ V $ και $W$ δύο $ \mathbb{K}- $χώροι. Τότε $ T \colon V \to W $ 
-  γραμμικός μετασχηματισμός αν και μόνον αν \[ T(k \mathbf{x} + \lambda \mathbf{y}) = 
-  k T(\mathbf{x}) + \lambda T(\mathbf{y}) \]
-\end{prop}
-
-\begin{proof}
-\item 
-  \begin{enumerate}[i)]
-    \item 
-      $ 
-      \left.
-        \begin{matrix*}[l]
-          T(\mathbf{0}_{V}) = T(\mathbf{0}_{V}+ \mathbf{0}_{V}) = 
-          T(\mathbf{0}_{V}) + T(\mathbf{0}_{V})  \\ 
-          T(\mathbf{0}_{V}) = T(\mathbf{0}_{V}) + \mathbf{0}_{W}
-        \end{matrix*} 
-      \right\}
-      \Rightarrow \cancel{T(\mathbf{0}_{V})} + T(\mathbf{0}_{V}) =
-      \cancel{T(\mathbf{0}_{V})} + \mathbf{0}_{W} \Rightarrow  
-      T(\mathbf{0}_{V}) = \mathbf{0}_{W} $
-    \item 
-  \end{enumerate}
-\end{proof}
-
-\begin{rem}
-  Αν $ T \colon V \to W $ είναι ένας γραμμικός μετασχηματισμός, τότε για κάθε 
-  $ n \in \mathbb{N} $, $ \mathbf{x}_{i} \in V $ και $ \lambda _{i} \in \mathbb{K} $, 
-  $ i = 1,\ldots, n $ ισχύει:
-  \[
-    T\left(\sum_{i=1}^{n} \lambda _{i} \mathbf{x}_{i}\right) = \sum_{i=1}^{n} 
-    \lambda _{i} T(\mathbf{x}_{i}) 
-  \] 
-\end{rem}
+% \begin{rem}
+%   Αν $ T \colon V \to W $ είναι ένας γραμμικός μετασχηματισμός, τότε για κάθε 
+%   $ n \in \mathbb{N} $, $ \mathbf{x}_{i} \in V $ και $ \lambda _{i} \in \mathbb{K} $, 
+%   $ i = 1,\ldots, n $ ισχύει:
+%   \[
+%     T\left(\sum_{i=1}^{n} \lambda _{i} \mathbf{x}_{i}\right) = \sum_{i=1}^{n} 
+%     \lambda _{i} T(\mathbf{x}_{i}) 
+%   \] 
+% \end{rem}
 
 \begin{example}[Ταυτοτικός]
   Έστω $V$ ένας $ \mathbb{K} - $χώρος και έστω $ T \colon V \to V $ η ταυτοτική 
@@ -119,21 +101,24 @@
     T(\mathbf{x}, \mathbf{y}) = (x,2x+y) 
   \] 
   Τότε η $T$ είναι γραμμικός μετασχηματισμός, αφού, αν $ \mathbf{x}=(x_{1}, y_{1}) $ 
-  και $ \mathbf{y}=(x_{2}, y_{2}) $, τότε $ \mathbf{x}+ \mathbf{y} = 
-  (x_{1}+ x_{2}, y_{1}+ y_{2}) $ και $ \lambda \mathbf{x} = 
-  (\lambda x_{1}, \lambda x_{2}) $ έχουμε:
-  \begin{align*}
-    T(\mathbf{x}+ \mathbf{y}) &= T(x_{1}+ x_{2}, y_{1}+ y_{2}) \\
-                              &= (x_{1}+ x_{2}, 2(x_{1}+ x_{2})+ y_{1}+ y_{2}) \\
-                              &= (x_{1}, 2 x_{1}+ y_{1}) + (x_{2}, 2 x_{2}+ y_{2}) \\
-                              &= T(\mathbf{x}) + T(\mathbf{y})
-                              \intertext{και}
-    T(\lambda \mathbf{x}) &= T(\lambda x_{1}, \lambda y_{1}) \\
-                          &= (\lambda x_{1}, 2 \lambda x_{1}+ \lambda y_{1}) \\
-                          &= \lambda (x_{1}, 2 x_{1}+ y_{1}) \\
-                          &= \lambda T(\mathbf{x})
-  \end{align*}
-
+  και $ \mathbf{y}=(x_{2}, y_{2}) $, τότε \[ \mathbf{x}+ \mathbf{y} = 
+    (x_{1}+ x_{2}, y_{1}+ y_{2}) \quad \text{και} \quad  \lambda \mathbf{x} = 
+  (\lambda x_{1}, \lambda x_{2}) \] και έχουμε:
+\[
+     \begin{aligned}
+      T(\mathbf{x}+ \mathbf{y}) &= T(x_{1}+ x_{2}, y_{1}+ y_{2}) \\
+                                &= (x_{1}+ x_{2}, 2(x_{1}+ x_{2})+ y_{1}+ y_{2}) \\
+                                &= (x_{1}, 2 x_{1}+ y_{1}) + (x_{2}, 2 x_{2}+ y_{2}) \\
+                                &= T(\mathbf{x}) + T(\mathbf{y}) 
+    \end{aligned}
+    \qquad \text{και} \qquad
+    \begin{aligned}
+      T(\lambda \mathbf{x}) &= T(\lambda x_{1}, \lambda y_{1}) \\
+                            &= (\lambda x_{1}, 2 \lambda x_{1}+ \lambda y_{1}) \\
+                            &= \lambda (x_{1}, 2 x_{1}+ y_{1}) \\
+                            &= \lambda T(\mathbf{x})
+    \end{aligned}
+  \]
 \end{example}
 
 \begin{example}
@@ -265,34 +250,6 @@
    \end{align*} 
 \end{proof}
 
-\begin{prop}
-  Ένας γραμμικός μετασχηματισμός $ T \colon V \to W $ ορίζεται από τις τιμές της 
-  $ f(\mathbf{e}_{i}) $ στα στοιχεία $ \mathbf{e}_{i} $ μιας βάσης του χώρου $V$.
-\end{prop}
-\begin{proof}
-  Έστω ότι ο $V$ έχει πεπρασμένη διάσταση, επομένως θα έχει πεπερασμένη βάση, 
-  $ B = \{ \mathbf{e}_{1}, \ldots, \mathbf{e_{n}} \} $. 
-  Για κάθε $ \mathbf{v} \in V $ έχουμε ότι 
-  $ \mathbf{v}= x_{1} \mathbf{e_{1}} + x_{2} \mathbf{e_{2}} +  
-  \cdots + x_{n} \mathbf{e_{n}} $ με $ x_{i} \in \mathbb{K} $. Συνεπώς
-  \begin{align*}
-    T(\mathbf{v}) & = T(x_{1} \mathbf{e_{1}}+ x_{2} \mathbf{e_{2}}+ \cdots + x_{n}
-    \mathbf{e}_{n}) \\ 
-                  &= x_{1}T(\mathbf{e_{1}}) + x_{2}T(\mathbf{e_{2}}) + \cdots + x_{n} 
-                  T(\mathbf{e_{n}}) \\ 
-                  &= x_{1} \mathbf{a}_{1} + x_{2} \mathbf{a}_{2} + \cdots + x_{n} 
-                  \mathbf{a}_{n}
-  \end{align*}
-  όπου τα $ \mathbf{a}_{i} = T(\mathbf{e}_{i}) \in W $, είναι οι τιμές του $T$ στα 
-  στοιχεία της βάσης $B$.
-\end{proof}
-
-\begin{rem}
-  Αν ο $V$ δεν έχει πεπερασμένη διάσταση, τότε το στοιχείο $ \mathbf{v} \in V $ 
-  θα γράφεται ως γραμμικός συνδυασμός πεπερασμένου πλήθους στοιχειών της βάσης του, 
-  έστω $ \mathbf{e_{1}}, \mathbf{e_{2}}, \ldots, \mathbf{e_{n}} $ και η απόδειξη 
-  συνεχίζει όπως παραπάνω.
-\end{rem}
 
 \section{Πυρήνας και Εικόνα Γραμμικού Μετασχηματισμού}
 
@@ -308,6 +265,18 @@
       λέγεται \textcolor{Col1}{εικόνα} του γραμμικού μετασχηματισμού $T$.
   \end{myitemize}
 \end{dfn}
+
+\begin{rem}
+\item {}
+  \begin{myitemize}
+    \item Ισχύει ότι $ \mathbf{0}_{V} \in \ker(T) $, και $ \mathbf{0}_{W} \in \im(T)
+      $, γιατί η $T$ είναι γραμμική και επομένως ισχύει ότι 
+      $ T(\mathbf{0}_{V}) = \mathbf{0}_{W} $.
+    \item Παρατηρούμε ότι $ \ker(T) $ είναι το σύνολο των στοιχείων του $V$, 
+      που απεικονίζονται στο $ \mathbf{0}_{W} $, μέσω του $T$ και $ \im(T) $ είναι το 
+      σύνολο $ T(V) $ των εικόνων των στοιχειών του $V$ μέσω του $T$.
+  \end{myitemize}
+\end{rem}
 
 \begin{example}
   Έστω $V$ και $W$ δυο $ \mathbb{K}- $χώροι. Τότε για τον ταυτοτικό μετασχηματισμό 
@@ -326,12 +295,12 @@
   $ T \colon \mathbb{R}^{3} \to \mathbb{R}^{2} $ με $ T(x,y,z) = (x-y,2z) $. Η 
   $T$ είναι γραμμικός μετασχηματισμός και έχουμε:
   \begin{align*}
-    \ker(T) = \{(x,y,z)\in \mathbb{R}^{3} \; : \; T(x,y,z) = (0,0) \} \\
-    &= \{(x,y,z)\in \mathbb{R}^{3} \; : \; (x-y,2z)=(0,0) \} \\
-    &= \{(x,y,z)\in \mathbb{R}^{3} \; : \; x-y=0 \; \text{και} \; 2z=0 \} \\
-    &= \{(x,y,z)\in \mathbb{R}^{3} \; : \; x=y \; \text{και} \; z=0 \} \\
-    &= \{(x,x,0)\in \mathbb{R}^{3} \; : \; x \in \mathbb{R} \} \\
-    &= < (1,1,0) >  
+    \ker(T) &= \{(x,y,z)\in \mathbb{R}^{3} \; : \; T(x,y,z) = (0,0) \} \\
+            &= \{(x,y,z)\in \mathbb{R}^{3} \; : \; (x-y,2z)=(0,0) \} \\
+            &= \{(x,y,z)\in \mathbb{R}^{3} \; : \; x-y=0 \; \text{και} \; 2z=0 \} \\
+            &= \{(x,y,z)\in \mathbb{R}^{3} \; : \; x=y \; \text{και} \; z=0 \} \\
+            &= \{(x,x,0)\in \mathbb{R}^{3} \; : \; x \in \mathbb{R} \} \\
+            &= < (1,1,0) >  
   \end{align*}
   ενώ για την εικόνα της $T$ έχουμε ότι $ \im(T) = \mathbb{R}^{2}  $, αφού αν 
   $ (a,b) \in \mathbb{R}^{2} $, τότε
@@ -343,17 +312,35 @@
 \begin{thm}
   Έστω $V$ και $W$  δύο  $ \mathbb{K}- $χώροι  και έστω  $ T \colon V \to W $  ένας 
   γραμμικός μετασχηματισμός. Τότε ισχύουν τα παρακάτω:
-  \begin{myitemize}
+  \begin{enumerate}[(i)]
     \item Ο πυρήνας $ \ker(T)  $ του $T$ είναι υπόχωρος του $V$. 
     \item Η εικόνα $ \im(T)  $ του $T$ είναι υπόχωρος του $W$.
-  \end{myitemize}
+  \end{enumerate}
 \end{thm}
 
 \begin{proof}
+\item {}
+  \begin{description}
+    \item [(i)] 
+      Έστω, $ \mathbf{x}, \mathbf{y} \in \ker(T) $ και $ \lambda \in \mathbb{K} $. 
+      Τότε $ T(\mathbf{x}) = T(\mathbf{y}) = \mathbf{0}_{W} $. 
+      Έχουμε
+      \[
+        T(\mathbf{x}+ \mathbf{y}) = T(\mathbf{x}) + T(\mathbf{y}) = 
+        \mathbf{0}_{W} + \mathbf{0}_{W} = \mathbf{0}_{W} \Rightarrow 
+      \mathbf{x}+ \mathbf{y} \in \ker(T) 
+      \] 
+      \[
+        T(\lambda \mathbf{x}) = \lambda T(\mathbf{x}) = \lambda \mathbf{0}_{W} = 
+        \mathbf{0}_{W} \Rightarrow \lambda \mathbf{x} \in \ker(T) 
+      \] 
+
+
+  \end{description}
 
 \end{proof}
 
-\begin{thm}
+\begin{thm}\label{thm:imt}
   Έστω $V$ και $W$ δύο $ \mathbb{K}- $χώροι και έστω $ T \colon V \to W $ ένας 
   γραμμικός μετασχηματισμός. Αν $ B = \{ \mathbf{v_{1}}, \ldots, \mathbf{v_{n}} \} $ 
   είναι μια βάση για τον $V$, τότε
@@ -364,8 +351,64 @@
 \end{thm}
 
 \begin{proof}
-
+  Είναι προφανές ότι $ T(\mathbf{v}_{i}) \in \im(T), \quad \forall i = 1,\ldots, n $. 
+  Αφού $ \im(T) \leq W $ και $ < T(\mathbf{v_{1}}), \ldots, T(\mathbf{v_{n}}) > $ είναι 
+  ο μικρότερος υπόχωρος του $W$ που περιέχει τα διανύσματα $ T(\mathbf{v}_{i}), \quad i =
+  1,\ldots, n$, έπεται ότι 
+  \begin{equation}\label{eq:im1}
+    < T(\mathbf{v_{1}}), \ldots, T(\mathbf{v_{n}}) > \subseteq \im(T)  
+  \end{equation} 
+  Έστω $ \mathbf{y} \in \im(T) $. Τότε $ \mathbf{y}= T(\mathbf{x}) $ για κάποιο $
+  \mathbf{x} \in V $. Αφού το σύνολο $B$ είναι μια βάση του $V$, υπάρχουν $ x_{1}, 
+  \ldots, x_{n} \in \mathbb{K} $, τέτοιοι ώστε
+  \[
+    \mathbf{x} = x_{1} \mathbf{v_{1}} + \cdots x_{n} \mathbf{v_{n}}
+  \] 
+  Οπότε, έχουμε
+  \begin{align*}
+    \mathbf{y} = T(\mathbf{x})  
+    &= T(x_{1} \mathbf{v_{1}}+ x_{2} \mathbf{v_{2}}+ 
+    \cdots + x_{n} \mathbf{v}_{n}) \\ 
+    &= x_{1}T(\mathbf{v_{1}}) + x_{2}T(\mathbf{v_{2}}) + \cdots + x_{n} 
+    T(\mathbf{v_{n}}) \in  < T(\mathbf{v_{1}}), \ldots, T(\mathbf{v_{n}}) >\\ 
+  \end{align*}
+  δηλαδή
+  \begin{equation}\label{eq:im2} 
+    \im(T) \subseteq < T(\mathbf{v_{1}}), \ldots, T(\mathbf{v_{n}}) > 
+  \end{equation} 
+  Οπότε από τις σχέσεις~\eqref{eq:im1} και~\eqref{eq:im2} έχουμε
+  \[
+    \im(T) = < T(\mathbf{v_{1}}), \ldots, T(\mathbf{v_{n}}) >  
+  \]
 \end{proof}
+
+\begin{rem}
+  Επομένως σύμφωνα με το θεώρημα~\ref{thm:imt}, ένας γραμμικός μετασχηματισμός 
+  $ T \colon V \to W $ ορίζεται από τις τιμές που παίρνει στα στοιχεία μιας βάσης 
+  $ B $ του χώρου $V$, με την έννοια ότι η εικόνα του τυχαίου στοιχείου 
+  $ \mathbf{v} \in V $ είναι γραμμικός συνδυασμός των εικόνων των στοιχείων του 
+  $B$ μέσω του μετασχηματισμού $T$. 
+  Πράγματι, αν
+  $ B = \{ \mathbf{e}_{1}, \ldots, \mathbf{e_{n}} \} $, 
+  τότε για το τυχαίο $ \mathbf{v} \in V $ έχουμε ότι 
+  $ \mathbf{v}= x_{1} \mathbf{e_{1}} + x_{2} \mathbf{e_{2}} +  
+  \cdots + x_{n} \mathbf{e_{n}} $ με $ x_{i} \in \mathbb{K} $. Συνεπώς
+  \begin{align*}
+    T(\mathbf{v}) & = T(x_{1} \mathbf{e_{1}}+ x_{2} \mathbf{e_{2}}+ \cdots + x_{n}
+    \mathbf{e}_{n}) \\ 
+                  &= x_{1}T(\mathbf{e_{1}}) + x_{2}T(\mathbf{e_{2}}) + \cdots + x_{n} 
+                  T(\mathbf{e_{n}})
+  \end{align*}
+  όπου τα $ T(\mathbf{e}_{i}) \in W $, είναι οι τιμές του $T$ στα 
+  στοιχεία της βάσης $B$.
+\end{rem}
+
+\begin{rem}
+  Αν ο $V$ δεν έχει πεπερασμένη διάσταση, τότε το στοιχείο $ \mathbf{v} \in V $ 
+  θα γράφεται ως γραμμικός συνδυασμός πεπερασμένου πλήθους στοιχειών της βάσης του, 
+  έστω $ \mathbf{e_{1}}, \mathbf{e_{2}}, \ldots, \mathbf{e_{n}} $ και η απόδειξη 
+  συνεχίζει όπως παραπάνω.
+\end{rem}
 
 \begin{example}
   Έστω οι $ \mathbb{R} - $χώροι $ \textbf{P}_{2}(\mathbb{R}) $ και 
@@ -458,9 +501,9 @@
   αντίστοιχα είναι πεπερασμένης διάστασης, τότε ορίζουμε 
   \begin{myitemize}
     \item την \textcolor{Col1}{μηδενικότητα} του $T$ να είναι η διάσταση 
-      $ \dim \ker(T) $ του $ \ker(T) $ 
-    \item τον \textcolor{Col1}{βαθμό} του $T$ να είναι η διάσταση $ \dim \im(T) $ του 
-      $ \im(T) $.
+      $ \dim \ker(T) $ του πυρήνα του μετασχηματισμού $T$.
+    \item τον \textcolor{Col1}{βαθμό} του $T$ να είναι η διάσταση $ \dim \im(T) $ της 
+     εικόνας του μετασχηματισμού $ T $.
   \end{myitemize}
 \end{dfn}
 
@@ -506,7 +549,7 @@
   Έστω $ V $ και $W$ δύο $ \mathbb{K}- $χώροι και έστω $ T \colon V \to W $ ένας 
   γραμμικός μετασχηματισμός. Αν $ \dim(V) = \dim(W) = n < \infty $ τότε οι 
   παρακάτω προτάσεις είναι ισοδύναμες.
-  \begin{enumerate}[i)]
+  \begin{enumerate}[(i)]
     \item $T$ είναι $ 1-1 $
     \item $T$ είναι επί
     \item $ \rank(T) = \dim(V) $
@@ -560,6 +603,7 @@
   $ T(1,1) = (1,3) = U(1,1) $. Τότε σύμφωνα με το πόρισμα, αφού οι δυο μετασχηματισμοί 
   ταυτίζονται στα στοιχεία μιας βάσης, είναι ίσοι.
 \end{example}
+
 
 
  \end{document}
