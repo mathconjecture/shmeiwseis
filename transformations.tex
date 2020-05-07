@@ -1,5 +1,5 @@
-\input{preamble/preamble.tex}
-\input{preamble/definitions.tex}
+\input{preamble.tex}
+\input{definitions.tex}
 
 
 
@@ -221,11 +221,12 @@
 \begin{proof}
   Αν $ \mathbf{x}, \mathbf{y} \in V $ και $ \lambda \in \mathbb{K} $ τότε
   \begin{align*}
-    S \circ T (\mathbf{x}+ \mathbf{y}) &= S(T(\mathbf{x}+ \mathbf{y})) =
+    (S \circ T) (\mathbf{x}+ \mathbf{y}) &= S(T(\mathbf{x}+ \mathbf{y})) =
     S(T(\mathbf{x})+T(\mathbf{y})) = S(T(\mathbf{x})) + S(T(\mathbf{y})) = 
-    S \circ T (\mathbf{x}) + S \circ T (\mathbf{y}) \\
-    S \circ T(\lambda \mathbf{x}) &= S(T(\lambda \mathbf{x})) = 
-    S(\lambda T(\mathbf{x})) = \lambda S(T(\mathbf{x})) = \lambda S \circ T (\mathbf{x})
+    (S \circ T) (\mathbf{x}) + (S \circ T) (\mathbf{y}) \\
+    (S \circ T)(\lambda \mathbf{x}) &= S(T(\lambda \mathbf{x})) = 
+    S(\lambda T(\mathbf{x})) = \lambda S(T(\mathbf{x})) = \lambda (S \circ T) 
+    (\mathbf{x})
   \end{align*}
 \end{proof}
 
@@ -238,10 +239,11 @@
   $ \mathbf{a} + \mathbf{b}, \lambda \mathbf{a} \in W $ και 
   $ \mathbf{a}= T(\mathbf{x}) $, $ \mathbf{b} = T(\mathbf{y}) $, με 
   $ \mathbf{x}, \mathbf{y} \in V $. Έχουμε
-  \begin{align*}
-    \mathbf{a}+ \mathbf{b} &= T(\mathbf{x}) + T(\mathbf{y}) = T(\mathbf{x}+ \mathbf{y})\\
-    \lambda \mathbf{a} &= \lambda T(\mathbf{x}) = T(\lambda \mathbf{x})
-  \end{align*}
+  \begin{equation*}
+    \mathbf{a}+ \mathbf{b} = T(\mathbf{x}) + T(\mathbf{y}) = T(\mathbf{x}+ \mathbf{y})
+    \quad \text{και} \quad
+    \lambda \mathbf{a} = \lambda T(\mathbf{x}) = T(\lambda \mathbf{x})
+  \end{equation*}
   επομένως
   \begin{align*}
     T^{-1} (\mathbf{a}+ \mathbf{b}) &= \mathbf{x} + \mathbf{y} = T^{-1} (\mathbf{a}) 
@@ -256,26 +258,20 @@
 \begin{dfn}
   Έστω $V$, $K$ δυο $ \mathbb{K}- $χώροι και έστω $ T \colon V \to W $ ένας 
   γραμμικός μετασχηματισμός. Τότε 
+  το σύνολο των στοιχείων $ \mathbf{x} \in V $, που απεικονίζονται στο μηδέν του χώρου 
+  $W$ λέγεται \textcolor{Col1}{πυρήνας} του $T$ και συμβολίζεται με $ \ker(T) $. 
+  Το σύνολο $T(V)$ των εικόνων των στοιχείων του $V$ λέγεται \textcolor{Col1}{εικόνα} 
+  του $T$ και συμβολίζεται με $ \im(T) $. Δηλαδή
   \begin{myitemize}
-    \item Το σύνολο 
-      $ \ker(T) = \{ \mathbf{x} \in V \; : \; T(\mathbf{x}) = \mathbf{0}_{W} \} $ 
-      λέγεται \textcolor{Col1}{πυρήνας} του γραμμικού μετασχηματισμού $T$.
-    \item Το σύνολο 
-      $ \im(T) = \{ T(\mathbf{x}) \; : \; \mathbf{x} \in V \} $ 
-      λέγεται \textcolor{Col1}{εικόνα} του γραμμικού μετασχηματισμού $T$.
+    \item $ \ker(T) = \{ \mathbf{x} \in V \; : \; T(\mathbf{x}) = \mathbf{0}_{W} \} $ 
+    \item $ \im(T) = \{ T(\mathbf{x}) \; : \; \mathbf{x} \in V \} $ 
   \end{myitemize}
 \end{dfn}
 
 \begin{rem}
-\item {}
-  \begin{myitemize}
-    \item Ισχύει ότι $ \mathbf{0}_{V} \in \ker(T) $, και $ \mathbf{0}_{W} \in \im(T)
-      $, γιατί η $T$ είναι γραμμική και επομένως ισχύει ότι 
-      $ T(\mathbf{0}_{V}) = \mathbf{0}_{W} $.
-    \item Παρατηρούμε ότι $ \ker(T) $ είναι το σύνολο των στοιχείων του $V$, 
-      που απεικονίζονται στο $ \mathbf{0}_{W} $, μέσω του $T$ και $ \im(T) $ είναι το 
-      σύνολο $ T(V) $ των εικόνων των στοιχειών του $V$ μέσω του $T$.
-  \end{myitemize}
+  Ισχύει ότι $ \mathbf{0}_{V} \in \ker(T) $, και $ \mathbf{0}_{W} \in \im(T)
+  $, γιατί η $T$ είναι γραμμική και επομένως ισχύει ότι 
+  $ T(\mathbf{0}_{V}) = \mathbf{0}_{W} $.
 \end{rem}
 
 \begin{example}
@@ -325,19 +321,23 @@
       Έστω, $ \mathbf{x}, \mathbf{y} \in \ker(T) $ και $ \lambda \in \mathbb{K} $. 
       Τότε $ T(\mathbf{x}) = T(\mathbf{y}) = \mathbf{0}_{W} $. 
       Έχουμε
-      \[
+      \begin{gather*}
         T(\mathbf{x}+ \mathbf{y}) = T(\mathbf{x}) + T(\mathbf{y}) = 
         \mathbf{0}_{W} + \mathbf{0}_{W} = \mathbf{0}_{W} \Rightarrow 
-      \mathbf{x}+ \mathbf{y} \in \ker(T) 
-      \] 
-      \[
+        \mathbf{x}+ \mathbf{y} \in \ker(T) \\
         T(\lambda \mathbf{x}) = \lambda T(\mathbf{x}) = \lambda \mathbf{0}_{W} = 
         \mathbf{0}_{W} \Rightarrow \lambda \mathbf{x} \in \ker(T) 
-      \] 
-
-
+      \end{gather*}
+    \item [(ii)] 
+      Έστω, $ \mathbf{x}, \mathbf{y} \in \im(T) $ και $ \lambda \in \mathbb{K} $. 
+      Τότε $ \mathbf{x} = T(\mathbf{a}) $ και $ \mathbf{y} = T(\mathbf{b}) $, με 
+      $ \mathbf{a}, \mathbf{b} \in V $. Οπότε
+      \begin{gather*}
+        \mathbf{x} + \mathbf{y} = T(\mathbf{a}) + T(\mathbf{b}) = T(\mathbf{a}+
+        \mathbf{b}) \in \im(T) \\
+        \lambda \mathbf{x} = \lambda T(\mathbf{a}) = T(\lambda \mathbf{a}) \in \im(T)
+      \end{gather*}
   \end{description}
-
 \end{proof}
 
 \begin{thm}\label{thm:imt}
@@ -425,33 +425,33 @@
   $ \im(T) $, θεωρούμε τη βάση $ B = \{ 1,x,x^{2} \} $ του $
   \textbf{P}_{2}(\mathbb{R}) $. Τότε από το προηγούμενο θεώρημα έχουμε
   \begin{align*}
-    \im(T) = < T(B) > &= < T(1), T(x), T(x^{2}) > \\
-                      &= < 
-                      \begin{pmatrix*}[r]
-                        0 & 0 \\
-                        0 & 1
-                      \end{pmatrix*}, 
-                      \begin{pmatrix*}[r]
-                        -1 & 0 \\
-                        0 & 0 
-                      \end{pmatrix*}, 
-                      \begin{pmatrix*}[r]
-                        -3 & 0 \\
-                        0 & 0
-                      \end{pmatrix*}
-                      > \\
-                      & = 
-                      < 
-                      \begin{pmatrix*}[r]
-                        0 & 0 \\
-                        0 & 1
-                      \end{pmatrix*}
-                      , 
-                      \begin{pmatrix*}[r]
-                        -1 & 0 \\
-                        0 & 0
-                      \end{pmatrix*}
-                      >  
+    \im(T) = < T(B) > 
+    &= < T(1), T(x), T(x^{2}) > \\
+    &= < 
+    \begin{pmatrix*}[r]
+      0 & 0 \\
+      0 & 1
+    \end{pmatrix*}, 
+    \begin{pmatrix*}[r]
+      -1 & 0 \\
+      0 & 0 
+    \end{pmatrix*}, 
+    \begin{pmatrix*}[r]
+      -3 & 0 \\
+      0 & 0
+    \end{pmatrix*}
+    > \\
+    & = 
+    < 
+    \begin{pmatrix*}[r]
+      0 & 0 \\
+      0 & 1
+    \end{pmatrix*}
+    , 
+    \begin{pmatrix*}[r]
+      -1 & 0 \\
+      0 & 0
+    \end{pmatrix*}>
   \end{align*}
   γιατί προφανώς $ 
   \begin{pmatrix*}[r]
@@ -492,7 +492,19 @@
 \end{prop}
 
 \begin{proof}
-
+  Πράγματι, έστω ότι ο $T$ είναι $ 1-1 $. Θα δείξουμε ότι το σύνολο $ T(B) $ είναι 
+  γραμμικώς ανεξάρτητο, αφού το ότι παράγει τον $ \im(T) $, είναι ακριβώς το 
+  αποτέλεσμα του προηγούμενου θεωρήματος. Επομένως, έστω $ \lambda _{1}, \ldots, 
+  \lambda _{n} \in \mathbb{K} $ τέτοια ώστε 
+  \begin{align*}
+    \lambda _{1} T(\mathbf{v}_{1}) + \cdots, \lambda _{n} T(\mathbf{v_{n}}) &= 
+    \mathbf{0}_{W} \Rightarrow \\
+    T(\lambda _{1} \mathbf{v}_{1} + \cdots, \lambda _{n} \mathbf{v_{n}}) &=
+    T(\mathbf{0}_{V}) \overset{1-1}{\Rightarrow} \\
+    \lambda _{1} \mathbf{v}_{1} + \cdots, \lambda _{n} \mathbf{v_{n}} &= \mathbf{0}_{V} 
+    \overset{\text{Β \; Βάση}}{\Rightarrow} \\ 
+    \lambda _{1} = \cdots = \lambda _{n} &= 0
+  \end{align*} 
 \end{proof}
 
 \begin{dfn}
@@ -531,7 +543,7 @@
 \end{thm}
 
 \begin{proof}
-
+%todo αποδειξη θεωρήματος μηδενικότητας
 \end{proof}
 
 \begin{thm}
@@ -543,6 +555,21 @@
 \end{thm}
 
 \begin{proof}
+\item {}
+  \begin{description}
+    \item [($ \Rightarrow $)] Έστω ότι $T$ είναι $ 1-1 $. Αν $ \mathbf{x} \in \ker(T)
+      \Rightarrow T(\mathbf{x}) = \mathbf{0}_{W} \Rightarrow T(\mathbf{x}) =
+      T(\mathbf{0}_{V}) \overset{1-1}{\Rightarrow} \mathbf{x} = \mathbf{0}_{v} $. 
+      Επομένως, $ \ker(T ) = \{\mathbf{0}_{V} \} $.
+    \item [($ \Leftarrow $)] Έστω ότι $ \ker(T) = \{ \mathbf{0}_{V} \} $ και έστω 
+      $ \mathbf{x}, \mathbf{y} \in V $ με $ T(\mathbf{x}) = T(\mathbf{y}) $. Θα 
+      δείξουμε ότι $ \mathbf{x} = \mathbf{y} $. Πράγματι, έχουμε
+      \[
+        \mathbf{0}_{W} = T(\mathbf{x}) - T(\mathbf{y}) = T(\mathbf{x} - \mathbf{y}) 
+      \]
+      άρα $ \mathbf{x} - \mathbf{y} \in \ker(T) \Rightarrow \mathbf{x}- \mathbf{y} =
+      \mathbf{0}_{V} \Rightarrow \mathbf{x} = \mathbf{y} $.
+  \end{description}
 \end{proof}
 
 \begin{thm}
@@ -557,7 +584,16 @@
 \end{thm}
 
 \begin{proof}
-
+  Από το θεώρημα διάστασης, έχουμε 
+  \[
+    n(T) + r(T) = \dim(V) 
+  \] 
+  Τώρα χρησιμοποιώντας το προηγούμενο θεώρημα, έχουμε ότι 
+  \[
+    T \quad 1-1 \Leftrightarrow \ker(T) = \{ \mathbf{0}_{V} \} \Leftrightarrow n(T) = 0 
+    \Leftrightarrow r(T) = \dim(V) \Leftrightarrow r(T) = \dim(W) \Leftrightarrow
+    \im(T) = W \Leftrightarrow T \quad \text{επί} 
+   \] 
 \end{proof}
 
 \begin{rem}
@@ -577,7 +613,7 @@
 \end{thm}
 
 \begin{proof}
-
+%todo απόδειξη του θεωρήματος μοναδικού Τ
 \end{proof}
 
 \begin{cor}
