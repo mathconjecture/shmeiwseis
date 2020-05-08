@@ -85,6 +85,7 @@
 
 \section{Παραδείγματα}
 
+
 \begin{example}\label{ex:Rn}
     \textcolor{Col2}{Ο διανυσματικός χώρος $ \mathbb{K}^{n} $ 
     επί του $ \mathbb{K} \quad (n \geq 1) $}
@@ -1005,115 +1006,116 @@
 
 \begin{examples}\label{ex:directsums}
 \item {}
-    \begin{enumerate}
-        \item Έστω $ V = \mathbb{R}^{2} $ και $ W_{1} = 
-            \{(x,y)\in \mathbb{R}^{2} \; : \; y =0 \} $ και 
-            $ W_{2} = \{(x,y)\in \mathbb{R}^{2} \mid x=0 \}$. 
-            Τότε $ \mathbb{R}^{2} = W_{1} \oplus W_{2} $. Πράγματι
-            \begin{gather*} 
-                \text{Έστω} \; (x,y) \in \mathbb{R}^{2} 
-                \Rightarrow (x,y) = \underbrace{(x,0)}_{\in W_{1}}+
-                \underbrace{(0,y)}_{\in W_{2}} \in W_{1} + W_{2} \\
-                \text{Έστω} \; (x,y) \in W_{1} \cap W_{2} \Rightarrow (x,y) 
-                \in W_{1} \; \text{και} \; (x,y) \in W_{2} \Rightarrow y=0 \; 
-                \text{και} \; x=0 \Rightarrow (x,y) = (0,0) 
-                \Rightarrow W_{1} \cap W_{2} = \{ \mathbf{0} \}.
-            \end{gather*} 
-        \item Από το παράδειγμα~\ref{ex:sums} -~\ref{ex:r2} έχουμε ότι 
-            $ \mathbb{R}^{2} = W_{1}+W_{2} $ και επίσης, προφανώς ισχύει ότι 
-            $ W_{1} \cap W_{2} = \{ \mathbf{0} \} $. 
-            Επομένως $ \mathbb{R}^{2} = W_{1} \oplus W_{2} $.
-        \item Έστω $ V = \mathbb{R}^{3} $ και $ W_{1} $ είναι η ευθεία $ \frac{x}{2} = 
-            \frac{y}{3} = \frac{z}{5} = \lambda$ και $ W_{2} $ η ευθεία $ x = -y = 
-            \frac{z}{2} = \mu $, υπόχωροι του $ V $. Έχουμε
-            \begin{align*}
-                W_{1}+W_{2} 
+  \begin{enumerate}
+    \item Έστω $ V = \mathbb{R}^{2} $ και $ W_{1} = 
+      \{(x,y)\in \mathbb{R}^{2} \; : \; y =0 \} $ και 
+      $ W_{2} = \{(x,y)\in \mathbb{R}^{2} \mid x=0 \}$. 
+      Τότε $ \mathbb{R}^{2} = W_{1} \oplus W_{2} $. Πράγματι
+      \begin{gather*} 
+        \text{Έστω} \; (x,y) \in \mathbb{R}^{2} 
+        \Rightarrow (x,y) = \underbrace{(x,0)}_{\in W_{1}}+
+        \underbrace{(0,y)}_{\in W_{2}} \in W_{1} + W_{2} 
+      \end{gather*} 
+      Θα δείξουεμ ότι η $ W_{1} \cap W_{2} = \{ \mathbf{0} \} $. Πράγματι, έστω 
+      \[ (x,y) \in W_{1} \cap W_{2} \Rightarrow (x,y) 
+        \in W_{1} \; \text{και} \; (x,y) \in W_{2} \Rightarrow y=0 \; 
+        \text{και} \; x=0 \Rightarrow (x,y) = (0,0) 
+      \Rightarrow W_{1} \cap W_{2} = \{ \mathbf{0} \} \]
+    \item Από το παράδειγμα~\ref{ex:sums} -~\ref{ex:r2} έχουμε ότι 
+      $ \mathbb{R}^{2} = W_{1}+W_{2} $ και επίσης, προφανώς ισχύει ότι 
+      $ W_{1} \cap W_{2} = \{ \mathbf{0} \} $. 
+      Επομένως $ \mathbb{R}^{2} = W_{1} \oplus W_{2} $.
+    \item Έστω $ V = \mathbb{R}^{3} $ και $ W_{1} $ είναι η ευθεία $ \frac{x}{2} = 
+      \frac{y}{3} = \frac{z}{5} = \lambda$ και $ W_{2} $ η ευθεία $ x = -y = 
+      \frac{z}{2} = \mu $, υπόχωροι του $ V $. Έχουμε
+      \begin{align*}
+        W_{1}+W_{2} 
                 &= \{ 
-                    \mathbf{w_{1}}+ \mathbf{w_{2}} \; : \; 
-                    \mathbf{w_{1}} \in W_{1}, \mathbf{w_{2}} \in W_{2} 
+                  \mathbf{w_{1}}+ \mathbf{w_{2}} \; : \; 
+                  \mathbf{w_{1}} \in W_{1}, \mathbf{w_{2}} \in W_{2} 
                 \} \Leftrightarrow \\
                 &= \{ 
-                    (2 \lambda, 3 \lambda, 5 \lambda ) + 
-                    (\mu, - \mu, 2 \mu) \; : \; \lambda, \mu \in 
-                    \mathbb{R} 
+                  (2 \lambda, 3 \lambda, 5 \lambda ) + 
+                  (\mu, - \mu, 2 \mu) \; : \; \lambda, \mu \in 
+                  \mathbb{R} 
                 \} \Leftrightarrow   \\ 
                 &= \{ 
-                    (2 \lambda + \mu, 3 \lambda - \mu, 5 \lambda + 2 
-                    \mu) \; : \; \lambda, \mu \in \mathbb{R} ) 
+                  (2 \lambda + \mu, 3 \lambda - \mu, 5 \lambda + 2 
+                  \mu) \; : \; \lambda, \mu \in \mathbb{R} ) 
                 \} 
-            \end{align*}
-            Γεωμετρικά, αυτό είναι επίπεδο, το επίπεδο που περιέχει τα σημεία 
-            $ (0,0,0), (2,3,5) $ και $ (1,-1,2) $. Εναλλακτικά για να βρούμε την 
-            εξίσωση του επιπέδου που έχει ως λύση το σύνολο 
-            $ \{ (2 \lambda + \mu , 3 \lambda - \mu, 5 \lambda + 2 \mu) \; : \; 
-            \lambda, \mu \in \mathbb{R} \} $. Ψάχνουμε σταθερές 
-            $ a,b,c \in \mathbb{R} $ έτσι ώστε 
-            \begin{align*}
-                a(2 \lambda + \mu ) + b(3 \lambda - \mu )+ c (5 \lambda + 2 \mu ) =
-                0, \quad \forall \lambda, \mu \in \mathbb{R} \\
-                \lambda (2a +3b+5c) + \mu (a-b+2c) = 0, \quad \forall \lambda, \mu 
-                \in \mathbb{R}
-            \end{align*} 
-            Θέτουμε $ \lambda =1, \mu = 0 $ και παίρνουμε $ 2a+3b+5c =0 $ και 
-            $ \lambda = 0, \mu =1 $ και παίρνουμε $ a-b+2c=0 $. Οπότε έχουμε
-            \[
-                \left.
-                    \begin{matrix*}[r]
-                        2a+3b+5c=0 \\
-                        a-b+2c=0
-                    \end{matrix*}
-                \right\} \Leftrightarrow 
-                \left.
-                    \begin{matrix*}[r]
-                        2a+3b+5c=0 \\
-                        a=b-2c
-                    \end{matrix*}
-                \right\} \Leftrightarrow
-                \left.
-                    \begin{matrix*}[r]
-                        5b+c=0 \\
-                        a=b-2c
-                    \end{matrix*}
-                \right\} \Leftrightarrow
-                \left.
-                    \begin{matrix*}[r]
-                        c=-5b \\
-                        a=b-2c
-                    \end{matrix*}
-                \right\} \Leftrightarrow
-                \left.
-                    \begin{matrix*}[r]
-                        c=-5b \\
-                        a=11b
-                    \end{matrix*}
-                \right\}
-            \]
+      \end{align*}
+      Γεωμετρικά, αυτό είναι επίπεδο, το επίπεδο που περιέχει τα σημεία 
+      $ (0,0,0), (2,3,5) $ και $ (1,-1,2) $. Εναλλακτικά για να βρούμε την 
+      εξίσωση του επιπέδου που έχει ως λύση το σύνολο 
+      $ \{ (2 \lambda + \mu , 3 \lambda - \mu, 5 \lambda + 2 \mu) \; : \; 
+      \lambda, \mu \in \mathbb{R} \} $. Ψάχνουμε σταθερές 
+      $ a,b,c \in \mathbb{R} $ έτσι ώστε 
+      \begin{align*}
+        a(2 \lambda + \mu ) + b(3 \lambda - \mu )+ c (5 \lambda + 2 \mu ) =
+        0, \quad \forall \lambda, \mu \in \mathbb{R} \\
+        \lambda (2a +3b+5c) + \mu (a-b+2c) = 0, \quad \forall \lambda, \mu 
+        \in \mathbb{R}
+      \end{align*} 
+      Θέτουμε $ \lambda =1, \mu = 0 $ και παίρνουμε $ 2a+3b+5c =0 $ και 
+      $ \lambda = 0, \mu =1 $ και παίρνουμε $ a-b+2c=0 $. Οπότε έχουμε
+      \[
+        \left.
+          \begin{matrix*}[r]
+            2a+3b+5c=0 \\
+            a-b+2c=0
+          \end{matrix*}
+        \right\} \Leftrightarrow 
+        \left.
+          \begin{matrix*}[r]
+            2a+3b+5c=0 \\
+            a=b-2c
+          \end{matrix*}
+        \right\} \Leftrightarrow
+        \left.
+          \begin{matrix*}[r]
+            5b+c=0 \\
+            a=b-2c
+          \end{matrix*}
+        \right\} \Leftrightarrow
+        \left.
+          \begin{matrix*}[r]
+            c=-5b \\
+            a=b-2c
+          \end{matrix*}
+        \right\} \Leftrightarrow
+        \left.
+          \begin{matrix*}[r]
+            c=-5b \\
+            a=11b
+          \end{matrix*}
+        \right\}
+      \]
 
-            Άρα για $ b=1, c=-5 $ και $ a=11 $ έχουμε το επίπεδο $ 11x+y-5z=0 $.
+      Άρα για $ b=1, c=-5 $ και $ a=11 $ έχουμε το επίπεδο $ 11x+y-5z=0 $.
 
-            Επομένως έχουμε ότι το επίπεδο $ V: 11x+y-5z=0 $ είναι το 
-            ευθύ άθροισμα των ευθειών $ W_{1}: \frac{x}{2} = \frac{y}{3} = 
-            \frac{z}{5}$ και $ W_{2}: x=-y= \frac{z}{2} $, καθώς 
-            $ V = W_{1}+W_{2} $ και $ W_{1}\cap W_{2} = \{ \mathbf{0} \} $.
+      Επομένως έχουμε ότι το επίπεδο $ V: 11x+y-5z=0 $ είναι το 
+      ευθύ άθροισμα των ευθειών $ W_{1}: \frac{x}{2} = \frac{y}{3} = 
+      \frac{z}{5}$ και $ W_{2}: x=-y= \frac{z}{2} $, καθώς 
+      $ V = W_{1}+W_{2} $ και $ W_{1}\cap W_{2} = \{ \mathbf{0} \} $.
 
-        \item Για το παράδειγμα\ref{ex:sums} -~\ref{ex:sym} έχουμε ότι 
-            $ V = W_{1} \oplus W_{2} $, 
-            γιατί δείξαμε ότι $ V= W_{1}+W_{2} $ και επίσης έχουμε 
-            $ W_{1} \cap W_{2} = \{ \mathbf{0} \} $, 
-            αφού αν $A \in W_{1} \cap W_{2}$, δηλαδή $ A $ συμμετρικός και 
-            αντι-συμμετρικός ταυτόχρονα, μας δίνει ότι $ A^{T} = A $ και 
-            $ A^{T}=-A $ και άρα $ 2A = \mathbf{0} \Rightarrow A= \mathbf{0} $.
+    \item Για το παράδειγμα\ref{ex:sums} -~\ref{ex:sym} έχουμε ότι 
+      $ V = W_{1} \oplus W_{2} $, 
+      γιατί δείξαμε ότι $ V= W_{1}+W_{2} $ και επίσης έχουμε 
+      $ W_{1} \cap W_{2} = \{ \mathbf{0} \} $, 
+      αφού αν $A \in W_{1} \cap W_{2}$, δηλαδή $ A $ συμμετρικός και 
+      αντι-συμμετρικός ταυτόχρονα, μας δίνει ότι $ A^{T} = A $ και 
+      $ A^{T}=-A $ και άρα $ 2A = \mathbf{0} \Rightarrow A= \mathbf{0} $.
 
-        \item Για το παράδειγμα\ref{ex:sums} -~\ref{ex:art} έχουμε ότι 
-            $ V = W_{1} \oplus W_{2} $, 
-            γιατί δείξαμε ότι $ V= W_{1}+W_{2} $ και επίσης έχουμε 
-            $ W_{1} \cap W_{2} = \{ \mathbf{0} \} $, 
-            αφού αν $f \in W_{1} \cap W_{2}$, δηλαδή $ f $ άρτια και περιττή 
-            ταυτόχρονα, μας δίνει ότι $ f(-x)=f(x)=-f(x), \; \forall x \in 
-            \mathbb{R} $ και άρα $ 2f(x) = 0, \; \forall x \in 
-            \mathbb{R} \Rightarrow f(x)=0, \; \forall x \in \mathbb{R} 
-            \Rightarrow f = \mathbf{0} $.
-    \end{enumerate}
+    \item Για το παράδειγμα\ref{ex:sums} -~\ref{ex:art} έχουμε ότι 
+      $ V = W_{1} \oplus W_{2} $, 
+      γιατί δείξαμε ότι $ V= W_{1}+W_{2} $ και επίσης έχουμε 
+      $ W_{1} \cap W_{2} = \{ \mathbf{0} \} $, 
+      αφού αν $f \in W_{1} \cap W_{2}$, δηλαδή $ f $ άρτια και περιττή 
+      ταυτόχρονα, μας δίνει ότι $ f(-x)=f(x)=-f(x), \; \forall x \in 
+      \mathbb{R} $ και άρα $ 2f(x) = 0, \; \forall x \in 
+      \mathbb{R} \Rightarrow f(x)=0, \; \forall x \in \mathbb{R} 
+      \Rightarrow f = \mathbf{0} $.
+  \end{enumerate}
 \end{examples}
 
 

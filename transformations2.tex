@@ -43,22 +43,310 @@
   \[
     T(\mathbf{v}_{j}) = \sum_{i=1}^{m} a_{ij} \mathbf{w}_{j}  
   \] 
-  Ο $ m \times n $ πίνακας $A = (a_{ij}) $ λέγεται πίνακας (αναπαράσταση) του 
-  γραμμικού μετασχηματισμού $T$ ως προς τις διατεταγμένες βάσεις $ \beta $ και 
-  $ \gamma $ και συμβολίζεται με $ \prescript{}{\beta}{(T)}_{\gamma } $.
+  Ο $ m \times n $ πίνακας $A = (a_{ij}) $ λέγεται πίνακας 
+  (\textcolor{Col1}{αναπαράσταση}) του γραμμικού μετασχηματισμού $T$ ως προς τις 
+  διατεταγμένες βάσεις $ \beta $ και 
+  $ \gamma $ και συμβολίζεται με $ [T]_{\beta}^{\gamma} $.
 \end{dfn}
 
 \begin{rem}
-  Αν $ V=W $ και $ \beta = \gamma $ τότε γράφουμε $ A = (T)_{\beta} $ αντί για 
-  $ \prescript{}{\beta }{(T)}_{\beta} $.
+  Αν $ V=W $ και $ \beta = \gamma $ τότε γράφουμε $ A = [T]_{\beta} $ αντί για 
+  $ [T]_{\beta}^{\beta} $.
 \end{rem}
 
+\begin{rem}\label{rem:1}
+\item {}
+  \begin{enumerate}[i)]
+    \item Η $ j- $ στήλη του πίνακα $A$ είναι το διάνυσμα 
+      $ [T(\mathbf{v}_{j})]_{\gamma} $, δηλαδή το διάνυσμα των συντεταγμένων του 
+      $ T(\mathbf{v}_{j}) $ ως προς την διατεταγμένη βάση $\gamma$ του $W$.
+    \item\label{rem:2} Αν $ S \colon V \to W $ είναι ένας γραμμικός μετασχηματισμός 
+      τέτοιος ώστε 
+      \[
+        [S]_{\beta}^{\gamma} = [T]_{\beta}^{\gamma}
+      \] 
+      οπότε $ S(\mathbf{v}_{j}) = T(\mathbf{v}_{j}) $ για όλα τα $ j = 1,\ldots, n $ 
+      τότε από γνωστό πόρισμα έπεται ότι $ S=T $. %todo να βρω και να γράψω το πορισμα
+  \end{enumerate}
+\end{rem}
 
+\begin{example}
+  Έστω $ T \colon \mathbb{R}^{2} \to \mathbb{R}^{3} $ ο γραμμικός μετασχηματισμός με 
+  τύπο 
+  \[
+    T(a_{1}, a_{2}) = (a_{1}+3 a_{2}, 0, 2 a_{1}- 4 a_{2}) 
+  \] 
+  Έστω $\beta$ και $\gamma$ οι συνήθεις διατεταγμένες βάσεις για τους $ \mathbb{R}^{2} $
+  και $ \mathbb{R}^{3} $, αντίστοιχα (δηλαδή, $ \beta = \{ (1,0), (0,1) \} $ και 
+  $ \gamma = \{ \underbrace{(1,0,0)}_{\mathbf{e_{1}}},
+  \underbrace{(0,1,0)}_{\mathbf{e_{2}}}, \underbrace{(0,0,1)}_{\mathbf{e_{3}}} \} $). 
+  Τώρα
+  \begin{align*}
+    T(1,0) = (1,0,2) = 1 \mathbf{e_{1}} + 0 \mathbf{e_{2}}+2 \mathbf{e_{3}}
+    T(0,1) = (3,0,-4) = 3 \mathbf{e_{1}}+ 0 \mathbf{e_{2}}- 4 \mathbf{e_{3}}
+  \end{align*}
+  άρα
+  \[
+    [T]_{\beta}^{\gamma} = 
+    \begin{pmatrix*}[r]
+      1 & 3 \\
+      0 & 0 \\
+      2 & -4
+    \end{pmatrix*}
+  \] 
+\end{example}
 
+\begin{example}
+  Έστω $ T \colon \textbf{P}_{3}(\mathbb{R}) \to \textbf{P}_{2}(\mathbb{R}) $ ο 
+  γραμμικός μετασχηματισμός με τύπο 
+  \[
+    T(p(x)) = p'(x), \quad \forall x \in \mathbb{R} 
+  \]
+  Έστω $ \beta $ και $\gamma$ οι συνήθεις διατεταγμένες βάσεις για τους $
+  \textbf{P}_{3}(\mathbb{R}) $ και $ \textbf{P}_{2}(\mathbb{R}) $, αντίστοιχα 
+  (δηλαδή, $ \beta = \{ 1,x,x^{2},x^{3} \}$ και $\gamma = \{ 1,x,x^{2} \}$). 
+  Τότε
+  \begin{align*}
+    T(1) = 0\cdot 1 +0x +0x^{2}
+    T(x) = 1 \cdot 1 + 0x + 0x^{2}
+    T(x^{2}) = 0 \cdot 1 + 2x +0x^{2} 
+    T(x^{3}) = 0 \cdot 1 + 0x + 3x^{2}
+  \end{align*}
+  άρα 
+  \[
+    [T]_{\beta}^{\gamma} = 
+    \begin{pmatrix*}[r]
+      0 & 1 & 0 & 0 \\
+      0 & 0 & 2 & 0 \\
+      0 & 0 & 0 & 3
+    \end{pmatrix*}
+  \] 
+\end{example}
 
+\begin{prop}
+  Έστω $V$ και $V$ δυο $ \mathbb{K}- $χώροι, και έστω $ T,S \colon V \to W $ δύο 
+  γραμμικοί μετασχηματισμοί. Έστω επίσης, $\lambda$ οποιοσδήποτε αριθμός στο 
+  $ \mathbb{K} $. Τότε οι συναρτήσεις
+  \begin{gather*}
+    T+S \colon V \to W, \quad \text{με τύπο}\quad (T+S)(\mathbf{v}) = 
+    T(\mathbf{v}) + S(\mathbf{v}), \quad \forall \mathbf{v} \in v \\
+    \lambda T \colon V \to W, \quad \text{με τύπο}\quad (\lambda T)(\mathbf{v}) = 
+    \lambda T(\mathbf{v}), \forall \mathbf{v} \in V
+  \end{gather*}
+  είναι γραμμικοί μετασχηματισμοί.
+\end{prop}
 
+\begin{proof}
+  %todo
+\end{proof}
 
+\begin{dfn}
+  Έστω $V$ και $W$ δύο $ \mathbb{K}- $χώροι. Τότε το σύνολο όλων των γραμμικών
+  μετασχηματισμών από τον χώρο $V$ στο χώρο $W$, συμβολίζεται με $ \mathcal{L}(V,W) $. 
+  Αν $ V=W $, τότε γράφουμε $ \mathcal{L}(V) $ αντί για $ \mathcal{L}(V,V) $.
+\end{dfn}
 
+\begin{thm}
+  Έστω $V$ και $W$ δύο $ \mathbb{K}- $χώροι. Τότε το σύνολο $ \mathcal{L}(V,W) $ 
+  με πράξεις όπως ορίστηκαν στην προηγούμενη πρόταση είναι ένας $ \mathbb{K}- $χώρος.
+\end{thm}
 
+\begin{proof}
+  %todo   
+\end{proof}
+
+Αργότερα θα δούμε ότι μπορούμε να ταυτί΄σουμε τον $ \mathcal{L}(V,W) $ με τον $
+\textbf{M}_{m \times n}(\mathbb{K}) $, όπου $n$ και $m$ είναι οι διαστάσεις των 
+$V$ και $W$, αντίστοιχα. 
+
+\begin{thm}
+  Έστω $V$ και $W$ δύο $ \mathbb{K}- $χώροι πεπερασμένης διάστασης με διατεταγμένες 
+  βάσεις $ \beta = \{ \mathbf{v_{1}}, \ldots, \mathbf{v_{n}} \} $ και $ \gamma = 
+  \{ \mathbf{w_{1}}, \ldots, \mathbf{w_{n}} \}$ αντίστοιχα. Έστω $ T,S \in
+  \mathcal{L}(V,W)$. Τότε ισχύουν τα παρακάτω:
+  \begin{enumerate}[i)]
+    \item $ [T+S]_{\beta}^{\gamma} = [T]_{\beta}^{\gamma} + [S]_{\beta}^{\gamma}$
+    \item $ [\lambda]_{\beta}^{\gamma} = \lambda [T]_{\beta}^{\gamma}, \quad \forall
+      \lambda \in \mathbb{K} $
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  %todo   
+\end{proof}
+
+%todo (έχει δώσει 6 ασκήσεις για το σπίτι... να τις λύσω)
+
+\begin{thm}
+  Έστω $ V,W,Z $, τρεις $ \mathbb{K}- $χώροι και έστω $ T \colon V \to W $ και $ S
+  \colon W \to Z $ δύο γραμμικοί μετασχηματισμοί. Τότε ή σύνθεση 
+  $ S \circ T \colon V \to Z $ είναι γραμμική.
+\end{thm}
+
+\begin{proof}
+  %todo  
+\end{proof}
+
+\begin{thm}
+  Έστω $V$ ένας $ \mathbb{K}- $χώρος και έστω $ T, S_{1}, S_{2} \in \mathcal{L}(V) $. 
+  Τότε ισχούν τα παρακάτω:
+  \begin{enumerate}[i)]
+    \item $ T \circ (S_{1}+S_{2}) = (T \circ S_{1}) + (T \circ S_{2}) $ και $
+      (S_{1}+S_{2}) \circ T = (S_{1} \circ T) + (S_{2} \circ T) $
+    \item $ T \circ (S_{1} \circ S_{2}) = (T \circ S_{1}) \circ S_{2} $
+    \item $ T \circ I_{V} = I_{V} \circ T = T $
+    \item $ \lambda (S_{1} \circ S_{2}) = (\lambda S_{1}) \circ S_{2} = S_{1} \circ
+      (\lambda S_{2}), \quad \forall \lambda \in \mathbb{K} $
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  %todo 
+\end{proof}
+
+\begin{thm}
+  Έστω $ V,W,Z $ τρεις $ \mathbb{K}- $χώροι πεπερασμένης διάστασης με διατεταγμένες 
+  βάσεις $ \alpha, \beta $ και $\gamma$, αντίστοιχα. Έστω $ T \in \mathcal{L}(V,W) $ 
+  και $ S \in \mathcal{L}(W,Z) $. Τότε
+  \[
+    [S \circ T]_{\beta}^{\alpha} = [S]_{\gamma}^{\beta} \cdot [T]_{beta}^{\alpha}
+  \] 
+\end{thm}
+
+\begin{proof}
+  %todo 
+\end{proof}
+
+\begin{cor}
+  Έστω $V$ ένας $ \mathbb{K}- $χώρος πεπερασμένης διάστασης με μια διατεταγμένη βάση 
+  $\beta$. Έστω $ T,S \in \mathcal{L}(V) $ Τότε
+  \[
+    [S \circ T]_{\beta} = [S]_{\beta} \cdot [T]_{\beta}
+  \] 
+\end{cor}
+
+\begin{thm}
+  Έστω $V$ ένας $ \mathbb{K}- $χώρος πεπερασμένης διάστασης με μια διατεταγμένη βάση 
+  $ \beta = \{ \mathbf{v_{1}}, \mathbf{v_{2}}, \ldots, \mathbf{v_{n}} \} $. Τότε 
+  ισχύει ότι 
+  \[
+    [I_{V}]_{\beta} = I_{n}
+  \] 
+  όπου $ I_{n} $ είναι ο ταυτοτικός πίνακας.
+\end{thm}
+
+\begin{proof}
+  %todo  
+\end{proof}
+
+\begin{example}
+  Έστω $ S \colon \textbf{P}_{3}(\mathbb{R}) \to \textbf{P}_{2}(\mathbb{R}) $ 
+  και $ T \colon \textbf{P}_{2}(\mathbb{R}) \to \textbf{P}_{3}(\mathbb{R}) $ 
+  με 
+  \[
+    S(p(x)) = p'(x) \quad \text{και} \quad T(p(x)) = \int_{0}^{x} p(t) \,{dt} 
+  \] 
+  Τότε οι $ S,T $ είναι γραμμικές. Έστω $ \alpha = \{ 1,x,x^{2},x^{3} \} $ και 
+  $ \beta = \{ 1,x,x^{2} \} $ οι συνήθεις διατεταγμένες βάσεις των $
+  \textbf{P}_{3}(\mathbb{R}) $ και $ \textbf{P}_{2}(\mathbb{R}) $ αντίστοιχα.
+  Από τον Απειροστικό Λογισμό έπεται ότι $ S \circ T = I_{\textbf{P}_{2}(\mathbb{R})}$. 
+  Ας διαπιστώσουμε αυτό το αποτέλεσμα χρησιμοποιώντας την παραπάνω θεωρία της Γραμμικής
+  Άλγεβρας. Έχουμε
+  \[
+    [S]_{\beta}^{\alpha} = 
+    \begin{pmatrix*}[r]
+      0 & 1 & 0 & 0 \\
+      0 & 0 & 2 & 0 \\
+      0 & 0 & 0 & 3
+    \end{pmatrix*} \quad \text{και} \quad 
+    \begin{pmatrix*}[c]
+      0 & 0 & 0 \\
+      1 & 0 & 0 \\
+      0 & 1/2 & 0 \\
+      0 & 0 & 1/3
+    \end{pmatrix*}
+  \] 
+\end{example}
+Από την προηγούμενη θεωρία, έχουμε ότι 
+\[
+  [S \circ T]_{\beta} = [S]_{\beta}^{\alpha} \cdot [T]_{\alpha}^{\beta} = 
+  \begin{pmatrix*}[r]
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 1
+  \end{pmatrix*} = [I_{\textbf{P}_{2}(\mathbb{R})}]_{\beta}
+\]
+Άρα, από το (ii) της παρατήρησης~\ref{rem:1} παίρνουμε ότι 
+$
+S \circ T = I_{\textbf{P}_{2}(\mathbb{R})} 
+$
+
+\begin{dfn}
+  Έστω $ A \in \textbf{M}_{m \times n}(\mathbb{K})  $. Ορίζουμε μια συνάρτηση 
+  $ T_{A} \colon \mathbb{K}^{n} \to \mathbb{K}^{m} $ ως εξής:
+  \[
+    T_{A}(\mathbf{x}) = A \cdot \mathbf{x}, \quad \text{για κάθε διάνυσμα στήλη} 
+    \quad  \mathbf{x} \in \mathbb{K}^{n}  
+  \] 
+  Η συνάρτηση $ T_{A} $ λέγεται αριστερός--πολλαπλασιασμός μετασχηματισμός.
+\end{dfn}
+
+Επομένως, αν 
+\[
+  A = 
+  \begin{pmatrix}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    a_{21} & a_{22} & \cdots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{m1} & a_{m2} & \cdots & a_{mn} 
+  \end{pmatrix} \quad \text{και} \quad \mathbf{x} = 
+  \begin{pmatrix*}[r] x_{1} \\ x_{2} \\ \vdots \\ x_{n} \end{pmatrix*}
+  \quad \text{τότε} \quad T_{A}(\mathbf{x}) = 
+  \begin{pmatrix*}[c]
+    a_{11} x_{1} + a_{12} x_{2} + \cdots + a_{1n}x_{n} \\
+    a_{21} x_{1} + a_{22} x_{2} + \cdots + a_{2n}x_{n} \\ 
+    \vdots \\
+    a_{m1} x_{1} + a_{m2} x_{2} + \cdots + a_{mn}x_{n} \\ 
+  \end{pmatrix*}_{m \times 1}
+ \] 
+
+ \begin{thm}
+   Έστω $ A \in \textbf{M}_{m \times n}(\mathbb{K}) $. Τότε ο αριστερός-πολλαπλασιασμός
+   μετασχηματισμός $ T_{A} \colon \mathbb{K}^{n} \to \mathbb{K}^{m} $ είναι γραμμική 
+   συνάρτηση. Επιπλέον, αν $ B \in \textbf{M}_{m \times n}(\mathbb{K}) $ και $ \beta ,
+   \gamma $ είναι οι συνήθεις διατεταγμένες βάσεις για τους $ \mathbb{K}^{n} $ και 
+   $ \mathbb{K}^{m} $, αντίστοιχα, τότε έχουμε τις παρακάτω ιδιότητες:
+   \begin{enumerate}[i)]
+     \item $ [T_{A}]_{\gamma}^{\beta} = A $
+     \item $ T_{A} = T_{B} \Leftrightarrow A = B $ 
+     \item $ T_{A+B} = T_{A} + T_{B} $
+     \item $ T_{\lambda A} = \lambda T_{A}, \quad \forall \lambda \in \mathbb{K} $
+     \item Αν $ S \colon \mathbb{K}^{n} \to \mathbb{K}^{m} $ είναι γραμμική, τότε 
+       $ \exists ! \; C \in \textbf{M}_{m \times n}(\mathbb{K}) $ τέτοιος ώστε 
+       $ S=T_{C} $.  Συγκεκριμένα, $ C = [S]_{\gamma}^{\beta} $.
+     \item Αν $ E \in \textbf{M}_{n \times p}(\mathbb{K}) $, τότε $ T_{AE} = T_{A} 
+       \circ T_{E} $ 
+     \item Αν $ m=n $, τότε $ T_{I{n}} = T_{\mathbb{K}^{n}} $
+   \end{enumerate}
+ \end{thm}
+
+ \begin{proof}
+   %todo
+ \end{proof}
+
+ \begin{example}
+   Έστω $ T \colon \mathbb{R}^{2} \to \mathbb{R}^{2} $ με 
+   \[
+   T \begin{pmatrix*}[r] x_{1} \\ x_{2} \end{pmatrix*} = 
+   \begin{pmatrix*}[r] 2 x_{1}- x_{2} \\ x_{1}+ x_{2} \end{pmatrix*}
+    \]  
+    Τότε η $T$ είναι γραμμική αφού $ T = T_{A} $, όπου $ A = 
+    \begin{pmatrix*}[r]
+      2 & -1 \\
+      1 & 1
+    \end{pmatrix*} $
+    Επιπλέον, ο πίνακας της $T$ ως προς τη συνήθη διατεταγμένη βάση $ \beta = \{ (1,0),
+    (0,1) \} $ είναι ο $A$.
+ \end{example}
 
 \end{document}
