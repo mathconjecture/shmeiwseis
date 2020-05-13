@@ -31,18 +31,21 @@
 \item {}
   \begin{myitemize}
     \item Συνήθως, αν δεν υπάρχει σύγχυση, γράφουμε απλώς 
-        \begin{gather*}
-          T(\mathbf{x}+ \mathbf{y}) = T(\mathbf{x}) + T(\mathbf{y}) \\
-          T(\lambda \mathbf{x}) = \lambda T(\mathbf{x}) 
-        \end{gather*}
-    \item Από τη 2η σχέση του ορισμού, προκύπτει ότι
+          $ T(\mathbf{x}+ \mathbf{y}) = T(\mathbf{x}) + T(\mathbf{y}) $ και 
+          $ T(\lambda \mathbf{x}) = \lambda T(\mathbf{x}) $
+    \item Προφανώς $T$ γραμμικός $ \Leftrightarrow  T(k \mathbf{x} + \lambda 
+      \mathbf{y}) =k T(\mathbf{x}) + \lambda T(\mathbf{y}) $
+  \end{myitemize}
+\end{rem}
+
+\begin{rem}
+    Από τη 2η σχέση του ορισμού, προκύπτει ότι
       \begin{center}
         αν $ \lambda = 0 $, τότε $ T(\mathbf{0}_{V}) = \mathbf{0}_{W} $ \\
         αν $ \lambda = -1 $, τότε $T(- \mathbf{x}) = - T(\mathbf{x}) $
       \end{center}
-    \item Προφανώς $T$ γραμμικός $ \Leftrightarrow  T(k \mathbf{x} + \lambda 
-      \mathbf{y}) =k T(\mathbf{x}) + \lambda T(\mathbf{y}) $
-  \end{myitemize}
+      Επομένως αν για μια συνάρτηση δεν ισχύει κάποια από τις παραπανω σχέσεις, τότε 
+      δεν είναι γραμμική.
 \end{rem}
 
 % \begin{rem}
@@ -56,22 +59,22 @@
 % \end{rem}
 
 \begin{example}[Ταυτοτικός]
-  Έστω $V$ ένας $ \mathbb{K} - $χώρος και έστω $ T \colon V \to V $ η ταυτοτική 
+  Έστω $V$ ένας $ \mathbb{K} - $χώρος και έστω $ I_{V} \colon V \to V $ η ταυτοτική 
   συνάρτηση επί του $V$ με 
   \[
-    T(\mathbf{x}) = \mathbf{x}, \quad \mathbf{x} \in V   
+    I_{V}(\mathbf{x}) = \mathbf{x}, \quad \mathbf{x} \in V   
   \]
-  Τότε η $T$ είναι γραμμικός μετασχηματισμός και λέγεται 
-  \textcolor{Col1}{ταυτοτικός} μετασχηματισμός επί του $V$ και συμβολίζεται με $ I_{V} $.
+  Τότε η $I_{V}$ είναι γραμμικός μετασχηματισμός και λέγεται 
+  \textcolor{Col1}{ταυτοτικός} μετασχηματισμός επί του $V$. 
 \end{example}
 
 \begin{example}[Μηδενικός]
-  Έστω $V$ και $W$ δυο $ \mathbb{K}- $χώροι και έστω $ T \colon V \to W $ με 
+  Έστω $V$ και $W$ δυο $ \mathbb{K}- $χώροι και έστω $ T_{0} \colon V \to W $ με 
   \[
-    T(\mathbf{x}) = \mathbf{0}_{W}, \quad \forall \mathbf{x} \in V
+    T_{0}(\mathbf{x}) = \mathbf{0}_{W}, \quad \forall \mathbf{x} \in V
   \]
-  Τότε η $T$ είναι γραμμικός μετασχηματισμός και λέγεται 
-  \textcolor{Col1}{μηδενικός} μετασχηματισμός επί του $V$ και συμβολίζεται με $ T_{0} $.
+  Τότε η $T_{0}$ είναι γραμμικός μετασχηματισμός και λέγεται 
+  \textcolor{Col1}{μηδενικός} μετασχηματισμός επί του $V$.
 \end{example}
 
 \begin{example}[Προβολή επί του άξονα $x$]
@@ -90,7 +93,7 @@
   \[
     T(\mathbf{x}, \mathbf{y}) = (x, -y) 
   \] 
-  Τότε η $T$ είναι γραμμικός μετασχηματισμός και λέγεται \textcolor{Col1}{συμμετριά} ως 
+  Τότε η $T$ είναι γραμμικός μετασχηματισμός και λέγεται \textcolor{Col1}{συμμετρία} ως 
   προς τον άξονα $x$.
 \end{example}
 
@@ -143,7 +146,8 @@
 
 \begin{rem}[Εξήγηση για τον τύπο της $\theta$]
   Έστω $\theta \in [0, 2 \pi)$, και έστω τα διανύσματα βάσης του $ \mathbb{R}^{2} $ 
-  $ \mathbf{e_{1}} = (1,0) $ και $ \mathbf{e_{2}} = (0,1) $. Τότε έχουμε:
+  $ \mathbf{e_{1}} = (1,0) $ και $ \mathbf{e_{2}} = (0,1) $ (όπως θα δούμε παρακάτω μια 
+  γραμμική συνάρτηση ορίζεται στα στοιχεία μιας βάσης). Τότε έχουμε:
   \begin{align*}
     T_{\theta}(\mathbf{e_{1}}) &= T_{\theta}(1,0) = (\cos{\theta}, \sin{\theta}) \\
     T_{\theta}(\mathbf{e_{2}}) &= T_{\theta}(0,1) = (- \sin{\theta} , \cos{\theta})
@@ -152,7 +156,7 @@
   \begin{align*}
     T_{\theta}(\mathbf{u}) = T_{\theta} (x,y) 
     &=  T_{\theta} (x \mathbf{e_{1}}+ y \mathbf{e_{2}}) \\
-    &= T_{\theta }(x \mathbf{e_{1}}) + T_{\theta }(y \mathbf{e_{2}}) \\
+    &= xT_{\theta }(\mathbf{e_{1}}) + yT_{\theta }(\mathbf{e_{2}}) \\
     &= x (\cos{\theta}, \sin{\theta}) + y (- \sin{\theta} , \cos{\theta}) \\
     &= (x \cos{\theta} - y \sin{\theta} , x \sin{\theta} + y \cos{\theta}) \\
   \end{align*} 
@@ -215,8 +219,8 @@
 \end{example}
 
 \begin{prop}
-  Η σύνθεση $ S \circ T $ δύο γραμμικών μετασχηματισμών $ T \colon E \to V $ και 
-  $ S \colon V \to W $ είναι επίσης γραμμικός μετασχηματισμός.
+  Έστω  $ T \colon E \to V $ και $ S \colon V \to W $ δυο γραμμικοί μετασχηματισμοί. 
+  Τότε και η σύνθεση $ S \circ T $ είναι επίσης γραμμικός μετασχηματισμός.
 \end{prop}
 \begin{proof}
   Αν $ \mathbf{x}, \mathbf{y} \in V $ και $ \lambda \in \mathbb{K} $ τότε
@@ -237,8 +241,9 @@
 \begin{proof}
   Έστω $ \mathbf{a}, \mathbf{b} \in W $ και $ \lambda \in \mathbb{K} $. Τότε 
   $ \mathbf{a} + \mathbf{b}, \lambda \mathbf{a} \in W $ και 
-  $ \mathbf{a}= T(\mathbf{x}) $, $ \mathbf{b} = T(\mathbf{y}) $, με 
-  $ \mathbf{x}, \mathbf{y} \in V $. Έχουμε
+  $ \mathbf{a}= T(\mathbf{x}) $, $ \mathbf{b} = T(\mathbf{y}) $, για κάποια
+  $ \mathbf{x}, \mathbf{y} \in V $. 
+  Έχουμε
   \begin{equation*}
     \mathbf{a}+ \mathbf{b} = T(\mathbf{x}) + T(\mathbf{y}) = T(\mathbf{x}+ \mathbf{y})
     \quad \text{και} \quad
@@ -258,10 +263,10 @@
 \begin{dfn}
   Έστω $V$, $K$ δυο $ \mathbb{K}- $χώροι και έστω $ T \colon V \to W $ ένας 
   γραμμικός μετασχηματισμός. Τότε 
-  το σύνολο των στοιχείων $ \mathbf{x} \in V $, που απεικονίζονται στο μηδέν του χώρου 
-  $W$ λέγεται \textcolor{Col1}{πυρήνας} του $T$ και συμβολίζεται με $ \ker(T) $. 
-  Το σύνολο $T(V)$ των εικόνων των στοιχείων του $V$ λέγεται \textcolor{Col1}{εικόνα} 
-  του $T$ και συμβολίζεται με $ \im(T) $. Δηλαδή
+  το σύνολο των στοιχείων $ \mathbf{x} \in V $, που απεικονίζονται  
+  στο μηδέν του χώρου $W$ λέγεται \textcolor{Col1}{πυρήνας} του $T$ και συμβολίζεται με 
+  $ \ker(T) $.  Το σύνολο $T(V)$ των εικόνων των στοιχείων του $V$ λέγεται 
+  \textcolor{Col1}{εικόνα} του $T$ και συμβολίζεται με $ \im(T) $. Δηλαδή
   \begin{myitemize}
     \item $ \ker(T) = \{ \mathbf{x} \in V \; : \; T(\mathbf{x}) = \mathbf{0}_{W} \} $ 
     \item $ \im(T) = \{ T(\mathbf{x}) \; : \; \mathbf{x} \in V \} $ 
@@ -289,7 +294,7 @@
 \begin{example}
   Έστω οι $ \mathbb{R}- $χώροι $ \mathbb{R}^{3} $ και $ \mathbb{R}^{2} $ και έστω 
   $ T \colon \mathbb{R}^{3} \to \mathbb{R}^{2} $ με $ T(x,y,z) = (x-y,2z) $. Η 
-  $T$ είναι γραμμικός μετασχηματισμός και έχουμε:
+  $T$ είναι γραμμικός μετασχηματισμός (δείξτε το) και έχουμε:
   \begin{align*}
     \ker(T) &= \{(x,y,z)\in \mathbb{R}^{3} \; : \; T(x,y,z) = (0,0) \} \\
             &= \{(x,y,z)\in \mathbb{R}^{3} \; : \; (x-y,2z)=(0,0) \} \\
@@ -298,11 +303,24 @@
             &= \{(x,x,0)\in \mathbb{R}^{3} \; : \; x \in \mathbb{R} \} \\
             &= < (1,1,0) >  
   \end{align*}
-  ενώ για την εικόνα της $T$ έχουμε ότι $ \im(T) = \mathbb{R}^{2}  $, αφού αν 
-  $ (a,b) \in \mathbb{R}^{2} $, τότε
+  Μία βάση για τον $ \ker(T) $ είναι η $ B = \{ (1,1,0) \} $, αφού το διάνυσμα 
+  $ (1,1,0) $ είναι γραμμικώς ανεξάρτητο, ως μη μηδενικό. Μπορούμε να επεκτείνουμε 
+  αυτή τη βάση, σε μια βάση για τον $ \mathbb{R}^{3} $, ως εξής:
+  \[
+    B_{\mathbb{R}^{3}} = \{ (1,1,0), (0,1,0), (0,0,1) \}  
+  \]
+  ενώ για την εικόνα της $T$ έχουμε, ότι άν  
+  $ (a,b) \in \mathbb{R}^{2} $, τότε ζητάμε $ (x,y,z) \in \mathbb{R}^{3} $ ώστε 
+  \begin{align*}
+    T(x,y,z) &= (a,b) \Leftrightarrow \\ 
+    (x-y,2z) &= (a,b) \Leftrightarrow \\
+    x= y+a \quad &\text{και} \quad z = b/2
+   \end{align*} 
+   Επομένως, για κάθε $ (a,b) \in \mathbb{R}^{2} $, έχουμε ότι 
   \[
     T(2a,a, b/2)= (2a-a,2(b/2)) = (a,b)
   \] 
+  'Αρα $ \im(T) = \mathbb{R}^{2} $
 \end{example}
 
 \begin{thm}
@@ -421,11 +439,12 @@
       0 & p(0)
     \end{pmatrix*}, \quad p \in \textbf{P}_{2}(\mathbb{R})
   \] 
-  Η $T$ είναι γραμμικός μετασχηματισμός και για να βρούμε βάση και τη διάσταση του 
+  Η $T$ είναι γραμμικός μετασχηματισμός (δείξτε το) και για να βρούμε βάση και 
+  τη διάσταση του 
   $ \im(T) $, θεωρούμε τη βάση $ B = \{ 1,x,x^{2} \} $ του $
   \textbf{P}_{2}(\mathbb{R}) $. Τότε από το προηγούμενο θεώρημα έχουμε
   \begin{align*}
-    \im(T) = < T(B) > 
+    \im(T) = 
     &= < T(1), T(x), T(x^{2}) > \\
     &= < 
     \begin{pmatrix*}[r]
@@ -482,7 +501,7 @@
   Το προηγούμενο παράδειγμα δείχνει ότι αν $ B = \{ \mathbf{v_{1}}, \ldots, 
   \mathbf{v_{n}} \} $ είναι μια βάση για έναν $ \mathbb{K}- $χώρο και 
   $ T \colon V \to W $ είναι ένας γραμμικός μετασχηματισμός, τότε δεν ισχύει 
-  απαραίτητα ότι το σύνολο $ T(B) = 
+  απαραίτητα ότι και το σύνολο $ T(B) = 
   \{ T(\mathbf{v_{1}}), \ldots, T(\mathbf{v_{n}}) \}$ είναι μια βάση για τον $ \im(T) $.
 \end{rem}
 
@@ -492,7 +511,8 @@
 \end{prop}
 
 \begin{proof}
-  Πράγματι, έστω ότι ο $T$ είναι $ 1-1 $. Θα δείξουμε ότι το σύνολο $ T(B) $ είναι 
+  Πράγματι, έστω ότι ο $T$ είναι $ 1-1 $. Για να δείξουμε ότι το σύνολο $T(B) $ είναι 
+  βάση, αρκεί να δείξουμε ότι το σύνολο $ T(B) $ είναι 
   γραμμικώς ανεξάρτητο, αφού το ότι παράγει τον $ \im(T) $, είναι ακριβώς το 
   αποτέλεσμα του προηγούμενου θεωρήματος. Επομένως, έστω $ \lambda _{1}, \ldots, 
   \lambda _{n} \in \mathbb{K} $ τέτοια ώστε 
@@ -533,13 +553,11 @@
 \begin{thm}[Θεώρημα Διάστασης]
   Έστω $ V $ και $W$ δύο $ \mathbb{K}- $χώροι και έστω $ T \colon V \to W $ ένας 
   γραμμικός μετασχηματισμός. Αν ο $V$ είναι πεπερασμένης διάστασης, τότε 
-  \[
+  \begin{align*}
+    \dim(\ker(T)) + \dim(\im(T)) = \dim(V) 
+    \intertext{ή ισοδύναμα}
     \Null(T) + \rank(T) = \dim (V) 
-  \]
-  ή με άλλα λόγια
-  \begin{center}
-    μηδενικότητα του $T$ $ + $ βαθμός του $T$ $ = \dim (V) $ 
-  \end{center}
+  \end{align*}
 \end{thm}
 
 \begin{proof}
@@ -572,7 +590,7 @@
   \end{description}
 \end{proof}
 
-\begin{thm}
+\begin{thm}\zlabel{thm:3one}
   Έστω $ V $ και $W$ δύο $ \mathbb{K}- $χώροι και έστω $ T \colon V \to W $ ένας 
   γραμμικός μετασχηματισμός. Αν $ \dim(V) = \dim(W) = n < \infty $ τότε οι 
   παρακάτω προτάσεις είναι ισοδύναμες.
@@ -640,6 +658,18 @@
   ταυτίζονται στα στοιχεία μιας βάσης, είναι ίσοι.
 \end{example}
 
+\begin{prop}
+  Έστω $V$ και $W$ δυο $ \mathbb{K}- $χώροι, πεπερασμένης διάστασης και έστω 
+  $ T \colon V \to W $ ένας γραμμικός μετασχηματισμός. Να δείξετε ότι 
+  \begin{enumerate}[i)]
+    \item $ \dim(V) < \dim(W) \Rightarrow T $ δεν είναι επί
+    \item $ \dim(V) > \dim(W) \Rightarrow T $ δεν είναι $ 1-1 $ 
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  %todo να βρω τις αποδείξεις και να τις γραψω
+\end{proof}
 
 
  \end{document}

@@ -1,9 +1,10 @@
-\input{preamble/preamble.tex}
-\input{preamble/definitions.tex}
+\input{preamble.tex}
+\input{definitions.tex}
 
 \everymath{\displaystyle}
 
 \begin{document}
+
 
 \chapter{Πεπλεγμένες Συναρτήσεις}
 
@@ -24,11 +25,11 @@
 \end{enumerate}
 τότε υπάρχει μοναδική συνάρτηση $ y=y(x) $ ορισμένη στο $ I_0 \subseteq \mathbb{R} $ 
 τέτοια ώστε:
-\begin{enumerate}[(i)]
+\begin{myitemize}
     \item $y_0 = y(x_0)$
     \item $F(x,y(x)) = 0 \quad \forall x \in I_0$
     \item $ \dv{y}{x} = - \frac{F_x}{F_y} \quad \forall x \in I_0  $
-\end{enumerate}
+\end{myitemize}
 
 \begin{rem}
     Ο παραπάνω τύπος για την παράγωγο $ \dv{y}{x} $ προκύπτει ως λύση της εξίσωσης
@@ -36,11 +37,9 @@
         \pdv{F}{x} + \pdv{F}{y}\dv{y}{x} = 0 
     \] 
     η οποία προκύπτει με παραγώγιση της $ F(x,y) = 0$, αν θεωρήσουμε ότι $ y=y(x) $.
-
 \end{rem}
 
 \subsection{Η εξίσωση \ensuremath{F(x,y,z) = 0}}
-
 
 Έστω $ F(x,y,z) = 0 $, όπου $F\colon D \to \mathbb{R}$ μια συνάρτηση με πεδίο ορισμού 
 ένα ανοικτό υποσύνολο $ D $ του $ \mathbb{R}^{3}  $ και $ (x_0,y_0,z_0) $ ένα 
@@ -52,12 +51,12 @@
 \end{enumerate}
 τότε υπάρχει μοναδική συνάρτηση, $ z=z(x,y) $ ορισμένη στο 
 $ D_0 \subseteq \mathbb{R}^{2} $ τέτοια ώστε:
-\begin{enumerate}[(i)]
+\begin{myitemize}
     \item $ z_0 = z(x_0,y_0) $
     \item $ F(x,y,z(x,y)) = 0  \quad \forall (x,y)\in  D_0 $
     \item $ \pdv{z}{x} = - \frac{F_x}{F_z} $, $ \pdv{z}{y} = - \frac{F_y}{Fz}\quad 
         \forall (x,y) \in D_0$
-\end{enumerate}
+\end{myitemize}
 
 \begin{rem}
     Οι παραπάνω τύποι για τις παραγώγους $ \pdv{z}{x}, \pdv{z}{y} $ προκύπτουν 
@@ -91,7 +90,7 @@ $ D_0 \subseteq \mathbb{R}^{2} $ τέτοια ώστε:
 \end{enumerate}
 τότε υπάρχουν μοναδικές συναρτήσεις $ y = y(x) $ και $ z = z(x) $ τάξης $ C^{1} $ 
 τέτοιες ώστε:
-\begin{enumerate}[(i)]
+\begin{myitemize}
     \item \begin{tabular}{l}
             $ y_0 = y(x_0) $ \\
             $ z_0 = z(x_0) $
@@ -102,7 +101,7 @@ $ D_0 \subseteq \mathbb{R}^{2} $ τέτοια ώστε:
         \end{tabular}
     \item $ \dv{y}{x} = - \frac{\pdv{(F,G)}{(x,z)}}{\pdv{(F,G)}{(y,z)}} $, 
         $ \dv{z}{x} = - \frac{\pdv{(F,G)}{(y,x)}}{\pdv{(F,G)}{(y,z)}} $
-\end{enumerate}
+\end{myitemize}
 
 \begin{rem}
     Οι παραπάνω τύποι για τις τιμές των μερικών παραγώγων $ \dv{y}{x}, \dv{z}{x}$ 
@@ -138,7 +137,7 @@ $ D_0 \subseteq \mathbb{R}^{2} $ τέτοια ώστε:
 \end{enumerate}
 τότε υπάρχουν μοναδικές συναρτήσεις $ z = z(x,y) $ και $ w = w(x,y) $ τάξης 
 $ C^{1} $ τέτοιες ώστε:
-\begin{enumerate}[(i)]
+\begin{myitemize}
     \item \begin{tabular}{l}
             $ z_0 = z(x_0,y_0) $ \\
             $ w_0 = w(x_0,y_0) $
@@ -152,7 +151,7 @@ $ C^{1} $ τέτοιες ώστε:
         \frac{\pdv{(F,G)}{(y,w)}}{\pdv{(F,G)}{(z,w)}} $, $ \pdv{w}{x} = -
         \frac{\pdv{(F,G)}{(z,x)}}{\pdv{(F,G)}{(z,w)}} $, $ \pdv{w}{y} = -
         \frac{\pdv{(F,G)}{(z,y)}}{\pdv{(F,G)}{(z,w)}} $
-\end{enumerate}
+\end{myitemize}
 
 \begin{rem}
     Οι παραπάνω τύποι για τις τιμές των μερικών παραγώγων 

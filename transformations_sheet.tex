@@ -1,0 +1,80 @@
+\input{preamble.tex}
+\input{definitions.tex}
+
+
+
+
+
+\chapter{Μετασχηματισμοί}
+
+
+
+\begin{document}
+
+
+
+Έστω $V$ και $W$ δυο $ \mathbb{K}- $χώροι πεπερασμένης διάστασης, με 
+$ \dim(V) = n $ και $ \dim(W) = m $ και έστω $ \mathcal{L}(V,W) $ ο χώρος των 
+γραμμικών μετασχηματισμών από τον $V$ στον $W$. Έστω επίσης ο χώρος 
+$ \textbf{M}_{m \times n}(\mathbb{K}) $ των $ m \times n $ πινάκων με στοιχεία από το 
+$ \mathbb{K} $. Έστω επίσης, οι βάσεις 
+\begin{align*}
+  \beta &= \{ \mathbf{v_{1}}, \ldots, \mathbf{v_{n}} \} \quad \text{βάση του $V$} \\
+  \beta' &= \{ \mathbf{w_{1}}, \ldots, \mathbf{w_{m}} \} \quad \text{βάση του $W$}
+\end{align*} 
+\begin{myitemize}
+  \item Σε κάθε κάθε στοιχείο $ A \in \textbf{M}_{m \times n}(\mathbb{K}) $, δηλαδή 
+    σε κάθε πίνακα $ A_{m \times n} $ αντιστοιχίζουμε 
+    ένα στοιχείο $ T_{A} \in \mathcal{L}(V,W) $, δηλαδή ένα γραμμικό μετασχηματισμό 
+    $ T_{A} \colon V \to W $ με τύπο:
+    \[ 
+      T_{A}(\mathbf{x}) = A \cdot \mathbf{x} \quad \text{\color{Col1}
+      αριστερός-πολλαπλασιασμός (με $A$)}
+    \]
+  \item Σε κάθε στοιχείο $ T \in \mathcal{L}(V,W) $, δηλαδή σε κάθε γραμμικό
+    μετασχηματισμό $ T \colon V \to W $ αντιστοιχίζουμε ένα στοιχείο 
+    $ A \in \textbf{M}_{m \times n}(\mathbb{K})$, δηλαδή έναν  πίνακα 
+    $ A_{m \times n} $ με τη βοήθεια των 2 βάσεων:
+    \begin{align*}
+      A = [T]_{\beta}^{\beta'} = 
+      \begin{pmatrix*}[c]
+        \vrule & \vrule & & \vrule \\
+        T(\mathbf{v_{1}}) & T(\mathbf{v_{2}}) & \cdots & T(\mathbf{v_{n}}) \\
+        \vrule & \vrule & & \vrule
+      \end{pmatrix*} \quad \text{\color{Col1} αναπαράσταση (του $T$)}
+    \end{align*} 
+    όπου ο πίνακας $A$ περιέχει ως στήλες τα $ [T(\mathbf{v}_{j})]_{\beta'} $ 
+    με $ j = 1,\ldots, n $, δηλαδή τις συντεταγμένες των  εικόνων μέσω του $T$, 
+    των στοιχείων της βάσης $ \beta $ του $V$, εκφρασμένες ως προς τη βάση 
+    $ \beta' $ του $W$.  Πιο συγκεκριμένα:
+    \[
+      \left.
+        \begin{aligned}
+          T(\mathbf{v}_{1}) &= \textcolor{Col1}{a_{11}} \mathbf{w_{1}}+
+          \textcolor{Col1}{a_{21}} \mathbf{w_{2}} + 
+          \cdots + \textcolor{Col1}{a_{m1}} \mathbf{w_{m}} \\
+          T(\mathbf{v}_{2}) &= \textcolor{Col2}{a_{12}} \mathbf{w_{1}}+
+          \textcolor{Col2}{a_{22}} \mathbf{w_{2}} + 
+          \cdots + \textcolor{Col2}{a_{m2}} \mathbf{w_{m}} \\
+                            &\vdots \\
+          T(\mathbf{v}_{2}) &= \textcolor{blue}{a_{1n}} \mathbf{w_{1}}+
+          \textcolor{blue}{a_{2n}} \mathbf{w_{2}} + 
+          \cdots + \textcolor{blue}{a_{mn}} \mathbf{w_{m}} \\
+        \end{aligned} 
+      \right\}
+      \quad \longrightarrow \quad
+      \begin{aligned}
+        A = [T]_{\beta}^{\beta'} = 
+        \begin{pmatrix*}[r]
+          \textcolor{Col1}{a_{11}} & \textcolor{Col2}{a_{12}} & \cdots &
+          \textcolor{blue}{a_{1n}} \\
+          \textcolor{Col1}{a_{21}} & \textcolor{Col2}{a_{22}} & \cdots &
+          \textcolor{blue}{a_{2n}} \\
+          \vdots & \vdots & \vdots \\
+          \textcolor{Col1}{a_{m1}} & \textcolor{Col2}{a_{m2}} & \cdots &
+          \textcolor{blue}{a_{mn}} \\
+        \end{pmatrix*}
+      \end{aligned}
+    \]
+\end{myitemize}
+\end{document}

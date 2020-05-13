@@ -1,8 +1,13 @@
-\input{preamble/preamble.tex}
-\input{preamble/definitions.tex}
+\input{preamble.tex}
+\input{definitions.tex}
 
+\zexternaldocument{transformations}
 
 \pagestyle{vangelis}
+
+
+
+
 
 
 \begin{document}
@@ -82,8 +87,8 @@
   \underbrace{(0,1,0)}_{\mathbf{e_{2}}}, \underbrace{(0,0,1)}_{\mathbf{e_{3}}} \} $). 
   Τώρα
   \begin{align*}
-    T(1,0) = (1,0,2) = 1 \mathbf{e_{1}} + 0 \mathbf{e_{2}}+2 \mathbf{e_{3}}
-    T(0,1) = (3,0,-4) = 3 \mathbf{e_{1}}+ 0 \mathbf{e_{2}}- 4 \mathbf{e_{3}}
+    T(1,0) &= (1,0,2) = 1 \mathbf{e_{1}} + 0 \mathbf{e_{2}}+2 \mathbf{e_{3}} \\
+    T(0,1) &= (3,0,-4) = 3 \mathbf{e_{1}}+ 0 \mathbf{e_{2}}- 4 \mathbf{e_{3}}
   \end{align*}
   άρα
   \[
@@ -107,9 +112,9 @@
   (δηλαδή, $ \beta = \{ 1,x,x^{2},x^{3} \}$ και $\gamma = \{ 1,x,x^{2} \}$). 
   Τότε
   \begin{align*}
-    T(1) = 0\cdot 1 +0x +0x^{2}
-    T(x) = 1 \cdot 1 + 0x + 0x^{2}
-    T(x^{2}) = 0 \cdot 1 + 2x +0x^{2} 
+    T(1) = 0\cdot 1 +0x +0x^{2} \\
+    T(x) = 1 \cdot 1 + 0x + 0x^{2} \\
+    T(x^{2}) = 0 \cdot 1 + 2x +0x^{2} \\ 
     T(x^{3}) = 0 \cdot 1 + 0x + 3x^{2}
   \end{align*}
   άρα 
@@ -162,11 +167,11 @@ $V$ και $W$, αντίστοιχα.
 \begin{thm}
   Έστω $V$ και $W$ δύο $ \mathbb{K}- $χώροι πεπερασμένης διάστασης με διατεταγμένες 
   βάσεις $ \beta = \{ \mathbf{v_{1}}, \ldots, \mathbf{v_{n}} \} $ και $ \gamma = 
-  \{ \mathbf{w_{1}}, \ldots, \mathbf{w_{n}} \}$ αντίστοιχα. Έστω $ T,S \in
-  \mathcal{L}(V,W)$. Τότε ισχύουν τα παρακάτω:
+  \{ \mathbf{w_{1}}, \ldots, \mathbf{w_{n}} \} $ αντίστοιχα. Έστω $ T,S \in
+  \mathcal{L}(V,W) $. Τότε ισχύουν τα παρακάτω:
   \begin{enumerate}[i)]
     \item $ [T+S]_{\beta}^{\gamma} = [T]_{\beta}^{\gamma} + [S]_{\beta}^{\gamma}$
-    \item $ [\lambda]_{\beta}^{\gamma} = \lambda [T]_{\beta}^{\gamma}, \quad \forall
+    \item $ [\lambda T]_{\beta}^{\gamma} = \lambda [T]_{\beta}^{\gamma}, \quad \forall
       \lambda \in \mathbb{K} $
   \end{enumerate}
 \end{thm}
@@ -191,7 +196,7 @@ $V$ και $W$, αντίστοιχα.
   Έστω $V$ ένας $ \mathbb{K}- $χώρος και έστω $ T, S_{1}, S_{2} \in \mathcal{L}(V) $. 
   Τότε ισχούν τα παρακάτω:
   \begin{enumerate}[i)]
-    \item $ T \circ (S_{1}+S_{2}) = (T \circ S_{1}) + (T \circ S_{2}) $ και $
+    \item $ T \circ (S_{1}+S_{2}) = (T \circ S_{1}) + (T \circ S_{2}) $ \quad και \quad $
       (S_{1}+S_{2}) \circ T = (S_{1} \circ T) + (S_{2} \circ T) $
     \item $ T \circ (S_{1} \circ S_{2}) = (T \circ S_{1}) \circ S_{2} $
     \item $ T \circ I_{V} = I_{V} \circ T = T $
@@ -209,7 +214,7 @@ $V$ και $W$, αντίστοιχα.
   βάσεις $ \alpha, \beta $ και $\gamma$, αντίστοιχα. Έστω $ T \in \mathcal{L}(V,W) $ 
   και $ S \in \mathcal{L}(W,Z) $. Τότε
   \[
-    [S \circ T]_{\beta}^{\alpha} = [S]_{\gamma}^{\beta} \cdot [T]_{beta}^{\alpha}
+    [S \circ T]_{\alpha}^{\gamma} = [S]_{\beta}^{\gamma} \cdot [T]_{\alpha}^{\beta}
   \] 
 \end{thm}
 
@@ -253,12 +258,12 @@ $V$ και $W$, αντίστοιχα.
   Ας διαπιστώσουμε αυτό το αποτέλεσμα χρησιμοποιώντας την παραπάνω θεωρία της Γραμμικής
   Άλγεβρας. Έχουμε
   \[
-    [S]_{\beta}^{\alpha} = 
+    [S]_{\alpha}^{\beta} = 
     \begin{pmatrix*}[r]
       0 & 1 & 0 & 0 \\
       0 & 0 & 2 & 0 \\
       0 & 0 & 0 & 3
-    \end{pmatrix*} \quad \text{και} \quad 
+    \end{pmatrix*} \quad \text{και} \quad [T]_{\beta}^{\alpha} = 
     \begin{pmatrix*}[c]
       0 & 0 & 0 \\
       1 & 0 & 0 \\
@@ -269,7 +274,7 @@ $V$ και $W$, αντίστοιχα.
 \end{example}
 Από την προηγούμενη θεωρία, έχουμε ότι 
 \[
-  [S \circ T]_{\beta} = [S]_{\beta}^{\alpha} \cdot [T]_{\alpha}^{\beta} = 
+  [S \circ T]_{\beta} = [S]_{\alpha}^{\beta} \cdot [T]_{\beta}^{\alpha} = 
   \begin{pmatrix*}[r]
     1 & 0 & 0 \\
     0 & 1 & 0 \\
@@ -288,7 +293,8 @@ $
     T_{A}(\mathbf{x}) = A \cdot \mathbf{x}, \quad \text{για κάθε διάνυσμα στήλη} 
     \quad  \mathbf{x} \in \mathbb{K}^{n}  
   \] 
-  Η συνάρτηση $ T_{A} $ λέγεται αριστερός--πολλαπλασιασμός μετασχηματισμός.
+  Η συνάρτηση $ T_{A} $ λέγεται \textcolor{Col1}{αριστερός--πολλαπλασιασμός
+  μετασχηματισμός}.
 \end{dfn}
 
 Επομένως, αν 
@@ -308,45 +314,371 @@ $
     \vdots \\
     a_{m1} x_{1} + a_{m2} x_{2} + \cdots + a_{mn}x_{n} \\ 
   \end{pmatrix*}_{m \times 1}
- \] 
+\] 
 
- \begin{thm}
-   Έστω $ A \in \textbf{M}_{m \times n}(\mathbb{K}) $. Τότε ο αριστερός-πολλαπλασιασμός
-   μετασχηματισμός $ T_{A} \colon \mathbb{K}^{n} \to \mathbb{K}^{m} $ είναι γραμμική 
-   συνάρτηση. Επιπλέον, αν $ B \in \textbf{M}_{m \times n}(\mathbb{K}) $ και $ \beta ,
-   \gamma $ είναι οι συνήθεις διατεταγμένες βάσεις για τους $ \mathbb{K}^{n} $ και 
-   $ \mathbb{K}^{m} $, αντίστοιχα, τότε έχουμε τις παρακάτω ιδιότητες:
-   \begin{enumerate}[i)]
-     \item $ [T_{A}]_{\gamma}^{\beta} = A $
-     \item $ T_{A} = T_{B} \Leftrightarrow A = B $ 
-     \item $ T_{A+B} = T_{A} + T_{B} $
-     \item $ T_{\lambda A} = \lambda T_{A}, \quad \forall \lambda \in \mathbb{K} $
-     \item Αν $ S \colon \mathbb{K}^{n} \to \mathbb{K}^{m} $ είναι γραμμική, τότε 
-       $ \exists ! \; C \in \textbf{M}_{m \times n}(\mathbb{K}) $ τέτοιος ώστε 
-       $ S=T_{C} $.  Συγκεκριμένα, $ C = [S]_{\gamma}^{\beta} $.
-     \item Αν $ E \in \textbf{M}_{n \times p}(\mathbb{K}) $, τότε $ T_{AE} = T_{A} 
-       \circ T_{E} $ 
-     \item Αν $ m=n $, τότε $ T_{I{n}} = T_{\mathbb{K}^{n}} $
-   \end{enumerate}
- \end{thm}
+\begin{thm}
+  Έστω $ A \in \textbf{M}_{m \times n}(\mathbb{K}) $. Τότε ο αριστερός-πολλαπλασιασμός
+  μετασχηματισμός $ T_{A} \colon \mathbb{K}^{n} \to \mathbb{K}^{m} $ είναι γραμμική 
+  συνάρτηση. Επιπλέον, αν $ B \in \textbf{M}_{m \times n}(\mathbb{K}) $ και $ \beta ,
+  \gamma $ είναι οι συνήθεις διατεταγμένες βάσεις για τους $ \mathbb{K}^{n} $ και 
+  $ \mathbb{K}^{m} $, αντίστοιχα, τότε έχουμε τις παρακάτω ιδιότητες:
+  \begin{enumerate}[i)]
+    \item $ [T_{A}]_{\beta}^{\gamma} = A $
+    \item $ T_{A} = T_{B} \Leftrightarrow A = B $ 
+    \item $ T_{A+B} = T_{A} + T_{B} $
+    \item $ T_{\lambda A} = \lambda T_{A}, \quad \forall \lambda \in \mathbb{K} $
+    \item Αν $ S \colon \mathbb{K}^{n} \to \mathbb{K}^{m} $ είναι γραμμική, τότε 
+      $ \exists ! \; C \in \textbf{M}_{m \times n}(\mathbb{K}) $ τέτοιος ώστε 
+      $ S=T_{C} $.  Συγκεκριμένα, $ C = [S]_{\gamma}^{\beta} $.
+    \item Αν $ E \in \textbf{M}_{n \times p}(\mathbb{K}) $, τότε $ T_{AE} = T_{A} 
+      \circ T_{E} $ 
+    \item Αν $ m=n $, τότε $ T_{I{n}} = T_{\mathbb{K}^{n}} $
+  \end{enumerate}
+\end{thm}
 
- \begin{proof}
-   %todo
- \end{proof}
+\begin{proof}
+  %todo
+\end{proof}
 
- \begin{example}
-   Έστω $ T \colon \mathbb{R}^{2} \to \mathbb{R}^{2} $ με 
-   \[
-   T \begin{pmatrix*}[r] x_{1} \\ x_{2} \end{pmatrix*} = 
-   \begin{pmatrix*}[r] 2 x_{1}- x_{2} \\ x_{1}+ x_{2} \end{pmatrix*}
-    \]  
-    Τότε η $T$ είναι γραμμική αφού $ T = T_{A} $, όπου $ A = 
+\begin{example}
+  Έστω $ T \colon \mathbb{R}^{2} \to \mathbb{R}^{2} $ με 
+  \[
+    T \begin{pmatrix*}[r] x_{1} \\ x_{2} \end{pmatrix*} = 
+    \begin{pmatrix*}[r] 2 x_{1}- x_{2} \\ x_{1}+ x_{2} \end{pmatrix*}
+  \]  
+  Τότε η $T$ είναι γραμμική αφού $ T = T_{A} $, όπου $ A = 
+  \begin{pmatrix*}[r]
+    2 & -1 \\
+    1 & 1
+  \end{pmatrix*} $
+  Επιπλέον, ο πίνακας της $T$ ως προς τη συνήθη διατεταγμένη βάση $ \beta = \{ (1,0),
+  (0,1) \} $ είναι ο $A$.
+\end{example}
+
+\begin{prop}
+  Έστω $ A \in \textbf{M}_{m \times n}(\mathbb{K}) $. Τότε $ \im(T_{A}) = \Sigma _{A} $ 
+  άρα $ \rank(T_{A}) = \rank(A) $
+\end{prop}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{prop}
+  Έστω $ A \in \textbf{M}_{m \times n}(\mathbb{K}) $. Τότε $ \ker(T_{A}) = N_{A} $ 
+  (όπου $ N(A) $ είναι ο μηδενόχωρος του $A$) και άρα $ \dim(N(A)) = n - \rank(A) $
+\end{prop}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{thm}
+  Έστω $V$ και $W$ δυο $ \mathbb{K}- $χώροι πεπερασμένης διάστασης με διατεταγμένες 
+  βάσεις $\beta$ και $\gamma$, αντίστοιχα, και έστω $ T \in \mathcal{L}(V,W) $. 
+  Τότε, για κάθε $ \mathbf{x} \in V $, έχουμε 
+  $ [T(\mathbf{x})]_{\gamma} = [T]_{\beta}^{\gamma} \cdot [\mathbf{x}]_{\beta} $
+\end{thm}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{dfn}
+  Έστω $V$ ένας $ \mathbb{K}- $χώρος πεπερασμένης διάστασης και έστω $ \beta = 
+  \{ \mathbf{v_{1}}, \mathbf{v_{2}}, \ldots, \mathbf{v}_{n} \}$,
+  $ \beta ' = \{ \mathbf{v_{1}}', \mathbf{v_{2}}', \ldots \mathbf{v_{n}}' \} $ 
+  δυο διατεταγμένες βάσεις για τον $V$. Για $ j = 1,2, \ldots , n $, έστω ότι 
+  \[
+    [\mathbf{v}_{j}]_{\beta '} = 
+    \begin{pmatrix*}[r] a_{1j} \\ a_{2j} \\ \vdots \\ a_{nj} \end{pmatrix*} 
+  \] 
+  (το διάνυσμα των συντεταγμένων του $ \mathbf{v}_{j} $ ως προς τη βάση $ \beta ' $, 
+  συνεπώς $ \mathbf{v}_{j} = \sum_{i=1}^{n} a_{ij} \mathbf{v}_{i}' $). Τότε ο 
+  πίνακας $ A = (a _{ij}) $ λέγεται πίνακας αλλαγής βάσης από τη $ \beta $ στη 
+  $ \beta ' $.
+\end{dfn}
+
+\begin{thm}
+  Έστω $V$ ένας $ \mathbb{K}- $χώρος πεπερασμένης διάστασης και έστω $\beta$ και 
+  $ \beta ' $ δυο διατεταγμένες βάσεις για τον $V$. Τότε ο πίνακας αλλαγής βάσης από 
+  την $\beta$ στη $\beta'$ είναι ο πίνακας του ταυτοτικού μετασχηματισμού $ I_{V} $ 
+  ως προς τις βάσεις $\beta$ και $ \beta ' $.
+\end{thm}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{rem}
+  Δεν ισχύει εν γένει ότι $ [I_{V}]_{\beta }^{\beta '} = I_{n} $ (ενώ θυμηθείτε ότι 
+  ισχύει πάντα $ [I_{V}]_{\beta } = I_{n} $). Για παράδειγμα, έστω ο $ \mathbb{R}- $ 
+  χώρος $ \mathbb{R}^{2} $ και οι εξής διατεταγμένες βάσεις του, 
+  \begin{align*}
+    \beta = \{ \mathbf{f}_{1} = (1,0), \mathbf{f}_{2} = (1,1) \} \quad \text{και} 
+    \quad \beta ' = \{ \mathbf{e}_{1} = (1,0), \mathbf{e_{2}} = (0,1) \} 
+  \end{align*}
+  Τότε
+  \begin{gather*}
+    I_{V}(\mathbf{f}_{1}) = \mathbf{f}_{1} = 1 \mathbf{e}_{1} + 0 \mathbf{e_{2}} \\
+    I_{V}(\mathbf{f}_{2}) = \mathbf{f}_{2} = 1 \mathbf{e_{1}}+ 1 \mathbf{e_{2}}
+  \end{gather*} 
+  άρα 
+  \[
+    [I_{V}]_{\beta }^{\beta '} = 
     \begin{pmatrix*}[r]
-      2 & -1 \\
+      1 & 1 \\
+      0 & 1
+    \end{pmatrix*} \neq I_{2}
+  \] 
+\end{rem}
+
+\begin{thm}\label{thm:3}
+  Έστω $v$ ένας $ \mathbb{K}- $χώρος πεπερασμένης διάστασης και εστω $\beta$ και 
+  $\beta '$ δυο διατεταγμένες βάσεις για τον $V$. Τότε, για κάθε $ \mathbf{u} \in V $, 
+  ισχύει 
+  \[
+    [\mathbf{u}]_{\beta '} = [I_{V}]_{\beta }^{\beta '} \cdot [\mathbf{u}]_{\beta }
+  \] 
+\end{thm}
+
+\begin{proof}
+\end{proof}
+
+\begin{thm}\label{thm:4}
+  Έστω $v$ ένας $ \mathbb{K}- $χώρος πεπερασμένης διάστασης και εστω $\beta$ και 
+  $\beta '$ δυο διατεταγμένες βάσεις για τον $V$. Ο πίνακας $ [I_{V}]_{\beta }^{\beta '}
+  $ (αλλαγής βάσης από τη $\beta$ στη $\beta '$) είναι αντιστρέψιμος και ισχύει 
+  \[
+    \left({[I_{V}]_{\beta }^{\beta '}}\right)^{-1} = [I_{V}]_{\beta '}^{\beta}  
+  \] 
+  Δηλαδή ο αντίστροφος του πίνακα αλλαγής βάσης από τη $\beta$ στη $\beta '$ είναι 
+  ο πίνακας αλλαγής βάσης από την $\beta '$ στη $\beta$.
+\end{thm}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{example}
+  Θεωρούμε τις εξής διατεταγμένες βάσεις του $ \mathbb{R}^{2} $:
+  \begin{align*}
+    \beta = \{ \mathbf{e_{1}}= (1,0), \mathbf{e_{2}}= (0,1) \} \\
+    \beta ' = \{ \mathbf{f}_{1} = (1,1), \mathbf{f} _{2} = (2,1) \} 
+  \end{align*}
+  Να βρεθεί ο πίνακας αλλαγής βάσης από τη $ \beta $ στη $ \beta' $ καθώς και το 
+  διάνυσμα των συντεταγμένων του $ \mathbf{u} = (2,4) $ ως προς τη $\beta '$.
+\end{example}
+
+\begin{solution}
+  Έχουμε $ [I_{\mathbb{R}^{2}}]_{\beta }^{\beta'} = \left([I_{\mathbb{R}^{2}}]_{\beta
+  '}^{\beta}\right)^{-1} $ (από το θεώρημα~\ref{thm:4}). Επειδή η $\beta$ είναι η 
+  συνήθης βάση του $ \mathbb{R}^{2} $, προκύπτει άμεσα ότι 
+  \[
+    [I_{\mathbb{R}^{2}}]_{\beta '}^{\beta } = 
+    \begin{pmatrix*}[r]
+      1 & 2 \\
       1 & 1
-    \end{pmatrix*} $
-    Επιπλέον, ο πίνακας της $T$ ως προς τη συνήθη διατεταγμένη βάση $ \beta = \{ (1,0),
-    (0,1) \} $ είναι ο $A$.
- \end{example}
+    \end{pmatrix*}
+  \] 
+  Τώρα, 
+  \[
+    \begin{pmatrix*}[r]
+      1 & 2 & \vrule &  1 & 0 \\
+      \undermat{[I_{\mathbb{R}^{2}}]_{\beta '}^{\beta }}{1 & 1} & \vrule & 0 & 1 
+    \end{pmatrix*} \sim 
+    \begin{pmatrix*}[r]
+      1 & 2 & \vrule & 1 & 0 \\
+      0 & -1 & \vrule & -1 & 1
+    \end{pmatrix*} \sim 
+    \begin{pmatrix*}[r]
+      1 & 2 & \vrule & 1 & 0 \\
+      0 & 1 & \vrule & 1 & -1
+    \end{pmatrix*} \sim 
+    \begin{pmatrix*}[r]
+      1 & 0 & \vrule & -1 & 2 \\
+      0 & 1 & \vrule & \undermat{[I_{\mathbb{R}^{2}}]_{\beta}^{\beta'}}{1 & -1} 
+    \end{pmatrix*}
+  \]
+
+  \vspace{2\baselineskip}
+
+  Για το διάνυσμα $ [\mathbf{u}]_{\beta'} $ των συντεταγμένων του 
+  $ \mathbf{u} $ ως προς τη βάση $ \beta ' $, από το θεώρημα~\ref{thm:3} 
+  έχουμε ότι 
+  \[
+    [\mathbf{u}]_{\beta '} = [I_{\mathbb{R}^{2}}]_{\beta }^{\beta'} \cdot
+    [\mathbf{u}]_{\beta} = 
+    \begin{pmatrix*}[r]
+      -1 & 2 \\
+      1 & -1
+    \end{pmatrix*} \cdot 
+    \begin{pmatrix*}[r]
+      2 \\
+      4
+    \end{pmatrix*} = 
+    \begin{pmatrix*}[r]
+      6 \\
+      -2
+    \end{pmatrix*}
+  \] 
+\end{solution}
+
+\begin{example}
+  Θεωρούμε τις εξής διατεταγμένες βάσεις του $ \mathbb{R}^{2} $: 
+  \begin{align*}
+    \beta &= \{ (1,1), (1,-1) \} \\
+    \beta ' &= \{ (2,4), (2,1) \}
+  \end{align*}
+  Να βρεθεί ο πίνακας αλλαγής βάσης από τη $\beta$ στη $\beta'$.
+\end{example}
+
+\begin{solution}
+  Εφόσον $\beta'$ είναι μια βάση για τον $ \mathbb{R}^{2} $, για το $ (1,1) $ 
+  υπάρχουν μοναδικά $ a,b \in \mathbb{R} $ ώστε 
+  \[
+    (1,1) = a (2,4) + b(2,1) 
+  \]
+  Ομοίως, για το (1,-1) υπάρχουν μοναδικά $ c,d \in \mathbb{R} $ ώστε 
+  \[
+    (1,-1) = c(2,4) + d(2,1) 
+  \] 
+  Τότε
+  \[
+    [I_{\mathbb{R}^{2}}]_{\beta}^{\beta'} = 
+    \begin{pmatrix*}[r]
+      a & c \\
+      b & d
+    \end{pmatrix*}
+  \] 
+  Έχουμε λοιπόν να λύσουμε τα συστήματα 
+  \[
+    \left.
+      \begin{matrix}
+        2a + 3b = 1 \\
+        4a + b = 1
+      \end{matrix} 
+    \right\} \quad \text{και} \quad 
+    \left.
+      \begin{matrix}
+        3c + 3d = 1 \\
+        4c + d = -1
+      \end{matrix} 
+    \right\} 
+  \] 
+  τα οποία λόγω της μοναδικής γραφής των (1,1) και (1,-1) θα έχουν μοναδική λύση, 
+  πράγματι
+  \[
+    \begin{pmatrix*}[r]
+      2 & 3 & \vrule & 1 & 1 \\
+      4 & 1 & \vrule & 1 & -1
+    \end{pmatrix*} \sim \cdots \sim
+    \begin{pmatrix*}[r]
+      1 & 0 & \vrule & 1/5 & -2/5 \\
+      0 & 1 & \vrule & 1/5 & 3/5
+    \end{pmatrix*}
+  \] 
+  Άρα, 
+  \[
+    [I_{\mathbb{R}^{2}}]_{\beta}^{\beta'} = 
+    \begin{pmatrix*}[r]
+      1/5 & -2/5 \\
+      1/5 & 3/5
+    \end{pmatrix*}
+  \] 
+\end{solution}
+
+\begin{thm}
+  Έστω $V$ και $W$ δυο $ \mathbb{K}- $χώροι πεπερασμένης διάστασης, και έστω 
+  $\beta_{1}$, ${\beta_{1}}'$ δυο διατεταγμένες βάσεις για τον $V$ και έστω 
+  $\beta_{2}$, ${{\beta}_{2}}'$ δυο διατεταγμένες βάσεις για τον $W$. Έστω 
+  $ T \in \mathcal{L}(V,W) $. Τότε ισχύει: 
+  \[
+    [T]_{{\beta_{1}}'}^{{\beta_{2}}'} = [I_{W}]_{\beta_{2}}^{{\beta_{2}}'} \cdot 
+    [T] _{\beta_{1}}^{\beta_{2}} \cdot [I_{V}]_{{\beta_{1}}'}^{\beta_{1}}
+  \] 
+\end{thm}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{cor}\label{cor:bas}
+  Έστω $V$ ένας $ \mathbb{K}- $χώρος πεπερασμένης διάστασης και έστω $ \beta $ και 
+  $ \beta' $ δυο διατεταγμένες βάσεις για τον $V$. Έστω $ T \in \mathcal{L}(V) $. 
+  Τότε ισχύει
+  \begin{align*}
+    [T]_{\beta'} &= [T]_{\beta}^{\beta'} \cdot [T]_{\beta} \cdot [T]_{\beta'}^{\beta} & 
+    (\text{Θεώρημα~\ref{thm:4}}) \\
+                 &= [I_{V}]_{\beta }^{\beta'} \cdot [T]_{\beta } 
+    \cdot \left([I_{V}]_{\beta }^{\beta'}\right)^{-1} &
+  \end{align*} 
+\end{cor}
+
+\begin{rem}
+  Υπενθυμίζουμε ότι αν $ A,B \in \textbf{M}_{m \times n}(\mathbb{K}) $ τότε ο 
+  $B$ λέγεται όμοιος με τον $A$ αν υπάρχει αντιστρέψιμος πίνακας $ P \in
+  \textbf{M}_{n}(\mathbb{K}) $ τέτοιος ώστε $ B = P \cdot A \cdot P^{-1} $. 
+  Επομένως αν $V$, $ \beta , \beta' $ και $T$ είναι όπως στο Πόρισμα~\ref{cor:bas}, 
+  τότε ο πίνακας $ [T]_{\beta'} $ είναι όμοιος προς τον $[T]_{\beta}$.
+\end{rem}
+
+\begin{dfn}
+  Έστω $V$ και $W$ δυο $ \mathbb{K}- $χώροι και έστω $ T \in \mathcal{L}(V,W) $. 
+  Μια συνάρτηση $ U \colon W \to V $, λέγεται ότι είναι ένας αντίστροφος του $T$ 
+  αν 
+  \[
+    T \circ U = I_{W} \quad \text{και} \quad U \circ T = I_{V} 
+  \]
+  Αν ο $T$ έχει έναν αντίστροφο, τότε ο $T$ καλείται αντιστρέψιμος.
+\end{dfn}
+
+Σημειώνουμε ότι αν ο $T$ είναι αντιστρέψιμος, τότε ο αντίστροφος του $T$ είναι 
+μοναδικός και συμβολίζεται με $ T^{-1} $. Ισχύουν:
+\begin{enumerate}
+  \item $ (T \circ U)^{-1} = U^{-1} \circ T^{-1} $
+  \item $ (T^{-1})^{-1} = T $, \quad δηλαδή ο $T$ είναι επίσης αντιστρέψιμος
+\end{enumerate}
+Ακόμη συχνά χρησιμοποιούμε το γεγονός ότι μια συνάρτηση είναι αντιστρέψιμη αν και μόνον αν
+είναι $ 1-1 $ και επί. Οπότε μπορούμε να αναδιατυπώσουμε το θεώρημα~\ref{thm:3one} 
+ως εξής
+\begin{enumerate}[resume]
+  \item Έστω $ T \in \mathcal{L}(V,W) $, όπου $V$ και $W$ δύο $ \mathbb{K}- $χώροι 
+    πεπεαρασμένης διάστασης με $ \dim(V) = \dim(W) $. Τότε 
+    \[ T  \quad \text{αντιστρέψιμος}  \Leftrightarrow \rank(T) = \dim(V) \]
+\end{enumerate}
+
+\begin{thm}
+  Έστω $V$ και $W$ δυο $ \mathbb{K}- $χώροι και έστω $ T \colon V \to W $ ένας 
+  αντιστρέψιμος γραμμικός μετασχηματισμός. Τότε $ T^{-1} \in \mathcal{L}(V,W) $.
+\end{thm}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{thm}
+  Έστω $V$ και $W$ δυο $ \mathbb{K}- $χώροι πεπερασμένης διάστασης και έστω 
+  $ T \in \mathcal{L}(V,W) $. Αν ο $T$ είναι αντιστρέψιμος, τότε 
+  $ \dim(V) = \dim(W) $.
+\end{thm}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{thm}
+  Έστω $V$ και $W$ δυο $ \mathbb{K}- $χώροι πεπερασμένης διάστασης με διατεταγμένες 
+  βάσεις $\beta$ και $\gamma$, αντίστοιχα. Έστω $ T \in \mathcal{L}(V,W) $. Τότε 
+  ο $T$ είναι αντιστρέψιμος αν και μόνον αν ο πίνακας $ [T]_{\beta}^{\gamma } $ 
+  είναι αντιστρέψιμος. Επιπλέον
+  \[
+    \left([T]_{\beta }^{\gamma }\right)^{-1} = [T^{-1}]_{\gamma }^{\beta} 
+  \]
+\end{thm}
+
+\begin{proof}
+
+\end{proof}
 
 \end{document}
