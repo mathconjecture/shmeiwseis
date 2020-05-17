@@ -501,8 +501,8 @@
   Το προηγούμενο παράδειγμα δείχνει ότι αν $ B = \{ \mathbf{v_{1}}, \ldots, 
   \mathbf{v_{n}} \} $ είναι μια βάση για έναν $ \mathbb{K}- $χώρο και 
   $ T \colon V \to W $ είναι ένας γραμμικός μετασχηματισμός, τότε δεν ισχύει 
-  απαραίτητα ότι και το σύνολο $ T(B) = 
-  \{ T(\mathbf{v_{1}}), \ldots, T(\mathbf{v_{n}}) \}$ είναι μια βάση για τον $ \im(T) $.
+  απαραίτητα ότι και το σύνολο $ T(B) = \{ T(\mathbf{v_{1}}), 
+  \ldots, T(\mathbf{v_{n}}) \}$ είναι μια βάση για τον $ \im(T) $.
 \end{rem}
 
 \begin{prop}
@@ -561,7 +561,55 @@
 \end{thm}
 
 \begin{proof}
-%todo αποδειξη θεωρήματος μηδενικότητας
+  Υποθέτουμε ότι $ \dim(V) = n $, $ n(T) = k $ και ότι $ \{ \mathbf{x_{1}},
+  \mathbf{x_{2}}, \ldots, \mathbf{x}_{k} \} $ είναι μια βάση για τον $ \ker(T) $. 
+  Επεκτείνουμε το $ \{ \mathbf{x_{1}}, \ldots, \mathbf{x}_{k} \} $ σε μια βάση 
+  $ \beta = \{ \mathbf{x_{1}}, \ldots, \mathbf{x}_{k}, \mathbf{x}_{k+1}, \ldots,
+  \mathbf{x}_{n} \} $ του $V$.
+
+  Ισχυριζόμαστε ότι το σύνολο 
+  $ S = \{ T(\mathbf{x}_{k+1}), \ldots, T(\mathbf{x}_{n}) \} $ είναι μια βάση για τον 
+  $ \im(T) $.
+
+  Καταρχάς αποδεικνύουμε ότι το $S$ παράγει τον $ \im(T) $. Εφόσον το σύνολο $ \beta $ 
+  έιναι μια βάση για τον $V$, από προηγούμενο θεώρημα έχουμε ότι 
+  \begin{align*}
+    \im(T) = < T(\beta) >&= < T(\mathbf{x_{1}}), \ldots, T(\mathbf{x}_{k}),
+    T(\mathbf{x}_{k+1}), \ldots, T(\mathbf{x}_{n}) > \\ 
+                         &= < T(\mathbf{x}_{k+1}), \ldots, T(\mathbf{x}_{n}) > \\
+                         &= < S > 
+  \end{align*}
+  αφού $ T(\mathbf{x}_{i}) = 0, \quad \forall i = 1,\ldots, k $, διότι $ \mathbf{x}_{i}
+  \in \ker(T) $. 
+
+  Άρα το $S$ παράγει τον $ \im(T) $. Τώρα αποδεικνύουμε ότι το $S$ είναι γραμμικά 
+  ανεξάρτητο. Έστω $ \lambda _{k+1}, \ldots, \lambda _{n} \in \mathbb{K} $, τέτοια ώστε 
+  \begin{align*} 
+    \lambda _{k+1} T(\mathbf{x}_{k+1}) + \cdots + \lambda _{n} T(\mathbf{x}_{n}) =
+    \mathbf{0}_{W} \Rightarrow \\
+    T(\lambda _{k+1} \mathbf{x}_{k+1} + \cdots + \lambda _{n} \mathbf{x}_{n}) = 
+    \mathbf{0}_{W} \Rightarrow \\
+    \lambda _{k+1} \mathbf{x}_{k+1} + \cdots + \lambda _{n} \mathbf{x}_{n} \in \ker(T) 
+  \end{align*} 
+  Επειδή $ \{ \mathbf{x_{1}}, \dots, \mathbf{x}_{n} \} $ είναι μια βάση για τον 
+  $ \ker(T) $, υπάρχουν $ \mu _{1}, \ldots, \mu _{k} \in \mathbb{K} $ τέτοια ώστε 
+  το στοιχείο $ \lambda _{k+1} \mathbf{x}_{k+1} + \cdots + \lambda _{n} \mathbf{x}_{n} $ 
+  να γράφεται ως γραμμικός συνδυασμός των στοιχείων την βάσης, δηλαδή
+  \begin{align*}
+    \lambda _{k+1} \mathbf{x}_{k+1} + \cdots + \lambda _{n} \mathbf{x}_{n} = \mu _{1} 
+    \mathbf{x_{1}} + \cdot + \mu _{k} \mathbf{x}_{k} \Rightarrow \\
+    \mu _{1} \mathbf{x_{1}} + \cdots + \mu _{k} \mathbf{x}_{k} + -\lambda _{1}
+    \mathbf{x}_{1} - \cdots - \lambda _{n} \mathbf{x}_{n} = \mathbf{0}_{V} \Rightarrow \\
+    \mu _{i} = 0, \quad \forall i = 1, \ldots, k \quad \text{και} \quad \lambda _{i} = 
+    0, \quad \forall i = k+1, \ldots, n
+   \end{align*} 
+   διότι το σύνολο $ \beta = \{ \mathbf{x}_{1}, \ldots, \mathbf{x}_{k}, \mathbf{x}_{k+1},
+   \ldots, \mathbf{x}_{n}\}  $ είναι μια βάση για τον $V$. 
+
+   Άρα το $S$ είναι γραμμικά ανεξάρτητο. Παρατηρείτε ότι το επιχείρημα δείχνει ότι 
+   τα $ T(\mathbf{x}_{k+1}), \ldots, T(\mathbf{x}_{n}) $ είναι διάφορα ανά δύο. 
+
+   Άρα $ r(T) = \abs{S} = n-k = \dim(V) - n(T) \Rightarrow n(T) + r(T) = \dim(V) $.
 \end{proof}
 
 \begin{thm}
