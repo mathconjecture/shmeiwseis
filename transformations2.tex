@@ -31,20 +31,28 @@
   $ \mathbf{v_{2}} $ το 2ο κ.ο.κ.) 
 \end{rem}
 
+
+\begin{example}
 Για παράδειγμα, στον $ \mathbb{R}^{3} $, η (συνήθης) βάση $ \beta = \{ \mathbf{e_{1}}, 
-\ldots, \mathbf{e_{n}}\} $ μπορεί να θεωρηθεί ως μια διατεταγμένη βάση. 
+\mathbf{e_{2}},\mathbf{e_{3}}\} $ μπορεί να θεωρηθεί ως μια διατεταγμένη βάση. 
 Επίσης, το σύνολο $ \gamma = \{ \mathbf{e_{2}}, \mathbf{e_{1}}, \mathbf{e_{3}} \} $ 
 μπορεί να θεωθηθεί ως διατεταγμένη βάση. 
-
 Τότε ισχύει ότι $ \beta \neq \gamma $ ως διατεταγμένες βάσεις. 
 Ταυτίζονται όμως ως σύνολα.  
+\end{example}
+
+\begin{rem}
+  Θυμάμαι ότι $ \mathbf{e_{1}} = (1,0,0), \mathbf{e_{2}}=(0,1,0), 
+  \mathbf{e_{3}}=(0,0,1) $ 
+\end{rem}
+
 \begin{dfn}
   Έστω $V$ και $W$ δυο $ \mathbb{K}- $χώροι πεπερασμένης διάστασης. Έστω $ \beta = \{
   \mathbf{v_{1}}, \mathbf{v_{2}}, \ldots, \mathbf{v_{n}} \} $ μια διατεταγμένη βάση 
-  του $V$ και έστω $ \Gamma = \{ \mathbf{w_{1}}, \mathbf{w_{2}}, \ldots, 
-  \mathbf{w_{n}} \} $ μια διατεταγμένη βάση του $W$. Έστω $ t \colon V \to W $ ένας 
-  γραμμικός μετασχηματισμός. Για $ j = 1,2, \ldots, n $ υπάρχουν μοναδικά $ a_{1j}, 
-  a_{2j}, \ldots, a_{mj} \in \mathbb{K} $ τέτοια ώστε 
+  του $V$ και έστω $ \gamma = \{ \mathbf{w_{1}}, \mathbf{w_{2}}, \ldots, 
+  \mathbf{w_{n}} \} $ μια διατεταγμένη βάση του $W$. Έστω $ T \colon V \to W $ ένας 
+  γραμμικός μετασχηματισμός. Τότε υπάρχουν μοναδικά $ a_{1j}, a_{2j}, \ldots, a_{mj} 
+  \in \mathbb{K} $, με $ j = 1,2, \ldots, n $  τέτοια ώστε 
   \[
     T(\mathbf{v}_{j}) = \sum_{i=1}^{m} a_{ij} \mathbf{w}_{j}  
   \] 
@@ -59,20 +67,31 @@
   $ [T]_{\beta}^{\beta} $.
 \end{rem}
 
+\begin{rem}
+  Ουσιαστικά, ο πίνακας $ A = (a_{ij}) $ είναι ο $ m \times n $ πίνακας
+    \begin{align*}
+      A = [T]_{\beta}^{\gamma} = 
+      \begin{pmatrix*}[c]
+        \vrule & \vrule & & \vrule \\
+        T(\mathbf{v_{1}}) & T(\mathbf{v_{2}}) & \cdots & T(\mathbf{v_{n}}) \\
+        \vrule & \vrule & & \vrule
+      \end{pmatrix*} \quad \text{\color{Col1} αναπαράσταση (του $T$)}
+    \end{align*} 
+    που περιέχει ως στήλες τα $ [T(\mathbf{v}_{j})]_{\gamma} $ 
+    με $ j = 1,\ldots, n $, δηλαδή τις συντεταγμένες των  εικόνων μέσω του $T$, 
+    των στοιχείων της βάσης $ \beta $ του $V$, εκφρασμένες ως προς τη βάση 
+    $ \gamma $ του $W$. 
+\end{rem}
+
 \begin{rem}\label{rem:1}
-\item {}
-  \begin{enumerate}[i)]
-    \item Η $ j- $ στήλη του πίνακα $A$ είναι το διάνυσμα 
-      $ [T(\mathbf{v}_{j})]_{\gamma} $, δηλαδή το διάνυσμα των συντεταγμένων του 
-      $ T(\mathbf{v}_{j}) $ ως προς την διατεταγμένη βάση $\gamma$ του $W$.
-    \item\label{rem:2} Αν $ S \colon V \to W $ είναι ένας γραμμικός μετασχηματισμός 
+    \label{rem:2} Αν $ S \colon V \to W $ είναι ένας γραμμικός μετασχηματισμός 
       τέτοιος ώστε 
       \[
         [S]_{\beta}^{\gamma} = [T]_{\beta}^{\gamma}
       \] 
       οπότε $ S(\mathbf{v}_{j}) = T(\mathbf{v}_{j}) $ για όλα τα $ j = 1,\ldots, n $ 
       τότε από γνωστό πόρισμα έπεται ότι $ S=T $. %todo να βρω και να γράψω το πορισμα
-  \end{enumerate}
+      Δηλαδή, γραμμικοί μετασχηματισμοί με ίδιο πίνακα–αναπαράσταση, ταυτίζονται.
 \end{rem}
 
 \begin{example}
@@ -85,7 +104,7 @@
   και $ \mathbb{R}^{3} $, αντίστοιχα (δηλαδή, $ \beta = \{ (1,0), (0,1) \} $ και 
   $ \gamma = \{ \underbrace{(1,0,0)}_{\mathbf{e_{1}}},
   \underbrace{(0,1,0)}_{\mathbf{e_{2}}}, \underbrace{(0,0,1)}_{\mathbf{e_{3}}} \} $). 
-  Τώρα
+  Τότε
   \begin{align*}
     T(1,0) &= (1,0,2) = 1 \mathbf{e_{1}} + 0 \mathbf{e_{2}}+2 \mathbf{e_{3}} \\
     T(0,1) &= (3,0,-4) = 3 \mathbf{e_{1}}+ 0 \mathbf{e_{2}}- 4 \mathbf{e_{3}}
@@ -97,7 +116,7 @@
       1 & 3 \\
       0 & 0 \\
       2 & -4
-    \end{pmatrix*}
+  \end{pmatrix*} 
   \] 
 \end{example}
 
@@ -129,12 +148,12 @@
 \end{example}
 
 \begin{prop}
-  Έστω $V$ και $V$ δυο $ \mathbb{K}- $χώροι, και έστω $ T,S \colon V \to W $ δύο 
+  Έστω $V$ και $W$ δυο $ \mathbb{K}- $χώροι, και έστω $ T,S \colon V \to W $ δύο 
   γραμμικοί μετασχηματισμοί. Έστω επίσης, $\lambda$ οποιοσδήποτε αριθμός στο 
   $ \mathbb{K} $. Τότε οι συναρτήσεις
   \begin{gather*}
     T+S \colon V \to W, \quad \text{με τύπο}\quad (T+S)(\mathbf{v}) = 
-    T(\mathbf{v}) + S(\mathbf{v}), \quad \forall \mathbf{v} \in v \\
+    T(\mathbf{v}) + S(\mathbf{v}), \quad \forall \mathbf{v} \in V \\
     \lambda T \colon V \to W, \quad \text{με τύπο}\quad (\lambda T)(\mathbf{v}) = 
     \lambda T(\mathbf{v}), \forall \mathbf{v} \in V
   \end{gather*}
@@ -160,14 +179,14 @@
   %todo   
 \end{proof}
 
-Αργότερα θα δούμε ότι μπορούμε να ταυτί΄σουμε τον $ \mathcal{L}(V,W) $ με τον $
+Αργότερα θα δούμε ότι μπορούμε να ταυτίσουμε τον $ \mathcal{L}(V,W) $ με τον $
 \textbf{M}_{m \times n}(\mathbb{K}) $, όπου $n$ και $m$ είναι οι διαστάσεις των 
 $V$ και $W$, αντίστοιχα. 
 
 \begin{thm}
   Έστω $V$ και $W$ δύο $ \mathbb{K}- $χώροι πεπερασμένης διάστασης με διατεταγμένες 
   βάσεις $ \beta = \{ \mathbf{v_{1}}, \ldots, \mathbf{v_{n}} \} $ και $ \gamma = 
-  \{ \mathbf{w_{1}}, \ldots, \mathbf{w_{n}} \} $ αντίστοιχα. Έστω $ T,S \in
+  \{ \mathbf{w_{1}}, \ldots, \mathbf{w_{m}} \} $ αντίστοιχα. Έστω $ T,S \in
   \mathcal{L}(V,W) $. Τότε ισχύουν τα παρακάτω:
   \begin{enumerate}[i)]
     \item $ [T+S]_{\beta}^{\gamma} = [T]_{\beta}^{\gamma} + [S]_{\beta}^{\gamma}$
@@ -185,7 +204,7 @@ $V$ και $W$, αντίστοιχα.
 \begin{thm}
   Έστω $ V,W,Z $, τρεις $ \mathbb{K}- $χώροι και έστω $ T \colon V \to W $ και $ S
   \colon W \to Z $ δύο γραμμικοί μετασχηματισμοί. Τότε ή σύνθεση 
-  $ S \circ T \colon V \to Z $ είναι γραμμική.
+  $ S \circ T \colon V \to Z $ είναι επίσης, γραμμικός μετασχηματισμός.
 \end{thm}
 
 \begin{proof}
@@ -209,7 +228,7 @@ $V$ και $W$, αντίστοιχα.
   %todo 
 \end{proof}
 
-\begin{thm}
+\begin{thm}\label{thm:linthm}
   Έστω $ V,W,Z $ τρεις $ \mathbb{K}- $χώροι πεπερασμένης διάστασης με διατεταγμένες 
   βάσεις $ \alpha, \beta $ και $\gamma$, αντίστοιχα. Έστω $ T \in \mathcal{L}(V,W) $ 
   και $ S \in \mathcal{L}(W,Z) $. Τότε
@@ -232,7 +251,7 @@ $V$ και $W$, αντίστοιχα.
 
 \begin{thm}
   Έστω $V$ ένας $ \mathbb{K}- $χώρος πεπερασμένης διάστασης με μια διατεταγμένη βάση 
-  $ \beta = \{ \mathbf{v_{1}}, \mathbf{v_{2}}, \ldots, \mathbf{v_{n}} \} $. Τότε 
+  $ \beta = \{ \mathbf{v_{1}}, \ldots, \mathbf{v_{n}} \} $. Τότε 
   ισχύει ότι 
   \[
     [I_{V}]_{\beta} = I_{n}
@@ -254,9 +273,9 @@ $V$ και $W$, αντίστοιχα.
   Τότε οι $ S,T $ είναι γραμμικές. Έστω $ \alpha = \{ 1,x,x^{2},x^{3} \} $ και 
   $ \beta = \{ 1,x,x^{2} \} $ οι συνήθεις διατεταγμένες βάσεις των $
   \textbf{P}_{3}(\mathbb{R}) $ και $ \textbf{P}_{2}(\mathbb{R}) $ αντίστοιχα.
-  Από τον Απειροστικό Λογισμό έπεται ότι $ S \circ T = I_{\textbf{P}_{2}(\mathbb{R})}$. 
-  Ας διαπιστώσουμε αυτό το αποτέλεσμα χρησιμοποιώντας την παραπάνω θεωρία της Γραμμικής
-  Άλγεβρας. Έχουμε
+  Όπως είναι γνωστό, ισχύει ότι $ S \circ T = I_{\textbf{P}_{2}(\mathbb{R})}$. 
+  Ας διαπιστώσουμε αυτό το αποτέλεσμα χρησιμοποιώντας το θεώρημα~\ref{thm:linthm}. 
+  Έχουμε
   \[
     [S]_{\alpha}^{\beta} = 
     \begin{pmatrix*}[r]
@@ -281,7 +300,7 @@ $V$ και $W$, αντίστοιχα.
     0 & 0 & 1
   \end{pmatrix*} = [I_{\textbf{P}_{2}(\mathbb{R})}]_{\beta}
 \]
-Άρα, από το (ii) της παρατήρησης~\ref{rem:1} παίρνουμε ότι 
+Άρα, από την παρατήρηση~\ref{rem:1} παίρνουμε ότι 
 $
 S \circ T = I_{\textbf{P}_{2}(\mathbb{R})} 
 $
@@ -318,10 +337,11 @@ $
 
 \begin{thm}
   Έστω $ A \in \textbf{M}_{m \times n}(\mathbb{K}) $. Τότε ο αριστερός-πολλαπλασιασμός
-  μετασχηματισμός $ T_{A} \colon \mathbb{K}^{n} \to \mathbb{K}^{m} $ είναι γραμμική 
-  συνάρτηση. Επιπλέον, αν $ B \in \textbf{M}_{m \times n}(\mathbb{K}) $ και $ \beta ,
-  \gamma $ είναι οι συνήθεις διατεταγμένες βάσεις για τους $ \mathbb{K}^{n} $ και 
-  $ \mathbb{K}^{m} $, αντίστοιχα, τότε έχουμε τις παρακάτω ιδιότητες:
+  μετασχηματισμός $ T_{A} \colon \mathbb{K}^{n} \to \mathbb{K}^{m} $ 
+  είναι γραμμικός. Επιπλέον, αν $ B \in \textbf{M}_{m \times n}(\mathbb{K}) $ 
+  και $ \beta , \gamma $ είναι οι συνήθεις διατεταγμένες βάσεις για τους 
+  $ \mathbb{K}^{n} $ και $ \mathbb{K}^{m} $, αντίστοιχα, τότε έχουμε τις παρακάτω 
+  ιδιότητες:
   \begin{enumerate}[i)]
     \item $ [T_{A}]_{\beta}^{\gamma} = A $
     \item $ T_{A} = T_{B} \Leftrightarrow A = B $ 

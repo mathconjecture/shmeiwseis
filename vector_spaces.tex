@@ -20,8 +20,8 @@
     Το σύνολο $V$ μαζί με τις πράξεις:
     \begin{alignat*}{2}
         + \colon V \times V &\to V & \qquad \text{και} \qquad \cdot \colon \mathbb{K} 
-        \times V &\to V \\ ( \vec{u}, \vec{v} ) &\mapsto \vec{u} + \vec{v} 
-                 & ( \lambda, \vec{u} ) &\mapsto \lambda \vec{u} 
+        \times V &\to V \\ ( \mathbf{u}, \mathbf{v} ) &\mapsto \mathbf{u} + \mathbf{v} 
+                 & ( \lambda, \mathbf{u} ) &\mapsto \lambda \mathbf{u} 
     \end{alignat*}
     \vspace{\baselineskip}
     που ικανοποιούν τα παρακάτω αξιώματα:
@@ -29,29 +29,29 @@
     \twocolumnside{%
         \textbf{Το $V$ είναι ομάδα αντιμεταθετική}
         \begin{enumerate}
-            \item $ \vec{u} + \vec{v} = \vec{v} + \vec{u}, \quad \forall \mathbf{u}, 
+            \item $ \mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}, \quad \forall \mathbf{u}, 
                 \mathbf{v} \in V $ 
-            \item $ ( \vec{u} + \vec{v} ) + \vec{w} = \vec{u} + ( \vec{v} + \vec{w}),
+            \item $ ( \mathbf{u} + \mathbf{v} ) + \mathbf{w} = \mathbf{u} + ( \mathbf{v} + \mathbf{w}),
                 \quad \forall \mathbf{u}, \mathbf{v}, \mathbf{w} \in V $ 
-            \item $ \exists \vec{0} \in V, \; \forall \mathbf{u} \in V \quad 
-                \vec{u} + \vec{0} = \vec{0} + \vec{u} = \vec{u} $ 
+            \item $ \exists \mathbf{0} \in V, \; \forall \mathbf{u} \in V \quad 
+                \mathbf{u} + \mathbf{0} = \mathbf{0} + \mathbf{u} = \mathbf{u} $ 
             \item $ \forall \mathbf{u} \in V, \; \exists \mathbf{v} \in V \quad  
-                \vec{u} + \mathbf{v} = \mathbf{v} + \vec{u} = \vec{0} $ 
+                \mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u} = \mathbf{0} $ 
         \end{enumerate}
         }{%
         \textbf{και επίσης ισχύει}
         \begin{enumerate}[resume]
             \setcounter{enumi}{4}
-        \item $ ( \lambda + \mu ) \vec{u} = \lambda \vec{u} + \mu \vec{u}, \quad 
+        \item $ ( \lambda + \mu ) \mathbf{u} = \lambda \mathbf{u} + \mu \mathbf{u}, \quad 
             \forall \mathbf{u} \in V \; \text{και} \; \forall \lambda, \mu \in 
             \mathbb{K} $ 
-        \item $ ( \lambda \mu ) \vec{u} = \lambda ( \mu \vec{u}), \quad  
+        \item $ ( \lambda \mu ) \mathbf{u} = \lambda ( \mu \mathbf{u}), \quad  
             \forall \mathbf{u} \in V \; \text{και} \; \forall \lambda, \mu \in 
             \mathbb{K} $ 
-        \item $ \lambda ( \vec{u} + \vec{v} ) = \lambda \vec{u} + \lambda \vec{v}, 
+        \item $ \lambda ( \mathbf{u} + \mathbf{v} ) = \lambda \mathbf{u} + \lambda \mathbf{v}, 
             \quad \forall \mathbf{u}, \mathbf{v} \in V \; \text{και} \; \forall  
             \lambda \in \mathbb{K} $ 
-        \item $ 1 \vec{u} = \vec{u}, \quad \forall \mathbf{u} \in V $ 
+        \item $ 1 \mathbf{u} = \mathbf{u}, \quad \forall \mathbf{u} \in V $ 
     \end{enumerate}
 }
 
@@ -101,7 +101,7 @@
     είναι ένας διανυσματικός χώρος επί του $ \mathbb{K} $. 
 
     Το μηδέν του χώρου 
-    είναι $ \vec{0} = (0,\ldots,0) $, όπου $0$ είναι το μηδέν του σώματος 
+    είναι $ \mathbf{0} = (0,\ldots,0) $, όπου $0$ είναι το μηδέν του σώματος 
     $ \mathbb{K} $ και το αντίθετο του $ \mathbf{u} $ είναι το $ - \mathbf{u} =
     (- x_{1}, \ldots, - x_{n}) $.
 
@@ -125,7 +125,7 @@
     είναι ένας διανυσματικός χώρος επί του $ \mathbb{R} $.
 
     Το μηδέν του χώρου είναι η μηδενική συνάρτηση $ \mathbf{0} $, με τιμή 
-    $ \vec{0}(x)=0, \; \forall x \in A $ και το αντίθετο της $f$ είναι 
+    $ \mathbf{0}(x)=0, \; \forall x \in A $ και το αντίθετο της $f$ είναι 
     η συνάρτηση $ -f $ με τιμή $ (-f)(x) = - f(x), \; \forall x \in A $.
 \end{example}
 
@@ -157,7 +157,7 @@
     είναι ένας διανυσματικός χώρος επί του $ \mathbb{K} $.
 
     Το μηδέν του χώρου είναι το μηδενικό πολυώνυμο $ \mathbf{0} $, 
-    με τιμή $ \vec{0}(x)=0+0x+\cdots +0x^{n} $ και το αντίθετο του 
+    με τιμή $ \mathbf{0}(x)=0+0x+\cdots +0x^{n} $ και το αντίθετο του 
     $p$ είναι το $ - p $ με τιμή $ (- p)(x) = 
     (-a_{n})x^{n}+(-a_{n-1})x^{n-1}+\cdots + (-a_{0}), \; \forall x \in A $.  
 \end{example}
