@@ -1,0 +1,803 @@
+\input{preamble.tex}
+\input{definitions.tex}
+
+
+
+
+\pagestyle{vangelis}
+\everymath{\displaystyle}
+
+\usepackage{geometry}
+\geometry{left=15mm,right=15mm,top=30.00mm,bottom=36.00mm,footskip=24.00mm,headsep=24.00mm}
+
+
+
+\begin{document}
+
+\chapter{Όρια Συναρτήσεων Πολλών Μεταβλητών}
+
+\section{Ορισμός Ορίου Συνάρτησης δύο Μεταβλητών}
+
+\vspace{\baselineskip}
+
+\mydfn{%
+  Έστω $ f \colon A \subseteq \mathbb{R}^{2} \to \mathbb{R} $.
+
+  Λέμε ότι η $f$ έχει όριο τον αριθμό $ l \in \mathbb{R} $ στο σημείο 
+  $ (x_{0}, y_{0}) $, σημείο συσσώρευσης του $A$, και το συμβολίζουμε με 
+  \[ \lim\limits_{(x,y)\to (x_{0},y_{0})}
+    f(x,y) = l \quad \text{ή} \quad \lim_{\substack{x\to x_{0} \\ y\to y_{0}}} 
+  f(x,y)=l, \; \text{αν} \] 
+  \begin{align*}
+    \forall \varepsilon > 0, \; \exists \delta _{1} > 0, \; \exists \delta _2 > 0 
+    \; &: \; \forall (x,y) \in A \; \text{με} \; 0 < \abs{x - x_{0}} < \delta _{1} 
+    \; \text{και} \; 0 < \abs{y - y_{0}} < \delta _{2} \Rightarrow \abs{f(x,y)-l} 
+    < \varepsilon \\
+    \text{ή ισοδύναμα} \quad \forall \varepsilon > 0, \; \exists \delta > 0 
+    \; &: \; \forall (x,y) \in A \; \text{με} \; 0 <
+    \sqrt{(x- x_{0})^{2}+(y- y_{0})^{2}} < \delta \Rightarrow \abs{f(x,y)-l} < 
+    \varepsilon 
+\end{align*}}
+
+\begin{example}
+\item {}
+  Να δείξετε ότι $ \lim\limits_{\substack{x\to 0 \\y \to 0}} 
+  \frac{xy}{x^{2}+y^{2}+1} = 0 $.
+  \begin{solution}
+  \item {}
+    \begin{description}
+      \item [Δοκιμή:]
+        \[
+          \abs{\frac{xy}{x^{2}+y^{2}+1}-0} < \varepsilon \Leftrightarrow 
+          \frac{\abs{xy}}{\abs{x^{2}+y^{2}+1}} < \varepsilon 
+        \] 
+        Όμως ισχύει ότι 
+        \[
+          \frac{\abs{xy}}{\abs{x^{2}+y^{2}+1}} < \abs{xy}, \quad 
+          \forall (x,y) \in \mathbb{R}^{2}
+        \] 
+        Οπότε αρκεί
+        \[
+          \abs{xy} < \varepsilon \Leftrightarrow \abs{x} \abs{y} < \varepsilon 
+          \Leftrightarrow \abs{x} \abs{y} < \sqrt{\varepsilon} 
+          \sqrt{\varepsilon}
+        \] 
+        Έστω $ \varepsilon > 0 $. Επιλέγουμε 
+        $ \delta _{1} = \delta _{2} = \sqrt{\varepsilon} $ και έχουμε:
+
+        \[
+          \forall (x,y) \in \mathbb{R}^{2} \; \text{με} \; 0 < \abs{x-0} = 
+          \abs{x} < \sqrt{\varepsilon} = \delta _{1} \; \text{και} \; 
+          0 < \abs{y-0} = \abs{y} < \sqrt{\varepsilon} = 
+          \delta _{2} \Rightarrow  
+          \abs{\frac{xy}{x^{2}+y^{2}+1}-0} < \varepsilon
+        \] 
+    \end{description}
+  \end{solution}
+\end{example}
+
+\begin{example}
+  Να δείξετε ότι $ \lim\limits_{\substack{x\to 0 \\y \to 0}} 
+  \frac{x^{2}-y^{2}}{x^{2}+y^{2}+1} = 0 $.
+\begin{solution}
+  \item {}
+    \begin{description}
+      \item [Δοκιμή:]
+        \[
+          \abs{\frac{x^{2}-y^{2}}{x^{2}+y^{2}+1}-0} < \varepsilon \Leftrightarrow 
+          \frac{\abs{x^{2}-y^{2}}}{\abs{x^{2}+y^{2}+1}} < \varepsilon \Leftrightarrow 
+          \frac{\abs{x^{2}-y^{2}}}{1+x^{2}+y^{2}} < \varepsilon 
+        \] 
+        Όμως ισχύει ότι 
+        \[
+          \frac{\abs{x^{2}-y^{2}}}{x^{2}+y^{2}+1} \leq 
+          \frac{x^{2}+y^{2}}{1+x^{2}+y^{2}} <  
+          x^{2}+y^{2}, \quad \forall (x,y) \in \mathbb{R}^{2}
+        \] 
+        Οπότε αρκεί
+        \[
+          x^{2}+y^{2} < \varepsilon
+        \] 
+        Έστω $ \varepsilon > 0 $. Επιλέγουμε 
+        $ \delta _{1} = \delta _{2} = \sqrt{\frac{\varepsilon}{2}} $ και έχουμε:
+
+        \begin{gather*}
+          \forall (x,y) \in \mathbb{R}^{2} \; \text{με} \; 0 < \abs{x-0} = 
+          \abs{x} < \sqrt{\frac{\varepsilon}{2}} = \delta _{1} \; \text{και} \; 
+          0 < \abs{y-0} = \abs{y} < \sqrt{\frac{\varepsilon}{2}} = 
+          \delta _{2} \Rightarrow \\
+          \abs{\frac{x^{2}-y^{2}}{x^{2}+y^{2}+1}-0} < x^{2}+y^{2} <
+          \left(\sqrt{\frac{\varepsilon}{2}}\right)^{2} + 
+          \left(\sqrt{\frac{\varepsilon}{2}}\right)^{2} = \varepsilon  
+        \end{gather*} 
+    \end{description}
+  \end{solution}
+\end{example}
+
+% \begin{example}
+%   Να δείξετε ότι $ \lim\limits_{\substack{x\to 0 \\y \to 0}} 
+%   (x+y) \sin{\frac{1}{x}} \sin{\frac{1}{y}} = 0  $.
+% \begin{solution}
+%   \item {}
+%     \begin{description}
+%       \item [Δοκιμή:]
+%         \[
+%           \abs{(x+y) \sin{\frac{1}{x}} \sin{\frac{1}{y}} - 0} < \varepsilon 
+%           \Leftrightarrow \abs{(x+y) \sin{\frac{1}{x}} \sin{\frac{1}{y}}} < \varepsilon 
+%           \Leftrightarrow \abs{x+y}\abs{\sin{\frac{1}{x}}} \abs{\sin{\frac{1}{y}}} 
+%           < \varepsilon 
+%         \] 
+%         Όμως ισχύει ότι 
+%         \[
+%           \abs{x+y} \abs{\sin{\frac{1}{x}}} \sin{\frac{1}{y}} \leq \abs{x+y} \cdot 1 
+%           \cdot 1 = \abs{x+y} \leq \abs{x} + \abs{y}
+%         \] 
+%         Οπότε αρκεί
+%         \[
+%         \abs{x}+ \abs{y} < \varepsilon
+%         \] 
+%         Έστω $ \varepsilon > 0 $. Επιλέγουμε 
+%         $ \delta _{1} = \delta _{2} = \frac{\varepsilon}{2} $ και έχουμε:
+
+%         \begin{gather*}
+%           \forall (x,y) \in \mathbb{R}^{2} \; \text{με} \; 0 < \abs{x-0} = 
+%           \abs{x} < \frac{\varepsilon}{2} = \delta _{1} \; \text{και} \; 
+%           0 < \abs{y-0} = \abs{y} < \frac{\varepsilon}{2} = 
+%           \delta _{2} \Rightarrow \\
+%           \abs{(x+y) \sin{\frac{1}{x}} \sin{\frac{1}{y}}} \leq \abs{x} + \abs{y} < 
+%           \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+%         \end{gather*} 
+%     \end{description}
+%   \end{solution}
+% \end{example}
+
+
+\section{Βασικά Θεωρήματα}
+
+\mythm{%
+  Έστω $ f,g \colon A \subseteq \mathbb{R}^{2} \to \mathbb{R} $ με 
+  $ \lim\limits_{\substack{x\to x_{0} \\y \to y_{0}}}  f(x,y) = l_{1} \in \mathbb{R} $ 
+  και 
+  $ \lim\limits_{\substack{x\to x_{0} \\y \to y_{0}}} g(x,y) = l_{2} \in \mathbb{R} $. 
+  Τότε:
+
+  \begin{minipage}[t]{0.5\textwidth}
+    \begin{enumerate}
+      \item $ \lim\limits_{\substack{x\to x_{0} \\y \to y_{0}}}  [f(x,y)\pm g(x,y)] = 
+        l_{1}\pm l_{2} $ 
+      \item $ \lim\limits_{\substack{x\to x_{0} \\y \to y_{0}}}  [a f(x,y)] = al_{1} $
+      \item $ \lim\limits_{\substack{x\to x_{0} \\y \to y_{0}}}  [f(x,y)\cdot g(x,y)] = 
+        l_{1}\cdot l_{2} $
+      \item $ \lim\limits_{\substack{x\to x_{0} \\y \to y_{0}}}  \frac{f(x,y)}{g(x,y)} = 
+        \frac{l_{1}}{l_{2}}, \; l_{2} \neq 0, \; g(x,y) \neq 0 $
+      \item $ \lim\limits_{\substack{x\to x_{0} \\y \to y_{0}}}  [f(x,y)]^{a} = 
+        {l_{1}}^{a}, \; a \in \mathbb{R}^{*}_{+}, \; f(x,y) \geq 0 $
+      \item $ \lim\limits_{\substack{x\to x_{0} \\y \to y_{0}}}  \ \sqrt[n]{f(x,y)} =
+        \sqrt[n]{l_{1}}, \; n \in \mathbb{N} \; f(x,y) \geq 0  $
+    \end{enumerate}
+  \end{minipage} \hfill 
+  \begin{minipage}[t]{0.49\textwidth}
+    \begin{enumerate}
+      \setcounter{enumi}{6}
+    \item $ \lim\limits_{\substack{x\to x_{0} \\y \to y_{0}}}  \abs{f(x,y)} = 
+      \abs{l_{1}} $ 
+    \item $ \lim\limits_{\substack{x\to x_{0} \\y \to y_{0}}} a^{f(x,y)} = 
+      a^{l_{1}}, \; a >0 $
+    \item $ f(x,y) \leq g(x,y), \; \forall (x,y) \in A \Rightarrow l_{1} \leq l_{2} $
+  \end{enumerate}
+\end{minipage}}
+
+\begin{example}
+  \begin{align*}
+    \lim\limits_{(x,y)\to (0, 0)} \frac{x^{2}-xy}{\sqrt{x} - \sqrt{y}} 
+    &= \lim\limits_{(x,y)\to (0, 0)} \frac{x(x-y)(\sqrt{x} + \sqrt{y})}{(\sqrt{x} -
+    \sqrt{y} )(\sqrt{x} + \sqrt{y})} = \lim\limits_{(x,y)\to (0, 0)}
+    \frac{x(x-y)(\sqrt{x} - \sqrt{y} )}{x-y} \\
+    &= \lim\limits_{(x,y)\to (0,0)} [x(\sqrt{x} + \sqrt{y})] = \lim\limits_{(x,y)\to
+    (0, 0)} x \cdot \lim\limits_{(x,y)\to (0, 0)} (\sqrt{x} + \sqrt{y}) = 0 \cdot 0 = 0 
+  \end{align*}
+\end{example}
+
+
+
+\mythm{%
+  \begin{minipage}{0.3\textwidth}
+    \begin{enumerate}[i)]
+      \item $ \abs{f(x,y)} \leq \abs{g(x,y)} $ \hfill \tikzmark{a}
+      \item $ \lim\limits_{(x,y)\to (x_{0}, y_{0})} g(x,y) = 0 $ \hfill \tikzmark{b}
+    \end{enumerate}
+  \end{minipage}
+
+  \mybrace{a}{b}[$ \lim\limits_{(x,y)\to (x_{0}, y_{0})} f(x,y) = 0 $]
+}
+
+\begin{example}
+  Να υπολογίσετε το όριο $ \lim\limits_{(x,y)\to (0, 0)} xy \sin{\frac{1}{x}} $. 
+
+  \begin{solution}
+  \item {}
+    \begin{minipage}{0.4\textwidth}
+      \begin{enumerate}[i)]
+        \item $ \abs{xy \sin{\frac{1}{x}}} = \abs{xy} 
+          \abs{\sin{\frac{1}{x}}} \leq \abs{xy} \cdot 1 = \abs{xy} $ 
+          \hfill \tikzmark{a}
+        \item $ \lim\limits_{(x,y)\to (0, 0)} xy = 0$ \hfill \tikzmark{b}
+      \end{enumerate}
+    \end{minipage}
+
+    \mybrace{a}{b}[$ \lim\limits_{(x,y)\to (0, 0)} xy 
+    \sin{\frac{1}{x}} = 0$]
+  \end{solution}
+\end{example}
+
+\mythm{%
+  \begin{minipage}{0.3\textwidth}
+    \begin{enumerate}[i)]
+      \item $ \abs{g(x,y)} \leq M \in \mathbb{R} $ \hfill \tikzmark{a}
+      \item $ \lim\limits_{(x,y)\to (x_{0}, y_{0})} f(x,y) = 0 $ \hfill \tikzmark{b}
+    \end{enumerate}
+  \end{minipage}
+
+  \mybrace{a}{b}[$ \lim\limits_{(x,y)\to (x_{0}, y_{0})} [f(x,y)\cdot g(x,y)] = 0 $]
+}
+
+\begin{example}
+  Να υπολογίσετε το όριο $ \lim\limits_{(x,y)\to (0, 0)} (x^{2}+y^{2}) 
+  \sin{\frac{1}{y}} $.  
+
+  \begin{solution}
+  \item {}
+    \begin{minipage}{0.4\textwidth}
+      \begin{enumerate}[i)]
+        \item $ \abs{\sin{\frac{1}{y}}} \leq 1 $ \hfill \tikzmark{a}
+        \item $ \lim\limits_{(x,y)\to (0, 0)} (x^{2}+y^{2}) = 0+0=0 $ 
+          \hfill \tikzmark{b}
+      \end{enumerate}
+    \end{minipage}
+    \mybrace{a}{b}[$ \lim\limits_{(x,y)\to (0, 0)} (x^{2}+y^{2}) \sin{\frac{1}{y}} 
+    = 0$]
+  \end{solution}
+\end{example}
+
+
+\section{Διαδοχικά ή Επάλληλα όρια}
+
+\mydfn{Αν για κάθε $ x \neq x_{0}, \; \exists $ το $ \lim_{y \to y_{0}} f(x,y) $, τότε το όριο 
+  αυτό είναι συνάρτηση του $x$, έστω $ \lim_{y \to y_{0}} f(x,y) = g(x) $ και 
+  αν υπάρχει και το $ \lim_{x \to x_{0}} g(x) $, ορίζουμε: 
+
+  \[
+    L_{1} = \lim_{x \to x_{0}} \left(\lim_{y \to y_{0}} f(x,y)\right) 
+    \quad \text{και ομοίως} \quad
+    L_{2} = \lim_{y \to y_{0}} \left(\lim_{x \to x_{0}} f(x,y)\right) 
+\]} 
+
+\begin{rem}
+  Αν συμβολίσουμε το όριο 
+  $ \lim\limits_{(x,y)\to (x_{0}, y_{0})} f(x,y) = L \in \mathbb{R} $, τότε 
+  ισχύουν τα ακόλουθα:
+  \begin{myitemize}
+    \item Αν υπάρχουν τα όρια $ L_{1} $ και $ L_{2} $ και $ L_{1} \neq L_{2} $, τότε
+      δεν υπάρχει το $ L $
+    \item Αν υπάρχουν τα όρια $ L_{1} $ και $ L_{2} $ και υπάρχει το $ L $, τότε
+      $ L_{1}=L_{2}=L $
+    \item Αν υπάρχουν τα $ L_{1} $ και $ L_{2} $, τότε δεν εξασφαλίζεται η ύπαρξη του 
+      $ L $ ακόμη και αν $ L_{1}=L_{2} $.
+    \item Η ύπαρξη του $ L_{1} $ δεν εξασφαλίζει την ύπαρξη του $ L_{2} $ και αντιστρόφως.
+    \item Η ύπαρξη του $ L $ δεν εξασφαλίζει την ύπαρξη των $ L_{1} $ και $ L_{2} $.
+  \end{myitemize}
+\end{rem}
+
+\begin{example}
+  Να υπολογιστεί το όριο $ \lim\limits_{(x,y)\to (0, 0)} \frac{x-y}{x+y} $
+  \begin{solution}
+    \begin{align*}
+      L_{1}&= \lim_{x \to 0} \left(\lim_{y \to 0} \frac{x-y}{x+y}\right) = 
+      \lim_{x \to 0} \frac{x}{x} = \lim_{x \to 0} 1 = 1 
+      \intertext{και}
+      L_{2}&= \lim_{y \to 0} \left(\lim_{x \to 0} \frac{x-y}{x+y} \right) = 
+      \lim_{y \to 0} \frac{-y}{y} = \lim_{y \to 0}(-1) = -1
+    \end{align*}
+    Επομένως αφού $ L_{1} \neq L_{2} \Rightarrow \not \exists L $ 
+  \end{solution}
+\end{example}
+
+\begin{example}
+  Να υπολογιστεί το όριο 
+  $ \lim\limits_{(x,y)\to (0, 0)} \frac{x^{2}-y^{2}+x^{3}+y^{3}}{x^{2}+y^{2}} $
+  \begin{solution}
+    \begin{align*}
+      L_{1} &= \lim_{x \to 0} 
+      \left(\lim_{y \to 0} \frac{x^{2}-y^{2}+x^{3}+y^{3}}{x^{2}+y^{2}}\right) = 
+      \lim_{x \to 0} \frac{x^{2}+x^{3}}{x^{2}} = \lim_{x \to 0} (1+x) = 1 
+      \intertext{και}
+      L_{2} &= \lim_{y \to 0} 
+      \left( \lim_{x \to 0} \frac{x^{2}-y^{2}+x^{3}+y^{3}} {x^{2}+y^{2}}\right) = 
+      \lim_{y \to 0} \frac{y^{3}-y^{2}}{y^{2}} = \lim_{y \to 0} (y - 1) = -1
+    \end{align*}
+    Επομένως αφού $ L_{1} \neq L_{2} \Rightarrow \not \exists L $ 
+  \end{solution}
+\end{example}
+
+\begin{example}
+  Να υπολογιστεί το όριο $ \lim\limits_{(x,y)\to (0, 0)} \frac{x^{3}+y}{x+y^{3}} $
+  \begin{solution}
+    \begin{align*}
+      L_{1} &= \lim_{x \to 0} \left(\lim_{y \to 0} \frac{x^{3}+y}{x+y^{3}}\right) = 
+      \lim_{x \to 0} \left(\frac{x^{3}}{x}\right) = \lim_{x \to 0} \left(x^{2}\right) = 0
+      \intertext{και}
+      L_{2} &= \lim_{y \to 0} \left( \lim_{x \to 0} \frac{x^{3}+y}{x+y^{3}}\right) = 
+      \lim_{y \to 0} \frac{y}{y^{3}} = \lim_{y \to 0} \left(\frac{1}{y^{2}}\right) = 
+      +\infty
+    \end{align*} 
+    Επομένως αφού $ L_{1} \neq L_{2} $ δεν υπάρχει το ζητούμενο όριο.
+  \end{solution}
+\end{example}
+
+\section{Υπολογισμός Ορίων μέσω καμπυλών}
+
+Χρησιμοποιούμε καμπύλες της μορφής 
+\[ 
+  x - x_{0} = \lambda (y- y_{0})^{n} \quad \text{ή} 
+  \quad y- y_{0} = \lambda (x- x_{0})^{n}, \quad l \in \mathbb{R}, \; n \in 
+  \mathbb{N}  
+\]
+
+\begin{rem}
+  Δυστυχώς ο τρόπος αυτός δεν εξασφαλίζει την ύπαρξη του ορίου, όταν αυτό υπάρχει, 
+  όμως χρησιμοποείται για να δείξουμε ότι ένα όριο, δεν υπάρχει.
+\end{rem}
+
+\begin{example}
+  Να υπολογιστεί το όριο $ \lim\limits_{(x,y)\to (0, 0)} \frac{xy}{x^{2}+y^{2}} $.
+  \begin{solution}
+    \[
+      \lim\limits_{(x,y)\to (0, 0)} \frac{xy}{x^{2}+y^{2}} 
+      \xlongequal[\lambda \in \mathbb{R}]{y= \lambda x} \lim_{x \to 0}
+      \frac{\lambda x^{2}}{x^{2}+ \lambda^{2} x^{2}} = \lim_{x \to 0} 
+      \frac{\lambda x^{2}}{x^{2}(\lambda ^{2}+1)} = \lim_{x \to 0} 
+      \frac{\lambda}{\lambda ^{2}+1} 
+    \]
+    Οπότε δεν υπάρχει το όριο, γιατί εξαρτάται από την τιμή του 
+    $ \lambda $ και άρα από την καμπύλη προσέγγισης του σημείου 
+    $ (0,0) $.
+  \end{solution}
+\end{example}
+
+\begin{example}
+  Να υπολογιστεί το όριο $ \lim\limits_{\substack{x\to 0 \\y \to 0}} 
+  \frac{x^{2}y}{x^{4}+y^{2}} $.
+  \begin{solution}
+    \[
+      \lim\limits_{\substack{x\to 0 \\y \to 0}} 
+      \frac{x^{2}y}{x^{4}+y^{2}} 
+      \xlongequal[\lambda \in \mathbb{R}]{y= \lambda x^{2}} 
+      \lim_{x \to 0} \frac{x^{2} \lambda x^{2}}
+      {x^{4}+\lambda^{2}x^{4}} = \lim_{x\to 0} 
+      \frac{\lambda x^{4}}{x^{4}(1+\lambda ^{2})} = 
+      \lim_{x \to 0} \frac{\lambda}{\lambda ^{2}+1} 
+    \] 
+    Οπότε δεν υπάρχει το όριο, γιατί εξαρτάται από την τιμή του $ \lambda $ 
+    και άρα από την καμπύλη προσέγγισης του σημείου $ (0,0) $.
+  \end{solution}
+\end{example}
+
+\begin{example}
+  Να υπολογιστεί το όριο $ \lim\limits_{(x,y)\to (0, 0)} \frac{x^{2}-y^{4}}
+  {2x^{2}+y^{4}} $. 
+  \begin{solution}
+    \[
+      \lim\limits_{(x,y)\to (0, 0)} \frac{x^{2}-y^{4}}
+      {2x^{2}+y^{4}} \xlongequal[\lambda \in \mathbb{R}]
+      {x= \lambda y^{2}} \lim_{y \to 0} 
+      \frac{\lambda ^{2}y^{4}-y^{4}}{2 \lambda ^{2}y^{4}+y^{4}} = 
+      \lim_{y \to 0} \frac{y^{4}(\lambda ^{2}-1)}
+      {y^{4}(2 \lambda ^{2}+1)} = 
+      \frac{\lambda ^{2}-1}{2 \lambda ^{2}+1} 
+    \] 
+    Οπότε δεν υπάρχει το όριο, γιατί εξαρτάται από την τιμή του $ \lambda $ 
+    και άρα από την καμπύλη προσέγγισης του σημείου $ (0,0) $.
+  \end{solution}
+\end{example}
+
+\begin{example}[Θέμα Εξετάσεων]
+  Να υπολογιστεί το όριο 
+  $ \lim\limits_{(x,y)\to (0, 0)} \frac{x^{3}y^{3}}{x^{3}y^{3}+ (x-y)^{3}} $ 
+  \begin{solution}
+  \item {}
+    \begin{align*}
+      \lim\limits_{\substack{x \to 0\\ y \to 0}} \frac{x^{3}y^{3}}{x^{3}y^{3} + 
+      (x-y)^{3}} 
+    &\xlongequal[\lambda \in \mathbb{R}]{y = \lambda x} \lim_{x \to 0} \frac{x^{3} 
+    \lambda ^{3} x^{3}}{x^{3} \lambda ^{3} x^{3} + (x - \lambda x)^{3}} 
+    = \lim_{x \to 0} \frac{\lambda ^{3}x^{6}}{x^{3} 
+    (\lambda ^{3} x^{3} + (1- \lambda)^{3})} \\
+    &= \lim_{x \to 0} \frac{\lambda ^{3} x^{3}}{\lambda ^{3}x^{3} + (1- \lambda)^{3}} 
+    = 
+    \begin{cases} 
+      0, & \lambda \neq 1 \\ 
+      1, & \lambda = 1 
+    \end{cases} 
+    \end{align*} 
+    Οπότε δεν υπάρχει το όριο, γιατί εξαρτάται από την τιμή του 
+    $ \lambda $ και άρα από την καμπύλη προσέγγισης του σημείου 
+    $ (0,0) $.
+  \end{solution}
+\end{example}
+
+
+\section{Υπολογισμός Ορίων με χρήση Πολικών Συντεταγμένων}
+
+Η μέθοδος αυτή βασίζεται στη χρήση πολικών συντεταγμένων με κέντρο το σημείο 
+$ (x_{0}, y_{0}) $, στο οποίο θέλουμε να υπολογίσουμε το όριο, και μας εξασφαλίζει 
+την ύπαρξη του ορίου, όταν αυτό υπάρχει.
+
+\begin{rem}
+\item {}
+  \begin{myitemize}
+    \item Ο μετασχηματισμός των Πολικών Συντεταγμένων, είναι:
+      \[
+        x - x_{0} = r \cos{\theta} \quad \text{και} \quad y - y_{0} = 
+        r \sin{\theta}, \; r \geq 0, \; \theta \in [0, 2 \pi]
+      \] 
+      και ισχύει ότι 
+      \[
+        r = \sqrt{(x- x_{0})^{2}+(y- y_{0})^{2}} \quad \text{και} \quad \theta = 
+        \frac{y}{x}.
+      \] 
+      Ο μετασχηματισμός του ορίου, τότε είναι 
+      \[
+        \lim\limits_{(x,y)\to (x_{0}, y_{0})} f(x,y) = 
+        \lim_{r \to 0} f(x(r, \theta ), y(r, \theta)) = L
+      \] 
+
+    \item Συνήθως η μέθοδος αυτή εφαρμόζεται όταν το σημείο στο οποίο θέλουμε να 
+      υπολογίσουμε το όριο είναι το $ (0,0) $ και όταν η συνάρτηση είναι ρητή ή 
+      περιέχει παραστάσεις της μορφής $ x^{2}+y^{2} $. Αν το όριο βγεί 
+      πραγματικός αριθμός ανεξάρτητος του $\theta$, τότε το όριο υπάρχει 
+  \end{myitemize}
+\end{rem}
+
+\begin{example}
+  \begin{align*} \lim\limits_{(x,y)\to (0, 0)} 
+    \frac{x^{2}-2y^{2}+2x^{3}-y^{3}}{x^{2}+y^{2}} 
+               &= \lim_{r \to 0} \frac{r^{2} \cos^{2}{\theta} - 2r^{2} \sin^{2}{\theta 
+               +2r^{3} \cos^{3}{\theta - r^{3} \sin^{3}{\theta}}}}{r^{2}} \\ 
+               &= \lim_{r \to 0} \frac{r^{2}(\cos^{2}{\theta} - 2 \sin^{2}{\theta} +2r 
+               \cos^{3}{\theta} - r \sin^{3}{\theta})}{r^{2}} = 
+               \cos^{2}{\theta} - 2 \sin^{2}{\theta}, \; \forall \theta \in [0, 2 \pi]
+  \end{align*}
+  Επομένως δεν υπάρχει το όριο γιατί εξαρτάται από το $\theta$.
+\end{example}
+
+\begin{example}
+  \begin{align*}
+    \lim\limits_{(x,y)\to (0, 0)} \frac{x^{3}y}{x^{2}+y^{2}} &= 
+    \lim_{r \to 0} \frac{r^{3} \cos^{3}{\theta} \cdot r 
+      \sin{\theta}}{r^{2}} = \lim_{r \to 0} \frac{r^{4} \sin{\theta} 
+    \cos^{3}{\theta}}{r^{2}} = 
+    \lim_{r \to 0} r^{2} \sin{\theta} \cos^{3}{\theta} 
+  \end{align*}
+  Για να υπολογίσουμε αυτό το όριο, έχουμε ότι
+  \[
+    \abs{\sin{\theta} \cos^{3}{\theta}} = \abs{\sin{\theta}} \cdot 
+    \abs{\cos^{3}{\theta}} = \abs{\sin{\theta}} \cdot \abs{\cos{\theta}}^{3} \leq 
+    1 \cdot 1^{3} = 1 
+  \] 
+  δηλαδή, η συνάρτηση $ \sin{\theta} \cos^{3}{\theta} $ είναι φραγμένη.
+  Επομένως
+  \[ 
+    \abs{r^{2} \sin{\theta} \cos^{3}{\theta}} \leq r^{2} \cdot 1 = r^{2} \Leftrightarrow 
+    -r^{2} \leq r^{2} \sin{\theta} \cos^{3}{\theta} \leq r^{2}
+  \] 
+  και επειδή $ \lim_{r \to 0} r^{2} = 0 $ από το κριτήριο παρεμβολής προκύπτει ότι 
+  $ \lim_{r \to 0} r^{2} \sin{\theta} \cos^{3}{\theta} = 0 $ και κατά συνέπεια
+  \[
+    \lim\limits_{(x,y)\to (0,0)} \frac{x^{3}y}{x^{2}+y^{2}} = 0
+  \] 
+\end{example}
+
+\begin{example}
+  \begin{align*}
+    \lim\limits_{(x,y)\to (0, 0)} \frac{\sqrt{x^{2}+y^{2}+1}-1}
+    {x^{2}+y^{2}} = \lim_{r \to 0} \frac{\sqrt{r^{2}+1} -1}{r^{2}} 
+    \overset{\left(\frac{0}{0}\right)}{\underset{\text{LH}}{=}} 
+    \lim_{r \to 0} \frac{\frac{r}{\sqrt{r^{2}+1}}}{2r} = \frac{1}{2}
+  \end{align*}
+  Επομένως το όριο είναι ανεξάρτητο του $\theta$, άρα 
+  \[
+    \lim\limits_{(x,y)\to (0, 0)} 
+    \frac{\sqrt{x^{2}+y^{2}+1} -1}{x^{2}+y^{2}} = \frac{1}{2} 
+  \] 
+\end{example}
+
+\begin{example}
+  \[ 
+    \lim\limits_{(x,y)\to (0, 0)} \frac{x^{3}+y^{3}}{x^{2}+y^{2}} = \lim_{r \to 0}
+    \frac{r^{3} \cos^{3}{\theta} + r^{3} \sin^{3}{\theta}}{r^{2} \cos^{2}{\theta} +
+    r^{2} \sin^{2}{\theta}} = \lim_{r \to 0} 
+    r(\cos^{3}{\theta} + \sin^{3}{\theta}) 
+  \] 
+  Έχουμε ότι
+  \[
+    \abs{\cos^{3}{\theta} + \sin^{3}{\theta}} \leq \abs{\cos^{3}{\theta}} + 
+    \abs{\sin^{3}{\theta}} = \abs{\cos{\theta} }^{3} + \abs{\sin{\theta} }^{3} \leq 
+    1^{3} + 1^{3} = 2
+  \] 
+  Άρα το παραπάνω όριο, είναι όριο μηδενικής επί φραγμένης και επομένως είναι 0 και άρα
+  ανεξάρτητο του $\theta$. Επομένως 
+  \[
+    \lim\limits_{(x,y)\to (0, 0)} \frac{x^{3}+y^{3}}{x^{2}+y^{2}} = 0 
+  \] 
+\end{example}
+
+\section{Άλλα Όρια}
+
+\begin{example}
+  $ \lim\limits_{(x,y)\to (0, 0)}
+  (1+x^{2}y^{2})^{(x^{2}+y^{2})^{-1}} $
+  \begin{solution}
+  \item {}
+    \begin{myitemize}
+      \item Λογαριθμίζουμε 
+        \[ \ln{(1+x^{2}y^{2})^{(x^{2}+y^{2})^{-1}}} = (x^{2}+y^{2})^{-1}
+          \ln{(1+x^{2}y^{2})} = \frac{1}{x^{2}+y^{2}} \ln{(1+x^{2}y^{2})} =
+        \frac{\ln{(1+x^{2}y^{2})}}{x^{2}+y^{2}} \]
+      \item Υπολογίζουμε το όριο  
+        \begin{align*} 
+          \lim\limits_{(x,y)\to (0, 0)}
+          \frac{\ln{(1+x^{2}y^{2})}}{x^{2}+y^{2}} 
+          &= \lim_{r \to 0} \frac{\ln{(1+ r^{2} 
+          \cos^{2}{\theta r^{2}\sin^{2}{\theta}})} }{r^{2}}
+          \overset{(\frac{0}{0})}{\underset{\text{L.H.}}{=}} = \lim_{r \to 0}
+          \frac{\frac{1}{1+r^{4} \cos^{2}{\theta} \sin^{2}{\theta}} 4 r^{3}
+          \cos^{2}{\theta} \sin^{2}{\theta}}{2r} \\ 
+          &= \lim_{r \to 0}
+          \frac{2r^{2} \cos^{2}{\theta} \sin^{2}{\theta}}{1+r^{4} \cos^{2}{\theta
+            \sin^{2}{\theta}}
+          } = \frac{0}{1} = 0   
+        \end{align*}
+      \item Τελικά  
+        \[ \lim\limits_{(x,y)\to (0,0)} (1+x^{2}y^{2})^{(x^{2}+y^{2})^{-1}} = e^{0}=1
+        \]
+    \end{myitemize}
+  \end{solution}
+\end{example}
+
+\begin{example}
+  $ \lim\limits_{(x,y)\to (0, 0)} \frac{\sin{xy}}{x} = \lim\limits_{(x,y)\to (0, 0)}
+  \left(y \frac{\sin{xy}}{xy}\right) = 
+  \lim\limits_{(x,y)\to (0, 0)} y \cdot \lim\limits_{(x,y)\to (0, 0)} \frac{\sin{xy}}{xy}
+  \overset{xy \to 0}{=}  0\cdot 1 = 0 $ 
+\end{example}
+
+\begin{example}
+  \begin{align*} 
+    \lim\limits_{(x,y)\to (0, 0)} 
+    \left( \frac{1- \cos{xy}}{x^{2}}\right) 
+    &= \lim\limits_{(x,y)\to (0, 0)} 
+    \left( \frac{2 \sin^{2}{\frac{xy}{2}}}{x^{2}} \right) = 
+    \lim\limits_{(x,y)\to (0, 0)} 
+    \left( \frac{y^{2}}{2}\frac{\sin^{2}{\frac{xy}{2}}}{\frac{x^{2}y^{2}}{4}} \right) 
+    = \lim\limits_{(x,y)\to (0, 0)} \frac{y^{2}}{2} \cdot \lim\limits_{(x,y)\to (0, 0)} 
+    \left(\frac{\sin{\frac{xy}{2}}}{\frac{xy}{2}}\right)^{2} \\ 
+    &\overset{\frac{xy}{2} \to 0 }{=} 0 \cdot 1^{2} = 1 
+  \end{align*}
+\end{example}
+
+\begin{example}
+  Να υπολογιστεί το όριο της συνάρτησης 
+  $ \lim\limits_{(x,y)\to (3, -1)} \frac{x-3y-6}{5x+2y-13} $ 
+  \begin{solution}
+    θέτω $ u=x-3 $ και $ v=y+1 $ και έχουμε $ x \to 3 \Rightarrow u \to 0 $ και 
+    $ y \to -1 \Rightarrow v \to 0 $. Άρα
+    \[
+      \lim\limits_{(x,y)\to (3, -1)} \frac{x-3y-6}{5x+2y-13} = \lim_{(u,v) \to (0,0)} 
+      \frac{u+3-3v+3-6}{5u+15+2v-2-13} = \lim_{(u,v) \to (0,0)} \frac{u-3v}{5u+2v}
+    \] 
+    Οπότε
+    \[
+      \lim_{(u,v) \to (0,0)} \frac{u-3v}{5u+2v} \overset{v= \lambda u}{=} 
+      \lim_{u \to 0} \frac{u- 3 \lambda u}{5u + 2 \lambda u} = \lim_{u \to 0}
+      \frac{1 - 3 \lambda}{5 + 2 \lambda}
+    \]
+    άρα δεν υπάρχει το όριο, γιατί εξαρτάται από το $ \lambda $.
+  \end{solution}
+\end{example}
+
+\begin{example}
+  Να υπολογιστεί το όριο της συνάρτησης
+  \[
+    f(x,y) = 
+    \begin{cases} 
+      \frac{1 - \cos{\sqrt{xy}}}{y}, & y \neq 0 \\ 0, & y =0 
+    \end{cases}  
+  \] 
+  \begin{solution}
+    \begin{align*}
+      \lim\limits_{\substack{x\to 0 \\y \to 0}} \frac{1- \cos{\sqrt{xy}}}{y} =
+      \lim\limits_{\substack{x\to 0 \\y \to 0}} \frac{2
+      \sin^{2}{\frac{\sqrt{xy}}{2}}}{y} = 
+      \lim\limits_{\substack{x\to 0 \\y \to 0}} \frac{x}{2} \frac{2
+      \sin^{2}{\frac{\sqrt{xy}}{2}}}{\frac{xy}{2}} =
+      \lim\limits_{\substack{x\to 0 \\y \to 0}} \frac{x}{2} 
+      \cdot\lim\limits_{\substack{x\to 0 \\y \to 0}}
+      \left(\frac{\sin{\frac{\sqrt{xy}}{2}}}{\frac{\sqrt{xy}}{2}} \right)^{2} 
+      = 0 \cdot 1^{2} = 0 
+    \end{align*} 
+  \end{solution}
+\end{example}
+
+
+\chapter{Συνέχεια Συναρτήσεων δυο Μεταβλητών}
+
+\section{Ορισμός}
+
+\mydfn{ Η συνάρτηση $ f \colon A \subseteq \mathbb{R}^{2} \to \mathbb{R} $ 
+  λέγεται συνεχής στο σημείο $ (x_{0}, y_{0}) \in A $ αν 
+$ \lim\limits_{(x,y)\to (x_{0}, y_{0})} f(x,y) = f(x_{0}, y_{0}) $.}
+
+\mydfn{Η συνάρτηση $ f \colon A \subseteq \mathbb{R}^{2} \to \mathbb{R} $ 
+λέγεται συνεχής στο Α, αν είναι συνεχής σε κάθε σημείο $ (x_{0}, y_{0}) \in A $.}
+
+\begin{rem}
+  Από τον παραπάνω ορισμό, καταλαβαίνουμε ότι μια συνάρτηση $ f(x,y) $ 
+  είναι συνεχής στο σημείο $ (x_{0}, y_{0}) $, αν
+  \begin{myitemize}
+    \item Υπάρχει το $ \lim\limits_{\substack{x\to x_{0} \\y \to y_{0}}} f(x,y) $
+    \item Υπάρχει το $ f(x_{0}, y_{0}) \in \mathbb{R} $
+    \item $  \lim\limits_{\substack{x\to x_{0} \\ y \to y_{0}}} f(x,y) = 
+      f(x_{0}, y_{0}) $
+  \end{myitemize}
+\end{rem}
+
+\begin{example}
+  Να μελετηθεί πλήρως ως προς τη συνέχεια η συνάρτηση 
+  \[
+    f(x,y) = 
+    \begin{cases} 
+      \frac{xy}{x^{2}+y^{2}}, & (x,y) \neq (0,0) \\ 
+      0, & (x,y) = (0,0) 
+    \end{cases}  
+  \]
+  \begin{solution}
+  \item {}              
+    Αν $ (x,y) \neq (0,0) $ τότε η $f$ είναι συνεχής 
+    ως ρητή συνάρτηση.
+
+    Αν $ (x,y)=(0,0) $, εξετάζουμε το όριο της $f$: 
+    \[
+      \lim\limits_{\substack{x\to 0 \\y \to 0}} \frac{xy}{x^{2}+y^{2}} = 
+      \lim_{r \to 0} \frac{r^{2} \cos{\theta} \sin{\theta} }{ r^{2}} = 
+      \lim_{r \to 0}(\cos{\theta} \sin{\theta}) = \cos{\theta} \sin{\theta} 
+    \] 
+    Επομένως δεν υπάρχει το όριο της $f$ στο σημείο $ (0,0) $, άρα η $f$ 
+    δεν είναι συνεχής στο $ (0,0) $.
+  \end{solution}
+\end{example}
+
+\begin{example}
+  Να μελετηθεί πλήρως ως προς τη συνέχεια η συνάρτηση 
+  \[
+    g(x,y) = 
+    \begin{cases} 
+      y^{2}x \sin{\frac{1}{x^{2}+y^{2}}}, & (x,y) 
+      \neq (0,0) \\ 0, & (x,y) = (0,0)
+    \end{cases}  
+  \] 
+  \begin{solution}
+  \item {}
+    Αν $ (x,y) \neq (0,0) $ τότε η $g$ είναι συνεχής 
+    ως ρητή συνάρτηση.
+
+    Αν $ (x,y)=(0,0) $, εξετάζουμε το όριο της $g$. 
+    Έχουμε:
+    \[
+      \abs{y^{2}x \sin{\frac{1}{x^{2}+y^{2}}}} = 
+      \abs{y^{2}x}\cdot \abs{\sin{\frac{1}{x^{2}+y^{2}}}}
+      \leq \abs{y^{2}x} \cdot 1 = \abs{y^{2}x}  
+    \] 
+    και 
+    \[
+      \lim\limits_{\substack{x\to 0 \\y \to 0}} y^{2}x = 0 
+    \] 
+    επομένως από το θεώρημα, έχουμε ότι 
+    $ \lim\limits_{\substack{x\to 0 \\y \to 0}} y^{2}x 
+    \sin{\frac{1}{x^{2}+y^{2}}} = 0 = f(0,0) $. Άρα η $f$ είναι συνεχής.
+  \end{solution}
+\end{example}
+
+\begin{example}
+  Να εξετάσετε αν η συνάρτηση $ f(x,y) = \frac{x^{2}+y^{4}}{x^{4}+y^{2}} $ μπορεί να 
+  οριστεί κατάλληλα ώστε να είναι συνεχής.
+  \begin{solution}
+    Παρατηρούμε ότι η συνάρτηση δεν ορίζεται στο σημείο $ (0,0) $. Έχουμε:
+    \begin{myitemize}
+      \item Προφανώς η $f$ είναι συνεχής, ως ρητή σε κάθε σημείο 
+        $ (x_{0}, y_{0}) \neq (0,0) $.  
+      \item Εξετάζουμε το όριο της $f$ στο σημείο $ (0,0) $. Έχουμε:
+        \[
+          \lim\limits_{\substack{x\to 0 \\y \to 0}} \frac{x^{2}+y^{4}}{x^{4}+y^{2}} =
+          \lim_{r \to 0} \frac{r^{2} \cos^{2}{\theta} + r^{4} 
+          \sin^{4}{\theta}}{r^{4} \cos^{4}{\theta} + r^{2} \sin^{2}{\theta}} =
+          \lim_{r \to 0} \frac{\cos^{2}{\theta} + r^{2} \sin^{2}{\theta}}{r^{2}
+          \cos^{2}{\theta} + \sin^{2}{\theta}} =
+          \frac{\cos^{2}{\theta}}{\sin^{2}{\theta}}
+        \] 
+        Επομένως δεν υπάρχει το όριο της $f$ στο $ (0,0) $, γιατί εξαρτάται από το
+        $\theta$. 
+    \end{myitemize}
+    Άρα η $f$ δεν μπορεί να είναι συνεχής στο σημείο $(0,0)$.
+  \end{solution}
+\end{example}
+
+\begin{example}
+  Να μελετηθεί πλήρως ως προς τη συνέχεια η συνάρτηση 
+  \[
+    f(x,y) = 
+    \begin{cases} 
+      e^{-\frac{x^{2}}{y}}, & y \neq 0 \\ 0, & y= 0 
+    \end{cases}  
+  \] 
+  \begin{solution}
+  \item {}
+    Για $ y \neq 0 $ η $f$ είναι συνεχής ως σύνθεση και πράξεις συνεχών 
+    συναρτήσεων. 
+
+    Για $ y =0 $, έχουμε:
+    \begin{myitemize}
+      \item Αν $ x \neq 0 $, τότε:
+        \[
+          \lim_{y \to 0^{+}} e^{- \frac{x^{2}}{y}} \overset{e^{- \infty}}{=} 0 
+        \] 
+        ενώ 
+        \[
+          \lim_{y \to 0^{-}} e^{- \frac{x^{2}}{y}} \overset{e^{\infty}}{=} \infty
+        \]
+      \item Αν $ x = 0 $, τότε: 
+        \[
+          f(0,y) = 
+          \begin{cases} 
+            1, & y \neq 0 \\ 0, & y= 0 
+          \end{cases} 
+        \] 
+        Άρα η $f$ δεν είναι συνεχής στον άξονα $x$, δηλαδή για $ y=0 $.
+    \end{myitemize}
+  \end{solution}
+\end{example}
+
+\begin{example}
+  Να δείξετε ότι η συνάρτηση 
+  \[
+    f(x,y) = 
+    \begin{cases} 
+      \frac{1 - \cos{\sqrt{xy}}}{x}, & x \neq 0 \\
+      \frac{y}{2}, & x=0 
+    \end{cases} 
+  \] 
+  είναι συνεχής σε όλα τα σημεία του άξονα $y$.
+  \begin{solution}
+  \item {}
+    Έστω $ (0, y_{0}) $ ένα τυχαίο σημείο 
+    του άξονα $y$. 
+    \[
+      \lim\limits_{\substack{x\to 0 \\y \to y_0}} 
+      \frac{1 - \cos{\sqrt{xy}}}{x} = 
+      \lim\limits_{\substack{x\to 0 \\y \to y_0}} \frac{2
+        \sin^{2}{\frac{\sqrt{xy}}{2}}}{x} = \lim\limits_{\substack{x\to 0 \\y
+      \to y_0}} \frac{y}{2} 
+      \frac{2\sin^{2}{\frac{\sqrt{xy}}{2}}}{\frac{xy}{2}} =
+      \lim\limits_{\substack{x\to 0 \\y \to y_0}} \frac{y}{2} \cdot
+      \lim\limits_{\substack{x\to 0 \\y \to y_0}} 
+      \left(\frac{\sin^{2}{\frac{\sqrt{xy} }{2}
+      }}{\frac{\sqrt{xy}}{2}} \right)^{2} = \frac{y_0}{2} \cdot (1)^{2} =
+      \frac{y_{0}}{2} 
+    \] 
+    και 
+    $ f(0, y_{0}) = \frac{y_{0}}{2} $.
+
+    Επομένως η $f$ είναι συνεχής σε κάθε σημείο του άξονα $y$.
+  \end{solution}
+\end{example}
+
+\end{document}

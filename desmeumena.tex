@@ -1,6 +1,15 @@
+\input{preamble.tex}
+\input{definitions.tex}
+
+\begin{document}
+
+
+
 \chapter{Ακρότατα Υπό Συνθήκη, Δεσμευμένα Ακρότατα}
 
 \section{Πολλαπλασιαστές Lagrange}
+
+\subsection{Ακρότατα υπό μία συνθήκη}
 
 \begin{thm}
     Έστω $ f(x,y,z) $ συνάρτηση τριών μεταβλητών, ορισμένη σε ένα ανοιχτό 
@@ -13,7 +22,7 @@
     \end{equation}
     Θεωρούμε τη συνάρτηση Lagrange που ορίζεται από τον τύπο
     \[
-        L(x,y,z, \lambda _{1}, \lambda _{2}) = f(x,y,z) + \lambda \phi (x,y,z) 
+        L(x,y,z, \lambda) = f(x,y,z) + \lambda \phi (x,y,z) 
     \] 
     και τις ορίζουσες
     \[
@@ -31,7 +40,7 @@
             {\phi}_{y} & {\phi}_{z} & 0
         \end{vmatrix}, \quad 
     \] 
-    Υποθέτουμε ότι $ (x_{0}, y_{0}, z_{0}, \lambda _{1}, \lambda _{2}) $ είναι μια 
+    Υποθέτουμε ότι $ (x_{0}, y_{0}, z_{0}, \lambda) $ είναι μια 
     λύση του συστήματος 
     \[
         \left.
@@ -39,8 +48,7 @@
                 L_{x} = 0 \\
                 L_{y} = 0 \\
                 L_{z} = 0 \\
-                L_{\lambda _{1}} = 0 \\
-                L_{\lambda _{2}} = 0 
+                L_{\lambda} = 0 \\
             \end{matrix}
         \right\} 
     \]
@@ -56,6 +64,9 @@
             συνθήκη του περιορισμού~\eqref{eq:constr1}.
     \end{myitemize}
 \end{thm}
+
+
+\subsection{Ακρότατα υπό δύο συνθήκες}
 
 
 \begin{thm}
@@ -111,3 +122,7 @@
             συνθήκες του περιορισμού~\eqref{eq:constr2}.
     \end{myitemize}
 \end{thm}
+
+\end{document}
+
+\end{document}

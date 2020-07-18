@@ -5,7 +5,7 @@
 
 \begin{document}
 
-\chapter{Μερικές Παράγωγοι}
+\chapter{Μερική Παράγωγος}
 
 \section{Ορισμός}
 
@@ -83,7 +83,7 @@ $ (x_{0}, y_{0}, z_{0}) \in A $.
       \lim_{k \to 0} \frac{3\cdot 2(1+k)^{2}-2\cdot 2^{3}+10}{k} = 
       \lim_{k \to 0} \frac{6(1+k)^{2}-6}{k} 
       \overset{(\frac{0}{0})}{\underset{\text{L H}}{=}} 
-      \lim_{k \to 0} \frac{12(1+k)}{1} = 12
+      \lim_{k \to 0} \frac{12(1+k)}{1} = 12\!\!\!
     \end{align*}
   \end{solution}
 \end{example}
@@ -290,10 +290,10 @@ $ \pdv{f}{x} $ και $ \pdv{g}{x} $ υπάρχουν για κάθε $ (x,y) \i
   Για τις μικτές παραγώγους $ f_{xy} $ και $ f_{yx} $ 
   ισχύει:
   \begin{align*}
-    \pdv[2]{f}{x}{y} = \pdv{}{x} \left(\pdv{f}{y}\right) = \pdv{}{x} (f_{y}) 
+    \pdv[2]{f}{x}{y} = \pdv{}{x} \left(\pdv{f}{y}\right) = \pdv{}{x} \left(f_{y}\right) 
     = (f_{y})_{x} = f_{yx}
     \intertext{και}
-    \pdv[2]{f}{y}{x} = \pdv{}{y} \left(\pdv{f}{x}\right) = \pdv{}{y} (f_{x}) = 
+    \pdv[2]{f}{y}{x} = \pdv{}{y} \left(\pdv{f}{x}\right) = \pdv{}{y} \left(f_{x}\right) = 
     (f_{x})_{y} = f_{xy}
   \end{align*} 
 \end{rem}
@@ -676,24 +676,40 @@ $ \pdv{f}{x} $ και $ \pdv{g}{x} $ υπάρχουν για κάθε $ (x,y) \i
 \end{example}
 
 
-\chapter{Παραγωγισιμότητα}
+\chapter{Διαφορικά}
 
 \section{Ολικό Διαφορικό}
 
 \begin{dfn}
-\item {}
-  Η συνάρτηση $ \pdv{f}{x}\cdot h + \pdv{f}{y} \cdot k = f_{x} \Delta x 
-  + f_{y} \Delta y $ ονομάζεται ολικό διαφορικό της συνάρτησης $f$ 
-  και συμβολίζεται με $ df $. Οπότε 
+  Έστω η συνάρτηση $ f(x,y) $. Τα \textcolor{Col1}{ολικά διαφορικά 1ης και 
+  2ης τάξης} της συνάρτηση $f$ συμβολίζονται με $ df $ και $ d^{2}f $, αντίστοιχα 
+  και ισχύει:
   \[
-    df = f_{x} \Delta x + f_{y} \Delta y \quad \text{ή} 
-    \quad df = f_{x}dx + f_{y}dy 
+    \boxed{df = f_{x}dx + f_{y}dy} \quad \text{και} \quad 
+    \boxed{d^{2}f = f_{xx}dx^{2}+2f_{xy}dxdy+f_{yy}dy^{2}}
   \] 
-  Στην περίπτωση όπου $ f= f(x_{1}, x_{2}, \ldots, x_{n}) $, έχουμε
+  Στην περίπτωση όπου $ f= f(x_{1}, x_{2}, \ldots, x_{n}) $, το ολικό 
+  διαφορικό 1ης τάξης γίνεται: 
   \[
     df = f_{x_{1}}d{x_{1}} + f_{x_{2}}d{x_{2}} + \cdots f_{x_{n}} dx_{n}
   \]
 \end{dfn}
+
+
+% \begin{dfn}
+% \item {}
+%   Η συνάρτηση $ \pdv{f}{x}\cdot h + \pdv{f}{y} \cdot k = f_{x} \Delta x 
+%   + f_{y} \Delta y $ ονομάζεται ολικό διαφορικό της συνάρτησης $f$ 
+%   και συμβολίζεται με $ df $. Οπότε 
+%   \[
+%     df = f_{x} \Delta x + f_{y} \Delta y \quad \text{ή} 
+%     \quad df = f_{x}dx + f_{y}dy 
+%   \] 
+%   Στην περίπτωση όπου $ f= f(x_{1}, x_{2}, \ldots, x_{n}) $, έχουμε
+%   \[
+%     df = f_{x_{1}}d{x_{1}} + f_{x_{2}}d{x_{2}} + \cdots f_{x_{n}} dx_{n}
+%   \]
+% \end{dfn}
 
 \begin{example}
   Να βρείτε το ολικό διαφορικό της συνάρτησης $ f(x,y) = xye^{x+2y} $ 
@@ -710,23 +726,124 @@ $ \pdv{f}{x} $ και $ \pdv{g}{x} $ υπάρχουν για κάθε $ (x,y) \i
       df = y(1+x)e^{x+2y} dx + x(1+2y)e^{x+2y}dy
     \]
   \end{solution}
-
 \end{example}
 
+\section{Εφαρμογές του Διαφορικού}
+
+\begin{example}
+  Να υπολογίσετε το $ \Delta f $ και το $ df $ στο σημείο $ (x,y) = (1,1) $, 
+  για τη συνάρτηση $ f(x,y) = x^{3}+y^{2} $ και για 
+  \begin{enumerate}[i)]
+    \item $ \Delta x = 0,1, \; \Delta y = 0,1 $
+    \item $ \Delta x = 0,01, \; \Delta y = 0,01 $
+  \end{enumerate}
+  Τι παρατηρείτε?
+\end{example}
+\begin{solution}
+\item {}
+  \begin{enumerate}[i)]
+    \item 
+      \begin{align*} 
+        \Delta f &= f(x+ \Delta x, y + \Delta y) - f(x,y) = f(1+0.1,1+0.1) - 
+        f(1,1) = f(1.1,1.1) - f(1,1) \\ 
+                 &= [(1.1)^{3}+(1.1)^{2}] - (1^{3}+1^{2}) = 0.541 \\
+        df &= f_{x}dx + f_{y}dy  = 3x^{2} dx + 2y dy \Rightarrow df (1,1) = 
+        3\cdot 1^{2} \cdot 0.1 + 2 \cdot 1 \cdot 0.1 = 0.5 
+      \end{align*}
+    \item 
+      \begin{align*} 
+        \Delta f &= f(x+ \Delta x, y + \Delta y) - f(x,y) = f(1+0.01,1+0.01) - 
+        f(1,1) = f(1.01,1.01) - f(1,1) \\ 
+                 &= [(1.01)^{3}+(1.01)^{2}] - (1^{3}+1^{2}) = 0.0504 \\
+        df &= f_{x}dx + f_{y}dy  = 3x^{2} dx + 2y dy \Rightarrow df (1,1) = 
+        3\cdot 1^{2} \cdot 0.01 + 2 \cdot 1 \cdot 0.01 = 0.05 
+      \end{align*}
+  \end{enumerate}
+  Παρατηρούμε ότι στην 1η περίπτωση, έχουμε
+  $ \Delta f - df \approx 0.04 $, ενώ στη 2η περίπτωση έχουμε $ \Delta f - df \approx 
+  0,0004 $, δηλαδή στη 2η περίπτωση, όπου τα $ \Delta x $ και $ \Delta y $ επιλέχθηκαν 
+  να είναι μικρότερα, το διαφορικό προσεγγίζει με μεγαλύτερη ακρίβεια τη διαφορά 
+  $ \Delta f $.
+\end{solution}
+
+\begin{example}%todo σχήμα (τρίγωνο) για την άσκηση. Δες λυμένα θέματα ηλεκτρ.
+  Κατά τη μέτρηση των στοιχείων μιας τριγωνικής επιφάνειας, βρέθηκαν οι πλευρές να 
+  έχουν μήκος \SI{100}{cm} και \SI{125}{cm} αντίστοιχα, ενώ η περιεχόμενη γωνία βρέθηκε 
+  να είναι \SI{60}{\degree}. Αν το πιθανό σφάλμα κατά την μέτρηση των πλευρών είναι 
+  $ \SI{0.2}{cm} $ και για τις γωνίες είναι $ \SI{1}{\degree} $, να υπολογίσετε κατά 
+  προσέγγιση το σφάλμα στο εμβαδό της επιφάνειας.
+\end{example}
+\begin{solution}
+  Έχουμε ότι $ E = \frac{y \cdot z}{2} $. Όμως από το ορθογώνιο τρίγωνο έχουμε ότι 
+  $ z = x \sin{\phi} $, άρα 
+  \[
+    E(x,y,\phi) = \frac{y \cdot x \cdot \sin{\phi}}{2} 
+  \] 
+  Παρατηρούμε ότι $ \Delta x = dx = 0.2, \; \Delta y = dy = 0.2 $ και 
+  $ \Delta \phi = d\phi = \SI{1}{\degree} \frac{\pi}{180} $. Οπότε,ισχύει ότι
+  \begin{equation*}
+    \Delta E \approx dE = E_{x} dx + E_{y} dy + E_{\phi} d\phi = \frac{y \cdot
+    \sin{\phi}}{2} dx + \frac{x \cdot \sin{\phi}}{2} dy + 
+    \frac{y \cdot x \cdot \cos{\phi}}{2} d\phi
+  \end{equation*} 
+  και πιο συγκεκριμένα ισχύει ότι 
+  \begin{align*}
+    \Delta E(100,125,60) \approx dE(100,125,60) 
+  &= E_{x} dx + E_{y} dy + E_{\phi} d\phi \\
+  &= E_{x}(100,125,60) dx + E_{y}(100,125,60) dy + E_{\phi}(100,125,60) d\phi \\
+  &= \frac{1}{2} \left(125 \cdot \sin{\frac{\pi}{3}} \cdot 0.2 + 100 \cdot
+    \sin{\frac{\pi}{3}} \cdot 0.2 + 100 \cdot 125 \cdot \cos{\frac{\pi}{3}} \cdot
+  \frac{\pi}{180}\right) \\
+  &= \SI{74.03}{cm^{2}}
+  \end{align*}
+  Άρα το σφάλμα μέτρησης του εμβαδού της τριγωνικής επιφάνειας είναι 
+  $ \SI{74.03}{cm^{2}} $
+\end{solution}
+
+\begin{example}%todo σχήμα
+  Κατά την εκτίμηση των συντεταγμένων ενός σημείου $ P(x,y) $ γίνονται σφάλματα 
+  $ dx $ και $ dy $ αντίστοιχα. Να υπολογίσετε την επίδραση αυτών των σφαλμάτων 
+  στη γωνία $ \theta $ και να γίνει αριθμητική εφαρμογή για $ x=1 $, $ y=2 $ και για 
+  $ dx = 0.01 $ και $ dy =-0.02 $.
+\end{example}
+\begin{solution}
+  Έστω οι συντεταγμένες του σημείου $ P'(x+ dx, y + dy) $, όπως φαίνονται στο σχήμα.
+  Έχουμε ότι 
+  \[
+    \tan{\theta} = \frac{y}{x} \Rightarrow \theta = \arctan{\frac{y}{x}}
+  \] 
+  Αν η γωνία μετά το σφάλμα της εκτίμησης είναι $ \theta'$, έχουμε ότι 
+  \[
+    \theta ' = \arctan{\frac{y+ dy}{x + dx}} 
+  \] 
+  Παρατηρούμε ότι $ \Delta x = dx = 0.01 $, $ \Delta y = dy = -0.02 $. Οπότε ισχύει ότι 
+  \[
+    \Delta \theta \approx d \theta = \theta _{x} dx + \theta _{y} dy =
+    \frac{-y}{x^{2}+y^{2}} dx + \frac{x}{x^{2}+y^{2}} dy = \frac{xdy-ydx}{x^{2}+y^{2}}
+  \] 
+  και μάλιστα υπολογίζουμε την απόλυτη τιμή και έχουμε
+  \[
+    \abs{\Delta \theta} \approx \frac{\abs{xdy-ydx}}{x^{2}+y^{2}} \leq \frac{\abs{x dy}
+    + \abs{y dx}}{x^{2}+y^{2}} 
+  \]
+  και πιο συγκεκριμένα, για το σημείο $ P(1,2) $ έχουμε
+  \[
+    \abs{\Delta \theta(1,2)} \leq \frac{\abs{1(-0.02)}+\abs{2\cdot 0.01}}{1^{2}+2^{2}} =
+    \frac{0.04}{5} = 0.008
+  \]
+\end{solution}
 
 \section{Τέλειο Διαφορικό}
 
-Θεωρούμε τις συναρτήσεις $ P(x,y) $ και $ Q(x,y) $ με πεδίο ορισμού $ A \subseteq
-\mathbb{R}^{2} $.
-\begin{dfn}
+\mydfn{Θεωρούμε τις συναρτήσεις $ P(x,y) $ και $ Q(x,y) $ με πεδίο ορισμού $ A \subseteq
+  \mathbb{R}^{2} $.
   Η παράσταση $ P(x,y) dx + Q(x,y) dy $ λέγεται \textcolor{Col2}{τέλειο 
   διαφορικό} αν υπάρχει συνάρτηση $ f(x,y) $ με πεδίο ορισμού το $A$, ώστε 
-  \begin{align*}
-    df = P(x,y)dx + Q(x,y)dy \Leftrightarrow \\
-    \pdv{f}{x} dx + \pdv{f}{y} dy = P(x,y)dx + Q(x,y)dy \Leftrightarrow \\
+  \begin{gather*}
+    df = P(x,y)dx + Q(x,y)dy \Leftrightarrow \pdv{f}{x} dx + \pdv{f}{y} dy = 
+    P(x,y)dx + Q(x,y)dy \Leftrightarrow \\
     \boxed{\pdv{f}{x} = P(x,y) \quad \text{και} \quad \pdv{f}{y} = Q(x,y)}
-  \end{align*}
-\end{dfn}
+\end{gather*}}
 
 
 \begin{prop}
@@ -734,7 +851,7 @@ $ \pdv{f}{x} $ και $ \pdv{g}{x} $ υπάρχουν για κάθε $ (x,y) \i
   παραγώγους πρώτης τάξης, σε μια ορθογώνια περιοχή $A$ του $ \mathbb{R}^{2} $,  
   τότε η  παράσταση  $ P(x,y)dx + Q(x,y)dy $ είναι τέλειο διαφορικό αν 
   \[
-    \pdv{p}{y} = \pdv{q}{x}, \quad \forall (x,y) \in A 
+    \boxed{\pdv{p}{y} = \pdv{q}{x}} \quad \forall (x,y) \in A
   \]
 \end{prop}
 
@@ -743,8 +860,8 @@ $ \pdv{f}{x} $ και $ \pdv{g}{x} $ υπάρχουν για κάθε $ (x,y) \i
   αν υπάρχει συνάρτηση  $ f(x,y,z) $  τέτοια ώστε  $ df = P(x,y,z)dx + Q(x,y,z)dy 
   + R(x,y,z)dz $.  Τότε ισχύουν οι παρακάτω σχέσεις:
   \[
-    \pdv{f}{x} = P(x,y,z) \quad \text{και} \quad \pdv{f}{y} = Q(x,y,z) 
-    \quad \text{και} \quad \pdv{f}{z} = R(x,y,z) 
+    \boxed{\pdv{f}{x} = P(x,y,z) \quad \text{και} \quad \pdv{f}{y} = Q(x,y,z) 
+    \quad \text{και} \quad \pdv{f}{z} = R(x,y,z)} 
   \] 
 \end{dfn}
 
@@ -754,13 +871,13 @@ $ \pdv{f}{x} $ και $ \pdv{g}{x} $ υπάρχουν για κάθε $ (x,y) \i
   $ \mathbb{R}^{3} $ τότε η  παράσταση 
   $ P(x,y,z)dx + Q(x,y,z)dy + R(x,y,z)dz $   είναι τέλειο διαφορικό αν 
   \[
-    \pdv{P}{y} = \pdv{Q}{x} \quad \text{και} \quad \pdv{Q}{z} = 
-    \pdv{R}{y} \quad \text{και} \quad  \pdv{P}{z} = \pdv{R}{x}, 
+    \boxed{\pdv{P}{y} = \pdv{Q}{x}} \quad \text{και} \quad \boxed{\pdv{Q}{z} = 
+    \pdv{R}{y}} \quad \text{και} \quad  \boxed{\pdv{P}{z} = \pdv{R}{x}} 
     \quad \forall (x,y,z) \in A 
   \] 
 \end{prop}
 
-\begin{rem}
+\begin{rem}\label{olokl}
   Οι συναρτήσεις  $ f(x,y) $  και  $ f(x,y,z) $ υπολογίζονται επίσης από τις 
   παρακάτω σχέσεις:
   \begin{align*}
@@ -768,7 +885,7 @@ $ \pdv{f}{x} $ και $ \pdv{g}{x} $ υπάρχουν για κάθε $ (x,y) \i
     f(x,y,z) &= \int_{x_{0}}^{x} P(t,y,z) \,{dt} + \int_{y_{0}}^{y} Q(x_{0},t,z) 
     \,{dt} + \int _{z_{0}}^{z} R(x_{0},y_{0},t) \,{dt}  
   \end{align*}
-  όπου τα $ x_{0} $, $ y_{0} $  και  $ z_{0} $ επιλέγονται αυθαίρετα στο πεδίο 
+  όπου τα $ x_{0} $, $ y_{0} $  και  $ z_{0} $ επιλέγονται \textbf{αυθαίρετα} στο πεδίο 
   ορισμού των  $ P $, $ Q $  και  $ R $.
 \end{rem}
 
@@ -778,8 +895,129 @@ $ \pdv{f}{x} $ και $ \pdv{g}{x} $ υπάρχουν για κάθε $ (x,y) \i
 \end{rem}
 
 \begin{example}
-  %todo να γράψω παράδειγμα για τέλεια διαφορικά
+  Να εξετάσετε αν η παράσταση $ \left(1+x- \frac{2}{y}\right)dx + 
+  \left(1+ \frac{2x}{y^{2}} \right)dy $ είναι τέλειο διαφορικό και αν ναι, να 
+  υπολογίσετε τη συνάρτηση δυναμικού.
 \end{example}
+\begin{solution}
+  Ελέγχουμε με το κριτήριο:
+  \[ 
+    \pdv{P}{y} = \frac{2}{y^{2}} = \pdv{Q}{x} 
+  \]
+  Άρα η παράσταση είναι τέλειο διαφορικό. Επομένως υπάρχει 
+  συνάρτηση, $ f(x,y) $ τέτοια ώστε: 
+  \begin{align}
+    \pdv{f}{x} &= 1 + x - \frac{2}{y} \label{fx1} \\
+    \pdv{f}{y} &= 1+ \frac{2x}{y^{2}} \label{fy1}
+  \end{align}
+  Ολοκληρώνουμε μερικώς ως προς $x$ την~\eqref{fx1} και έχουμε
+  \[
+    f(x,y) = \int \left(1+x- \frac{2}{y}\right) \,{dx} = x + 
+    \frac{x^{2}}{2} - \frac{2x}{y} + c(y) 
+  \] 
+  Άρα  
+  \begin{equation}
+    f(x,y) = x + \frac{x^{2}}{2} - \frac{2x}{y} + c(y) \label{fxy}
+  \end{equation}
+  Στη συνέχεια παραγωγίζουμε μερικώς ως προς $y$ τη συνάρτηση $ f(x,y) $ που μόλις 
+  βρήκαμε και έχουμε:
+  \begin{equation}
+    \pdv{f}{y} = \frac{2x}{y^{2}} + c'(y) \label{ffy}
+  \end{equation} 
+  Στη συνέχεια εξισώνουμε την~\eqref{ffy} με την~\eqref{fy1} και προκύπτει
+  \[
+    c'(y) = 1 \Rightarrow c(y) = y + k 
+  \] 
+  Άρα, τελικά η συνάρτηση δυναμικού είναι 
+  \[
+    f(x,y) = x + \frac{x^{2}}{2} - \frac{2x}{y} + y + k 
+  \] 
+\end{solution}
+
+\begin{example}
+  Να εξετάσετε αν η παράσταση $ (3x^{2}+3y-1)dx + (z^{2}+3x)dy + (2yz+1)dz $ είναι 
+  τέλειο διαφορικό και αν ναι, να υπολογίσετε τη συνάρτηση δυναμικού.
+\end{example}
+\begin{solution}
+  Ελέγχουμε με το κριτήριο:
+  \[
+    \pdv{P}{y} = 3 = \pdv{Q}{x} \quad \text{και} \quad \pdv{Q}{z} = 2z = \pdv{R}{y}
+    \quad \text{και} \quad \pdv{P}{z} = 0 = \pdv{R}{x}
+  \] 
+  Άρα η παράσταση είναι τέλειο διαφορικό. Για να βρούμε τη συνάρτηση δυναμικού, έχουμε
+  \begin{description}
+    \item [A᾽ Τρόπος: (Με Τύπο)]
+      Θα χρησιμοποιήσουμε τον τύπο της παρατήρησης~\ref{olokl} για να υπολογίσουμε 
+      τη συνάρτηση δυναμικού. 
+      \begin{align*}
+        f(x,y,z) &= \int _{x_{0}}^{x} P(t,y,z) \,{dt} + \int _{y_{0}}^{y} Q(x_{0},t,z) 
+        \,{dt} + \int _{z_{0}}^{z} R(x_{0}, y_{0}, t) \,{dt} \\
+                 &= \int _{0}^{x} (3t^{2}+3y-1) \,{dt} + \int _{0}^{y} (z^{2}+3\cdot 0) 
+                 \,{dt} + \int _{0}^{z} (2\cdot 0\cdot t + 1) \,{dt} \\ 
+                 &= \int _{0}^{x} (3t^{2}+3y-1) \,{dt} + \int _{0}^{y} z^{2} \,{dt} + 
+                 \int _{0}^{z} 1 \,{dt} \\
+                 &= \left[t^{3}+3yt-t\right]_{0}^{x} + \left[z^{2}t\right]_{0}^{y} + 
+                 \bigl[t\bigr]_{0}^{z} \\
+                 &= x^{3}+3xy-x + z^{2}y+z
+      \end{align*}
+    \item [B᾽ Τρόπος: (Με Ολοκλήρωση)] Αφού η παράσταση είναι τέλειο διαφορικό,  
+      υπάρχει συνάρτηση, $ f(x,y,z) $ τέτοια ώστε: 
+      \begin{align}
+        \pdv{f}{x} &= 3x^{2}+3y-1 \label{fx11} \\
+        \pdv{f}{y} &= z^{2}+3x \label{fy11} \\
+        \pdv{f}{z} &= 2yz+1 \label{fz11}
+      \end{align} 
+      Ολοκληρώνουμε μερικώς την~\eqref{fx11} και έχουμε
+      \begin{equation*}
+        f(x,y,z) = \int (3x^{2}+3y-1) \,{dx} = x^{3} + 3xy -x + c(y,z) 
+      \end{equation*} 
+      Άρα 
+      \begin{equation}
+        f(x,y,z) =  x^{3} + 3xy -x + c(y,z) \label{fxyz}
+      \end{equation}
+      Στη συνέχεια παραγωγίζουμε μερικώς ως προς $y$ και ως προς $z$  
+      τη συνάρτηση $f(x,y,z)$ που μόλις βρήκαμε και έχουμε:
+      \begin{align}
+        \pdv{f}{y} &= 3x + \pdv{c}{y} \label{cy} \\
+        \pdv{f}{z} &= \pdv{c}{z} \label{cz}
+      \end{align}
+      Στη συνέχεια εξισώνοντας την~\eqref{cy} με την~\eqref{fy11} προκύπτει 
+      \begin{equation}
+        \pdv{c}{y} = z^{2} \label{last1}
+      \end{equation}
+      και εξισώνοντας την~\eqref{cz} με την~\eqref{fz11} προκύπτει
+      \begin{equation}
+        \pdv{c}{z} = 2yz+1 \label{last2}
+      \end{equation}
+      Από τις σχέσεις~\eqref{last1} και~\eqref{last2} μπορούμε να βρούμε τη συνάρτηση 
+      $ c(y,z) $ ακολουθώντας τη διαδικασία του προηγούμενου παραδείγματος, αφού 
+      ουσιαστικά έχουμε τις μερικές παραγώγους της συνάρτησης και ζητάμε 
+      να βρούμε την ίδια τη συνάρτηση. Οπότε ολοκληρώνουμε μερικώς ως προς 
+      $y$ την~\eqref{last1} και έχουμε
+      \begin{equation}
+        c(y,z) = \int z^{2} \,{dy} = z^{2}y + k(z) \label{kz} 
+      \end{equation} 
+      Στη συνέχεια παραγωγίζουμε ως προς $z$ τη συνάρτηση $ c(y,z) $ που μόλις βρήκαμε 
+      και έχουμε
+      \begin{equation}
+        \pdv{c}{z} = 2yz + k'(z) \label{kz1}
+      \end{equation} 
+      Έπειτα εξισώνουμε τις σχέσεις~\eqref{last2} και~\eqref{kz1} και προκύπτει 
+      \[
+        k'(z) = 1 \Rightarrow k(z) = z + c_{1} \label{finally}
+      \] 
+      Οπότε με αντικατάσταση της~\eqref{finally} στην~\eqref{kz} βρίσκουμε 
+      \begin{equation}
+        c(y,z) = z^{2}y+z + c_{1} \label{cyz}
+      \end{equation}
+      Τέλος με αντικατάσταση της~\eqref{cyz} στη συνάρτηση $ f(x,y,z) $ από τη 
+      σχέση~\eqref{fxyz} βρίσκουμε
+      \[
+        f(x,y,z) = x^{3}+3xy-x+z^{2}y+z+ c_{1} 
+      \] 
+  \end{description}
+\end{solution}
+
 
 \section{Αρμονικές Συναρτήσεις}
 
@@ -862,6 +1100,59 @@ $ \pdv{f}{x} $ και $ \pdv{g}{x} $ υπάρχουν για κάθε $ (x,y) \i
       \end{solution}
   \end{enumerate}
 \end{examples}
+
+\section{Τύπος Taylor και Maclaurin}
+
+\begin{example}
+  Να υπολογιστεί το ανάπτυγμα της συνάρτησης $f(x,y)=x^3+y^3+xy^2$ γύρω από το 
+  σημείο $ (1,2) $ (ή ισοδύναμα σε δυνάμεις του $(x-1)$ και $(y-2)$).
+\end{example}
+
+\begin{solution}
+  Για να υπολογίσουμε το ανάπτυγμα της συνάρτησης σε δυνάμεις του $(x-1)$ και $(y-2)$ 
+  αρκεί ισοδύναμα να υπολογίσουμε το ανάπτυγμα της συνάρτησης γύρω από το 
+  σημείο $(x_0,y_0)=(1,2)$
+
+  Παρατηρώ ότι δεν αναφέρεται στην εκφώνηση μέχρι τους όρους ποιας τάξης 
+  xρειάζεται να βρω το ανάπτυγμα.  Γι' αυτό, μιας και η συνάρτηση είναι πολυωνυμική,
+  βρίσκω μέχρι την τάξη όπου μηδενίζονται οι μερικές παράγωγοι: 
+
+  (Δηλαδή στο συγκεκριμένο παράδειγμα μέχρι $3$ης τάξης, αφού όλες οι παράγωγοι 
+  $4$ης και ανώτερης τάξης, θα είναι όλες μηδέν)
+
+  \vspace{\baselineskip}
+
+  \twocolumnsides{\begin{itemize}
+      \item $f_x=3x^2+y^2\Rightarrow f_x(1,2)=7$
+      \item $f_y=3y^2+2xy\Rightarrow f_y(1,2)=16$
+      \item $f_{xx}=6x\Rightarrow f_{xx}(1,2)=6$
+      \item $f_{xy}=2y\Rightarrow f_{xy}(1,2)=4$
+      \item $f_{yy}=6y+2x\Rightarrow f_{yy}(1,2)=14$
+      \end{itemize}}{\begin{itemize}
+      \item $f_{xxx}=6$
+      \item $f_{xxy}=f_{xyx}=0$
+      \item $f_{xyy}=f_{yxy}=2$
+      \item $f_{yyy}=6$ 
+  \end{itemize}}
+
+  \vspace{\baselineskip}
+
+  Με αντικατάσταση των μερικών παραγώγων στον τύπο Taylor, έχουμε:
+  \begin{align*}
+    f(x,y)&=13+\Bigl(7(x-1)+16(y-2)\Bigr)+ \\ 
+          &\quad +\frac{1}{2!}\Bigl(6(x-1)^2 +2\cdot 4(x-1)(y-2)+14(y-2)^2\Bigr)+ \\
+          &\quad +\frac{1}{3!}\Bigl(6(x-1)^3+3\cdot 0(x-1)^2(y-2)+3
+          \cdot 2(x-1)(y-2)^2+6(y-2)^3\Bigr).
+  \end{align*}
+  Και μετά τις πράξεις, έχουμε: 
+  \begin{align*}
+    f(x,y)&=13+7(x-1)(y-2)+16(y-2)+3(x-1)^2+4(x-1)(y-2) \\
+          &\quad +7(y-2)^2+(x-1)^3+(x-1)(y-2)^2+(y-2)^3.
+  \end{align*}
+  Δεν κάνουμε άλλες πράξεις.
+
+  Έχουμε το ανάπτυγμα της $f(x,y)$ σε δυνάμεις του $(x-1)$ και $(y-2)$ όπως ζητήθηκε.
+\end{solution}
 
 
       \end{document}

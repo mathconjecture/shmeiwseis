@@ -1,0 +1,38 @@
+\input{preamble.tex}
+\input{definitions_ask.tex}
+
+\pagestyle{vangelis}
+\everymath{\displaystyle}
+
+\begin{document}
+
+\section{Διαφορικοί Τελεστές}
+
+\begin{dfn}
+  Τελεστής  \textcolor{Col1}{Hamilton} ή \textcolor{Col1}{ανάδελτα} 
+  \[ \grad = \pdv{}{x} \mathbf{i} + \pdv{}{y} \mathbf{j} + \pdv{}{z} \mathbf{k} \]
+\end{dfn}
+Ο τελεστής ανάδελτα συμπεριφέρεται ακριβώς όπως ένα διάνυσμα.
+
+\section{Κλίση}
+
+Έστω $ f(x,y,z) $ πραγματική συνάρτηση (βαθμωτό πεδίο), συνεχής, με συνεχείς μερικές 
+παραγώγους 1ης τάξης.
+
+\begin{dfn}
+  \textcolor{Col1}{Κλίση} της $f$ ονομάζεται η \textcolor{Col1}{διανυσματική} συνάρτηση
+  \[
+    \grad f = \pdv{f}{x} \mathbf{i} + \pdv{f}{y} \mathbf{j} + \pdv{f}{z} \mathbf{k} 
+  \] 
+\end{dfn}
+
+\section{Ιδιότητες}
+
+\begin{enumerate}[i)]
+  \item $ \grad (f \pm g) = \grad f \pm \grad g $
+  \item $ \grad (a f) = a \grad f, \quad \forall a \in \mathbb{R}  $
+  \item $ \grad (fg) =  g \grad f +  f\grad g $
+  \item $ \grad (\frac{f}{g}) = \frac{g \grad f - f \grad g}{g^{2}}  $
+\end{enumerate}
+
+\end{document}

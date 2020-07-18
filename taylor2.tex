@@ -6,67 +6,109 @@
 \setdefaultlanguage{greek}
 \setotherlanguage{english}
 
-
-\usepackage{amsmath,amssymb,amsthm,amsfonts}
-\usepackage{minibox}
-\usepackage{physics} 
 \usepackage[margin=1cm]{geometry}
+
+\usepackage[intlimits]{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{proof}
+\usepackage{mathtools}
+\usepackage{minibox}
+
 \usepackage{diffcoeff}
+\usepackage{physics}
+
+\usepackage[RGB]{xcolor}
+\definecolor{Col1}{rgb}{0.74, 0.2, 0.64}
+\definecolor{Col2}{rgb}{0.0, 0.55, 0.55}
+
+%%%%%%%%%%%%% TIKZ $$$$$$$$$$$$$$$$$
+\usepackage{tikz}
+\usetikzlibrary{shapes,angles,calc,arrows,arrows.meta,quotes,intersections}
+
+%%%%%%%%%%%%%% WATERMARK above pictures with opacity %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \usepackage[printwatermark]{xwatermark}
+ \newsavebox\mybox
+ \savebox\mybox{\tikz[color=Col2,opacity=0.2]\node{ΠΡΟΣΗΜΟ};}
+ \newwatermark*[
+   allpages,
+   fontfamily=lmr,
+   fontseries=m,
+   angle=45,
+   scale=12,
+   xpos=-40,
+   ypos=40,
+ ]{\usebox\mybox} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
 \thispagestyle{empty}
 
 \begin{center}
-    \minibox[frame]{\large\bfseries Τύπος Taylor}
+\minibox{\textcolor{Col1}{\large\bfseries Τύπος Taylor}}
 \end{center}
 
 \vspace{\baselineskip}
 
-\begin{align*}
-    f(x,y)&=f(x_{0}, y_{0}) + \frac{1}{1!} \left((x- x_{0})
-        \eval{\pdv{f(x,y)}{x}}_{(x_{0}, y_{0})}  +
-    (y- y_{0})\eval{\pdv{f(x,y)}{y}}_{(x_{0}, y_{0})}\right)
-    + \frac{1}{2!} \left((x- x_{0})^{2} \eval{\pdv[2]{f(x,y)}{x}}_{(x_{0}, y_{0})}+ 2(x- x_{0})(y- y_{0})
-        \eval{\pdv[2]{f(x,y)}{y}{x}}_{(x_{0}, y_{0})} + (y- y_{0})^{2} \eval{\pdv[2]{f(x,y)}{y} }_{(x_{0},
-y_{0})}\right) \\
-          & \qquad + \frac{1}{3!} \left( (x- x_{0})^{3} \eval{\diffp[3]{f(x,y)}{x}}_{(x_{0},
-          y_{0})}
-      + 3 (x- x_{0})^{2}(y- y_{0}) \eval{\diffp[2,1]{f(x,y)}{x,y}}_{(x_{0}, y_{0})} 
-      + 3 (x- x_{0})(y- y_{0})^{2} \eval{\diffp[1,2]{f(x,y)}{x,y}}_{(x_{0}, y_{0})} + (y- y_{0})^{3}
-      \eval{\diffp[3]{f(x,y)}{y}}_{(x_{0}, y_{0})}
-  \right) + \cdots
-\end{align*}
+% \begin{align*}
+%   f(x,y)&=f(x_{0}, y_{0}) + \frac{1}{1!} \left((x- x_{0})
+%     \eval{\pdv{f(x,y)}{x}}_{(x_{0}, y_{0})}  +
+%   (y- y_{0})\eval{\pdv{f(x,y)}{y}}_{(x_{0}, y_{0})}\right)
+%   + \frac{1}{2!} \left((x- x_{0})^{2} \eval{\pdv[2]{f(x,y)}{x}}_{(x_{0}, y_{0})}+ 2(x- x_{0})(y- y_{0})
+%     \eval{\pdv[2]{f(x,y)}{y}{x}}_{(x_{0}, y_{0})} + (y- y_{0})^{2} \eval{\pdv[2]{f(x,y)}{y} }_{(x_{0},
+%   y_{0})}\right) \\
+%         & \qquad + \frac{1}{3!} \left( (x- x_{0})^{3} \eval{\diffp[3]{f(x,y)}{x}}_{(x_{0},
+%           y_{0})}
+%           + 3 (x- x_{0})^{2}(y- y_{0}) \eval{\diffp[2,1]{f(x,y)}{x,y}}_{(x_{0}, y_{0})} 
+%           + 3 (x- x_{0})(y- y_{0})^{2} \eval{\diffp[1,2]{f(x,y)}{x,y}}_{(x_{0}, y_{0})} + (y- y_{0})^{3}
+%           \eval{\diffp[3]{f(x,y)}{y}}_{(x_{0}, y_{0})}
+%         \right) + \cdots
+%   \end{align*}
 
-\begin{center}
+\begin{align*}
+  f(x,y)&=f(x_{0}, y_{0}) + \frac{1}{1!} \left((x- x_{0})
+    \pdv{f(x_{0}, y_{0})}{x} + (y- y_{0}) \pdv{f(x_{0}, y_{0})}{y} \right)
+  + \frac{1}{2!} \left((x- x_{0})^{2} \pdv[2]{f(x_{0}, y_{0})}{x} + 
+    2(x- x_{0})(y- y_{0}) \pdv[2]{f(x_{0}, y_{0})}{y}{x} + (y- y_{0})^{2} 
+    \pdv[2]{f(x_{0}, y_{0})}{y} \right) \\
+        & \qquad + \frac{1}{3!} \left( (x- x_{0})^{3} \diffp[3]{f(x_{0},
+          y_{0})}{x} + 3 (x- x_{0})^{2}(y- y_{0}) \diffp[2,1]{f(x_{0}, y_{0})}{x,y} 
+          + 3 (x- x_{0})(y- y_{0})^{2} \diffp[1,2]{f(x_{0}, y_{0})}{x,y} + (y- y_{0})^{3}
+          \diffp[3]{f(x_{0}, y_{0})}{y}
+        \right) + \cdots
+  \end{align*}
+
+  \begin{center}
     ή
-\end{center}
+  \end{center}
 
-\begin{align*}
+  \begin{align*}
     f(x,y)&=f(x_{0}, y_{0}) + \frac{1}{1!} \left[(x- x_{0})
-        f_{x}(x_{0}, y_{0})  +
+      f_{x}(x_{0}, y_{0})  +
     (y- y_{0}) f_{y}(x_{0}, y_{0})\right]
     + \frac{1}{2!} \left[(x- x_{0})^{2} f_{xx}(x_{0}, y_{0})+ 2(x- x_{0})(y- y_{0})
-        f_{xy}(x_{0}, y_{0}) + (y- y_{0})^{2} f_{yy}(x_{0},
+      f_{xy}(x_{0}, y_{0}) + (y- y_{0})^{2} f_{yy}(x_{0},
     y_{0})\right] \\
           & \qquad + \frac{1}{3!} \left[ (x- x_{0})^{3} f_{xxx}(x_{0},
-              y_{0})
-              + 3 (x- x_{0})^{2}(y- y_{0}) f_{xxy}(x_{0}, y_{0}) 
-              + 3 (x- x_{0})(y- y_{0})^{2} f_{xyy}(x_{0}, y_{0}) + (y- y_{0})^{3}
-              f_{yyy} (x_{0}, y_{0})
-      \right] + \cdots
- \end{align*} 
+            y_{0})
+            + 3 (x- x_{0})^{2}(y- y_{0}) f_{xxy}(x_{0}, y_{0}) 
+            + 3 (x- x_{0})(y- y_{0})^{2} f_{xyy}(x_{0}, y_{0}) + (y- y_{0})^{3}
+            f_{yyy} (x_{0}, y_{0})
+          \right] + \cdots
+    \end{align*} 
 
- \begin{center}
-    ή 
- \end{center}
+    \begin{center}
+      ή 
+    \end{center}
 
-\begin{equation*}
-    \boxed{f(x,y)=f(x_{0}, y_{0}) + \frac{1}{1!} \left((x- x_{0})
-    \pdv{x}+ (y- y_{0})\pdv{y}\right) f(x_{0}, y_{0})
-    + \frac{1}{2!} \left((x- x_{0})
-    \pdv{x}+ (y- y_{0})\pdv{y}\right)^{(2)}f(x_{0}, y_{0} ) 
-           + \frac{1}{3!} \left((x- x_{0})
-       \pdv{x}+ (y- y_{0})\pdv{y}\right)^{(3)}f(x_{0}, y_{0}) + \cdots}
-\end{equation*}
-\end{document}
+    \begin{equation*}
+      \boxed{f(x,y)=f(x_{0}, y_{0}) + \frac{1}{1!} \left((x- x_{0})
+        \pdv{x}+ (y- y_{0})\pdv{y}\right) f(x_{0}, y_{0})
+        + \frac{1}{2!} \left((x- x_{0})
+        \pdv{x}+ (y- y_{0})\pdv{y}\right)^{(2)}f(x_{0}, y_{0} ) 
+        + \frac{1}{3!} \left((x- x_{0})
+      \pdv{x}+ (y- y_{0})\pdv{y}\right)^{(3)}f(x_{0}, y_{0}) + \cdots}
+    \end{equation*}
+    \end{document}

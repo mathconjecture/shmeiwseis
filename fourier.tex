@@ -1,5 +1,5 @@
-\input{preamble/preamble.tex}
-\input{preamble/definitions.tex}
+\input{preamble.tex}
+\input{definitions.tex}
 
 
 
@@ -184,12 +184,14 @@ $ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ 
 \end{gather*}
 
 \begin{thm}
-    Έστω $ f \colon \mathbb{R} \to \mathbb{R} $ μια περιοδική συνάρτηση με περίοδο 
-    $ 2 \pi $ και τμηματικά λεία. Τότε η σειρά Fourier της $f$ συγκλίνει για κάθε 
-    $ x \in \mathbb{R} $, στην τιμή
-    \[
-        \frac{f(x^{-}) + f(x^{+})}{2} 
-    \] 
+  Έστω $ f \colon \mathbb{R} \to \mathbb{R} $ μια περιοδική συνάρτηση με περίοδο 
+  $ 2 \pi $ και τμηματικά λεία. Τότε η σειρά Fourier της $f$ συγκλίνει για κάθε 
+  $ x \in \mathbb{R} $, στην τιμή
+  \[
+    \frac{f(x^{-}) + f(x^{+})}{2} 
+  \] 
+  όπου $ f({x_{0}}^{-}) = \lim\limits_{x \to {x_{0}}^{-}} f(x) $ και 
+  $ f({x_{0}}^{+}) = \lim\limits_{x \to {x_{0}}^{+}} f(x) $ 
 \end{thm}
 
 \begin{rem}
@@ -201,6 +203,17 @@ $ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ 
         συγκλίνει απόλυτα και ομοιόμορφα στην $f$ στο $ \mathbb{R} $.
     \end{myitemize}
 \end{rem}
+
+\begin{rem}
+  Δηλαδή συνοψίζοντας η σειρά Fourier μιας περιοδικής με περίοδο $ 2 \pi $ και 
+  τμηματικά λείας συνάρτησης δίνεται από τον τύπο 
+  \[
+    \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{(nx)} + b_{n} \sin{(nx)}] =  
+    \frac{f(x^{-}) + f(x^{+})}{2} 
+  \] 
+\end{rem}
+
+
 
 \section{Ορθογωνιότητα}
 
@@ -291,8 +304,6 @@ $ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ 
 
 \begin{proof}
 \item {}
-    \begin{myitemize}
-    \item 
         \[
             \int _{-L}^{L} \sin{\frac{n \pi x}{L}} \,{dx} =  
             \left[\frac{- \cos{\frac{n \pi x}{L}}}{\frac{n \pi }{L}} \right]_{-L}^{L} 
@@ -301,7 +312,6 @@ $ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ 
             [ \cos{n \pi}- \cos{n \pi}] = 0 
         \] 
 
-    \item 
         \[
             \int _{-L}^{L} \cos{\frac{n \pi x}{L}} \,{dx} =  
             \left[\frac{\sin{\frac{n \pi x}{L}}}{\frac{n \pi }{L}} \right]_{-L}^{L} 
@@ -310,7 +320,6 @@ $ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ 
             \sin{n \pi} = 0 
         \]
 
-    \item 
         \begin{align*}
             \int _{-L}^{L} \sin{\frac{n \pi x }{L}} \sin{\frac{m \pi x}{L}} \,{dx} 
             &= \frac{1}{2} \int _{-L}^{L} \left[\cos{\frac{(n-m) \pi x}{L}} - 
@@ -323,7 +332,6 @@ $ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ 
             &= \frac{L}{2 \pi}
             [\frac{1}{n-m} \sin{(n-m) \pi} - \frac{1}{n+m} \sin{(n+m) \pi}] = 
 \end{align*} 
-    \end{myitemize}
 \end{proof}
 
 \end{document}

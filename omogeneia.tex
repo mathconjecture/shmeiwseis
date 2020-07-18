@@ -1,6 +1,8 @@
-\input{preamble/preamble.tex}
-\input{preamble/definitions.tex}
+\input{preamble.tex}
+\input{definitions.tex}
 
+
+\pagestyle{vangelis}
 
 \begin{document}
 
@@ -13,123 +15,128 @@
 
 \begin{dfn}
 \item {}
-    \begin{enumerate}[i)]
-        \item $ f(x,y) $ ομογενής βαθμού $ \rho \Leftrightarrow 
-            f(\lambda x, \lambda y), \; \forall \lambda \in \mathbb{R} $ 
-        \item $ f(x,y,z) $ ομογενής βαθμού $ \rho \Leftrightarrow 
-            f(\lambda x, \lambda y, \lambda z), \; \forall \lambda \in \mathbb{R} $ 
-    \end{enumerate}
+  \begin{enumerate}[i)]
+    \item $ f(x,y) $ ομογενής βαθμού $ \rho \Leftrightarrow 
+      f(\lambda x, \lambda y), \; \forall \lambda \in \mathbb{R} $ 
+    \item $ f(x,y,z) $ ομογενής βαθμού $ \rho \Leftrightarrow 
+      f(\lambda x, \lambda y, \lambda z), \; \forall \lambda \in \mathbb{R} $ 
+  \end{enumerate}
 \end{dfn}
 
 \begin{thm}[Euler]
-    $ f(x,y) $ ομογενής βαρμού $ \rho \Rightarrow x f_{x} + y f_{y} = \rho f $
+  $ f(x,y) $ ομογενής βαρμού $ \rho \Rightarrow x f_{x} + y f_{y} = \rho f $
 \end{thm}
 \begin{prop}
-    $ f(x,y) $ ομογενής βαρμού $ \rho \Rightarrow f_{x}, f_{y} $ ομογενείς βαρμού 
-    $ \rho -1 $.
+  $ f(x,y) $ ομογενής βαρμού $ \rho \Rightarrow f_{x}, f_{y} $ ομογενείς βαρμού 
+  $ \rho -1 $.
 \end{prop}
 
 \begin{proof}
 \item {}
-    $ f $ ομογενής βαθμού $ \rho \overset{\text{Euler}}{\Rightarrow} xf_{x}+yf_{y}= 
-    \rho f \xRightarrow[\text{ως προς $x$}]{\text{παρ/ζω}} f_{x} + x f_{xx} + y f_{yx} =
-    \rho f_{x} \Rightarrow xf_{xx} + yf_{xy} = (\rho -1)f_{x} $
+  $ f $ ομογενής βαθμού $ \rho \overset{\text{(Euler)}}{\Rightarrow} xf_{x}+yf_{y}= 
+  \rho f \xRightarrow[\text{ως προς $x$}]{\text{παρ/ζω}} f_{x} + x f_{xx} + y f_{yx} =
+  \rho f_{x} \Rightarrow xf_{xx} + yf_{xy} = (\rho -1)f_{x} $
 
-    $ f $ ομογενής βαθμού $ \rho \overset{\text{Euler}}{\Rightarrow} xf_{x}+yf_{y}= 
-    \rho f \xRightarrow[\text{ως προς $y$}]{\text{παρ/ζω}} xf_{xy} + f_{y} + y f_{yy} =
-    \rho f_{y} \Rightarrow xf_{yx} + yf_{yy} = (\rho -1)f_{y} $
+  $ f $ ομογενής βαθμού $ \rho \overset{\text{(Euler)}}{\Rightarrow} xf_{x}+yf_{y}= 
+  \rho f \xRightarrow[\text{ως προς $y$}]{\text{παρ/ζω}} xf_{xy} + f_{y} + y f_{yy} =
+  \rho f_{y} \Rightarrow xf_{yx} + yf_{yy} = (\rho -1)f_{y} $
 \end{proof}
 
 \begin{exercise}
-    Έστω $ f(x,y) $, συνεχής, με συνεχείς μερικές παραγώγους 2ης τάξης, 
-    ομογενής βαθμού $\rho$. Να δείξετε ότι ισχύει \[ x^{2}f_{xx}+2xyf_{xy}+y^{2}f_{yy} =
-    \rho (\rho -1)f \]
-    \begin{solution}
-    \item {}
-        $f$ ομογενής βαθμού $\rho \Rightarrow f_{x}, f_{y} $ ομογενείς βαθμού $\rho -1$.
-        Οπότε ισχύει το θεώρημα Euler για αυτές, άρα:
-        \begin{align*}
-            \sysdelim.\}\systeme{x f_{xx}+yf_{xy}=(\rho -1)f_{x}, x f_{yx}+yf_{yy}=
-    (\rho -1)f_{y}} \Rightarrow \sysdelim.\}
-    \systeme*{x^{2} f_{xx} \+ xyf_{xy}=(\rho-1)xf_{x},yxf_{yx} \+ y^{2}f_{yy}=
-    (\rho -1)yf_{y}} \xRightarrow[f_{xy}=f_{yx}]{(+)} x^{2}f_{xx}+2xyf_{xy}+y^{2}f_{yy}=
-    (\rho -1)(xf_{x}+yf_{y})
+  Έστω $ f(x,y) $, συνεχής, με συνεχείς μερικές παραγώγους 2ης τάξης, 
+  ομογενής βαθμού $\rho$. Να δείξετε ότι ισχύει \[ x^{2}f_{xx}+2xyf_{xy}+y^{2}f_{yy} =
+  \rho (\rho -1)f \]
+  \begin{solution}
+  \item {}
+    $f$ ομογενής βαθμού $\rho \Rightarrow f_{x}, f_{y} $ ομογενείς βαθμού $\rho -1$.
+    Οπότε ισχύει το θεώρημα Euler για αυτές, άρα:
+    \begin{align*}
+      \sysdelim.\}\systeme{x f_{xx}+yf_{xy}=(\rho -1)f_{x}, x f_{yx}+yf_{yy}=
+  (\rho -1)f_{y}} \Rightarrow \sysdelim.\}
+  \systeme*{x^{2} f_{xx} \+ xyf_{xy}=(\rho-1)xf_{x},yxf_{yx} \+ y^{2}f_{yy}=
+  (\rho -1)yf_{y}} \xRightarrow{(+)} x^{2}f_{xx}+2xyf_{xy}+y^{2}f_{yy}=
+  (\rho -1)(xf_{x}+yf_{y})
 \end{align*} 
 Όμως επειδή $f$ ομογενής έχουμε ότι $ xf_{x}+yf_{y}= \rho f $. Οπότε
 \[
-    x^{2}f_{xx}+2xyf_{xy}+y^{2}f_{yy} = \rho (\rho -1)f
+  x^{2}f_{xx}+2xyf_{xy}+y^{2}f_{yy} = \rho (\rho -1)f
 \] 
     \end{solution}
-\end{exercise}
+  \end{exercise}
 
-\pagebreak
+  \pagebreak
 
-    \begin{exercise}
-        Αν $ u = u(x,y) $ και $ v=v(x,y) $ ομογενείς βαθμού $ \rho $, 
-        τότε να δείξετε ότι $ \forall f(u,v) $ με συνεχείς μερικές παραγώγους 1ης τάξης
-        ισχύει 
-        \[
-            xf_{x}+yf_{y}= \rho (u f_{u}+vf_{v}) 
-         \] 
-         \begin{solution}
-         \item {}
-             Έχουμε ότι για τις συναρτήσεις $u(x,y) $ και $v(x,y)$ είναι ομογενείς 
-             βαθμού $\rho$, οπότε:
-             \[
-             \sysdelim.\}\systeme{xu_{x}+yu_{y}= \rho u, xv_{x}+yv_{y}= \rho v} 
-         \] 
-         Για την συνάρτηση $f$ έχουμε ότι είναι σύνθετη με $ f=f(u,v) $ και 
-         $ u = u(x,y) $ και $ v=v(x,y) $, οπότε οι μερικές παράγωγοί της δίνονται από
-         το δέντρο της και είναι:
-         \[
-         \sysdelim.\} \systeme*{f_{x}=f_{u}u_{x}+f_{v}v_{x},f_{y}=f_{u}u_{y}+f_{v}v_{y}}
-         \Rightarrow xf_{x}+yf_{y} = \underbrace{(xu_{x}+yu_{y})}_{\rho
-         u}f_{u}+\underbrace{(xv_{x}+yv_{y})}_{\rho v}f_{v}
-     \] 
-     Άρα 
+  \begin{exercise}
+    Αν $ u = u(x,y) $ και $ v=v(x,y) $ ομογενείς βαθμού $ \rho $, 
+    τότε να δείξετε ότι $ \forall f(u,v) $ με συνεχείς μερικές παραγώγους 1ης τάξης
+    ισχύει 
+    \[
+      xf_{x}+yf_{y}= \rho (u f_{u}+vf_{v}) 
+    \] 
+    \begin{solution}
+    \item {}
+      Έχουμε ότι για τις συναρτήσεις $u(x,y) $ και $v(x,y)$ είναι ομογενείς 
+      βαθμού $\rho$, οπότε:
+      \[
+      \sysdelim.\}\systeme{xu_{x}+yu_{y}= \rho u, xv_{x}+yv_{y}= \rho v} 
+    \] 
+    Για την συνάρτηση $f$ έχουμε ότι είναι σύνθετη με $ f=f(u,v) $ και 
+    $ u = u(x,y) $ και $ v=v(x,y) $, οπότε οι μερικές παράγωγοί της δίνονται από
+    το δέντρο της και είναι:
+    \[
+      \left.
+        \begin{tabular}{l}
+        $f_{x}=f_{u}u_{x}+f_{v}v_{x}$ \\
+        $f_{y}=f_{u}u_{y}+f_{v}v_{y}$
+      \end{tabular}
+      \right\}
+    \Rightarrow xf_{x}+yf_{y} = \underbrace{(xu_{x}+yu_{y})}_{\rho
+    u}f_{u}+\underbrace{(xv_{x}+yv_{y})}_{\rho v}f_{v}
+  \] 
+  Άρα 
+  \[
+    xf_{x}+yf_{y} = \rho (uf_{u}+vf_{v}) 
+  \] 
+\end{solution}
+   \end{exercise}
+
+   \begin{exercise}
+     Έστω $ u = u(x,y) $ και $ v = v(x,y) $, ομογενείς βαθμού $\rho$, με 
+     $ u(x,y) \neq 0, v(x,y) \neq 0, \; \forall (x,y) \in \mathbb{R}^{2} $. 
+     Να δείξετε ότι 
      \[
-         xf_{x}+yf_{y} = \rho (uf_{u}+vf_{v}) 
+       udv -v du = \frac{1}{\rho} \pdv{(u,v)}{(x,y)} (xdy-ydx) 
+       \quad \text{όπου} \quad  \pdv{(u,v)}{(x,y)} = \begin{vmatrix}
+         u_{x} & u_{y} \\ v_{x} & v_{y} 
+       \end{vmatrix} 
      \] 
+     \begin{solution}
+       \[
+       \sysdelim.\} \systeme*{du=u_{x}dx+u_{y}dy,dv=v_{x}dx+v_{y}dy} \Rightarrow 
+     \sysdelim.\} \systeme*{vdu=vu_{x}dx+vu_{y}dy,udv=uv_{x}dx+uv_{y}dy} 
+     \overset{(-)}{\Rightarrow}  udv -vdu = (uv_{x}-vu_{x})dx+(uv_{y}-vu_{y})dy 
+   \] 
+   \begin{align*}
+     u \quad \text{ομογενής βαθμού $\rho$} \Rightarrow xu_{x}+yu_{y}= 
+     \rho u \Rightarrow u &= \frac{1}{\rho} (xu_{x}+yu_{y})   \\
+     v \quad \text{ομογενής βαθμού $\rho$} \Rightarrow xv_{x}+yv_{y}= 
+     \rho v \Rightarrow u &= \frac{1}{\rho} (xv_{x}+yv_{y})   
+   \end{align*} 
+   Οπότε με αντικατάσταση, έχουμε:
+   \begin{align*}
+     udv - vdu &= \frac{1}{\rho} (u_{y}v_{x}-u_{x}v_{y})ydx+ \frac{1}{\rho}
+     (u_{x}v_{y}-u_{y}v_{x})xdy \\ 
+               &=- \frac{1}{\rho} (u_{x}v_{y}-u_{y}v_{x})ydx+ \frac{1}{\rho}
+               (u_{x}v_{y}-u_{y}v_{x})xdy \\
+               &= \frac{1}{\rho} (u_{x}v_{y}-u_{y}v_{x})(xdy-ydx) \\
+               &= \frac{1}{\rho} \cdot \pdv{(u,v)}{(x,y)} (xdy-ydx)
+   \end{align*}
  \end{solution}
     \end{exercise}
 
-    \begin{exercise}
-        Έστω $ u = u(x,y) $ και $ v = v(x,y) $, ομογενείς βαθμού $\rho$, με 
-        $ u(x,y) \neq 0, v(x,y) \neq 0, \; \forall (x,y) \in \mathbb{R}^{2} $. 
-        Να δείξετε ότι 
-        \[
-            udv -v du = \frac{1}{\rho} \pdv{(u,v)}{(x,y)} (xdy-ydx) 
-            \quad \text{όπου} \quad  \pdv{(u,v)}{(x,y)} = \begin{vmatrix}
-             u_{x} & u_{y} \\ v_{x} & v_{y} 
-         \end{vmatrix} 
-         \] 
-         \begin{solution}
-             \[
-             \sysdelim.\} \systeme*{du=u_{x}dx+u_{y}dy,dv=v_{x}dx+v_{y}dy} \Rightarrow 
-         \sysdelim.\} \systeme*{vdu=vu_{x}dx+vu_{y}dy,udv=uv_{x}dx+uv_{y}dy} 
-         \overset{(-)}{\Rightarrow}  udv -vdu = (uv_{x}-vu_{x})dx+(uv_{y}-vu_{y})dy 
-     \] 
-     \begin{align*}
-         u \quad \text{ομογενής βαθμού $\rho$} \Rightarrow xu_{x}+yu_{y}= 
-         \rho u \Rightarrow u &= \frac{1}{\rho} (xu_{x}+yu_{y})   \\
-         v \quad \text{ομογενής βαθμού $\rho$} \Rightarrow xv_{x}+yv_{y}= 
-         \rho v \Rightarrow u &= \frac{1}{\rho} (xv_{x}+yv_{y})   
-     \end{align*} 
-     Οπότε με αντικατάσταση, έχουμε:
-     \begin{align*}
-         udv - vdu &= \frac{1}{\rho} (u_{y}v_{x}-u_{x}v_{y})ydx+ \frac{1}{\rho}
-         (u_{x}v_{y}-u_{y}v_{x})xdy \\ 
-                   &=- \frac{1}{\rho} (u_{x}v_{y}-u_{y}v_{x})ydx+ \frac{1}{\rho}
-                   (u_{x}v_{y}-u_{y}v_{x})xdy \\
-                   &= \frac{1}{\rho} (u_{x}v_{y}-u_{y}v_{x})(xdy-ydx) \\
-                   &= \frac{1}{\rho} \cdot \pdv{(u,v)}{(x,y)} (xdy-ydx)
-     \end{align*}
-         \end{solution}
-    \end{exercise}
-    
 
 
 
 
 
-\end{document}
+    \end{document}
