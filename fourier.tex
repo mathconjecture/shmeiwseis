@@ -3,6 +3,10 @@
 
 
 
+\pagestyle{vangelis}
+\everymath{\displaystyle}
+
+
 \begin{document}
 
 \chapter{Σειρές Fourier}
@@ -15,21 +19,22 @@
 \begin{dfn}
     Μια συνάρτηση $ f \colon \mathbb{R} \to \mathbb{R} $ λέγεται 
     \textcolor{Col1}{περιοδική} αν 
-    \[
+    $
         f(x+T)=f(x),\quad \forall x \in \mathbb{R} 
-    \] 
+    $ 
     όπου $ T>0 $, ονομάζεται \textcolor{Col1}{περίοδος} της συνάρτησης.
 \end{dfn}
 
-\begin{rem}
-    Κάθε περιοδική συνάρτηση $ f(x) $ με περίοδo $ 2L>0 $ μπορεί να 
-    μετασχηματιστεί σε μια συνάρτηση με περίοδο $ 2 \pi $. Πράγματι, θέτωντας 
-    \[ 
-        \frac{x}{t} = \frac{2L}{2 \pi} \Leftrightarrow x= t \frac{L}{\pi} 
-    \]
-    η συνάρτηση $ g(t) = f\Bigl(t \frac{L}{\pi}\Bigr) $ που προκύπτει 
-    έχει περίοδο $ 2 \pi $.
-\end{rem}
+\begin{prop}
+  Αν οι συναρτήσεις $ f $ και $g$ είναι περιοδικές με περίοδο $T$, τότε και οι 
+  $ f+g $ και $ f\cdot g $ είναι περιοδικές με την ίδια περίοδο.
+\end{prop}
+\begin{proof}
+  \begin{align*}
+    (f+g)(x+T) = f(x+T)+g(x+T)=f(x)+g(x)=(f+g)(x) \\
+    (f\cdot g)(x+T) = f(x+T)\cdot g(x+T)=f(x)\cdot g(x)=(f\cdot g)(x) 
+   \end{align*} 
+\end{proof}
 
 \begin{dfn}
     Μια συνάρτηση $ f \colon [a,b] \to \mathbb{R} $ λέγεται 
@@ -55,7 +60,27 @@
     \end{alignat*}
 \end{dfn}
 
+\begin{examples}
+\item {}
+  \begin{enumerate}
+    \item Οι συναρτήσεις $ f(x)=x^{2} $ και $ g(x)= \cos x $ είναι άρτιες.
+    \item Οι συναρτήσεις $ f(x)=x^{3} $ και $ g(x)= \sin x $ είναι περιττές.
+  \end{enumerate}
+\end{examples}
 
+\begin{rem}
+  Η γραφική παράσταση μιας άρτιας συνάρτησης είναι συμμετρική ως προς τον άξονα $y$, 
+  ενώ μιας περιττής συνάρτησης ως προς την αρχή των αξόνων.
+\end{rem}
+
+\begin{prop}
+\item {}
+  \begin{myitemize*}
+    \item $ f(x) $ άρτια $ \Rightarrow \int _{-L}^{L} f(x) \,{dx} = 2 \int _{0}^{L} f(x)
+      \,{dx} $ 
+    \item $ f(x) $ περιττή $ \Rightarrow \int _{-L}^{L} f(x) \,{dx} = 0 $
+  \end{myitemize*}
+\end{prop}
 
 \section{Περιοδική Επέκταση Συναρτήσεων}
 
@@ -123,19 +148,19 @@ $ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ 
 με $ \sin{mx} $ και ολοκληρώσουμε σε διάστημα μίας περιόδου: 
 
 \begin{gather*}
-    f(x) = \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{nx} + b_{n} \sin{nx}]  \\
+    % f(x) = \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{nx} + b_{n} \sin{nx}]  \\
     f(x) \sin{mx} = \frac{a_{0}}{2} \sin{mx} + \sum_{n=1}^{\infty} 
-    [a_{n} \cos{nx} = \sin{mx} + b_{n} \sin{nx} \sin{mx}]   \\
+    [a_{n} \cos{nx} \sin{mx} + b_{n} \sin{nx} \sin{mx}]   \\
     \int _{- \pi} ^{\pi} f(x) \sin{mx} \,{dx} = \frac{a_{0}}{2} \int _{- \pi}^{\pi} 
     \sin{mx} \,{dx} + \sum_{n=1}^{\infty} \left[a_{n} \int _{- \pi}^{\pi} 
         \cos{nx} \sin{mx}  \,{dx} + b_{n} \int _{- \pi }^{\pi} \sin{nx} \sin{mx} 
     \,{dx}\right] \\
-    \int _{- \pi }^{\pi} f(x) \sin{nx} \,{dx} = \frac{a_{0}}{2} \cdot 0 + 
-    a_{n}\cdot 0 + b_{n} \cdot \int _{- \pi}^{\pi } \sin^{2}{nx} \,{dx} \\
-    \int _{- \pi }^{\pi} f(x) \sin{nx} \,{dx} =  b_{n} \cdot \pi 
+    \int _{- \pi }^{\pi} f(x) \sin{mx} \,{dx} = \frac{a_{0}}{2} \cdot 0 + 
+    a_{m}\cdot 0 + b_{m} \cdot \int _{- \pi}^{\pi } \sin^{2}{mx} \,{dx} \\
+    \int _{- \pi }^{\pi} f(x) \sin{mx} \,{dx} =  b_{m} \cdot \pi 
 \end{gather*}   
 
-Οπότε 
+Οπότε θέτωντας όπου $ n=m $, έχουμε
 \[
     \boxed{b_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi} f(x) \sin{nx} \,{dx}}
 \] 
@@ -144,7 +169,7 @@ $ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ 
 σε διάστημα μιας περιόδου, έχουμε:
 
 \begin{gather*}
-    f(x) = \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{nx} + b_{n} \sin{nx}]  \\
+    % f(x) = \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{nx} + b_{n} \sin{nx}]  \\
     f(x) \cos{mx} = \frac{a_{0}}{2} \cos{mx} + \sum_{n=1}^{\infty} 
     [a_{n} \cos{nx} \cos{mx} + b_{n} \sin{nx} \cos{mx}]   \\
     \int _{- \pi} ^{\pi} f(x) \cos{mx} \,{dx} = \frac{a_{0}}{2} \int _{- \pi}^{\pi} 
@@ -168,14 +193,14 @@ $ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ 
     \intertext{άρα}
     \begin{cases} 
         \displaystyle{\int _{- \pi }^{\pi} f(x) \cos{nx} \,{dx} = 
-        a_{n}\cdot \pi } \\
+        a_{n}\cdot \pi }, \quad n=1,2,3\ldots \\
         \displaystyle{\int _{- \pi }^{\pi} f(x) \,{dx} = \frac{a_{0}}{2}
         2 \pi } 
     \end{cases} 
     \Leftrightarrow 
     \begin{cases} 
         \displaystyle{a_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi } f(x) \cos{nx} 
-        \,{dx}} \\
+        \,{dx}}, \quad n=1,2,3\ldots \\
         \displaystyle{a_{0} = \frac{1}{\pi} \int _{- \pi}^{\pi} f(x) \,{dx}}
     \end{cases}
     \intertext{ή ισοδύναμα, μαζεύοντας}
@@ -215,123 +240,14 @@ $ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ 
 
 
 
-\section{Ορθογωνιότητα}
-
-\begin{dfn}
-    Έστω δυο πραγματικές συναρτήσεις $ f(x), g(x) $ ορισμένες σ᾽ ένα διάστημα 
-    $ [a,b] \subseteq \mathbb{R} $. Ορίζουμε ως \textcolor{Col1}{εσωτερικό γινόμενο} 
-    των $ f(x) $ και $ g(x) $ και το συμβολίζουμε με $ <f,g> $ το ολοκλήρωμα
-    \[
-        <f,g> = \int _{a}^{b} w(x) f(x)g(x) \,{dx} 
-    \] 
-    όπου $ w(x) $ γνωστή θετική συνάρτηση, $ \forall x \in [a,b] $, η οποία 
-    ονομάζεται \textcolor{Col1}{συνάρτηση βάρους}.
-\end{dfn}
 
 \begin{rem}
-    Τα όρια ολοκλήρωσης στο παραπάνω ολοκλήρωμα μπορεί να είναι και $ \infty $.
+    Κάθε περιοδική συνάρτηση $ f(x) $ με περίοδo $ 2L>0 $ μπορεί να 
+    μετασχηματιστεί σε μια συνάρτηση με περίοδο $ 2 \pi $. Πράγματι, θέτωντας 
+    \[ 
+        \frac{x}{t} = \frac{2L}{2 \pi} \Leftrightarrow x= t \frac{L}{\pi} 
+    \]
+    η συνάρτηση $ g(t) = f\Bigl(t \frac{L}{\pi}\Bigr) $ που προκύπτει 
+    έχει περίοδο $ 2 \pi $.
 \end{rem}
-
-\begin{dfn}
-    Δυο πραγματικές συναρτήσεις $ f(x), g(x) $ είναι \textcolor{Col1}{ορθογώνιες} 
-    στο διάστημα $ [a,b] \subseteq \mathbb{R} $ ως προς τη συνάρτηση βάρους $ w(x) $, 
-    αν το εσωτερικό του γινόμενο είναι μηδέν, δηλαδή:
-    \[
-        \int _{a}^{b} w(x)f(x)g(x) \,{dx} = 0
-    \] 
-\end{dfn}
-
-\begin{dfn}
-    Μια ακολουθία πραγματικών συναρτήσεων $ \{ f_{n}(x) \}_{n=1}^{\infty} $ αποτελεί 
-    ένα σύστημα ορθογώνιων συναρτήσεων στο διάστημα $ [a,b] $, ως προς τη 
-    συνάρτηση βάρους $ w(x) $, αν τα μέλη της είναι ανα δύο ορθογώνια, δηλαδή:
-    \[
-        \int _{a}^{b} w(x) f_{n}(x)f_{m}(x) \,{dx} = 0 \quad \forall n \neq m, \; n,m = 
-        1,2,3, \ldots
-    \] 
-\end{dfn}
-
-\begin{prop}
-    Το σύστημα των συναρτήσεων $ \{ \cos{(nx)} \}_{n=1}^{\infty} $ είναι ορθογώνιο 
-    στο διάστημα $ [0, \pi] $, ως προς τη συνάρτηση βάρους $ w(x)=1 $.
-
-    \begin{proof}
-    \item {}
-        \begin{myitemize}
-        \item Αν $ n \neq m $, τότε:
-            \begin{align*}
-                \int _{0}^{\pi} \cos{nx} \cdot \cos{mx} \,{dx} &= \frac{1}{2} 
-                \int _{0}^{\pi} [\cos{(nx+mx)} + \cos{(nx - mx)}] \,{dx} = 
-                \frac{1}{2} 
-                \left[\frac{\sin{(n+m)x}}{n+m} + \frac{\sin{(n-m)x}}{n-m}
-                \right]_{0}^{\pi} = 0 \\
-            \end{align*} 
-
-        \item Αν $ n = m $, τότε:
-            \begin{align*}
-                \int _{0}^{\pi} cos^{2}(nx) \,{dx} = 
-                \int _{0}^{\pi} \frac{1+ \cos{2nx}}{2}
-                \,{dx} = 
-                \frac{1}{2} \left[x + \frac{\sin{2nx}}{2n}\right]_{0}^{\pi} =
-                \frac{\pi}{2} 
-            \end{align*}
-        \end{myitemize}
-    \end{proof}
-\end{prop}
-
-
-\begin{prop}
-    Το σύστημα των συναρτήσεων $ \{ \sin{(nx)} \} _{n=1}^{\infty} $ είναι ορθογώνιο
-    στο διάστημα $ [0, \pi] $, ως προς τη συνάρτηση βάρους $ w(x)=1 $.
-\end{prop}
-
-\begin{proof}
-\item {}
-    Ομοίως
-\end{proof}
-
-\begin{prop}
-    Το σύστημα των συναρτήσεων Bessel 1ου είδους $ \{ J_{n}(x) \} _{n=1}^{\infty} $ 
-    είναι ορθογώνιο στο διάστημα $ [0,a] $, ως προς τη συνάρτηση βάρους $ w(x)=x $.
-\end{prop}
-
-\begin{prop}
-    Το σύστημα των πραγματικών συναρτήσεων 
-    $ \{ 1, \sin{\frac{n \pi x}{L}, \cos{\frac{n \pi x}{L} } } \}_{n=1}^{\infty} $ 
-    είναι ορθογώνιο στο $ [-L,L] $, με $ L>0 $, ως προς τη συνάρτηση βάρους 
-    $ w(x)=1 $.
-\end{prop}
-
-\begin{proof}
-\item {}
-        \[
-            \int _{-L}^{L} \sin{\frac{n \pi x}{L}} \,{dx} =  
-            \left[\frac{- \cos{\frac{n \pi x}{L}}}{\frac{n \pi }{L}} \right]_{-L}^{L} 
-            = - \frac{L}{n \pi} \left[\cos{\frac{n \pi x}{L}} \right]_{-L}^{L} = 
-            - \frac{L}{n \pi} [ \cos{n \pi} - \cos{(- n \pi)}] = - \frac{L}{n \pi } 
-            [ \cos{n \pi}- \cos{n \pi}] = 0 
-        \] 
-
-        \[
-            \int _{-L}^{L} \cos{\frac{n \pi x}{L}} \,{dx} =  
-            \left[\frac{\sin{\frac{n \pi x}{L}}}{\frac{n \pi }{L}} \right]_{-L}^{L} 
-            = \frac{L}{n \pi} \left[\sin{\frac{n \pi x}{L}} \right]_{-L}^{L} = 
-            \frac{L}{n \pi} [ \sin{n \pi} - \sin{(- n \pi)}] =  \frac{2L}{n \pi } 
-            \sin{n \pi} = 0 
-        \]
-
-        \begin{align*}
-            \int _{-L}^{L} \sin{\frac{n \pi x }{L}} \sin{\frac{m \pi x}{L}} \,{dx} 
-            &= \frac{1}{2} \int _{-L}^{L} \left[\cos{\frac{(n-m) \pi x}{L}} - 
-            \cos{\frac{(n+m) \pi x}{L}} \right] \,{dx} = 
-            \frac{1}{2} \left[\frac{\sin{\frac{(n-m) \pi x}{L}}}
-                {\frac{(n-m) \pi}{L}} - \frac{\sin{\frac{(n+m) \pi x}{L}}}
-            {\frac{(n+m) \pi x}{L}}\right]_{-L}^{L} \\ 
-            &= \frac{L}{2 \pi} \left[\frac{1}{n-m} \sin{\frac{(n-m) \pi x}{L} - 
-            \frac{1}{n+m} \sin{\frac{(n+m) \pi x}{L}}}\right]_{-L}^{L} \\ 
-            &= \frac{L}{2 \pi}
-            [\frac{1}{n-m} \sin{(n-m) \pi} - \frac{1}{n+m} \sin{(n+m) \pi}] = 
-\end{align*} 
-\end{proof}
-
 \end{document}
