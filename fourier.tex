@@ -17,12 +17,12 @@
 \vspace{\baselineskip}
 
 \begin{dfn}
-    Μια συνάρτηση $ f \colon \mathbb{R} \to \mathbb{R} $ λέγεται 
-    \textcolor{Col1}{περιοδική} αν 
-    $
-        f(x+T)=f(x),\quad \forall x \in \mathbb{R} 
-    $ 
-    όπου $ T>0 $, ονομάζεται \textcolor{Col1}{περίοδος} της συνάρτησης.
+  Μια συνάρτηση $ f \colon \mathbb{R} \to \mathbb{R} $ λέγεται 
+  \textcolor{Col1}{περιοδική} αν 
+  $
+  f(x+T)=f(x),\quad \forall x \in \mathbb{R} 
+  $ 
+  όπου $ T>0 $, ονομάζεται \textcolor{Col1}{περίοδος} της συνάρτησης.
 \end{dfn}
 
 \begin{prop}
@@ -33,31 +33,31 @@
   \begin{align*}
     (f+g)(x+T) = f(x+T)+g(x+T)=f(x)+g(x)=(f+g)(x) \\
     (f\cdot g)(x+T) = f(x+T)\cdot g(x+T)=f(x)\cdot g(x)=(f\cdot g)(x) 
-   \end{align*} 
+  \end{align*} 
 \end{proof}
 
 \begin{dfn}
-    Μια συνάρτηση $ f \colon [a,b] \to \mathbb{R} $ λέγεται 
-    \textcolor{Col1}{τμηματικά συνεχής}, αν η  $f$ έχει πεπερασμένου πλήθους 
-    σημεία ασυνέχειας, στα οποία υπάρχουν τα πλευρικά όρια και είναι πεπερασμένα.
+  Μια συνάρτηση $ f \colon [a,b] \to \mathbb{R} $ λέγεται 
+  \textcolor{Col1}{τμηματικά συνεχής}, αν η  $f$ έχει πεπερασμένου πλήθους 
+  σημεία ασυνέχειας, στα οποία υπάρχουν τα πλευρικά όρια και είναι πεπερασμένα.
 \end{dfn}
 
 \begin{dfn}
-    Μια συνάρτηση  $ f \colon [a,b] \to \mathbb{R} $  λέγεται  
-    \textcolor{Col1}{τμηματικά λεία} αν η $f$ και η $f$' είναι τμηματικά συνεχείς 
-    στο $ [a,b] $.     
+  Μια συνάρτηση  $ f \colon [a,b] \to \mathbb{R} $  λέγεται  
+  \textcolor{Col1}{τμηματικά λεία} αν η $f$ και η $f$' είναι τμηματικά συνεχείς 
+  στο $ [a,b] $.     
 \end{dfn}
 
 \begin{dfn}
-    Μια συνάρτηση $ f(x) $ θα λέγεται:
-    \begin{alignat*}{4}
+  Μια συνάρτηση $ f(x) $ θα λέγεται:
+  \begin{alignat*}{4}
         &\textcolor{Col1}{\text{άρτια}}   & \quad 
         &\overset{\text{ορ.}}{\Leftrightarrow} & \quad f(-x) &= f(x), & 
         &\quad \forall x \in \mathbb{R} \\
         &\textcolor{Col1}{\text{περιττή}}  & \quad 
         &\overset{\text{ορ.}}{\Leftrightarrow} & \quad f(-x) &= -f(x), & 
         &\quad \forall x \in \mathbb{R}. \\
-    \end{alignat*}
+  \end{alignat*}
 \end{dfn}
 
 \begin{examples}
@@ -88,48 +88,48 @@
 
 \begin{enumerate}
 
-    \item Αν $ f(x) $ ορισμένη στο $ [-L,L] $ με $ f(-L)=f(L) $ τότε η συνάρτηση
-        \[
-            F(x) = f(x), \; -L \leq x \leq L \quad \text{και} \quad F(x+2L)=F(x)
-        \]
-        με περίοδο $ 2L $ λέγεται \textcolor{Col1}{περιοδική επέκταση} της $f$. 
+  \item Αν $ f(x) $ ορισμένη στο $ [-L,L] $ με $ f(-L)=f(L) $ τότε η συνάρτηση
+    \[
+      F(x) = f(x), \; -L \leq x \leq L \quad \text{και} \quad F(x+2L)=F(x)
+    \]
+    με περίοδο $ 2L $ λέγεται \textcolor{Col1}{περιοδική επέκταση} της $f$. 
 
-    \item Αν $ f(x) $ ορισμένη στο $ [0,L] $, τότε μπορεί να επεκταθεί 
-        κατά άπειρους τρόπους σε μια περιοδική συνάρτηση 
-        \begin{alignat*}{4}
+  \item Αν $ f(x) $ ορισμένη στο $ [0,L] $, τότε μπορεί να επεκταθεί 
+    κατά άπειρους τρόπους σε μια περιοδική συνάρτηση 
+    \begin{alignat*}{4}
             &F(x) = 
             \begin{cases}  
-                f(x), & \phantom{-} 0 \leq x \leq L \\
-                \phi(x) & -L < x < 0
+              f(x), & \phantom{-} 0 \leq x \leq L \\
+              \phi(x) & -L < x < 0
             \end{cases}  & \quad & \text{και} \quad F(x+2L)=F(x)
-        \end{alignat*}
-        με περίοδο $ 2L $, όπου $ \phi(x) $ αυθαίρετη συνάρτηση. 
+    \end{alignat*}
+    με περίοδο $ 2L $, όπου $ \phi(x) $ αυθαίρετη συνάρτηση. 
 
-    \item \label{artia} Αν $ f(x) $ ορισμένη στο $ [0,L] $ τότε η συνάρτηση 
-        \begin{alignat*}{4}
+  \item \label{artia} Αν $ f(x) $ ορισμένη στο $ [0,L] $ τότε η συνάρτηση 
+    \begin{alignat*}{4}
             & F(x) = 
             \begin{cases}  
-                f(x), & \phantom{-} 0 \leq x \leq L \\
-                f(-x), & -L \leq x \leq 0
+              f(x), & \phantom{-} 0 \leq x \leq L \\
+              f(-x), & -L \leq x \leq 0
             \end{cases}  & \quad \text{και} \quad F(x+2L)=F(x)
-        \end{alignat*}
-        με περίοδο $ 2L $ λέγεται \textcolor{Col1}{άρτια περιοδική επέκταση} της $f$.
+    \end{alignat*}
+    με περίοδο $ 2L $ λέγεται \textcolor{Col1}{άρτια περιοδική επέκταση} της $f$.
 
-    \item \label{peritth} Αν $ f(x) $ ορισμένη στο $ [0,L] $, με $ f(0)=f(L)=0 $ 
-        τότε η συνάρτηση
-        \begin{alignat*}{4}
+  \item \label{peritth} Αν $ f(x) $ ορισμένη στο $ [0,L] $, με $ f(0)=f(L)=0 $ 
+    τότε η συνάρτηση
+    \begin{alignat*}{4}
             &F(x) = 
             \begin{cases}  
-                \phantom{-} f(x), & \phantom{-} 0 \leq x \leq L \\
-                -f(-x), & -L \leq x \leq 0
+              \phantom{-} f(x), & \phantom{-} 0 \leq x \leq L \\
+              -f(-x), & -L \leq x \leq 0
             \end{cases}  & \quad \text{και} \quad F(x+2L)=F(x)
-        \end{alignat*}
-        με περίοδο $ 2L $ λέγεται \textcolor{Col1}{περιττή περιοδική επέκταση} της $f$.
+    \end{alignat*}
+    με περίοδο $ 2L $ λέγεται \textcolor{Col1}{περιττή περιοδική επέκταση} της $f$.
 
-    \item Αν $ f(x) $ ορισμένη στο $ (0,L) $, τότε επεκτείνεται σε 
-        άρτια (αντ. περιττή) περιοδική συνάρτηση $ F(x) $ θέτωντας $ F(0) $, 
-        $ F(L) $ οποιαδήποτε τιμή (αντ. $F(0)=F(L)$) και στη συνέχεια εφαρμόσουμε 
-        τις επεκτάσεις~\ref{artia} και~\ref{peritth}.
+  \item Αν $ f(x) $ ορισμένη στο $ (0,L) $, τότε επεκτείνεται σε 
+    άρτια (αντ. περιττή) περιοδική συνάρτηση $ F(x) $ θέτωντας $ F(0) $, 
+    $ F(L) $ οποιαδήποτε τιμή (αντ. $F(0)=F(L)$) και στη συνέχεια εφαρμόσουμε 
+    τις επεκτάσεις~\ref{artia} και~\ref{peritth}.
 \end{enumerate}
 
 
@@ -140,7 +140,7 @@ $ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ 
 \textcolor{Col1}{τριγωνομετρική} σειρά της μορφής:
 
 \begin{equation}\label{eq:trigser}
-    f(x) = \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{nx}  + b_{n} \sin{nx}]
+  f(x) = \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{nx}  + b_{n} \sin{nx}]
 \end{equation} 
 
 Αν υποθέσουμε ότι υπάρχει η αναπαράσταση της $f$ ως τριγωνομετρική σειρά και ότι 
@@ -148,64 +148,64 @@ $ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ 
 με $ \sin{mx} $ και ολοκληρώσουμε σε διάστημα μίας περιόδου: 
 
 \begin{gather*}
-    % f(x) = \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{nx} + b_{n} \sin{nx}]  \\
-    f(x) \sin{mx} = \frac{a_{0}}{2} \sin{mx} + \sum_{n=1}^{\infty} 
-    [a_{n} \cos{nx} \sin{mx} + b_{n} \sin{nx} \sin{mx}]   \\
-    \int _{- \pi} ^{\pi} f(x) \sin{mx} \,{dx} = \frac{a_{0}}{2} \int _{- \pi}^{\pi} 
-    \sin{mx} \,{dx} + \sum_{n=1}^{\infty} \left[a_{n} \int _{- \pi}^{\pi} 
-        \cos{nx} \sin{mx}  \,{dx} + b_{n} \int _{- \pi }^{\pi} \sin{nx} \sin{mx} 
-    \,{dx}\right] \\
-    \int _{- \pi }^{\pi} f(x) \sin{mx} \,{dx} = \frac{a_{0}}{2} \cdot 0 + 
-    a_{m}\cdot 0 + b_{m} \cdot \int _{- \pi}^{\pi } \sin^{2}{mx} \,{dx} \\
-    \int _{- \pi }^{\pi} f(x) \sin{mx} \,{dx} =  b_{m} \cdot \pi 
+  % f(x) = \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{nx} + b_{n} \sin{nx}]  \\
+  f(x) \sin{mx} = \frac{a_{0}}{2} \sin{mx} + \sum_{n=1}^{\infty} 
+  [a_{n} \cos{nx} \sin{mx} + b_{n} \sin{nx} \sin{mx}]   \\
+  \int _{- \pi} ^{\pi} f(x) \sin{mx} \,{dx} = \frac{a_{0}}{2} \int _{- \pi}^{\pi} 
+  \sin{mx} \,{dx} + \sum_{n=1}^{\infty} \left[a_{n} \int _{- \pi}^{\pi} 
+    \cos{nx} \sin{mx}  \,{dx} + b_{n} \int _{- \pi }^{\pi} \sin{nx} \sin{mx} 
+  \,{dx}\right] \\
+  \int _{- \pi }^{\pi} f(x) \sin{mx} \,{dx} = \frac{a_{0}}{2} \cdot 0 + 
+  a_{m}\cdot 0 + b_{m} \cdot \int _{- \pi}^{\pi } \sin^{2}{mx} \,{dx} \\
+  \int _{- \pi }^{\pi} f(x) \sin{mx} \,{dx} =  b_{m} \cdot \pi 
 \end{gather*}   
 
 Οπότε θέτωντας όπου $ n=m $, έχουμε
 \[
-    \boxed{b_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi} f(x) \sin{nx} \,{dx}}
+  \boxed{b_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi} f(x) \sin{nx} \,{dx}}
 \] 
 
 Ομοίως αν πολλαπλασιάσουμε την~\eqref{eq:trigser} με $ \cos{mx} $ και ολοκληρώσουμε 
 σε διάστημα μιας περιόδου, έχουμε:
 
 \begin{gather*}
-    % f(x) = \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{nx} + b_{n} \sin{nx}]  \\
-    f(x) \cos{mx} = \frac{a_{0}}{2} \cos{mx} + \sum_{n=1}^{\infty} 
-    [a_{n} \cos{nx} \cos{mx} + b_{n} \sin{nx} \cos{mx}]   \\
-    \int _{- \pi} ^{\pi} f(x) \cos{mx} \,{dx} = \frac{a_{0}}{2} \int _{- \pi}^{\pi} 
-    \cos{mx} \,{dx} + \sum_{n=1}^{\infty} \left[a_{n} \int _{- \pi}^{\pi}
-        \cos{nx} \cos{mx}  \,{dx} + b_{n} \int _{- \pi }^{\pi} \sin{nx} \cos{mx} 
-    \,{dx}\right] \\
+  % f(x) = \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{nx} + b_{n} \sin{nx}]  \\
+  f(x) \cos{mx} = \frac{a_{0}}{2} \cos{mx} + \sum_{n=1}^{\infty} 
+  [a_{n} \cos{nx} \cos{mx} + b_{n} \sin{nx} \cos{mx}]   \\
+  \int _{- \pi} ^{\pi} f(x) \cos{mx} \,{dx} = \frac{a_{0}}{2} \int _{- \pi}^{\pi} 
+  \cos{mx} \,{dx} + \sum_{n=1}^{\infty} \left[a_{n} \int _{- \pi}^{\pi}
+    \cos{nx} \cos{mx}  \,{dx} + b_{n} \int _{- \pi }^{\pi} \sin{nx} \cos{mx} 
+  \,{dx}\right] \\
 \end{gather*}
 
 και από τις συνθήκες ορθογωνιότητας για τις διάφορες περιπτώσεις του $ m $, προκύπτει
 
 \begin{gather*}
-    \begin{cases} 
-        \displaystyle{\int _{- \pi }^{\pi} f(x) \cos{mx} \,{dx} = 
-            \frac{a_{0}}{2} \cdot 0 + a_{m} \int _{- \pi }^{\pi } \cos^{2}{mx} 
-        \,{dx} + b_{m} \cdot 0}, 
+  \begin{cases} 
+    \displaystyle{\int _{- \pi }^{\pi} f(x) \cos{mx} \,{dx} = 
+      \frac{a_{0}}{2} \cdot 0 + a_{m} \int _{- \pi }^{\pi } \cos^{2}{mx} 
+    \,{dx} + b_{m} \cdot 0}, 
          & m = 1,2,3, \ldots \\
          \displaystyle{\int _{- \pi }^{\pi} f(x) \,{dx} = \frac{a_{0}}{2}} 
          \int _{- \pi}^{\pi} \,{dx}, 
          & m=0 \\
-    \end{cases} 
-    \intertext{άρα}
-    \begin{cases} 
-        \displaystyle{\int _{- \pi }^{\pi} f(x) \cos{nx} \,{dx} = 
-        a_{n}\cdot \pi }, \quad n=1,2,3\ldots \\
-        \displaystyle{\int _{- \pi }^{\pi} f(x) \,{dx} = \frac{a_{0}}{2}
-        2 \pi } 
-    \end{cases} 
-    \Leftrightarrow 
-    \begin{cases} 
-        \displaystyle{a_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi } f(x) \cos{nx} 
-        \,{dx}}, \quad n=1,2,3\ldots \\
-        \displaystyle{a_{0} = \frac{1}{\pi} \int _{- \pi}^{\pi} f(x) \,{dx}}
-    \end{cases}
-    \intertext{ή ισοδύναμα, μαζεύοντας}
-    \boxed{a_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi} f(x) \cos{nx} \,{dx}, 
-    n = 0,1,2,3, \ldots}
+  \end{cases} 
+  \intertext{άρα}
+  \begin{cases} 
+    \displaystyle{\int _{- \pi }^{\pi} f(x) \cos{nx} \,{dx} = 
+    a_{n}\cdot \pi }, \quad n=1,2,3\ldots \\
+    \displaystyle{\int _{- \pi }^{\pi} f(x) \,{dx} = \frac{a_{0}}{2}
+    2 \pi } 
+  \end{cases} 
+  \Leftrightarrow 
+  \begin{cases} 
+    \displaystyle{a_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi } f(x) \cos{nx} 
+    \,{dx}}, \quad n=1,2,3\ldots \\
+    \displaystyle{a_{0} = \frac{1}{\pi} \int _{- \pi}^{\pi} f(x) \,{dx}}
+  \end{cases}
+  \intertext{ή ισοδύναμα, μαζεύοντας}
+  \boxed{a_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi} f(x) \cos{nx} \,{dx}, 
+  n = 0,1,2,3, \ldots}
 \end{gather*}
 
 \begin{thm}
@@ -221,12 +221,12 @@ $ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ 
 
 \begin{rem}
 \item {}
-    \begin{myitemize}
+  \begin{myitemize}
     \item Αν $f$ συνεχής στο $x$, τότε η σειρά Fourier συγκλίνει στο f(x), γιατί 
-        $ f(x^{-}) = f(x^{+}) $.
+      $ f(x^{-}) = f(x^{+}) $.
     \item Αν $f$ συνεχής για κάθε $x \in \mathbb{R} $, τότε η σειρά Fourier 
-        συγκλίνει απόλυτα και ομοιόμορφα στην $f$ στο $ \mathbb{R} $.
-    \end{myitemize}
+      συγκλίνει απόλυτα και ομοιόμορφα στην $f$ στο $ \mathbb{R} $.
+  \end{myitemize}
 \end{rem}
 
 \begin{rem}
@@ -239,15 +239,13 @@ $ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ 
 \end{rem}
 
 
-
-
 \begin{rem}
-    Κάθε περιοδική συνάρτηση $ f(x) $ με περίοδo $ 2L>0 $ μπορεί να 
-    μετασχηματιστεί σε μια συνάρτηση με περίοδο $ 2 \pi $. Πράγματι, θέτωντας 
-    \[ 
-        \frac{x}{t} = \frac{2L}{2 \pi} \Leftrightarrow x= t \frac{L}{\pi} 
-    \]
-    η συνάρτηση $ g(t) = f\Bigl(t \frac{L}{\pi}\Bigr) $ που προκύπτει 
-    έχει περίοδο $ 2 \pi $.
+  Κάθε περιοδική συνάρτηση $ f(x) $ με περίοδo $ 2L>0 $ μπορεί να 
+  μετασχηματιστεί σε μια συνάρτηση με περίοδο $ 2 \pi $. Πράγματι, θέτωντας 
+  \[ 
+    \frac{x}{t} = \frac{2L}{2 \pi} \Leftrightarrow x= t \frac{L}{\pi} 
+  \]
+  η συνάρτηση $ g(t) = f\Bigl(t \frac{L}{\pi}\Bigr) $ που προκύπτει 
+  έχει περίοδο $ 2 \pi $.
 \end{rem}
 \end{document}
