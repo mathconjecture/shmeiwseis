@@ -2,7 +2,6 @@
 \input{definitions.tex}
 
 
-
 \pagestyle{vangelis}
 \everymath{\displaystyle}
 
@@ -63,8 +62,8 @@
 \begin{examples}
 \item {}
   \begin{enumerate}
-    \item Οι συναρτήσεις $ f(x)=x^{2} $ και $ g(x)= \cos x $ είναι άρτιες.
-    \item Οι συναρτήσεις $ f(x)=x^{3} $ και $ g(x)= \sin x $ είναι περιττές.
+    \item Οι συναρτήσεις $ f(x)=x^{2} $ και $ g(x)= \cos x $ είναι άρτιες. 
+    \item συναρτήσεις $ f(x)=x^{3} $ και $ g(x)= \sin x $ είναι περιττές.
   \end{enumerate}
 \end{examples}
 
@@ -73,12 +72,14 @@
   ενώ μιας περιττής συνάρτησης ως προς την αρχή των αξόνων.
 \end{rem}
 
-\begin{prop}
+\begin{prop}\label{prop:artper}
 \item {}
+  Αν $ f(x) $ ολοκληρώσιμη στο διάστημα $[-a,a]$ τότε ισχύουν:
+
   \begin{myitemize*}
-    \item $ f(x) $ άρτια $ \Rightarrow \int _{-L}^{L} f(x) \,{dx} = 2 \int _{0}^{L} f(x)
+    \item $ f(x) $ άρτια $ \Rightarrow \int _{-a}^{a} f(x) \,{dx} = 2 \int _{0}^{a} f(x)
       \,{dx} $ 
-    \item $ f(x) $ περιττή $ \Rightarrow \int _{-L}^{L} f(x) \,{dx} = 0 $
+    \item $ f(x) $ περιττή $ \Rightarrow \int _{-a}^{a} f(x) \,{dx} = 0 $
   \end{myitemize*}
 \end{prop}
 
@@ -136,7 +137,7 @@
 \section{Τριγωνομετρικές Σειρές}
 
 Έστω $ f \colon \mathbb{R} \to \mathbb{R} $ μια περιοδική συνάρτηση, με περίοδο 
-$ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ μπορεί να αναπαρασταθεί ως 
+$ 2 \pi $. Τότε υπό κατάλληλες προϋποθέσεις η $f$ μπορεί να αναπαρασταθεί ως 
 \textcolor{Col1}{τριγωνομετρική} σειρά της μορφής:
 
 \begin{equation}\label{eq:trigser}
@@ -144,8 +145,8 @@ $ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ 
 \end{equation} 
 
 Αν υποθέσουμε ότι υπάρχει η αναπαράσταση της $f$ ως τριγωνομετρική σειρά και ότι 
-η σύγκλιση της σειράς είναι ομοιόμορφη, τότε αν πολλαπλασιάσουμε την~\eqref{eq:trigser}
-με $ \sin{mx} $ και ολοκληρώσουμε σε διάστημα μίας περιόδου: 
+η σύγκλιση της σειράς είναι \textbf{ομοιόμορφη}, τότε αν πολλαπλασιάσουμε 
+την~\eqref{eq:trigser} με $ \sin{mx} $ και ολοκληρώσουμε σε διάστημα μίας περιόδου: 
 
 \begin{gather*}
   % f(x) = \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{nx} + b_{n} \sin{nx}]  \\
@@ -161,9 +162,10 @@ $ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ 
 \end{gather*}   
 
 Οπότε θέτωντας όπου $ n=m $, έχουμε
-\[
-  \boxed{b_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi} f(x) \sin{nx} \,{dx}}
-\] 
+\begin{equation}\label{eq:four1}
+  \boxed{b_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi} f(x) \sin{nx} \,{dx}, \quad n =
+  1,2,3, \ldots}
+\end{equation} 
 
 Ομοίως αν πολλαπλασιάσουμε την~\eqref{eq:trigser} με $ \cos{mx} $ και ολοκληρώσουμε 
 σε διάστημα μιας περιόδου, έχουμε:
@@ -203,10 +205,28 @@ $ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ 
     \,{dx}}, \quad n=1,2,3\ldots \\
     \displaystyle{a_{0} = \frac{1}{\pi} \int _{- \pi}^{\pi} f(x) \,{dx}}
   \end{cases}
-  \intertext{ή ισοδύναμα, μαζεύοντας}
-  \boxed{a_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi} f(x) \cos{nx} \,{dx}, 
-  n = 0,1,2,3, \ldots}
 \end{gather*}
+ή ισοδύναμα, μαζεύοντας
+\begin{equation}\label{eq:four2}
+  \boxed{a_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi} f(x) \cos{nx} \,{dx}, \quad
+  n = \textcolor{Col1}{0},1,2,3, \ldots}
+\end{equation}
+
+\begin{rem}
+  Οι τύποι~\eqref{eq:four1} και~\eqref{eq:four2} ονομάζονται 
+  \textcolor{Col1}{συντελεστές Fourier} και για τον υπολογισμό τους, 
+  θεωρήσαμε ότι η σειρά~\eqref{eq:trigser} συγκλίνει ομοιόμορφα στην $f$. 
+  Γεγονός είναι ότι για κάθε συνάρτηση $f$ που είναι ολοκληρώσιμη στο 
+  $ [- \pi , \pi] $, μπορούμε να υπολογίσουμε τους συντελεστές Fourier
+  και τυπικά να σχηματίσουμε τη σειρά 
+  \[
+    \frac{a_{0}}{2} + \sum_{n=1}^{\infty} a_{n} \cos{nx} + b_{n} \sin{nx}  
+  \] 
+  που ονομάζεται σειρά Fourier της $f$. Το υπό ποιες προϋποθέσεις η σειρά Fourier 
+  μιας συνάρτησης $f$ συγκλίνει στην $f$, απαντά το επόμενο θεώρημα.
+\end{rem}
+
+\section{Σειρές Fourier}
 
 \begin{thm}
   Έστω $ f \colon \mathbb{R} \to \mathbb{R} $ μια περιοδική συνάρτηση με περίοδο 
@@ -222,30 +242,104 @@ $ 2 \pi $. Τότε υπό κατάλληλες προυποθέσεις η $f$ 
 \begin{rem}
 \item {}
   \begin{myitemize}
-    \item Αν $f$ συνεχής στο $x$, τότε η σειρά Fourier συγκλίνει στο f(x), γιατί 
-      $ f(x^{-}) = f(x^{+}) $.
-    \item Αν $f$ συνεχής για κάθε $x \in \mathbb{R} $, τότε η σειρά Fourier 
+    \item Αν $f$ συνεχής στο $x$, τότε η σειρά Fourier της $f$ συγκλίνει στο $f(x)$, 
+      γιατί $ f(x^{-}) = f(x^{+}) $.
+    \item Αν $f$ συνεχής για κάθε $x \in \mathbb{R} $, τότε η σειρά Fourier της $f$ 
       συγκλίνει απόλυτα και ομοιόμορφα στην $f$ στο $ \mathbb{R} $.
   \end{myitemize}
 \end{rem}
 
 \begin{rem}
   Δηλαδή συνοψίζοντας η σειρά Fourier μιας περιοδικής με περίοδο $ 2 \pi $ και 
-  τμηματικά λείας συνάρτησης δίνεται από τον τύπο 
+  τμηματικά λείας συνάρτησης $ f $ δίνεται από τον τύπο 
   \[
     \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{(nx)} + b_{n} \sin{(nx)}] =  
     \frac{f(x^{-}) + f(x^{+})}{2} 
   \] 
+  και οι συντελεστές $ a_{n} $ και $ b_{n} $ από τους τύπους~\eqref{eq:four1}
+  και~\eqref{eq:four2}.
 \end{rem}
 
+\section{Συναρτήσεις με περίοδο 2L}
 
 \begin{rem}
-  Κάθε περιοδική συνάρτηση $ f(x) $ με περίοδo $ 2L>0 $ μπορεί να 
+  Κάθε περιοδική συνάρτηση $ f(x) $ με περίοδο $ 2L>0 $ μπορεί να 
   μετασχηματιστεί σε μια συνάρτηση με περίοδο $ 2 \pi $. Πράγματι, θέτωντας 
   \[ 
-    \frac{x}{t} = \frac{2L}{2 \pi} \Leftrightarrow x= t \frac{L}{\pi} 
+    \frac{x}{t} = \frac{2L}{2 \pi} \Leftrightarrow x= \frac{L}{\pi} t
   \]
-  η συνάρτηση $ g(t) = f\Bigl(t \frac{L}{\pi}\Bigr) $ που προκύπτει 
+  η συνάρτηση $ g(t) = f\Bigl(\frac{L}{\pi}t\Bigr) $ που προκύπτει 
   έχει περίοδο $ 2 \pi $.
 \end{rem}
+
+Για την $ g(t) $ η σειρά Fourier είναι 
+\[
+  \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{(nt)} + b_{n} \sin{(nt)}]
+\] 
+όπου 
+\[
+  a_{n} = \frac{1}{\pi} \int _{- \pi}^{\pi} g(t) \cos{nt} \,{dt} = 
+  \frac{1}{\pi} \int _{- \pi}^{\pi} f\Bigl(\frac{L}{\pi} t\Bigr) \cos{nt} \,{dt}, 
+  \quad n = 0,1,2,3, \ldots
+\] 
+και 
+\[
+  b_{n} = \frac{1}{\pi} \int _{- \pi}^{\pi} g(t) \sin{nt} \,{dt} = 
+  \frac{1}{\pi} \int _{- \pi}^{\pi} f\Bigl(\frac{L}{\pi} t\Bigr) \sin{nt} \,{dt}, 
+  \quad n = 1,2,3, \ldots
+\]
+Επιστρέφοντας πίσω, στην αρχική μεταβλητή $x$, θέτοντας όπου $ t = \frac{\pi x}{L} $, 
+έχουμε ότι η σειρά Fourier της συνάρτησης $ f(x) $ είναι
+\[
+  \frac{a_{0}}{2} + \sum_{n=1}^{\infty} \left[a_{n} \cos{\left(\frac{n \pi x}{L}\right)} 
+  + b_{n} \sin{\left(\frac{n \pi x}{L}\right)} \right]
+\]
+όπου 
+\[
+  a_{n} = \frac{1}{L} \int _{- L}^{L} f(x) 
+  \cos{\left(\frac{n \pi x}{L}\right)} \,{dx}, \quad n = 0,1,2,3, \ldots
+\] 
+και 
+\[
+  b_{n} = \frac{1}{L} \int _{- L}^{L} f(x) 
+  \sin{\left(\frac{n \pi x}{L}\right)} \,{dx}, \quad n = 1,2,3, \ldots
+\]
+
+\section{Ημιτονική και Συνημιτονική σειρά Fourier}
+
+\subsection*{\ensuremath{f} άρτια}
+
+Αν η $f$ είναι άρτια, τότε η συνάρτηση $ f(x) \cos{(nx)} $ είναι επίσης \textbf{άρτια} 
+(γινόμενο άρτιας με άρτια συνάρτηση είναι άρτια), ενώ η συνάρτηση 
+$ f(x) \sin{(nx)} $ είναι \textbf{περιττή} 
+(γινόμενο άρτιας με περιττή συνάρτηση είναι περιττή), για αυτό, αν λάβουμε υπόψιν 
+μας τις σχέσεις της πρότασης~\ref{prop:artper}, έχουμε:
+\[
+  a_{n} = \frac{2}{\pi} \int _{0}^{\pi} f(x) \cos{(nx)} \,{dx}, \quad \text{και} \quad
+  b_{n} = 0
+\] 
+και τότε η σειρά Fourier της $f$ γίνεται:
+\[
+  \sum_{n=0}^{\infty} a_{n} \cos{(nx)} \quad 
+  \text{\color{Col1} Συνημιτονική σειρά Fourier}
+\]
+
+\subsection*{\ensuremath{f} περιττή}
+
+Αν η $f$ είναι περιττή, τότε η συνάρτηση $ f(x) \cos{(nx)} $ είναι επίσης 
+\textbf{περιττή} (γινόμενο άρτιας με περιττή συνάρτηση είναι περιττή), ενώ η συνάρτηση 
+$ f(x) \sin{(nx)} $ είναι \textbf{άρτια} 
+(γινόμενο περιττής με περιττή συνάρτηση είναι άρτια), για αυτό, αν λάβουμε υπόψιν μας 
+τις σχέσεις της πρότασης~\ref{prop:artper}, έχουμε:
+\[
+  a_{n} = 0, \quad \text{και} \quad
+  b_{n} = \frac{2}{\pi} \int _{0}^{\pi} f(x) \sin{(nx)} \,{dx} 
+\] 
+και τότε η σειρά Fourier της $f$ γίνεται:
+\[
+  \sum_{n=1}^{\infty} a_{n} \sin{(nx)} \quad 
+  \text{\color{Col1} Ημιτονική σειρά Fourier}
+\]
+
+
 \end{document}
