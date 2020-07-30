@@ -1,0 +1,155 @@
+\input{preamble.tex}
+\input{definitions_ask.tex}
+
+\pagestyle{vangelis}
+\everymath{\displaystyle}
+
+\begin{document}
+
+
+% \begin{center}
+%   \minibox{\Large\bfseries \textcolor{Col1}{Τύποι Ορθογωνιότητας}}
+% \end{center}
+
+\chapter*{Ορθογωνιότητα}
+
+\twocolumnsides{
+  \section*{Ορθογωνιότητα στο $ [- \pi, \pi] $}
+\renewcommand{\arraystretch}{4.5}
+ \begin{tabular}{l}
+   $\int _{-\pi}^{\pi} \cos{(nx)} \cos{(mx)} \,{dx} = 
+  \begin{cases}
+    0, & n \neq m \\
+    \pi, &n=m \neq 0 \\
+    2\pi, &n=m=0 
+  \end{cases} $ \\
+  $ \int _{-\pi}^{\pi} \sin{(nx)} \sin{(mx)} \,{dx} = 
+  \begin{cases}
+    0, & n \neq m \\
+    \pi, &n=m \neq 0 \\
+  \end{cases} $ \\
+  $ \int _{-\pi}^{\pi} \sin{(nx)} \cos{(mx)} \,{dx} = 0, \quad 
+  \forall n,m $ \\
+ \end{tabular} 
+  }{
+  \section*{Ορθογωνιότητα στο $ [0, \pi] $}
+\renewcommand{\arraystretch}{4.5}
+\begin{tabular}{l}
+  $ \int _{0}^{\pi} \cos{(nx)} \cos{(mx)} \,{dx} = 
+  \begin{cases}
+    0, & n \neq m \\
+    {\pi}/{2}, &n=m \neq 0 \\
+    \pi, &n=m=0 
+  \end{cases} $ \\
+  $ \int _{0}^{\pi} \sin{(nx)} \sin{(mx)} \,{dx} = 
+  \begin{cases}
+    0, & n \neq m \\
+    {\pi}/{2}, &n=m \neq 0 \\
+  \end{cases} $ \\
+  $ \int _{0}^{\pi} \sin{(nx)} \cos{(mx)} \,{dx} = 0, \quad 
+  \forall n,m $
+\end{tabular}
+}
+
+\vspace{2\baselineskip}
+
+\twocolumnsides{
+  \section*{Ορθογωνιότητα στο $ [- L, L] $}
+\renewcommand{\arraystretch}{4.5}
+ \begin{tabular}{l}
+  $\int _{-L}^{L} \cos{\left(\frac{n \pi x}{L}\right)} 
+  \cos{\left(\frac{m \pi x}{L}\right)} \,{dx} = 
+  \begin{cases}
+    0, & n \neq m \\
+    L, &n=m \neq 0 \\
+    2L, &n=m=0 
+  \end{cases} $ \\
+  $ \int _{-L}^{L} \sin{\left(\frac{n \pi x}{L}\right)} 
+  \sin{\left(\frac{m \pi x}{L}\right)} \,{dx} = 
+  \begin{cases}
+    0, & n \neq m \\
+    L, &n=m \neq 0 \\
+  \end{cases} $ \\
+  $ \int _{-L}^{L} \sin{\left(\frac{n \pi x}{L}\right)} 
+  \cos{\left(\frac{m \pi x}{L}\right)} \,{dx} = 0, \quad 
+  \forall n,m $ \\
+ \end{tabular} 
+  }{
+  \section*{Ορθογωνιότητα στο $ [0, L] $}
+\renewcommand{\arraystretch}{4.5}
+\begin{tabular}{l}
+  $ \int _{0}^{L} \cos{\left(\frac{n \pi x}{L}\right)} 
+  \cos{\left(\frac{m \pi x}{L}\right)} \,{dx} = 
+  \begin{cases}
+    0, & n \neq m \\
+    {L}/{2}, &n=m \neq 0 \\
+    L, &n=m=0 
+  \end{cases} $ \\
+  $ \int _{0}^{L} \sin{\left(\frac{n \pi x}{L}\right)} 
+  \sin{\left(\frac{m \pi x}{L}\right)} \,{dx} = 
+  \begin{cases}
+    0, & n \neq m \\
+    {L}/{2}, &n=m \neq 0 \\
+  \end{cases} $ \\
+  $ \int _{0}^{L} \sin{\frac{n \pi x}{L}} \cos{\frac{m \pi x}{L}} \,{dx} = 0, \quad 
+  \forall n,m $
+\end{tabular}
+}
+
+
+\chapter*{Σειρές Fourier}
+
+
+\section*{Σειρά Fourier συνάρτησης με περίοδο $ 2 \pi $}
+
+\begin{thm}
+  Έστω $ f \colon \mathbb{R} \to \mathbb{R} $ μια \textbf{περιοδική} συνάρτηση με 
+  περίοδο $ 2 \pi $ και \textbf{τμηματικά λεία}. Τότε η σειρά Fourier της $f$ 
+  συγκλίνει για κάθε $ x \in \mathbb{R} $, στην τιμή
+  \begin{align*}
+    f(x) &= \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{nx} + b_{n} \sin{nx}], 
+    \quad \forall x \; \text{όπου $x$ είναι σημείο \textbf{συνέχειας} της $f$} \\
+    \frac{f(x_{0}^{-}) + f(x_{0}^{+})}{2} &= \frac{a_{0}}{2} + \sum_{n=1}^{\infty} 
+    [a_{n} \cos{nx} + b_{n} \sin{nx}], 
+    \quad \forall x_{0} \; \text{όπου $x_{0}$ είναι σημείο \textbf{ασυνέχειας} της $f$}\\
+  \end{align*} 
+  όπου οι συντελεστές fourier δίνονται από τις σχέσεις:
+  \[
+  \boxed{a_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi} f(x) \cos{nx} \,{dx}, \quad
+  n = \textcolor{Col1}{0},1,2,3, \ldots} \quad \text{και} \quad 
+  \boxed{b_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi} f(x) \sin{nx} \,{dx}, \quad n =
+  1,2,3, \ldots}
+   \] 
+\end{thm}
+
+
+\section*{Σειρά Fourier συνάρτησης με περίοδο $ 2 L$}
+
+\begin{thm}
+  Έστω $ f \colon \mathbb{R} \to \mathbb{R} $ μια \textbf{περιοδική} συνάρτηση με 
+  περίοδο $ 2 L $ και \textbf{τμηματικά λεία}. Τότε η σειρά Fourier της $f$ 
+  συγκλίνει για κάθε $ x \in \mathbb{R} $, στην τιμή
+  \begin{align*}
+    f(x) &= \frac{a_{0}}{2} + \sum_{n=1}^{\infty} \left[a_{n} 
+    \cos{\left(\frac{n \pi x}{L}\right)} + b_{n} \sin{\left(\frac{n \pi x}{L} \right)}
+  \right], 
+    \quad \forall x \; \text{όπου $x$ είναι σημείο \textbf{συνέχειας} της $f$} \\
+    \frac{f(x_{0}^{-}) + f(x_{0}^{+})}{2} &= \frac{a_{0}}{2} + \sum_{n=1}^{\infty} 
+    \left[a_{n} \cos{\left(\frac{n \pi x}{L}\right)} + b_{n} 
+    \sin{\left(\frac{n \pi x}{L}\right)}\right], 
+    \quad \forall x_{0} \; \text{όπου $x_{0}$ είναι σημείο \textbf{ασυνέχειας} της $f$}\\
+  \end{align*} 
+  όπου οι συντελεστές fourier δίνονται από τις σχέσεις:
+  \[
+    \boxed{a_{n} = \frac{1}{L} \int _{- L }^{L} f(x) \cos{\left(\frac{n \pi x}{L}\right)} \,{dx}, \quad
+  n = \textcolor{Col1}{0},1,2,3, \ldots} \quad \text{και} \quad 
+  \boxed{b_{n} = \frac{1}{L} \int _{- L }^{L} f(x) \sin{\left(\frac{n \pi x}{L}\right)} \,{dx}, \quad n =
+  1,2,3, \ldots}
+   \] 
+\end{thm}
+
+\begin{rem}
+  $ f({x_{0}}^{-}) = \lim\limits_{x \to {x_{0}}^{-}} f(x) $ και 
+  $ f({x_{0}}^{+}) = \lim\limits_{x \to {x_{0}}^{+}} f(x) $ 
+\end{rem}
+\end{document}

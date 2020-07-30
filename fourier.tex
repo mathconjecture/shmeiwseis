@@ -47,41 +47,6 @@
   στο $ [a,b] $.     
 \end{dfn}
 
-\begin{dfn}
-  Μια συνάρτηση $ f(x) $ θα λέγεται:
-  \begin{alignat*}{4}
-        &\textcolor{Col1}{\text{άρτια}}   & \quad 
-        &\overset{\text{ορ.}}{\Leftrightarrow} & \quad f(-x) &= f(x), & 
-        &\quad \forall x \in \mathbb{R} \\
-        &\textcolor{Col1}{\text{περιττή}}  & \quad 
-        &\overset{\text{ορ.}}{\Leftrightarrow} & \quad f(-x) &= -f(x), & 
-        &\quad \forall x \in \mathbb{R}. \\
-  \end{alignat*}
-\end{dfn}
-
-\begin{examples}
-\item {}
-  \begin{enumerate}
-    \item Οι συναρτήσεις $ f(x)=x^{2} $ και $ g(x)= \cos x $ είναι άρτιες. 
-    \item συναρτήσεις $ f(x)=x^{3} $ και $ g(x)= \sin x $ είναι περιττές.
-  \end{enumerate}
-\end{examples}
-
-\begin{rem}
-  Η γραφική παράσταση μιας άρτιας συνάρτησης είναι συμμετρική ως προς τον άξονα $y$, 
-  ενώ μιας περιττής συνάρτησης ως προς την αρχή των αξόνων.
-\end{rem}
-
-\begin{prop}\label{prop:artper}
-\item {}
-  Αν $ f(x) $ ολοκληρώσιμη στο διάστημα $[-a,a]$ τότε ισχύουν:
-
-  \begin{myitemize*}
-    \item $ f(x) $ άρτια $ \Rightarrow \int _{-a}^{a} f(x) \,{dx} = 2 \int _{0}^{a} f(x)
-      \,{dx} $ 
-    \item $ f(x) $ περιττή $ \Rightarrow \int _{-a}^{a} f(x) \,{dx} = 0 $
-  \end{myitemize*}
-\end{prop}
 
 \section{Περιοδική Επέκταση Συναρτήσεων}
 
@@ -215,23 +180,24 @@ $ 2 \pi $. Τότε υπό κατάλληλες προϋποθέσεις η $f$ 
 \begin{rem}
   Οι τύποι~\eqref{eq:four1} και~\eqref{eq:four2} ονομάζονται 
   \textcolor{Col1}{συντελεστές Fourier} και για τον υπολογισμό τους, 
-  θεωρήσαμε ότι η σειρά~\eqref{eq:trigser} συγκλίνει ομοιόμορφα στην $f$. 
+  θεωρήσαμε ότι η σειρά~\eqref{eq:trigser} συγκλίνει ομοιόμορφα στην $f$, κάτι 
+  που δεν το γνωρίζουμε εκ των προτέρων. 
   Γεγονός είναι ότι για κάθε συνάρτηση $f$ που είναι ολοκληρώσιμη στο 
   $ [- \pi , \pi] $, μπορούμε να υπολογίσουμε τους συντελεστές Fourier
-  και τυπικά να σχηματίσουμε τη σειρά 
+  και τυπικά να σχηματίσουμε τη σειρά,γράφοντας
   \[
-    \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{nx} + b_{n} \sin{nx}]
+    f(x) \sim \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{nx} + b_{n} \sin{nx}]
   \] 
-  που ονομάζεται σειρά Fourier της $f$. Υπό ποιες προϋποθέσεις η σειρά Fourier 
-  μιας συνάρτησης $f$ συγκλίνει στην $f$, απαντάται στο επόμενο θεώρημα.
+  η οποία ονομάζεται σειρά Fourier της $f$. Υπό ποιες προϋποθέσεις η σειρά Fourier 
+  μιας συνάρτησης $f$ \textbf{συγκλίνει} στην $f$, απαντάται στο επόμενο θεώρημα.
 \end{rem}
 
 \section{Σειρές Fourier}
 
 \begin{thm}
-  Έστω $ f \colon \mathbb{R} \to \mathbb{R} $ μια περιοδική συνάρτηση με περίοδο 
-  $ 2 \pi $ και τμηματικά λεία. Τότε η σειρά Fourier της $f$ συγκλίνει για κάθε 
-  $ x \in \mathbb{R} $, στην τιμή
+  Έστω $ f \colon \mathbb{R} \to \mathbb{R} $ μια \textbf{περιοδική} συνάρτηση με 
+  περίοδο $ 2 \pi $ και \textbf{τμηματικά λεία}. Τότε η σειρά Fourier της $f$ 
+  συγκλίνει για κάθε $ x \in \mathbb{R} $, στην τιμή
   \[
     \frac{f(x^{-}) + f(x^{+})}{2} 
   \] 
@@ -245,7 +211,7 @@ $ 2 \pi $. Τότε υπό κατάλληλες προϋποθέσεις η $f$ 
     \item Αν $f$ συνεχής στο $x$, τότε η σειρά Fourier της $f$ συγκλίνει στο $f(x)$, 
       γιατί $ f(x^{-}) = f(x^{+}) $.
     \item Αν $f$ συνεχής για κάθε $x \in \mathbb{R} $, τότε η σειρά Fourier της $f$ 
-      συγκλίνει απόλυτα και ομοιόμορφα στην $f$ στο $ \mathbb{R} $.
+      συγκλίνει \textbf{απόλυτα} και \textbf{ομοιόμορφα} στην $f$ στο $ \mathbb{R} $.
   \end{myitemize}
 \end{rem}
 
@@ -264,14 +230,13 @@ $ 2 \pi $. Τότε υπό κατάλληλες προϋποθέσεις η $f$ 
 
 \begin{rem}
   Κάθε περιοδική συνάρτηση $ f(x) $ με περίοδο $ 2L>0 $ μπορεί να 
-  μετασχηματιστεί σε μια συνάρτηση με περίοδο $ 2 \pi $. Πράγματι, θέτωντας 
+  \textbf{μετασχηματιστεί} σε μια συνάρτηση με περίοδο $ 2 \pi $. Πράγματι, θέτωντας 
   \[ 
-    \frac{x}{t} = \frac{2L}{2 \pi} \Leftrightarrow x= \frac{L}{\pi} t
+    \frac{x}{t} = \frac{2L}{2 \pi} \Leftrightarrow \boxed{x= \frac{L}{\pi} t}
   \]
   η συνάρτηση $ g(t) = f\Bigl(\frac{L}{\pi}t\Bigr) $ που προκύπτει 
   έχει περίοδο $ 2 \pi $.
 \end{rem}
-
 Για την $ g(t) $ η σειρά Fourier είναι 
 \[
   \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{(nt)} + b_{n} \sin{(nt)}]
@@ -307,12 +272,61 @@ $ 2 \pi $. Τότε υπό κατάλληλες προϋποθέσεις η $f$ 
 
 \section{Ημιτονική και Συνημιτονική σειρά Fourier}
 
-\subsection*{Συνημιτονική σειρά Fourier}
 
-Αν η $f$ είναι \textbf{άρτια}, τότε η συνάρτηση $ f(x) \cos{(nx)} $ είναι επίσης 
-\textbf{άρτια} (γινόμενο άρτιας με άρτια συνάρτηση είναι άρτια), ενώ η συνάρτηση 
-$ f(x) \sin{(nx)} $ είναι \textbf{περιττή} 
-(γινόμενο άρτιας με περιττή συνάρτηση είναι περιττή), για αυτό, αν λάβουμε υπόψιν 
+\subsection*{Άρτιες - Περιττές Συναρτήσεις}
+
+\begin{dfn}
+  Μια συνάρτηση $ f(x) $ θα λέγεται:
+  \begin{alignat*}{4}
+        &\textcolor{Col1}{\text{άρτια}}   & \quad 
+        &\overset{\text{ορ.}}{\Leftrightarrow} & \quad f(-x) &= f(x), & 
+        &\quad \forall x \in \mathbb{R} \\
+        &\textcolor{Col1}{\text{περιττή}}  & \quad 
+        &\overset{\text{ορ.}}{\Leftrightarrow} & \quad f(-x) &= -f(x), & 
+        &\quad \forall x \in \mathbb{R}. \\
+  \end{alignat*}
+\end{dfn}
+
+\begin{examples}
+\item {}
+  \begin{enumerate}
+    \item Οι συναρτήσεις $ f(x)=x^{2} $ και $ g(x)= \cos (nx) $ είναι άρτιες. 
+    \item συναρτήσεις $ f(x)=x^{3} $ και $ g(x)= \sin (nx) $ είναι περιττές.
+  \end{enumerate}
+\end{examples}
+
+\begin{prop}
+\item {}
+  \begin{enumerate}\label{prop:ginart}
+    \item άρτια $ \cdot $ άρτια $=$ άρτια
+    \item περιττή $ \cdot $ περιττή $=$ άρτια
+    \item άρτια $ \cdot $ περιττή $=$ περιττή
+  \end{enumerate}
+\end{prop}
+
+\begin{rem}
+  Η γραφική παράσταση μιας άρτιας συνάρτησης είναι συμμετρική ως προς τον άξονα $y$, 
+  ενώ μιας περιττής συνάρτησης ως προς την αρχή των αξόνων.
+\end{rem}
+
+\begin{prop}\label{prop:artper}
+\item {}
+  Αν $ f(x) $ ολοκληρώσιμη στο διάστημα $[-a,a]$ τότε ισχύουν:
+
+  \begin{myitemize*}
+    \item $ f(x) $ άρτια $ \Rightarrow \int _{-a}^{a} f(x) \,{dx} = 2 \int _{0}^{a} f(x)
+      \,{dx} $ 
+    \item $ f(x) $ περιττή $ \Rightarrow \int _{-a}^{a} f(x) \,{dx} = 0 $
+  \end{myitemize*}
+\end{prop}
+
+
+\subsection*{Συνημιτονική σειρά Fourier συνάρτησης με περίοδο $ 2 \pi $}
+
+Αν η $f$ είναι \textbf{άρτια}, με περίοδο $ 2 \pi $, τότε η συνάρτηση 
+$ f(x) \cos{(nx)} $ είναι επίσης \textbf{άρτια} (από πρόταση~\ref{prop:ginart}), 
+ενώ η συνάρτηση $ f(x) \sin{(nx)} $ είναι \textbf{περιττή} 
+(από πρόταση~\ref{prop:ginart}), για αυτό, αν λάβουμε υπόψιν 
 μας τις σχέσεις της πρότασης~\ref{prop:artper}, έχουμε:
 \[
   a_{n} = \frac{2}{\pi} \int _{0}^{\pi} f(x) \cos{(nx)} \,{dx}, \quad \text{και} \quad
@@ -324,12 +338,13 @@ $ f(x) \sin{(nx)} $ είναι \textbf{περιττή}
   \text{\color{Col1} Συνημιτονική σειρά Fourier}
 \]
 
-\subsection*{Ημιτονική σειρά Fourier}
 
-Αν η $f$ είναι \textbf{περιττή}, τότε η συνάρτηση $ f(x) \cos{(nx)} $ είναι επίσης 
-\textbf{περιττή} (γινόμενο άρτιας με περιττή συνάρτηση είναι περιττή), ενώ η συνάρτηση 
-$ f(x) \sin{(nx)} $ είναι \textbf{άρτια} 
-(γινόμενο περιττής με περιττή συνάρτηση είναι άρτια), για αυτό, αν λάβουμε υπόψιν μας 
+\subsection*{Ημιτονική σειρά Fourier συνάρτησης με περίοδο $ 2 \pi $}
+
+Αν η $f$ είναι \textbf{περιττή}, με περίοδο $ 2 \pi $,  τότε η συνάρτηση 
+$ f(x) \cos{(nx)} $ είναι επίσης \textbf{περιττή} (από πρόταση~\ref{prop:ginart}), 
+ενώ η συνάρτηση $ f(x) \sin{(nx)} $ είναι \textbf{άρτια} 
+(από πρόταση~\ref{prop:ginart}), για αυτό, αν λάβουμε υπόψιν μας 
 τις σχέσεις της πρότασης~\ref{prop:artper}, έχουμε:
 \[
   a_{n} = 0, \quad \text{και} \quad
@@ -341,5 +356,39 @@ $ f(x) \sin{(nx)} $ είναι \textbf{άρτια}
   \text{\color{Col1} Ημιτονική σειρά Fourier}
 \]
 
+\subsection*{Συνημιτονική σειρά Fourier συνάρτησης με περίοδο $ 2 L$}
+
+Αν η $f$ είναι \textbf{άρτια}, με περίοδο $ 2 L$, τότε η συνάρτηση 
+$ f(x) \cos{\left(\frac{n \pi x}{L}\right)} $ είναι επίσης \textbf{άρτια} (από πρόταση~\ref{prop:ginart}), 
+ενώ η συνάρτηση $ f(x) \sin{\left(\frac{n \pi x}{L}\right)} $ είναι \textbf{περιττή} 
+(από πρόταση~\ref{prop:ginart}), για αυτό, αν λάβουμε υπόψιν 
+μας τις σχέσεις της πρότασης~\ref{prop:artper}, έχουμε:
+\[
+  a_{n} = \frac{2}{L} \int _{0}^{L} f(x) \cos{\left(\frac{n \pi x}{L}\right)} \,{dx}, \quad \text{και} \quad
+  b_{n} = 0
+\] 
+και τότε η σειρά Fourier της $f$ γίνεται:
+\[
+  \sum_{n=0}^{\infty} a_{n} \cos{\left(\frac{n \pi x}{L}\right)} \quad 
+  \text{\color{Col1} Συνημιτονική σειρά Fourier}
+\]
+
+
+\subsection*{Ημιτονική σειρά Fourier συνάρτησης με περίοδο $ 2 L$}
+
+Αν η $f$ είναι \textbf{περιττή}, με περίοδο $ 2 L$,  τότε η συνάρτηση 
+$ f(x) \cos{\left(\frac{n \pi x}{L}\right)} $ είναι επίσης \textbf{περιττή} (από πρόταση~\ref{prop:ginart}), 
+ενώ η συνάρτηση $ f(x) \sin{\left(\frac{n \pi x}{L}\right)} $ είναι \textbf{άρτια} 
+(από πρόταση~\ref{prop:ginart}), για αυτό, αν λάβουμε υπόψιν μας 
+τις σχέσεις της πρότασης~\ref{prop:artper}, έχουμε:
+\[
+  a_{n} = 0, \quad \text{και} \quad
+  b_{n} = \frac{2}{L} \int _{0}^{L} f(x) \sin{\left(\frac{n \pi x}{L}\right)} \,{dx} 
+\] 
+και τότε η σειρά Fourier της $f$ γίνεται:
+\[
+  \sum_{n=1}^{\infty} a_{n} \sin{\left(\frac{n \pi x}{L}\right)} \quad 
+  \text{\color{Col1} Ημιτονική σειρά Fourier}
+\]
 
 \end{document}

@@ -1,129 +1,293 @@
-\input{preamble.tex}
-\input{definitions.tex}
+\input{preamble_ask.tex}
+\input{definitions_ask.tex}
 
+\renewcommand{\qedsymbol}{}
 
-
+\pagestyle{vangelis}
 
 
 \begin{document}
 
+\begin{center}
+  \minibox{\large\bfseries \textcolor{Col1}{Ορθογωνιότητα Συναρτήσεων}}
+\end{center}
 
-\chapter{Ορθογωνιότητα}
+\vspace{\baselineskip}
+
+
+
+\section*{Ορισμοί}
 
 \begin{dfn}
-    Έστω δυο πραγματικές συναρτήσεις $ f(x), g(x) $ ορισμένες σ᾽ ένα διάστημα 
-    $ [a,b] \subseteq \mathbb{R} $. Ορίζουμε ως \textcolor{Col1}{εσωτερικό γινόμενο} 
-    των $ f(x) $ και $ g(x) $ και το συμβολίζουμε με $ <f,g> $ το ολοκλήρωμα
-    \[
-        <f,g> = \int _{a}^{b} w(x) f(x)g(x) \,{dx} 
-    \] 
-    όπου $ w(x) $ γνωστή θετική συνάρτηση, $ \forall x \in [a,b] $, η οποία 
-    ονομάζεται \textcolor{Col1}{συνάρτηση βάρους}.
+  Έστω δυο πραγματικές συναρτήσεις $ f(x), g(x) $ ορισμένες σε ένα διάστημα 
+  $ [a,b] \subseteq \mathbb{R} $. Ορίζουμε ως \textcolor{Col1}{εσωτερικό γινόμενο} 
+  των $ f(x) $ και $ g(x) $ και το συμβολίζουμε με $ <f,g> $ το ολοκλήρωμα
+  \[
+    <f,g> = \int _{a}^{b} w(x) f(x)g(x) \,{dx} 
+  \] 
+  όπου $ w(x) $ γνωστή \textbf{θετική} συνάρτηση, $ \forall x \in [a,b] $, η οποία 
+  ονομάζεται \textcolor{Col1}{συνάρτηση βάρους}.
 \end{dfn}
 
 \begin{rem}
-    Τα όρια ολοκλήρωσης στο παραπάνω ολοκλήρωμα μπορεί να είναι και $ \infty $.
+  Τα όρια ολοκλήρωσης στο παραπάνω ολοκλήρωμα μπορεί να είναι και $ \infty $.
 \end{rem}
 
 \begin{dfn}
-    Δυο πραγματικές συναρτήσεις $ f(x), g(x) $ είναι \textcolor{Col1}{ορθογώνιες} 
-    στο διάστημα $ [a,b] \subseteq \mathbb{R} $ ως προς τη συνάρτηση βάρους $ w(x) $, 
-    αν το εσωτερικό του γινόμενο είναι μηδέν, δηλαδή:
-    \[
-        \int _{a}^{b} w(x)f(x)g(x) \,{dx} = 0
-    \] 
+  Δυο πραγματικές συναρτήσεις $ f(x), g(x) $ είναι \textcolor{Col1}{ορθογώνιες} 
+  στο διάστημα $ [a,b] \subseteq \mathbb{R} $ ως προς τη συνάρτηση βάρους $ w(x) $, 
+  αν το εσωτερικό τους γινόμενο είναι \textbf{μηδέν}, δηλαδή:
+  \[
+    \int _{a}^{b} w(x)f(x)g(x) \,{dx} = 0
+  \] 
 \end{dfn}
 
 \begin{dfn}
-    Μια ακολουθία πραγματικών συναρτήσεων $ \{ f_{n}(x) \}_{n=1}^{\infty} $ αποτελεί 
-    ένα σύστημα ορθογώνιων συναρτήσεων στο διάστημα $ [a,b] $, ως προς τη 
-    συνάρτηση βάρους $ w(x) $, αν τα μέλη της είναι ανα δύο ορθογώνια, δηλαδή:
-    \[
-        \int _{a}^{b} w(x) f_{n}(x)f_{m}(x) \,{dx} = 0 \quad \forall n \neq m, \; n,m = 
-        1,2,3, \ldots
-    \] 
+  Μια ακολουθία πραγματικών συναρτήσεων $ \{ f_{n}(x) \}_{n=1}^{\infty} $ αποτελεί 
+  ένα \textcolor{Col1}{σύστημα ορθογώνιων συναρτήσεων} στο διάστημα $ [a,b] $, 
+  ως προς τη συνάρτηση βάρους $ w(x) $, αν τα μέλη της είναι 
+  \textbf{ανά δύο ορθογώνια}, δηλαδή:
+  \[
+    \int _{a}^{b} w(x) f_{n}(x)f_{m}(x) \,{dx} = 0, \quad \forall n \neq m, \; 
+    \text{όπου} \;  n,m = 1,2,3, \ldots
+  \] 
 \end{dfn}
 
-\begin{prop}
-    Το σύστημα των συναρτήσεων $ \{ \cos{(nx)} \}_{n=1}^{\infty} $ είναι ορθογώνιο 
-    στο διάστημα $ [-\pi, \pi] $, ως προς τη συνάρτηση βάρους $ w(x)=1 $.
+\begin{rem}
+  Οι παρακάτω ταυτότητες θα είναι χρήσιμες στον υπολογισμό των ολοκληρωμάτων:
+  \begin{align*}
+    \cos{a} \cos{b} &= \frac{1}{2} [\cos{(a-b)} + \cos{(a+b)}] \\ 
+    \sin{a} \sin{b} &= \frac{1}{2} [\cos{(a-b)} - \cos{(a+b)}] \\
+    \sin{a} \cos{b} &= \frac{1}{2} [\sin{(a-b)} + \sin{(a+b)}]
+  \end{align*} 
+\end{rem}
 
-    \begin{proof}
-    \item {}
-        \begin{myitemize}
-        \item Αν $ n \neq m $, τότε:
-            \begin{align*}
-                \int _{-\pi}^{\pi} \cos{nx} \cdot \cos{mx} \,{dx} &= \frac{1}{2} 
-                \int _{-\pi}^{\pi} [\cos{(nx+mx)} + \cos{(nx - mx)}] \,{dx} = 
-                \frac{1}{2} 
-                \left[\frac{\sin{(n+m)x}}{n+m} + \frac{\sin{(n-m)x}}{n-m}
-                \right]_{-\pi}^{\pi} = 0 \\
-            \end{align*} 
 
-        \item Αν $ n = m $, τότε:
-            \begin{align*}
-                \int _{-\pi}^{\pi} \cos^{2}(nx) \,{dx} = 
-                \int _{-\pi}^{\pi} \frac{1+ \cos{2nx}}{2}
-                \,{dx} = 
-                \frac{1}{2} \left[x + \frac{\sin{2nx}}{2n}\right]_{-\pi}^{\pi} = \pi 
-            \end{align*}
-        \end{myitemize}
-    \end{proof}
-\end{prop}
-
+\section*{Ορθογωνιότητα των \ensuremath{\boldsymbol {\sin{(nx)}, \; \cos{(nx)}}}}
 
 \begin{prop}
-    Το σύστημα των συναρτήσεων $ \{ \sin{(nx)} \} _{n=1}^{\infty} $ είναι ορθογώνιο
-    στο διάστημα $ [0, \pi] $, ως προς τη συνάρτηση βάρους $ w(x)=1 $.
+  Το σύστημα των συναρτήσεων $ \{1, \sin{(nx), \cos{(nx)} } \} _{n=1}^{\infty} $ 
+  είναι ορθογώνιο στο διάστημα $ \color{Col1}{[- \pi , \pi ]} $, ως προς τη 
+  συνάρτηση βάρους $ w(x)=1 $.
 \end{prop}
-
 \begin{proof}
 \item {}
-    Ομοίως
-\end{proof}
+  Εξετάζουμε ως προς την ορθογωνιότητα \textbf{ανά δύο} τις συναρτήσεις.
+  \[
+    \int _{- \pi}^{\pi} 1 \cdot \sin{(nx)} \,{dx} 
+    =  \left[\frac{- \cos{(nx)}}{n} \right]_{- \pi}^{\pi} 
+    = - \frac{1}{n} \left[\cos{(nx)} \right]_{- \pi}^{\pi} 
+    = - \frac{1}{n} [\cos{(n \pi)} - \cos{(- n \pi)}] 
+    = - \frac{1}{n} [\cos{(n \pi)}- \cos{(n \pi)}] = 0 
+  \] 
+  \[
+    \int _{-\pi}^{\pi} 1 \cdot \cos{(nx)} \,{dx} 
+    =  \left[\frac{\sin{(nx)}}{n} \right]_{- \pi}^{\pi} 
+    = \frac{1}{n} \left[\sin{(nx)} \right]_{- \pi}^{\pi} 
+    = \frac{1}{n} [ \sin{(n \pi)} - \sin{(- n \pi)}] =  \frac{2}{n} \sin{(n \pi)} = 0 
+  \]
+  \begin{myitemize}
+    \item Αν $ n \neq m $, τότε
+      \begin{align*}
+        \int _{-\pi}^{\pi} \sin{(nx)} \sin{(mx)} \,{dx} 
+            &=\frac{1}{2} \int_{-\pi}^{\pi} \left[\cos{[(n-m)x]} - \cos{[(n+m)x]}\right]
+            \,{dx} 
+            = \frac{1}{2} \left[\frac{\sin{[(n-m)x]}}{n-m} - 
+            \frac{\sin{[(n+m)x]}}{n+m} \right]_{-\pi}^{\pi} \\
+            &= \frac{1}{\cancel{2}} \cdot \cancel{2}  \left[{\frac{\sin{[(n-m)
+                  \pi]}}{n-m}} - \frac{\sin{[(n+m)
+            \pi]}}{n+m}\right] = 1 \cdot 0 = 0  
+      \end{align*} 
+      \begin{align*}
+        \int _{-\pi}^{\pi} \cos{(nx)} \cos{(mx)} \,{dx} 
+            &= \frac{1}{2} \int _{-\pi}^{\pi} \left[\cos{[(n-m)x]} + 
+              \cos{[(n+m)x]} \right] \,{dx} 
+              = \frac{1}{2} \left[\frac{\sin{[(n-m)x]}}{n-m} 
+            + \frac{\sin{[(n+m)x]}}{n+m} \right]_{-\pi}^{\pi} \\
+            &= \frac{1}{\cancel{2}} \cdot \cancel{2} \left[ 
+              \frac{\sin{[(n-m) \pi]}}{n-m} + \frac{\sin{[(n+m) \pi]}}{n+m}\right] 
+              = 1 \cdot 0 = 0  
+      \end{align*}
+      \begin{align*}
+        \int _{-\pi}^{\pi} \sin{(nx)} \cos{(mx)} \,{dx} 
+            &= \frac{1}{2} \int _{-\pi}^{\pi} \left[\sin{[(n-m)x]} + 
+              \sin{[(n+m)x]} \right] \,{dx} 
+              = \frac{1}{2} \left[-\frac{\cos{[(n-m)x]}}{n-m} - 
+              \frac{\cos{[(n+m)x]}}{n+m} \right]_{-\pi}^{\pi} \\
+            &=  - \frac{1}{2} \left[\cancel{\frac{\cos{[(n-m) \pi]}}{n-m}} + 
+              \bcancel{\frac{\cos{[(n+m) \pi]}}{n+m}} - \cancel{\frac{\cos{[(n-m)
+            (-\pi)]}}{n-m}} - \bcancel{\frac{\cos{[(n+m) (-\pi)]}}{n+m}} \right] 
+            = - \frac{1}{2} \cdot 0 = 0  
+      \end{align*}
+    \item Αν $ n = m $, τότε
+      \begin{align*}
+        \int _{-\pi}^{\pi} \cos^{2}(nx) \,{dx} = 
+        \int _{-\pi}^{\pi} \frac{1+ \cos{(2nx)}}{2}
+        \,{dx} = 
+        \frac{1}{2} \left[x + \frac{\sin{(2nx)}}{2n} \right]_{-\pi}^{\pi} = \pi
+      \end{align*}
+      \begin{align*}
+        \int _{-\pi}^{\pi} \sin^{2}(2nx) \,{dx} = 
+        \int _{-\pi}^{\pi} \frac{1- \cos{(2nx)}}{2}
+        \,{dx} = 
+        \frac{1}{2} \left[x - \frac{\sin{(2nx)}}{2n} \right]_{-\pi}^{\pi} = \pi
+      \end{align*}
+      \begin{align*}
+        \int _{-\pi}^{\pi} \sin{(nx)} \cos{(nx)} \,{dx} 
+            &= \frac{1}{2} \int _{-\pi}^{\pi} \sin{(2nx)} \,{dx} 
+            = \frac{1}{2} \left[-\frac{\cos{(2nx)}}{2n}\right] _{-\pi}^{\pi} 
+            =  - \frac{1}{4n} \cdot 0 = 0  
+      \end{align*}
+  \end{myitemize}
+\end{proof} 
 
 \begin{prop}
-    Το σύστημα των συναρτήσεων Bessel 1ου είδους $ \{ J_{n}(x) \} _{n=1}^{\infty} $ 
-    είναι ορθογώνιο στο διάστημα $ [0,a] $, ως προς τη συνάρτηση βάρους $ w(x)=x $.
+  Το σύστημα των πραγματικών συναρτήσεων 
+  $ \{ 1, \sin{(nx)}, \cos{(nx)} \}_{n=1}^{\infty} $ 
+  είναι ορθογώνιο στο $ \color{Col1}{[0, \pi]} $, ως προς τη συνάρτηση βάρους 
+  $ w(x)=1 $.
 \end{prop}
-
-\begin{prop}
-    Το σύστημα των πραγματικών συναρτήσεων 
-    $ \{ 1, \sin{\frac{n \pi x}{L}, \cos{\frac{n \pi x}{L} } } \}_{n=1}^{\infty} $ 
-    είναι ορθογώνιο στο $ [-L,L] $, με $ L>0 $, ως προς τη συνάρτηση βάρους 
-    $ w(x)=1 $.
-\end{prop}
-
 \begin{proof}
-\item {}
-        \[
-            \int _{-L}^{L} \sin{\frac{n \pi x}{L}} \,{dx} =  
-            \left[\frac{- \cos{\frac{n \pi x}{L}}}{\frac{n \pi }{L}} \right]_{-L}^{L} 
-            = - \frac{L}{n \pi} \left[\cos{\frac{n \pi x}{L}} \right]_{-L}^{L} = 
-            - \frac{L}{n \pi} [ \cos{n \pi} - \cos{(- n \pi)}] = - \frac{L}{n \pi } 
-            [ \cos{n \pi}- \cos{n \pi}] = 0 
-        \] 
-
-        \[
-            \int _{-L}^{L} \cos{\frac{n \pi x}{L}} \,{dx} =  
-            \left[\frac{\sin{\frac{n \pi x}{L}}}{\frac{n \pi }{L}} \right]_{-L}^{L} 
-            = \frac{L}{n \pi} \left[\sin{\frac{n \pi x}{L}} \right]_{-L}^{L} = 
-            \frac{L}{n \pi} [ \sin{n \pi} - \sin{(- n \pi)}] =  \frac{2L}{n \pi } 
-            \sin{n \pi} = 0 
-        \]
-
-        \begin{align*}
-            \int _{-L}^{L} \sin{\frac{n \pi x }{L}} \sin{\frac{m \pi x}{L}} \,{dx} 
-            &= \frac{1}{2} \int _{-L}^{L} \left[\cos{\frac{(n-m) \pi x}{L}} - 
-            \cos{\frac{(n+m) \pi x}{L}} \right] \,{dx} = 
-            \frac{1}{2} \left[\frac{\sin{\frac{(n-m) \pi x}{L}}}
-                {\frac{(n-m) \pi}{L}} - \frac{\sin{\frac{(n+m) \pi x}{L}}}
-            {\frac{(n+m) \pi x}{L}}\right]_{-L}^{L} \\ 
-            &= \frac{L}{2 \pi} \left[\frac{1}{n-m} \sin{\frac{(n-m) \pi x}{L} - 
-            \frac{1}{n+m} \sin{\frac{(n+m) \pi x}{L}}}\right]_{-L}^{L} \\ 
-            &= \frac{L}{2 \pi}
-            [\frac{1}{n-m} \sin{(n-m) \pi} - \frac{1}{n+m} \sin{(n+m) \pi}] = 
-\end{align*} 
+  Ομοίως, με τη διαφορά ότι αν $ n=m $, τότε 
+  \begin{align*}
+    \int _{0}^{\pi} \cos^{2}(nx) \,{dx} = 
+    \int _{0}^{\pi} \frac{1+ \cos{(2nx)}}{2} \,{dx} = 
+    \frac{1}{2} \left[x + \frac{\sin{(2nx)}}{2n} \right]_{0}^{\pi} = \frac{\pi}{2}
+  \end{align*}
+  \begin{align*}
+    \int _{0}^{\pi} \sin^{2}(nx) \,{dx} = 
+    \int _{0}^{\pi} \frac{1- \cos{(2nx)}}{2} \,{dx} = 
+    \frac{1}{2} \left[x - \frac{\sin{(2nx)}}{2n} \right]_{-\pi}^{\pi} = \frac{\pi}{2}
+  \end{align*}
 \end{proof}
+
+
+\section*{Ορθογωνιότητα των \ensuremath{\boldsymbol{\sin{(\frac{n \pi x}{L})}, \; 
+\cos{(\frac{n \pi x}{L})}}}}
+
+\begin{prop}
+  Το σύστημα των πραγματικών συναρτήσεων 
+  $ \{ 1, \sin{(\frac{n \pi x}{L})}, \cos{(\frac{n \pi x}{L})} \}_{n=1}^{\infty} $ 
+  είναι ορθογώνιο στο $ \color{Col1}{[-L,L]} $, με $ L>0 $, ως προς τη συνάρτηση 
+  βάρους $ w(x)=1 $.
+\end{prop}
+\begin{proof}
+  \[
+    \int _{-L}^{L} \sin{\left(\frac{n \pi x}{L}\right)} \,{dx} =  
+    \left[\frac{- \cos{\left(\frac{n \pi x}{L}\right)}}{\frac{n \pi }{L}} 
+    \right]_{-L}^{L} 
+    = - \frac{L}{n \pi} \left[\cos{\left(\frac{n \pi x}{L}\right)} \right]_{-L}^{L} = 
+    - \frac{L}{n \pi} [ \cos{(n \pi)} - \cos{(- n \pi)}] = - \frac{L}{n \pi } 
+    [ \cos{(n \pi)}- \cos{(n \pi)}] = 0 
+  \] 
+  \[
+    \int _{-L}^{L} \cos{\left(\frac{n \pi x}{L}\right)} \,{dx} =  
+    \left[\frac{\sin{\left(\frac{n \pi x}{L}\right)}}{\frac{n \pi }{L}} \right]_{-L}^{L} 
+    = \frac{L}{n \pi} \left[\sin{\left(\frac{n \pi x}{L}\right)} \right]_{-L}^{L} = 
+    \frac{L}{n \pi} [ \sin{(n \pi)} - \sin{(- n \pi)}] =  \frac{2L}{n \pi } 
+    \sin{(n \pi)} = 0 
+  \]
+  \begin{myitemize}
+    \item Αν $ n \neq m $, τότε
+      \begin{align*}
+        \int _{-L}^{L} \sin{\left(\frac{n \pi x }{L}\right)} 
+        &\sin{\left(\frac{m \pi x}{L}\right)} \,{dx} 
+        = \frac{1}{2} \int _{-L}^{L} \left[\cos{\left(\frac{(n-m) \pi x}{L}\right)} 
+        - \cos{\left(\frac{(n+m) \pi x}{L}\right)} \right] \,{dx} \\
+        &= \frac{1}{2} \left[\frac{\sin{\left(\frac{(n-m) \pi x}{L}\right)}}
+          {\frac{(n-m) \pi}{L}} - \frac{\sin{\left(\frac{(n+m) \pi x}{L}\right)}}
+        {\frac{(n+m) \pi }{L}}\right]_{-L}^{L} 
+        = \frac{L}{2 \pi} \left[\frac{\sin{\left(\frac{(n-m) \pi
+          x}{L}\right)}}{n-m} - 
+        \frac{\sin{\left(\frac{(n+m) \pi x}{L}\right)}}{n+m}\right]_{-L}^{L} \\ 
+        &= \frac{L}{\cancel{2}\pi} \cdot \cancel{2}
+        \left[ \frac{\sin{[(n-m) \pi]}}{n-m} - \frac{\sin{[(n+m)
+        \pi]}}{n+m}\right] = \frac{L}{\pi} \cdot 0 = 0
+      \end{align*} 
+      \begin{align*}
+        \int _{-L}^{L} \cos{\left(\frac{n \pi x }{L}\right)} 
+        &\cos{\left(\frac{m \pi x}{L}\right)} \,{dx} 
+        = \frac{1}{2} \int _{-L}^{L} \left[\cos{\left(\frac{(n-m) \pi x}{L}\right)} 
+        + \cos{\left(\frac{(n+m) \pi x}{L}\right)} \right] \,{dx} \\
+        &= \frac{1}{2} \left[\frac{\sin{\left(\frac{(n-m) \pi x}{L}\right)}}
+          {\frac{(n-m) \pi}{L}} + \frac{\sin{\left(\frac{(n+m) \pi x}{L}\right)}}
+        {\frac{(n+m) \pi }{L}}\right]_{-L}^{L} 
+        = \frac{L}{2 \pi} \left[\frac{\sin{\left(\frac{(n-m) \pi
+          x}{L}\right)}}{n-m} + 
+        \frac{\sin{\left(\frac{(n+m) \pi x}{L}\right)}}{n+m}\right]_{-L}^{L} \\ 
+        &= \frac{L}{\cancel{2}\pi} \cdot \cancel{2}
+        \left[ \frac{\sin{[(n-m) \pi]}}{n-m} + \frac{\sin{[(n+m)
+        \pi]}}{n+m}\right] = \frac{L}{\pi} \cdot 0 = 0
+      \end{align*}
+      \begin{align*}
+        \int _{-L}^{L} \sin{\left(\frac{n \pi x }{L}\right)} 
+        &\cos{\left(\frac{m \pi x}{L}\right)} \,{dx} 
+        = \frac{1}{2} \int _{-L}^{L} \left[\sin{\left(\frac{(n+m) \pi x}{L}\right)} 
+        + \sin{\left(\frac{(n-m) \pi x}{L}\right)} \right] \,{dx} \\
+        &= \frac{1}{2} \left[-\frac{\cos{\left(\frac{(n+m) \pi x}{L}\right)}}
+          {\frac{(n+m) \pi}{L}} - \frac{\left(\cos{\frac{(n-m) \pi x}{L}}\right)}
+        {\frac{(n-m) \pi }{L}}\right]_{-L}^{L}
+        =-\frac{L}{2 \pi} \left[\frac{\cos{\left(\frac{(n+m) \pi x}{L}\right)}}{n+m} + 
+        \frac{\cos{\left(\frac{(n-m) \pi x}{L}\right)}}{n-m}\right]_{-L}^{L} 
+        = -\frac{L}{2\pi}\cdot 0 = 0
+      \end{align*}
+    \item Αν $ n = m $, τότε
+      \begin{align*}
+        \int _{-L}^{L} \cos^{2}\left(\frac{n \pi x}{L}\right) \,{dx} = 
+        \int _{-L}^{L} \frac{1+ \cos{\left( 2 \frac{n \pi x}{L} \right)}}{2}
+        \,{dx} = 
+        \frac{1}{2} \left[x + \frac{\sin{\left(2 \frac{n \pi x}{L}\right)}}
+        {\frac{2 n \pi}{L}} \right]_{-L}^{L} = L
+      \end{align*}
+      \begin{align*}
+        \int _{-L}^{L} \sin^{2}\left(\frac{n \pi x}{L}\right) \,{dx} = 
+        \int _{-L}^{L} \frac{1- \cos{\left( 2 \frac{n \pi x}{L} \right)}}{2}
+        \,{dx} = 
+        \frac{1}{2} \left[x - \frac{\sin{\left(2 \frac{n \pi x}{L}\right)}}
+        {\frac{2 n \pi}{L}} \right]_{-L}^{L} = L
+      \end{align*}
+      \begin{align*}
+        \int _{-L}^{L} \sin{\left(\frac{n \pi x }{L}\right)} 
+        \cos{\left(\frac{n \pi x}{L}\right)} \,{dx} 
+            &= \frac{1}{2} \int _{-L}^{L} \sin{\left(\frac{2 n \pi x}{L}\right)} \,{dx} 
+            = \frac{1}{2} \left[-\frac{\cos{\left(\frac{2 n \pi x}{L}\right)}}
+            {\frac{2n \pi}{L}} \right]_{-L}^{L} 
+            = -\frac{L}{4 n \pi} \left[\cos{\left(\frac{2n \pi x}{L}\right)} 
+            \right]_{-L}^{L} = -\frac{L}{4n\pi}\cdot 0 = 0
+      \end{align*}
+  \end{myitemize}
+\end{proof}
+\begin{prop}
+  Το σύστημα των πραγματικών συναρτήσεων 
+  $ \{ 1, \sin{\left(\frac{n \pi x}{L}\right)}, 
+  \cos{\left(\frac{n \pi x}{L}\right)} \}_{n=1}^{\infty} $ 
+  είναι ορθογώνιο στο $ \color{Col1}{[0,L]} $, με $ L>0 $, ως προς τη συνάρτηση βάρους 
+  $ w(x)=1 $.
+\end{prop}
+\begin{proof}
+  Ομοίως, με τη διαφορά ότι αν $ n=m $, τότε 
+  \begin{align*}
+    \int _{0}^{L} \cos^{2}\left(\frac{n \pi x}{L}\right) \,{dx} = 
+    \int _{0}^{L} \frac{1+ \cos{\left( 2 \frac{n \pi x}{L} \right)}}{2}
+    \,{dx} = 
+    \frac{1}{2} \left[x + \frac{\sin{\left(2 \frac{n \pi x}{L}\right)}}
+    {\frac{2 n \pi}{L}} \right]_{0}^{L} = \frac{L}{2}
+  \end{align*}
+  \begin{align*}
+    \int _{0}^{L} \sin^{2}\left(\frac{n \pi x}{L}\right) \,{dx} = 
+    \int _{0}^{L} \frac{1- \cos{\left( 2 \frac{n \pi x}{L} \right)}}{2}
+    \,{dx} = 
+    \frac{1}{2} \left[x - \frac{\sin{\left(2 \frac{n \pi x}{L}\right)}}
+    {\frac{2 n \pi}{L}} \right]_{-L}^{L} = \frac{L}{2}
+  \end{align*}
+\end{proof}
+
+\section*{Ορθογωνιότητα άλλων συναρτήσεων}
+
+\begin{prop}
+  Το σύστημα των συναρτήσεων Bessel 1ου είδους $ \{ J_{n}(x) \} _{n=1}^{\infty} $ 
+  είναι ορθογώνιο στο διάστημα $ \color{Col1}{[0,a]} $, ως προς τη συνάρτηση βάρους 
+  $ w(x)=x $.
+\end{prop}
 
 \end{document}
