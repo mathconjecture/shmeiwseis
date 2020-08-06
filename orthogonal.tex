@@ -285,9 +285,57 @@
 \section*{Ορθογωνιότητα άλλων συναρτήσεων}
 
 \begin{prop}
-  Το σύστημα των συναρτήσεων Bessel 1ου είδους $ \{ J_{n}(x) \} _{n=1}^{\infty} $ 
+  Το σύστημα των συναρτήσεων Bessel 1ου είδους 
+  $ \left\{ J_{k}\left(\frac{\rho _{k,n}}{a}x \right)\right\}_{n=1}^{\infty} $ 
   είναι ορθογώνιο στο διάστημα $ \color{Col1}{[0,a]} $, ως προς τη συνάρτηση βάρους 
   $ w(x)=x $.
+  \[
+    \int _{0}^{a} x J_{k}\left(\frac{\rho _{k,n}}{a}x \right)
+    J_{k}\left(\frac{\rho_{k,m}}{a}x\right) \,{dx} = 
+    \begin{cases}
+      0, & n \neq m \\
+      \frac{a^{2}}{2} J_{k+1}^{2}(\rho_{k,n}), & n=m
+    \end{cases}
+   \] 
+  όπου οι συναρτήσεις Bessel 1ου είδους δίνονται από τον τύπο:
+  \[
+    J_{\kappa}(x) = \sum_{n=0}^{\infty} \frac{(-1)^{n}}{n!
+    \Gamma(n+\kappa+1)}\left(\frac{x}{2}\right)^{2n+\kappa} 
+  \]
 \end{prop}
 
+\begin{prop}
+  Το σύστημα των πολυωνύμων Legendre $ \{P_{n}(x)\}_{n=1}^{\infty} $, είναι ορθογώνιο 
+  στο διάστημα $ \textcolor{Col1}{[-1,1]} $, ως προς τη συνάρτηση βάρους $ w(x)=1 $.
+  \[
+    \int _{-1}^{1} P_{n}(x)P_{m}(x) \,{dx} = 
+    \begin{cases}  
+      0, & n \neq m \\
+      \frac{2}{2n+1}, & n=m
+    \end{cases}
+  \] 
+  όπου τα πολυώνυμα Legendre δίνονται από τον τύπο:
+  \[
+    P_{n}(x) = \frac{1}{2^{n} n!} \dv[n]{}{x} {(x^{2}-1)^{n}}, 
+    \quad n=0,1,2,\ldots
+  \]
+\end{prop}
+
+\begin{prop}
+  Το σύστημα των πολυωνύμων Laquerre $ \{L_{n}(t)\}_{n=1}^{\infty} $, είναι ορθογώνιο 
+  στο διάστημα $ \textcolor{Col1}{[0,+\infty]} $, ως προς τη συνάρτηση βάρους 
+  $ w(t)= \mathrm{e}^{-t} $.
+  \[
+    \int _{-1}^{1} \mathrm{e}^{-t}  L_{n}(t)L_{m}(t) \,{dt} = 
+    \begin{cases}  
+      0, & n \neq m \\
+      1, & n=m
+    \end{cases}
+  \] 
+  όπου τα πολυώνυμα Laquerre δίνονται από τον τύπο:
+  \[
+    L_{n}(t) = \frac{\mathrm{e}^{t}}{n!} \dv[n]{}{t}{(t^{n} \mathrm{e}^{-t})}  
+    \quad n=0,1,2,\ldots
+  \] 
+\end{prop}
 \end{document}
