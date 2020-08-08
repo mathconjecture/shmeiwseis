@@ -1,0 +1,128 @@
+\input{preamble.tex}
+\input{definitions.tex}
+
+
+\pagestyle{vangelis}
+\everymath{\displaystyle}
+
+\renewcommand{\qedsymbol}{}
+
+\begin{document}
+
+\chapter{Μετασχηματισμός Laplace}
+
+\vspace{\baselineskip}
+
+
+\begin{dfn}
+  Μια συνάρτηση $ f(t) $ λέμε ότι είναι \textcolor{Col1}{εκθετικού τύπου $a$}, όπου 
+  $a>0$, στο $ 0 \leq t < \infty $, αν υπάρχει $ M>0 $, ώστε για κάθε $ t \geq t_{0} $ 
+  να ισχύει $ \abs{f(t)} \leq M \mathrm{e}^{at} $.
+\end{dfn}
+
+\begin{prop}
+  Κάθε φραγμένη συνάρτηση είναι εκθετικού τύπου 0.
+\end{prop}
+\begin{proof}
+  Προφανώς
+  \[
+    \abs{f(t)} \leq M = M \mathrm{e}^{0t}
+  \] 
+\end{proof}
+
+\begin{example}
+  Η βηματική συνάρτηση $ H(t) $ είναι εκθετικού τύπου 0.
+  \begin{proof}
+    \[
+      \abs{H(t)} \leq 1 = \mathrm{e}^{0t} 
+    \] 
+  \end{proof}
+\end{example}
+
+\begin{prop}
+  Κάθε πολυωνυμική συνάρτηση είναι εκθετικού τύπου $a$, για κάθε $ a>0 $.
+\end{prop}
+\begin{proof}
+  Πράγματι
+  \[
+    \mathrm{e}^{at} = \sum_{n=0}^{\infty} \frac{(at)^{n}}{n!} = \sum_{n=0}^{\infty} 
+    \frac{a^{n}}{n!} t^{n} \geq \frac{a^{n}}{n!} t^{n} \Rightarrow t^{n} \leq
+    \frac{n!}{a^{n}} \mathrm{e}^{at}
+  \]
+\end{proof}
+
+\begin{example}
+  Η συνάρτηση $ f(t) = \mathrm{e}^{5t} \sin{2t} $ είναι εκθετικού τύπου 5.
+  \begin{proof}
+    \[
+      \abs{f(t)} = \abs{\mathrm{e}^{5t} \sin{2t}} = \abs{\mathrm{e}^{5t}} \cdot 
+      \abs{\sin{2t}} \leq \mathrm{e}^{5t} \cdot 1 = \mathrm{e}^{5t}
+    \] 
+  \end{proof}
+\end{example}
+
+
+\begin{dfn}
+  Έστω $ f(t) $ συνάρτηση, ορισμένη για $ t \geq 0 $. Τότε ο μετασχηματισμός Laplace 
+  της $f$, είναι
+  \[
+    \mathcal{L} \left[f(t)\right] = F(s) = \int _{0}^{+\infty} f(t)\cdot \mathrm{e}^{-st} 
+    \,{dt}, \quad s>0
+  \] 
+  οποτεδήποτε το γενικευμένο ολοκλήρωμα συγκλίνει.
+\end{dfn}
+
+\begin{example}
+  $ \mathcal{L}\left[1\right] = \frac{1}{s}, \quad s > 0 $
+\end{example}
+\begin{proof}
+  \[
+    \mathcal{L}\left[1\right] = \int_{0}^{+\infty} 1\cdot \mathrm{e}^{-st} \,{dt} =  
+    \int_{0}^{+\infty} \mathrm{e}^{-st} \,{dt} = \eval{\frac{\mathrm{e}^{-st}}{-s}}
+    _{0}^{+\infty} = \lim_{t \to \infty} \cancelto{0}{\frac{\mathrm{e}^{-st}}{-s}} 
+    + \frac{1}{s} = \frac{1}{s} , \quad s>0 
+   \] 
+\end{proof}
+
+\begin{example}
+  $ \mathcal{L}\left[t\right] = \frac{1}{s^{2}}, \quad s>0 $
+\end{example}
+\begin{proof}
+  \[
+    \mathcal{L}\left[t\right] = \int_{0}^{+\infty} t \cdot \mathrm{e}^{-st} \,{dt} = 
+    \left[-\frac{t \mathrm{e}^{-st}}{s} - \frac{\mathrm{e}^{-st}}{s^{2}}\right]
+    _{0}^{+\infty} = \lim_{t \to \infty} 
+    \cancelto{0}{\left(- \frac{t\mathrm{e}^{-st}}{s} -
+    \frac{\mathrm{e}^{-st}}{s^{2}}\right)} + \frac{1}{s^{2}} = \frac{1}{s^{2}} , 
+    \quad s>0
+   \] 
+\end{proof}
+
+\begin{example}
+  $ \mathcal{L}\left[\mathrm{e}^{at}\right] = \frac{1}{s-a}, \quad s > a $ 
+  \begin{proof}
+    \[
+      \mathcal{L}\left[\mathrm{e}^{at}\right] = \int_{0}^{+\infty} \mathrm{e}^{at} 
+      \mathrm{e}^{-st} \,{dt} = \int_{0}^{+\infty} \mathrm{e}^{-(s-a)t} \,{dt} =
+      \eval{\frac{\mathrm{e}^{-(s-a)t}}{-(s-a)}} _{0}^{+\infty} = 
+      \lim_{t \to \infty} \cancelto{0}{\frac{\mathrm{e}^{-(s-a)}}{-(s-a)}}
+      + \frac{1}{s-a} = \frac{1}{s-a}, \quad s > a
+    \]
+  \end{proof}
+\end{example}
+
+\begin{example}
+  $ \mathcal{L}\left[\sin{at}\right] = \frac{a}{s^{2}+a^{2}} $
+\end{example}
+\begin{proof}
+  \begin{align*}
+    \mathcal{L}\left[\sin{at}\right] &= \int_{0}^{+\infty} \sin{at} \cdot
+    \mathrm{e}^{-st} \,{dt} = \left[- \frac{\mathrm{e}^{-st}}{s^{2}+a^{2}} 
+    (a \cos{at} + s \sin{at})\right] _{0}^{+\infty} = \lim_{t \to \infty} 
+    \cancelto{0}{\left[- \frac{\mathrm{e}^{-st}}{s^{2}+a^{2}} (a \cos{at} + s
+    \sin{at})\right]} + \frac{a}{s^{2}+a^{2}} \\
+                                     &= \frac{a}{s^{2}+a^{2}} , \quad s>0
+  \end{align*} 
+\end{proof}
+
+\end{document}
