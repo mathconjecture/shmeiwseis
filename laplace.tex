@@ -1,5 +1,5 @@
-\input{preamble.tex}
-\input{definitions.tex}
+\input{preamble_ask.tex}
+\input{definitions_ask.tex}
 
 
 \pagestyle{vangelis}
@@ -9,16 +9,157 @@
 
 \begin{document}
 
-\chapter{Μετασχηματισμός Laplace}
+\chapter*{Μετασχηματισμός Laplace}
 
 \vspace{\baselineskip}
 
 
+\section*{Ορισμός - Παραδείγματα}
+
+\begin{dfn}
+  Έστω $ f(t) $ συνάρτηση, ορισμένη για $ t \geq 0 $. Τότε ο μετασχηματισμός Laplace 
+  της $f$, είναι
+  \begin{equation}\label{eq:laplace}
+    \mathcal{L} \left[f(t)\right] = F(s) = \int _{0}^{+\infty} f(t) 
+    \mathrm{e}^{-st} \,{dt}, \quad s>0
+  \end{equation} 
+  οποτεδήποτε το γενικευμένο ολοκλήρωμα συγκλίνει.
+\end{dfn}
+
+\begin{example}
+  $ \mathcal{L}\left[1\right] = \frac{1}{s}, \quad s > 0 $
+\end{example}
+\begin{proof}
+  \[
+    \mathcal{L}\left[1\right] = \int_{0}^{+\infty} 1\cdot \mathrm{e}^{-st} \,{dt} =  
+    \int_{0}^{+\infty} \mathrm{e}^{-st} \,{dt} = \eval{\frac{\mathrm{e}^{-st}}{-s}}
+    _{0}^{+\infty} = \lim_{t \to \infty} \cancelto{0}{\frac{\mathrm{e}^{-st}}{-s}} 
+    + \frac{1}{s} = \frac{1}{s} , \quad s>0 
+  \] 
+\end{proof}
+
+\begin{example}
+  $ \mathcal{L}\left[t\right] = \frac{1}{s^{2}}, \quad s>0 $
+\end{example}
+\begin{proof}
+  \[
+    \mathcal{L}\left[t\right] = \int_{0}^{+\infty} t \cdot \mathrm{e}^{-st} \,{dt} = 
+    \left[-\frac{t \mathrm{e}^{-st}}{s} - \frac{\mathrm{e}^{-st}}{s^{2}}\right]
+    _{0}^{+\infty} = \lim_{t \to \infty} 
+    \cancelto{0}{\left(- \frac{t\mathrm{e}^{-st}}{s} -
+    \frac{\mathrm{e}^{-st}}{s^{2}}\right)} + \frac{1}{s^{2}} = \frac{1}{s^{2}} , 
+    \quad s>0
+  \] 
+\end{proof}
+
+\begin{example}
+  $ \mathcal{L}\left[\mathrm{e}^{at}\right] = \frac{1}{s-a}, \quad s > a $ 
+  \begin{proof}
+    \[
+      \mathcal{L}\left[\mathrm{e}^{at}\right] = \int_{0}^{+\infty} \mathrm{e}^{at} 
+      \mathrm{e}^{-st} \,{dt} = \int_{0}^{+\infty} \mathrm{e}^{-(s-a)t} \,{dt} =
+      \eval{\frac{\mathrm{e}^{-(s-a)t}}{-(s-a)}} _{0}^{+\infty} = 
+      \lim_{t \to \infty} \cancelto{0}{\frac{\mathrm{e}^{-(s-a)}}{-(s-a)}}
+      + \frac{1}{s-a} = \frac{1}{s-a}, \quad s > a
+    \]
+  \end{proof}
+\end{example}
+
+\begin{example}
+  $ \mathcal{L}\left[\sin{at}\right] = \frac{a}{s^{2}+a^{2}} $
+\end{example}
+\begin{proof}
+  \begin{align*}
+    \mathcal{L}\left[\sin{at}\right] &= \int_{0}^{+\infty} \sin{at} \cdot
+    \mathrm{e}^{-st} \,{dt} = \left[- \frac{\mathrm{e}^{-st}}{s^{2}+a^{2}} 
+    (a \cos{at} + s \sin{at})\right] _{0}^{+\infty} = \lim_{t \to \infty} 
+    \cancelto{0}{\left[- \frac{\mathrm{e}^{-st}}{s^{2}+a^{2}} (a \cos{at} + s
+    \sin{at})\right]} + \frac{a}{s^{2}+a^{2}} \\
+  \end{align*} 
+  \begin{description}
+    \item [Β Τρόπος:]
+      \begin{align*}
+        \mathcal{L}\left[\sin{at}\right] = \mathcal{L}\left(\frac{\mathrm{e}^{iat} -
+        \mathrm{e}^{-iat}}{2i}\right) = \frac{1}{2i} 
+        \left(\mathcal{L}[\mathrm{e}^{iat}] - \mathcal{L}[\mathrm{e}^{-iat}]\right) = 
+        \frac{1}{2i} \left(\frac{1}{s-ia} - \frac{1}{s+ia}\right) = 
+        \frac{1}{2i} \left(\frac{2ia}{s^{2}+a^{2}}\right) = \frac{a}{s^{2}+a^{2}}
+      \end{align*}
+  \end{description}
+\end{proof}
+
+\begin{example}
+  $ \mathcal{L}\left[\sinh{at}\right] = \frac{a}{s^{2}-a^{2}} $
+\end{example}
+\begin{proof}
+  \begin{align*}
+    \mathcal{L}\left[\sin{at}\right] = \mathcal{L}\left(\frac{\mathrm{e}^{at} -
+    \mathrm{e}^{-at}}{2}\right) = \frac{1}{2} 
+    \left(\mathcal{L}[\mathrm{e}^{at}] - \mathcal{L}[\mathrm{e}^{-at}]\right) = 
+    \frac{1}{2} \left(\frac{1}{s-a} - \frac{1}{s+a}\right) = 
+    \frac{1}{2} \left(\frac{2a}{s^{2}-a^{2}}\right) = \frac{a}{s^{2}-a^{2}}
+  \end{align*}
+\end{proof}
+
+\begin{example}\label{ex:nonex}
+  Η συνάρτηση $ f(t)= \mathrm{e}^{t^{2}} $ δεν έχει μετασχηματισμό Laplace.
+\end{example}
+\begin{proof}
+\item {}
+  Αν $ s \leq 0 $ τότε $ t^{2}-st \geq 0 \Rightarrow
+  \mathrm{e}^{t^{2}-st} \geq 1 $, άρα 
+  \[
+    \mathcal{L}\left[\mathrm{e}^{t^{2}}\right] = \int_{0}^{+\infty} 
+    \mathrm{e}^{t^{2}}  \mathrm{e}^{-st}\,{dt} =
+    \int_{0}^{+\infty} \mathrm{e}^{t^{2}-st} \,{dt} \geq \int_{0}^{+\infty} \,{dt}, 
+    \quad \forall t \geq 0
+  \] 
+  Όμως
+  \[
+    \int_{0}^{+\infty} \,{dt} = \left[t \strut\right]_{0}^{+\infty} = 
+    \lim_{t \to +\infty} t - 0 = +\infty, \quad \text{αποκλίνει}
+  \]
+  Άρα από το κριτήριο σύγκρισης και το αρχικό ολοκλήρωμα αποκλίνει.
+
+  Αν $ s \geq 0 $ τότε $ t^{2}-st \geq 0 \Leftrightarrow t(t-s) \geq 0
+  \Leftrightarrow t \geq s $, οπότε $ \mathrm{e}^{t^{2}-st} \geq 1 \Leftrightarrow t
+  \geq s $, επομένως 
+  \[
+    \mathcal{L}\left[\mathrm{e}^{t^{2}}\right] = \int_{0}^{+\infty} 
+    \mathrm{e}^{t^{2}}  \mathrm{e}^{-st}\,{dt} = \int_{0}^{+\infty} 
+    \mathrm{e}^{t^{2}-st} \,{dt} \geq \int_{s}^{+\infty} \,{dt}, \quad \forall t \geq s
+  \]
+  όμως
+  \[
+    \int_{s}^{+\infty} \,{dt} = 
+    \left[t \strut\right]_{s}^{+\infty} = \lim_{t \to +\infty} t - s = +\infty
+  \] 
+  Άρα από το κριτήριο σύγκρισης και το αρχικό ολοκλήρωμα αποκλίνει.
+
+  Επομένως, η συνάρτηση $ f(t) = t^{2} $ δεν έχει μετασχηματισμό Laplace.
+\end{proof}
+
+
+\section*{Ικανές και Αναγκαίες συνθήκες ύπαρξης του μετασχηματισμού Laplace}
+
+Από το παράδειγμα~\ref{ex:nonex} καταλαβαίνουμε ότι δεν έχουν όλες οι συναρτήσεις 
+μετασχηματισμό Laplace. Στο επόμενο θεώρημα, μετά από κάποιους χρήσιμους ορισμούς,  
+διατυπώνουμε \textbf{ικανές} συνθήκες για την ύπαρξη του μετασχηματισμού Laplace 
+μιας συνάρτησης. 
+
 \begin{dfn}
   Μια συνάρτηση $ f(t) $ λέμε ότι είναι \textcolor{Col1}{εκθετικού τύπου $a$}, όπου 
-  $a>0$, στο $ 0 \leq t < \infty $, αν υπάρχει $ M>0 $, ώστε για κάθε $ t \geq t_{0} $ 
-  να ισχύει $ \abs{f(t)} \leq M \mathrm{e}^{at} $.
+  $a>0$, στο $ 0 \leq t < \infty $, αν υπάρχει $ M>0$ και $ t_{0}>0 $, ώστε για κάθε 
+  $ t \geq t_{0} $ να ισχύει $ \abs{f(t)} \leq M \mathrm{e}^{at} $.
 \end{dfn}
+
+\begin{rem}
+  Ουσιαστικά, μια συνάρτηση εκθετικού τύπου $a$, δεν αυξάνει ταχύτερα από την 
+  συνάρτηση $ M \mathrm{e}^{at} $ καθώς $ t \to \infty $. Αυτό σημαίνει ότι η 
+  γραφική της παράσταση, περιέχεται στην περιοχή που βρίσκεται ανάμεσα στις 
+  γραφικές παραστάσεις των συναρτήσεων 
+  $ \pm M \mathrm{e}^{at}$, για κάθε $ t \geq t_{0} $.
+\end{rem}
 
 \begin{prop}
   Κάθε φραγμένη συνάρτηση είναι εκθετικού τύπου 0.
@@ -61,68 +202,101 @@
   \end{proof}
 \end{example}
 
+\begin{rem}
+  Ένας, τρόπος για να ελέγχουμε αν μια συνάρτηση είναι εκθετικού τύπου $a$, είναι 
+  υπολογίζοντας το όριο
+  \[
+    \lim_{t \to \infty} \frac{\abs{f(t)}}{\mathrm{e}^{at}} 
+  \] 
+  Αν αυτό το όριο είναι πεπαρασμένο για κάποια τιμή του $a$, τότε η συνάρτηση $ f(t)
+  $ θα είναι εκθετικού τύπου $a$, αλλιώς, αν αυτό το όριο είναι άπειρο για κάθε $a$, 
+  τότε η $f$ δεν είναι εκθετικού τύπου.
+\end{rem}
+
+\begin{example}
+  Η συνάρτηση του παραδείγματος~\ref{ex:nonex}, δεν είναι εκθετικού τύπου, αφού
+  \[
+    \lim_{t \to \infty} \frac{|\mathrm{e}^{t^{2}}|}{\mathrm{e}^{at}} = 
+    \lim_{t \to \infty} \frac{\mathrm{e}^{t^{2}}}{\mathrm{e}^{at}} = 
+    \lim_{t \to \infty} \mathrm{e}^{t(t-a)} = \infty, \quad \forall a
+  \]
+\end{example}
 
 \begin{dfn}
-  Έστω $ f(t) $ συνάρτηση, ορισμένη για $ t \geq 0 $. Τότε ο μετασχηματισμός Laplace 
-  της $f$, είναι
-  \[
-    \mathcal{L} \left[f(t)\right] = F(s) = \int _{0}^{+\infty} f(t)\cdot \mathrm{e}^{-st} 
-    \,{dt}, \quad s>0
-  \] 
-  οποτεδήποτε το γενικευμένο ολοκλήρωμα συγκλίνει.
+  Μια συνάρτηση $ f \colon [a,b] \to \mathbb{R} $ ονομάζεται 
+  \textcolor{Col1}{τμηματικά συνεχής}, αν το σύνολο των σημείων 
+  ασυνέχειας είναι πεπερασμένο και \textbf{σε κάθε} σημείο ασυνέχειας της $f$ 
+  υπάρχουν τα πλευρικά όρια και είναι πεπερασμένα.
 \end{dfn}
 
-\begin{example}
-  $ \mathcal{L}\left[1\right] = \frac{1}{s}, \quad s > 0 $
-\end{example}
+\begin{rem}
+  Προφανώς αν μια συνάρτηση είναι συνεχής, είναι και τμηματικά συνεχής.
+\end{rem}
+
+\begin{thm}\label{thm:sygklisi}
+  Έστω $f$ μια συνάρτηση, που είναι \textbf{τμηματικά συνεχής} και 
+  \textbf{εκθετικού τύπου $a$}. Τότε ο μετασχηματισμός Laplace 
+  $ \mathcal{L}\left[f(t)\right] = F(s) $ της $ f(t) $, όπως ορίστηκε 
+  στη σχέση~\eqref{eq:laplace}, \textbf{υπάρχει} για κάθε $ s>a $.
+\end{thm}
 \begin{proof}
+  ισχύει ότι
   \[
-    \mathcal{L}\left[1\right] = \int_{0}^{+\infty} 1\cdot \mathrm{e}^{-st} \,{dt} =  
-    \int_{0}^{+\infty} \mathrm{e}^{-st} \,{dt} = \eval{\frac{\mathrm{e}^{-st}}{-s}}
-    _{0}^{+\infty} = \lim_{t \to \infty} \cancelto{0}{\frac{\mathrm{e}^{-st}}{-s}} 
-    + \frac{1}{s} = \frac{1}{s} , \quad s>0 
-   \] 
-\end{proof}
-
-\begin{example}
-  $ \mathcal{L}\left[t\right] = \frac{1}{s^{2}}, \quad s>0 $
-\end{example}
-\begin{proof}
+    \mathcal{L}\left[f(t)\right] = \int_{0}^{+\infty} f(t) \mathrm{e}^{-st} \,{dt} 
+    \leq \abs{\int_{0}^{+\infty} f(t)  \mathrm{e}^{-st} \,{dt}} \leq 
+    \int_{0}^{+\infty} \abs{f(t)}  \mathrm{e}^{-st} \,{dt} 
+  \] 
+  επομένως, αρκεί να δείξουμε ότι 
   \[
-    \mathcal{L}\left[t\right] = \int_{0}^{+\infty} t \cdot \mathrm{e}^{-st} \,{dt} = 
-    \left[-\frac{t \mathrm{e}^{-st}}{s} - \frac{\mathrm{e}^{-st}}{s^{2}}\right]
-    _{0}^{+\infty} = \lim_{t \to \infty} 
-    \cancelto{0}{\left(- \frac{t\mathrm{e}^{-st}}{s} -
-    \frac{\mathrm{e}^{-st}}{s^{2}}\right)} + \frac{1}{s^{2}} = \frac{1}{s^{2}} , 
-    \quad s>0
-   \] 
+    \int_{0}^{+\infty} \abs{f(t)} \mathrm{e}^{-st} \,{dt} < \infty .
+  \] 
+  Πράγματι
+  \[
+    \int_{0}^{+\infty} \abs{f(t)}  \mathrm{e}^{-st} \,{dt}  = \int_{0}^{+\infty}
+    \abs{f(t)} \mathrm{e}^{-st} \mathrm{e}^{-at} \mathrm{e}^{at} \,{dt} = 
+    \int_{0}^{+\infty} \abs{f(t)}  \mathrm{e}^{-at}  \mathrm{e}^{-(s-a)t} 
+    \,{dt} 
+  \] 
+  και επειδή $f$ είναι εκθετικού τύπου $a$ έχουμε ότι
+  \[
+    \int_{0}^{+\infty} \abs{f(t)} \mathrm{e}^{-st} \,{dt} \leq M \int_{0}^{+\infty}
+    \mathrm{e}^{-(s-a)t} \,{dt} = M
+    \left[\frac{\mathrm{e}^{-(s-a)t}}{-(s-a)}\right]_{0}^{+\infty} = \frac{M}{s-a} < 
+    \infty , \quad \text{αν} \quad s-a>0 \Leftrightarrow s>a
+  \] 
 \end{proof}
 
-\begin{example}
-  $ \mathcal{L}\left[\mathrm{e}^{at}\right] = \frac{1}{s-a}, \quad s > a $ 
-  \begin{proof}
-    \[
-      \mathcal{L}\left[\mathrm{e}^{at}\right] = \int_{0}^{+\infty} \mathrm{e}^{at} 
-      \mathrm{e}^{-st} \,{dt} = \int_{0}^{+\infty} \mathrm{e}^{-(s-a)t} \,{dt} =
-      \eval{\frac{\mathrm{e}^{-(s-a)t}}{-(s-a)}} _{0}^{+\infty} = 
-      \lim_{t \to \infty} \cancelto{0}{\frac{\mathrm{e}^{-(s-a)}}{-(s-a)}}
-      + \frac{1}{s-a} = \frac{1}{s-a}, \quad s > a
-    \]
-  \end{proof}
-\end{example}
+\begin{rem}
+  Άμεση συνέπεια του παραπάνω θεωρήματος είναι ότι η μεταβλητή $s$ είναι \textbf{θετική},
+  γεγονός που τις περισσότερες φορές συμπεριλαμβάνεται στον ορισμό του μετασχηματισμού 
+  Laplace .
+\end{rem}
 
-\begin{example}
-  $ \mathcal{L}\left[\sin{at}\right] = \frac{a}{s^{2}+a^{2}} $
-\end{example}
+\begin{cor}
+  Αν ισχύουν οι συνθήκες του θεωρήματος~\ref{thm:sygklisi}, τότε
+  \begin{equation}\label{eq:anagkaia}
+    \lim_{s \to \infty} F(s) = 0 
+  \end{equation} 
+\end{cor}
 \begin{proof}
-  \begin{align*}
-    \mathcal{L}\left[\sin{at}\right] &= \int_{0}^{+\infty} \sin{at} \cdot
-    \mathrm{e}^{-st} \,{dt} = \left[- \frac{\mathrm{e}^{-st}}{s^{2}+a^{2}} 
-    (a \cos{at} + s \sin{at})\right] _{0}^{+\infty} = \lim_{t \to \infty} 
-    \cancelto{0}{\left[- \frac{\mathrm{e}^{-st}}{s^{2}+a^{2}} (a \cos{at} + s
-    \sin{at})\right]} + \frac{a}{s^{2}+a^{2}} \\
-                                     &= \frac{a}{s^{2}+a^{2}} , \quad s>0
-  \end{align*} 
+  Πράγματι, από την απόδειξη του θεωρήματος, έχουμε
+  \[
+    \lim_{s \to \infty} \abs{F(s)} \leq \lim_{s \to \infty} \frac{M}{s-a} = 0
+  \] 
+  απ᾽ όπου, με το κριτήριο παρεμβολής, έπεται ότι
+  \[
+    \lim_{s \to \infty} F(s) = 0 
+  \]
 \end{proof}
+\begin{rem}
+  Άμεση συνέπεια του πορίσματος είναι ότι η συνθήκη~\eqref{eq:anagkaia} είναι 
+  \textbf{αναγκαία} για την ύπαρξη του μετασχηματισμού Laplace μιας συνάρτησης. 
+  Αυτό σημαίνει ότι αν συνάρτηση $F(s)$ δεν ικανοποιεί τη συνθήκη αυτή, τότε δε 
+  μπορεί να είναι ο μετασχηματισμός Laplace καμίας συνεχούς ή τμηματικά συνεχούς 
+  συνάρτησης.
+\end{rem}
+
+
+
 
 \end{document}
