@@ -7,6 +7,14 @@
 
 \renewcommand{\qedsymbol}{}
 
+\newtheoremstyle{myex}
+{\topsep}{\topsep}%
+{}{}%
+{\color{Col1}\bfseries}{}%
+{\baselineskip}{}%
+
+
+
 \begin{document}
 
 \chapter*{Μετασχηματισμός Laplace}
@@ -27,7 +35,7 @@
 \end{dfn}
 
 \begin{example}
-  $ \mathcal{L}\left[1\right] = \frac{1}{s}, \quad s > 0 $
+  $ \boldsymbol{\mathcal{L}\left[1\right] = \frac{1}{s}, \quad s > 0} $
 \end{example}
 \begin{proof}
   \[
@@ -39,7 +47,7 @@
 \end{proof}
 
 \begin{example}
-  $ \mathcal{L}\left[t\right] = \frac{1}{s^{2}}, \quad s>0 $
+  $ \boldsymbol{\mathcal{L}\left[t\right] = \frac{1}{s^{2}}, \quad s>0} $
 \end{example}
 \begin{proof}
   \[
@@ -53,7 +61,8 @@
 \end{proof}
 
 \begin{example}
-  $ \mathcal{L}\left[\mathrm{e}^{at}\right] = \frac{1}{s-a}, \quad s > a $ 
+  $ \boldsymbol{\mathcal{L}\left[\mathrm{e}^{at}\right] = \frac{1}{s-a}, \quad s > a} $ 
+\end{example}
   \begin{proof}
     \[
       \mathcal{L}\left[\mathrm{e}^{at}\right] = \int_{0}^{+\infty} \mathrm{e}^{at} 
@@ -63,10 +72,9 @@
       + \frac{1}{s-a} = \frac{1}{s-a}, \quad s > a
     \]
   \end{proof}
-\end{example}
 
 \begin{example}
-  $ \mathcal{L}\left[\sin{at}\right] = \frac{a}{s^{2}+a^{2}} $
+  $ \boldsymbol{\mathcal{L}\left[\sin{at}\right] = \frac{a}{s^{2}+a^{2}}} $
 \end{example}
 \begin{proof}
   \begin{align*}
@@ -89,7 +97,7 @@
 \end{proof}
 
 \begin{example}
-  $ \mathcal{L}\left[\sinh{at}\right] = \frac{a}{s^{2}-a^{2}} $
+  $ \boldsymbol{\mathcal{L}\left[\sinh{at}\right] = \frac{a}{s^{2}-a^{2}}} $
 \end{example}
 \begin{proof}
   \begin{align*}
@@ -102,7 +110,7 @@
 \end{proof}
 
 \begin{example}\label{ex:nonex}
-  Η συνάρτηση $ f(t)= \mathrm{e}^{t^{2}} $ δεν έχει μετασχηματισμό Laplace.
+  Η συνάρτηση $ \boldsymbol{f(t)= \mathrm{e}^{t^{2}}} $ δεν έχει μετασχηματισμό Laplace.
 \end{example}
 \begin{proof}
 \item {}
@@ -172,13 +180,13 @@
 \end{proof}
 
 \begin{example}
-  Η Βηματική συνάρτηση $ H(t) $ είναι εκθετικού τύπου 0.
+  Η Βηματική συνάρτηση $ \boldsymbol{H(t)} $ είναι εκθετικού τύπου 0.
+\end{example}
   \begin{proof}
     \[
       \abs{H(t)} \leq 1 = \mathrm{e}^{0t} 
     \] 
   \end{proof}
-\end{example}
 
 \begin{prop}
   Κάθε πολυωνυμική συνάρτηση είναι εκθετικού τύπου $a$, για κάθε $ a>0 $.
@@ -193,14 +201,14 @@
 \end{proof}
 
 \begin{example}
-  Η συνάρτηση $ f(t) = \mathrm{e}^{5t} \sin{2t} $ είναι εκθετικού τύπου 5.
+  Η συνάρτηση $ \boldsymbol{f(t) = \mathrm{e}^{5t} \sin{2t}} $ είναι εκθετικού τύπου 5.
+\end{example}
   \begin{proof}
     \[
       \abs{f(t)} = \abs{\mathrm{e}^{5t} \sin{2t}} = \abs{\mathrm{e}^{5t}} \cdot 
       \abs{\sin{2t}} \leq \mathrm{e}^{5t} \cdot 1 = \mathrm{e}^{5t}
     \] 
   \end{proof}
-\end{example}
 
 \begin{rem}
   Ένας, τρόπος για να ελέγχουμε αν μια συνάρτηση είναι εκθετικού τύπου $a$, είναι 
@@ -296,7 +304,36 @@
   συνάρτησης.
 \end{rem}
 
-
+\begin{prop}
+  Έστω $ f(t) $ μια περιοδική συνάρτηση, θετικής περιόδου $T$, για την οποία υπάρχει 
+  ο μετασχηματισμός Laplace. Να δειχθεί ότι 
+  \[
+    \mathcal{L}\left[f(t)\right] = \frac{1}{1- \mathrm{e}^{sT}} \int _{0}^{T}
+    \mathrm{e}^{-st}f(t) \,{dt}  
+  \] 
+  \begin{proof}
+    Από τον ορισμό του μετασχηματισμού Laplace
+    \begin{align*}
+      \mathcal{L}\left[f(t)\right] 
+      &= \int_{0}^{+\infty} \mathrm{e}^{-st} f(t) \,{dt} \\ 
+      &= \int_{0}^{T} \mathrm{e}^{-st} f(t) \,{dt} + \int _{T}^{2T} \mathrm{e}^{-st}f(t)
+      \,{dt} + \int _{2T}^{3T} \mathrm{e}^{-st} f(t)\,{dt} + \cdots \\ 
+      &= \int _{0}^{T} \mathrm{e}^{-st} f(t)\,{dt} + \int _{0}^{T} \mathrm{e}^{-s(u+T)}
+      f(u+T) \,{du} + \int _{0}^{T} \mathrm{e}^{-s(u+2T)} f(u+2T) \,{du} + \cdots \\
+      \intertext{λαμβάνοντας όμως υπόψιν ότι $f$ περιοδική με περίοδο $T>0$, παίρνουμε} 
+      &= \int _{0}^{T} \mathrm{e}^{-st} f(t) \,{dt} + \int _{0}^{T} \mathrm{e}^{-s(u+T)}
+      f(u) \,{du} + \int _{0}^{T} \mathrm{e}^{-s(u+2T)} f(u) \,{du} + \cdots \\
+      &= \int _{0}^{T} \mathrm{e}^{-st} f(t) \,{dt} + \mathrm{e}^{-sT} \int _{0}^{T} 
+      \mathrm{e}^{-st} f(t) \,{dt} + \mathrm{e}^{-2sT} \int _{0}^{T} \mathrm{e}^{-st}
+      f(t) \,{dt} + \cdots \\
+      &= \left[1+ \mathrm{e}^{-sT} + \mathrm{e}^{(-sT)^{2}} + \cdots\right] \int _{0}^{T}
+      \mathrm{e}^{-st} f(t) \,{dt} \\
+      \intertext{και χρησιμοποιώντας τον τύπο αθροίσματος γεωμετρικής σειράς με 
+        λόγο $ 0< \mathrm{e}^{-st} <1$, προκύπτει}
+      &= \frac{1}{1- \mathrm{e}^{-st}} \int _{0}^{T} \mathrm{e}^{-st} f(t) \,{dt} 
+    \end{align*}
+  \end{proof}
+\end{prop}
 
 
 \end{document}
