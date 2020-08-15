@@ -1,6 +1,8 @@
 \input{preamble_ask.tex}
 \input{definitions_ask.tex}
 
+\geometry{left=15.63mm,right=15.63mm,top=30.25mm,bottom=36.25mm,
+footskip=24.16mm,headsep=24.16mm}
 
 \pagestyle{vangelis}
 \everymath{\displaystyle}
@@ -22,7 +24,7 @@
 \vspace{\baselineskip}
 
 
-\section*{Ορισμός - Παραδείγματα}
+\section*{Ορισμός και Παραδείγματα}
 
 \begin{dfn}
   Έστω $ f(t) $ συνάρτηση, ορισμένη για $ t \geq 0 $. Τότε ο μετασχηματισμός Laplace 
@@ -79,8 +81,8 @@
 \begin{proof}
   \begin{align*}
     \mathcal{L}\left[\sin{at}\right] &= \int_{0}^{+\infty} \sin{at} \cdot
-    \mathrm{e}^{-st} \,{dt} = \left[- \frac{\mathrm{e}^{-st}}{s^{2}+a^{2}} 
-    (a \cos{at} + s \sin{at})\right] _{0}^{+\infty} = \lim_{t \to \infty} 
+    \mathrm{e}^{-st} \,{dt} = {\left[- \frac{\mathrm{e}^{-st}}{s^{2}+a^{2}} 
+  (a \cos{at} + s \sin{at})\right]} _{0}^{+\infty} = \lim_{t \to \infty} 
     \cancelto{0}{\left[- \frac{\mathrm{e}^{-st}}{s^{2}+a^{2}} (a \cos{at} + s
     \sin{at})\right]} + \frac{a}{s^{2}+a^{2}} \\
   \end{align*} 
@@ -124,7 +126,7 @@
   \] 
   Όμως
   \[
-    \int_{0}^{+\infty} \,{dt} = \left[t \strut\right]_{0}^{+\infty} = 
+    \int_{0}^{+\infty} \,{dt} = {\left[t \strut\right]}_{0}^{+\infty} = 
     \lim_{t \to +\infty} t - 0 = +\infty, \quad \text{αποκλίνει}
   \]
   Άρα από το κριτήριο σύγκρισης και το αρχικό ολοκλήρωμα αποκλίνει.
@@ -140,11 +142,10 @@
   όμως
   \[
     \int_{s}^{+\infty} \,{dt} = 
-    \left[t \strut\right]_{s}^{+\infty} = \lim_{t \to +\infty} t - s = +\infty
+    {\left[t \strut\right]}_{s}^{+\infty} = \lim_{t \to +\infty} t - s = +\infty
   \] 
-  Άρα από το κριτήριο σύγκρισης και το αρχικό ολοκλήρωμα αποκλίνει.
-
-  Επομένως, η συνάρτηση $ f(t) = t^{2} $ δεν έχει μετασχηματισμό Laplace.
+  Άρα από το κριτήριο σύγκρισης και το αρχικό ολοκλήρωμα αποκλίνει.  
+  Άρα, η $ f(t) = t^{2} $ δεν έχει μετασχηματισμό Laplace.
 \end{proof}
 
 
@@ -194,7 +195,7 @@
 \begin{proof}
   Πράγματι
   \[
-    \mathrm{e}^{at} = \sum_{n=0}^{\infty} \frac{(at)^{n}}{n!} = \sum_{n=0}^{\infty} 
+  \mathrm{e}^{at} = \sum_{n=0}^{\infty} \frac{{(at)}^{n}}{n!} = \sum_{n=0}^{\infty} 
     \frac{a^{n}}{n!} t^{n} \geq \frac{a^{n}}{n!} t^{n} \Rightarrow t^{n} \leq
     \frac{n!}{a^{n}} \mathrm{e}^{at}
   \]
@@ -269,7 +270,7 @@
   \[
     \int_{0}^{+\infty} \abs{f(t)} \mathrm{e}^{-st} \,{dt} \leq M \int_{0}^{+\infty}
     \mathrm{e}^{-(s-a)t} \,{dt} = M
-    \left[\frac{\mathrm{e}^{-(s-a)t}}{-(s-a)}\right]_{0}^{+\infty} = \frac{M}{s-a} < 
+    {\left[\frac{\mathrm{e}^{-(s-a)t}}{-(s-a)}\right]}_{0}^{+\infty} = \frac{M}{s-a} < 
     \infty , \quad \text{αν} \quad s-a>0 \Leftrightarrow s>a
   \] 
 \end{proof}
@@ -277,10 +278,10 @@
 \begin{rem}
   Άμεση συνέπεια του παραπάνω θεωρήματος είναι ότι η μεταβλητή $s$ είναι \textbf{θετική},
   γεγονός που τις περισσότερες φορές συμπεριλαμβάνεται στον ορισμό του μετασχηματισμού 
-  Laplace .
+  Laplace.
 \end{rem}
 
-\begin{cor}
+\begin{cor}\label{cor:4}
   Αν ισχύουν οι συνθήκες του θεωρήματος~\ref{thm:sygklisi}, τότε
   \begin{equation}\label{eq:anagkaia}
     \lim_{s \to \infty} F(s) = 0 
@@ -291,18 +292,20 @@
   \[
     \lim_{s \to \infty} \abs{F(s)} \leq \lim_{s \to \infty} \frac{M}{s-a} = 0
   \] 
-  απο όπου, με το κριτήριο παρεμβολής, έπεται ότι
+  από όπου, με το κριτήριο παρεμβολής, έπεται ότι
   \[
     \lim_{s \to \infty} F(s) = 0 
   \]
 \end{proof}
 \begin{rem}
-  Άμεση συνέπεια του πορίσματος είναι ότι η συνθήκη~\eqref{eq:anagkaia} είναι 
-  \textbf{αναγκαία} για την ύπαρξη του μετασχηματισμού Laplace μιας συνάρτησης. 
+  Άμεση συνέπεια του πορίσματος~\ref{cor:4} είναι ότι η συνθήκη~\eqref{eq:anagkaia} 
+  είναι \textbf{αναγκαία} για την ύπαρξη του μετασχηματισμού Laplace μιας συνάρτησης. 
   Αυτό σημαίνει ότι αν συνάρτηση $F(s)$ δεν ικανοποιεί τη συνθήκη αυτή, τότε δε 
   μπορεί να είναι ο μετασχηματισμός Laplace καμίας συνεχούς ή τμηματικά συνεχούς 
   συνάρτησης.
 \end{rem}
+
+\section*{Μετασχηματισμός Laplace περιοδικής συνάρτησης}
 
 \begin{prop}
   Έστω $ f(t) $ μια περιοδική συνάρτηση, θετικής περιόδου $T$, για την οποία υπάρχει 
@@ -311,6 +314,7 @@
     \mathcal{L}\left[f(t)\right] = \frac{1}{1- \mathrm{e}^{sT}} \int _{0}^{T}
     \mathrm{e}^{-st}f(t) \,{dt}  
   \] 
+\end{prop}
   \begin{proof}
     Από τον ορισμό του μετασχηματισμού Laplace
     \begin{align*}
@@ -326,14 +330,13 @@
       &= \int _{0}^{T} \mathrm{e}^{-st} f(t) \,{dt} + \mathrm{e}^{-sT} \int _{0}^{T} 
       \mathrm{e}^{-st} f(t) \,{dt} + \mathrm{e}^{-2sT} \int _{0}^{T} \mathrm{e}^{-st}
       f(t) \,{dt} + \cdots \\
-      &= \left[1+ \mathrm{e}^{-sT} + \mathrm{e}^{(-sT)^{2}} + \cdots\right] \int _{0}^{T}
-      \mathrm{e}^{-st} f(t) \,{dt} \\
+      &= \left[1+ \mathrm{e}^{-sT} + \mathrm{e}^{{(-sT)}^{2}} + \cdots\right] 
+      \int _{0}^{T} \mathrm{e}^{-st} f(t) \,{dt} \\
       \intertext{και χρησιμοποιώντας τον τύπο αθροίσματος γεωμετρικής σειράς με 
         λόγο $ 0< \mathrm{e}^{-st} <1$, προκύπτει}
       &= \frac{1}{1- \mathrm{e}^{-st}} \int _{0}^{T} \mathrm{e}^{-st} f(t) \,{dt} 
     \end{align*}
   \end{proof}
-\end{prop}
 
 
 \end{document}

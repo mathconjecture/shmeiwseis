@@ -1,10 +1,10 @@
-\input{$HOME/Desktop/preamble/preamble.tex}
-\input{$HOME/Desktop/preamble/definitions.tex}
+\input{preamble.tex}
+\input{definitions.tex}
 
-\usepackage{tikz} 
-\usetikzlibrary{decorations.pathreplacing,}
-\newcommand{\tikzmark}[1]{\tikz[baseline={(#1.base)},overlay,remember picture]
-\node[outer sep=0pt, inner sep=0pt] (#1) {\phantom{A}};}
+% \usepackage{tikz} 
+% \usetikzlibrary{decorations.pathreplacing,}
+% \newcommand{\tikzmark}[1]{\tikz[baseline={(#1.base)},overlay,remember picture]
+% \node[outer sep=0pt, inner sep=0pt] (#1) {\phantom{A}};}
 
 \everymath{\displaystyle}
 \thispagestyle{empty}
@@ -16,7 +16,7 @@
 
 \vspace{\baselineskip}
 
-\begin{thmbreak}[\textlatin{\bfseries Bolzano}]
+\begin{thmbreak}[\bfseries Bolzano]
 \begin{minipage}[t]{0.24\textwidth}
 	\begin{enumerate}[i)]
 	\item $f$ συνεχής στο $ [a,b] $ \hfill \tikzmark{a} 
@@ -32,7 +32,7 @@
 \end{tikzpicture}
 
 
-\begin{thmbreak}[\textlatin{\bfseries Rolle }]
+\begin{thmbreak}[\bfseries Rolle ]
 	\begin{minipage}[t]{0.29\textwidth}
 		\begin{enumerate}[i)]
 			\item $f$ συνεχής στο $ [a,b] $ \hfill \tikzmark{a}
@@ -63,7 +63,7 @@
 	{$\quad \exists \xi \in (a,b) \; : \; f'(\xi) = \frac{f(b) - f(a)}{b - a}$};
 \end{tikzpicture}
 
-\begin{thmbreak}[{\bfseries Θεώρημα Μέσης Τιμής \textlatin{Cauchy}}]
+\begin{thmbreak}[{\bfseries Θεώρημα Μέσης Τιμής Cauchy}]
 	\begin{minipage}[t]{0.32\textwidth}
 	\begin{enumerate}[i)]
 		\item $f, g$ συνεχείς στο $ [a,b] $ \hfill \tikzmark{a}
@@ -80,7 +80,7 @@
 	\frac{f(b) - f(a)}{b - a}$};
 	\end{tikzpicture}
 
-	\begin{thmbreak}[\textlatin{\bfseries Fermat}]
+	\begin{thmbreak}[\bfseries Fermat]
 		\begin{minipage}[t]{0.25\textwidth}
 			\begin{enumerate}[i)]
 				\item $f(x_{0})$ τοπικό ακότατο \hfill \tikzmark{a}
