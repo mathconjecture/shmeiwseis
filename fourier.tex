@@ -312,11 +312,11 @@ $ 2 \pi $. Τότε υπό κατάλληλες προϋποθέσεις η $f$ 
 \item {}
   Αν $ f(x) $ ολοκληρώσιμη στο διάστημα $[-a,a]$ τότε ισχύουν:
 
-  \begin{myitemize*}
+  \begin{myitemize}
     \item $ f(x) $ άρτια $ \Rightarrow \int _{-a}^{a} f(x) \,{dx} = 2 \int _{0}^{a} f(x)
       \,{dx} $ 
     \item $ f(x) $ περιττή $ \Rightarrow \int _{-a}^{a} f(x) \,{dx} = 0 $
-  \end{myitemize*}
+  \end{myitemize}
 \end{prop}
 
 
@@ -328,12 +328,12 @@ $ f(x) \cos{(nx)} $ είναι επίσης \textbf{άρτια} (από πρότ
 (από πρόταση~\ref{prop:ginart}), για αυτό, αν λάβουμε υπόψιν 
 μας τις σχέσεις της πρότασης~\ref{prop:artper}, έχουμε:
 \[
-  a_{n} = \frac{2}{\pi} \int _{0}^{\pi} f(x) \cos{(nx)} \,{dx}, \quad \text{και} \quad
-  b_{n} = 0
+  a_{n} = \frac{2}{\pi} \int _{0}^{\pi} f(x) \cos{(nx)} \,{dx}, 
+  \quad n=\textcolor{Col1}{0},1,2,\ldots \quad \text{και} \quad b_{n} = 0
 \] 
 και τότε η σειρά Fourier της $f$ γίνεται:
 \[
-  \sum_{n=0}^{\infty} a_{n} \cos{(nx)} \quad 
+  \frac{a_{0}}{2} + \sum_{n=1}^{\infty} a_{n} \cos{(nx)} \quad 
   \text{\color{Col1} Συνημιτονική σειρά Fourier}
 \]
 
@@ -351,8 +351,7 @@ $ f(x) \cos{(nx)} $ είναι επίσης \textbf{περιττή} (από πρ
 \] 
 και τότε η σειρά Fourier της $f$ γίνεται:
 \[
-  \sum_{n=1}^{\infty} a_{n} \sin{(nx)} \quad 
-  \text{\color{Col1} Ημιτονική σειρά Fourier}
+  \sum_{n=1}^{\infty} b_{n} \sin{(nx)} \quad \text{\color{Col1} Ημιτονική σειρά Fourier}
 \]
 
 \subsection*{Συνημιτονική σειρά Fourier συνάρτησης με περίοδο $ 2 L$}
@@ -365,11 +364,11 @@ $ f(x) \cos{\left(\frac{n \pi x}{L}\right)} $ είναι επίσης \textbf{ά
 μας τις σχέσεις της πρότασης~\ref{prop:artper}, έχουμε:
 \[
   a_{n} = \frac{2}{L} \int _{0}^{L} f(x) \cos{\left(\frac{n \pi x}{L}\right)} \,{dx}, 
-  \quad \text{και} \quad b_{n} = 0
+  \quad n=\textcolor{Col1}{0},1,2,\ldots \quad \text{και} \quad b_{n} = 0
 \] 
 και τότε η σειρά Fourier της $f$ γίνεται:
 \[
-  \sum_{n=0}^{\infty} a_{n} \cos{\left(\frac{n \pi x}{L}\right)} \quad 
+  \frac{a_{0}}{2} + \sum_{n=1}^{\infty} a_{n} \cos{\left(\frac{n \pi x}{L}\right)} \quad 
   \text{\color{Col1} Συνημιτονική σειρά Fourier}
 \]
 
@@ -388,7 +387,7 @@ $ f(x) \sin{\left(\frac{n \pi x}{L}\right)} $ είναι \textbf{άρτια}
 \] 
 και τότε η σειρά Fourier της $f$ γίνεται:
 \[
-  \sum_{n=1}^{\infty} a_{n} \sin{\left(\frac{n \pi x}{L}\right)} \quad 
+  \sum_{n=1}^{\infty} b_{n} \sin{\left(\frac{n \pi x}{L}\right)} \quad 
   \text{\color{Col1} Ημιτονική σειρά Fourier}
 \]
 
