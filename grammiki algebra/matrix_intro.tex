@@ -1,5 +1,6 @@
-\input{$HOME/Desktop/preamble/preamble.tex}
-\input{$HOME/Desktop/preamble/definitions.tex}
+\input{preamble.tex}
+\input{definitions.tex}
+\input{tikz.tex}
 
 
 
@@ -16,35 +17,34 @@
 μέσα στο σύνολο.
 
 \[
-	A = \begin{pmatrix*}
-		a_{11} & a_{12} & \cdots & a_{1n} \\
-		a_{21} & a_{22} & \cdots & a_{2n} \\
-		\vdots & \vdots & \ddots & \vdots \\
-		a_{m1} & a_{m2} & \cdots & a_{mm}
-	\end{pmatrix*}_{m\times n} 
+  A = \begin{pmatrix*}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    a_{21} & a_{22} & \cdots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{m1} & a_{m2} & \cdots & a_{mm}
+  \end{pmatrix*}_{m\times n} 
 \] 
 Ο δείκτης $ m\times n $ ονομάζεται διάσταση του πίνακα $ A $ και μας δείχνει ότι
 ο πίνακας έχει $ m $ το πλήθος γραμμές και $n$ στήλες.
-Πιο συνοπτικά, ο παραπάνω πίνακας συμβολίζεται ως $ A = (a_{ij})_{m\times
-n} $.
+Πιο συνοπτικά, ο παραπάνω πίνακας συμβολίζεται ως $ A = (a_{ij})_{m\times n} $.
 
 
 \subsection{Ειδικές Περιπτώσεις Πινάκων}
 
-	
+
 \begin{enumerate}
-	\item  Στήλη $ \Sigma = \begin{pmatrix}
-			a_{11} \\
-			a_{21} \\
-			\vdots \\
-			a_{n1}
-		\end{pmatrix}_{n\times 1}$
+  \item  Στήλη $ \Sigma = \begin{pmatrix}
+      a_{11} \\
+      a_{21} \\
+      \vdots \\
+      a_{n1}
+    \end{pmatrix}_{n\times 1}$
 
-	\item  Γραμμή $ \Gamma  = \begin{pmatrix}
-			b_{11} & b_{12} & \cdots & b_{1n}
-		\end{pmatrix}_{1\times n} $
+  \item  Γραμμή $ \Gamma  = \begin{pmatrix}
+      b_{11} & b_{12} & \cdots & b_{1n}
+    \end{pmatrix}_{1\times n} $
 
-	\item Μοναδιάιος $ 2\times 2 $ 
+  \item Μοναδιάιος $ 2\times 2 $ 
 \end{enumerate}
 
 
