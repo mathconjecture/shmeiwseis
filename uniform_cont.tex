@@ -1,0 +1,102 @@
+\input{preamble_typ.tex}
+\input{definitions_typ.tex}
+
+\geometry{left=12.63mm,right=12.63mm,top=30.25mm, bottom=36.25mm,footskip=24.16mm,
+headsep=24.16mm}
+
+\pagestyle{vangelis}
+\everymath{\displaystyle}
+
+\renewcommand{\qedsymbol}{}
+
+
+\begin{document}
+
+\chapter{Ομοιόμορφη Συνέχεια}
+
+Έστω $A \subseteq \mathbb{R} $ και έστω $ f \colon A \to \mathbb{R} $.  
+
+\section{Συνέχεια}
+
+\begin{dfn}
+  $f$ \textbf{συνεχής} στο $A \Leftrightarrow \textcolor{Col1}{\forall x_{0} \in A}, \; 
+  \forall \varepsilon > 0, \; \exists \delta > 0, \; \forall x \in A \quad 
+  \left[\strut\abs{x - x_{0}} < \delta \Rightarrow \abs{f(x)-f(x_{0})} < 
+  \varepsilon\right] $ 
+\end{dfn}
+
+\begin{dfn}
+  $f$ \textbf{όχι συνεχής} στο $A \Leftrightarrow 
+  \textcolor{Col1}{\exists x_{0} \in A}, \; \exists
+  \varepsilon > 0, \; \forall \delta > 0, \; \exists x \in A \quad \left[\strut\abs{x - 
+  x_{0}} < \delta \Rightarrow \abs{f(x)-f(x_{0})} < \varepsilon\right] $ 
+\end{dfn}
+
+\section{Ομοιόμορφη Συνέχεια}
+
+\begin{dfn}
+  $f$ \textbf{ομοιόμορφα συν.} στο 
+  $A \Leftrightarrow \forall \varepsilon > 0, \; 
+  \exists \delta > 0, \; \textcolor{Col1}{\forall x_{0} \in A}, \; \forall x \in A 
+  \quad \left[\strut\abs{x - x_{0}} < \delta \Rightarrow \abs{f(x)-f(x_{0})} < 
+  \varepsilon\right] $ 
+\end{dfn}
+
+\begin{dfn}
+  $f$ \textbf{όχι ομοιόμορφα συν.} στο $A \Leftrightarrow 
+  \exists \varepsilon > 0, \forall \delta > 0, \; 
+  \textcolor{Col1}{\exists x_{0} \in A}, \; \exists x \in A \quad 
+  \left[\strut\abs{x - x_{0}} < \delta \Rightarrow \abs{f(x)- f(x_{0})} < 
+  \varepsilon\right] $ 
+\end{dfn}
+
+Η τυπική διαφορά στους παραπάνω ορισμούς, είναι η σειρά των ποσοδεικτών. Ουσιαστικά όμως,  
+
+\twocolumnsides{
+  \section{Όταν αποδεικνύουμε συνέχεια στο A}
+  \begin{myitemize}
+    \item επιλέγουμε $ x_{0} \in A $
+    \item Επιλέγουμε $ \varepsilon > 0 $
+    \item Βρίσκουμε $ \delta = \delta (x_{0}, \varepsilon) $
+    \item Επιλέγουμε $ x \in A $ με $ \abs{x- x_{0}} < \delta $ 
+    \item αποδεικνύουμε ότι $ \abs{f(x) - f(x_{0})} < \varepsilon $.
+  \end{myitemize}}{
+  \section{Όταν αποδεικνύουμε ομοιόμορφη συνέχεια στο A} 
+  \begin{myitemize}
+    \item επιλέγουμε $ \varepsilon > 0 $
+    \item Βρίσκουμε $ \delta = \delta (\varepsilon) $
+    \item Επιλέγουμε $ x_{0} \in A $
+    \item Επιλέγουμε $ x \in A $ με $ \abs{x- x_{0}} < \delta $ 
+    \item αποδεικνύουμε ότι $ \abs{f(x) - f(x_{0})} < \varepsilon $.
+  \end{myitemize}
+}
+
+\vspace{\baselineskip}
+
+\section{Παρατηρήσεις}
+
+Από την παραπάνω ανάλυση, είναι προφανές ότι μια ομοιόμορφα συνεχής συνάρτηση, θα είναι 
+και συνεχής, γιατί αν βρούμε κάποιο $ \delta > 0 $ που δουλεύει για όλα τα $ x_{0} \in A
+$, τότε μπορούμε να βρούμε $ \delta $ (το ίδιο $\delta$) που δουλεύει και για κάθε 
+$ x_{0} \in A $ ξεχωριστά.
+
+\vspace{\baselineskip}
+
+\section{Παραδείγματα}
+
+\begin{example}
+  Έστω $ A = \mathbb{R} $ και $ f \colon A \to \mathbb{R} $ με $ f(x)=3x+7 $. Τότε 
+  η $f$ είναι ομοιόμορφα συνεχής στο $A$.
+\end{example}
+\begin{proof}
+  Έστω $ \varepsilon >0 $. $ \exists \delta = \frac{\varepsilon}{3} >0 $, ώστε 
+  $ \forall x_{0} \in A $, και $ \forall x \in A $ με $ \abs{x - x_{0}} < \delta $ να 
+  ισχύει
+  \[
+    \abs{3x+7-(3x_{0}+7)} = \abs{3(x-x_{0})} = 3 \abs{x- x_{0}} < 3\cdot 
+    \frac{\varepsilon}{3} = \varepsilon
+  \]
+\end{proof}
+\end{document}
+
+

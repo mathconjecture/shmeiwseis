@@ -1,8 +1,8 @@
 \input{preamble_ask.tex}
 \input{definitions_ask.tex}
 
-\geometry{left=15.63mm,right=15.63mm,top=30.25mm,bottom=36.25mm,
-footskip=24.16mm,headsep=24.16mm}
+\geometry{left=15.63mm,right=15.63mm,top=30.25mm, bottom=36.25mm,footskip=24.16mm,
+  headsep=24.16mm}
 
 \pagestyle{vangelis}
 \everymath{\displaystyle}
@@ -65,15 +65,15 @@ footskip=24.16mm,headsep=24.16mm}
 \begin{example}
   $ \boldsymbol{\mathcal{L}\left[\mathrm{e}^{at}\right] = \frac{1}{s-a}, \quad s > a} $ 
 \end{example}
-  \begin{proof}
-    \[
-      \mathcal{L}\left[\mathrm{e}^{at}\right] = \int_{0}^{+\infty} \mathrm{e}^{at} 
-      \mathrm{e}^{-st} \,{dt} = \int_{0}^{+\infty} \mathrm{e}^{-(s-a)t} \,{dt} =
-      \eval{\frac{\mathrm{e}^{-(s-a)t}}{-(s-a)}} _{0}^{+\infty} = 
-      \lim_{t \to \infty} \cancelto{0}{\frac{\mathrm{e}^{-(s-a)}}{-(s-a)}}
-      + \frac{1}{s-a} = \frac{1}{s-a}, \quad s > a
-    \]
-  \end{proof}
+\begin{proof}
+  \[
+    \mathcal{L}\left[\mathrm{e}^{at}\right] = \int_{0}^{+\infty} \mathrm{e}^{at} 
+    \mathrm{e}^{-st} \,{dt} = \int_{0}^{+\infty} \mathrm{e}^{-(s-a)t} \,{dt} =
+    \eval{\frac{\mathrm{e}^{-(s-a)t}}{-(s-a)}} _{0}^{+\infty} = 
+    \lim_{t \to \infty} \cancelto{0}{\frac{\mathrm{e}^{-(s-a)}}{-(s-a)}}
+    + \frac{1}{s-a} = \frac{1}{s-a}, \quad s > a
+  \]
+\end{proof}
 
 \begin{example}
   $ \boldsymbol{\mathcal{L}\left[\sin{at}\right] = \frac{a}{s^{2}+a^{2}}} $
@@ -82,7 +82,7 @@ footskip=24.16mm,headsep=24.16mm}
   \begin{align*}
     \mathcal{L}\left[\sin{at}\right] &= \int_{0}^{+\infty} \sin{at} \cdot
     \mathrm{e}^{-st} \,{dt} = {\left[- \frac{\mathrm{e}^{-st}}{s^{2}+a^{2}} 
-  (a \cos{at} + s \sin{at})\right]} _{0}^{+\infty} = \lim_{t \to \infty} 
+    (a \cos{at} + s \sin{at})\right]} _{0}^{+\infty} = \lim_{t \to \infty} 
     \cancelto{0}{\left[- \frac{\mathrm{e}^{-st}}{s^{2}+a^{2}} (a \cos{at} + s
     \sin{at})\right]} + \frac{a}{s^{2}+a^{2}} \\
   \end{align*} 
@@ -183,11 +183,11 @@ footskip=24.16mm,headsep=24.16mm}
 \begin{example}
   Η Βηματική συνάρτηση $ \boldsymbol{H(t)} $ είναι εκθετικού τύπου 0.
 \end{example}
-  \begin{proof}
-    \[
-      \abs{H(t)} \leq 1 = \mathrm{e}^{0t} 
-    \] 
-  \end{proof}
+\begin{proof}
+  \[
+    \abs{H(t)} \leq 1 = \mathrm{e}^{0t} 
+  \] 
+\end{proof}
 
 \begin{prop}
   Κάθε πολυωνυμική συνάρτηση είναι εκθετικού τύπου $a$, για κάθε $ a>0 $.
@@ -195,7 +195,7 @@ footskip=24.16mm,headsep=24.16mm}
 \begin{proof}
   Πράγματι
   \[
-  \mathrm{e}^{at} = \sum_{n=0}^{\infty} \frac{{(at)}^{n}}{n!} = \sum_{n=0}^{\infty} 
+    \mathrm{e}^{at} = \sum_{n=0}^{\infty} \frac{{(at)}^{n}}{n!} = \sum_{n=0}^{\infty} 
     \frac{a^{n}}{n!} t^{n} \geq \frac{a^{n}}{n!} t^{n} \Rightarrow t^{n} \leq
     \frac{n!}{a^{n}} \mathrm{e}^{at}
   \]
@@ -204,12 +204,12 @@ footskip=24.16mm,headsep=24.16mm}
 \begin{example}
   Η συνάρτηση $ \boldsymbol{f(t) = \mathrm{e}^{5t} \sin{2t}} $ είναι εκθετικού τύπου 5.
 \end{example}
-  \begin{proof}
-    \[
-      \abs{f(t)} = \abs{\mathrm{e}^{5t} \sin{2t}} = \abs{\mathrm{e}^{5t}} \cdot 
-      \abs{\sin{2t}} \leq \mathrm{e}^{5t} \cdot 1 = \mathrm{e}^{5t}
-    \] 
-  \end{proof}
+\begin{proof}
+  \[
+    \abs{f(t)} = \abs{\mathrm{e}^{5t} \sin{2t}} = \abs{\mathrm{e}^{5t}} \cdot 
+    \abs{\sin{2t}} \leq \mathrm{e}^{5t} \cdot 1 = \mathrm{e}^{5t}
+  \] 
+\end{proof}
 
 \begin{rem}
   Ένας, τρόπος για να ελέγχουμε αν μια συνάρτηση είναι εκθετικού τύπου $a$, είναι 
@@ -315,10 +315,10 @@ footskip=24.16mm,headsep=24.16mm}
     \mathrm{e}^{-st}f(t) \,{dt}  
   \] 
 \end{prop}
-  \begin{proof}
-    Από τον ορισμό του μετασχηματισμού Laplace
-    \begin{align*}
-      \mathcal{L}\left[f(t)\right] 
+\begin{proof}
+  Από τον ορισμό του μετασχηματισμού Laplace
+  \begin{align*}
+    \mathcal{L}\left[f(t)\right] 
       &= \int_{0}^{+\infty} \mathrm{e}^{-st} f(t) \,{dt} \\ 
       &= \int_{0}^{T} \mathrm{e}^{-st} f(t) \,{dt} + \int _{T}^{2T} \mathrm{e}^{-st}f(t)
       \,{dt} + \int _{2T}^{3T} \mathrm{e}^{-st} f(t)\,{dt} + \cdots \\ 
@@ -333,10 +333,10 @@ footskip=24.16mm,headsep=24.16mm}
       &= \left[1+ \mathrm{e}^{-sT} + \mathrm{e}^{{(-sT)}^{2}} + \cdots\right] 
       \int _{0}^{T} \mathrm{e}^{-st} f(t) \,{dt} \\
       \intertext{και χρησιμοποιώντας τον τύπο αθροίσματος γεωμετρικής σειράς με 
-        λόγο $ 0< \mathrm{e}^{-st} <1$, προκύπτει}
+      λόγο $ 0< \mathrm{e}^{-st} <1$, προκύπτει}
       &= \frac{1}{1- \mathrm{e}^{-st}} \int _{0}^{T} \mathrm{e}^{-st} f(t) \,{dt} 
-    \end{align*}
-  \end{proof}
+  \end{align*}
+\end{proof}
 
 
 \end{document}
