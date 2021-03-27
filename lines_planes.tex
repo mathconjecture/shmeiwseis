@@ -1,7 +1,16 @@
 \input{preamble.tex}
 \input{definitions_ask.tex}
+\usepackage{tikz}
+\usetikzlibrary{calc}
 
+\usetikzlibrary{shapes,angles,calc,arrows.meta,quotes,intersections}
+\pgfdeclarelayer{fg}
+\pgfdeclarelayer{bg}
+\pgfsetlayers{bg,main,fg}
 % \geometry{top=1cm}
+
+\input{insbox}
+\usepackage{wrapfig}
 
 \pagestyle{vangelis}
 \everymath{\displaystyle}
@@ -17,23 +26,57 @@
 Στο χώρο, μια ευθεία μπορεί να προσδιοριστεί αν γνωρίζουμε ένα σημείο της
 καθώς και το \textbf{διάνυσμα} που μας δείχνει την κατεύθυνσή της.
 
+
 \section*{Ευθεία στο χώρο}
 
-%todo σχήμα παραμετρικης ευθειας δες Stewart
-Έστω $L$ ευθεία του χώρου που διέρχεται από τη σημείο $ P_{0}(x_{0}, y_{0}, z_{0}) $ 
-και είναι παράλληλη προς το διάνυσμα 
+
+\begin{wrapfigure}{l}{0.28\linewidth}
+  \begin{tikzpicture}[scale=0.7]
+    \node  (0) at (0, 3) {};
+    \node  (1) at (0, 0) {};
+    \node  (2) at (-2, -1) {};
+    \node  (3) at (3, 0) {};
+    \node  (5) at (-1.0, 2) {};
+    \node  (6) at (4, 3) {};
+    \node[above] (e) at (6) {$\varepsilon$};
+    \node  (7) at ($(5)!0.40!(6)$) {};
+    \node  (8) at ($(5)!0.8!(6)$) {};
+    \node  (u) at (2.375, 0.625) {};
+    \node[above,yshift=-2pt,xshift=-5pt,Col2] (a) at (u) {$\mathbf{u}$};
+    \draw[-latex,very thin] (1.center) node[left,yshift=3pt]{$O$} to (2.center) 
+      node[left]{$x$};
+    \draw[-latex,ultra thick,Col2] (1.center) to (u);
+    \draw[-latex,very thin] (1.center) to (3.center) node[below]{$y$};
+    \draw[-latex,very thin] (1.center) to (0.center) node[left]{$z$};
+    \draw[very thick,Col1] (5.center) to (6.center);
+    \draw[-latex] (1.center) to node[above left=-3pt]{$\mathbf{r_{0}}$} (7.center) 
+      node[pin={[pin edge={black,latex-},Col2]93:\smaller$t=0$}]{}
+      node[above,xshift=5pt]{\smaller$P_{0}$};
+    \draw[-latex] (1.center) to node[right=5pt]{$\mathbf{r}$} (8.center) ;
+    \draw[-latex,ultra thick,Col2] (7.center) to (8.center) node[above left] 
+      {$t\mathbf{u}$};
+    \node[above right] at (8) {\smaller$P$};
+    \draw[fill] (7.center) circle (1.5pt); 
+    \draw[fill] (8.center) circle (1.5pt); 
+  \end{tikzpicture}
+\end{wrapfigure}
+
+Έστω $ \varepsilon $ ευθεία του χώρου που διέρχεται από το σημείο 
+$ P_{0}(x_{0}, y_{0}, z_{0}) $ και είναι παράλληλη προς το διάνυσμα 
 $ \mathbf{u} = a \mathbf{i} + b \mathbf{j} + c \mathbf{k} $. Τότε για το 
-τυχαίο σημείο $ P(x,y,z) $ της ευθείας $L$, όπως φαίνεται στο σχήμα, ισχύει:
+τυχαίο σημείο $ P(x,y,z) $ της ευθείας $ \varepsilon $, όπως φαίνεται στο σχήμα, ισχύει:
 \begin{equation}\label{eq:vline}
   \mathbf{r} = \mathbf{r_{0}} + t \mathbf{u} \quad t \in \mathbb{R}
 \end{equation}
+
 Η εξίσωση~\eqref{eq:vline} λέγεται \textcolor{Col1}{διανυσματική παραμετρική} εξίσωση 
-της ευθείας $L$  και σε πλήρη ανάπτυξη, παίρνει τη μορφή:
+της ευθείας $ \varepsilon $  και σε πλήρη ανάπτυξη, παίρνει τη μορφή:
 \begin{align*} 
   \mathbf{r}(t) = (x_{0}, y_{0}, z_{0}) + t (a, b, c) 
   = (x_{0} + t a, y_{0}+ t b, z_{0} + t c) 
 \end{align*} 
-ή ισοδύναμα 
+ή ισοδύναμα, χρησιμοποιώντας τα μοναδιαία διανύσματα των αξόνων η παραπάνω εξίσωση
+γράφεται
 \[
   \boxed{\mathbf{r}(t) = (x_{0}+ t a) \mathbf{i} + (y_{0} + t b) \mathbf{j}+
   (z_{0}+ t c) \mathbf{k}} \quad t \in \mathbb{R} 
@@ -50,7 +93,7 @@ $ \mathbf{u} = a \mathbf{i} + b \mathbf{j} + c \mathbf{k} $. Τότε για τ�
   \quad t \in \mathbb{R} 
 \end{equation} 
 Η εξισώσεις~\eqref{eq:pline} λέγονται \textcolor{Col1}{παραμετρικές εξισώσεις} της 
-ευθείας $L$.
+ευθείας $ \varepsilon $.
 
 \begin{rem}
   Με απαλοιφή της παραμέτρου $t$ από τις εξισώσεις~\eqref{eq:pline} και αν 
@@ -129,7 +172,6 @@ $ \mathbf{u} = a \mathbf{i} + b \mathbf{j} + c \mathbf{k} $. Τότε για τ�
   ευθείας, με τους τρόπους που περιγράψαμε παραπάνω, δεν είναι μοναδική.
 \end{rem}
 \begin{rem}
-  %todo σχήμα παραμετρικης ευθυγραμμο τμημα δες Stewart
   Στο παράδειγμα~\ref{ex:line2}, παρατηρούμε ότι αν επιλέξουμε $ t=0 $, τότε οι 
   παραμετρικές εξισώσεις, μας δίνουν τις συντεταγμένες του σημείου $ A $, ενώ για 
   $ t=1 $, παίρνουμε το σημείο$ B $. Επομένως το ευθύγραμμο τμήμα $ AB $, 
@@ -143,36 +185,61 @@ $ \mathbf{u} = a \mathbf{i} + b \mathbf{j} + c \mathbf{k} $. Τότε για τ�
       \end{matrix*} 
     \right\} \quad  t \in [0,1]
   \]
-
-
-  \section*{Ευθύγραμμο Τμήμα στο χώρο}
-
-  Γενικά η διανυσματική παραμετρική εξίσωση του ευθύγραμμου τμήματος $ AB $, όπου
-  $ \mathbf{r}_{A} $ και $ \mathbf{r}_{B} $ είναι τα διανύσματα θέσης, αντίστοιχα, των 
-  σημείων $ A(x_{A},y_{A},z_{A}) $ και $B(x_{B},y_{B},z_{B})$, είναι 
-  \[
-    \boxed{\mathbf{r} = \mathbf{r}_{A} + t(\mathbf{r}_{B}- \mathbf{r}_{A})} 
-    \quad \text{ή} \quad \boxed{\mathbf{r} = (1-t) \mathbf{r}_{A} + t \mathbf{r}_{B}}, 
-    \quad t \in [0,1]
-  \] 
-  και οι αντίστοιχες παραμετρικές εξισώσεις, είναι:
-  \[
-    \boxed{\left.
-        \begin{matrix*}[l]
-          x(t) = x_{A} + t(x_{B}-x_{A}) \\
-          y(t) = y_{A} + t(y_{B}-y_{A}) \\
-          z(t) = z_{A} + t(z_{B}-z_{A}) 
-        \end{matrix*} 
-    \right\}} \quad \text{ή} \quad  
-    \boxed{\left.
-        \begin{matrix*}[l]
-          x(t) = (1-t)x_{A} + tx_{B} \\
-          y(t) = (1-t)y_{A} + ty_{B} \\
-          z(t) = (1-t)z_{A} + tz_{B} 
-        \end{matrix*} 
-    \right\}} \quad t \in [0,1]
-  \]
 \end{rem}
+
+
+\section*{Ευθύγραμμο Τμήμα στο χώρο}
+
+\begin{wrapfigure}{l}{0.28\linewidth}
+  \begin{tikzpicture}[scale=0.7]
+    \node  (0) at (0, 3) {};
+    \node  (1) at (0, 0) {};
+    \node  (2) at (-2, -1) {};
+    \node  (3) at (3, 0) {};
+    \node  (5) at (-0.75, 2) [pin={[pin
+      edge={black,latex-},Col2]115:\smaller$t=0$}] {};
+    \node  (6) at (3.5, 1) [pin={[pin
+      edge={black,latex-},Col2]93:\smaller$t=1$}] {};
+    \node[above,xshift=2pt] (a) at (5) {$A$};
+    \node[above,xshift=5pt] (b) at (6) {$B$};
+    \draw[-latex,very thin] (1.center) node[left,yshift=3pt]{$O$} to (2.center) 
+      node[left]{$x$};
+    \draw[-latex,very thin] (1.center) to (3.center) node[below]{$y$};
+    \draw[-latex,very thin] (1.center) to (0.center) node[left]{$z$};
+    \draw[-latex] (1.center) to node[left]{$\mathbf{r_{A}}$} (5.center);
+    \draw[-latex] (1.center) to node[above]{$\mathbf{r_{B}}$} (6.center);
+    \draw[fill,Col2] (5.center) circle (2pt); 
+    \draw[fill,Col2] (6.center) circle (2pt); 
+    \draw[very thick,->,Col1] (5.center) to ($(5)!0.5!(6)$);
+    \draw[ultra thick,Col1] (5.center) to (6.center);
+  \end{tikzpicture}
+\end{wrapfigure}
+
+Γενικά η διανυσματική παραμετρική εξίσωση του \textcolor{Col1}{ευθύγραμμου τμήματος} 
+$ AB $, όπου $ \mathbf{r}_{A} $ και $ \mathbf{r}_{B} $ είναι τα διανύσματα θέσης, 
+αντίστοιχα, των σημείων $ A(x_{A},y_{A},z_{A}) $ και $B(x_{B},y_{B},z_{B})$, είναι 
+\[
+  \boxed{\mathbf{r} = \mathbf{r}_{A} + t(\mathbf{r}_{B}- \mathbf{r}_{A})} 
+  \quad \text{ή} \quad \boxed{\mathbf{r} = (1-t) \mathbf{r}_{A} + t \mathbf{r}_{B}}, 
+  \quad t \in [0,1]
+\] 
+και οι αντίστοιχες παραμετρικές εξισώσεις, είναι:
+\[
+  \boxed{\left.
+      \begin{matrix*}[l]
+        x(t) = x_{A} + t(x_{B}-x_{A}) \\
+        y(t) = y_{A} + t(y_{B}-y_{A}) \\
+        z(t) = z_{A} + t(z_{B}-z_{A}) 
+      \end{matrix*} 
+  \right\}} \quad \text{ή} \quad  
+  \boxed{\left.
+      \begin{matrix*}[l]
+        x(t) = (1-t)x_{A} + tx_{B} \\
+        y(t) = (1-t)y_{A} + ty_{B} \\
+        z(t) = (1-t)z_{A} + tz_{B} 
+      \end{matrix*} 
+  \right\}} \quad t \in [0,1]
+\]
 
 \begin{example}
   Οι παραμετρικές εξισώσεις του ευθυγράμμου τμήματος $ AB $, που ενώνει τα σημεία 
@@ -233,8 +300,9 @@ $ \mathbf{u}/ \norm{\mathbf{u}} $.
   \sqrt{3} (1,1,1) = (200 \sqrt{3} , 200 \sqrt{3} , 200 \sqrt{3}) $. 
 \end{solution}
 
-
 \chapter*{Εξίσωση Επιπέδου στο Χώρο}
+
+
 
 Ένα επίπεδο, μπορεί να προσδιορισθεί, αν γνωρίζουμε ένα σημείο του, και ένα 
 διάνυσμα που είναι κάθετο σε αυτό, και το οποίο μας δείχνει τον προσανατολισμό του 
@@ -242,22 +310,70 @@ $ \mathbf{u}/ \norm{\mathbf{u}} $.
 
 \section*{Επίπεδο στο χώρο}
 
-Έστω $ \Pi $ επίπεδο του χώρου που διέρχεται από το σημείο $ P(x_{0}, y_{0}, z_{0}) $ 
+\begin{wrapfigure}{l}{0.34\linewidth}
+  \begin{tikzpicture}[scale=0.70]
+  %axes
+  \coordinate  (0) at (0, 0) [label=left:$O$] {};
+  \node  (x) at (-2, -1)[label={[left]:$x$}] {};
+  \node  (y) at (4, 0) [label={[below right]:$y$}]{};
+  \node  (z) at (0, 4) [label={[below left]:$z$}] {};
+  \path[name path=z,-latex] (0.center) to (z.center);
+  \path[name path=y,-latex] (0.center) to (y.center);
+  \draw[-latex] (0.center) to (x.center);
+  \coordinate  (c) at (2.25, 3.75) {};
+  \coordinate  (b) at (5.75, 1.75) {};
+  \coordinate  (d) at (-1.25, 1.5) {};
+  \coordinate  (a) at (2.25, -0.5) {};
+  \coordinate  (po) at (3, 1) {};
+  \coordinate  (p) at (1.75, 2.25) {};
+  \draw[fill] (p) circle (1.5pt);
+  \draw[fill] (po) circle (1.5pt);
+  \node[above right,xshift=3pt] (PO) at (po) {\smaller$P_{0}$};
+  \node[above] (P) at (p) {\smaller$P(x,y,z)$};
+  \draw[ultra thick,-latex,Col2] (po.center) to (p.center);
+  \draw[ultra thick,-latex,Col1] (po.center) to (4,3.5) node[right] (n) {$\mathbf{n}$};
+  \path[name path=p] (0.center) to node[above left] {$\mathbf{r}$} (p.center);
+  \path[name path=po] (0.center) to node[below right] 
+    {$\mathbf{r_{0}}$} (po.center);
+  %make the right angle
+  \coordinate (an1) at ($(po)!7pt!(n)$) ;
+  \coordinate (an2) at ($(po)!7pt!(p)$) ;
+  \draw (an1) -- ($(an1)+(-0.13,0.3,0.25)$) -- (an2); 
+  \draw[name path=plane,fill,blue!50,opacity=0.4] (a) -- (b) -- (c) -- (d) -- (a) ;
+  \coordinate [name intersections={of=p and plane, by=1}];
+  \coordinate [name intersections={of=po and plane, by=2}];
+  \coordinate [name intersections={of=z and plane, by={z2,z1}}];
+  \coordinate [name intersections={of=y and plane, by={y2,y1}}];
+  \draw (0) -- (z1) ;
+  \draw[dashed] (z1) -- (z2) ;
+  \draw[-latex] (z2) -- (z) ;
+  \draw (0) -- (y1) ;
+  \draw[dashed] (y1) -- (y2) ;
+  \draw[-latex] (y2) -- (y) ;
+  \draw (0) to (1);
+  \draw (0) to (2);
+  \begin{pgfonlayer}{bg}
+    \draw[dashed,-latex] (1) to (p);
+    \draw[dashed,-latex] (2) to (po);
+  \end{pgfonlayer}
+\end{tikzpicture}
+\end{wrapfigure}
+Έστω $ \Pi $ επίπεδο του χώρου που διέρχεται από το σημείο 
+$ P_{0}(x_{0}, y_{0}, z_{0}) $ 
 και έστω $ \vec{n} = a \mathbf{i} + b \mathbf{j} + c \mathbf{k} $, ένα διάνυσμα κάθετο 
-στο επίπεδο. Τότε για το τυχαίο σημείο $ M(x,y,z) $ του επιπέδου $ \Pi $, όπως φαίνεται 
+στο επίπεδο. Τότε για το τυχαίο σημείο $ P(x,y,z) $ του επιπέδου $ \Pi $, όπως φαίνεται 
 στο σχήμα, ισχύει ότι 
 \begin{equation}\label{eq:vplane}
   \vec{n} \cdot (\mathbf{r} - \mathbf{r}_{0}) = 0
 \end{equation} 
 αφού το διάνυσμα $ \vec{n} $, είναι κάθετο και σε όλα τα διανύσματα του επιπέδου, άρα 
-και στο διάνυσμα $ \vec{PP_{0}} $. 
-
+και στο διάνυσμα $ \vec{P_{0}P} $. 
 Η εξίσωση~\eqref{eq:vplane} λέγεται \textcolor{Col1}{διανυσματική} εξίσωση του 
 επιπέδου $ \Pi $ και σε πλήρη ανάπτυξη, παίρνει τη μορφή:
-\begin{align*}
+\begin{equation*}
   (a,b,c) \cdot (x- x_{0}, y- y_{0}, z- z_{0}) = 0 
-\end{align*} 
-ή ισοδύναμα
+\end{equation*} 
+ή ισοδύναμα, υπολογίζοντας το εσωτερικό γινόμενο, έχουμε
 \begin{equation}
   \boxed{a(x- x_{0}) + b(y- y_{0}) + c(z- z_{0}) = 0}
 \end{equation}
@@ -277,6 +393,8 @@ $ ax+by+cz=d $, όπου $ d=a x_{0}+ b y_{0}+cz_{0} $.
     2(x-2)+3(y-4)+4(z-(-1)) = 0 \Leftrightarrow 2x+3y+4z=12
   \]
   Για να βρούμε τα σημεία τομής του επιπέδου με τους άξονες, έχουμε:
+  \InsertBoxR{1}{\parbox[b][3\baselineskip][c]{0.32\textwidth}
+  {\includegraphics[scale=0.65]{plane_ex}}}
   \begin{myitemize}
     \item Για τον άξονα $z$, θέτουμε $ x=y=0 $ και βρίσκουμε $ z=3 $.
     \item Για τον άξονα $x$, θέτουμε $ y=z=0 $ και βρίσκουμε $ x=6 $.
@@ -284,10 +402,8 @@ $ ax+by+cz=d $, όπου $ d=a x_{0}+ b y_{0}+cz_{0} $.
   \end{myitemize}
   Με τη βοήθεια αυτών των σημείων, μπορούμε να σχεδιάσουμε, εύκολα, το τμήμα του 
   επιπέδου, που βρίσκεται στο 1ο ογδοημόριο, όπως φαίνεται στο σχήμα.
-  %todo σχήμα, δες Stewart.
 \end{solution}
 
-\enlargethispage{\baselineskip}
 
 \begin{example}
   Βρείτε την εξίσωση του επιπέδου, που διέρχεται από τα σημεία 
@@ -315,7 +431,6 @@ $ ax+by+cz=d $, όπου $ d=a x_{0}+ b y_{0}+cz_{0} $.
   \]
 \end{solution}
 
-\pagebreak
 
 \begin{example}
   Βρείτε το σημείο, στο οποίο η ευθεία με παραμετρικές εξισώσεις $ x=2+3t $, $ y=-4t
@@ -334,6 +449,69 @@ $ ax+by+cz=d $, όπου $ d=a x_{0}+ b y_{0}+cz_{0} $.
     x=-4 \quad y=8 \quad z=3
   \] 
   Επομένως το σημείο τομής της ευθείας και του επιπέδου, είναι $ (x,y,z) = (-4,8,3) $.
+\end{solution}
+
+\begin{example}
+  Να βρεθεί η εξίσωση της ευθείας, που διέρχεται από το σημείο $ P(0,-7,0) $ 
+  και είναι κάθετη στο επίπεδο $ x+2y+2z=13 $.
+\end{example}
+\begin{solution}
+  Ένα διάνυσμα κάθετο στο επίπεδο, και επομένως παράλληλο προς την ζητούμενη ευθεία, 
+  είναι το $ \vec{n} = (1,2,2) $. Άρα η εξίσωση της ευθείας, είναι:
+  \[
+    \mathbf{r} = (0,-7,0) + t(1,2,2,) = (t, -7+2t, 2t) 
+  \]
+  Άρα οι παραμετρικές εξισώσεις της ευθείας, είναι 
+  \[
+    \left. 
+      \begin{matrix*}[l]
+        x(t)=t \\
+        y(t)=-7+2t \\
+        z(t)=2t
+      \end{matrix*} 
+    \right\} \quad t \in \mathbb{R}
+  \] 
+\end{solution}
+
+\begin{example}
+  Να βρείτε το σημείο τομής των ευθειών, $ \varepsilon _{1}: x=t, \; y=-t+2, \;
+  z=t+1$ και $ \varepsilon _{2}; x=2s+2, \; y=s+3, \; z=5s+6 $, και στη συνέχεια να 
+  βρείτε την εξίσωση του επιπέδου, που ορίζουν αυτές οι δύο ευθείες.
+\end{example}
+\begin{solution}
+  Για να βρούμε το σημείο τομής των δύο ευθειών, λύνουμε το σύστημα των εξισώσεών τους.
+  \[
+    \left.
+      \begin{matrix}
+        x=t=2s+2 \\
+        y=-t+2=s+3
+      \end{matrix} 
+    \right\} \Leftrightarrow 
+    \left.
+      \begin{matrix}
+        t-2s=2 \\
+        -t-s=1
+      \end{matrix} 
+    \right\} \Leftrightarrow s=-1 \quad \text{και} \quad t=0
+  \] 
+  Οπότε $ z=t+1=5s+6 $ και για $ s=-1 $ και $ t=0 $, έχουμε ότι $ 0+1=5(-1)+6
+  \Leftrightarrow 1 = 1 $, δηλαδή ικανοποιείται και η 3η εξίσωση. Άρα οι δύο 
+  ευθείες, τέμνονται για $ s=-1, \; t=0 $, στο σημείο με $ x=0, \; y=2, \; z=1 $, 
+  δηλαδή $ P(0,2,1) $.
+
+  Ένα διάνυσμα κάθετο στις δύο ευθείες, επομένως και στο επίπεδο που ορίζουν είναι, το
+  \[
+    \vec{n_{1}} \times \vec{n_{2}} = 
+    \begin{vmatrix*}[r]
+      \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+      1 & -1 & 1 \\
+      2 & 1 & 5 
+    \end{vmatrix*} = -6 \mathbf{i}-3 \mathbf{j}+3 \mathbf{k}
+  \]  
+  Άρα η εξίσωση του ζητούμενου επιπέδου, είναι 
+  \[
+    -6(x-0)+(-3)(y-2)+3(z-1)=0 \Leftrightarrow 6x+3y-3z=3 
+  \]
 \end{solution}
 
 \begin{rem}\label{rem:parallhla}
