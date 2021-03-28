@@ -311,7 +311,7 @@ $ \mathbf{u}/ \norm{\mathbf{u}} $.
 \section*{Επίπεδο στο χώρο}
 
 \begin{wrapfigure}{l}{0.34\linewidth}
-  \begin{tikzpicture}[scale=0.70]
+  \begin{tikzpicture}[scale=0.7]
   %axes
   \coordinate  (0) at (0, 0) [label=left:$O$] {};
   \node  (x) at (-2, -1)[label={[left]:$x$}] {};
@@ -325,7 +325,7 @@ $ \mathbf{u}/ \norm{\mathbf{u}} $.
   \coordinate  (d) at (-1.25, 1.5) {};
   \coordinate  (a) at (2.25, -0.5) {};
   \coordinate  (po) at (3, 1) {};
-  \coordinate  (p) at (1.75, 2.25) {};
+  \coordinate  (p) at (1.75, 1.80) {};
   \draw[fill] (p) circle (1.5pt);
   \draw[fill] (po) circle (1.5pt);
   \node[above right,xshift=3pt] (PO) at (po) {\smaller$P_{0}$};
@@ -338,7 +338,7 @@ $ \mathbf{u}/ \norm{\mathbf{u}} $.
   %make the right angle
   \coordinate (an1) at ($(po)!7pt!(n)$) ;
   \coordinate (an2) at ($(po)!7pt!(p)$) ;
-  \draw (an1) -- ($(an1)+(-0.13,0.3,0.25)$) -- (an2); 
+  \draw (an1) -- ($(an1)+(-0.10,0.3,0.35)$) -- (an2); 
   \draw[name path=plane,fill,blue!50,opacity=0.4] (a) -- (b) -- (c) -- (d) -- (a) ;
   \coordinate [name intersections={of=p and plane, by=1}];
   \coordinate [name intersections={of=po and plane, by=2}];
