@@ -4,11 +4,11 @@
 
 \pagestyle{vangelis}
 % \everymath{\displaystyle}
-
+\setcounter{chapter}{1}
 
 \begin{document}
 
-\chapter{Σειρές Fourier}
+\chapter*{Σειρές Fourier}
 
 \section{Περιοδικές Συναρτήσεις}
 
@@ -22,6 +22,18 @@
   $ 
   όπου $ T>0 $, ονομάζεται \textcolor{Col1}{περίοδος} της συνάρτησης.
 \end{dfn}
+
+%todo add some graphs of periodic functions
+\begin{examples}
+\item {}
+  \begin{enumerate}[i)]
+    \item Η $ f(x) = \sin{x} $ είναι περιοδική με περίοδο $ T=2 \pi $.
+    \item Η $ f(x) = \sin{nx} $ είναι περιοδική με περίοδο $ T= \frac{2 \pi}{n} $.
+    \item Η $ f(x) = \tan{x} $ είναι περιοδική με περίοδο $ T= \pi $.
+    \item Η $ f(x) = c, \; c \in \mathbb{R} $, σταθερή συνάρτηση, είναι περιοδική με 
+      περίοδο οποιονδήποτε θετικό αριθμό.
+  \end{enumerate}
+\end{examples}
 
 \begin{prop}
   Αν οι συναρτήσεις $ f $ και $g$ είναι περιοδικές με περίοδο $T$, τότε και οι 
@@ -51,6 +63,7 @@
 
 \vspace{\baselineskip}
 
+%todo fix δεν είναι ορισμοί, δες Κραββαρίτη
 \begin{enumerate}
 
   \item Αν $ f(x) $ ορισμένη στο $ [-L,L] $ με $ f(-L)=f(L) $ τότε η συνάρτηση
@@ -93,7 +106,7 @@
 
   \item Αν $ f(x) $ ορισμένη στο $ (0,L) $, τότε επεκτείνεται σε 
     άρτια (αντ. περιττή) περιοδική συνάρτηση $ F(x) $ θέτωντας $ F(0) $, 
-    $ F(L) $ οποιαδήποτε τιμή (αντ. $F(0)=F(L)$) και στη συνέχεια εφαρμόσουμε 
+    $ F(L) $ οποιαδήποτε τιμή (αντ. $F(0)=F(L)=0$) και στη συνέχεια εφαρμόσουμε 
     τις επεκτάσεις~\ref{artia} και~\ref{peritth}.
 \end{enumerate}
 
@@ -255,8 +268,8 @@ $ 2 \pi $. Τότε υπό κατάλληλες προϋποθέσεις η $f$ 
 Επιστρέφοντας πίσω, στην αρχική μεταβλητή $x$, θέτοντας όπου $ t = \frac{\pi x}{L} $, 
 έχουμε ότι η σειρά Fourier της συνάρτησης $ f(x) $ είναι
 \[
-  \frac{a_{0}}{2} + \sum_{n=1}^{\infty} \left[a_{n} \cos{\left(\frac{n \pi x}{L}\right)} 
-  + b_{n} \sin{\left(\frac{n \pi x}{L}\right)} \right]
+  \boxed{\frac{a_{0}}{2} + \sum_{n=1}^{\infty} \left[a_{n} \cos{\left(\frac{n \pi x}{L}\right)} 
+  + b_{n} \sin{\left(\frac{n \pi x}{L}\right)} \right]}
 \]
 όπου 
 \[
@@ -274,6 +287,7 @@ $ 2 \pi $. Τότε υπό κατάλληλες προϋποθέσεις η $f$ 
 
 \subsection*{Άρτιες - Περιττές Συναρτήσεις}
 
+%todo add some graphs
 \begin{dfn}
   Μια συνάρτηση $ f(x) $ θα λέγεται:
   \begin{alignat*}{4}
@@ -303,6 +317,7 @@ $ 2 \pi $. Τότε υπό κατάλληλες προϋποθέσεις η $f$ 
   \end{enumerate}
 \end{prop}
 
+%todo add some graphs showing the integrals relations
 \begin{rem}
   Η γραφική παράσταση μιας άρτιας συνάρτησης είναι συμμετρική ως προς τον άξονα $y$, 
   ενώ μιας περιττής συνάρτησης ως προς την αρχή των αξόνων.
@@ -333,7 +348,7 @@ $ f(x) \cos{(nx)} $ είναι επίσης \textbf{άρτια} (από πρότ
 \] 
 και τότε η σειρά Fourier της $f$ γίνεται:
 \[
-  \frac{a_{0}}{2} + \sum_{n=1}^{\infty} a_{n} \cos{(nx)} \quad 
+  \boxed{\frac{a_{0}}{2} + \sum_{n=1}^{\infty} a_{n} \cos{(nx)}} \quad 
   \text{\color{Col1} Συνημιτονική σειρά Fourier}
 \]
 
@@ -351,7 +366,7 @@ $ f(x) \cos{(nx)} $ είναι επίσης \textbf{περιττή} (από πρ
 \] 
 και τότε η σειρά Fourier της $f$ γίνεται:
 \[
-  \sum_{n=1}^{\infty} b_{n} \sin{(nx)} \quad \text{\color{Col1} Ημιτονική σειρά Fourier}
+  \boxed{\sum_{n=1}^{\infty} b_{n} \sin{(nx)}} \quad \text{\color{Col1} Ημιτονική σειρά Fourier}
 \]
 
 \subsection*{Συνημιτονική σειρά Fourier συνάρτησης με περίοδο $ 2 L$}
@@ -368,7 +383,8 @@ $ f(x) \cos{\left(\frac{n \pi x}{L}\right)} $ είναι επίσης \textbf{ά
 \] 
 και τότε η σειρά Fourier της $f$ γίνεται:
 \[
-  \frac{a_{0}}{2} + \sum_{n=1}^{\infty} a_{n} \cos{\left(\frac{n \pi x}{L}\right)} \quad 
+  \boxed{\frac{a_{0}}{2} + \sum_{n=1}^{\infty} a_{n} \cos{\left(\frac{n \pi
+  x}{L}\right)}} \quad 
   \text{\color{Col1} Συνημιτονική σειρά Fourier}
 \]
 
@@ -387,7 +403,7 @@ $ f(x) \sin{\left(\frac{n \pi x}{L}\right)} $ είναι \textbf{άρτια}
 \] 
 και τότε η σειρά Fourier της $f$ γίνεται:
 \[
-  \sum_{n=1}^{\infty} b_{n} \sin{\left(\frac{n \pi x}{L}\right)} \quad 
+  \boxed{\sum_{n=1}^{\infty} b_{n} \sin{\left(\frac{n \pi x}{L}\right)}} \quad 
   \text{\color{Col1} Ημιτονική σειρά Fourier}
 \]
 
