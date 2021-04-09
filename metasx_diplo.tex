@@ -1,0 +1,175 @@
+\input{preamble_ask.tex}
+\input{definitions_ask.tex}
+
+\pgfdeclarelayer{bg}
+\pgfdeclarelayer{fg}
+\pgfsetlayers{bg,main,fg}
+
+\renewcommand{\qedsymbol}{}
+
+\pagestyle{vangelis}
+
+
+\begin{document}
+
+\begin{center}
+  \minibox{\large\bfseries \textcolor{Col1}{Αλλαγή Μεταβλητών στο Διπλό Ολοκλήρωμα}}
+\end{center}
+
+\vspace{\baselineskip}
+
+
+\section*{Γενική Μεθοδολογία}
+
+\begin{enumerate}
+  \item Επιλέγουμε \textbf{κατάλληλες} εξισώσεις μετασχηματισμού ανάλογα με το σχήμα του 
+    χωρίου 
+    $D$. 
+    \[
+      \left.
+        \begin{matrix}
+          x=x(u,v) \\
+          y=y(u,v)
+        \end{matrix} 
+      \right\} \quad \text{και} \quad J = \pdv{(x,y)}{(u,v)} = 
+      \begin{vmatrix*}[r]
+        x_{u} & x_{v} \\
+        y_{u} & y_{v}
+      \end{vmatrix*}
+    \] 
+  \item Μετασχηματίζουμε τη συνάρτηση $ f(x,y) $, θέτοντας όπου $ x=x(u,v) $ και όπου 
+    $ y=y(u,v) $
+    \[
+      g(u,v) = f(x(u,v),y(u,v)) 
+    \] 
+  \item Μετασχηματίζουμε το χωρίο $D$, μετασχηματίζοντας συνήθως τις 
+    \textbf{καμπύλες} που αποτελούν το \textcolor{Col1}{σύνορο} του $D$, 
+    θέτοντας όπου $ x=x(u,v) $ και όπου $ y=y(u,v) $ και στη συνέχεια σχεδιάζουμε το 
+    νέο χωρίο $ D^{*} $ στο επίπεδο $ uv $.  
+  \item Χρησιμοποιούμε τον τύπο αλλαγής μεταβλητών για το διπλό ολοκλήρωμα:
+    \[
+      \iint_{D} f(x,y) \,{dx}{dy} = \iint_{D^{*}} g(u,v) \abs{\pdv{(x,y)}{(u,v)}}
+      \,{du}{dv} 
+    \] 
+    όπου $ \abs{\pdv{(x,y)}{(u,v)}} $ είναι η \textbf{απόλυτη τιμή} της Ιακωβιανής 
+    ορίζουσας του μετασχηματισμού.
+\end{enumerate}
+
+\section*{Επιλογή Κατάλληλου Μετασχηματισμού}
+
+\begin{myitemize}[leftmargin=*]
+  \item Όταν το χωρίο $D$ είναι \textbf{κυκλικός δίσκος}, ή μέρος κυκλικού δίσκου, τότε
+    μετασχηματίζουμε σε \textcolor{Col1}{πολικές} συντεταγμένες:
+    \[
+      \left.
+        \begin{matrix}
+          x=r \cos{\theta} \\
+          y=r \sin{\theta}
+        \end{matrix} 
+      \right\} \quad \text{και} \quad J = \pdv{(x,y)}{(r, \theta)} = 
+      \begin{vmatrix*}[r]
+        x_{r} & x_{\theta} \\
+        y_{r} & y_{\theta} 
+      \end{vmatrix*} = 
+      \begin{vmatrix*}[r]
+        \cos{\theta} & -r \sin{\theta} \\
+        \sin{\theta} & r \cos{\theta}
+      \end{vmatrix*} = r
+    \] 
+  \item Όταν το χωρίο $D$ είναι \textbf{ελλειπτικός δίσκος}, ή μέρος ελλειπτικού δίσκου, 
+    τότε μετασχηματίζουμε σε \textcolor{Col1}{ελλειπτικές} συντεταγμένες:
+    \[
+      \left.
+        \begin{matrix}
+          x=ar \cos{\theta} \\
+          y=br \sin{\theta}
+        \end{matrix} 
+      \right\} \quad \text{και} \quad J = \pdv{(x,y)}{(r, \theta)} =  
+      \begin{vmatrix*}[r]
+        x_{r} & x_{\theta} \\
+        y_{r} & y_{\theta} 
+      \end{vmatrix*} = 
+      \begin{vmatrix*}[r]
+        a\cos{\theta} & -ar \sin{\theta} \\
+        b\sin{\theta} & br \cos{\theta}
+      \end{vmatrix*} = ab\,r 
+    \] 
+    όπου $a$ και $b$ είναι οι άξονες της έλλειψης με εξίσωση
+    $ \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} =1 $.
+
+  \item Όταν μια παράσταση των $ x $ και $ y $ εμφανίζεται στην ολοκληρωτέα συνάρτηση 
+    και ταυτόχρονα στο σύνορο του $D$, τότε τη θέτουμε ίση με $ u $ και συνήθως 
+    θέτουμε $ v = x $ ή $ v=y $ ή οποιαδήποτε άλλη απλή παράσταση των $ x $ και 
+    $ y $, με την προϋπόθεση ότι $ J \neq 0 $. 
+  \item Όταν μια παράσταση των $ x $ και $ y $ εμφανίζεται δύο φορές στο σύνορο του $D$, 
+    τότε τη θέτουμε ίση με $ u $ και συνήθως θέτουμε $ v = x $ ή $ v=y $ ή οποιαδήποτε 
+    απλή παράσταση των $ x $ και $ y $ με την προϋπόθεση ότι $ J \neq 0 $. 
+\end{myitemize}
+
+\begin{rem}
+  Οι ελλειπτικές συντεταγμένες, είναι \textbf{σύνθεση} ενός γραμμικού μετασχηματισμού 
+  που μετασχηματίζει τον ελλειπτικό δίσκο σε κυκλικό και των πολικών συντεταγμένων, 
+  όπως φαίνεται στο παρακάτω σχήμα.
+\end{rem}
+
+\vspace{\baselineskip}
+
+\begin{tikzpicture}[scale=0.8]
+  \begin{pgfonlayer}{bg}
+    \draw[-latex,Col2] (-3,0) -- (3,0) node[right]{$x$} ;
+    \draw[-latex,Col2] (0,-2) -- (0,2) node[left]{$y$} ;
+    \draw[-latex,Col2] (6,0) -- (10,0) node [right]{$u$} ;
+    \draw[-latex,Col2] (8,-2) -- (8,2) node [left]{$v$} ;
+    \draw[-latex,Col2] (13,0) -- (17,0) node [right]{$r$} ;
+    \draw[-latex,Col2] (15,-2) -- (15,2) node [left]{$\theta$} ;
+  \end{pgfonlayer}
+  \coordinate (el) at (1,1);
+  \node[Col1] at (el) [above,xshift=15pt]
+    {$\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1$} ;
+  \coordinate (cl) at (9,1);
+  \node[Col1] at (cl) [above,xshift=8pt] {\small$u^{2}+v^{2}=1$} ;
+  \coordinate (o1) at (0, 0) {};
+  \coordinate (o2) at (8, 0) {};
+  \coordinate (o3) at (15, 0) {};
+  \coordinate (a) at (2,0) ;
+  \coordinate (b) at (0,1) ;
+  \node at (a) [below right] {$a$} ;
+  \node at (b) [above left] {$b$} ;
+  \coordinate (u) at (10,0) ;
+  \coordinate (v) at (8,2) ;
+  \coordinate (c) at (9, 0) ;
+  \node at (c) [below right] {$1$} ;
+  \coordinate (r) at (16,0) ;
+  \coordinate (th) at (15,1.4) ;
+  \node  at (r) [below] {$1$};
+  \node  at (th) [left] {$2 \pi$};
+  %arrows
+  \coordinate (8) at (3, 0.5) ;
+  \coordinate (9) at (6, 0.5) ;
+  \coordinate (18) at (10, 0.5) ;
+  \coordinate (23) at (13, 0.5) ;
+  \coordinate (n1) at (3, -0.5) ;
+  \coordinate (n2) at (13, -0.5) ;
+  %shapes and fillings
+  \fill[blue!25,opacity=0.5] (o3) rectangle (th-|r) ;
+  \draw[Col1,very thick] (o3) rectangle (th-|r) ;
+  \fill[blue!25,opacity=0.5] (o1) ellipse (2 and 1);
+  \draw[Col1,very thick] (o1) ellipse (2 and 1);
+  \fill[blue!25,opacity=0.5] (o2) circle (1);
+  \draw[Col1,very thick] (o2) circle (1);
+  \draw [in=110, out=70, looseness=0.75,blue!50,thin] (8.center) edge[-latex] 
+    node[blue!75,midway,above=13pt,xshift=6pt] {$\frac{x}{a}=u \Rightarrow x=au$} 
+    node[blue!75,midway,above,xshift=5pt] {$\frac{y}{b}=v \Rightarrow y=bv$} (9.center) ;
+  \draw [in=110, out=70, looseness=0.75,blue!50,thin] (18.center) edge[-latex] 
+    node[blue!75,midway,above=10pt,xshift=5pt] {$u=r \cos{\theta}$} 
+    node[blue!75,midway,above,xshift=5pt] {$v=r \sin{\theta}$} (23.center);
+  \draw [in=-110, out=-70, looseness=0.75,blue!50,thin] (n1.center) edge[-latex] 
+    node[blue!75,midway,below,xshift=5pt] {$x=ar \cos{\theta}$} 
+    node[blue!75,midway,below=10pt,xshift=5pt] {$y=br \sin{\theta}$} (n2.center);
+\end{tikzpicture}
+
+\enlargethispage{\baselineskip}
+
+
+
+\end{document}

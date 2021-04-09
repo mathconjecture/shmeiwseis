@@ -1,10 +1,27 @@
 \input{preamble.tex}
 \input{definitions.tex}
+\input{tikz.tex}
+
+\pgfplotsset{
+  myaxis/.style={axis lines=center,axis line style={thick,blue!50,-stealth},tick label
+  style={font=\large,blue!75,above=5pt},xtick=\empty,ytick=\empty,tick style={blue!50}},
+  myplot/.style={Col1!75,ultra thick,samples=500,no marks,smooth,},
+  dashed lines/.style={dashed,blue!50,ultra thin},
+}
+
+\newcommand{\twocolumnsiderp}[2]{\begin{minipage}[c]{0.50\linewidth}\raggedright
+        #1
+        \end{minipage}\hfill\begin{minipage}[c]{0.45\linewidth}\raggedright
+        #2
+    \end{minipage}
+}
 
 
 \pagestyle{vangelis}
 % \everymath{\displaystyle}
 \setcounter{chapter}{1}
+
+\input{insbox}
 
 \begin{document}
 
@@ -23,17 +40,48 @@
   όπου $ T>0 $, ονομάζεται \textcolor{Col1}{περίοδος} της συνάρτησης.
 \end{dfn}
 
-%todo add some graphs of periodic functions
+\twocolumnsiderp{
 \begin{examples}
 \item {}
   \begin{enumerate}[i)]
     \item Η $ f(x) = \sin{x} $ είναι περιοδική με περίοδο $ T=2 \pi $.
     \item Η $ f(x) = \sin{nx} $ είναι περιοδική με περίοδο $ T= \frac{2 \pi}{n} $.
     \item Η $ f(x) = \tan{x} $ είναι περιοδική με περίοδο $ T= \pi $.
-    \item Η $ f(x) = c, \; c \in \mathbb{R} $, σταθερή συνάρτηση, είναι περιοδική με 
+    \item Η $ f(x) = c, \; c \in \mathbb{R} $, η σταθερή συνάρτηση, είναι περιοδική με 
       περίοδο οποιονδήποτε θετικό αριθμό.
   \end{enumerate}
 \end{examples}
+}{
+\twocolumnsides{
+  \centering
+  \begin{tikzpicture}[scale=0.5]
+    \begin{axis}[myaxis,
+      ymin=-2,ymax=2,
+      xmin=-7,xmax=7,
+      extra x ticks={6.28},
+      extra x tick labels={$2 \pi$},
+      domain=-2*pi:2*pi,
+      ]
+      \addplot[myplot] {sin(deg(x))} node[above right,pos=0.65]{\Large$\sin x$} ;
+    \end{axis}
+  \end{tikzpicture}
+  }{
+  \centering
+  \begin{tikzpicture}[scale=0.5]
+    \begin{axis}[myaxis,
+      ymin=-6,ymax=6,
+      xmin=-6,xmax=6,
+      extra x ticks={-1.57,1.57},
+      extra x tick labels={$-\frac{\pi}{2}$,$\frac{\pi}{2}$},
+      tick label style={font=\Large,blue!75,below left=3pt},
+      domain=-1.8*pi:1.8*pi,
+      ]
+      \addplot [myplot,dashed lines] {tan(deg(x))};
+      \addplot [myplot,restrict y to domain=-10:10] {tan(deg(x))} node
+        [right,pos=0.55,xshift=5pt] {\Large$\tan x$};
+    \end{axis}
+  \end{tikzpicture}
+}}
 
 \begin{prop}
   Αν οι συναρτήσεις $ f $ και $g$ είναι περιοδικές με περίοδο $T$, τότε και οι 
