@@ -1,0 +1,47 @@
+\input{preamble.tex}
+\input{definitions.tex}
+\input{tikz.tex}
+
+\pagestyle{vangelis}
+% \everymath{\displaystyle}
+
+%todo να γραψω τα παραδείγματα σειρές fourier
+
+\begin{document}
+
+\begin{example}
+  Να βρείτε τη σειρά Fourier της συνάρτησης $ f(t)=t $ με $ 0 \leq t < 2 \pi $.
+\end{example}
+\begin{solution}
+  Η $f$ είναι τμηματικά συνεχής στο $ [0,2 \pi] $ με σημεία ασυνέχειας τα $ 0 $ και 
+  $ 2 \pi $, και προφανώς είναι παραγωγίσιμη στο $ (0,2 \pi) $ ενώ $ f'(0^{+}) = f'(2
+  \pi ^{-}) = 1  $, άρα η $f$ είναι τμηματικά λεία. Είναι περιοδική με περίοδο 
+  $ T=2 \pi $ 
+  \[
+    a_{0} = \frac{1}{\pi} \int _{0}^{2 \pi} t\,{dt} = \frac{1}{\pi}
+    \left[\frac{t^{2}}{2}\right]_{0}^{2 \pi} = \frac{1}{\pi} \cdot \frac{4 \pi ^{2}}{2} 
+    = 2 \pi
+  \] 
+  \begin{align*}
+    a_{n} &= \frac{1}{\pi} \int _{0}^{2 \pi} t \cos{(nt)} \,{dt} = \frac{1}{\pi} 
+    \int _{0}^{2 \pi} t \left(\frac{\sin{(nt)}}{n}\right)' \,{dt} = \frac{1}{\pi}
+    \left(\left[\frac{t \sin{(nt)}}{n} \right]_{0}^{2 \pi} - \int _{0}^{2 \pi}
+    \frac{\sin{(nt)}}{n} \,{dt}\right) \\ 
+          &= \frac{1}{\pi} \left(0 - \left[- \frac{\cos{(nt)}}{n^{2}}\right]_{0}^{2 
+            \pi}\right) = \frac{1}{\pi} \left(\frac{\cos{(2 \pi n)}}{n^{2}} - 
+            \frac{1}{n^{2}}\right) = \frac{1}{\pi} \left(\frac{1}{n^{2}} - 
+          \frac{1}{n^{2}}\right) = 0
+  \end{align*} 
+  \begin{align*}
+    b_{n} &= \frac{1}{\pi} \int _{0}^{2 \pi} t \sin{(nt)} \,{dt} = \frac{1}{\pi} 
+    \int _{0}^{2 \pi } t \left(- \frac{\cos{(nt)}}{n}\right)' \,{dt} = \frac{1}{\pi}
+    \left(\left[- \frac{t \cos{(nt)}}{n} \right]_{0}^{2 \pi} + \int _{0}^{2 \pi}
+    \frac{\cos{(nt)}}{n} \,{dt}\right) \\
+          &= \frac{1}{\pi} \left(- \frac{2 \pi \cos{(2 \pi n)}}{n} + \left[
+            \frac{\sin{(nt)}}{n^{2}}\right]_{0}^{2 \pi}\right) = \frac{1}{\pi} \left(-
+          \frac{2 \pi}{n} + 0\right) = - \frac{2}{n} 
+  \end{align*}
+\end{solution}
+
+\end{document}
+

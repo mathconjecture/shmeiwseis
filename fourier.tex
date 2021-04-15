@@ -16,6 +16,12 @@
     \end{minipage}
 }
 
+\newcommand{\twocolumnsiderq}[2]{\begin{minipage}[c]{0.64\linewidth}\raggedright
+        #1
+        \end{minipage}\hfill\begin{minipage}[c]{0.31\linewidth}\raggedright
+        #2
+    \end{minipage}
+}
 
 \pagestyle{vangelis}
 % \everymath{\displaystyle}
@@ -41,46 +47,46 @@
 \end{dfn}
 
 \twocolumnsiderp{
-\begin{examples}
-\item {}
-  \begin{enumerate}[i)]
-    \item Η $ f(x) = \sin{x} $ είναι περιοδική με περίοδο $ T=2 \pi $.
-    \item Η $ f(x) = \sin{nx} $ είναι περιοδική με περίοδο $ T= \frac{2 \pi}{n} $.
-    \item Η $ f(x) = \tan{x} $ είναι περιοδική με περίοδο $ T= \pi $.
-    \item Η $ f(x) = c, \; c \in \mathbb{R} $, η σταθερή συνάρτηση, είναι περιοδική με 
-      περίοδο οποιονδήποτε θετικό αριθμό.
-  \end{enumerate}
-\end{examples}
-}{
-\twocolumnsides{
-  \centering
-  \begin{tikzpicture}[scale=0.5]
-    \begin{axis}[myaxis,
-      ymin=-2,ymax=2,
-      xmin=-7,xmax=7,
-      extra x ticks={6.28},
-      extra x tick labels={$2 \pi$},
-      domain=-2*pi:2*pi,
-      ]
-      \addplot[myplot] {sin(deg(x))} node[above right,pos=0.65]{\Large$\sin x$} ;
-    \end{axis}
-  \end{tikzpicture}
+  \begin{examples}
+  \item {}
+    \begin{enumerate}[i)]
+      \item Η $ f(x) = \sin{x} $ είναι περιοδική με περίοδο $ T=2 \pi $.
+      \item Η $ f(x) = \sin{nx} $ είναι περιοδική με περίοδο $ T= \frac{2 \pi}{n} $.
+      \item Η $ f(x) = \tan{x} $ είναι περιοδική με περίοδο $ T= \pi $.
+      \item Η $ f(x) = c, \; c \in \mathbb{R} $, η σταθερή συνάρτηση, είναι περιοδική με 
+        περίοδο οποιονδήποτε θετικό αριθμό.
+    \end{enumerate}
+  \end{examples}
   }{
-  \centering
-  \begin{tikzpicture}[scale=0.5]
-    \begin{axis}[myaxis,
-      ymin=-6,ymax=6,
-      xmin=-6,xmax=6,
-      extra x ticks={-1.57,1.57},
-      extra x tick labels={$-\frac{\pi}{2}$,$\frac{\pi}{2}$},
-      tick label style={font=\Large,blue!75,below left=3pt},
-      domain=-1.8*pi:1.8*pi,
-      ]
-      \addplot [myplot,dashed lines] {tan(deg(x))};
-      \addplot [myplot,restrict y to domain=-10:10] {tan(deg(x))} node
-        [right,pos=0.55,xshift=5pt] {\Large$\tan x$};
-    \end{axis}
-  \end{tikzpicture}
+  \twocolumnsides{
+    \centering
+    \begin{tikzpicture}[scale=0.5]
+      \begin{axis}[myaxis,
+        ymin=-2,ymax=2,
+        xmin=-7,xmax=7,
+        extra x ticks={6.28},
+        extra x tick labels={$2 \pi$},
+        domain=-2*pi:2*pi,
+        ]
+        \addplot[myplot] {sin(deg(x))} node[above right,pos=0.65]{\Large$\sin x$} ;
+      \end{axis}
+    \end{tikzpicture}
+    }{
+    \centering
+    \begin{tikzpicture}[scale=0.5]
+      \begin{axis}[myaxis,
+        ymin=-6,ymax=6,
+        xmin=-6,xmax=6,
+        extra x ticks={-1.57,1.57},
+        extra x tick labels={$-\frac{\pi}{2}$,$\frac{\pi}{2}$},
+        tick label style={font=\Large,blue!75,below left=3pt},
+        domain=-1.8*pi:1.8*pi,
+        ]
+        \addplot [myplot,dashed lines] {tan(deg(x))};
+        \addplot [myplot,restrict y to domain=-10:10] {tan(deg(x))} node
+          [right,pos=0.55,xshift=5pt] {\Large$\tan x$};
+      \end{axis}
+    \end{tikzpicture}
 }}
 
 \begin{prop}
@@ -94,17 +100,46 @@
   \end{align*}
 \end{proof}
 
+\twocolumnsiderq{
 \begin{dfn}
   Μια συνάρτηση $ f \colon [a,b] \to \mathbb{R} $ λέγεται 
   \textcolor{Col1}{τμηματικά συνεχής}, αν η  $f$ έχει πεπερασμένου πλήθους 
   σημεία ασυνέχειας, στα οποία υπάρχουν τα πλευρικά όρια και είναι πεπερασμένα.
 \end{dfn}
-
 \begin{dfn}
   Μια συνάρτηση  $ f \colon [a,b] \to \mathbb{R} $  λέγεται  
   \textcolor{Col1}{τμηματικά λεία} αν η $f$ και η $f$' είναι τμηματικά συνεχείς 
   στο $ [a,b] $.     
 \end{dfn}
+}{\begin{tikzpicture}[scale=0.50]
+  \coordinate (o) at (0,0) ;
+  \node  (0) at (1, 1)  {} ;
+  \node  (1) at (3.5, 1.5) {};
+  \node  (2) at (3.5, 2.5) {};
+  \fill (1) circle (2pt) ;
+  \node  (3) at (6, 2) {};
+  \fill (3) circle (2pt) ;
+  \node  (4) at (-1.5, 3.75) {};
+  \node  (5) at (1, 3) {};
+  \fill (5) circle (2pt) ;
+  \node  (6) at (-2, 0) {};
+  \coordinate  (7) at (7, 0) {};
+  \node  (8) at (0, -1) {};
+  \coordinate  (9) at (0, 4) {};
+  \node  at (9) [left,blue!75] {$y$} ;
+  \node  at (7) [below,blue!75] {$x$} ;
+  \node  at (3,3) [above,Col1!75] {$y=f(x)$} ;
+  \draw [in=-120, out=30, looseness=1.75,Col1!75, thick] (0.center) to (1.center);
+  \draw [in=-150, out=15, looseness=1.25,Col1!75, thick] (2.center) to (3.center);
+  \draw [in=-165, out=0, looseness=1.75,Col1!75, thick] (4.center) to (5.center);
+  \draw[-latex,blue!50] (6.center) to (7.center);
+  \draw[-latex,blue!50] (8.center) to (9.center);
+  \draw[dashed,dash expand off,blue!50] (5.center) -- (o-|5) node[below] {$x_{0}$} ;
+  \draw[dashed,dash expand off,blue!50] (2.center) -- (o-|2) node[below] {$x_{1}$} ;
+  \draw[black,fill=white] (0) circle (2pt) ;
+  \draw[black,fill=white] (2) circle (2pt) ;
+  \draw[black,fill=white] (4) circle (2pt) ;
+\end{tikzpicture}}
 
 
 \section{Περιοδική Επέκταση Συναρτήσεων}
@@ -252,7 +287,7 @@ $ 2 \pi $. Τότε υπό κατάλληλες προϋποθέσεις η $f$ 
   μιας συνάρτησης $f$ \textbf{συγκλίνει} στην $f$, απαντάται στο επόμενο θεώρημα.
 \end{rem}
 
-\section{Σειρές Fourier}
+\section{Σειρά Fourier}
 
 \begin{thm}
   Έστω $ f \colon \mathbb{R} \to \mathbb{R} $ μια \textbf{περιοδική} συνάρτηση με 
@@ -335,7 +370,6 @@ $ 2 \pi $. Τότε υπό κατάλληλες προϋποθέσεις η $f$ 
 
 \subsection*{Άρτιες - Περιττές Συναρτήσεις}
 
-%todo add some graphs
 \begin{dfn}
   Μια συνάρτηση $ f(x) $ θα λέγεται:
   \begin{alignat*}{4}
@@ -365,7 +399,6 @@ $ 2 \pi $. Τότε υπό κατάλληλες προϋποθέσεις η $f$ 
   \end{enumerate}
 \end{prop}
 
-%todo add some graphs showing the integrals relations
 \begin{rem}
   Η γραφική παράσταση μιας άρτιας συνάρτησης είναι συμμετρική ως προς τον άξονα $y$, 
   ενώ μιας περιττής συνάρτησης ως προς την αρχή των αξόνων.
@@ -373,12 +406,40 @@ $ 2 \pi $. Τότε υπό κατάλληλες προϋποθέσεις η $f$ 
 
 \begin{prop}\label{prop:artper}
 \item {}
+\InsertBoxR{1}{\parbox[b][4\baselineskip][c]{0.48\textwidth}
+  {\begin{tikzpicture}[scale=0.8]
+      \coordinate (o) at (0,0) ;
+      \node at (o) [below left,blue!50] {\small$0$} ;
+      \coordinate (a) at (-1.25,1.25*1.25) ;
+      \coordinate (b) at (1.25,1.25*1.25) ;
+      \fill[domain=-1.30:1.30,smooth,variable=\x,blue!25,very thick] (-1.3,0)
+        node[below,blue!50] {\small$-a$} -- plot ({\x},{\x*\x}) -- 
+        (1.3,0) node[below,blue!50] {\small$a$} -- cycle;
+      \draw[domain=-1.4:1.4,smooth,variable=\x,Col1,very thick] plot ({\x},{\x*\x})
+        node[right]{\small $y=x^{2}$};
+      \draw[-stealth,blue!50] (-2,0) -- (2,0) node[right] {};
+      \draw[-stealth,blue!50] (0,-2) -- (0,2) node[left] {\small$y$};
+    \end{tikzpicture} 
+    \hspace{0.2\baselineskip}
+    \begin{tikzpicture}[scale=0.8]
+      \coordinate (o) at (0,0) ;
+      \node at (o) [below left,blue!50] {\small$0$} ;
+      \coordinate (a) at (-1.2,1.2*1.2) ;
+      \coordinate (b) at (1.2,1.2*1.2) ;
+      \fill[domain=-1.20:1.20,smooth,variable=\x,blue!25,very thick] (-1.2,0) 
+        node[above,blue!50] {\small$-a$} --
+        plot ({\x},{\x*\x*\x}) -- (1.2,0) node[below,blue!50] {\small$a$} -- cycle ;
+      \draw[domain=-1.25:1.25,smooth,variable=\x,Col1,very thick] 
+        plot ({\x},{\x*\x*\x}) node[below right]{\small $y=x^{3}$};
+      \draw[-stealth,blue!50] (-2,0) -- (2,0) node[right] {};
+      \draw[-stealth,blue!50] (0,-2) -- (0,2) node[left] {\small$y$};
+\end{tikzpicture}}} 
   Αν $ f(x) $ ολοκληρώσιμη στο διάστημα $[-a,a]$ τότε ισχύουν:
 
   \begin{myitemize}
-    \item $ f(x) $ άρτια $ \Rightarrow \int _{-a}^{a} f(x) \,{dx} = 2 \int _{0}^{a} f(x)
-      \,{dx} $ 
-    \item $ f(x) $ περιττή $ \Rightarrow \int _{-a}^{a} f(x) \,{dx} = 0 $
+    \item $ f(x) $ άρτια $ \Rightarrow \displaystyle{\int _{-a}^{a} f(x) \,{dx} = 2 
+        \int _{0}^{a} f(x) \,{dx}} $ 
+    \item $ f(x) $ περιττή $ \Rightarrow \displaystyle{\int _{-a}^{a} f(x) \,{dx} = 0} $
   \end{myitemize}
 \end{prop}
 
@@ -456,3 +517,4 @@ $ f(x) \sin{\left(\frac{n \pi x}{L}\right)} $ είναι \textbf{άρτια}
 \]
 
 \end{document}
+

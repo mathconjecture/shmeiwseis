@@ -3,7 +3,7 @@
 \usepackage{tikz}
 \usetikzlibrary{calc}
 
-\usetikzlibrary{shapes,angles,calc,arrows.meta,quotes,intersections}
+\usetikzlibrary[shapes,angles,calc,arrows.meta,quotes,intersections]
 \pgfdeclarelayer{fg}
 \pgfdeclarelayer{bg}
 \pgfsetlayers{bg,main,fg}
@@ -402,8 +402,35 @@ $ ax+by+cz=d $, όπου $ d=a x_{0}+ b y_{0}+cz_{0} $.
     2(x-2)+3(y-4)+4(z-(-1)) = 0 \Leftrightarrow 2x+3y+4z=12
   \]
   Για να βρούμε τα σημεία τομής του επιπέδου με τους άξονες, έχουμε:
-  \InsertBoxR{1}{\parbox[b][3\baselineskip][c]{0.32\textwidth}
-  {\includegraphics[scale=0.65]{plane_ex}}}
+  \InsertBoxR{1}{\parbox[b][1.5\baselineskip][c]{0.33\textwidth}
+    {\begin{tikzpicture}[scale=0.8]
+    \begin{pgfonlayer}{bg}
+      \coordinate (o) at (0,0) ;
+      \node at (o) [left=5pt,yshift=2pt] {$0$} ;
+      \coordinate (z) at (0,3) ;
+      \node at (z) [left] {$z$} ;
+      \coordinate (y) at (3,0) ;
+      \node at (y) [below] {$y$} ;
+      \coordinate (x) at (-2.5,-1.3) ;
+      \node at (x) [left] {$x$} ;
+      \coordinate (a) at ($(o)!0.7!(x)$) ;
+      \coordinate (b) at ($(o)!0.6!(y)$) ;
+      \coordinate (c) at ($(o)!0.5!(z)$) ;
+      \draw[dashed] (o) to (a);
+      \draw[dashed] (o) to (b);
+      \draw[dashed] (o) to (c);
+      \fill (a) circle (1.5pt) ;
+      \fill (b) circle (1.5pt) ;
+      \fill (c) circle (1.5pt) ;
+    \end{pgfonlayer}
+    \draw[fill,blue!50,opacity=0.5] (a) to (b) to (c) to (a) ;
+    \draw[-latex] (a) to (x);
+    \draw[-latex] (b) to (y);
+    \draw[-latex] (c) to (z);
+    \node at (a) [left,yshift=3pt] {\small$(6,0,0)$} ;
+    \node at (b) [above right,xshift=-5pt] {\small$(0,4,0)$} ;
+    \node at (c) [left] {\small$(0,0,3)$} ;
+  \end{tikzpicture}}}
   \begin{myitemize}
     \item Για τον άξονα $z$, θέτουμε $ x=y=0 $ και βρίσκουμε $ z=3 $.
     \item Για τον άξονα $x$, θέτουμε $ y=z=0 $ και βρίσκουμε $ x=6 $.
@@ -412,7 +439,6 @@ $ ax+by+cz=d $, όπου $ d=a x_{0}+ b y_{0}+cz_{0} $.
   Με τη βοήθεια αυτών των σημείων, μπορούμε να σχεδιάσουμε, εύκολα, το τμήμα του 
   επιπέδου, που βρίσκεται στο 1ο ογδοημόριο, όπως φαίνεται στο σχήμα.
 \end{solution}
-
 
 \begin{example}
   Βρείτε την εξίσωση του επιπέδου, που διέρχεται από τα σημεία 
