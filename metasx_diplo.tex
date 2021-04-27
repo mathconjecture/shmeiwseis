@@ -48,11 +48,11 @@
     νέο χωρίο $ D^{*} $ στο επίπεδο $ uv $.  
   \item Χρησιμοποιούμε τον τύπο αλλαγής μεταβλητών για το διπλό ολοκλήρωμα:
     \[
-      \iint_{D} f(x,y) \,{dx}{dy} = \iint_{D^{*}} g(u,v) \abs{\pdv{(x,y)}{(u,v)}}
-      \,{du}{dv} 
+      \boxed{\iint_{D} f(x,y) \,{dx}{dy} = \iint_{D^{*}} g(u,v) \abs{\pdv{(x,y)}{(u,v)}}
+      \,{du}{dv}}
     \] 
-    όπου $ \abs{\pdv{(x,y)}{(u,v)}} $ είναι η \textbf{απόλυτη τιμή} της Ιακωβιανής 
-    ορίζουσας του μετασχηματισμού.
+    όπου $ \abs{\pdv{(x,y)}{(u,v)}} $ είναι η \textbf{απόλυτη τιμή} της
+    \textcolor{Col1}{Ιακωβιανής ορίζουσας} του μετασχηματισμού.
 \end{enumerate}
 
 \section*{Επιλογή Κατάλληλου Μετασχηματισμού}
@@ -161,8 +161,8 @@
     node[blue!75,midway,above=13pt,xshift=6pt] {$\frac{x}{a}=u \Rightarrow x=au$} 
     node[blue!75,midway,above,xshift=5pt] {$\frac{y}{b}=v \Rightarrow y=bv$} (9.center) ;
   \draw [in=150, out=30, looseness=0.75,blue!50,thin] (18.center) edge[-latex] 
-    node[blue!75,midway,above=10pt,xshift=5pt] {$u=r \cos{\theta}$} 
-    node[blue!75,midway,above,xshift=5pt] {$v=r \sin{\theta}$} (23.center);
+    node[blue!75,midway,above=14pt,xshift=5pt] {$u=r \cos{\theta}$} 
+    node[blue!75,midway,above=4pt,xshift=5pt] {$v=r \sin{\theta}$} (23.center);
   \draw [in=-120, out=-60, looseness=0.75,blue!50,thin] (n1.center) edge[-latex] 
     node[blue!75,midway,below,xshift=5pt] {$x=ar \cos{\theta}$} 
     node[blue!75,midway,below=10pt,xshift=5pt] {$y=br \sin{\theta}$} (n2.center);

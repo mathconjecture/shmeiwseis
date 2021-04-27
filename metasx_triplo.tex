@@ -1,0 +1,245 @@
+\input{preamble_ask.tex}
+\input{definitions_ask.tex}
+\input{tikz.tex}
+
+\geometry{top=2.7cm}
+
+\pgfdeclarelayer{bg}
+\pgfdeclarelayer{fg}
+\pgfsetlayers{bg,main,fg}
+
+\renewcommand{\qedsymbol}{}
+
+\pagestyle{vangelis}
+
+\newcommand{\twocolumnsidesn}[2]{\begin{minipage}[t]{0.43\linewidth}\raggedright
+        #1
+        \end{minipage}\hfill\begin{minipage}[t]{0.48\linewidth}\raggedright
+        #2
+    \end{minipage}
+}
+
+\newcommand{\threecolumnsides}[3]{\begin{minipage}[c]{0.39\linewidth}\raggedright
+        #1
+        \end{minipage}\hfill\begin{minipage}[c]{0.30\linewidth}\raggedright
+        #2
+        \end{minipage}\hfill\begin{minipage}[c]{0.30\linewidth}\raggedright
+        #3
+    \end{minipage}
+}
+
+\newcommand{\threecolumnsidess}[3]{\begin{minipage}[c]{0.30\linewidth}\raggedright
+        #1
+        \end{minipage}\hfill\begin{minipage}[c]{0.30\linewidth}\raggedright
+        #2
+        \end{minipage}\hfill\begin{minipage}[c]{0.30\linewidth}\raggedright
+        #3
+    \end{minipage}
+}
+
+\begin{document}
+
+\begin{center}
+  \minibox{\large\bfseries \textcolor{Col1}{Αλλαγή Μεταβλητών στο Τριπλό Ολοκλήρωμα}}
+\end{center}
+
+
+
+\section*{Γενική Μεθοδολογία}
+
+\begin{enumerate}
+  \item Επιλέγουμε \textbf{κατάλληλες} εξισώσεις μετασχηματισμού ανάλογα με το σχήμα του 
+    χωρίου 
+    $\Omega$. 
+    \[
+      \left.
+        \begin{matrix}
+          x=x(u,v,w) \\
+          y=y(u,v,w) \\
+          z=z(u,v,w)
+        \end{matrix} 
+      \right\} \quad \text{και} \quad J = \pdv{(x,y,z)}{(u,v,w)} = 
+      \begin{vmatrix*}[r]
+        x_{u} & x_{v} & x_{w} \\
+        y_{u} & y_{v} & y_{w} \\
+        z_{u} & z_{v} & z_{w}
+      \end{vmatrix*}
+    \] 
+  \item Μετασχηματίζουμε τη συνάρτηση $ f(x,y,z) $, θέτοντας όπου $ x=x(u,v,w) $, 
+    όπου $ y=y(u,v,w) $ και όπου $ z=z(u,v,w) $
+    \[
+      g(u,v,w) = f(x(u,v,w),y(u,v,w),z(u,v,w)) 
+    \] 
+  \item Μετασχηματίζουμε το χωρίο $\Omega$, μετασχηματίζοντας συνήθως τις 
+    \textbf{επιφάνειες} που αποτελούν το \textcolor{Col1}{σύνορο} του $\Omega$, 
+    θέτοντας όπου $ x=x(u,v,w) $, όπου $ y=y(u,v,w) $ και όπου $ z=z(u,v,w) $ και 
+    στη συνέχεια σχεδιάζουμε το νέο χωρίο $ \Omega^{*} $ στο χώρο $ uvw $.  
+  \item Χρησιμοποιούμε τον τύπο αλλαγής μεταβλητών για το τριπλό ολοκλήρωμα:
+    \[
+      \boxed{\iiint_{\Omega} f(x,y,z) \,{dx}{dy}{dz} = \iiint_{\Omega^{*}} g(u,v,w) 
+        \abs{\pdv{(x,y,z)}{(u,v,w)}}
+      \,{du}{dv}{dw}}
+    \] 
+    όπου $ \abs{\pdv{(x,y,z)}{(u,v,w)}} $ είναι η \textbf{απόλυτη τιμή} της
+    \textcolor{Col1}{Ιακωβιανής ορίζουσας} του μετασχηματισμού.
+\end{enumerate}
+
+\section*{Επιλογή Κατάλληλου Μετασχηματισμού}
+
+\begin{myitemize}[leftmargin=*]
+  \item Όταν το χωρίο $\Omega$ είναι \textbf{κύλινδρος}, ή έχει κυλινδρική συμμετρία, 
+    τότε μετασχηματίζουμε σε \textcolor{Col1}{κυλινδρικές} συντεταγμένες:
+    \[
+      \left.
+        \begin{matrix}
+          x=r \cos{\theta} \\
+          y=r \sin{\theta} \\
+          z=z
+        \end{matrix} 
+      \right\} \quad \text{και} \quad J = \pdv{(x,y,z)}{(r, \theta,z)} =  
+      \begin{vmatrix*}[r]
+        x_{r} & x_{\theta} & x_{z} \\
+        y_{r} & y_{\theta} & y_{z} \\
+        x_{z} & y_{z} & z_{z}
+      \end{vmatrix*} = 
+      \begin{vmatrix*}[r]
+        \cos{\theta} & -r \sin{\theta} & 0 \\
+        \sin{\theta} & r \cos{\theta} & 0 \\
+        0 & 0 & 1
+      \end{vmatrix*} = r 
+    \] 
+
+  \item Όταν το χωρίο $\Omega$ είναι \textbf{σφαίρα}, ή τμήμα σφαίρας, τότε
+    μετασχηματίζουμε σε \textcolor{Col1}{σφαιρικές} συντεταγμένες:
+    \[
+      \left.
+        \begin{matrix}
+          x=\rho \sin{\phi} \cos{\theta} \\
+          y=\rho \sin{\phi} \sin{\theta} \\
+          z=\rho \cos{\phi}
+        \end{matrix} 
+      \right\} \;\; \text{και} \;\; J = \pdv{(x,y,z)}{(\rho, \phi, \theta)} = 
+      \begin{vmatrix*}[r]
+        x_{\rho} & x_{\phi} & x_{\theta} \\
+        y_{\rho} & y_{\phi} & y_{\theta} \\
+        z_{\rho} & z_{\phi} & z_{\theta}
+      \end{vmatrix*} = 
+      \begin{vmatrix*}[r]
+        \sin{\phi} \cos{\theta} & \rho \cos{\phi} \cos{\theta} & -\rho \sin{\phi}
+        \sin{\theta} \\
+        \sin{\phi} \sin{\theta} & \rho \cos{\phi} \sin{\theta} & \rho \sin{\phi}
+        \cos{\theta} \\
+        \cos{\phi} & - \rho \sin{\phi} & 0
+      \end{vmatrix*} = \rho ^{2} \sin{\phi} 
+    \] 
+\end{myitemize}
+
+
+\vspace{\baselineskip}
+
+
+\twocolumnsidesn{
+  \section*{Κυλινδρικές Συντεταγμένες}
+
+  \begin{tikzpicture}[scale=0.8]
+    \coordinate (0) at (0, 20) ;
+    \node at (0) [left,xshift=-5pt,yshift=4pt] {$0$} ;
+    \coordinate (y) at (4, 20) ;
+    \node at (y) [right] {$y$} ;
+    \coordinate (z) at (0, 24) ;
+    \node at (z) [left] {$z$} ;
+    \coordinate (p) at (1.5, 22.5) ;
+    \fill (p) circle (2pt) ;
+    \node at (p) [right] {$P$} ;
+    \coordinate (p1) at (1.5, 19) ;
+    \fill (p1) circle (2pt) ;
+    \node at (p1) [below right] {$P'$} ;
+    \coordinate (x) at ($(0)+(-150:3.5)$) ;
+    \draw[name path=xaxis,-latex] (0)-- (x) node[left] {$x$} ;
+    \draw[name path=yaxis,-latex] (0.center) to (y.center);
+    \draw[dashed] (p.center) to node[pos=0.4,right] {$z$} (p1.center);
+    \coordinate (z1) at ($(p)+(150:3)$) ;
+    \coordinate (x1) at ($(p1)+(180:5)$) ;
+    \coordinate (y1) at ($(p1)+(30:3)$) ;
+    \coordinate (xp) at (intersection of p1--x1 and 0--x) ;
+    \coordinate (yp) at (intersection of p1--y1 and 0--y) ;
+    \draw[dashed] (p1) -- (xp) node [left=3pt,yshift=2pt] {$x$} ;
+    \draw[dashed] (p1) -- (yp) node [above right] {$y$};
+    \path pic[fill=Col1!25,draw,-latex,angle radius=12pt,"$\theta$"] {angle=xp--0--p1} ;
+    \draw[-latex] (0.center) to (z.center);
+    \draw (0.center) to node[pos=0.6,above] {$r$} (p1.center);
+  \end{tikzpicture}
+  \threecolumnsidess{
+    \begin{empheq}[box=\mathboxr]{gather*}
+      x= r\cos{\theta} \\
+      y= r\sin{\theta} \\
+      z= z
+    \end{empheq}
+  }
+  {\begin{empheq}[box=\mathboxg]{gather*}
+      J=r
+  \end{empheq}}
+  {\begin{empheq}[box=\mathboxg]{gather*}
+      r \geq 0 \\
+      0 \leq \theta \leq 2 \pi \\
+      J = r
+  \end{empheq}}
+  }{
+  \section*{Σφαιρικές Συντεταγμένες}
+  \begin{tikzpicture}[scale=0.8]
+    \coordinate (0) at (0, 20) ;
+    \node at (0) [left,xshift=-5pt,yshift=4pt] {$0$} ;
+    \coordinate (y) at (4, 20) ;
+    \node at (y) [right] {$y$} ;
+    \coordinate (z) at (0, 24) ;
+    \node at (z) [left] {$z$} ;
+    \coordinate (p) at (1.5, 22.5) ;
+    \fill (p) circle (2pt) ;
+    \node at (p) [right] {$P$} ;
+    \coordinate (p1) at (1.5, 19) ;
+    \fill (p1) circle (2pt) ;
+    \node at (p1) [below right] {$P'$} ;
+    \coordinate (x) at ($(0)+(-150:3.5)$) ;
+    \draw[name path=xaxis,-latex] (0)-- (x) node[left] {$x$} ;
+    \draw[name path=yaxis,-latex] (0.center) to (y.center);
+    \draw[dashed] (p.center) to node[pos=0.4,right] {$z$} (p1.center);
+    \coordinate (z1) at ($(p)+(150:3)$) ;
+    \coordinate (zp) at (intersection of p--z1 and 0--z) ;
+    \coordinate (x1) at ($(p1)+(180:5)$) ;
+    \coordinate (y1) at ($(p1)+(30:3)$) ;
+    \coordinate (xp) at (intersection of p1--x1 and 0--x) ;
+    \coordinate (yp) at (intersection of p1--y1 and 0--y) ;
+    \draw[dashed] (p1) -- (xp) node [left=3pt,yshift=2pt] {$x$} ;
+    \draw[dashed] (p1) -- (yp) node [above right] {$y$};
+    \draw[dashed] (p) -- (zp) node [left] {$z$};
+    \coordinate (r1) at ($(p)!0.85!(zp)$) ;
+    \draw (r1) -- ++(0,-8pt) -- ++(150:7.5pt) ;
+    \path pic[fill=Col1!25,draw,-latex,angle radius=12pt,"$\theta$"] {angle=xp--0--p1} ;
+    \path pic[fill=Col2!25,draw,latex-,angle radius=25pt,"$\phi$"] {angle=p--0--z} ;
+    \draw[Col1] (0.center) to node[pos=0.6,left] {$\rho$} (p.center);
+    \draw[-latex] (0.center) to (z.center);
+    \draw (0.center) to node[pos=0.6,above] {$r$} (p1.center);
+  \end{tikzpicture}
+  \threecolumnsides{
+    \begin{empheq}[box=\mathboxr]{gather*}
+      x= \rho \sin{\phi} \cos{\theta} \\
+      y= \rho \sin{\phi} \sin{\theta} \\
+      z= \rho \cos{\phi} 
+    \end{empheq}
+  }
+  {\begin{empheq}[box=\mathboxg]{gather*}
+      J=\rho^{2}\sin{\phi}
+  \end{empheq}}
+  {\begin{empheq}[box=\mathboxg]{gather*}
+      \rho \geq 0 \\
+      0 \leq \theta \leq 2 \pi \\
+      0 \leq \phi \leq \pi 
+  \end{empheq}}
+}
+
+
+
+
+\end{document}
+
+

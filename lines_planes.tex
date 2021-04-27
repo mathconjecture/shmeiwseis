@@ -82,6 +82,7 @@ $ \mathbf{u} = a \mathbf{i} + b \mathbf{j} + c \mathbf{k} $. Τότε για τ�
   (z_{0}+ t c) \mathbf{k}} \quad t \in \mathbb{R} 
 \]
 Επομένως, αν $ \mathbf{r}(t) = (x(t), y(t), z(t)) $, έχουμε:
+
 \begin{equation}\label{eq:pline}
   \boxed{
     \begin{matrix}
@@ -92,6 +93,7 @@ $ \mathbf{u} = a \mathbf{i} + b \mathbf{j} + c \mathbf{k} $. Τότε για τ�
   } 
   \quad t \in \mathbb{R} 
 \end{equation} 
+
 Η εξισώσεις~\eqref{eq:pline} λέγονται \textcolor{Col1}{παραμετρικές εξισώσεις} της 
 ευθείας $ \varepsilon $.
 
@@ -549,7 +551,48 @@ $ ax+by+cz=d $, όπου $ d=a x_{0}+ b y_{0}+cz_{0} $.
   \]
 \end{solution}
 
-\begin{rem}\label{rem:parallhla}
+
+\section*{Γωνία δύο επιπέδων}
+
+  \InsertBoxR{0}{\parbox[b][3\baselineskip][c]{0.30\textwidth}
+    {\begin{tikzpicture}[scale=0.8]
+        \node (o) at (0, 0) {};
+        \node (a) at (4, 0) {};
+        \node (b) at (6, 1) {};
+        \node (c) at (2, 1) {};
+        \node (d) at (5.5, 2.25) {} ;
+        \node (e) at (1.5, 2.25) {} ;
+        \node (v1) at (3, 0.5) {};
+        \node["$\mathbf{n_{1}}$"] (v2) at (3, 3) {};
+        \node (d1) at (3, 1.25) {};
+        \node["$\mathbf{n_{2}}$"] (d2) at (1.5, 3) {};
+        \begin{pgfonlayer}{fg}
+          \draw[-latex] (d1.center) to (v2.center);
+          \draw[-latex] (d1.center) to (d2.center);
+          \draw[fill] (d1) circle (.5pt) ;
+        \end{pgfonlayer}
+        \begin{pgfonlayer}{bg}
+          \path[fill=Col1!50] (o.center) to (a.center) to (b.center) to 
+            (intersection of b--c and a--d) to[every to={draw=red,dashed}] (c.center) -- 
+            cycle   ;
+          \draw[dashed] (v1.center) to (d1.center);
+          \coordinate (k) at ($(v1)+(.2,.2)$) ;
+          \draw (v1|-k) -- (k) -- (v1-|k) ;
+          \node[xshift=-18pt,yshift=-3pt] at (b.200) {\smaller$\Pi_{1}$} ;
+          \path pic[draw,angle radius=13pt,"$\theta$",angle eccentricity=1.5] 
+            {angle=b--a--d};
+        \end{pgfonlayer}
+        \begin{pgfonlayer}{fg}
+          \path pic[draw,angle radius=10pt,"$\theta$",angle eccentricity=1.5] 
+            {angle=v2--d1--d2};
+          \coordinate (l) at ($(d1)!0.1!(d2)$) ;
+          \draw (l) -- ++ (-.15,-.15) -- ++(.15,-.15) ;
+        \end{pgfonlayer}
+        \path[fill=blue!50,opacity=0.5] (o.center) to (a.center) to (d.center) to 
+          (e.center) -- cycle   ;
+        \node[xshift=-10pt,yshift=-5pt] at (d.210) {\smaller$\Pi_{2}$} ;
+  \end{tikzpicture}}}
+
   Δυο επίπεδα, είναι \textcolor{Col1}{παράλληλα}, αν και μόνον αν τα κάθετα διανύσματα 
   τους, είναι παράλληλα. Για παράδειγμα τα επίπεδα $ x+2y-3z=4 $ και $ 2x+4y-6z=3 $ 
   είναι παράλληλα, γιατί τα κάθετα διανύσματα $ \vec{n_{1}} = (1,2,-3) $ και 
@@ -557,9 +600,9 @@ $ ax+by+cz=d $, όπου $ d=a x_{0}+ b y_{0}+cz_{0} $.
   $ \vec{n_{2}} = 2 \vec{n_{1}} $. Αν δύο επίπεδα, δεν είναι παράλληλα, τότε τέμνονται 
   σε μία ευθεία, και η \textcolor{Col1}{γωνία} μεταξύ τους ορίζεται να είναι η 
   \textbf{οξεία} γωνία που σχηματίζουν τα κάθετα διανύσματά τους.
-\end{rem}
+
 \begin{rem}
-  Σύμφωνα με την παρατήρηση~\ref{rem:parallhla} το διάνυσμα 
+  Σύμφωνα με την παραπάνω παρατήρηση το διάνυσμα 
   $ \vec{n_{1}} \times \vec{n_{2}} $ είναι παράλληλο προς τα δύο επίπεδα, με κάθετα 
   διανύσματα τα $ \vec{n_{1}} $ και $ \vec{n_{2}} $. Επομένως, το διάνυσμα αυτό 
   θα είναι παράλληλο και προς την ευθεία, που αποτελείται από τα σημεία τομής τους.
