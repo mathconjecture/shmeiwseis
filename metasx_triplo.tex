@@ -210,7 +210,7 @@
     \coordinate (yp) at (intersection of p1--y1 and 0--y) ;
     \draw[dashed] (p1) -- (xp) node [left=3pt,yshift=2pt] {$x$} ;
     \draw[dashed] (p1) -- (yp) node [above right] {$y$};
-    \draw[dashed] (p) -- (zp) node [left] {$z$};
+    \draw[dashed] (p) -- (zp) node [left] {$z$} node[midway,above] {$r$};
     \coordinate (r1) at ($(p)!0.85!(zp)$) ;
     \draw (r1) -- ++(0,-8pt) -- ++(150:7.5pt) ;
     \path pic[fill=Col1!25,draw,-latex,angle radius=12pt,"$\theta$"] {angle=xp--0--p1} ;
@@ -227,8 +227,11 @@
     \end{empheq}
   }
   {\begin{empheq}[box=\mathboxg]{gather*}
-      J=\rho^{2}\sin{\phi}
-  \end{empheq}}
+      J=\rho^{2}\sin{\phi} 
+  \end{empheq}
+  \begin{empheq}[box=\mathboxg]{gather*}
+    r=\rho \sin(\phi)
+\end{empheq}}
   {\begin{empheq}[box=\mathboxg]{gather*}
       \rho \geq 0 \\
       0 \leq \theta \leq 2 \pi \\
