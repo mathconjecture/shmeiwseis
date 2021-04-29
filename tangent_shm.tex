@@ -1,0 +1,272 @@
+\input{preamble_ask.tex}
+\input{definitions_ask.tex}
+\input{tikz.tex}
+
+\input{insbox}
+\usepackage{wrapfig}
+
+% \geometry{top=0cm}
+
+\pagestyle{vangelis}
+\everymath{\displaystyle}
+\setcounter{chapter}{1}
+
+
+\begin{document}
+
+
+\chapter*{Εφαπτόμενο Επίπεδο, Εφαπτόμενη και Κάθετη Ευθεία}
+
+\section*{Εφαπτόμενη ευθεία}
+
+
+\begin{wrapfigure}{l}{.365\linewidth}
+  \begin{tikzpicture}[scale=.7]
+  \node (w) at (2.85, 0.5) {};
+  \node (a) at (0.85, 3.5) {};
+  \node (b) at (4.85, 3.5) {};
+  \node (c) at (-1.1, 1.25) {};
+  \node (d) at (4.85, 1.25) {};
+  \node (e) at (6.6, 2.75) {};
+  \node[above left] at (e) {$z=c$};
+  \node (f) at (0.65, 2.75) {};
+  \node (g) at (1.260, 2) {};
+  \node (h) at (4.440, 2) {};
+  \node (o) at (0, 0) {};
+  \node (x) at (-1.4, -1.5) {};
+  \node (y) at (6, 0) {};
+  \node (z) at (0, 5) {};
+  \node (gp) at (1.260, -1) {};
+  \node (hp) at (4.440, -1) {};
+  \begin{pgfonlayer}{fg}
+    \path[name path=surf,shading=ball,ball color=Col1!55,opacity=.8] (a.center) 
+      [in=180, out=-90, looseness=0.75] to 
+      (w.center) to (w.center) [in=-90, out=0, looseness=0.75] to (b.center) to 
+      [in=-45, out=165, looseness=1.25] (a.center) ;
+    % \draw [in=180, out=-90, looseness=0.75] (a.center) to (w.center);
+    % \draw [in=-90, out=0, looseness=0.75] (w.center) to (b.center);
+    \path[shading=ball,ball color=Col1!55] (b.center) to 
+      [in=-45, out=165, looseness=1.25] (a.center) to 
+      [in=90, out=90, looseness=0.75] node[midway, above] {$z=f(x,y)$} cycle;
+    % \draw (b.center) to [in=-45, out=165, looseness=1.25] (a.center)
+    %   to [in=90, out=90, looseness=0.75] cycle;
+    \draw [bend right=75, looseness=0.50,very thick] (g.center) to (h.center);
+    \draw [bend left=75, looseness=0.50,dashed,very thick] (g.center) to (h.center);
+    \draw[dashed,blue!50] (g.center) -- (gp.center) ;
+    \draw[dashed,blue!50] (h.center) -- (hp.center) ;
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{main}
+    \path[name path=plane,opacity=.8,shading=axis,shading angle=270,fill=blue!75] 
+      (c.center) to (d.center) to (e.center) to (f.center) --cycle ;
+    \draw [bend right=75, looseness=0.50,very thick] (gp.center) to 
+      node[pos=0.8,below right,yshift=5pt]{\small$f(x,y)=c$} (hp.center);
+    \draw [bend left=75, looseness=0.50,very thick] (gp.center) 
+      to (hp.center);
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{bg}
+    \draw[-latex,blue!50,thick] (o.center) to (z.center) 
+      node[left]{$z$};
+    \draw[-latex,blue!50,thick] (o.center) to (x.center) node[left] {$x$};
+    \draw[-latex,blue!50,thick,name intersections={of=surf and plane,name={x}}] 
+      (o.center) to (y.center) node[below] {$y$};
+  \end{pgfonlayer}
+\end{tikzpicture}
+\end{wrapfigure}
+
+Έστω $ f(x,y) $ διαφορίσιμη συνάρτηση, η οποία είναι σταθερή κατά μήκος της
+\textbf{επίπεδης} καμπύλης  $ \mathbf{r}(t) = x(t)\mathbf{i}+y(t)\mathbf{j} $. 
+Τότε η καμπύλη αυτή λέγεται \textcolor{Col1}{ισοσταθμική καμπύλη} της $f$ και ισχύει ότι 
+\begin{equation} 
+  \label{eq:linest}
+  f(x(t),y(t))=c 
+\end{equation}
+Δηλαδή, οι εικόνες μέσω της $f$ των σημείων μιας ισοσταθμικής καμπύλης, έχουν όλες το 
+ίδιο ύψος, γι᾽ αυτό λέγονται και \textbf{ισοϋψείς}. Ουσιαστικά οι ισοσταθμικές καμπύλες 
+αποτελούν την προβολή στο επίπεδο $ xy $ των σημείων τομής της επιφάνειας $ z=f(x,y) $ 
+και του οριζόντιου επιπέδου $ z=c $.  Παραγωγίζοντας την εξίσωση~\eqref{eq:linest} ως 
+προς $t$, έχουμε:
+\[
+  \pdv{f}{x} \dv{x}{t} + \pdv{f}{y} \dv{y}{t} = 0 \Leftrightarrow 
+  \left(\pdv{f}{x} , \pdv{f}{y} \right) \cdot 
+  \left(\dv{x}{t} , \dv{y}{t} \right) =0 \Leftrightarrow 
+  \grad f \cdot \mathbf{r'}(t) = 0
+\]
+Δηλαδή, σε \textbf{κάθε} σημείο της ισοσταθμικής καμπύλης, το διάνυσμα της κλίσης, είναι 
+κάθετο στο εφαπτόμενο διάνυσμα της καμπύλης. Άρα σε κάθε σημείο $ (x_{0}, y_{0}) $ 
+του Πεδίου Ορισμού της $f$ η κλίση $ \grad f(x_{0}, y_{0}) $ είναι κάθετη στην 
+ισοσταθμική καμπύλη που διέρχεται από το $ (x_{0}, y_{0}) $.
+
+\begin{dfn}
+  Η \textcolor{Col1}{εφαπτόμενη ευθεία}, μιας ισοσταθμικής καμπύλης
+  $ f(x,y)=c $, της διαφορίσιμης συνάρτησης $ f(x,y) $, στο σημείο 
+  $ P_{0}(x_{0}, y_{0}) $, είναι η ευθεία που διέρχεται από το σημείο 
+  $ P_{0} $ και είναι \textbf{κάθετη} στο διάνυσμα της κλίσης $ \grad f(P_{0}) $. 
+  Η εξίσωσή της, δίνεται από τον τύπο:
+  \begin{empheq}[box=\mathboxr]{equation*}
+    f_{x}(x_{0}, y_{0}) (x- x_{0}) + f_{y}(x_{0}, y_{0}) (y- y_{0}) = 0
+  \end{empheq}
+\end{dfn} 
+
+
+\section*{Εφαπτόμενο Επίπεδο}
+
+Έστω $S: f(x,y,z)=c $, μια \textcolor{Col1}{ισοσταθμική επιφάνεια}, της διαφορίσιμης 
+συνάρτησης $ f(x,y,z) $ και $ P_{0}(x_{0}, y_{0}, z_{0}) $ ένα σημείο πάνω στην $S$.  
+Έστω $ \mathbf{r}(t) = x(t)\mathbf{i}+y(t)\mathbf{j}+z(t)\mathbf{k} $ τυχαία, 
+καμπύλη \textbf{πάνω} στην $S$, η οποία διέρχεται από το σημείο $ P_{0} $, για 
+$ t=t_{0} $.  
+Τότε, για κάθε σημείο της καμπύλης $ \mathbf{r}(t) $, αφού αυτή βρίσκεται πάνω στην 
+επιφάνεια $S$, ισχύει  
+\begin{equation} \label{eq:surst}
+  f(x(t),y(t),z(t)) = c 
+\end{equation}
+και παραγωγίζοντας την εξίσωση~\eqref{eq:surst} ως προς $t$, έχουμε:
+\[
+  \pdv{f}{x} \dv{x}{t} + \pdv{f}{y} \dv{y}{t} + \pdv{f}{z} \dv{z}{t} = 0 \Leftrightarrow 
+  \left(\pdv{f}{x} , \pdv{f}{y} , \pdv{f}{z}\right) \cdot 
+  \left(\dv{x}{t} , \dv{y}{t} , \dv{z}{t}\right) =0 \Leftrightarrow 
+  \grad f \cdot \mathbf{r'}(t) = 0
+\] 
+
+Δηλαδή, σε \textbf{κάθε} σημείο της καμπύλης, το διάνυσμα της κλίσης, είναι κάθετο στο 
+εφαπτόμενο διάνυσμα της καμπύλης. Επομένως, και στο σημείο $ P_{0} $, θα ισχύει 
+$ \grad f(P_{0}) \cdot \mathbf{r'}(t_{0}) = 0 $, και επειδή η καμπύλη $ \mathbf{r}(t) $
+είναι τυχαία, προκύπτει ότι το διάνυσμα $ \grad f(P_{0}) $, της κλίσης στο σημείο 
+$ P_{0} $, είναι κάθετο σε όλα τα εφαπτόμενα διανύσματα 
+$ \mathbf{r'}(t_{0}) $, \textbf{όλων} των καμπυλών πάνω στην $S$ που διέρχονται από το 
+$ P_{0} $. Άρα οι εφαπτόμενες ευθείες στο σημείο $ P_{0} $ όλων των καμπυλών πάνω στην 
+$S$, περιέχονται στο επίπεδο που διέρχεται από το $ P_{0} $ και είναι κάθετο στο 
+$ \grad f(P_{0}) $. 
+
+\begin{dfn}
+\item 
+  \InsertBoxR{0}{\parbox[b][4\baselineskip][c]{0.32\textwidth}
+    {\begin{tikzpicture}[scale=0.62]
+        \begin{scope}[yshift=-20pt]
+          \node (a) at (-1.25, 0.75) {};
+          \node (b) at (3.5, 1.5) {};
+          \node (c) at (5.5, 3.25) {};
+          \node (g) at (-0.25, 4.25) {};
+          \node (d) at (-1.75, 1.75) {};
+          \node (f) at (5, 5.5) {};
+          \node (e) at (3.5, 3) {};
+          \begin{pgfonlayer}{main}
+            \path[shading=ball,shading angle=90,ball color=Col1!85,opacity=.8] 
+              (c.center)[out=135, in=75, looseness=1.25] to 
+              (a.center)[out=60, in=135, looseness=0.75] to node[pos=0.65,below=5pt]
+              {\small$f(x,y,z)=c$} (b.center) to [in=135, out=90] (c.center) ;
+          \end{pgfonlayer}
+          % \draw [in=135, out=90] (b.center) to (c.center);
+          % \draw [out=60, in=135, looseness=0.75] (a.center) to (b.center);
+          % \draw [out=135, in=75, looseness=1.25] (c.center) to (a.center);
+          \begin{pgfonlayer}{fg}
+            \path[shading=axis,fill=blue!55,opacity=.5] (d.center) to (e.center) to 
+              (f.center) to (g.center) --cycle;
+            \coordinate (p) at (1.5, 3.5) ;
+            \coordinate (p1) at (0.6, 5.0) ;
+            \fill (p) node[right] {\small$P_{0}$} circle (1.5pt) ;
+            \draw[-latex,thick] (p) -- (p1) node[right] {\small$\grad f$} ;
+          \coordinate (l) at ($(p)!0.15!(p1)$) ;
+          \draw (l) -- ++ (-.19,-.14) -- ++(.14,-.21) {} ;
+          \end{pgfonlayer}
+        \end{scope}
+    \begin{pgfonlayer}{bg}
+      \node (o) at (0, 0) {};
+      \node (x) at (-2.0, -1.25) {};
+      \node (y) at (5, 0) {};
+      \node (z) at (0, 5) {};
+      \draw[-latex,blue!50,thick] (o.center) to (z.center) node[left]{$z$};
+      \draw[-latex,blue!50,thick] (o.center) to (x.center) node[left]{$x$};
+      \draw[-latex,blue!50,thick] (o.center) to (y.center) node[below]{$y$};
+    \end{pgfonlayer}
+\end{tikzpicture}}}
+
+  Το \textcolor{Col1}{εφαπτόμενο επίπεδο}, μιας ισοσταθμικής επιφάνειας 
+  $ f(x,y,z)=c $, της διαφορίσιμης συνάρτησης $ f(x,y,z) $, στο σημείο 
+  $ P_{0}(x_{0}, y_{0}, z_{0}) $, είναι το επίπεδο που διέρχεται από το σημείο 
+  $ P_{0} $ και είναι \textbf{κάθετο} στο διάνυσμα της κλίσης $ \grad f(P_{0}) $. 
+  Η εξίσωσή του, δίνεται από τον τύπο:
+  \begin{empheq}[box=\mathboxr]{equation*}
+    \label{eq:tan}
+    \!f_{x}(x_{0}, y_{0}, z_{0}) (x- x_{0}) +\! f_{y}(x_{0}, y_{0}, z_{0}) (y- y_{0}) 
+    +\! f_{z}(x_{0}, y_{0}, z_{0}) (z- z_{0}) \!= 0
+  \end{empheq}
+\end{dfn}
+
+\begin{rem}
+  Αν $ S: z=f(x,y) $ τότε θέτουμε $ g(x,y,z) =  f(x,y) - z = 0 $ και έχουμε ότι $ z_{0}=
+  f(x_{0}, y_{0}) $ και 
+  \begin{align*}
+    g_{x}(x_{0}, y_{0}, z_{0}) = f_{x}(x_{0}, y_{0}) \\
+    g_{y}(x_{0}, y_{0}, z_{0}) = f_{y}(x_{0}, y_{0}) \\
+    g_{z}(x_{0}, y_{0}, z_{0}) = -1
+  \end{align*} 
+  οπότε  σε αυτήν την περίπτωση, η εξίσωση του εφαπτόμενου επιπέδου γίνεται
+  \begin{empheq}[box=\mathboxg]{equation*}
+    f_{x}(x_{0}, y_{0}) (x- x_{0}) + f_{y}(x_{0}, y_{0}) (y- y_{0}) 
+    - (z- z_{0}) = 0
+  \end{empheq}
+\end{rem}
+
+\section*{Κάθετη Ευθεία}
+
+\begin{dfn} Η \textcolor{Col1}{κάθετη ευθεία}, μιας ισοσταθμικής επιφάνειας 
+  $ f(x,y,z)=c  $, της διαφορίσιμης συνάρτησης $ f(x,y,z) $, στο σημείο 
+  $ P_{0}(x_{0}, y_{0}, z_{0}) $ είναι η ευθεία που διέρχεται από το σημείο 
+  $ P_{0} $ και είναι κάθετη στο εφαπτόμενο επίπεδο, και άρα είναι \textbf{παράλληλη} 
+  στο διάνυσμα της κλίσης $ \grad f(P_{0}) $. Η εξίσωσή της, δίνεται από τον τύπο:
+  \begin{empheq}[box=\mathboxr]{equation}
+    \label{eq:kath}
+    \mathbf{r}(t) = (x_{0}, y_{0}, z_{0}) + t \grad f(x_{0}, y_{0}, z_{0})
+  \end{empheq} 
+\end{dfn}
+Η εξίσωση~\eqref{eq:kath}, ισοδύναμα, γράφεται:
+\begin{equation}
+  \label{eq:kath2}
+  \tcbhighmath{
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{l}
+      $x= x_{0}+ f_{x}(x_{0}, y_{0}, z_{0})t$ \\
+      $y= y_{0}+ f_{y}(x_{0}, y_{0}, z_{0})t$ \\
+      $z= z_{0}+ f_{z}(x_{0}, y_{0}, z_{0})t$
+    \end{tabular}
+  }
+  \quad \Leftrightarrow \quad
+  \tcbhighmath{
+    \frac{x- x_{0}}{f_{x}(x_{0}, y_{0}, z_{0})} = 
+    \frac{y- y_{0}}{f_{y}(x_{0}, y_{0}, z_{0})} = 
+    \frac{z- z_{0}}{f_{z}(x_{0}, y_{0}, z_{0})}
+  }
+\end{equation}
+
+
+\tcbset{highlight math style={nobeforeafter, math upper,size=small, 
+enhanced, sharp corners, colback=Col2!20, colframe=Col2!50}}
+
+\begin{rem}
+  Αν $ S: z=f(x,y) $ τότε θέτοντας $ g(x,y,z) =  f(x,y) - z = 0 $ όπως και προηγουμένως,
+  έχουμε ότι $ z_{0}=f(x_{0}, y_{0}) $, και άρα οι εξισώσεις~\eqref{eq:kath2}, της
+  κάθετης ευθείας, γίνονται: 
+  \begin{equation*} 
+    \tcbhighmath{
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{l}
+        $x= x_{0}+ f_{x}(x_{0}, y_{0})t$ \\
+        $y= y_{0}+ f_{y}(x_{0}, y_{0})t$ \\
+        $z= z_{0} - t$
+      \end{tabular}
+    }
+    \quad \Leftrightarrow \quad
+    \tcbhighmath{
+      \frac{x- x_{0}}{f_{x}(x_{0}, y_{0})} = 
+      \frac{y- y_{0}}{f_{y}(x_{0}, y_{0})} = 
+      \frac{z- z_{0}}{-1}  
+    }
+  \end{equation*}
+\end{rem}
+
+
+
+
+\end{document}
+
