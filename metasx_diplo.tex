@@ -151,11 +151,12 @@
   \coordinate (n1) at (3, -0.5) ;
   \coordinate (n2) at (13, -0.5) ;
   %shapes and fillings
-  \fill[blue!25,opacity=0.5] (o3) rectangle (th-|r) ;
+  \draw[shading=axis,top color=blue!15,bottom color=blue!75,shading angle=75,opacity=0.5] (o3) rectangle (th-|r) ;
   \draw[Col1,very thick] (o3) rectangle (th-|r) ;
-  \fill[blue!25,opacity=0.5] (o1) ellipse (2 and 1);
+  \draw[shading=axis,top color=blue!15,bottom color=blue!75,shading angle=90,opacity=0.5] 
+    (o1) ellipse (2 and 1);
   \draw[Col1,very thick] (o1) ellipse (2 and 1);
-  \fill[blue!25,opacity=0.5] (o2) circle (1);
+  \draw[shading=axis,top color=blue!15,bottom color=blue!75,shading angle=75,opacity=0.5] (o2) circle (1);
   \draw[Col1,very thick] (o2) circle (1);
   \draw [in=150, out=30, looseness=0.75,blue!50,thin] (8.center) edge[-latex] 
     node[blue!75,midway,above=13pt,xshift=6pt] {$\frac{x}{a}=u \Rightarrow x=au$} 

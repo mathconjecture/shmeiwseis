@@ -314,60 +314,62 @@ $ \mathbf{u}/ \norm{\mathbf{u}} $.
 
 \begin{wrapfigure}{l}{0.34\linewidth}
   \begin{tikzpicture}[scale=0.7]
-  %axes
-  \coordinate  (0) at (0, 0) [label=left:$O$] {};
-  \node  (x) at (-2, -1)[label={[left]:$x$}] {};
-  \node  (y) at (4, 0) [label={[below right]:$y$}]{};
-  \node  (z) at (0, 4) [label={[below left]:$z$}] {};
-  \begin{pgfonlayer}{bg}
-    \path[name path=z,-latex] (0.center) to (z.center);
-    \path[name path=y,-latex] (0.center) to (y.center);
-    \draw[-latex] (0.center) to (x.center);
-  \end{pgfonlayer}
-  \coordinate  (c) at (2.25, 3.75) {};
-  \coordinate  (b) at (5.75, 1.75) {};
-  \coordinate  (d) at (-1.25, 1.5) {};
-  \coordinate  (a) at (2.25, -0.5) {};
-  \coordinate  (po) at (3, 1) {};
-  \coordinate  (p) at (1.75, 1.80) {};
-  \begin{pgfonlayer}{fg}
-  \end{pgfonlayer}
-  \node[above right,xshift=3pt] (PO) at (po) {\smaller$P_{0}$};
-  \node[above] (P) at (p) {\smaller$P(x,y,z)$};
-  \begin{pgfonlayer}{fg}
-    \draw[ultra thick,-latex,Col2] (po.center) to (p.center);
-    \draw[ultra thick,-latex,Col1] (po.center) to (4,3.5) node[right] (n) {$\mathbf{n}$};
-    \draw[fill] (p) circle (1.5pt);
-    \draw[fill] (po) circle (1.5pt);
-  \end{pgfonlayer}
-  \begin{pgfonlayer}{bg}
-    \path[name path=p] (0.center) to node[above left] {$\mathbf{r}$} (p.center);
-    \path[name path=po] (0.center) to node[below right] {$\mathbf{r_{0}}$} (po.center);
-  \end{pgfonlayer}
-  %make the right angle
-  \coordinate (an1) at ($(po)!7pt!(n)$) ;
-  \coordinate (an2) at ($(po)!7pt!(p)$) ;
-  \draw (an1) -- ($(an1)+(-0.10,0.3,0.35)$) -- (an2); 
-  \draw[name path=plane,fill,blue!50,opacity=0.4] (a) -- (b) -- (c) -- (d) -- (a) ;
-  \coordinate [name intersections={of=p and plane, by=1}];
-  \coordinate [name intersections={of=po and plane, by=2}];
-  \coordinate [name intersections={of=z and plane, by={z2,z1}}];
-  \coordinate [name intersections={of=y and plane, by={y2,y1}}];
-  \begin{pgfonlayer}{bg}
-    \draw (0) -- (z1) ;
-    \draw[dashed] (z1) -- (z2) ;
-    \draw[-latex] (z2) -- (z) ;
-    \draw (0) -- (y1) ;
-    \draw[dashed] (y1) -- (y2) ;
-    \draw[-latex] (y2) -- (y) ;
-    \draw (0) to (1);
-    \draw (0) to (2);
-  \end{pgfonlayer}
-  \begin{pgfonlayer}{bg}
-    \draw[dashed,-latex] (1) to (p);
-    \draw[dashed,-latex] (2) to (po);
-  \end{pgfonlayer}
-\end{tikzpicture}
+    %axes
+    \coordinate  (0) at (0, 0) [label=left:$O$] {};
+    \node  (x) at (-2, -1)[label={[left]:$x$}] {};
+    \node  (y) at (4, 0) [label={[below right]:$y$}]{};
+    \node  (z) at (0, 4) [label={[below left]:$z$}] {};
+    \begin{pgfonlayer}{bg}
+      \path[name path=z,-latex] (0.center) to (z.center);
+      \path[name path=y,-latex] (0.center) to (y.center);
+      \draw[-latex] (0.center) to (x.center);
+    \end{pgfonlayer}
+    \coordinate  (c) at (2.25, 3.75) {};
+    \coordinate  (b) at (5.75, 1.75) {};
+    \coordinate  (d) at (-1.25, 1.5) {};
+    \coordinate  (a) at (2.25, -0.5) {};
+    \coordinate  (po) at (3, 1) {};
+    \coordinate  (p) at (1.75, 1.80) {};
+    \begin{pgfonlayer}{fg}
+    \end{pgfonlayer}
+    \node[above right,xshift=3pt] (PO) at (po) {\smaller$P_{0}$};
+    \node[above] (P) at (p) {\smaller$P(x,y,z)$};
+    \begin{pgfonlayer}{fg}
+      \draw[ultra thick,-latex,Col2] (po.center) to (p.center);
+      \draw[ultra thick,-latex,Col1] (po.center) to (4,3.5) node[right] (n) 
+        {$\mathbf{n}$};
+      \draw[fill] (p) circle (1.5pt);
+      \draw[fill] (po) circle (1.5pt);
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{bg}
+      \path[name path=p] (0.center) to node[above left] {$\mathbf{r}$} (p.center);
+      \path[name path=po] (0.center) to node[below right] {$\mathbf{r_{0}}$} (po.center);
+    \end{pgfonlayer}
+    %make the right angle
+    \coordinate (an1) at ($(po)!7pt!(n)$) ;
+    \coordinate (an2) at ($(po)!7pt!(p)$) ;
+    \draw (an1) -- ($(an1)+(-0.10,0.3,0.35)$) -- (an2); 
+    \draw[name path=plane,shading=ball,ball color=blue!75,opacity=0.4] (a) -- (b) -- 
+      (c) -- (d) -- (a) ;
+    \coordinate [name intersections={of=p and plane, by=1}];
+    \coordinate [name intersections={of=po and plane, by=2}];
+    \coordinate [name intersections={of=z and plane, by={z2,z1}}];
+    \coordinate [name intersections={of=y and plane, by={y2,y1}}];
+    \begin{pgfonlayer}{bg}
+      \draw (0) -- (z1) ;
+      \draw[dashed] (z1) -- (z2) ;
+      \draw[-latex] (z2) -- (z) ;
+      \draw (0) -- (y1) ;
+      \draw[dashed] (y1) -- (y2) ;
+      \draw[-latex] (y2) -- (y) ;
+      \draw (0) to (1);
+      \draw (0) to (2);
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{bg}
+      \draw[dashed,-latex] (1) to (p);
+      \draw[dashed,-latex] (2) to (po);
+    \end{pgfonlayer}
+  \end{tikzpicture}
 \end{wrapfigure}
 Έστω $ \Pi $ επίπεδο του χώρου που διέρχεται από το σημείο 
 $ P_{0}(x_{0}, y_{0}, z_{0}) $ 
@@ -406,32 +408,32 @@ $ ax+by+cz=d $, όπου $ d=a x_{0}+ b y_{0}+cz_{0} $.
   Για να βρούμε τα σημεία τομής του επιπέδου με τους άξονες, έχουμε:
   \InsertBoxR{1}{\parbox[b][1.5\baselineskip][c]{0.33\textwidth}
     {\begin{tikzpicture}[scale=0.8]
-    \begin{pgfonlayer}{bg}
-      \coordinate (o) at (0,0) ;
-      \node at (o) [left=5pt,yshift=2pt] {$0$} ;
-      \coordinate (z) at (0,3) ;
-      \node at (z) [left] {$z$} ;
-      \coordinate (y) at (3,0) ;
-      \node at (y) [below] {$y$} ;
-      \coordinate (x) at (-2.5,-1.3) ;
-      \node at (x) [left] {$x$} ;
-      \coordinate (a) at ($(o)!0.7!(x)$) ;
-      \coordinate (b) at ($(o)!0.6!(y)$) ;
-      \coordinate (c) at ($(o)!0.5!(z)$) ;
-      \draw[dashed] (o) to (a);
-      \draw[dashed] (o) to (b);
-      \draw[dashed] (o) to (c);
-      \fill (a) circle (1.5pt) ;
-      \fill (b) circle (1.5pt) ;
-      \fill (c) circle (1.5pt) ;
-    \end{pgfonlayer}
-    \draw[fill,blue!50,opacity=0.5] (a) to (b) to (c) to (a) ;
-    \draw[-latex] (a) to (x);
-    \draw[-latex] (b) to (y);
-    \draw[-latex] (c) to (z);
-    \node at (a) [left,yshift=3pt] {\small$(6,0,0)$} ;
-    \node at (b) [above right,xshift=-5pt] {\small$(0,4,0)$} ;
-    \node at (c) [left] {\small$(0,0,3)$} ;
+        \begin{pgfonlayer}{bg}
+          \coordinate (o) at (0,0) ;
+          \node at (o) [left=5pt,yshift=2pt] {$0$} ;
+          \coordinate (z) at (0,3) ;
+          \node at (z) [left] {$z$} ;
+          \coordinate (y) at (3,0) ;
+          \node at (y) [below] {$y$} ;
+          \coordinate (x) at (-2.5,-1.3) ;
+          \node at (x) [left] {$x$} ;
+          \coordinate (a) at ($(o)!0.7!(x)$) ;
+          \coordinate (b) at ($(o)!0.6!(y)$) ;
+          \coordinate (c) at ($(o)!0.5!(z)$) ;
+          \draw[dashed] (o) to (a);
+          \draw[dashed] (o) to (b);
+          \draw[dashed] (o) to (c);
+          \fill (a) circle (1.5pt) ;
+          \fill (b) circle (1.5pt) ;
+          \fill (c) circle (1.5pt) ;
+        \end{pgfonlayer}
+        \draw[shading=ball,ball color=blue!75,opacity=0.5] (a) to (b) to (c) to (a) ;
+        \draw[-latex] (a) to (x);
+        \draw[-latex] (b) to (y);
+        \draw[-latex] (c) to (z);
+        \node at (a) [left,yshift=3pt] {\small$(6,0,0)$} ;
+        \node at (b) [above right,xshift=-5pt] {\small$(0,4,0)$} ;
+        \node at (c) [left] {\small$(0,0,3)$} ;
   \end{tikzpicture}}}
   \begin{myitemize}
     \item Για τον άξονα $z$, θέτουμε $ x=y=0 $ και βρίσκουμε $ z=3 $.
@@ -554,52 +556,52 @@ $ ax+by+cz=d $, όπου $ d=a x_{0}+ b y_{0}+cz_{0} $.
 
 \section*{Γωνία δύο επιπέδων}
 
-  \InsertBoxR{0}{\parbox[b][3\baselineskip][c]{0.30\textwidth}
-    {\begin{tikzpicture}[scale=0.8]
-        \node (o) at (0, 0) {};
-        \node (a) at (4, 0) {};
-        \node (b) at (6, 1) {};
-        \node (c) at (2, 1) {};
-        \node (d) at (5.5, 2.25) {} ;
-        \node (e) at (1.5, 2.25) {} ;
-        \node (v1) at (3, 0.5) {};
-        \node["$\mathbf{n_{1}}$"] (v2) at (3, 3) {};
-        \node (d1) at (3, 1.25) {};
-        \node["$\mathbf{n_{2}}$"] (d2) at (1.5, 3) {};
-        \begin{pgfonlayer}{fg}
-          \draw[-latex] (d1.center) to (v2.center);
-          \draw[-latex] (d1.center) to (d2.center);
-          \draw[fill] (d1) circle (.5pt) ;
-        \end{pgfonlayer}
-        \begin{pgfonlayer}{bg}
-          \path[fill=Col1!50] (o.center) to (a.center) to (b.center) to 
-            (intersection of b--c and a--d) to[every to={draw=red,dashed}] (c.center) -- 
-            cycle   ;
-          \draw[dashed] (v1.center) to (d1.center);
-          \coordinate (k) at ($(v1)+(.2,.2)$) ;
-          \draw (v1|-k) -- (k) -- (v1-|k) ;
-          \node[xshift=-18pt,yshift=-3pt] at (b.200) {\smaller$\Pi_{1}$} ;
-          \path pic[draw,angle radius=13pt,"$\theta$",angle eccentricity=1.5] 
-            {angle=b--a--d};
-        \end{pgfonlayer}
-        \begin{pgfonlayer}{fg}
-          \path pic[draw,angle radius=10pt,"$\theta$",angle eccentricity=1.5] 
-            {angle=v2--d1--d2};
-          \coordinate (l) at ($(d1)!0.1!(d2)$) ;
-          \draw (l) -- ++ (-.15,-.15) -- ++(.15,-.15) ;
-        \end{pgfonlayer}
-        \path[fill=blue!50,opacity=0.5] (o.center) to (a.center) to (d.center) to 
-          (e.center) -- cycle   ;
-        \node[xshift=-10pt,yshift=-5pt] at (d.210) {\smaller$\Pi_{2}$} ;
-  \end{tikzpicture}}}
+\InsertBoxR{0}{\parbox[b][3\baselineskip][c]{0.30\textwidth}
+  {\begin{tikzpicture}[scale=0.8]
+      \node (o) at (0, 0) {};
+      \node (a) at (4, 0) {};
+      \node (b) at (6, 1) {};
+      \node (c) at (2, 1) {};
+      \node (d) at (5.5, 2.25) {} ;
+      \node (e) at (1.5, 2.25) {} ;
+      \node (v1) at (3, 0.5) {};
+      \node["$\mathbf{n_{1}}$"] (v2) at (3, 3) {};
+      \node (d1) at (3, 1.25) {};
+      \node["$\mathbf{n_{2}}$"] (d2) at (1.5, 3) {};
+      \begin{pgfonlayer}{fg}
+        \draw[-latex] (d1.center) to (v2.center);
+        \draw[-latex] (d1.center) to (d2.center);
+        \draw[fill] (d1) circle (.5pt) ;
+      \end{pgfonlayer}
+      \begin{pgfonlayer}{bg}
+        \path[shading=ball,ball color=Col1,opacity=0.4] (o.center) to (a.center) to 
+          (b.center) to (intersection of b--c and a--d) to[every to={draw=red,dashed}] 
+          (c.center) -- cycle   ;
+        \draw[dashed] (v1.center) to (d1.center);
+        \coordinate (k) at ($(v1)+(.2,.2)$) ;
+        \draw (v1|-k) -- (k) -- (v1-|k) ;
+        \node[xshift=-18pt,yshift=-3pt] at (b.200) {\smaller$\Pi_{1}$} ;
+        \path pic[draw,angle radius=13pt,"$\theta$",angle eccentricity=1.5] 
+          {angle=b--a--d};
+      \end{pgfonlayer}
+      \begin{pgfonlayer}{fg}
+        \path pic[draw,angle radius=10pt,"$\theta$",angle eccentricity=1.5] 
+          {angle=v2--d1--d2};
+        \coordinate (l) at ($(d1)!0.1!(d2)$) ;
+        \draw (l) -- ++ (-.15,-.15) -- ++(.15,-.15) ;
+      \end{pgfonlayer}
+      \path[shading=ball,ball color=blue!75,opacity=0.5] (o.center) to (a.center) to 
+        (d.center) to (e.center) -- cycle   ;
+      \node[xshift=-10pt,yshift=-5pt] at (d.210) {\smaller$\Pi_{2}$} ;
+\end{tikzpicture}}}
 
-  Δυο επίπεδα, είναι \textcolor{Col1}{παράλληλα}, αν και μόνον αν τα κάθετα διανύσματα 
-  τους, είναι παράλληλα. Για παράδειγμα τα επίπεδα $ x+2y-3z=4 $ και $ 2x+4y-6z=3 $ 
-  είναι παράλληλα, γιατί τα κάθετα διανύσματα $ \vec{n_{1}} = (1,2,-3) $ και 
-  $ \vec{n_{2}} = (2,4,-6) $ είναι επίσης παράλληλα, αφού 
-  $ \vec{n_{2}} = 2 \vec{n_{1}} $. Αν δύο επίπεδα, δεν είναι παράλληλα, τότε τέμνονται 
-  σε μία ευθεία, και η \textcolor{Col1}{γωνία} μεταξύ τους ορίζεται να είναι η 
-  \textbf{οξεία} γωνία που σχηματίζουν τα κάθετα διανύσματά τους.
+Δυο επίπεδα, είναι \textcolor{Col1}{παράλληλα}, αν και μόνον αν τα κάθετα διανύσματα 
+τους, είναι παράλληλα. Για παράδειγμα τα επίπεδα $ x+2y-3z=4 $ και $ 2x+4y-6z=3 $ 
+είναι παράλληλα, γιατί τα κάθετα διανύσματα $ \vec{n_{1}} = (1,2,-3) $ και 
+$ \vec{n_{2}} = (2,4,-6) $ είναι επίσης παράλληλα, αφού 
+$ \vec{n_{2}} = 2 \vec{n_{1}} $. Αν δύο επίπεδα, δεν είναι παράλληλα, τότε τέμνονται 
+σε μία ευθεία, και η \textcolor{Col1}{γωνία} μεταξύ τους ορίζεται να είναι η 
+\textbf{οξεία} γωνία που σχηματίζουν τα κάθετα διανύσματά τους.
 
 \begin{rem}
   Σύμφωνα με την παραπάνω παρατήρηση το διάνυσμα 
