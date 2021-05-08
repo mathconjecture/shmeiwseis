@@ -427,7 +427,7 @@ $ 2 \pi $. Τότε υπό κατάλληλες προϋποθέσεις η $f$ 
       \coordinate (a) at (-1.2,1.2*1.2) ;
       \coordinate (b) at (1.2,1.2*1.2) ;
       \fill[domain=-1.20:1.20,smooth,variable=\x,blue!25,very thick] (-1.2,0) 
-        node[above,blue!50] {\small$-a$} --
+        node[below left,blue!50] {\small$-a$} --
         plot ({\x},{\x*\x*\x}) -- (1.2,0) node[below,blue!50] {\small$a$} -- cycle ;
       \draw[domain=-1.25:1.25,smooth,variable=\x,Col1,very thick] 
         plot ({\x},{\x*\x*\x}) node[below right]{\small $y=x^{3}$};

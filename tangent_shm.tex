@@ -22,55 +22,55 @@
 
 \begin{wrapfigure}{l}{.365\linewidth}
   \begin{tikzpicture}[scale=.7]
-  \node (w) at (2.85, 0.5) {};
-  \node (a) at (0.85, 3.5) {};
-  \node (b) at (4.85, 3.5) {};
-  \node (c) at (-1.1, 1.25) {};
-  \node (d) at (4.85, 1.25) {};
-  \node (e) at (6.6, 2.75) {};
-  \node[above left] at (e) {$z=c$};
-  \node (f) at (0.65, 2.75) {};
-  \node (g) at (1.260, 2) {};
-  \node (h) at (4.440, 2) {};
-  \node (o) at (0, 0) {};
-  \node (x) at (-1.4, -1.5) {};
-  \node (y) at (6, 0) {};
-  \node (z) at (0, 5) {};
-  \node (gp) at (1.260, -1) {};
-  \node (hp) at (4.440, -1) {};
-  \begin{pgfonlayer}{fg}
-    \path[name path=surf,shading=ball,ball color=Col1!55,opacity=.8] (a.center) 
-      [in=180, out=-90, looseness=0.75] to 
-      (w.center) to (w.center) [in=-90, out=0, looseness=0.75] to (b.center) to 
-      [in=-45, out=165, looseness=1.25] (a.center) ;
-    % \draw [in=180, out=-90, looseness=0.75] (a.center) to (w.center);
-    % \draw [in=-90, out=0, looseness=0.75] (w.center) to (b.center);
-    \path[shading=ball,ball color=Col1!55] (b.center) to 
-      [in=-45, out=165, looseness=1.25] (a.center) to 
-      [in=90, out=90, looseness=0.75] node[midway, above] {$z=f(x,y)$} cycle;
-    % \draw (b.center) to [in=-45, out=165, looseness=1.25] (a.center)
-    %   to [in=90, out=90, looseness=0.75] cycle;
-    \draw [bend right=75, looseness=0.50,very thick] (g.center) to (h.center);
-    \draw [bend left=75, looseness=0.50,dashed,very thick] (g.center) to (h.center);
-    \draw[dashed,blue!50] (g.center) -- (gp.center) ;
-    \draw[dashed,blue!50] (h.center) -- (hp.center) ;
-  \end{pgfonlayer}
-  \begin{pgfonlayer}{main}
-    \path[name path=plane,opacity=.8,shading=axis,shading angle=270,fill=blue!75] 
-      (c.center) to (d.center) to (e.center) to (f.center) --cycle ;
-    \draw [bend right=75, looseness=0.50,very thick] (gp.center) to 
-      node[pos=0.8,below right,yshift=5pt]{\small$f(x,y)=c$} (hp.center);
-    \draw [bend left=75, looseness=0.50,very thick] (gp.center) 
-      to (hp.center);
-  \end{pgfonlayer}
-  \begin{pgfonlayer}{bg}
-    \draw[-latex,blue!50,thick] (o.center) to (z.center) 
-      node[left]{$z$};
-    \draw[-latex,blue!50,thick] (o.center) to (x.center) node[left] {$x$};
-    \draw[-latex,blue!50,thick,name intersections={of=surf and plane,name={x}}] 
-      (o.center) to (y.center) node[below] {$y$};
-  \end{pgfonlayer}
-\end{tikzpicture}
+    \node (w) at (2.85, 0.5) {};
+    \node (a) at (0.85, 3.5) {};
+    \node (b) at (4.85, 3.5) {};
+    \node (c) at (-1.1, 1.25) {};
+    \node (d) at (4.85, 1.25) {};
+    \node (e) at (6.6, 2.75) {};
+    \node[above left] at (e) {$z=c$};
+    \node (f) at (0.65, 2.75) {};
+    \node (g) at (1.260, 2) {};
+    \node (h) at (4.440, 2) {};
+    \node (o) at (0, 0) {};
+    \node (x) at (-1.4, -1.5) {};
+    \node (y) at (6, 0) {};
+    \node (z) at (0, 5) {};
+    \node (gp) at (1.260, -1) {};
+    \node (hp) at (4.440, -1) {};
+    \begin{pgfonlayer}{fg}
+      \path[name path=surf,shading=ball,ball color=Col1!55,opacity=.8] (a.center) 
+        [in=180, out=-90, looseness=0.75] to 
+        (w.center) to (w.center) [in=-90, out=0, looseness=0.75] to (b.center) to 
+        [in=-45, out=165, looseness=1.25] (a.center) ;
+      % \draw [in=180, out=-90, looseness=0.75] (a.center) to (w.center);
+      % \draw [in=-90, out=0, looseness=0.75] (w.center) to (b.center);
+      \path[shading=ball,ball color=Col1!55] (b.center) to 
+        [in=-45, out=165, looseness=1.25] (a.center) to 
+        [in=90, out=90, looseness=0.75] node[midway, above] {$z=f(x,y)$} cycle;
+      % \draw (b.center) to [in=-45, out=165, looseness=1.25] (a.center)
+      %   to [in=90, out=90, looseness=0.75] cycle;
+      \draw [bend right=75, looseness=0.50,very thick] (g.center) to (h.center);
+      \draw [bend left=75, looseness=0.50,dashed,very thick] (g.center) to (h.center);
+      \draw[dashed,blue!50] (g.center) -- (gp.center) ;
+      \draw[dashed,blue!50] (h.center) -- (hp.center) ;
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{main}
+      \path[name path=plane,opacity=.8,shading=axis,shading angle=270,fill=blue!75] 
+        (c.center) to (d.center) to (e.center) to (f.center) --cycle ;
+      \draw [bend right=75, looseness=0.50,very thick] (gp.center) to 
+        node[pos=0.8,below right,yshift=5pt]{\small$f(x,y)=c$} (hp.center);
+      \draw [bend left=75, looseness=0.50,very thick] (gp.center) 
+        to (hp.center);
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{bg}
+      \draw[-latex,blue!50,thick] (o.center) to (z.center) 
+        node[left]{$z$};
+      \draw[-latex,blue!50,thick] (o.center) to (x.center) node[left] {$x$};
+      \draw[-latex,blue!50,thick,name intersections={of=surf and plane,name={x}}] 
+        (o.center) to (y.center) node[below] {$y$};
+    \end{pgfonlayer}
+  \end{tikzpicture}
 \end{wrapfigure}
 
 Έστω $ f(x,y) $ διαφορίσιμη συνάρτηση, η οποία είναι σταθερή κατά μήκος της
@@ -166,20 +166,20 @@ $ \grad f(P_{0}) $.
             \coordinate (p1) at (0.6, 5.0) ;
             \fill (p) node[right] {\small$P_{0}$} circle (1.5pt) ;
             \draw[-latex,thick] (p) -- (p1) node[right] {\small$\grad f$} ;
-          \coordinate (l) at ($(p)!0.15!(p1)$) ;
-          \draw (l) -- ++ (-.19,-.14) -- ++(.14,-.21) {} ;
+            \coordinate (l) at ($(p)!0.15!(p1)$) ;
+            \draw (l) -- ++ (-.19,-.14) -- ++(.14,-.21) {} ;
           \end{pgfonlayer}
         \end{scope}
-    \begin{pgfonlayer}{bg}
-      \node (o) at (0, 0) {};
-      \node (x) at (-2.0, -1.25) {};
-      \node (y) at (5, 0) {};
-      \node (z) at (0, 5) {};
-      \draw[-latex,blue!50,thick] (o.center) to (z.center) node[left]{$z$};
-      \draw[-latex,blue!50,thick] (o.center) to (x.center) node[left]{$x$};
-      \draw[-latex,blue!50,thick] (o.center) to (y.center) node[below]{$y$};
-    \end{pgfonlayer}
-\end{tikzpicture}}}
+        \begin{pgfonlayer}{bg}
+          \node (o) at (0, 0) {};
+          \node (x) at (-2.0, -1.25) {};
+          \node (y) at (5, 0) {};
+          \node (z) at (0, 5) {};
+          \draw[-latex,blue!50,thick] (o.center) to (z.center) node[left]{$z$};
+          \draw[-latex,blue!50,thick] (o.center) to (x.center) node[left]{$x$};
+          \draw[-latex,blue!50,thick] (o.center) to (y.center) node[below]{$y$};
+        \end{pgfonlayer}
+  \end{tikzpicture}}}
 
   Το \textcolor{Col1}{εφαπτόμενο επίπεδο}, μιας ισοσταθμικής επιφάνειας 
   $ f(x,y,z)=c $, της διαφορίσιμης συνάρτησης $ f(x,y,z) $, στο σημείο 
