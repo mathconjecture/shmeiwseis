@@ -168,6 +168,7 @@
     \path pic[fill=Col1!25,draw,-latex,angle radius=12pt,"$\theta$"] {angle=xp--0--p1} ;
     \draw[-latex] (0.center) to (z.center);
     \draw (0.center) to node[pos=0.6,above] {$r$} (p1.center);
+    \path pic[draw,scale=0.5] {right angle=p--p1--0};
   \end{tikzpicture}
   \threecolumnsidess{
     \begin{empheq}[box=\mathboxr]{gather*}
@@ -211,13 +212,15 @@
     \draw[dashed] (p1) -- (xp) node [left=3pt,yshift=2pt] {$x$} ;
     \draw[dashed] (p1) -- (yp) node [above right] {$y$};
     \draw[dashed] (p) -- (zp) node [left] {$z$} node[midway,above] {$r$};
-    \coordinate (r1) at ($(p)!0.85!(zp)$) ;
-    \draw (r1) -- ++(0,-8pt) -- ++(150:7.5pt) ;
+    % \coordinate (r1) at ($(p)!0.85!(zp)$) ;
+    % \draw (r1) -- ++(0,-8pt) -- ++(150:7.5pt) ;
     \path pic[fill=Col1!25,draw,-latex,angle radius=12pt,"$\theta$"] {angle=xp--0--p1} ;
     \path pic[fill=Col2!25,draw,latex-,angle radius=25pt,"$\phi$"] {angle=p--0--z} ;
     \draw[Col1] (0.center) to node[pos=0.6,left] {$\rho$} (p.center);
     \draw[-latex] (0.center) to (z.center);
     \draw (0.center) to node[pos=0.6,above] {$r$} (p1.center);
+    \path pic[draw,scale=0.5] {right angle=p--p1--0};
+    \path pic[draw,scale=0.5] {right angle=0--zp--p};
   \end{tikzpicture}
   \threecolumnsides{
     \begin{empheq}[box=\mathboxr]{gather*}
