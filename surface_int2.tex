@@ -3,6 +3,7 @@
 \input{tikz.tex}
 \input{myboxes.tex}
 
+\pagestyle{askhseis}
 
 \begin{document}
 
@@ -12,8 +13,8 @@
 
 \section{Ορισμός}
 
-Έστω $ S $ μια απλή, λεία και προσανατολισμένη επιφάνεια του $ \mathbb{R}^{3} $, 
-με διανυσματική παραμετρική εξίσωση $ \mathbf{r}(u,v) =
+Έστω $ S $ μια απλή, λεία και \textbf{προσανατολισμένη} επιφάνεια του 
+$ \mathbb{R}^{3} $, με διανυσματική παραμετρική εξίσωση $ \mathbf{r}(u,v) =
 x(u,v)\mathbf{i}+y(u,v)\mathbf{j}+z(u,v)\mathbf{k}, $ όπου $ (u,v) \in D \subseteq
 \mathbb{R}^{2} $. Υποθέτουμε ακόμα, ότι $ \mathbf{F}(x,y,z) =
 P(x,y,z)\mathbf{i}+Q(x,y,z)\mathbf{j}+R(x,y,z)\mathbf{k} $ είναι μία διανυσματική 
@@ -31,20 +32,20 @@ $ \mathbf{F}(x,y,z) $ πάνω στην επιφάνεια $S$,
     \item Το πρόσημο $ + $ αντιστοιχεί στην περίπτωση που τα διανύσματα 
       $ \mathbf{\widehat{n}} $ και $ \mathbf{r}_{u} \times \mathbf{r}_{v} $ 
       είναι ομόρροπα και το πρόσημο $ - $ αντιστοιχεί στην περίπτωση που είναι 
-      αντίρροπα. Με $ \mathbf{\widehat{n}} $ συμβολίζουμε το μοναδιαίο κάθετο διάνυσμα 
-      στο σημείο $ \mathbf{r}(u,v) $ της επιφάνειας $S$.
+      αντίρροπα. Με $ \mathbf{\widehat{n}} $ συμβολίζουμε το \textbf{μοναδιαίο} κάθετο 
+      διάνυσμα στο σημείο $ \mathbf{r}(u,v) $ της επιφάνειας $S$.
     \item Το διάνυσμα $ d \mathbf{S} $ παριστάνει το στοιχειώδες διανυσματικό εμβαδό 
-      της επιφάνειας $S$, που είναι ίσο με $ d \mathbf{S} = \mathbf{r}_{u} \times
-      \mathbf{r}_{v} du dv $. Ισχύει επίσης, ότι $ d \mathbf{S} = \mathbf{\widehat{n}}
-      \cdot d \mathbf{S} $ και τότε ισχύει ο τύπος 
-      \[
-        \iint_{S} \mathbf{F}(x,y,z) \, d \mathbf{S} = \iint_{S} \mathbf{F} \cdot
-        \mathbf{\widehat{n}} \,{dS}
-      \] 
+      της επιφάνειας $S$, που είναι ίσο με $ d \mathbf{S} = (\mathbf{r}_{u} \times
+      \mathbf{r}_{v}) du dv $. Ισχύει επίσης, ότι $ d \mathbf{S} = \mathbf{\widehat{n}}
+      \,dS $ και τότε ισχύει ο τύπος 
+      \begin{equation}\label{eq:flux1}
+        \boxed{\iint_{S} \mathbf{F}(x,y,z) \, d \mathbf{S} = \iint_{S} \mathbf{F} \cdot
+        \mathbf{\widehat{n}} \,{dS}}
+      \end{equation} 
       ο οποίος μετασχηματίζει το επιφανειακό ολοκλήρωμα ΙΙου είδους σε ένα επιφανειακό 
-      ολοκλήρωμα Ιου είδους. Το ολοκλήρωμα $ \iint_{S} \mathbf{F}\cdot
+      ολοκλήρωμα \textbf{Ιου είδους}. Το ολοκλήρωμα $ \iint_{S} \mathbf{F}\cdot
       \mathbf{\widehat{n}} \,{dS} $ ονομάζεται \textcolor{Col1}{ροή} του 
-      διανυσματικού πεδίου $ \mathbf{F} $, δια μέσου της επιφάνειας $S$.
+      διανυσματικού πεδίου $ \mathbf{F} $, \textbf{δια μέσου} της επιφάνειας $S$.
     \item Το επιφανειακό ολοκλήρωμα ΙΙου είδους, συμβολίζεται και ως 
       \[
         \iint_{S} Pdydz + Qdxdz + Rdxdy 
@@ -57,8 +58,94 @@ $ \mathbf{F}(x,y,z) $ πάνω στην επιφάνεια $S$,
   Επομένως, αν $S$ και $ S' $ είναι οι δύο όψεις της επιφάνειας, τότε ισχύει ότι 
   \[
     \iint_{S} \mathbf{F} \,{d \mathbf{S}} = - \iint_{S'} \mathbf{F} \,{d \mathbf{S}} 
-   \] 
+  \] 
 \end{rem}
 %todo να εξηγήσω καλύτερα τον προσανατολισμό επιφανειών.
-  
+
+
+\section{Μέθοδος Υπολογισμού του Επιφανειακού Ολοκληρώματος IIου είδους}
+
+\subsection*{Η επιφάνεια $S$ δίνεται σε διανυσματική παραμετρική μορφή}
+
+Αν η επιφάνεια $S$ ορίζεται από τη διανυσματική παραμετρική εξίσωση 
+$ \mathbf{r}(u,v) = x(u,v)\mathbf{i}+y(u,v)\mathbf{j}+z(u,v)\mathbf{k} $, όπου 
+$ (u,v) \in D \subseteq \mathbb{R}^{2} $, τότε:
+\[
+  \iint_{S} \mathbf{F} \cdot \,{d\mathbf{S}} = \iint_{S} \mathbf{F} \cdot
+  \mathbf{\widehat{n}}\,{dS} = \pm\iint_{D} \mathbf{F} \cdot \frac{\mathbf{r}_{u} \times
+  \mathbf{r}_{v}}{\cancel{\norm{\mathbf{r}_{u} \times \mathbf{r}_{v}}}}
+  \cancel{\norm{\mathbf{r}_{u} \times \mathbf{r}_{v}}}\,{du}{dv} = \pm\iint_{D} 
+  \mathbf{F} \cdot (\mathbf{r}_{u} \times \mathbf{r}_{v}) \,{du}{dv}
+\]
+άρα
+\[
+  \iint_{S} \mathbf{F}(x,y,z) \cdot \,{d\mathbf{S}} = \pm\iint_{D} 
+  \mathbf{F}(x(u,v),y(u,v),z(u,v)) \cdot (\mathbf{r}_{u} \times \mathbf{r}_{v}) 
+  \,{du}{dv}
+\]
+
+\subsection*{Η επιφάνεια $S$ δίνεται ως συνάρτηση 2 μεταβλητών}
+
+\begin{enumerate}
+  \item Αν η επιφάνεια $S$ είναι συνάρτηση της μορφής $ z=z(x,y) $ και $D$ είναι η 
+    προβολή της $S$ στο επίπεδο $ xy $, τότε: 
+    \[
+      \iint_{S} \mathbf{F} \cdot \,{d\mathbf{S}} = \iint_{S} \mathbf{F} \cdot
+      \mathbf{\widehat{n}} \,{dS} = 
+      \pm\iint_{D} 
+      \mathbf{F} \cdot \frac{(-z_{x},-z_{y},1)}{\cancel{\sqrt{1+(z_{x})^{2}+
+      (z_{y})^{2}}}} \cancel{\sqrt{1+(z_{x})^{2}+(z_{y})^{2}}} \,{dx}{dy} = 
+      \pm\iint_{D} \mathbf{F} \cdot (-z_{x},-z_{y},1) \,{dx}{dy}
+    \]
+    άρα
+    \[
+      \iint_{S} \mathbf{F}(x,y,z) \cdot \,{d\mathbf{S}} = \pm\iint_{D} 
+      \mathbf{F}(x,y,z(x,y)) \cdot (-z_{x},-z_{y},1) \,{dx}{dy} 
+    \] 
+
+  \item Αν η επιφάνεια $S$ είναι συνάρτηση της μορφής $ y=y(x,z) $ και $D$ είναι η 
+    προβολή της $S$ στο επίπεδο $ xz $, τότε: 
+    \[
+      \iint_{S} \mathbf{F}(x,y,z) \cdot \,{d\mathbf{S}} = \pm\iint_{D} 
+      \mathbf{F}(x,y(x,z),z) \cdot (-y_{x},1,-y_{z}) \,{dx}{dz} 
+    \]
+
+  \item Αν η επιφάνεια $S$ είναι συνάρτηση της μορφής $ x=x(y,z) $ και $D$ είναι η 
+    προβολή της $S$ στο επίπεδο $ yz $, τότε: 
+    \[
+      \iint_{S} \mathbf{F}(x,y,z) \cdot \,{d\mathbf{S}} = \pm\iint_{D} 
+      \mathbf{F}(x(y,z),y,z) \cdot (1,-x_{y},-x_{z}) \,{dy}{dz} 
+    \]
+
+\end{enumerate}
+
+\subsection*{Η επιφάνεια $S$ δίνεται ως εξίσωση της μορφής g(x,y,z)=0}
+Αν η επιφάνεια $S$ δίνεται από την εξίσωση $ g(x,y,z) = 0 $, όπου $ g $ είναι μια 
+συνεχώς διαφορίσιμη συνάρτηση, και $D$ είναι η προβολή της $S$ στο επίπεδο που βρίσκεται 
+από κάτω της, τότε:
+\begin{equation*}
+  \iint_{S} \mathbf{F}\cdot {d\mathbf{S}} = \iint_{S} \mathbf{F} \cdot \mathbf{\widehat{n}} \,{d\mathbf{S}} = 
+  \pm\iint_{D} \mathbf{F} \cdot \frac{\grad{g}}{\cancel{\norm{\grad
+  g}}}\frac{\cancel{\norm{\grad g}}}{\abs{\grad(g) \cdot \mathbf{p}}} \,{dA} =
+  \pm\iint_{D} \mathbf{F} \cdot 
+  \frac{\grad{g}}{\abs{\grad(g) \cdot \mathbf{p}}} \,{dA} 
+\end{equation*}
+άρα
+\begin{equation}\label{eq:surface_int3}
+  \iint_{S} \mathbf{F}(x,y,z) \cdot {d\mathbf{S}} = 
+  \pm\iint_{D} \mathbf{F}(x,y,z) \cdot 
+  \frac{\grad{g}}{\abs{\grad(g) \cdot \mathbf{p}}} \,{dA} 
+\end{equation}
+όπου $ \mathbf{p} $ είναι ένα μοναδιαίο κάθετο διάνυσμα στην περιοχή $D$ (συνήθως 
+$ \mathbf{p} = \mathbf{i} $ ή $ \mathbf{j} $ ή $ \mathbf{k} $) και 
+$ \grad(g)\cdot \mathbf{p} \neq 0 $ .  
+
+Ειδικότερα, αν η επιφάνεια $S$ δίνεται από την εξίσωση $ g(x,y,z) = 0 $ και $D$ είναι η
+προβολή της $S$ στο επίπεδο $ xy $, τότε η εξίσωση~\eqref{eq:surface_int3} γίνεται:
+\[
+  \iint_{S} \mathbf{F}(x,y,z) \,{dS} = \pm\iint_{D} \mathbf{F}(x,y,z(x,y)) 
+  \cdot \frac{(g_{x},g_{y},g_{z})}{\abs{g_{z}}} \,{dx}{dy} 
+\]
+
+
 \end{document}
