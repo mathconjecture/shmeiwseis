@@ -1,0 +1,567 @@
+\input{preamble_ask.tex}
+\input{definitions_ask.tex}
+\input{tikz.tex}
+
+\newcommand{\twocolumnsidesch}[2]{\begin{minipage}[c]{0.45\linewidth}\raggedright
+    #1
+    \end{minipage}\hfill\begin{minipage}[c]{0.45\linewidth}\raggedright
+    #2
+\end{minipage}}
+
+\everymath{\displaystyle}
+\pagestyle{askhseis}
+
+
+\begin{document}
+
+\begin{center}
+  \minibox{\large\bfseries \textcolor{Col1}{Θεωρία - Συνοπτικά}}
+\end{center}
+
+\vspace{\baselineskip}
+
+\section*{Όριο Συνάρτησης}
+
+\subsection*{Πλευρικά Όρια}
+
+\begin{prop}
+  $ \lim_{x \to x_{0}} f(x) = l \Leftrightarrow \lim_{x \to x_{0}^{+}} f(x) =
+  \lim_{x \to x_{0}^{-}} f(x) = l $
+\end{prop}
+
+\subsection*{Χρήσιμες Προτάσεις}
+
+\begin{prop}
+  $
+    \lim_{x \to x_{0}} f(x) = l \Leftrightarrow \lim_{x \to x_{0}} (f(x)-l)=0
+    \Leftrightarrow \lim_{x \to x_{0}} \abs{f(x)-l} = 0 
+  $
+\end{prop}
+
+\begin{prop}
+  $ \lim_{x \to x_{0}} f(x)=l \Leftrightarrow \lim_{x \to x_{0}} (-f(x)) = -l $
+\end{prop}
+
+\begin{prop}
+  Αν $ \lim_{x \to x_{0}} f(x) = l \in \mathbb{R} $ τότε 
+  $ \lim_{x \to x_{0}} \abs{f(x)} = \abs{l} $ 
+\end{prop}
+
+\begin{prop}
+  $ \lim_{x \to x_{0}} f(x) = 0 \Leftrightarrow \lim_{x \to x_{0}} \abs{f(x)} = 0 $
+\end{prop}
+
+\begin{prop}
+  Αν μια συνάρτηση $ f $ έχει όριο στο σημείο $ x_{0} $, τότε αυτό είναι
+  \textbf{μοναδικό}.
+\end{prop}
+
+\begin{prop}
+  Αν $ \lim_{x \to x_{0}} f(x) = l $, τότε υπάρχει περιοχή του $ x_{0} $ ώστε οι τιμές 
+  της $ f(x) $ να είναι \textbf{ομόσημες} του $l$ για κάθε $x$ σε αυτή την περιοχή, 
+  δηλαδή:
+  \begin{myitemize}
+    \item Αν $ l > 0 $ τότε $ f(x)>0 $ 
+    \item Αν $ l < 0 $ τότε $ f(x)<0 $ 
+  \end{myitemize}
+\end{prop}
+
+\begin{prop}
+\item {}
+  \begin{myitemize}
+    \item Αν $ \lim_{x \to x_{0}} f(x) = l \in \mathbb{R} $ και $ f(x) \geq 0 $ για κάθε 
+      $x$ σε μια περιοχή του $ x_{0} $, τότε $ l \geq 0 $ 
+    \item Αν $ \lim_{x \to x_{0}} f(x) = l \in \mathbb{R} $ και $ \lim_{x \to x_{0}} g(x)
+      = m \in \mathbb{R}$ και $ f(x) \geq g(x) $ για κάθε $x$ σε μια περιοχή του 
+      $ x_{0} $, τότε $ l \geq m $ 
+  \end{myitemize}
+\end{prop}
+
+\begin{prop}
+\item {}
+  \begin{minipage}[t]{8.0 cm}
+    \begin{myitemize}
+      \item $ h(x) \leq f(x) \leq g(x), \; \forall x$ σε μια περιοχή του $ x_{0} $
+        \hfill\tikzmark{a}
+      \item $ \lim_{x \to x_{0}} h(x) = \lim_{x \to x_{0}} g(x) = l \in \mathbb{R} $
+        \hfill\tikzmark{b}
+    \end{myitemize}
+  \end{minipage}
+  \mybrace{a}{b}[ $ \lim_{x \to x_{0}} f(x) = l $ ]
+\end{prop}
+
+
+\section*{Συνέχεια Συνάρτησης}
+
+\begin{dfn}
+  Έστω συνάρτηση $f$ ορισμένη σ᾽ ένα διάστημα $\Delta$ και έστω $ x_{0} \in \Delta $. 
+  Θα λέμε ότι $ f $ είναι \textcolor{Col1}{συνεχής στο $ x_{0} $}, αν ισχύει:
+  \[
+    \lim_{x \to x_{0}} f(x) = f(x_{0})  
+  \] 
+\end{dfn}
+
+\begin{prop}
+  Αν οι συναρτήσεις $ f $ και $ g $ είναι συνεχείς στο $ x_{0} $, τότε οι συναρτήσεις:
+  \[
+    f+g, \; af, \; f\cdot g, \;  \frac{f}{g}, \; \text{με} \; g(x_{0}) \neq 0
+    \quad \text{είναι επίσης \textbf{συνεχείς}} 
+  \]
+\end{prop}
+
+\begin{prop}
+  Αν η συνάρτηση $ f $ είναι συνεχής στο $ x_{0} $, τότε και η συνάρτηση $ \abs{f}
+  $ είναι επίσης συνεχής στο $ x_{0} $.
+\end{prop}
+
+\section*{Ορισμός της Παραγώγου}
+
+\begin{dfn}
+  Έστω συνάρτηση $ f $, ορισμένη σ᾽ ενα διάστημα $\Delta$, και έστω σημείο $ x_{0} \in
+  \Delta $. Λέμε ότι η συνάρτηση $f$ είναι \textcolor{Col1}{παραγωγίσιμη στο σημείο 
+  $ x_{0} $}, αν υπάρχει το όριο
+  \[
+    \lim_{x \to x_{0}} \frac{f(x)-f(x_{0})}{x- x_{0}} 
+  \] 
+  και είναι πραγματικός αριθμός. Το όριο αυτό ονομάζεται παράγωγος της $f$ στο $ x_{0} $ 
+  και συμβολίζεται με $ f'(x_{0}) $.
+\end{dfn}
+
+\begin{dfn}  
+  Μια συνάρτηση $ f $ λέγεται \textcolor{Col1}{παραγωγίσιμη} αν είναι παραγωγίσιμη σε \textbf{κάθε} σημείο του πεδίου ορισμού της.
+\end{dfn}
+
+\begin{rem}
+  Το παραπάνω όριο, μπορεί να διατυπωθεί ισοδύναμα, θέτοντας 
+  $x-x_{0}=h $ και αντικαθιστώντας όπου $x=x_{0}+h$, και τότε αν $ x \to x_{0} $ έχουμε
+  ότι $ x- x_{0} = h \to 0 $. 
+  \[
+    \lim_{h \to 0} \frac{f(x_{0}+h)-f(x_{0})}{h} = f'(x_{0})
+  \]
+\end{rem}
+%todo να το ξαναγράψω ίσως καλύτερα
+
+\section*{Εξίσωση εφαπτομένης γραφικής παράστασης συνάρτησης}
+
+Έστω συνάρτηση $ f $ ορισμένη σ᾽ ένα διάστημα $\Delta$ και έστω σημείο 
+$ x_{0} \in \Delta $. Η \textcolor{Col1}{εφαπτομένη} της γραφικής παράστασης της συνάρτησης 
+$ f $ στο σημείο $ (x_{0}, f(x_{0})) $ είναι η ευθεία η οποία διέρχεται από αυτό το 
+σημείο και έχει συντελεστή διεύθυνσης $ f'(x_{0}) $. Άρα η εξίσωση της εφαπτομένης 
+της συνάρτησης $f$ στο σημείο $ (x_{0}, f(x_{0})) $ είναι:
+
+\vspace{\baselineskip}
+
+\twocolumnsidesch{
+  \begin{tikzpicture}[scale=0.8,tangent/.style=
+    {decoration=
+      {markings, mark=at position #1 with
+        {\coordinate (tangent point-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,0pt);
+          \coordinate (tangent unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (1,0pt);
+          \coordinate (tangent orthogonal unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,1);
+        }
+      },
+    postaction=decorate},
+    use tangent/.style={shift=(tangent point-#1),
+      x=(tangent unit vector-#1),
+    y=(tangent orthogonal unit vector-#1)},
+    use tangent/.default=1]
+
+    \draw[stealth-stealth] (0,4) -- (0,0) node (O) {} -- (4,0) ;
+    \path[very thick,tangent=0.6,blue!50] (0.8,0.8) to[out=90, in=180] (3.5,3.5)
+      node[right,blue!75]{$f(x)$} ;
+    \filldraw[use tangent] (0,0) node (p){} circle (1.5pt);
+    \path[ultra thick,use tangent,Col1!50] (-2,0) -- (2,0) node (s) {};
+    \draw[dashed] (O|-p) node[left]{$f(x_{0})$} -- (p) -- (O-|p) node[below]{$x_{0}$};
+    \node[left]  at (4,4) {$\varepsilon$};
+    \draw[dashed] (p) -- ++(2.5,0) node (w){}; 
+    \draw pic[fill,Col2!45]{angle=w--p--s};
+    \draw[very thick,tangent=0.6,blue!50] (0.8,0.8) to[out=90, in=180] (3.5,3.5)
+      node[right,blue!75]{$f(x)$} ;
+    \draw[ultra thick,use tangent,Col1!50] (-2,0) -- (2,0) node (s) {};
+    \node at (3,3) [above,Col2!75!black,yshift=-3pt,xshift=-4pt] {$\phi$};
+  \end{tikzpicture}
+  }{
+  \[
+    \boxed{\varepsilon \colon \;  y - f(x_{0}) = f'(x_{0})(x- x_{0})}
+  \]
+}
+
+\begin{rem}
+  Η γεωμετρική ερμηνεία, λοιπόν της παραγώγου μιας συνάρτησης $ f(x) $ σ᾽ ένα σημείο 
+  $ x_{0} $ είναι ότι παριστάνει την \textbf{κλίση} της εφαπτομένης, της γραφικής 
+  παράστασης της συνάρτησης σε αυτό το σημείο. Δηλαδή
+  \[
+    f'(x_{0}) = \tan{\phi}  
+  \] 
+  όπου $ \phi $ είναι η γωνία που σχηματίζει η εφαπτόμενη ευθεία στο σημείο $ x_{0} $ 
+  με τον θετικό ημιάξονα $x$.
+\end{rem}
+\begin{rem}
+  Αν $ f'(x_{0}) = 0 $ τότε η κλίση της εφαπτομένης στο σημείο $ x_{0} $ θα είναι 
+  μηδέν, επομένως η εφαπτόμενη ευθεία θα είναι \textbf{οριζόντια}, δηλαδή παράλληλη 
+  προς τον άξονα $x$.
+\end{rem}
+%todo σχήμα με οριζοντια εφαπτομενη
+
+\begin{rem}
+  Αν $ f'(x_{0}) = + \infty $ ή $ f'(x_{0}) = - \infty $ και η $f$ είναι 
+  \textbf{συνεχής} στο $ x_{0} $, τότε η εξίσωση της εφαπτομένης είναι η 
+  \textbf{κατακόρυφη} ευθεία με εξίσωση $ x= x_{0} $ όπως φαίνεται στα παρακάτω σχήματα.
+\end{rem}
+
+\twocolumnsidesch{
+  \subsection*{$f'(x_{0})=+\infty$}
+  \begin{tikzpicture}[scale=0.8,tangent/.style=
+    {decoration=
+      {markings, mark=at position #1 with
+        {\coordinate (tangent point-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,0pt);
+          \coordinate (tangent unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence
+            number}) at (0.8,0pt);
+          \coordinate (tangent orthogonal unit vector-\pgfkeysvalueof{/pgf/decoration/mark
+            info/sequence number}) at (0pt,0.8);
+        }
+      },
+    postaction=decorate},
+    use tangent/.style={shift=(tangent point-#1),
+      x=(tangent unit vector-#1),
+    y=(tangent orthogonal unit vector-#1)},
+    use tangent/.default=1]
+
+    \draw[ultra thin,stealth-stealth] (0,4) -- (0,0) node (O) {} -- (4,0) ;
+    \draw[very thick,tangent=0.5,blue!50] (1.4,0.8) to[out=-10, in=-190] (2.55,3.5)
+      node[below right,blue!75]{$f(x)$} ;
+    \filldraw[use tangent] (0,0) node (p){} circle (1.5pt);
+    \draw[ultra thick,use tangent,Col1!75] (-2,0) -- (2,0);
+    \draw[dashed] (O|-p) node[left]{$f(x_{0})$} -- (p) -- (O-|p) node[below]{$x_{0}$};
+    \node[left]  at (2,4) {$\varepsilon$};
+  \end{tikzpicture}
+  }{
+  \subsection*{$f'(x_{0})=-\infty$}
+  \begin{tikzpicture}[scale=0.8,tangent/.style=
+    {decoration=
+      {markings, mark=at position #1 with
+        {\coordinate (tangent point-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,0pt);
+          \coordinate (tangent unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence
+            number}) at (0.8,0pt);
+          \coordinate (tangent orthogonal unit vector-\pgfkeysvalueof{/pgf/decoration/mark
+            info/sequence number}) at (0pt,0.8);
+        }
+      },
+    postaction=decorate},
+    use tangent/.style={shift=(tangent point-#1),
+      x=(tangent unit vector-#1),
+    y=(tangent orthogonal unit vector-#1)},
+    use tangent/.default=1]
+
+    \draw[ultra thin,stealth-stealth] (0,4) -- (0,0) node (O) {} -- (4,0) ;
+    \draw[very thick,tangent=0.5,blue!50] (1.35,3.7) to[out=-10, in=-190] (2.60,0.7)
+      node[above right,blue!75]{$f(x)$} ;
+    \filldraw[use tangent] (0,0) node (p){} circle (1.5pt);
+    \draw[ultra thick,use tangent,Col1!75] (-2,0) -- (2,0);
+    \draw[dashed] (O|-p) node[left]{$f(x_{0})$} -- (p) -- (O-|p) node[below]{$x_{0}$};
+    \node[left]  at (2,4) {$\varepsilon$};
+  \end{tikzpicture}
+}
+
+
+\begin{prop}
+  Αν μια συνάρτηση $ y=f(x) $ είναι παραγωγίσιμη σ᾽ ένα σημείο $ x_{0} $ τότε είναι 
+  και συνεχής στο $ x_{0} $.
+\end{prop}
+
+\begin{rem}
+\item{}
+  \begin{myitemize}
+    \item Προσοχή! Το αντίστροφο της παραπάνω πρότασης \textbf{δεν} ισχύει. 
+      Δηλαδή, αν μια συνάρτηση είναι συνεχής σε κάποιο σημείο $ x_{0} $, 
+      τότε δεν είναι και απαραίτητα παραγωγίσιμη στο σημείο αυτό.
+    \item Η συνέχεια της συνάρτησης στο σημείο $ x_{0} $ είναι \textbf{αναγκαία} 
+      συνθήκη ώστε να είναι παραγωγίσιμη σε αυτό το σημείο, με την έννοια ότι 
+      αν δεν είναι συνεχής η συνάρτηση στο σημείο $ x_{0} $, αποκλείεται να είναι 
+      παραγωγίσιμη σε αυτό.
+  \end{myitemize}
+\end{rem}
+%παραδειγμα με ορισμο για |x|
+
+\begin{prop}
+  Αν μια συνάρτηση $ y=f(x) $ είναι παραγωγίσιμη σ᾽ ένα σημείο $ x_{0} $ τότε είναι 
+  και διαφορίσιμη στο σημείο αυτό, και αντίστροφα. Δηλαδή, ισχύει:
+  \[
+    df  = f'(x) dx 
+  \] 
+\end{prop}
+
+\begin{prop}
+  Αν η συνάρτηση $f$ είναι συνεχής σ᾽ ένα διάστημα $\Delta$ και για κάθε εσωτερικό 
+  σημείο $x \in \Delta$ ισχύει $ f'(x)=0 $, τότε η $f$ είναι \textbf{σταθερή} στο 
+  $\Delta$. 
+\end{prop}
+
+\section*{Μονοτονία}
+
+\begin{dfn}
+  Έστω συνάρτηση $ f \colon A \subseteq \mathbb{R} \to \mathbb{R} $. Τότε:
+  \begin{myitemize}
+    \item $ f(x) \; \text{\textcolor{Col1}{γνησίως αύξουσα} στο διάστημα $A$} \;
+      \overset{\text{ορ.}}{\Leftrightarrow} \forall x_{1}, x_{2} \in A \; 
+      \text{με} \; x_{1}< x_{2} \; \text{ισχύει} \; f(x_{1}) < f(x_{2}) $
+    \item $ f(x) \; \text{\textcolor{Col1}{αύξουσα} στο διάστημα $A$} \;
+      \overset{\text{ορ.}}{\Leftrightarrow} \forall x_{1}, x_{2} \in A \;
+      \text{με} \; x_{1}< x_{2} \; \text{ισχύει} \; f(x_{1}) \leq f(x_{2}) $
+    \item $ f(x) \; \text{\textcolor{Col1}{γνησίως φθίνουσα} στο διάστημα $A$} \;
+      \overset{\text{ορ.}}{\Leftrightarrow} \forall x_{1}, x_{2} \in A \;
+      \text{με} \; x_{1}< x_{2} \; \text{ισχύει} \; f(x_{1}) > f(x_{2}) $
+    \item $ f(x) \; \text{\textcolor{Col1}{φθίνουσα} στο διάστημα $A$} \;
+      \overset{\text{ορ.}}{\Leftrightarrow} \forall x_{1}, x_{2} \in A \;
+      \text{με} \; x_{1}< x_{2} \; \text{ισχύει} \; f(x_{1}) \geq f(x_{2}) $
+  \end{myitemize}
+\end{dfn}
+
+
+
+\section*{Θεωρήματα - Κριτήρια Μονοτονίας} 
+
+\begin{prop}
+Έστω συνάρτηση $ f \colon \Delta \to \mathbb{R} $ συνεχής στο διάστημα $\Delta$ 
+και παραγωγίσιμη στο εσωτερικό του $\Delta$. Τότε:
+\begin{myitemize}
+  \item $f$ \textcolor{Col1}{γνησίως αύξουσα} στο $\Delta \Leftrightarrow f'(x) >0 $ 
+    για κάθε $x$ στο εσωτερικό του $\Delta$. 
+  \item $f$ \textcolor{Col1}{γνησίως φθίνουσα} στο $\Delta \Leftrightarrow f'(x) <0 $ 
+    για κάθε $x$ στο εσωτερικό του $\Delta$. 
+  \item $f$ \textcolor{Col1}{αύξουσα} στο $\Delta \Leftrightarrow f'(x) \geq 0 $ 
+    για κάθε $x$ στο εσωτερικό του $\Delta$. 
+  \item $f$ \textcolor{Col1}{φθίνουσα} στο $\Delta \Leftrightarrow f'(x) \leq 0 $ 
+    για κάθε $x$ στο εσωτερικό του $\Delta$. 
+\end{myitemize}
+\end{prop}
+
+
+\section*{Ακρότατα}
+
+\begin{dfn}
+  Μια συνάρτηση $f$ με πεδίο ορισμού ένα διάστημα $\Delta$, λέμε ότι παρουσιάζει στο 
+  σημείο $ x_{0} \in \Delta $
+  \begin{myitemize}
+    \item \textcolor{Col1}{τοπικό μέγιστο}, αν υπάρχει περιοχή του $ x_{0} $ ώστε $ f(x) 
+      \leq f(x_{0}) $ για κάθε $x$ σε αυτήν την περιοχή.
+    \item \textcolor{Col1}{τοπικό ελάχιστο}, αν υπάρχει περιοχή του $ x_{0} $ ώστε 
+      $ f(x) \geq f(x_{0}) $ για κάθε $x$ σε αυτήν την περιοχή.
+  \end{myitemize}
+\end{dfn}
+
+\begin{rem}
+\item {}
+  \begin{myitemize}
+    \item Ένα τοπικό ελάχιστο μπορεί να είναι μεγαλύτερο από ένα τοπικό μέγιστο.
+    \item Τα άκρα του διαστήματος $\Delta$ μπορεί να είναι σημεία τοπικών ακροτάτων της 
+      συνάρτησης $f$, αν η $f$ ορίζεται σε αυτά.
+  \end{myitemize}
+\end{rem}
+
+\begin{thmbreak}[\bfseries Fermat]
+  Έστω συνάρτηση $ f $ ορισμένη σ᾽ ένα διάστημα $\Delta$ και $ x_{0} $ 
+  \textbf{εσωτερικό} σημείο του $\Delta$. 
+
+  \begin{minipage}[t]{5.5 cm}
+    \begin{enumerate}[i)]
+      \item $f(x_{0})$ τοπικό ακρότατο \hfill \tikzmark{a}
+      \item η $ f $ παραγωγίσιμη στο $ x_{0} \in \Delta $  \hfill \tikzmark{b}
+    \end{enumerate}
+    \mybrace{a}{b}[$ f'(x_{0})=0 $]
+  \end{minipage}
+\end{thmbreak}
+
+\begin{rem}
+\item {}
+  \begin{myitemize}
+    \item Το αντίστροφο του παραπάνω θεωρήματος δεν ισχύει! Δηλαδή, μπορεί η 
+      παράγωγος μιας συνάρτησης σε κάποιο σημείο, να είναι μηδέν όμως η συνάρτηση να 
+      μην παρουσιάζει ακρότατο σε αυτό το σημείο. 
+      \begin{example}
+      Για τη συνάρτηση $ f(x)=x^{3} $, ισχύει ότι $ f'(0)=0 $, χωρίς αυτή να έχει τοπικό 
+      ακρότατο στο σημείο $ x_{0}=0 $. (είναι σημείο καμπής)
+
+      \begin{tikzpicture}[scale=0.7]
+        \draw[-stealth,blue!50] (-2,0) -- (2,0) node[right] {};
+        \draw[-stealth,blue!50] (0,-2) -- (0,2) node[above] {};
+        \draw[domain=-1.25:1.25,smooth,variable=\x,Col1!75,very thick] 
+          plot ({\x},{\x*\x*\x}) node[below right]{\small $y=x^{3}$};
+        % \fill (0,0) circle (2pt);
+      \end{tikzpicture}
+      \end{example}
+
+    \item Μια συνάρτηση μπορεί να έχει τοπικό ακρότατο σ᾽ ένα σημείο $ x_{0} $ χωρίς 
+      να είναι παραγωγίσιμη σε αυτό.  
+      \begin{example}
+      Η συνάρτηση $ f(x)= \abs{x} $ δεν είναι παραγωγίσιμη στο $ x_{0}=0 $, 
+      όμως παρουσιάζει ελάχιστο στο σημείο αυτό.
+
+      \begin{tikzpicture}[scale=0.7]
+        \draw[-stealth,blue!50] (-2,0) -- (2,0) node[right] {};
+        \draw[-stealth,blue!50] (0,-1) -- (0,2) node[above] {};
+        \draw[domain=-1.7:1.7,smooth,variable=\x,Col1!75,very thick] 
+          plot ({\x},abs{\x}) node[right]{\small $y=\abs{x}$};
+        % \fill (0,0) circle (2pt);
+      \end{tikzpicture}
+      \end{example}
+
+    \item Αν το σημείο τοπικού ακροτάτου είναι άκρο του διαστήματος ορισμού της 
+      συνάρτησης, τότε η παράγωγος μπορεί να μη μηδενίζεται σε αυτό. Παράδειγμα: Η 
+      συνάρτηση $ f(x) = x^{2}+1 $ με $ x \geq -1 $, έχει τοπικό ακρότατο στο σημείο 
+      $ x_{0}=-1 $, ενώ $ f'(-1)=2 \neq 0 $.
+  \end{myitemize}
+\end{rem}
+
+\begin{dfn}
+  Για μια συνεχή συνάρτηση $f$ τα εσωτερικά σημεία του διαστήματος $\Delta$, όπου 
+  ισχύει $ f'(x_{0}) = 0 $, ονομάζονται \textcolor{Col1}{στάσιμα} σημεία της $f$. 
+  Τα στάσιμα σημεία καθώς και τα σημεία στα οποία η $f$ δεν είναι παραγωγίσιμη,
+  ονομάζονται \textcolor{Col1}{κρίσιμα} σημεία.
+\end{dfn}
+
+\begin{rem}
+  Οι θέσεις των \textbf{πιθανών} τοπικών ακροτάτων μιας συνεχούς συνάρτησης $f$ με πεδίο 
+  ορισμού ένα κλειστό διάστημα $ \Delta = [a,b] $, είναι τα \textbf{κρίσιμα} σημεία 
+  της και τα άκρα του $\Delta$.
+\end{rem}
+
+
+
+
+\subsection*{Κριτήριο 1ης Παραγώγου}
+Έστω μια συνάρτηση παραγωγίσιμη σ᾽ ένα διάστημα $ (a,b) $ εκτός ίσως από το $ x_{0} $ 
+το οποίο είναι εσωτερικό σημείο του $(a,b)$ και στο οποίο είναι συνεχής. Τότε:
+\begin{myitemize}
+  \item Αν $ f'(x)>0 $ για κάθε 
+    $ \underbrace{x \in (a, x_{0})}_{\text{αριστερά του } x_{0}} $ 
+    και $ f'(x) <0 $ για κάθε
+    $ \underbrace{x \in (x_{0}, b)}_{\text{δεξιά του } x_{0}} $, τότε το $ f(x_{0}) $ 
+    είναι τοπικό μέγιστο. 
+  \item Αν $ f'(x)<0 $ για κάθε 
+    $ \underbrace{x \in (a, x_{0})}_{\text{αριστερά του } x_{0}} $ 
+    και $ f'(x) >0 $ για κάθε
+    $ \underbrace{x \in (x_{0}, b)}_{\text{δεξιά του } x_{0}} $, τότε το $ f(x_{0}) $ 
+    είναι τοπικό ελάχιστο. 
+\end{myitemize}
+
+
+
+\subsection*{Κριτήριο 2ης Παραγώγου}
+
+\begin{prop}
+  Έστω $ y=f(x) $ συνάρτηση ορισμένη σ᾽ ένα διάστημα $\Delta$ και έστω $ x_{0} $ 
+  εσωτερικό σημείο του $\Delta$. Ισχύει:
+  \begin{myitemize}
+    \item Αν $ f'(x_{0})=0 $ και $ f''(x_{0}) > 0 $, τότε η συνάρτηση παρουσιάζει τοπικό 
+      \textbf{ελάχιστο} στη θέση $ x_{0} $, την τιμή $ f(x_{0}) $.
+    \item Αν $ f'(x_{0})=0 $ και $ f''(x_{0}) < 0 $, τότε η συνάρτηση παρουσιάζει τοπικό 
+      \textbf{μέγιστο} στη θέση $ x_{0} $, την τιμή $ f(x_{0}) $.
+  \end{myitemize}
+\end{prop}
+
+
+\subsection*{Κριτήριο ν οστής Παραγώγου}
+
+\begin{prop}
+  Έστω $ y=f(x) $ συνάρτηση ορισμένη σ᾽ ένα διάστημα $\Delta$ και έστω $ x_{0} $ 
+  εσωτερικό σημείο του $\Delta$. Αν 
+  \[
+    f'(x_{0})=f''(x_{0})=\cdots = f^{(n-1)}(x_{0})=0 \; \text{και} \; f^{(n)}(x_{0}) 
+    \neq 0 
+  \]
+  τότε,ισχύει:
+  \begin{myitemize}
+    \item Αν $n$ \textbf{περιττός}, τότε η συνάρτηση δεν παρουσιάζει ακρότατο στο σημείο 
+      $ x_{0} $, αλλά σημείο καμπής.
+    \item Αν $n$ \textbf{άρτιος}, τότε
+      \begin{myitemize}
+        \item Αν $ f^{(n)}(x_{0}) > 0 $, τότε η συνάρτηση παρουσιάζει τοπικό 
+          \textbf{ελάχιστο} στη θέση $ x_{0} $, την τιμή $ f(x_{0}) $.
+        \item Αν $ f^{(n)}(x_{0}) < 0 $, τότε η συνάρτηση παρουσιάζει τοπικό 
+          \textbf{μέγιστο} στη θέση $ x_{0} $, την τιμή $ f(x_{0}) $.
+      \end{myitemize}
+  \end{myitemize}
+\end{prop}
+
+
+
+\section*{Κυρτές και Κοίλες Συναρτήσεις}
+
+%Να ξαναγραψω τους ορισμους κυρτες κοιλες 
+\begin{dfn}
+  Έστω μια συνάρτηση $f$ συνεχής και παραγωγίσιμη σ᾽ ένα διάστημα $ \Delta $. 
+  Λέμε ότι:
+  \begin{myitemize}
+    \item $f$ κυρτή (ή στρέφει τα κοίλα άνω) στο $ \Delta $, αν η $ f' $ είναι 
+      γνησίως αύξουσα στο $ \Delta $.
+    \item $f$ κοίλη (ή στρέφει τα κοίλα κάτω) στο $ \Delta $, αν η $ f' $ είναι 
+      γνησίως φθίνουσα στο $ \Delta $.
+  \end{myitemize}
+\end{dfn}
+
+
+\subsection*{Γεωμετρική Ερμηνεία Καμπυλότητας}
+
+\begin{rem}
+\item {}
+  \begin{myitemize}
+    \item Μια συνάρτηση $f$ λέγεται ότι είναι κυρτή σ᾽ ένα διάστημα $\Delta$, αν το 
+      ευθύγραμμο τμήμα που ενώνει οποιαδήποτε δύο σημεία του γραφήματός της, βρίσκεται 
+      \textbf{πάνω} από αυτό ή επί αυτού (αν είναι εφαπτόμενο).
+    \item Μια συνάρτηση $f$ λέγεται ότι είναι κοίλη σ᾽ ένα διάστημα $\Delta$, αν το 
+      ευθύγραμμο τμήμα που ενώνει οποιαδήποτε δύο σημεία του γραφήματός της, βρίσκεται 
+      \textbf{κάτω} από αυτό ή επί αυτού (αν είναι εφαπτόμενο).
+  \end{myitemize}
+\end{rem}
+
+\begin{prop}
+  Έστω συνάρτηση $ f \colon \Delta \to \mathbb{R} $ συνεχής στο διάστημα $\Delta$ 
+  και δυο φορές παραγωγίσιμη στο εσωτερικό του $\Delta$. Τότε:
+  \begin{myitemize} 
+    \item $f$ \textbf{κυρτή} στο $\Delta \Leftrightarrow  f''(x) \geq 0 $ για κάθε $x$ 
+      στο εσωτερικό του $\Delta$.
+    \item $f$ \textbf{κοίλη} στο $\Delta \Leftrightarrow  f''(x) \leq 0 $ για κάθε $x$ 
+      στο εσωτερικό του $\Delta$.
+  \end{myitemize}
+\end{prop}
+
+\section*{Σημεία Καμπής}
+
+\begin{dfn}
+  Ένα σημείο $ (x_{0}, f(x)) $ της γραφικής παράστασης μιας συνάρτησης $ f $, λέγεται 
+  σημείο καμπής, αν:
+  \begin{myitemize}
+    \item Η $f$ είναι συνεχής στο $ x_{0} $
+    \item Υπάρχει η εφαπτομένη της γραφικής παράστασης της $f$ στο σημείο $ x_{0} $
+  \item $ f''(x)>0, \, \forall \underbrace{x \in (a, x_{0})}_{\text{αριστερά του } x_{0}} $ 
+    και $ f''(x) <0, \, \forall \underbrace{x \in (x_{0}, b)}_{\text{δεξιά του } x_{0}} $ ή
+    $ f''(x)<0, \, \forall \underbrace{x \in (a, x_{0})}_{\text{αριστερά του } x_{0}} $ 
+    και $ f''(x) >0, \, \forall \underbrace{x \in (x_{0}, b)}_{\text{δεξιά του } x_{0}} $
+  \end{myitemize}
+\end{dfn}
+
+\begin{prop}
+  Αν μια συνάρτηση $f$ έχει σημείο καμπής στο σημείο $ x_{0} $, τότε $ f''(x_{0})=0 $ 
+  ή δεν υπάρχει η $f''$ στο $ x_{0} $.
+\end{prop}
+
+\begin{rem}
+  Μια συνάρτηση $f$ έχει πιθανά σημεία καμπής στα σημεία όπου $ f''(x)=0 $ ή στα 
+  σημεία όπου δεν ορίζεται η $ f''(x) $.
+\end{rem}
+
+\section*{Taylor - Maclaurin}
+
+\begin{prop}
+\item {}
+  \begin{myitemize}
+    \item Το ανάπτυγμα Maclaurin μιας \textbf{άρτιας} συνάρτησης, περιέχει μόνο
+      \textbf{άρτιες} δυνάμεις του $x$ 
+    \item ανάπτυγμα Maclaurin μιας \textbf{περιττής} συνάρτησης, περιέχει μόνο
+      \textbf{περιττές} δυνάμεις του $x$ 
+  \end{myitemize}
+\end{prop}
+
+
+\end{document}

@@ -47,6 +47,14 @@
 	{$\quad \exists x_{0} \in (a,b) \; : \; f'(x_{0}) = 0$};
 \end{tikzpicture}
 
+\begin{rem}
+  Η Γεωμετρική ερμηνεία του θεωρήματος Rolle είναι, ότι εφόσον μια συνάρτηση 
+  $ y=f(x) $ ικανοποιεί τις προυποθέσεις του θεωρήματος, τότε υπάρχει τουλάχιστον ένα 
+  σημείο $ x_{0} $ στο διάστημα $ (a,b) $ στο οποίο η εφαπτομένη της γραφικής παράστασης 
+  της συνάρτησης, να είναι \textbf{παράλληλη} προς τον άξονα $x$.
+\end{rem}
+
+
 \begin{thmbreak}[{\bfseries  Μέσης Τιμής}] 
 	\begin{minipage}[t]{4.6cm}
 		\begin{enumerate}[i)]
@@ -61,6 +69,15 @@
 	right=0.1cm] {$\Rightarrow$}node[midway, right=0.5cm,text=black,text width = 3in,]
 	{$\quad \exists \xi \in (a,b) \; : \; f'(\xi) = \frac{f(b) - f(a)}{b - a}$};
 \end{tikzpicture}
+
+\begin{rem}
+  Η Γεωμετρική ερμηνεία του θεωρήματος Μέσης Τιμής είναι, ότι εφόσον μια συνάρτηση 
+  $ y=f(x) $ ικανοποιεί τις προυποθέσεις του θεωρήματος, τότε υπάρχει τουλάχιστον ένα 
+  σημείο $\xi$ στο διάστημα $ (a,b) $ στο οποίο η εφαπτομένη της γραφικής παράστασης 
+  της συνάρτησης, να είναι \textbf{παράλληλη} προς τη χορδή $AB$ όπου $ A(a,f(a)) $ 
+  και $ B(b,f(b)) $.
+\end{rem}
+
 
 \begin{thmbreak}[{\bfseries Θεώρημα Μέσης Τιμής Cauchy}]
 	\begin{minipage}[t]{5cm}
@@ -79,11 +96,15 @@
 	\frac{f(b) - f(a)}{b - a}$};
 	\end{tikzpicture}
 
+
 	\begin{thmbreak}[\bfseries Fermat]
-		\begin{minipage}[t]{4.2cm}
+      Έστω $ f \colon \Delta \to \mathbb{R} $ και $ x_{0} $ \textbf{εσωτερικό} σημείο 
+      του $\Delta$. 
+
+		\begin{minipage}[t]{0.30\textwidth}
 			\begin{enumerate}[i)]
-				\item $f(x_{0})$ τοπικό ακρότατο \hfill \tikzmark{a}
-				\item $ \exists $ η $ f'(x_{0}) $ \hfill \tikzmark{b}
+				\item $f(x_{0})$ τοπικό ακότατο \hfill \tikzmark{a}
+        \item η $ f $ παραγωγίσιμη στο $ x_{0} \in \Delta $  \hfill \tikzmark{b}
 			\end{enumerate}
 		\end{minipage}
 	\end{thmbreak}
@@ -93,6 +114,5 @@
 	right=0.1cm] {$\Rightarrow$}node[midway, right=0.5cm,text=black,text width = 3in,]
 	{$\quad  f'(x_{0}) = 0 $};
 \end{tikzpicture}
-
 
 \end{document}

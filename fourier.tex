@@ -247,7 +247,7 @@ $ 2 \pi $. Τότε υπό κατάλληλες προϋποθέσεις η $f$ 
     \displaystyle{\int _{- \pi }^{\pi} f(x) \cos{mx} \,{dx} = 
       \frac{a_{0}}{2} \cdot 0 + a_{m} \int _{- \pi }^{\pi } \cos^{2}{mx} 
     \,{dx} + b_{m} \cdot 0}, 
-         & m = 1,2,3, \ldots \\
+         & m = 1,2,3, \ldots \\[0.5cm]
          \displaystyle{\int _{- \pi }^{\pi} f(x) \,{dx} = \frac{a_{0}}{2}} 
          \int _{- \pi}^{\pi} \,{dx}, 
          & m=0 \\
@@ -255,22 +255,27 @@ $ 2 \pi $. Τότε υπό κατάλληλες προϋποθέσεις η $f$ 
   \intertext{άρα}
   \begin{cases} 
     \displaystyle{\int _{- \pi }^{\pi} f(x) \cos{nx} \,{dx} = 
-    a_{n}\cdot \pi }, \quad n=1,2,3\ldots \\
+    a_{n}\cdot \pi }, \quad n=1,2,3\ldots \\[0.5cm]
     \displaystyle{\int _{- \pi }^{\pi} f(x) \,{dx} = \frac{a_{0}}{2}
     2 \pi } 
   \end{cases} 
   \Leftrightarrow 
   \begin{cases} 
     \displaystyle{a_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi } f(x) \cos{nx} 
-    \,{dx}}, \quad n=1,2,3\ldots \\
+    \,{dx}}, \quad n=1,2,3\ldots \\[0.5cm]
     \displaystyle{a_{0} = \frac{1}{\pi} \int _{- \pi}^{\pi} f(x) \,{dx}}
   \end{cases}
 \end{gather*}
-ή ισοδύναμα, μαζεύοντας
+ή ισοδύναμα
 \begin{equation}\label{eq:four2}
   \boxed{a_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi} f(x) \cos{nx} \,{dx}, \quad
   n = \textcolor{Col1}{0},1,2,3, \ldots}
 \end{equation}
+
+\begin{rem}
+  Οι συντελεστές Fourier μπορούν να υπολογιστούν σε \textbf{οποιαδήποτε} πλήρη περίοδο. 
+  
+\end{rem}
 
 \begin{rem}
   Οι τύποι~\eqref{eq:four1} και~\eqref{eq:four2} ονομάζονται 
@@ -283,9 +288,11 @@ $ 2 \pi $. Τότε υπό κατάλληλες προϋποθέσεις η $f$ 
   \[
     f(x) \sim \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{nx} + b_{n} \sin{nx}]
   \] 
-  η οποία ονομάζεται σειρά Fourier της $f$. Υπό ποιες προϋποθέσεις η σειρά Fourier 
-  μιας συνάρτησης $f$ \textbf{συγκλίνει} στην $f$, απαντάται στο επόμενο θεώρημα.
+  η οποία ονομάζεται σειρά \textcolor{Col1}{Fourier} της $f$. Υπό ποιες προϋποθέσεις η 
+  σειρά Fourier μιας συνάρτησης $f$ \textbf{συγκλίνει} στην $f$, απαντάται στο επόμενο 
+  θεώρημα.
 \end{rem}
+
 
 \section{Σειρά Fourier}
 
@@ -320,6 +327,8 @@ $ 2 \pi $. Τότε υπό κατάλληλες προϋποθέσεις η $f$ 
   και οι συντελεστές $ a_{n} $ και $ b_{n} $ από τους τύπους~\eqref{eq:four1}
   και~\eqref{eq:four2}.
 \end{rem}
+
+
 
 \section{Συναρτήσεις με περίοδο 2L}
 
