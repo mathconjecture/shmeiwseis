@@ -1,0 +1,203 @@
+\input{preamble_ask.tex}
+\input{definitions_ask.tex}
+\input{myboxes.tex}
+\input{tikz}
+
+\geometry{left=1.9cm,right=1.9cm}
+
+\newcommand{\twocolumnsidescc}[2]{\begin{minipage}[c]{0.48\linewidth}\raggedright
+        #1
+        \end{minipage}\hfill\begin{minipage}[c]{0.48\linewidth}\raggedright
+        #2
+    \end{minipage}
+}
+
+\geometry{top=2.5cm}
+\everymath{\displaystyle}
+\pagestyle{askhseis}
+
+\begin{document}
+
+\setcounter{chapter}{1}
+
+\begin{center}
+  \minibox{\large \bfseries \textcolor{Col1}{Διωνυμικό Ανάπτυγμα}}
+\end{center}
+
+\vspace{\baselineskip}
+
+
+
+\section*{Διωνυμικοί Συντελεστές}
+
+
+\begin{dfn}
+  Έστω $ n,k $ ακέραιοι με $ 0 \leq k \leq n $. Ορίζουμε τους 
+  \textcolor{Col1}{διωνυμικούς συντελεστές} με τον εξής τρόπο: 
+  \[
+    \binom{n}{k} = \frac{n!}{k!(n-k)!} = \frac{n(n-1)\cdots (n-k+1)}{k!}, \quad
+    \text{αν } k \neq 0,n 
+    \quad \text{και} \quad \binom{n}{0} = \binom{n}{n} = 1 
+  \] 
+\end{dfn}
+
+\subsection*{Ιδιότητες Διωνυμικών Συντελεστών}
+
+\begin{enumerate}
+  \item \label{it:idiii} 
+    $ \bm{\binom{n+1}{k} = \binom{n}{k-1} + \binom{n}{k}} $
+    \begin{proof}
+      \begin{align*}
+        \binom{n}{k-1} + \binom{n}{k} 
+        &= \frac{n!}{(k-1)!(n-k+1)!} + \frac{n!}{k!(n-k)!} 
+        = \frac{kn!}{k!(n+1-k)!} + \frac{(n+1-k)n!}{k!(n+1-k)!} \\
+        &= n! \left[\frac{k}{k!(n+1-k)!} + \frac{n+1-k}{k!(n+1-k)!}\right] 
+        = \frac{n!(n+1)}{k!(n+1-k)!} = \frac{(n+1)!}{k!(n+1-k)!} = 
+        \binom{n+1}{k}
+      \end{align*} 
+    \end{proof}
+
+  \item \textbf{Οι διωνυμικοί συντελεστές είναι φυσικοί αριθμοί}.
+    \begin{proof}
+    \item {}
+      Θα δείξουμε με Μαθηματική Επαγωγή, ότι $ \binom{n}{k} \in \mathbb{N} $,
+      για κάθε $ n \in \mathbb{N} $ με $ k \leq n $.
+      \begin{myitemize}
+        \item Για $ n=1 $, προφανώς, $ \binom{1}{1} \in \mathbb{N} $
+        \item Έστω ότι $ \binom{n}{k} \in \mathbb{N}, \; \text{για κάθε } k \leq n $
+        \item Θα δείξουμε ότι $ \binom{n+1}{k} \in \mathbb{N}, \; \text{για κάθε } 
+          k \leq n+1$. Πράγματι, από την ιδιότητα~\ref{it:idiii} έχουμε
+          \[
+            \binom{n+1}{k} = \binom{n}{k-1} + \binom{n}{k}, \; \text{για κάθε } 
+            k \leq n
+          \]
+          επομένως από την υπόθεση της επαγωγής, $ \textstyle{\binom{n+1}{k}} \in
+          \mathbb{N}, \; \text{για κάθε } k \leq n $. Όμως και 
+          $ \textstyle{\binom{n+1}{n+1} \in \mathbb{N}} $, άρα 
+          \[
+            \binom{n+1}{k} \in \mathbb{N}, \text{για κάθε } k \leq n+1 
+          \] 
+      \end{myitemize}
+    \end{proof}
+  % \item $ \binom{n}{k} = \binom{n}{n-k}, \quad 0 \leq k \leq n $
+\end{enumerate}
+
+\enlargethispage{2\baselineskip}
+
+\subsection*{Τρίγωνο του Pascal}
+
+Οι \textcolor{Col1}{διωνυμικοί συντελεστές} δίνονται και από το 
+\textbf{τρίγωνο του Pascal}, με το συντελεστή $ \textstyle{\binom{n}{k}} $ να 
+βρίσκεται στη $ (n+1) $ γραμμή στην $ (k+1) $ θέση .
+Το τρίγωνο του Pascal έχει τις παρακάτω δύο ιδιότητες:
+\begin{enumerate}[i)]\label{en:pasc}
+  \item Ο πρώτος και ο τελευταίος αριθμός κάθε γραμμής είναι $1$.
+  \item \label{it:pascii} Οποιοσδήποτε άλλος αριθμός σε κάθε γραμμή, είναι το 
+    άθροισμα των 2 αριθμών που βρίσκονται ακριβώς από πάνω του στην αμέσως 
+    προηγούμενη γραμμή.
+\end{enumerate}
+\twocolumnsidescc{
+\begin{gather*}
+  (a+b)^{0}={\color{Col1}1} \\
+  (a+b)^{1}={\color{Col1}1}a+b{\color{Col1}1} \\
+  (a+b)^{2}={\color{Col1}1}a^{2}+{\color{Col1}2}ab
+  +b^{2}{\color{Col1}1} \\
+  (a+b)^{3}={\color{Col1}1}a^{3}+{\color{Col1}3}a^{2}b
+  +{\color{Col1}3}ab^{2}+b^{3}{\color{Col1}1} \\
+  (a+b)^{4}={\color{Col1}1}a^{4}+{\color{Col1}4}a^{3}b
+  +{\color{Col1}6}a^{2}b^{2}+{\color{Col1}4}ab^{3}
+  +b^{4}{\color{Col1}1} 
+\end{gather*}
+}{
+\begin{myitemize}
+  \item Η ιδlότητα~\ref{it:pascii} του Τριγώνου Pascal, είναι ακριβώς η
+    ιδιότητα~\ref{it:idiii} των διωνυμικών συντελεστών. 
+    \[ \binom{n+1}{k} = \binom{n}{k-1} + \binom{n}{k} \]
+  \item Προφανώς $ \binom{n}{k} = \binom{n}{n-k}, \quad 0 \leq k \leq n $
+\end{myitemize}
+}
+
+
+
+\section*{Διωνυμικό Θεώρημα}
+
+Έστω$ a,b \in \mathbb{R} $ και $ n \in \mathbb{N} $. Τότε
+\[
+  \boxed{(a+b)^{n} = a^{n} + \binom{n}{1} a^{n-1}b + 
+    \binom{n}{2} a^{n-2}b^{2} + \binom{n}{3} a^{n-3}b^{3} + \cdots + 
+  \binom{n}{n-1} ab^{n-1} + b^{n} = \sum_{k=0}^{n} \binom{n}{k} a^{n-k}b^{k}}
+\]
+όπου οι διωνυμικοί συντελεστές δίνονται από τον τύπο
+$
+\binom{n}{k} = \frac{n!}{k!(n-k)!}
+$ 
+
+Με τη βοήθεια του Διωνυμικού θεωρήματος αποδεικνύονται πολύ εύκολα τα παρακάτω 
+αθροίσματα των διωυυμικών συντελεστών.
+\begin{prop}
+\item {}
+  \begin{enumerate}
+    \item $ \sum_{k=0}^{n} \binom{n}{k} = \binom{n}{0} +\cdots+ \binom{n}{n} =  2^{n} $. 
+      Πράγματι, $ 2^{n}=(1+1)^{n} =
+      \sum_{k=0}^{n} \binom{n}{k} $
+    \item $ \sum_{k=0}^{n} (-1)^k \binom{n}{k} = \binom{n}{0} - \binom{n}{1} +\cdots
+      +(-1)^{n} \binom{n}{n} = 0 $. Πράγματι, $ 0 = (1+(-1))^{n} = 
+      \sum_{k=0}^{n} (-1)^{k}\binom{n}{k} $
+    \item $ \sum_{k \; \text{περιττός}} \binom{n}{k} = 2^{n-1} $. 
+      Πράγματι με αφαίρεση της ii) από την i) έχουμε: $ 2 \sum_{k \; \text{περιττός}} 
+      \binom{n}{k} = 2^{n} \Leftrightarrow \sum_{k \; \text{περιττός}}
+      \binom{n}{k} = 2^{n-1} $
+    \item $ \sum_{k \; \text{άρτιος}} \binom{n}{k} = 2^{n-1} $. 
+      Πράγματι με πρόσθεση των i) και ii) έχουμε: $ 2 \sum_{k \; \text{άρτιος}}
+      \binom{n}{k} = 2^{n} \Leftrightarrow \sum_{k \text{περιττός}} \binom{n}{k}
+      = 2^{n-1} $
+  \end{enumerate}
+\end{prop}
+
+
+
+\section*{Διωνυμική Σειρά}
+
+
+Έστω $ a,b \in \mathbb{R} $ με $ \abs{a} > \abs{b} $ και $ p \in \mathbb{R} $, όχι
+φυσικός και $ k \in \mathbb{N} $. Τότε
+\[
+  \boxed{(a+b)^{p} = a^{p} + \binom{p}{1} a^{p-1}b + \binom{p}{2} a^{p-2}b^{2} +
+    \binom{p}{3} a^{p-3}b^{3} + \cdots + \binom{p}{k} a^{p-k}b^{k} + \cdots =
+  \sum_{k=0}^{\infty} \binom{p}{k} a^{p-k}b^{k}}
+\] 
+ή ισοδύναμα
+\[
+  (a+b)^{p} = a^{p}\left[1 + \binom{p}{1} \left(\frac{b}{a}\right)+ \binom{p}{2} 
+    \left(\frac{b}{a}\right)^{2}+ \binom{p}{3} \left(\frac{b}{ a}\right)^{3}+ \cdots + 
+  \binom{p}{k} \left(\frac{b}{a}\right)^{k}+ \cdots\right]
+\] 
+όπου οι διωνυμικοί συντελεστές δίνονται από τον τύπο
+$
+\binom{p}{k} = \frac{p(p-1)(p-2)\cdots (p-(k-1))}{k!} 
+$ με $ \binom{p}{0} \overset{\text{ορ.}}{=} 1 $.
+\begin{rem}
+\item {}
+  Για $ p \in \mathbb{R} $ το διωνυμικό ανάπτυγμά είναι \textbf{σειρά}
+  και μάλιστα συγκλίνουσα, αν $ \abs{\frac{b}{a}} < 1 $. 
+
+  Ισχύει ότι αν $ \abs{\frac{b}{a}} < < 1  $ τότε  
+  $ (a+b)^{p} \approx a^{p}\left(1+p\left(\frac{b}{a}\right)\right)  $ 
+\end{rem}
+\[
+  (1+x)^p = 1 + px + \frac{p(p-1)}{2!} x^2 + \cdots + \frac{p(p-1)\cdots (p-k+1)}{k!}
+  x^n + \cdots   
+\] 
+\begin{rem}
+\item {}
+  \begin{myitemize}
+    \item Αν $ p>0 $ αλλά όχι ακέραιος, τότε η σειρά συγκλίνει (απολύτως) για $ -1 \leq x
+      \leq 1 $
+    \item Αν $-1<p<0$, τότε η σειρά συγκλίνει για $ -1 < x \leq 1 $
+    \item Αν $p \leq -1$, τότε η σειρά συγκλίνει για $ -1 < x < 1 $
+  \end{myitemize}
+\end{rem}
+
+
+
+\end{document}
