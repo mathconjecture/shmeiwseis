@@ -64,8 +64,9 @@
       \begin{axis}[myaxis,
         ymin=-2,ymax=2,
         xmin=-7,xmax=7,
-        extra x ticks={6.28},
-        extra x tick labels={$2 \pi$},
+        extra x ticks={0,6.28},
+        extra x tick labels={$0$,$2 \pi$},
+        tick label style={blue!75,above left=3pt},
         domain=-2*pi:2*pi,
         ]
         \addplot[myplot] {sin(deg(x))} node[above right,pos=0.65]{\Large$\sin x$} ;

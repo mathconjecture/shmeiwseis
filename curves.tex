@@ -1,5 +1,6 @@
 \input{preamble_ask.tex}
 \input{definitions_ask.tex}
+\input{tikz.tex}
 
 \geometry{left=15.63mm,right=15.63mm,top=30.25mm, bottom=36.25mm,footskip=24.16mm,
   headsep=24.16mm}
@@ -7,6 +8,12 @@
 \pagestyle{vangelis}
 \everymath{\displaystyle}
 
+\newcommand{\twocolumnsidescc}[2]{\begin{minipage}[c]{0.40\linewidth}\raggedright
+        #1
+        \end{minipage}\hfill\begin{minipage}[c]{0.50\linewidth}\raggedright
+        #2
+    \end{minipage}
+}
 
 \begin{document}
 
@@ -22,22 +29,70 @@
   %todo σχημα καμπύλης στο χωρο
 \end{dfn}
 
-\begin{examples}
-\item {}
-  \begin{enumerate}
-    %todo σχήμα για έλικα 
-    \item Η έλικα $ \mathbf{r}(t)= a \cos{\omega t}\, \mathbf{i} + a \sin{\omega t}\,
-      \mathbf{j} + bt \, \mathbf{k} $ 
-    \item Η τυχαία καμπύλη στο χώρο 
-      $ \mathbf{r}(t)=t^{2}\, \mathbf{i} + (2t+5)\, \mathbf{j} + 2t^{3} \, \mathbf{k}$ 
-    \item Η ευθεία στο χώρο $ \mathbf{r}(t)=(x_{0}+at)\, \mathbf{i} + (y_{0}+bt)\,
-      \mathbf{j} + (z_{0}+ct) \, \mathbf{k}$, που διέρχεται από το σημείο 
-      $ P(x_{0}, y_{0}, z_{0}) $ και είναι παράλληλη στο διάνυσμα 
-      $ \mathbf{u} = (a,b,c) $.
-  \end{enumerate}
-\end{examples}
+\begin{example}
+  Η \textbf{κυκλική έλικα} $ \mathbf{r}(t)= a \cos{(\omega t)}\, \mathbf{i} + a 
+  \sin{(\omega t)}\, \mathbf{j} + bt \, \mathbf{k} $, με $ a,b,\omega \in \mathbb{R} $. 
+      \begin{center}
+      \begin{tikzpicture}
+        \draw[axis,<->,>=stealth] (0,2.6) node[left] {$z$} -- (0,0) -- (-1.5,-1.5) 
+          node[left] {$x$} ;
+        \draw[axis,-stealth] (0,0) -- (2.6,0) node[below] {$y$} ;
+        \draw [graph,domain=0:720,smooth,variable=\t,samples=200] 
+          plot ({sin(\t)},\t/360,{cos(\t)}) ;
+      \end{tikzpicture}
+      \end{center}
+  \end{example}
+  \begin{rem*}
+    Ο αριθμός $a$ είναι η ακτίνα της έλικας, ενώ ο $ 2 \pi b $ παριστανεί την σταθερή, 
+    κάθετη απόσταση ανάμεσα σε 2 σπείρες.
+  \end{rem*}
+  \begin{example}
+    Η ευθεία στο χώρο, που διέρχεται από το σημείο $ P_0(x_{0}, y_{0}, z_{0}) $ 
+    και είναι παράλληλη στο διάνυσμα $ \mathbf{u} = (a,b,c) $, δίνεται από την 
+    εξίσωση. 
+    $ \mathbf{r}(t)=(x_{0}+at)\, \mathbf{i} + (y_{0}+bt)\, \mathbf{j} + (z_{0}+ct) 
+    \, \mathbf{k}$
+
+    \vspace{\baselineskip}
+    \twocolumnsidescc{
+      \begin{tikzpicture}[scale=0.7]
+        \node  (0) at (0, 3) {};
+        \node  (1) at (0, 0) {};
+        \node  (2) at (-2, -1) {};
+        \node  (3) at (3, 0) {};
+        \node  (5) at (-1, 2) {};
+        \node  (6) at (4, 3) {};
+        \node[above] (e) at (6) {$\varepsilon$};
+        \node  (7) at ($(5)!0.40!(6)$) {};
+        \node  (8) at ($(5)!0.8!(6)$) {};
+        \node  (u) at (2.375, 0.625) {};
+        \node[above,yshift=-2pt,xshift=-5pt,Col2] (a) at (u) {$\mathbf{u}$};
+        \draw[-latex,very thin] (1.center) node[left,yshift=3pt]{$O$} to (2.center) 
+          node[left]{$x$};
+        \draw[-latex,ultra thick,Col2] (1.center) to (u);
+        \draw[-latex,very thin] (1.center) to (3.center) node[below]{$y$};
+        \draw[-latex,very thin] (1.center) to (0.center) node[left]{$z$};
+        \draw[very thick,Col1] (5.center) to (6.center);
+        \draw[-latex] (1.center) to node[above left=-3pt]{$\mathbf{r_{0}}$} (7.center) 
+          node[pin={[pin edge={black,latex-},Col2]93:\smaller$t=0$}]{}
+          node[above,xshift=5pt]{\smaller$P_{0}$};
+        \draw[-latex] (1.center) to node[right=5pt]{$\mathbf{r}$} (8.center) ;
+        \draw[-latex,ultra thick,Col2] (7.center) to (8.center) node[above left] 
+          {$t\mathbf{u}$};
+        \node[above right] at (8) {\smaller$P$};
+        \draw[fill] (7.center) circle (1.5pt); 
+        \draw[fill] (8.center) circle (1.5pt); 
+      \end{tikzpicture}
+      }{
+      Πράγματι, παρατηρούμε ότι $ \mathbf{r(t)} = \mathbf{r_0} + t \mathbf{u} $, δηλαδή:
+      \[
+        \mathbf{r(t)} = (x_{0}, y_{0}, z_{0}) + t(a,b,c) = (x_{0}+ta, y_{0}+tb, z_{0}+tc)
+      \]  
+    }
+
+  \end{example}
 
 
 
 
-\end{document}
+  \end{document}

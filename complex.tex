@@ -1,0 +1,652 @@
+\input{preamble_ask.tex}
+\input{definitions_ask.tex}
+\input{tikz.tex}
+\input{insbox}
+
+\DeclareMathOperator{\Arg}{Arg}
+\setcounter{chapter}{1}
+
+\pagestyle{vangelis}
+\everymath{\displaystyle}
+
+\newcommand{\twocolumnsiderr}[2]{\begin{minipage}[t]{0.38\linewidth}\raggedright
+    #1
+    \end{minipage}\hfill\begin{minipage}[t]{0.52\linewidth}\raggedright
+    #2
+  \end{minipage}
+}
+
+\newcommand{\threecolumnsidess}[3]{\begin{minipage}[c]{0.30\linewidth}\raggedright
+    #1
+    \end{minipage}\hfill\begin{minipage}[c]{0.35\linewidth}\raggedright
+    #2
+    \end{minipage}\hfill\begin{minipage}[c]{0.30\linewidth}\raggedright
+    #3
+  \end{minipage}
+}
+
+\newcommand{\fourcolumnsides}[4]{\begin{minipage}[c]{0.22\linewidth}\raggedright
+    #1
+    \end{minipage}\hfill\begin{minipage}[c]{0.28\linewidth}\raggedright
+    #2
+    \end{minipage}\hfill\begin{minipage}[c]{0.28\linewidth}\raggedright
+    #3
+    \end{minipage}\hfill\begin{minipage}[c]{0.22\linewidth}\raggedright
+    #4
+  \end{minipage}
+}
+\begin{document}
+
+\chapter*{Μιγαδικοί Αριθμοί}
+
+
+Οι \textbf{μιγαδικοί} αριθμοί είναι εκφράσεις της μορφής $ a+bi $, 
+όπου $ a,b \in \mathbb{R} $ και $ i= \sqrt{-1} $ είναι η \textit{φανταστική} μονάδα. 
+Αν $ z=a+bi $ μιγαδικός αριθμός, τότε ο $a$ λέγεται 
+\textcolor{Col1}{πραγματικό μέρος} και γράφουμε $ a = \Re(z) $, 
+ενώ ο $b$ λέγεται \textcolor{Col1}{φανταστικό μέρος} και γράφουμε $b=\Im($z$)$. 
+Το σύνολο των μιγαδικών αριθμών συμβολίζεται με $ \mathbb{C} $, ενώ με $ \mathbb{I} $ 
+συμβολίζουμε το σύνολο των φανταστικών αριθμών.
+\begin{align*}
+  \mathbb{C} = \{ a+bi \; : \; a,b \in \mathbb{R} \; \text{και} \; i = \sqrt{-1}
+    \} \quad \text{και} \quad \mathbb{I} = \{ bi \; : \; b \in \mathbb{R} 
+  \; \text{και} \; i = \sqrt{-1} \}  
+\end{align*}
+
+\section*{Ισότητα Μιγαδικών Αριθμών}
+
+\begin{dfn}
+  Έστω οι μιγαδικοί αριθμοί $ z_{1}=a+bi $ και $ z_{2}=c+di $. Τότε 
+  $
+  z_{1} = z_{2} \Leftrightarrow a=c \; \text{και} \; b=d 
+  $
+\end{dfn}
+
+
+\twocolumnsides{
+  \subsection*{Γεωμετρική Αναπαράσταση Μιγαδικών}
+  Έστω $xOy$ καρτεσιανό σύστημα αξόνων και $z=a+bi$ μιγαδικός αριθμός. Στον μιγαδικό 
+  αριθμό $z$  αντιστοιχίζουμε το ζεύγος $(a,b)$ και άρα το σημείο $M(a,b)$ με 
+  συντεταγμένες $a,b$ το οποίο ονομάζουμε \textcolor{Col1}{γεωμετρική εικόνα} του 
+  μιγαδικού $z$.  
+  % Επίσης στο σημείο $M(a,b)$ και άρα και στον μιγαδικό αριθμό $z$ 
+  % αντιστοιχίζουμε το διάνυσμα θέσης $\vec{OM}$.
+  \[
+    \begin{tikzpicture}
+      \draw[-stealth] (0,0) coordinate (O) -- (2.2,0) node[right] {$x$} ;
+      \node at (O) [left] {$O$} ;
+      \draw[-stealth] (0,0) -- (0,2.2) node[left] {$y$} ;
+      \coordinate (p) at (1.4,1.4) ;
+      \fill[Col1] (p) node[above right,font=\small,xshift=-5pt] {$z=a+bi$} 
+        node [right,Col2,yshift=-5pt,font=\small] {$M(a,b)$} circle (1pt) ;
+      \draw[dashed,Col2] (O|-p) node[left]{$b$} -- (p) -- (p|-O) 
+        node[below]{$a$} ;
+    \end{tikzpicture}
+  \]
+  }{
+  \subsection*{Μέτρο Μιγαδικών}
+  Ονομάζουμε \textcolor{Col1}{μέτρο} ενός μιγαδικού αριθμού $ z=a+bi $, και το 
+  συμβολίζουμε με $ \abs{z} $, την τιμή 
+  \[
+    \abs{z} = \sqrt{a^{2}+b^{2}} \geq 0
+  \]
+  Το μέτρο, παριστάνει την \textbf{απόσταση} της εικόνας 
+  του μιγαδικού αριθμού από την αρχή των αξόνων.
+  \[
+    \begin{tikzpicture}
+      \draw[-stealth] (0,0) coordinate (O) -- (2.2,0) node[right] {$x$} ;
+      \node at (O) [left] {$O$} ;
+      \draw[-stealth] (0,0) -- (0,2.2) node[left] {$y$} ;
+      \coordinate (p) at (1.4,1.4) ;
+      \fill (p) node[above right,font=\small,xshift=-5pt] {$z=a+bi$} circle (1pt) ;
+      \draw[dashed,Col2] (O|-p) node[left]{$b$} -- (p) -- (p|-O) node[below]{$a$} ;
+      \draw (O) -- node[above left,xshift=3pt,Col1] {$\abs{z}$} (p) ;
+      \draw[Col2] (O-|p)++(0,0.25) -- ++(-0.25,0) -- ++ (0,-0.25) ; 
+    \end{tikzpicture}
+  \]
+}
+
+
+\twocolumnsides{
+  \subsection*{Απόσταση Μιγαδικών αριθμών}
+
+  Αν $ z_{1}= a_{1}+ b_{1}i $ και $ z_{2}= a_{2}+ b_{2}i $, τότε το μέτρο
+  \[
+    \abs{z_{1}- z_{2}} = \sqrt{(a_{1}- a_{2})^{2} + (b_{1}- b_{2})^{2}} 
+  \] 
+  παριστάνει την απόσταση των μιγαδικών αριθμών, $ z_{1} $ και $ z_{2} $.
+  }{
+  \subsection*{Ιδιότητες του Μέτρου}
+  \twocolumnsidess{
+    \begin{enumerate}
+      \item $ \abs{z_{1} \cdot z_{2}} = \abs{z_{1}} \cdot \abs{z_{2}} $
+      \item $ \abs{\frac{z_{1}}{z_{2}}} = \frac{\abs{z_{1}}}{\abs{z_{2}}}, 
+        \; z_{2} \neq 0 $
+    \end{enumerate}
+    }{
+    \begin{enumerate}[start=5]
+      \item $ \abs{z^{k}} = \abs{z} ^{k} $
+    \end{enumerate}
+  }
+  \begin{enumerate}[start=3]
+    \item $ \abs{z} = \abs{-z} = \abs{\overline{z}} = \abs{- \overline{z}} $
+    \item $ \abs{\abs{z_{1}- z_{2}}} \leq \abs{z_{1}- z_{2}} \leq \abs{z_{1}} - 
+      \abs{z_{2}} $
+  \end{enumerate}
+}
+
+\section*{Πράξεις Μιγαδικών Αριθμών}
+
+Έστω $z_{1}=a+bi$ και $z_{2}=c+di$ μιγαδικοί αριθμοί.
+
+\twocolumnsides{
+  \subsubsection*{Πρόσθεση}
+  $z_{1}+z_{2}=(a+bi)+(c+di)=(a+c)+(b+d)i$
+  }{
+  \subsubsection*{Αφαίρεση}
+  $z_{1}-z_{2}=(a+bi)-(c+di)=(a-c)+(b-d)i$
+}
+
+
+\twocolumnsides{
+  \subsubsection*{Πολλαπλασιασμός}
+  \begin{align*}
+    z_{1}\cdot z_{2}&=(a+bi)\cdot (c+di) \\
+                    &=ac+adi+bci+bdi^{2} \\
+                    &=ac-bd+(ad+bc)i \\
+  \end{align*}
+  }{
+  \subsubsection*{Διαίρεση}
+  \begin{align*}
+    \frac{z_{1}}{z_{2}}&=\frac{(a+bi)}{(c+di)}     =\frac{(a+bi)(c-di)}{(c+di)(c-di)} \\
+                       &=\frac{ac+bd+(-ad+bc)}{b^{2}+d^{2}} \\
+                       &=\frac{ac+bd}{c^2+d^2}+\frac{bc-ad}{c^2+d^2}
+  \end{align*}
+}
+
+\subsection*{Συνοπτικά}
+
+\twocolumnsides{
+  \begin{myitemize}
+    \item $z_{1}+z_{2}=(a+c)+(b+d)i$
+    \item $z_{1}-z_{2}=(a-c)+(b-d)i$
+  \end{myitemize}
+  }{
+  \begin{myitemize}
+    \item $z_{1}\cdot z_{2}=(ac-bd)+(ad+bc)i$
+    \item $\frac{z_{1}}{z_{2}}=\frac{ac+bd}{c^2+d^2}+\frac{bc-ad}{c^2+d^2}i$
+  \end{myitemize}
+}
+
+\vspace{\baselineskip}
+
+\twocolumnsides{
+  \section*{Αντίθετος}
+  \begin{dfn}
+    Έστω ο μιγαδικός $ z=a+bi $. Ονομάζουμε \textcolor{Col1}{αντίθετο} του 
+    $z$ τον μιγαδικό αριθμό $ -z=-a-bi $.
+  \end{dfn}
+  \[
+    \begin{tikzpicture}
+      \coordinate (0) at (0,0)  ;
+      \draw[-stealth] (-2,0) -- (2,0) node[right] {$x$} ;
+      \node at (O) [above left] {$O$} ;
+      \draw[-stealth] (0,-2) -- (0,2) node[left] {$y$} ;
+      \coordinate (p) at (1.2,1.2) ;
+      \coordinate (q) at (-1.2,-1.2) ;
+      \fill (p) node[above right,font=\small,xshift=-5pt] {$z=a+bi$} circle (1pt) ;
+      \fill[Col1] (q) node[below,font=\small,Col1] {$z=-a-bi$} circle (1pt) ;
+      \draw[dashed,Col2] (O|-p) node[left]{$b$} -- (p) -- (p|-O) node[below]{$a$} ;
+      \draw[Col2] (O-|p)++(0,0.25) -- ++(-0.25,0) -- ++ (0,-0.25) ; 
+      \draw[dashed,Col2] (O|-q) node[right]{$-b$} -- (q) -- (q|-O) node[above]{$-a$} ;
+    \end{tikzpicture}
+  \]
+  }{
+  \section*{Συζυγής}
+  \begin{dfn}
+    Έστω ο μιγαδικός $ z=a+bi $. Ονομάζουμε \textcolor{Col1}{συζυγή} του 
+    $z$ τον μιγαδικό αριθμό $ \overline{z}=a-bi $.
+  \end{dfn}
+  \[
+    \begin{tikzpicture}
+      \coordinate (0) at (0,0)  ;
+      \draw[-stealth] (-0.5,0) -- (2,0) node[right] {$x$} ;
+      \node at (O) [above left] {$O$} ;
+      \draw[-stealth] (0,-2) -- (0,2) node[left] {$y$} ;
+      \coordinate (p) at (1.2,1.2) ;
+      \coordinate (q) at (1.2,-1.2) ;
+      \fill (p) node[above right,font=\small,xshift=-5pt] {$z=a+bi$} circle (1pt) ;
+      \fill[Col1] (q) node[below,font=\small,Col1] {$z=a-bi$} circle (1pt) ;
+      \draw[dashed,Col2] (O|-p) node[left]{$b$} -- (p) -- (p|-O) node[below right]{$a$} ;
+      \draw[dashed,Col2] (O|-q) node[left]{$-b$} -- (q) -- (q|-O) 
+        node[below right]{$a$} ;
+    \end{tikzpicture}
+  \]
+}
+
+\section*{Ιδιότητες των Συζυγών}
+
+Έστω $ z_{1}, z_{2} $ και $ z $ μιγαδικοί αριθμοί. Τότε 
+
+\twocolumnsides{
+  \begin{enumerate}
+    \item $ \overline{\overline{z}} = z $
+    \item $ \overline{z_{1}+ z_{2}} = \overline{z_{1}} + \overline{z_{2}} \quad
+      \text{και} \quad 
+      \overline{z_{1}+ z_{2}+ \cdots + z_{n}} = \overline{z_{1}} + \overline{z_{2}} +
+      \cdots \overline{z_{n}} $
+    \item $ \overline{z_{1}\cdot z_{2}} = \overline{z_{1}} \cdot \overline{z_{2}} \quad
+      \text{και} \quad 
+      \overline{z_{1}\cdot z_{2} \cdots z_{n}} = \overline{z_{1}} \cdot
+      \overline{z_{2}} \cdots \overline{z_{n}} $
+    \item $ \overline{\left(\frac{z_{1}}{z_{2}}\right)} =
+      \frac{\overline{z_{1}}}{\overline{z_{2}}} $, αν $ z_{2} \neq 0 $
+  \end{enumerate}
+  }{
+  \begin{enumerate}[start=5]
+    \item $ z \cdot \overline{z} = a^{2}+b^{2} = \abs{z} ^{2} $
+    \item $ \frac{z+ \overline{z}}{2} = \Re(z) \quad \text{και} \quad 
+      \frac{z- \overline{z}}{2i} = \Im(z) $ 
+    \item Αν $ z = \overline{z} $ τότε $ z \in \mathbb{R} $
+    \item Αν $ z = -\overline{z} $ τότε $ z \in \mathbb{I} $
+  \end{enumerate}
+}
+
+\begin{rem}
+  Για να υπολογίσουμε το πηλίκο δύο μιγαδικών αριθμών, θα πολλαπλασιάζουμε τον αριθμητή
+  και τον παρονομαστή με τον συζυγή αριθμό του \textbf{παρονομαστή}.
+\end{rem}
+\begin{example}
+  \begin{align*}
+    \frac{1+i}{2+3i} = \frac{(1+i)(2-3i)}{(2+3i)(2-3i)} =
+    \frac{2+2i-3i-3i^{2}}{2^{2}+3^{2}} = \frac{5}{2^{2}+3^{2}} - \frac{1}{2^{2}+3^{2}}i =
+    \frac{5}{13} - \frac{1}{13} i
+  \end{align*}
+\end{example}
+
+\twocolumnsider{
+  \section*{Δυνάμεις}
+
+  Έστω $z\in \mathbb{C}$ και $n\in\mathbb{Z}$. Τότε
+  \begin{myitemize}
+    \item $z^{n}=\underbrace{z\cdot z \cdots z}_{n\; \text{φορές}}, \; n>0$
+    \item $z^{0}=1$
+    \item $z^{n}=(z^{-1})^{-n}, \; n<0$
+  \end{myitemize}
+  }{
+  \section*{Ιδιότητες των Δυνάμεων}
+
+  \twocolumnsiderr{
+    \begin{myitemize}
+      \item $z^{m}\cdot  z^{n}=z^{m+n}$
+      \item $\frac{z^{m}}{z^{n}}=z^{m-n}$
+      \item $(z^{m})^{n}=z^{m\cdot n}$
+    \end{myitemize}
+    }{
+    \begin{myitemize}
+      \item $(z_{1}\cdot z_{2})^{n}=z_{1}^{n}\cdot z_{2}^{n}$
+      \item $\left(\frac{z_{1}}{z_{2}}\right)^{n}=\frac{z_{1}^{n}}{z_{2}^{n}}$
+      \item $z=0\Rightarrow 0^{n}=0, \; n>0$
+    \end{myitemize}
+  }
+}
+
+\section*{Δυνάμεις της Φανταστικής Μονάδας}
+
+\twocolumnsides{
+  \begin{myitemize}
+    \item $i^{0}=1$
+    \item $i^{1}=i$
+    \item $i^{2}=-1$
+    \item $i^{3}=i^{2}\cdot i=-i$
+  \end{myitemize}
+  }{
+  \begin{myitemize}
+    \item $i^{4}=i^{3}\cdot i=1$
+    \item $i^{5}=i^{4}\cdot i=i$
+    \item $i^{6}=i^{5}\cdot i=-1$
+    \item $i^{7}=i^{6}\cdot i=-i$
+  \end{myitemize}
+}
+
+\vspace{\baselineskip}
+
+Αποδεικνύεται με επαγωγή ότι για κάθε $n>0$
+
+\twocolumnsides{
+  \begin{myitemize}
+    \item $i^{4n}=1$
+    \item $i^{4n+1}=i$
+    \item $i^{4n+2}=-1$
+    \item $i^{4n+3}=-i$
+  \end{myitemize}
+  }{
+  \begin{myitemize}
+    \item $i^{n}=(i^{-1})^{-n}=\left(\frac{1}{i}\right)^{-n}=(-i)^{-n}, \; n<0$
+  \end{myitemize}
+}
+
+\begin{example}
+  \[
+    i^{27} = i^{4\cdot 6 +3} = (i^{4})^{6} \cdot i ^{3} = 1^{6} \cdot -i = -i \quad
+    \text{ή πιο απλά} \quad i^{27} = i^{4\cdot 6+3} = i^{3} = -i
+  \] 
+\end{example}
+
+\section*{Πολική μορφή Μιγαδικού αριθμού}
+
+\InsertBoxL{4}{\parbox[b][4\baselineskip][c]{0.28\textwidth}{
+    \begin{tikzpicture}
+      \path[-stealth] (0,0) coordinate (O) -- (2.2,0) node[right] (x) {$x$} ;
+      \node at (O) [left] {$O$} ;
+      \draw[-stealth] (0,0) -- (0,2.2) node[left] {$y$} ;
+      \coordinate (p) at (1.4,1.4) ;
+      \fill[Col1] (p) node[above right,font=\small,xshift=-5pt] {$z=a+bi$} 
+        node [right,Col2,yshift=-5pt,font=\small] {$M(a,b)$} circle (1pt) ;
+      \draw[dashed,Col2] (O|-p) node[left]{$b$} -- (p) -- (p|-O) 
+        node[below]{$a$} ;
+      \draw (0) -- node[left] {$r$} (p) pic[draw,fill=Col1!55,->,>=stealth,"$\theta$",
+        angle eccentricity=1.5]{angle=x--0--p};
+      \draw[-stealth] (0,0) coordinate (O) -- (2.2,0) node[right] (x) {$x$} ;
+      \draw[Col2] (O-|p)++(0,0.25) -- ++(-0.25,0) -- ++ (0,-0.25) ; 
+  \end{tikzpicture}}
+}
+
+Έστω $z=a+bi$ μιγαδικός αριθμός και $M$ η εικόνα του $z$ στο μιγαδικό επίπεδο. 
+Έστω $r=\abs{z}$ και $\theta$ η γωνία που σχηματίζει ο \textbf{θετικός} ημιάξονας $x$ 
+με το διάνυσμα θέσης του $z$ και η οποία μετριέται σε ακτίνια. 
+Τότε $a=r\cos \theta$ και $b=r\sin \theta$ και επομένως ο μιγαδικός $z$ μπορεί να γραφεί 
+σε \textcolor{Col1}{τριγωνομετρική} ή \textcolor{Col1}{πολική} μορφή ως:
+\[
+  \boxed{z=r(\cos\theta+i\sin\theta)}
+\]
+και χρησιμοποιώντας την ταυτότητα Euler $e^{ix}=\cos x+i\sin x, \; x\in\mathbb{R}$ σε
+\textcolor{Col1}{εκθετική} μορφή ως:
+\[
+  z= re^{i\theta}
+\]
+
+
+Οι τιμές των $r, \theta$ λέγονται \textcolor{Col1}{πολικές συντεταγμένες} του $z$. Κάθε
+τιμή του $\theta$ λέγεται \textcolor{Col1}{όρισμα} του $z$, και με $\arg z$ συμβολίζουμε
+το σύνολο των ορισμάτων του $z$, που προφανώς είναι άπειρα και διαφέρουν μεταξύ τους κατά
+$2\pi$. Αν $z=0$ τότε δεν ορίζεται το όρισμα του $z$. Ισχύει:
+\[
+  \tan\theta=\frac{b}{a}
+\]
+
+\section*{Πρωτεύον Όρισμα}
+
+% \subsection*{$0 \leq \theta \leq 2 \pi$}
+% Το \textcolor{Col1}{Πρωτεύον όρισμα} του $\arg z$ συμβολίζεται με $\Arg z$ και 
+% είναι η μοναδική τιμή του $\theta\in \arg z$ ώστε $0\leq\theta<2\pi$. Ισχύει:
+% \[
+%   \arg z=\Arg z+2k\pi, \quad k\in\mathbb{Z}
+% \]
+% \begin{enumerate}
+%   \item Αν $a\neq 0$ τότε από τη σχέση $\tan\theta=\frac{b}{a}$ έχουμε:
+%     \[
+%       \Arg z=
+%       \arctan\frac{b}{a}+k\pi, \; \text{με}\; k=
+%       \begin{cases}
+%         0, & a>0, \; b\geq 0 \\
+%         1, & a<0 \\
+%         2, & a>0, \; b<0
+%       \end{cases}
+%     \]
+%   \item Αν $a=0$ και $b\neq 0$ τότε
+%     \[
+%       \Arg=
+%       \begin{cases}
+%         \frac{\pi}{2},  &\text{για}\quad   b>0 \\[10pt]
+%         \frac{3\pi}{2}, &\text{για}\quad   b<0
+%       \end{cases}
+%       \]
+%   \end{enumerate}
+
+\begin{dfn}
+  Έστω $ z=a+bi $, μιγαδικός αριθμός, με $ z \neq 0 $. 
+  Ορίζουμε ως \textcolor{Col1}{πρωτεύον όρισμα} του $ z 
+  $, και το συμβολίζουμε με $ \Arg z $, την \textbf{αλγεβρική τιμή} $\theta$, 
+  της \textbf{κυρτής} (με μέτρο μικρότερο ή ίσο των $ \SI{180}{\degree} $), 
+  \textbf{προσανατολισμένης} (οι πλευρές της θεωρούνται διατεταγμένες) γωνίας, 
+  $ \widehat{(Ox,OM)} $, όπου $M$ είναι η εικόνα του 
+  μιγαδικού αριθμού $z$ στο μιγαδικό επίπεδο.
+\end{dfn}
+\begin{rem}
+  Το πρωτεύον όρισμα του $z$ είναι η μοναδική τιμή του 
+  $\theta\in \arg z$ ώστε $ - \pi < \theta \leq \pi$. 
+  Ισχύει:
+  \[
+    \arg z=\Arg z+2k\pi, \quad k\in\mathbb{Z}
+  \]
+\end{rem}
+
+
+\begin{examples}
+\item {}
+  \fourcolumnsides{
+    \begin{tikzpicture}[scale=0.8]
+      \draw[-stealth] (0,0) coordinate (O) -- (2.2,0) node[below] {$x$} ;
+      \node at (O) [left] {$O$} ;
+      \draw[-stealth] (0,0) -- (0,2.2) node[left] {$y$} ;
+      \coordinate (p) at (1.4,1.4) ;
+      \fill[Col1] (p) node[above=5pt,font=\small,xshift=-5pt,Col2] {$z=1+i$} circle (1.5pt) ;
+      \draw (O) --  (p) node[right,Col1] {$M$} ;
+      \fill pic[draw,fill=Col1!55,-latex,angle radius=18pt] {angle=x--0--p} ;
+      \node[fill=Col2!25] at (1,0.5) [right,draw,inner sep=2pt] {$\Arg= \pi /4$} ;
+    \end{tikzpicture}
+    }{
+    \begin{tikzpicture}[scale=0.8]
+      \draw[-stealth] (0,0) coordinate (O) -- (2.2,0) node[right] {$x$} ;
+      \draw[-stealth] (0,0) coordinate (O) -- (-1.7,0) node[left] {$x'$} ;
+      \node at (O) [below left] {$O$} ;
+      \draw[-stealth] (0,0) -- (0,2.2) node[left] {$y$} ;
+      \coordinate (p) at (-1.4,1.4) ;
+      \fill (p) node[above=5pt,font=\small,xshift=-5pt,Col2] {$z=-1+i$} 
+        circle (1.5pt) ;
+      \draw (O) --  (p) node[left,Col1] {$M$} ;
+      \fill pic[draw,fill=Col1!55,-latex,opacity=0.7,angle radius=11pt] {angle=x--0--p} ;
+      \node[fill=Col2!25] at (0.5,0.7) [right,draw,inner sep=2pt] {$\Arg= 3\pi /4$} ;
+    \end{tikzpicture}
+    }{
+    \begin{tikzpicture}[scale=0.8]
+      \draw[-stealth] (0,0) coordinate (O) -- (1.7,0) node[right] {$x$} ;
+      \draw[-stealth] (0,0) coordinate (O) -- (-2.2,0) node[left] {$x'$} ;
+      \node at (O) [above right] {$O$} ;
+      \draw[-stealth] (0,0) -- (0,1.7) node[left] {$y$} ;
+      \draw[-stealth] (0,0) -- (0,-2.2) node[left] {$y'$} ;
+      \coordinate (p) at (-1.4,-1.4) ;
+      \fill (p) node[below=5pt,font=\small,xshift=-5pt,Col2] {$z=-1-i$} 
+        circle (1.5pt) ;
+      \draw (O) --  (p) node[left,Col1] {$M$} ;
+      \fill pic[draw,fill=Col1!55,-latex,opacity=0.7,angle radius=11pt,latex-] {angle=p--0--x} ;
+      \node[fill=Col2!25] at (-0.5,0.7) [left,draw,inner sep=2pt] {$\Arg= -3\pi /4$} ;
+    \end{tikzpicture}
+  }
+  {
+    \begin{tikzpicture}[scale=0.8]
+      \draw[-stealth] (0,0) coordinate (O) -- (2.2,0) node[right] {$x$} ;
+      \node at (O) [left] {$O$} ;
+      \draw[-stealth] (0,0) -- (0,1.5) node[left] {$y$} ;
+      \draw[-stealth] (0,0) -- (0,-2.2) node[left] {$y'$} ;
+      \coordinate (p) at (1.4,-1.4) ;
+      \fill (p) node[below=5pt,font=\small,xshift=-5pt,Col2] {$z=1-i$} 
+        circle (1.5pt) ;
+      \draw (O) --  (p) node[right,Col1] {$M$} ;
+      \fill pic[draw,fill=Col1!55,latex-,angle radius=18pt] {angle=p--0--x} ;
+      \node[fill=Col2!25] at (1.0,-0.5) [right,draw,inner sep=2pt] {$\Arg= -\pi /4$} ;
+    \end{tikzpicture}
+  }
+\end{examples}
+
+
+\subsection*{Υπολογισμός Πρωτεύοντος Ορίσματος}
+
+\begin{enumerate}
+  \item Αν $ z \in \mathbb{R}_{+}^{*} $ τότε $ \Arg z = 0 $.
+  \item Αν $ z \in \mathbb{R}_{-}^{*} $ τότε $ \Arg z = \pi $.
+  \item Αν $ z \in \mathbb{C}- \mathbb{R} $ τότε $ \Arg z = - \Arg \overline{z} $
+  \item Αν $ z \in \mathbb{R}^{*} $ τότε $ \Arg z = \Arg \overline{z} $
+  \item Αν $a\neq 0$ τότε έχουμε:
+    $
+    \Arg z=\arctan\frac{b}{a}+k\pi, \; \text{με}\; k=
+    \begin{cases}
+      0, & a>0 \\
+      1, & a<0, \; b \geq 0 \\
+      -1, & a<0, \; b<0
+    \end{cases}
+    $
+  \item Αν $a=0$ και $b\neq 0$ τότε
+    $ 
+    \Arg= 
+    \begin{cases}
+      \frac{\pi}{2},  &\text{για}\quad   b>0 \\[10pt]
+      -\frac{\pi}{2}, &\text{για}\quad   b<0
+    \end{cases}
+    $
+  \end{enumerate}
+
+  \begin{example}
+    Να βρεθεί η τριγωνομετρική μορφή του μιγαδικού αριθμού $ z=1+i $ . 
+  \end{example}
+  \begin{solution}
+    Ξέρουμε ότι η τριγωνομετρική μορφή δίνεται από τον τύπο 
+    $ z = \abs{z} [\cos{(\theta)} + i \sin{(\theta)}] $. 
+    Επομένως, αρκεί να βρούμε το $ \abs{z} $ καθώς κ ένα όρισμα 
+    του $z$. Έχουμε ότι $ \abs{z} = \sqrt{1^{2}+1^{2}} = \sqrt{2} $. Επίσης,
+    \[
+      \left.
+        \begin{matrix}
+          \cos{\theta} = \frac{1}{\sqrt{2}} \\
+          \sin{\theta} = \frac{1}{\sqrt{2}} 
+        \end{matrix} 
+      \right\} 
+      \Rightarrow 
+      \tan{\theta} = 1 \Leftrightarrow \theta = \frac{\pi}{4} \quad \text{ή} \quad 
+      \theta = \pi + \frac{\pi}{4} = \frac{5 \pi}{4}
+    \] 
+    Επειδή όμως ο μιγαδικός $ z=1+i $ βρίσκεται στο 1ο τεταρτημόριο, έχουμε 
+    τελικά ότι $ \theta = \frac{\pi}{4} $. Άρα 
+    \[
+      \boxed{z= \sqrt{2} \left[ \cos{\frac{\pi}{4}} + i \sin{\frac{\pi}{4}}\right]} 
+    \]
+  \end{solution}
+
+  \begin{example}
+    Να γραφεί σε τριγωνομετρική μορφή ο μιγαδικός $ z=- \cos{\theta} + i \sin{\theta}
+    $, αν $ \theta \in [0, \pi /2] $.
+  \end{example}
+  \begin{solution}
+    Προφανώς ο δοσμένος μιγαδικός αριθμός, δεν είναι σε τριγωνομετρική μορφή, γιατί 
+    μπροστά από το $ \cos{\theta} $ υπάρχει αρνητικό πρόσημο. Άρα, εργαζόμαστε όπως 
+    κ στο προηγούμενο παράδειγμα. Έχουμε ότι 
+    \[ \abs{z} = \sqrt{(- \cos{\theta} )^{2}+
+    (\sin{\theta} )^{2}} = \sqrt{1} = 1 \]
+    Επίσης
+    \[
+      \left.
+        \begin{matrix*}[l]
+          \cos{\phi} = \frac{- \cos{\theta}}{1} = - \cos{\theta} = \cos{(\pi - \theta)}
+          \\[10pt]
+          \sin{\phi} = \frac{\sin{\theta}}{1} = \sin{\theta} = \sin{(\pi - \theta)}
+        \end{matrix*} 
+      \right\} 
+      \Rightarrow 
+      \phi = \pi - \theta
+    \] 
+    Άρα 
+    \[
+      \boxed{z = \left[\cos{(\pi - \theta)} + i \sin{(\pi - \theta)} \right]}
+    \] 
+  \end{solution}
+
+  \section*{Ισότητα σε Πολική μορφή}
+
+  Έστω $z_{1}=r_{1}(\cos\theta_{1}+i\sin\theta_{1}), \; z_{2}
+  =r_{2}(\cos\theta_{2}+i\sin\theta_{2})$ και $z=r(\cos\theta+i\sin\theta)$
+
+  \[
+    z_{1}=z_{2}\Leftrightarrow r_{1}=r_{2} \quad\text{και}\quad 
+    \Arg z_{1}=\Arg z_{2}\quad \text{ή}\quad \theta_{1}=\theta_{2}+2k\pi,
+    \quad k\in\mathbb{Z} 
+  \]
+
+  \section*{Πράξεις σε Πολική μορφή}
+
+  \begin{center}
+    \begin{Mytable}    
+      \renewcommand{\arraystretch}{2.0}
+      \begin{tabular}{|c|c|}
+        \TabCellHead Τριγωνομετρική Μορφή  &  \TabCellHead Εκθετική Μορφή \\ \hline
+        $z_{1}\cdot
+        z_{2}=r_{1}r_{2}[\cos(\theta_{1}+\theta_{2})+i\sin(\theta_{1}+\theta_{2})]$ &
+        $z_{1}\cdot z_{2}=r_{1}r_{2}e^{i(\theta_{1}+\theta_{2})}$ \\ \hline
+        $\frac{z_{1}}{z_{2}}=\frac{r_{1}}{r_{2}}[(\cos(\theta_{1}-\theta_{2})+
+        i(\sin\theta_{1}-\theta_{2}))]$ & $\frac{z_{1}}{z_{2}}=
+        \frac{r_{1}}{r_{2}}e^{i(\theta_{1}-\theta_{2})}$ \\[5pt] \hline
+        $z^{-1}=\frac{1}{z}=\frac{1}{r}(\cos\theta-i\sin\theta)$ &
+        $z^{-1}=\frac{1}{r}e^{-i\theta}$ \\[5pt] \hline
+        $\overline{z}=r(\cos\theta-i\sin\theta)$ & $\overline{z}=re^{-i\theta}$ \\ 
+        \hline
+        \bottomrule
+      \end{tabular}
+      \end{Mytable}
+      \end{center}
+
+
+      \section*{Θεώρημα De Moivre}
+
+      Αν $z=r(\cos\theta+i\sin\theta)$ και $n\in\mathbb{Z}$ τότε
+      $
+      \boxed{z^{n}=r^{n}[\cos (n\theta)+i\sin (n\theta)]}
+      $
+
+      \section*{Νιοστές Ρίζες μιγαδικών αριθμών}
+      \begin{dfn}
+        Έστω $ a \in \mathbb{C} $ με $ a \neq 0 $. Νιοστή ρίζα του $a$, ονομάζεται
+        κάθε μιγαδικός αριθμός $ z $ που επαληθεύει την εξίσωση $ z^{n}=a $ με 
+        $ n \in \mathbb{N}- \{ 0,1 \} $.
+      \end{dfn}
+
+      \begin{thm}\label{thm:niost}
+        Κάθε μιγαδικός αριθμός της μορφής $a=r(\cos\theta+i\sin\theta), \; a\neq 0$,
+        όπου $ a \in \mathbb{C} $, τις: 
+        \[
+          \boxed{z_{k}=\sqrt[n]{r}\left[ \cos\left(\frac{\theta+2k\pi}{n}\right)+i
+          \sin\left(\frac{\theta+2k\pi}{n}\right) \right], \quad k=0,1,\ldots, n-1}
+        \]
+      \end{thm}
+      \begin{example}
+        Να λυθεί η εξίσωση $ z^{4} = -16 $. 
+      \end{example}
+      \begin{solution}
+        Αρχικά, γράφουμε τον αριθμό $ a = -16 $ σε τριγωνομετρική μορφή. Έχουμε 
+        $ a=-16=-16+0i $, άρα 
+        \[ 
+          \abs{a} = \sqrt{(-16)^{2}+0^2} = \abs{-16} = 16 
+        \] 
+        Επίσης
+        \[
+          \tan{\theta} = \frac{0}{-16} = 0 \Leftrightarrow \theta =0 \quad
+          \text{ή} \quad \theta = \pi
+        \] 
+        Προφανώς $ \theta = \pi $, γιατί ο $a=-16$ βρίσκεται πάνω στον αρνητικό 
+        ημιάξονα των πραγματικών αριθμών. Επομένως, $ a = 16[\cos{\pi} + i
+        \sin{\pi}] $. Άρα η εξίσωση που ζητάμε να λύσουμε, γίνεται:
+        \[
+          z^{4} = 16 [\cos{\pi} + i \sin{\pi}] 
+        \] 
+        Από το θεώρημα~\ref{thm:niost} έχουμε ότι
+        \[
+          z_{k} = \sqrt[4]{16} \left[\cos{\left(\frac{2k \pi + \pi}{4}\right)} + i
+          \sin{\left(\frac{2k \pi + \pi}{ 4}\right)}\right], 
+          \quad \text{με} \quad k=0,1,2,3
+        \] 
+
+
+      \end{solution}
+
+
+
+      \end{document}
