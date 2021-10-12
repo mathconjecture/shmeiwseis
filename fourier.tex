@@ -90,6 +90,16 @@
     \end{tikzpicture}
 }}
 
+
+\subsection*{Ιδιότητες Περιοδικών Συναρτήσεων}
+
+\begin{myitemize}
+  \item Αν $f$ περιοδική με περίοδο $T$, τότε $ f(x+nT) = f(x) $, για κάθε $x$ στο 
+    πεδίο ορισμού της $f$, και για κάθε $ n \in \mathbb{N} $.
+  \item Αν $f$ περιοδική με περίοδο $T$, τότε $ f(ax) $ επίσης περιοδική με περίοδο 
+    $ T/ \abs{a} $, για κάθε $ a \in \mathbb{R}^{*} $.
+\end{myitemize}
+
 \begin{prop}
   Αν οι συναρτήσεις $ f $ και $g$ είναι περιοδικές με περίοδο $T$, τότε και οι 
   $ f+g $ και $ f\cdot g $ είναι περιοδικές με την ίδια περίοδο.
@@ -109,7 +119,7 @@
 \end{dfn}
 \begin{dfn}
   Μια συνάρτηση  $ f \colon [a,b] \to \mathbb{R} $  λέγεται  
-  \textcolor{Col1}{τμηματικά λεία} αν η $f$ και η $f$' είναι τμηματικά συνεχείς 
+  \textcolor{Col1}{τμηματικά λεία} αν η $f$ και η $f'$ είναι τμηματικά συνεχείς 
   στο $ [a,b] $.     
 \end{dfn}
 }{\begin{tikzpicture}[scale=0.50]
@@ -147,7 +157,6 @@
 
 \vspace{\baselineskip}
 
-%todo fix δεν είναι ορισμοί δες Κραββαρίτη
 \begin{enumerate}
 
   \item Αν $ f(x) $ ορισμένη στο $ [-L,L] $ με $ f(-L)=f(L) $ τότε η συνάρτηση
@@ -329,18 +338,36 @@ $ 2 \pi $. Τότε υπό κατάλληλες προϋποθέσεις η $f$ 
   και~\eqref{eq:four2}.
 \end{rem}
 
-
+\begin{rem}
+  Επειδή οι όροι $ \sin{nx} $ και $ \cos{nx} $ της σειράς Fourier, έχουν μηδενική μέση
+  τιμή, σε διάστημα μιας περιόδου (λόγω συμμετρίας), 
+  ο σταθερός όρος $ a_{0}/2 $ αναμένεται να εμφανίζεται πάντα, στη σειρά Fourier κάθε 
+  συνάρτησης $f$ με μη μηδενική \textbf{μέση τιμή}. Επομένως
+  \[
+    \frac{a_{0}}{2} = \frac{1}{2 \pi} \int _{- \pi }^{\pi} f(x)\,{dx} =
+    \text{\textbf{Μέση Τιμή} της $f$ σε διάστημα μίας περιόδου}
+   \] 
+\end{rem}
 
 \section{Συναρτήσεις με περίοδο 2L}
 
 \begin{rem}
   Κάθε περιοδική συνάρτηση $ f(x) $ με περίοδο $ 2L>0 $ μπορεί να 
-  \textbf{μετασχηματιστεί} σε μια συνάρτηση με περίοδο $ 2 \pi $. Πράγματι, θέτωντας 
+  \textbf{μετασχηματιστεί} σε μια συνάρτηση με περίοδο $ 2 \pi $. Πράγματι, έστω 
+  $ f(x) $ συνάρτηση ορισμένη στο τυχαίο διάστημα $ [a,b] $. Παίρνοντας 
   \[ 
+    L = \frac{b-a}{2} \quad \text{και θέτωντας} \quad 
     \frac{x}{t} = \frac{2L}{2 \pi} \Leftrightarrow \boxed{x= \frac{L}{\pi} t}
   \]
-  η συνάρτηση $ g(t) = f\Bigl(\frac{L}{\pi}t\Bigr) $ που προκύπτει 
-  έχει περίοδο $ 2 \pi $.
+  τότε για τη συνάρτηση $ g(t) = f\Bigl(\frac{L}{\pi}t\Bigr) $, έχουμε ότι:
+  \begin{myitemize}
+    \item Αν $ x_{1}= a $, τότε $ t_{1} = \frac{\pi}{L} a $ \tikzmark{a}
+    \item Αν $ x_{2}= b $, τότε $ t_{2} = \frac{\pi}{L} b $ \tikzmark{b}
+  \end{myitemize}
+  \mybrace{a}{b}[με τη διαφορά $ t_{2}- t_{1} = \frac{\pi}{L} (b-a) = \frac{\pi}{L} 
+  \cdot 2L = 2 \pi $.] 
+  και επομένως θα είναι ορισμένη σε διάστημα μήκους $ 2 \pi $.
+
 \end{rem}
 Για την $ g(t) $ η σειρά Fourier είναι 
 \[
@@ -358,8 +385,8 @@ $ 2 \pi $. Τότε υπό κατάλληλες προϋποθέσεις η $f$ 
   \frac{1}{\pi} \int _{- \pi}^{\pi} f\Bigl(\frac{L}{\pi} t\Bigr) \sin{nt} \,{dt}, 
   \quad n = 1,2,3, \ldots
 \]
-Επιστρέφοντας πίσω, στην αρχική μεταβλητή $x$, θέτοντας όπου $ t = \frac{\pi x}{L} $, 
-έχουμε ότι η σειρά Fourier της συνάρτησης $ f(x) $ είναι
+Επιστρέφοντας πίσω, στην αρχική μεταβλητή $x$, θέτοντας όπου $ t = \frac{\pi x}{L} $ 
+και $ dt = \frac{\pi}{L} dx $, έχουμε ότι η σειρά Fourier της συνάρτησης $ f(x) $ είναι
 \[
   \boxed{\frac{a_{0}}{2} + \sum_{n=1}^{\infty} \left[a_{n} \cos{\left(\frac{n \pi x}{L}\right)} 
   + b_{n} \sin{\left(\frac{n \pi x}{L}\right)} \right]}
@@ -381,14 +408,14 @@ $ 2 \pi $. Τότε υπό κατάλληλες προϋποθέσεις η $f$ 
 \subsection*{Άρτιες - Περιττές Συναρτήσεις}
 
 \begin{dfn}
-  Μια συνάρτηση $ f(x) $ θα λέγεται:
+  Μια συνάρτηση $ f \colon A \to \mathbb{R} $ θα λέγεται:
   \begin{alignat*}{4}
         &\textcolor{Col1}{\text{άρτια}}   & \quad 
         &\overset{\text{ορ.}}{\Leftrightarrow} & \quad f(-x) &= f(x), & 
-        &\quad \forall x \in \mathbb{R} \\
+        &\quad \forall x \in A \\
         &\textcolor{Col1}{\text{περιττή}}  & \quad 
         &\overset{\text{ορ.}}{\Leftrightarrow} & \quad f(-x) &= -f(x), & 
-        &\quad \forall x \in \mathbb{R}. \\
+        &\quad \forall x \in A \\
   \end{alignat*}
 \end{dfn}
 
@@ -527,4 +554,6 @@ $ f(x) \sin{\left(\frac{n \pi x}{L}\right)} $ είναι \textbf{άρτια}
 \]
 
 \end{document}
+
+
 
