@@ -10,17 +10,17 @@
 }
 
 \newcommand{\twocolumnsiderp}[2]{\begin{minipage}[c]{0.50\linewidth}\raggedright
-        #1
-        \end{minipage}\hfill\begin{minipage}[c]{0.45\linewidth}\raggedright
-        #2
-    \end{minipage}
+    #1
+    \end{minipage}\hfill\begin{minipage}[c]{0.45\linewidth}\raggedright
+    #2
+  \end{minipage}
 }
 
 \newcommand{\twocolumnsiderq}[2]{\begin{minipage}[c]{0.64\linewidth}\raggedright
-        #1
-        \end{minipage}\hfill\begin{minipage}[c]{0.31\linewidth}\raggedright
-        #2
-    \end{minipage}
+    #1
+    \end{minipage}\hfill\begin{minipage}[c]{0.31\linewidth}\raggedright
+    #2
+  \end{minipage}
 }
 
 \pagestyle{vangelis}
@@ -112,44 +112,44 @@
 \end{proof}
 
 \twocolumnsiderq{
-\begin{dfn}
-  Μια συνάρτηση $ f \colon [a,b] \to \mathbb{R} $ λέγεται 
-  \textcolor{Col1}{τμηματικά συνεχής}, αν η  $f$ έχει πεπερασμένου πλήθους 
-  σημεία ασυνέχειας, στα οποία υπάρχουν τα πλευρικά όρια και είναι πεπερασμένα.
-\end{dfn}
-\begin{dfn}
-  Μια συνάρτηση  $ f \colon [a,b] \to \mathbb{R} $  λέγεται  
-  \textcolor{Col1}{τμηματικά λεία} αν η $f$ και η $f'$ είναι τμηματικά συνεχείς 
-  στο $ [a,b] $.     
-\end{dfn}
-}{\begin{tikzpicture}[scale=0.50]
-  \coordinate (o) at (0,0) ;
-  \node  (0) at (1, 1)  {} ;
-  \node  (1) at (3.5, 1.5) {};
-  \node  (2) at (3.5, 2.5) {};
-  \fill (1) circle (2pt) ;
-  \node  (3) at (6, 2) {};
-  \fill (3) circle (2pt) ;
-  \node  (4) at (-1.5, 3.75) {};
-  \node  (5) at (1, 3) {};
-  \fill (5) circle (2pt) ;
-  \node  (6) at (-2, 0) {};
-  \coordinate  (7) at (7, 0) {};
-  \node  (8) at (0, -1) {};
-  \coordinate  (9) at (0, 4) {};
-  \node  at (9) [left,blue!75] {$y$} ;
-  \node  at (7) [below,blue!75] {$x$} ;
-  \node  at (3,3) [above,Col1!75] {$y=f(x)$} ;
-  \draw [in=-120, out=30, looseness=1.75,Col1!75, thick] (0.center) to (1.center);
-  \draw [in=-150, out=15, looseness=1.25,Col1!75, thick] (2.center) to (3.center);
-  \draw [in=-165, out=0, looseness=1.75,Col1!75, thick] (4.center) to (5.center);
-  \draw[-latex,blue!50] (6.center) to (7.center);
-  \draw[-latex,blue!50] (8.center) to (9.center);
-  \draw[dashed,dash expand off,blue!50] (5.center) -- (o-|5) node[below] {$x_{0}$} ;
-  \draw[dashed,dash expand off,blue!50] (2.center) -- (o-|2) node[below] {$x_{1}$} ;
-  \draw[black,fill=white] (0) circle (2pt) ;
-  \draw[black,fill=white] (2) circle (2pt) ;
-  \draw[black,fill=white] (4) circle (2pt) ;
+  \begin{dfn}
+    Μια συνάρτηση $ f \colon [a,b] \to \mathbb{R} $ λέγεται 
+    \textcolor{Col1}{τμηματικά συνεχής}, αν η  $f$ έχει πεπερασμένου πλήθους 
+    σημεία ασυνέχειας, στα οποία υπάρχουν τα πλευρικά όρια και είναι πεπερασμένα.
+  \end{dfn}
+  \begin{dfn}
+    Μια συνάρτηση  $ f \colon [a,b] \to \mathbb{R} $  λέγεται  
+    \textcolor{Col1}{τμηματικά λεία} αν η $f$ και η $f'$ είναι τμηματικά συνεχείς 
+    στο $ [a,b] $.     
+  \end{dfn}
+  }{\begin{tikzpicture}[scale=0.50]
+    \coordinate (o) at (0,0) ;
+    \node  (0) at (1, 1)  {} ;
+    \node  (1) at (3.5, 1.5) {};
+    \node  (2) at (3.5, 2.5) {};
+    \fill (1) circle (2pt) ;
+    \node  (3) at (6, 2) {};
+    \fill (3) circle (2pt) ;
+    \node  (4) at (-1.5, 3.75) {};
+    \node  (5) at (1, 3) {};
+    \fill (5) circle (2pt) ;
+    \node  (6) at (-2, 0) {};
+    \coordinate  (7) at (7, 0) {};
+    \node  (8) at (0, -1) {};
+    \coordinate  (9) at (0, 4) {};
+    \node  at (9) [left,blue!75] {$y$} ;
+    \node  at (7) [below,blue!75] {$x$} ;
+    \node  at (3,3) [above,Col1!75] {$y=f(x)$} ;
+    \draw [in=-120, out=30, looseness=1.75,Col1!75, thick] (0.center) to (1.center);
+    \draw [in=-150, out=15, looseness=1.25,Col1!75, thick] (2.center) to (3.center);
+    \draw [in=-165, out=0, looseness=1.75,Col1!75, thick] (4.center) to (5.center);
+    \draw[-latex,blue!50] (6.center) to (7.center);
+    \draw[-latex,blue!50] (8.center) to (9.center);
+    \draw[dashed,dash expand off,blue!50] (5.center) -- (o-|5) node[below] {$x_{0}$} ;
+    \draw[dashed,dash expand off,blue!50] (2.center) -- (o-|2) node[below] {$x_{1}$} ;
+    \draw[black,fill=white] (0) circle (2pt) ;
+    \draw[black,fill=white] (2) circle (2pt) ;
+    \draw[black,fill=white] (4) circle (2pt) ;
 \end{tikzpicture}}
 
 
@@ -261,299 +261,371 @@ $ 2 \pi $. Τότε υπό κατάλληλες προϋποθέσεις η $f$ 
          \displaystyle{\int _{- \pi }^{\pi} f(x) \,{dx} = \frac{a_{0}}{2}} 
          \int _{- \pi}^{\pi} \,{dx}, 
          & m=0 \\
-  \end{cases} 
-  \intertext{άρα}
-  \begin{cases} 
-    \displaystyle{\int _{- \pi }^{\pi} f(x) \cos{nx} \,{dx} = 
-    a_{n}\cdot \pi }, \quad n=1,2,3\ldots \\[0.5cm]
-    \displaystyle{\int _{- \pi }^{\pi} f(x) \,{dx} = \frac{a_{0}}{2}
-    2 \pi } 
-  \end{cases} 
-  \Leftrightarrow 
-  \begin{cases} 
-    \displaystyle{a_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi } f(x) \cos{nx} 
-    \,{dx}}, \quad n=1,2,3\ldots \\[0.5cm]
-    \displaystyle{a_{0} = \frac{1}{\pi} \int _{- \pi}^{\pi} f(x) \,{dx}}
-  \end{cases}
-\end{gather*}
-ή ισοδύναμα
-\begin{equation}\label{eq:four2}
-  \boxed{a_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi} f(x) \cos{nx} \,{dx}, \quad
-  n = \textcolor{Col1}{0},1,2,3, \ldots}
-\end{equation}
+       \end{cases} 
+       \intertext{άρα}
+       \begin{cases} 
+         \displaystyle{\int _{- \pi }^{\pi} f(x) \cos{nx} \,{dx} = 
+         a_{n}\cdot \pi }, \quad n=1,2,3\ldots \\[0.5cm]
+         \displaystyle{\int _{- \pi }^{\pi} f(x) \,{dx} = \frac{a_{0}}{2}
+         2 \pi } 
+       \end{cases} 
+       \Leftrightarrow 
+       \begin{cases} 
+         \displaystyle{a_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi } f(x) \cos{nx} 
+         \,{dx}}, \quad n=1,2,3\ldots \\[0.5cm]
+         \displaystyle{a_{0} = \frac{1}{\pi} \int _{- \pi}^{\pi} f(x) \,{dx}}
+       \end{cases}
+     \end{gather*}
+     ή ισοδύναμα
+     \begin{equation}\label{eq:four2}
+       \boxed{a_{n} = \frac{1}{\pi} \int _{- \pi }^{\pi} f(x) \cos{nx} \,{dx}, \quad
+       n = \textcolor{Col1}{0},1,2,3, \ldots}
+     \end{equation}
 
-\begin{rem}
-  Οι συντελεστές Fourier μπορούν να υπολογιστούν σε \textbf{οποιαδήποτε} πλήρη περίοδο. 
-  
-\end{rem}
+     \begin{rem}
+       Οι συντελεστές Fourier μπορούν να υπολογιστούν σε \textbf{οποιαδήποτε} πλήρη περίοδο. 
 
-\begin{rem}
-  Οι τύποι~\eqref{eq:four1} και~\eqref{eq:four2} ονομάζονται 
-  \textcolor{Col1}{συντελεστές Fourier} και για τον υπολογισμό τους, 
-  θεωρήσαμε ότι η σειρά~\eqref{eq:trigser} συγκλίνει ομοιόμορφα στην $f$, κάτι 
-  που δεν το γνωρίζουμε εκ των προτέρων. 
-  Γεγονός είναι ότι για κάθε συνάρτηση $f$ που είναι ολοκληρώσιμη στο 
-  $ [- \pi , \pi] $, μπορούμε να υπολογίσουμε τους συντελεστές Fourier
-  και τυπικά να σχηματίσουμε τη σειρά,γράφοντας
-  \[
-    f(x) \sim \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{nx} + b_{n} \sin{nx}]
-  \] 
-  η οποία ονομάζεται σειρά \textcolor{Col1}{Fourier} της $f$. Υπό ποιες προϋποθέσεις η 
-  σειρά Fourier μιας συνάρτησης $f$ \textbf{συγκλίνει} στην $f$, απαντάται στο επόμενο 
-  θεώρημα.
-\end{rem}
+     \end{rem}
 
-
-\section{Σειρά Fourier}
-
-\begin{thm}
-  Έστω $ f \colon \mathbb{R} \to \mathbb{R} $ μια \textbf{περιοδική} συνάρτηση με 
-  περίοδο $ 2 \pi $ και \textbf{τμηματικά λεία}. Τότε η σειρά Fourier της $f$ 
-  συγκλίνει για κάθε $ x \in \mathbb{R} $, στην τιμή
-  \[
-    \frac{f(x^{-}) + f(x^{+})}{2} 
-  \] 
-  όπου $ f({x_{0}}^{-}) = \lim\limits_{x \to {x_{0}}^{-}} f(x) $ και 
-  $ f({x_{0}}^{+}) = \lim\limits_{x \to {x_{0}}^{+}} f(x) $ 
-\end{thm}
-
-\begin{rem}
-\item {}
-  \begin{myitemize}
-    \item Αν $f$ συνεχής στο $x$, τότε η σειρά Fourier της $f$ συγκλίνει στο $f(x)$, 
-      γιατί $ f(x^{-}) = f(x^{+}) $.
-    \item Αν $f$ συνεχής για κάθε $x \in \mathbb{R} $, τότε η σειρά Fourier της $f$ 
-      συγκλίνει \textbf{απόλυτα} και \textbf{ομοιόμορφα} στην $f$ στο $ \mathbb{R} $.
-  \end{myitemize}
-\end{rem}
-
-\begin{rem}
-  Δηλαδή συνοψίζοντας η σειρά Fourier μιας περιοδικής με περίοδο $ 2 \pi $ και 
-  τμηματικά λείας συνάρτησης $ f $ δίνεται από τον τύπο 
-  \[
-    \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{(nx)} + b_{n} \sin{(nx)}] =  
-    \frac{f(x^{-}) + f(x^{+})}{2} 
-  \] 
-  και οι συντελεστές $ a_{n} $ και $ b_{n} $ από τους τύπους~\eqref{eq:four1}
-  και~\eqref{eq:four2}.
-\end{rem}
-
-\begin{rem}
-  Επειδή οι όροι $ \sin{nx} $ και $ \cos{nx} $ της σειράς Fourier, έχουν μηδενική μέση
-  τιμή, σε διάστημα μιας περιόδου (λόγω συμμετρίας), 
-  ο σταθερός όρος $ a_{0}/2 $ αναμένεται να εμφανίζεται πάντα, στη σειρά Fourier κάθε 
-  συνάρτησης $f$ με μη μηδενική \textbf{μέση τιμή}. Επομένως
-  \[
-    \frac{a_{0}}{2} = \frac{1}{2 \pi} \int _{- \pi }^{\pi} f(x)\,{dx} =
-    \text{\textbf{Μέση Τιμή} της $f$ σε διάστημα μίας περιόδου}
-   \] 
-\end{rem}
-
-\section{Συναρτήσεις με περίοδο 2L}
-
-\begin{rem}
-  Κάθε περιοδική συνάρτηση $ f(x) $ με περίοδο $ 2L>0 $ μπορεί να 
-  \textbf{μετασχηματιστεί} σε μια συνάρτηση με περίοδο $ 2 \pi $. Πράγματι, έστω 
-  $ f(x) $ συνάρτηση ορισμένη στο τυχαίο διάστημα $ [a,b] $. Παίρνοντας 
-  \[ 
-    L = \frac{b-a}{2} \quad \text{και θέτωντας} \quad 
-    \frac{x}{t} = \frac{2L}{2 \pi} \Leftrightarrow \boxed{x= \frac{L}{\pi} t}
-  \]
-  τότε για τη συνάρτηση $ g(t) = f\Bigl(\frac{L}{\pi}t\Bigr) $, έχουμε ότι:
-  \begin{myitemize}
-    \item Αν $ x_{1}= a $, τότε $ t_{1} = \frac{\pi}{L} a $ \tikzmark{a}
-    \item Αν $ x_{2}= b $, τότε $ t_{2} = \frac{\pi}{L} b $ \tikzmark{b}
-  \end{myitemize}
-  \mybrace{a}{b}[με τη διαφορά $ t_{2}- t_{1} = \frac{\pi}{L} (b-a) = \frac{\pi}{L} 
-  \cdot 2L = 2 \pi $.] 
-  και επομένως θα είναι ορισμένη σε διάστημα μήκους $ 2 \pi $.
-
-\end{rem}
-Για την $ g(t) $ η σειρά Fourier είναι 
-\[
-  \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{(nt)} + b_{n} \sin{(nt)}]
-\] 
-όπου 
-\[
-  a_{n} = \frac{1}{\pi} \int _{- \pi}^{\pi} g(t) \cos{nt} \,{dt} = 
-  \frac{1}{\pi} \int _{- \pi}^{\pi} f\Bigl(\frac{L}{\pi} t\Bigr) \cos{nt} \,{dt}, 
-  \quad n = 0,1,2,3, \ldots
-\] 
-και 
-\[
-  b_{n} = \frac{1}{\pi} \int _{- \pi}^{\pi} g(t) \sin{nt} \,{dt} = 
-  \frac{1}{\pi} \int _{- \pi}^{\pi} f\Bigl(\frac{L}{\pi} t\Bigr) \sin{nt} \,{dt}, 
-  \quad n = 1,2,3, \ldots
-\]
-Επιστρέφοντας πίσω, στην αρχική μεταβλητή $x$, θέτοντας όπου $ t = \frac{\pi x}{L} $ 
-και $ dt = \frac{\pi}{L} dx $, έχουμε ότι η σειρά Fourier της συνάρτησης $ f(x) $ είναι
-\[
-  \boxed{\frac{a_{0}}{2} + \sum_{n=1}^{\infty} \left[a_{n} \cos{\left(\frac{n \pi x}{L}\right)} 
-  + b_{n} \sin{\left(\frac{n \pi x}{L}\right)} \right]}
-\]
-όπου 
-\[
-  a_{n} = \frac{1}{L} \int _{- L}^{L} f(x) 
-  \cos{\left(\frac{n \pi x}{L}\right)} \,{dx}, \quad n = 0,1,2,3, \ldots
-\] 
-και 
-\[
-  b_{n} = \frac{1}{L} \int _{- L}^{L} f(x) 
-  \sin{\left(\frac{n \pi x}{L}\right)} \,{dx}, \quad n = 1,2,3, \ldots
-\]
-
-\section{Ημιτονική και Συνημιτονική σειρά Fourier}
+     \begin{rem}
+       Οι τύποι~\eqref{eq:four1} και~\eqref{eq:four2} ονομάζονται 
+       \textcolor{Col1}{συντελεστές Fourier} και για τον υπολογισμό τους, 
+       θεωρήσαμε ότι η σειρά~\eqref{eq:trigser} συγκλίνει ομοιόμορφα στην $f$, κάτι 
+       που δεν το γνωρίζουμε εκ των προτέρων. 
+       Γεγονός είναι ότι για κάθε συνάρτηση $f$ που είναι ολοκληρώσιμη στο 
+       $ [- \pi , \pi] $, μπορούμε να υπολογίσουμε τους συντελεστές Fourier
+       και τυπικά να σχηματίσουμε τη σειρά,γράφοντας
+       \[
+         f(x) \sim \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{nx} + b_{n} \sin{nx}]
+       \] 
+       η οποία ονομάζεται σειρά \textcolor{Col1}{Fourier} της $f$. Υπό ποιες προϋποθέσεις η 
+       σειρά Fourier μιας συνάρτησης $f$ \textbf{συγκλίνει} στην $f$, απαντάται στο επόμενο 
+       θεώρημα.
+     \end{rem}
 
 
-\subsection*{Άρτιες - Περιττές Συναρτήσεις}
+     \section{Σειρά Fourier}
 
-\begin{dfn}
-  Μια συνάρτηση $ f \colon A \to \mathbb{R} $ θα λέγεται:
-  \begin{alignat*}{4}
+     \begin{thm}
+       Έστω $ f \colon \mathbb{R} \to \mathbb{R} $ μια \textbf{περιοδική} συνάρτηση με 
+       περίοδο $ 2 \pi $ και \textbf{τμηματικά λεία}. Τότε η σειρά Fourier της $f$ 
+       συγκλίνει για κάθε $ x \in \mathbb{R} $, στην τιμή
+       \[
+         \frac{f(x^{-}) + f(x^{+})}{2} 
+       \] 
+       όπου $ f({x_{0}}^{-}) = \lim\limits_{x \to {x_{0}}^{-}} f(x) $ και 
+       $ f({x_{0}}^{+}) = \lim\limits_{x \to {x_{0}}^{+}} f(x) $ 
+     \end{thm}
+
+     \begin{rem}
+     \item {}
+       \begin{myitemize}
+         \item Αν $f$ συνεχής στο $x$, τότε η σειρά Fourier της $f$ συγκλίνει στο $f(x)$, 
+           γιατί $ f(x^{-}) = f(x^{+}) $.
+         \item Αν $f$ συνεχής για κάθε $x \in \mathbb{R} $, τότε η σειρά Fourier της $f$ 
+           συγκλίνει \textbf{απόλυτα} και \textbf{ομοιόμορφα} στην $f$ στο $ \mathbb{R} $.
+       \end{myitemize}
+     \end{rem}
+
+     \begin{rem}
+       Δηλαδή συνοψίζοντας η σειρά Fourier μιας περιοδικής με περίοδο $ 2 \pi $ και 
+       τμηματικά λείας συνάρτησης $ f $ δίνεται από τον τύπο 
+       \[
+         \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{(nx)} + b_{n} \sin{(nx)}] =  
+         \frac{f(x^{-}) + f(x^{+})}{2} 
+       \] 
+       και οι συντελεστές $ a_{n} $ και $ b_{n} $ από τους τύπους~\eqref{eq:four1}
+       και~\eqref{eq:four2}.
+     \end{rem}
+
+     \begin{rem}
+       Επειδή οι όροι $ \sin{nx} $ και $ \cos{nx} $ της σειράς Fourier, έχουν μηδενική μέση
+       τιμή, σε διάστημα μιας περιόδου (λόγω συμμετρίας), 
+       ο σταθερός όρος $ a_{0}/2 $ αναμένεται να εμφανίζεται πάντα, στη σειρά Fourier κάθε 
+       συνάρτησης $f$ με μη μηδενική \textbf{μέση τιμή}. Επομένως
+       \[
+         \frac{a_{0}}{2} = \frac{1}{2 \pi} \int _{- \pi }^{\pi} f(x)\,{dx} =
+         \text{\textbf{Μέση Τιμή} της $f$ σε διάστημα μίας περιόδου}
+       \] 
+     \end{rem}
+
+     \section{Συναρτήσεις με περίοδο 2L}
+
+     \begin{rem}
+       Κάθε περιοδική συνάρτηση $ f(x) $ με περίοδο $ 2L>0 $ μπορεί να 
+       \textbf{μετασχηματιστεί} σε μια συνάρτηση με περίοδο $ 2 \pi $. Πράγματι, έστω 
+       $ f(x) $ συνάρτηση ορισμένη στο τυχαίο διάστημα $ [a,b] $. Παίρνοντας 
+       \[ 
+         L = \frac{b-a}{2} \quad \text{και θέτωντας} \quad 
+         \frac{x}{t} = \frac{2L}{2 \pi} \Leftrightarrow \boxed{x= \frac{L}{\pi} t}
+       \]
+       τότε για τη συνάρτηση $ g(t) = f\Bigl(\frac{L}{\pi}t\Bigr) $, έχουμε ότι:
+       \begin{myitemize}
+         \item Αν $ x_{1}= a $, τότε $ t_{1} = \frac{\pi}{L} a $ \tikzmark{a}
+         \item Αν $ x_{2}= b $, τότε $ t_{2} = \frac{\pi}{L} b $ \tikzmark{b}
+       \end{myitemize}
+       \mybrace{a}{b}[με τη διαφορά $ t_{2}- t_{1} = \frac{\pi}{L} (b-a) = \frac{\pi}{L} 
+       \cdot 2L = 2 \pi $.] 
+       και επομένως θα είναι ορισμένη σε διάστημα μήκους $ 2 \pi $.
+
+     \end{rem}
+     Για την $ g(t) $ η σειρά Fourier είναι 
+     \[
+       \frac{a_{0}}{2} + \sum_{n=1}^{\infty} [a_{n} \cos{(nt)} + b_{n} \sin{(nt)}]
+     \] 
+     όπου 
+     \[
+       a_{n} = \frac{1}{\pi} \int _{- \pi}^{\pi} g(t) \cos{nt} \,{dt} = 
+       \frac{1}{\pi} \int _{- \pi}^{\pi} f\Bigl(\frac{L}{\pi} t\Bigr) \cos{nt} \,{dt}, 
+       \quad n = 0,1,2,3, \ldots
+     \] 
+     και 
+     \[
+       b_{n} = \frac{1}{\pi} \int _{- \pi}^{\pi} g(t) \sin{nt} \,{dt} = 
+       \frac{1}{\pi} \int _{- \pi}^{\pi} f\Bigl(\frac{L}{\pi} t\Bigr) \sin{nt} \,{dt}, 
+       \quad n = 1,2,3, \ldots
+     \]
+     Επιστρέφοντας πίσω, στην αρχική μεταβλητή $x$, θέτοντας όπου $ t = \frac{\pi x}{L} $ 
+     και $ dt = \frac{\pi}{L} dx $, έχουμε ότι η σειρά Fourier της συνάρτησης $ f(x) $ είναι
+     \[
+       \boxed{\frac{a_{0}}{2} + \sum_{n=1}^{\infty} \left[a_{n} \cos{\left(\frac{n \pi x}{L}\right)} 
+       + b_{n} \sin{\left(\frac{n \pi x}{L}\right)} \right]}
+     \]
+     όπου 
+     \[
+       a_{n} = \frac{1}{L} \int _{- L}^{L} f(x) 
+       \cos{\left(\frac{n \pi x}{L}\right)} \,{dx}, \quad n = 0,1,2,3, \ldots
+     \] 
+     και 
+     \[
+       b_{n} = \frac{1}{L} \int _{- L}^{L} f(x) 
+       \sin{\left(\frac{n \pi x}{L}\right)} \,{dx}, \quad n = 1,2,3, \ldots
+     \]
+
+     \section{Ημιτονική και Συνημιτονική σειρά Fourier}
+
+
+     \subsection*{Άρτιες - Περιττές Συναρτήσεις}
+
+     \begin{dfn}
+       Μια συνάρτηση $ f \colon A \to \mathbb{R} $ θα λέγεται:
+       \begin{alignat*}{4}
         &\textcolor{Col1}{\text{άρτια}}   & \quad 
         &\overset{\text{ορ.}}{\Leftrightarrow} & \quad f(-x) &= f(x), & 
         &\quad \forall x \in A \\
         &\textcolor{Col1}{\text{περιττή}}  & \quad 
         &\overset{\text{ορ.}}{\Leftrightarrow} & \quad f(-x) &= -f(x), & 
         &\quad \forall x \in A \\
-  \end{alignat*}
-\end{dfn}
+       \end{alignat*}
+     \end{dfn}
 
-\begin{examples}
-\item {}
-  \begin{enumerate}
-    \item Οι συναρτήσεις $ f(x)=x^{2} $ και $ g(x)= \cos (nx) $ είναι άρτιες. 
-    \item συναρτήσεις $ f(x)=x^{3} $ και $ g(x)= \sin (nx) $ είναι περιττές.
-  \end{enumerate}
-\end{examples}
+     \begin{examples}
+     \item {}
+       \begin{enumerate}
+         \item Οι συναρτήσεις $ f(x)=x^{2} $ και $ g(x)= \cos (nx) $ είναι άρτιες. 
+         \item συναρτήσεις $ f(x)=x^{3} $ και $ g(x)= \sin (nx) $ είναι περιττές.
+       \end{enumerate}
+     \end{examples}
 
-\begin{prop}
-\item {}
-  \begin{enumerate}\label{prop:ginart}
-    \item άρτια $ \cdot $ άρτια $=$ άρτια
-    \item περιττή $ \cdot $ περιττή $=$ άρτια
-    \item άρτια $ \cdot $ περιττή $=$ περιττή
-  \end{enumerate}
-\end{prop}
+     \begin{prop}
+     \item {}
+       \begin{enumerate}\label{prop:ginart}
+         \item άρτια $ \cdot $ άρτια $=$ άρτια
+         \item περιττή $ \cdot $ περιττή $=$ άρτια
+         \item άρτια $ \cdot $ περιττή $=$ περιττή
+       \end{enumerate}
+     \end{prop}
 
-\begin{rem}
-  Η γραφική παράσταση μιας άρτιας συνάρτησης είναι συμμετρική ως προς τον άξονα $y$, 
-  ενώ μιας περιττής συνάρτησης ως προς την αρχή των αξόνων.
-\end{rem}
+     \begin{rem}
+       Η γραφική παράσταση μιας άρτιας συνάρτησης είναι συμμετρική ως προς τον άξονα $y$, 
+       ενώ μιας περιττής συνάρτησης ως προς την αρχή των αξόνων.
+     \end{rem}
 
-\begin{prop}\label{prop:artper}
-\item {}
-\InsertBoxR{1}{\parbox[b][4\baselineskip][c]{0.48\textwidth}
-  {\begin{tikzpicture}[scale=0.8]
-      \coordinate (o) at (0,0) ;
-      \node at (o) [below left,blue!50] {\small$0$} ;
-      \coordinate (a) at (-1.25,1.25*1.25) ;
-      \coordinate (b) at (1.25,1.25*1.25) ;
-      \fill[domain=-1.30:1.30,smooth,variable=\x,blue!25,very thick] (-1.3,0)
-        node[below,blue!50] {\small$-a$} -- plot ({\x},{\x*\x}) -- 
-        (1.3,0) node[below,blue!50] {\small$a$} -- cycle;
-      \draw[domain=-1.4:1.4,smooth,variable=\x,Col1,very thick] plot ({\x},{\x*\x})
-        node[right]{\small $y=x^{2}$};
-      \draw[-stealth,blue!50] (-2,0) -- (2,0) node[right] {};
-      \draw[-stealth,blue!50] (0,-2) -- (0,2) node[left] {\small$y$};
-    \end{tikzpicture} 
-    \hspace{0.2\baselineskip}
-    \begin{tikzpicture}[scale=0.8]
-      \coordinate (o) at (0,0) ;
-      \node at (o) [below left,blue!50] {\small$0$} ;
-      \coordinate (a) at (-1.2,1.2*1.2) ;
-      \coordinate (b) at (1.2,1.2*1.2) ;
-      \fill[domain=-1.20:1.20,smooth,variable=\x,blue!25,very thick] (-1.2,0) 
-        node[below left,blue!50] {\small$-a$} --
-        plot ({\x},{\x*\x*\x}) -- (1.2,0) node[below,blue!50] {\small$a$} -- cycle ;
-      \draw[domain=-1.25:1.25,smooth,variable=\x,Col1,very thick] 
-        plot ({\x},{\x*\x*\x}) node[below right]{\small $y=x^{3}$};
-      \draw[-stealth,blue!50] (-2,0) -- (2,0) node[right] {};
-      \draw[-stealth,blue!50] (0,-2) -- (0,2) node[left] {\small$y$};
-\end{tikzpicture}}} 
-  Αν $ f(x) $ ολοκληρώσιμη στο διάστημα $[-a,a]$ τότε ισχύουν:
+     \begin{prop}\label{prop:artper}
+     \item {}
+       \InsertBoxR{1}{\parbox[b][4\baselineskip][c]{0.48\textwidth}
+         {\begin{tikzpicture}[scale=0.8]
+             \coordinate (o) at (0,0) ;
+             \node at (o) [below left,blue!50] {\small$0$} ;
+             \coordinate (a) at (-1.25,1.25*1.25) ;
+             \coordinate (b) at (1.25,1.25*1.25) ;
+             \fill[domain=-1.30:1.30,smooth,variable=\x,blue!25,very thick] (-1.3,0)
+               node[below,blue!50] {\small$-a$} -- plot ({\x},{\x*\x}) -- 
+               (1.3,0) node[below,blue!50] {\small$a$} -- cycle;
+             \draw[domain=-1.4:1.4,smooth,variable=\x,Col1,very thick] plot ({\x},{\x*\x})
+               node[right]{\small $y=x^{2}$};
+             \draw[-stealth,blue!50] (-2,0) -- (2,0) node[right] {};
+             \draw[-stealth,blue!50] (0,-2) -- (0,2) node[left] {\small$y$};
+           \end{tikzpicture} 
+           \hspace{0.2\baselineskip}
+           \begin{tikzpicture}[scale=0.8]
+             \coordinate (o) at (0,0) ;
+             \node at (o) [below left,blue!50] {\small$0$} ;
+             \coordinate (a) at (-1.2,1.2*1.2) ;
+             \coordinate (b) at (1.2,1.2*1.2) ;
+             \fill[domain=-1.20:1.20,smooth,variable=\x,blue!25,very thick] (-1.2,0) 
+               node[below left,blue!50] {\small$-a$} --
+               plot ({\x},{\x*\x*\x}) -- (1.2,0) node[below,blue!50] {\small$a$} -- cycle ;
+             \draw[domain=-1.25:1.25,smooth,variable=\x,Col1,very thick] 
+               plot ({\x},{\x*\x*\x}) node[below right]{\small $y=x^{3}$};
+             \draw[-stealth,blue!50] (-2,0) -- (2,0) node[right] {};
+             \draw[-stealth,blue!50] (0,-2) -- (0,2) node[left] {\small$y$};
+       \end{tikzpicture}}} 
+       Αν $ f(x) $ ολοκληρώσιμη στο διάστημα $[-a,a]$ τότε ισχύουν:
 
-  \begin{myitemize}
-    \item $ f(x) $ άρτια $ \Rightarrow \displaystyle{\int _{-a}^{a} f(x) \,{dx} = 2 
-        \int _{0}^{a} f(x) \,{dx}} $ 
-    \item $ f(x) $ περιττή $ \Rightarrow \displaystyle{\int _{-a}^{a} f(x) \,{dx} = 0} $
-  \end{myitemize}
-\end{prop}
-
-
-\subsection*{Συνημιτονική σειρά Fourier συνάρτησης με περίοδο $ 2 \pi $}
-
-Αν η $f$ είναι \textbf{άρτια}, με περίοδο $ 2 \pi $, τότε η συνάρτηση 
-$ f(x) \cos{(nx)} $ είναι επίσης \textbf{άρτια} (από πρόταση~\ref{prop:ginart}), 
-ενώ η συνάρτηση $ f(x) \sin{(nx)} $ είναι \textbf{περιττή} 
-(από πρόταση~\ref{prop:ginart}), για αυτό, αν λάβουμε υπόψιν 
-μας τις σχέσεις της πρότασης~\ref{prop:artper}, έχουμε:
-\[
-  a_{n} = \frac{2}{\pi} \int _{0}^{\pi} f(x) \cos{(nx)} \,{dx}, 
-  \quad n=\textcolor{Col1}{0},1,2,\ldots \quad \text{και} \quad b_{n} = 0
-\] 
-και τότε η σειρά Fourier της $f$ γίνεται:
-\[
-  \boxed{\frac{a_{0}}{2} + \sum_{n=1}^{\infty} a_{n} \cos{(nx)}} \quad 
-  \text{\color{Col1} Συνημιτονική σειρά Fourier}
-\]
+       \begin{myitemize}
+         \item $ f(x) $ άρτια $ \Rightarrow \displaystyle{\int _{-a}^{a} f(x) \,{dx} = 2 
+           \int _{0}^{a} f(x) \,{dx}} $ 
+         \item $ f(x) $ περιττή $ \Rightarrow \displaystyle{\int _{-a}^{a} f(x) \,{dx} = 0} $
+       \end{myitemize}
+     \end{prop}
 
 
-\subsection*{Ημιτονική σειρά Fourier συνάρτησης με περίοδο $ 2 \pi $}
+     \subsection*{Συνημιτονική σειρά Fourier συνάρτησης με περίοδο $ 2 \pi $}
 
-Αν η $f$ είναι \textbf{περιττή}, με περίοδο $ 2 \pi $,  τότε η συνάρτηση 
-$ f(x) \cos{(nx)} $ είναι επίσης \textbf{περιττή} (από πρόταση~\ref{prop:ginart}), 
-ενώ η συνάρτηση $ f(x) \sin{(nx)} $ είναι \textbf{άρτια} 
-(από πρόταση~\ref{prop:ginart}), για αυτό, αν λάβουμε υπόψιν μας 
-τις σχέσεις της πρότασης~\ref{prop:artper}, έχουμε:
-\[
-  a_{n} = 0, \quad \text{και} \quad
-  b_{n} = \frac{2}{\pi} \int _{0}^{\pi} f(x) \sin{(nx)} \,{dx} 
-\] 
-και τότε η σειρά Fourier της $f$ γίνεται:
-\[
-  \boxed{\sum_{n=1}^{\infty} b_{n} \sin{(nx)}} \quad \text{\color{Col1} Ημιτονική σειρά Fourier}
-\]
-
-\subsection*{Συνημιτονική σειρά Fourier συνάρτησης με περίοδο $ 2 L$}
-
-Αν η $f$ είναι \textbf{άρτια}, με περίοδο $ 2 L$, τότε η συνάρτηση 
-$ f(x) \cos{\left(\frac{n \pi x}{L}\right)} $ είναι επίσης \textbf{άρτια} 
-(από πρόταση~\ref{prop:ginart}), 
-ενώ η συνάρτηση $ f(x) \sin{\left(\frac{n \pi x}{L}\right)} $ είναι \textbf{περιττή} 
-(από πρόταση~\ref{prop:ginart}), για αυτό, αν λάβουμε υπόψιν 
-μας τις σχέσεις της πρότασης~\ref{prop:artper}, έχουμε:
-\[
-  a_{n} = \frac{2}{L} \int _{0}^{L} f(x) \cos{\left(\frac{n \pi x}{L}\right)} \,{dx}, 
-  \quad n=\textcolor{Col1}{0},1,2,\ldots \quad \text{και} \quad b_{n} = 0
-\] 
-και τότε η σειρά Fourier της $f$ γίνεται:
-\[
-  \boxed{\frac{a_{0}}{2} + \sum_{n=1}^{\infty} a_{n} \cos{\left(\frac{n \pi
-  x}{L}\right)}} \quad 
-  \text{\color{Col1} Συνημιτονική σειρά Fourier}
-\]
+     Αν η $f$ είναι \textbf{άρτια}, με περίοδο $ 2 \pi $, τότε η συνάρτηση 
+     $ f(x) \cos{(nx)} $ είναι επίσης \textbf{άρτια} (από πρόταση~\ref{prop:ginart}), 
+     ενώ η συνάρτηση $ f(x) \sin{(nx)} $ είναι \textbf{περιττή} 
+     (από πρόταση~\ref{prop:ginart}), για αυτό, αν λάβουμε υπόψιν 
+     μας τις σχέσεις της πρότασης~\ref{prop:artper}, έχουμε:
+     \[
+       a_{n} = \frac{2}{\pi} \int _{0}^{\pi} f(x) \cos{(nx)} \,{dx}, 
+       \quad n=\textcolor{Col1}{0},1,2,\ldots \quad \text{και} \quad b_{n} = 0
+     \] 
+     και τότε η σειρά Fourier της $f$ γίνεται:
+     \[
+       \boxed{\frac{a_{0}}{2} + \sum_{n=1}^{\infty} a_{n} \cos{(nx)}} \quad 
+       \text{\color{Col1} Συνημιτονική σειρά Fourier}
+     \]
 
 
-\subsection*{Ημιτονική σειρά Fourier συνάρτησης με περίοδο $ 2 L$}
+     \subsection*{Ημιτονική σειρά Fourier συνάρτησης με περίοδο $ 2 \pi $}
 
-Αν η $f$ είναι \textbf{περιττή}, με περίοδο $ 2 L$,  τότε η συνάρτηση 
-$ f(x) \cos{\left(\frac{n \pi x}{L}\right)} $ είναι επίσης \textbf{περιττή} 
-(από πρόταση~\ref{prop:ginart}), ενώ η συνάρτηση 
-$ f(x) \sin{\left(\frac{n \pi x}{L}\right)} $ είναι \textbf{άρτια} 
-(από πρόταση~\ref{prop:ginart}), για αυτό, αν λάβουμε υπόψιν μας 
-τις σχέσεις της πρότασης~\ref{prop:artper}, έχουμε:
-\[
-  a_{n} = 0, \quad \text{και} \quad
-  b_{n} = \frac{2}{L} \int _{0}^{L} f(x) \sin{\left(\frac{n \pi x}{L}\right)} \,{dx} 
-\] 
-και τότε η σειρά Fourier της $f$ γίνεται:
-\[
-  \boxed{\sum_{n=1}^{\infty} b_{n} \sin{\left(\frac{n \pi x}{L}\right)}} \quad 
-  \text{\color{Col1} Ημιτονική σειρά Fourier}
-\]
+     Αν η $f$ είναι \textbf{περιττή}, με περίοδο $ 2 \pi $,  τότε η συνάρτηση 
+     $ f(x) \cos{(nx)} $ είναι επίσης \textbf{περιττή} (από πρόταση~\ref{prop:ginart}), 
+     ενώ η συνάρτηση $ f(x) \sin{(nx)} $ είναι \textbf{άρτια} 
+     (από πρόταση~\ref{prop:ginart}), για αυτό, αν λάβουμε υπόψιν μας 
+     τις σχέσεις της πρότασης~\ref{prop:artper}, έχουμε:
+     \[
+       a_{n} = 0, \quad \text{και} \quad
+       b_{n} = \frac{2}{\pi} \int _{0}^{\pi} f(x) \sin{(nx)} \,{dx} 
+     \] 
+     και τότε η σειρά Fourier της $f$ γίνεται:
+     \[
+       \boxed{\sum_{n=1}^{\infty} b_{n} \sin{(nx)}} \quad \text{\color{Col1} Ημιτονική σειρά Fourier}
+     \]
 
-\end{document}
+     \subsection*{Συνημιτονική σειρά Fourier συνάρτησης με περίοδο $ 2 L$}
+
+     Αν η $f$ είναι \textbf{άρτια}, με περίοδο $ 2 L$, τότε η συνάρτηση 
+     $ f(x) \cos{\left(\frac{n \pi x}{L}\right)} $ είναι επίσης \textbf{άρτια} 
+     (από πρόταση~\ref{prop:ginart}), 
+     ενώ η συνάρτηση $ f(x) \sin{\left(\frac{n \pi x}{L}\right)} $ είναι \textbf{περιττή} 
+     (από πρόταση~\ref{prop:ginart}), για αυτό, αν λάβουμε υπόψιν 
+     μας τις σχέσεις της πρότασης~\ref{prop:artper}, έχουμε:
+     \[
+       a_{n} = \frac{2}{L} \int _{0}^{L} f(x) \cos{\left(\frac{n \pi x}{L}\right)} \,{dx}, 
+       \quad n=\textcolor{Col1}{0},1,2,\ldots \quad \text{και} \quad b_{n} = 0
+     \] 
+     και τότε η σειρά Fourier της $f$ γίνεται:
+     \[
+       \boxed{\frac{a_{0}}{2} + \sum_{n=1}^{\infty} a_{n} \cos{\left(\frac{n \pi
+       x}{L}\right)}} \quad 
+       \text{\color{Col1} Συνημιτονική σειρά Fourier}
+     \]
+
+
+     \subsection*{Ημιτονική σειρά Fourier συνάρτησης με περίοδο $ 2 L$}
+
+     Αν η $f$ είναι \textbf{περιττή}, με περίοδο $ 2 L$,  τότε η συνάρτηση 
+     $ f(x) \cos{\left(\frac{n \pi x}{L}\right)} $ είναι επίσης \textbf{περιττή} 
+     (από πρόταση~\ref{prop:ginart}), ενώ η συνάρτηση 
+     $ f(x) \sin{\left(\frac{n \pi x}{L}\right)} $ είναι \textbf{άρτια} 
+     (από πρόταση~\ref{prop:ginart}), για αυτό, αν λάβουμε υπόψιν μας 
+     τις σχέσεις της πρότασης~\ref{prop:artper}, έχουμε:
+     \[
+       a_{n} = 0, \quad \text{και} \quad
+       b_{n} = \frac{2}{L} \int _{0}^{L} f(x) \sin{\left(\frac{n \pi x}{L}\right)} \,{dx} 
+     \] 
+     και τότε η σειρά Fourier της $f$ γίνεται:
+     \[
+       \boxed{\sum_{n=1}^{\infty} b_{n} \sin{\left(\frac{n \pi x}{L}\right)}} \quad 
+       \text{\color{Col1} Ημιτονική σειρά Fourier}
+     \]
+
+
+     \chapter*{Μιγαδική Μορφή της Σειράς Fourier}
+
+     Έστω $f(t)$ μια τμηματικά λεία και περιοδική συνάρτηση με περίοδο $ T=2 \pi $. Τότε 
+     για τη σειρά Fourier, έχουμε:
+     \begin{align}\label{eq:fouri}
+       f(t) &= \frac{a_{0}}{2} + \sum_{n=1}^{\infty} \left[a_{n} \cos{(nt)} + b_{n}
+       \sin{(nt)}\right] \notag \\
+            &= \frac{a_{0}}{2} + \sum_{n=1}^{\infty} \left[a_{n} \frac{e^{int}+e^{-int}}{2} +
+            b_{n} \frac{e^{int}-e^{-int}}{2i} \right] \notag \\
+            &= \frac{a_{0}}{2} + \sum_{n=1}^{\infty} \left[a_{n} \frac{e^{int}+e^{-int}}{2} - i
+            b_{n} \frac{e^{int}-e^{-int}}{2}\right] \notag \\
+            &= \underbrace{\frac{a_{0}}{2}}_{c_{0}} + \sum_{n=1}^{\infty}
+            \left[\underbrace{\left(\frac{a_{n}-ib_{n}}{2}\right)}_{c_{n}}e^{int} +
+            \left(\frac{a_{n}+ib_{n}}{2}\right) e^{-int}\right]
+       \end{align}
+       Θέτουμε $ c_{0} = \frac{a_{0}}{2} $ και $ c_{n} = \frac{a_{n}-ib_{n}}{2} $ και
+       παρατηρούμε ότι:
+       \begin{myitemize}
+         \item Η τιμή $ c_{0} = \frac{a_{0}}{2} $ δίνεται από τον τύπο $ c_{n} =
+           \frac{a_{n}- ib_{n}}{2} $ για $ n=0 $. Πράγματι: 
+           $ c_{0} = \frac{a_{0}+ib_{0}}{2} \overset{b_{0}=0}{=} \frac{a_{0}}{2}$.
+         \item 
+           $ c_{-n} = \frac{a_{-n}-ib_{-n}}{2} = \frac{a_{n}+ib_{n}}{2} $, αφού 
+           $ a_{n} $ άρτια και $ b_{n} $ περιττή.
+         \item Ισχύει, προφανώς ότι $ c_{-n} = \frac{a_{n}+ib_{n}}{2} = \overline{c_{n}}
+           $, είναι ο συζυγής του $ c_{n} = \frac{a_{n}-i b_{n}}{2} $.
+       \end{myitemize}
+       Επομένως, η σειρά~\eqref{eq:fouri}, γίνεται:
+       \[
+         f(t) = c_{0} + \sum_{n=1}^{\infty} c_{n} e^{int} + \sum_{n=1}^{\infty} c_{-n}
+         e^{-int} 
+       \] 
+       Αν θέσουμε $ k=-n $ το τελευταίο άθροισμα γίνεται $ \sum_{k=-\infty}^{-1} c_{k}
+       e^{ikt} $, οπότε η σειρά γράφεται στην πιο συμπαγή μορφή:
+       \[
+         f(t) = c_{0} + \sum_{n=1}^{\infty} c_{n} e^{int} + \sum_{n=-\infty}^{-1} c_{n}
+         e^{int} = \sum_{n=- \infty}^{\infty} c_{n} e^{int}
+       \]
+       Για τους συντελεστές, έχουμε:
+       \[
+         c_{0} = \frac{a_{0}}{2} = \frac{1}{2\pi} \int _{- \pi }^{\pi} f(t) \,{dt}
+       \] 
+       \begin{align*}
+         c_{n} &= \frac{a_{n}-ib_{n}}{2} = \frac{1}{2} 
+         \left(\frac{1}{\pi} \int _{- \pi }^{\pi } f(t) \cos{(nt)} \,{dt} - i
+         \frac{1}{\pi} \int _{- \pi }^{\pi } f(t) \sin{(nt)} \,{dt}  \right) \\ 
+               &= \frac{1}{2 \pi} \int _{- \pi }^{\pi} f(t) [\cos{(nt)} - i \sin{(nt)}] 
+               \,{dt} = \frac{1}{2 \pi} \int _{- \pi }^{\pi } f(t) e^{-int} \,{dt}
+       \end{align*} 
+       \begin{align*}
+         c_{-n} &= \frac{a_{n}+ib_{n}}{2} = \frac{1}{2} 
+         \left(\frac{1}{\pi} \int _{- \pi }^{\pi } f(t) \cos{(nt)} \,{dt} + i
+         \frac{1}{\pi} \int _{- \pi }^{\pi } f(t) \sin{(nt)} \,{dt}  \right) \\ 
+                &= \frac{1}{2 \pi} \int _{- \pi }^{\pi} f(t) [\cos{(nt)} + i \sin{(nt)}] 
+                \,{dt} = \frac{1}{2 \pi} \int _{- \pi }^{\pi } f(t) e^{int} \,{dt} = 
+                \frac{1}{2 \pi} \int _{- \pi }^{\pi } f(t) e^{-i(-n)t}) \,{dt} 
+       \end{align*}
+       και αν θέσουμε $ k=-n $ ο συντελεστής $ c_{-n} $ γίνεται $ c_{k} =
+       \frac{1}{2 \pi} \int _{- \pi }^{\pi} f(t) \mathrm{e}^{-ikt}\,{dt} $.
+
+       Άρα η σειρά Fourier στη μιγαδική της μορφή, είναι:
+       \[
+         \boxed{f(t) = \sum_{n=- \infty}^{\infty} c_{n} e^{-int} \quad \text{με} \quad c_{n} =
+         \frac{1}{2 \pi} \int _{- \pi}^{\pi } f(t) e^{-int} \,{dt}, \; n \in \mathbb{Z}}
+       \]
+
+       %todo να γραψω παραδειγμα με μιγαδικη σειρα fourier (Μαρκακης) 
+       %todo να γραψω ότι $ a_{n} $ είναι άρτια και b_{n} περιττή
+
+
+
+       \end{document}
 
 
 
