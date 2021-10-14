@@ -1,6 +1,7 @@
 \input{preamble_ask.tex}
 \input{definitions_ask.tex}
 
+\geometry{left=1.5cm,right=1.5cm}
 \renewcommand{\qedsymbol}{}
 
 \pagestyle{vangelis}
@@ -63,7 +64,7 @@
 \end{rem}
 
 
-\section*{Ορθογωνιότητα των \ensuremath{\boldsymbol {\sin{(nx)}, \; \cos{(nx)}}}}
+\section*{Ορθογωνιότητα των \ensuremath{\sin{(nx)}, \; \cos{(nx)}}}
 
 \begin{prop}
   Το σύστημα των συναρτήσεων $ \{1, \sin{(nx), \cos{(nx)} } \} _{n=1}^{\infty} $ 
@@ -116,8 +117,8 @@
               \frac{\cos{[(n+m)x]}}{n+m} \right]_{-\pi}^{\pi} \\
             &=  - \frac{1}{2} \left[\cancel{\frac{\cos{[(n-m) \pi]}}{n-m}} + 
               \bcancel{\frac{\cos{[(n+m) \pi]}}{n+m}} - \cancel{\frac{\cos{[(n-m)
-            (-\pi)]}}{n-m}} - \bcancel{\frac{\cos{[(n+m) (-\pi)]}}{n+m}} \right] 
-            = - \frac{1}{2} \cdot 0 = 0  
+            (-\pi)]}}{n-m}} - \bcancel{\frac{\cos{[(n+m) (-\pi)]}}{n+m}} \right] \\
+            &= - \frac{1}{2} \cdot 0 = 0  
       \end{align*}
     \item Αν $ n = m $, τότε
       \begin{align*}
@@ -141,6 +142,12 @@
   \end{myitemize}
 \end{proof} 
 
+\begin{rem}
+  Λόγω της περιοδικότητας των συναρτήσεων $ \sin{(nx)} $ και $ \cos{(nx)} $, όλοι οι
+  παραπάνω τύποι ορθογωνιότητας, αληθεύουν ακόμη και αν τα ολοκληρώματα υπολογιστούν 
+  σε οποιαδήποτε πλήρη περίοδο, $ [x_{0}, x_{0}+ 2 \pi] $  
+\end{rem}
+
 \begin{prop}
   Το σύστημα των πραγματικών συναρτήσεων 
   $ \{ 1, \sin{(nx)}, \cos{(nx)} \}_{n=1}^{\infty} $ 
@@ -162,8 +169,9 @@
 \end{proof}
 
 
-\section*{Ορθογωνιότητα των \ensuremath{\boldsymbol{\sin{(\frac{n \pi x}{L})}, \; 
-\cos{(\frac{n \pi x}{L})}}}}
+
+\section*{Ορθογωνιότητα των \ensuremath{\sin{(\frac{n \pi x}{L})}, \; 
+\cos{(\frac{n \pi x}{L})}}}
 
 \begin{prop}
   Το σύστημα των πραγματικών συναρτήσεων 
@@ -175,10 +183,10 @@
   \[
     \int _{-L}^{L} \sin{\left(\frac{n \pi x}{L}\right)} \,{dx} =  
     \left[\frac{- \cos{\left(\frac{n \pi x}{L}\right)}}{\frac{n \pi }{L}} 
-    \right]_{-L}^{L} 
-    = - \frac{L}{n \pi} \left[\cos{\left(\frac{n \pi x}{L}\right)} \right]_{-L}^{L} = 
-    - \frac{L}{n \pi} [ \cos{(n \pi)} - \cos{(- n \pi)}] = - \frac{L}{n \pi } 
-    [ \cos{(n \pi)}- \cos{(n \pi)}] = 0 
+    \right]_{-L}^{L}
+    = - \frac{L}{n \pi} \left[\cos{\left(\frac{n \pi x}{L}\right)} \right]_{-L}^{L} 
+    = -\frac{L}{n \pi} [ \cos{(n \pi)} - \cos{(- n \pi)}]  
+    = 0 
   \] 
   \[
     \int _{-L}^{L} \cos{\left(\frac{n \pi x}{L}\right)} \,{dx} =  
@@ -228,8 +236,8 @@
           {\frac{(n+m) \pi}{L}} - \frac{\left(\cos{\frac{(n-m) \pi x}{L}}\right)}
         {\frac{(n-m) \pi }{L}}\right]_{-L}^{L}
         =-\frac{L}{2 \pi} \left[\frac{\cos{\left(\frac{(n+m) \pi x}{L}\right)}}{n+m} + 
-        \frac{\cos{\left(\frac{(n-m) \pi x}{L}\right)}}{n-m}\right]_{-L}^{L} 
-        = -\frac{L}{2\pi}\cdot 0 = 0
+        \frac{\cos{\left(\frac{(n-m) \pi x}{L}\right)}}{n-m}\right]_{-L}^{L} \\
+        &= -\frac{L}{2\pi}\cdot 0 = 0
       \end{align*}
     \item Αν $ n = m $, τότε
       \begin{align*}
@@ -253,7 +261,8 @@
             = \frac{1}{2} \left[-\frac{\cos{\left(\frac{2 n \pi x}{L}\right)}}
             {\frac{2n \pi}{L}} \right]_{-L}^{L} 
             = -\frac{L}{4 n \pi} \left[\cos{\left(\frac{2n \pi x}{L}\right)} 
-            \right]_{-L}^{L} = -\frac{L}{4n\pi}\cdot 0 = 0
+            \right]_{-L}^{L} \\
+            &= -\frac{L}{4n\pi}\cdot 0 = 0
       \end{align*}
   \end{myitemize}
 \end{proof}

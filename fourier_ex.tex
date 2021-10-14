@@ -34,7 +34,7 @@
         \begin{myitemize}
           \item $f$ συνεχής στο $ (0,2 \pi) $, με $ f(0^{+}) = 0 $ και 
             $ f(2 \pi ^{-}) = 2 \pi $ \hfill\tikzmark{a}
-          \item $f$ παραγωγίσιμη στο $ (0,2 \pi ) $ με $ f'(x)=1 $ και 
+          \item $ f'(x)=1 $ συνεχής στο $ (0,2 \pi ) $ και 
             $ f'(0^{+}) = f'(2 \pi ^{-}) = 1 $. \hfill\tikzmark{b}
         \end{myitemize}
         \mybrace{a}{b}[$f$ τμηματικά λεία στο $ [0.2 \pi] $]
@@ -128,7 +128,7 @@
       \begin{minipage}[t]{0.72\textwidth}
         \begin{myitemize}
           \item $f$ συνεχής στο $ [-2,2] $ \hfill \tikzmark{a}
-          \item $f$ παραγωγίσιμη στο $ (-2,2) $ με $ f'(t)=2t $ και $ f'(-2^{+}) = -4 $ και 
+          \item $ f'(t)=2t $ συνεχής στο $ (-2,2) $ με  και $ f'(-2^{+}) = -4 $ και 
             $ f'(2^{-}) = 4 $ \hfill \tikzmark{b}
         \end{myitemize}
         \mybrace{a}{b}[$f$ τμηματικά λεία στο $[-2,2]$]
@@ -183,6 +183,7 @@
   \end{enumerate}
 \end{solution}
 
+\begin{mybox3}
 \begin{example}
 \item{}
 \item{}
@@ -194,6 +195,7 @@
       + \cdots = \frac{n^{2}}{12} $.
   \end{enumerate}
 \end{example}
+\end{mybox3}
 \begin{solution}
 \item {}
   \begin{enumerate}[i)]
@@ -209,7 +211,7 @@
       \begin{minipage}[t]{0.65\textwidth}
         \begin{myitemize}
           \item $f$ συνεχής στο $ [-2,2] $ \hfill \tikzmark{a}
-          \item $f$ παραγωγίσιμη στο $ (-2,2) $ με $ f'(t)=1 $ και $ f'(-2^{+}) = 
+          \item $ f'(t)=1 $ συνεχής στο $ (-2,2) $ και $ f'(-2^{+}) = 
             f'(2^{-}) = 1 $ \hfill \tikzmark{b}
         \end{myitemize}
         \mybrace{a}{b}[$f$ τμηματικά λεία στο $[-2,2]$]
@@ -259,5 +261,45 @@
       \] 
   \end{enumerate}
 \end{solution}
+
+\begin{mybox3}
+\begin{example}
+  Να βρεθεί η σειρά Fourier της συνάρτησης $ f(t) = e^{at} $, με $ a \neq 0 $, αν 
+  $ - \pi < t \leq \pi $.
+\end{example}
+\end{mybox3}
+\begin{solution}
+  Θα υπολογίσουμε τη \textbf{μιγαδική} σειρά Fourier,  
+  $ \sum\limits_{n=- \infty}^{\infty} c_{n} \mathrm{e}^{int} $. Οπότε, 
+  \begin{align*}
+    c_{n} &= \frac{1}{2 \pi} \int _{- \pi }^{\pi} \mathrm{e}^{at} \mathrm{e}^{-int } 
+    \,{dt} = \frac{1}{2 \pi} \int _{- \pi }^{\pi} \mathrm{e}^{(a-in)t} \,{dt} = 
+    \frac{1}{2 \pi} \left[\frac{\mathrm{e}^{(a-in)t}}{a- in} \right]_{- \pi }^{\pi} = 
+    \frac{1}{2 \pi} \frac{1}{a-in} \left[\mathrm{e}^{at} (\cos{nt} - i 
+    \sin{nt})\right]_{- \pi }^{\pi} \\
+          &= \frac{1}{2 \pi} \frac{a+in}{a^{2}+n^{2}} 
+          \left[\mathrm{e}^{a \pi} (\cos{(n \pi)- i \cancel{\sin{(n \pi)}}) - 
+            \mathrm{e}^{-a \pi } (\cos{(n \pi )}}
+          +i \cancel{\sin{(n \pi)}} )\right] = (-1)^{n} \frac{a+in}{a^{2}+n^{2}} 
+          \frac{\sinh{(a \pi)}}{\pi}
+  \end{align*}
+  Από τις σχέσεις $ a_{0}= c_{0}, \; a_{n}= c_{n}+c_{-n} $ και 
+  $ b_{n}=i(c_{n}-c_{-n}) $, προκύπτουν οι πραγματικοί συντελεστές Fourier
+  \begin{gather*}
+    a_{0}= \frac{\sinh{(a \pi)}}{a\pi}  \\
+    a_{n}= (-1)^{n} \frac{2a}{a^{2}+n^{2}} \frac{\sinh{(a \pi)}}{\pi} \\
+    b_{n} = (-1)^{n+1} \frac{2n}{a^{2}+n^{2}} \frac{\sinh{(a \pi)}}{\pi} 
+  \end{gather*} 
+\end{solution}
+Στα σημεία ασυνέχειας $ t_{m} = \pm (2m-1) \pi, \; m=1,2,3,\ldots $ η σειρά Fourier 
+συγκλίνει στην τιμή 
+\[
+  \sum_{n=- \infty}^{\infty} c_{n} \mathrm{e}^{\pm in (2m-1) \pi} = 
+  \frac{\mathrm{e}^{a \pi} + \mathrm{e}^{- a \pi}}{2} = \cosh{(a \pi)}  
+\] 
+
+
+
+
 \end{document}
 
