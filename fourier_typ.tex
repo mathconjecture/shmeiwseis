@@ -1,0 +1,92 @@
+\input{preamble_ask.tex}
+\input{definitions_ask.tex}
+
+\DeclareMathOperator{\sgn}{sgn}
+\pagestyle{askhseis}
+
+\geometry{left=18mm,right=18mm,top=30.00mm,bottom=36.00mm,footskip=24.16mm,headsep=24.16mm}
+\everymath{\displaystyle}
+
+\begin{document}
+
+\begin{center}
+  \minibox{\large\bfseries \textcolor{Col1}{Μετασχηματισμός Fourier}}
+\end{center}
+
+\begin{gather*}
+  \mathcal{F}\left\{f(t)\right\} \equiv F(\omega) = \frac{1}{\sqrt{2 \pi}}
+  \int_{-\infty}^{+\infty} f(t) \mathrm{e}^{-i\omega t} dt \,{dt} \\
+  \mathcal{F}^{-1}\left\{F(\omega)\right\} \equiv f(t) = \frac{1}{\sqrt{2 \pi}} 
+  \int_{-\infty}^{+\infty} F(\omega) \mathrm{e}^{i \omega t}  \,{d\omega} 
+\end{gather*} 
+
+\vspace{\baselineskip}
+
+\twocolumnsides{
+  \section*{Fourier βασικών συναρτήσεων}
+  \begin{enumerate}
+    \item $ \mathcal{F}\{1\} = 2 \pi \delta (\omega) $
+  \item $ \mathcal{F}\left\{\frac{1}{t}\right\}=-i \sqrt{\frac{\pi}{2}} \sgn(\omega) $
+  \item $ \mathcal{F}\left\{\frac{1}{t^{2}}\right\}=- \sqrt{\frac{\pi}{2}} \omega 
+    \sgn(\omega) $
+  \item $ \mathcal{F}\left\{\frac{1}{t^{n}}\right\}= \frac{(-1)^{n}i^{n}}{(n-1)!}
+    \sqrt{\frac{\pi}{2}} \omega^{n-1} \sgn(\omega) $
+    \item $ \mathcal{F}\{\mathrm{e}^{i \omega_{0}t}\}=2 \pi \delta(\omega-\omega_{0}) $
+    \item $ \mathcal{F}\{\sin{at}\} = i\pi [\delta (\omega+ a)- \delta (\omega- a)]$
+    \item $ \mathcal{F}\{\cos{at}\} = \pi [\delta (a- a) + \delta (a+ a)]$
+    \item $ \bm{\mathcal{F}\{e^{i \omega_{0}t}}f(t)\} = F(\omega-  \omega_{0}), 
+      \quad \omega _{0} >0 $
+    \item $ \mathcal{F}\left\{f(t) \cos{(at)}\right\} = \frac{1}{2} F(\omega-a) = 
+      \frac{1}{2} F(\omega+a) $
+    \item $ \mathcal{F}\left\{f(t) \sin{(at)}\right\} = \frac{i}{2} F(\omega+a) - 
+      \frac{i}{2} F(\omega-a) $
+    \item $ \mathcal{F}\left\{\sgn(t)\right\}=-i \sqrt{\frac{2}{\pi}}\frac{1}{\omega} $ 
+    \item $ \mathcal{F}\left\{\mathrm{e}^{-at} u(t)\right\} = \frac{1}{\sqrt{2 \pi}}
+      \frac{1}{a+i\omega} $
+      \begin{enumerate}[i)]
+        \item $ \mathcal{F}\left\{t \mathrm{e}^{-at} u(t)\right\} =
+          \frac{1}{\sqrt{2 \pi}} \frac{1}{(a+iw)^{2}} $
+        \item $ \mathcal{F}\left\{t^{n} \mathrm{e}^{-at} u(t)\right\} =
+          i^{2n}(-1)^{n}\frac{1}{\sqrt{2 \pi}} \frac{n!}{(a+iw)^{n+1}} $
+      \end{enumerate}
+  \end{enumerate}
+  }{
+  \section*{Ιδιότητες}
+  \begin{enumerate}
+    \item $ \mathcal{F}\left\{f(t-t_{0})\right\}=F(\omega)\mathrm{e}^{-i\omega t_{0}} $
+    \item $ \mathcal{F}\{tf(t)\} = i F'(\omega) $
+    \item $ \mathcal{F}\{t^{2}f(t)\} = i^{2} F''(\omega) $
+    \item $ \bm{\mathcal{F}\{t^{n}f(t)\} = i^{n} F^{(n)}(\omega)} $
+    \item $ \mathcal{F}\{u(t)\} = \pi \delta (\omega) + \frac{1}{i\omega} $
+    \item $ \mathcal{F}\{u_{a}(t)\} = \frac{\mathrm{e}^{-as}}{s}$
+    \item $ \mathcal{F}\{\delta(t)\} = 1 $
+    \item $ \mathcal{F}\{\delta(t-a)\}=\frac{1}{\sqrt{2 \pi}} \mathrm{e}^{-ia \omega}  $
+    \item $ \mathcal{F}\{f(at)\}=\frac{1}{a} F\left(\frac{\omega}{a}\right), \quad a>0 $
+    \item $ \mathcal{F}\{f(t-t_{0})\} = \mathrm{e}^{-i \omega t_{0}} F(\omega) $
+    \item $ \mathcal{F}\left\{\int\nolimits _{0}^{t} f(\tau) \,{d\tau}\right\} = 
+      \frac{F(s)}{s} $
+\end{enumerate}
+
+  \section*{Συνάρτηση Γάμμα}
+  \[
+    \boxed{\Gamma (t) = \int _{0}^{\infty} \mathrm{e}^{-x} x^{t-1} \,{dx}}
+  \] 
+  \begin{myitemize}
+    \item $\Gamma (t+1) = t \cdot \Gamma (t), \quad t \in \mathbb{R} $
+    \item $\Gamma (n+1) = n \cdot \Gamma (n) = n!, \quad n \in \mathbb{N}$
+    \item $\Gamma \left(\frac{1}{2}\right) = \sqrt{\pi}$
+  \end{myitemize}
+}
+
+\section*{Χρήσιμες Σχέσεις}
+\centering
+\begin{myitemize}
+  \item $ \mathcal{F}\{y'(t)\} = i\omega F{y} (\omega) $
+  \item $ \mathcal{F}\{y''(t)\} = (i\omega)^{2} F{y}(\omega) $
+  \item $ \mathcal{F}\{y''(t)\} = (i\omega)^{3} F{y}(\omega) $
+  \item $ \mathcal{F}\{f^{(n)}(t)\} = (i\omega)^{n} F(\omega) $
+\end{myitemize}
+
+
+\end{document}
+

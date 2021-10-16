@@ -1,0 +1,142 @@
+\input{preamble.tex}
+\input{definitions.tex}
+\input{tikz.tex}
+
+\DeclareMathOperator{\Si}{Si}
+
+% \everymath{\displaystyle}
+
+\begin{document}
+
+\setcounter{chapter}{1}
+
+\chapter*{Μετασχηματισμός Fourier}
+
+\begin{dfn}
+  Έστω $ f \colon (- \infty, \infty) \to \mathbb{R} $, τμηματικά λεία σε κάθε πεπερασμένο
+  διάστημα και απολύτως ολοκληρώσιμη στο $ (- \infty, \infty) $. Τότε
+  \begin{align*}
+    \mathcal{F}[f(t)] &= \hat{f} (w) = \frac{1}{\sqrt{2 \pi}} \int _{-\infty} ^{\infty} 
+    f(t) \mathrm{e}^{-iwt} \,{dt}
+    \quad \text{\textcolor{Col1}{Μετασχηματισμός Fourier}} 
+    \intertext{και}
+    \mathcal{F}^{-1}[\hat{f} (w)] &= f(t) = \frac{1}{\sqrt{2 \pi}}
+    \int _{- \infty} ^{\infty} \hat{f} (w) \mathrm{e}^{iwt} \,{dw}=e
+    \quad \text{\textcolor{Col1}{Αντίστροφος Μετασχηματισμός
+    Fourier}} 
+  \end{align*} 
+\end{dfn}
+
+\begin{example}
+  Να βρεθεί ο Μετασχηματισμός Fourier της συνάρτησης 
+  $ f(t) = 
+  \begin{cases}
+    1, & \abs{t} \leq a \\
+    0, & \abs{t} > a
+  \end{cases}$
+\end{example}
+\begin{solution}
+  \[ 
+    \mathcal{F}[f(t)] = \frac{1}{\sqrt{2 \pi}} \int _{a}^{a} \mathrm{e}^{-iwt} \,{dt} =
+    \frac{1}{\sqrt{2 \pi}} \left[\frac{\mathrm{e}^{-iwt}}{-iw} \right]_{-a}^{a} = 
+    \frac{1}{\sqrt{2 \pi}} \left(\frac{\mathrm{e}^{-iat} - \mathrm{e}^{iat}}{-iw}\right) 
+    = \frac{2}{\sqrt{2 \pi} w} \left(\frac{\mathrm{e}^{iaw} -
+    \mathrm{e}^{-iaw}}{2i}\right) = \sqrt{\frac{2}{\pi}} \frac{\sin{(aw)}}{w}
+  \]
+  \begin{align*}
+    \mathcal{F^{-1}}[\hat{f} (w)] 
+    &= \frac{1}{\sqrt{2 \pi}} \int _{\infty}^{\infty}
+    \sqrt{\frac{2}{\pi}} \frac{\sin{(aw)}}{w} \mathrm{e}^{iwt} \,{dw} =
+    \frac{1}{\sqrt{2 \pi}} \sqrt{\frac{2}{\pi}} \int _{- \infty}^{\infty}
+    \frac{\sin{(aw)}}{w} \mathrm{e}^{iwt} \,{dw} \\ 
+    &= \frac{1}{\pi} \int _{- \infty}^{\infty} \frac{sin(aw) \cos{(wt)}}{w} + i 
+    \frac{\sin{(aw)} \sin{(wt)}}{w} \,{dw} 
+  \end{align*} 
+  και επειδή $ \int _{- \infty}^{\infty} \frac{\sin{(aw)} \sin{(wt)}}{w} \,{dw} = 0 $ 
+  για κάθε $t$, αφού η συνάρτηση είναι περιττή, έχουμε:
+  \begin{align*}
+    f(t) = \mathcal{F^{-1}}[f(t)] &= \frac{1}{\pi} 
+    \int _{-\infty}^{\infty}\frac{\sin{(aw)} \cos{(wt)}}{w}, \quad \forall t \neq \pm a 
+    \\
+    \frac{f(a^{-})+f(a^{+})}{2} = \frac{1}{2} = \mathcal{F^{-1}}[f(t)] &= \frac{1}{\pi} 
+    \int _{-\infty}^{\infty}\frac{\sin{(aw)} \cos{(aw)}}{w}, \quad t= \pm a
+  \end{align*} 
+  Οπότε, παίρνουμε το ολοκλήρωμα:
+  \[
+    \int _{- \infty}^{\infty} \frac{\sin{(aw)} \cos{(wt)}}{w} \,{dw} = 
+    \begin{cases}
+      \pi, & \abs{t} < a \\
+      \frac{\pi}{2}, & \abs{t} = a \\
+      0, & \abs{t} > a
+    \end{cases}
+  \] 
+\end{solution}
+
+\begin{example}
+  Να βρεθεί ο Μετασχηματισμός Fourier της συνάρτησης 
+  $ f(t) = 
+  \begin{cases}
+    \mathrm{e}^{-kt}, & t \geq 0 \\
+    0, & {t} < 0
+  \end{cases}$, με $ k>0 $.
+\end{example}
+\begin{solution}
+  \begin{align*}
+    \mathcal{F}\left\{f(t)\right\} 
+    &= \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{+\infty}
+    \mathrm{e}^{-kt} \mathrm{e}^{-iwt} \,{dt} = \frac{1}{\sqrt{2 \pi}}
+    \int_{0}^{+\infty} \mathrm{e}^{-(k+iw)t} \,{dt} = \frac{1}{\sqrt{2 \pi}} 
+    \left[\frac{\mathrm{e}^{-(k+iw)t}}{-(k+iw)}\right]_{0}^{\infty} \\
+    &= \frac{1}{\sqrt{2 \pi}} \frac{k-iw}{k^{2}+w^{2}} \left(\cancelto{0}{-\lim_{t \to
+    \infty} \mathrm{e}^{-(k+iw)t}} + 1\right) = \frac{1}{\sqrt{2 \pi}} 
+    \frac{k-iw}{k^{2}+w^{2}} 
+  \end{align*} 
+  Ο λόγος, για τον οποίο το παραπάνω όριο είναι ίσο με 0, είναι:
+  \[
+    \abs{\mathrm{e}^{-(k+iw)t}} = \abs{\mathrm{e}^{-kt} \cdot \mathrm{e}^{-iwt}} =
+    \mathrm{e}^{-kt} \abs{\cos{(wt)} - i \sin{(wt)}} = \mathrm{e}^{-kt}
+    \sqrt{\cos^{2}{(wt)} + \sin^{2}{(wt)}} = \mathrm{e}^{-kt} 
+  \] 
+  Άρα 
+  \[
+    \lim_{t \to \infty} \abs{\mathrm{e}^{-(k+iw)t}} = 
+    \lim_{t \to \infty} \mathrm{e}^{-kt} \overset{k>0}{=} 0 \Rightarrow 
+    \lim_{t \to \infty} \mathrm{e}^{-(k+iw)t} = 0
+  \] 
+  γιατί, από γνωστή πρόταση 
+  $ \lim_{x \to \infty} \abs{f(x)} = 0 \Rightarrow \lim_{x \to \infty} f(x) = 0 $.
+\end{solution}
+
+\begin{example}
+  Να βρεθεί ο Μετασχηματισμός Fourier της συνάρτησης 
+  $ f(t) = \mathrm{e}^{-a \abs{t}} = 
+  \begin{cases}
+    \mathrm{e}^{-at}, & t \geq 0 \\
+    \mathrm{e}^{at} , & {t} < 0
+  \end{cases}$, με $ a>0 $.
+\end{example}
+\begin{solution}
+  \begin{align*}
+    \mathcal{F}\left\{f(t)\right\} 
+    &= \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{+\infty} 
+    \mathrm{e}^{-a \abs{t}} \mathrm{e}^{-i\omega t} \,{dt} = \frac{1}{\sqrt{2 \pi}} 
+    \left(\int_{-\infty}^{0} \mathrm{e}^{at} \mathrm{e}^{-i\omega t} \,{dt} +
+    \int_{0}^{+\infty} \mathrm{e}^{-at} \mathrm{e}^{-i\omega t} \,{dt} \right) \\
+    &= \frac{1}{\sqrt{2 \pi}} \left(\int _{- \infty}^{0} \mathrm{e}^{(a-i\omega)t} 
+      \,{dt} + \int_{0}^{+\infty} \mathrm{e}^{-(a+i\omega)t} \,{dt}\right) 
+    = \frac{1}{\sqrt{2 \pi}} \left(\left[\frac{\mathrm{e}^{(a-i\omega)t}}{a-i\omega}
+        \right]_{- \infty}^{0} + \left[\frac{\mathrm{e}^{-(a+i\omega)t}}{-(a+i\omega)}
+    \right]_{0}^{\infty} \right) \\
+    &= \frac{1}{\sqrt{2 \pi}} \left(\frac{1- \cancelto{0}{\lim\limits_{t \to - \infty}
+          \mathrm{e}^{(a-i\omega)t}}}{a-i\omega} + \frac{\cancelto{0}{\lim\limits_{t \to \infty}
+\mathrm{e}^{-(a+i\omega)t}} -1 }{-(a+i\omega)}  \right) \\
+    &= \frac{1}{\sqrt{2 \pi}} \left(\frac{1}{a- i\omega} + \frac{1}{a+i \omega}\right) 
+    = \frac{1}{\sqrt{2 \pi}} \frac{a+i\omega+a-i\omega}{a^{2}-(i\omega)^{2}} = 
+    \frac{1}{\sqrt{2 \pi}} \frac{2a}{a^{2}+\omega^{2}} = \sqrt{\frac{2}{\pi}}
+    \frac{a}{a^{2}+\omega^{2}} 
+  \end{align*}
+\end{solution}
+
+
+
+\end{document}

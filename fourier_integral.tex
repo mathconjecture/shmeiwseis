@@ -1,0 +1,271 @@
+\input{preamble.tex}
+\input{definitions.tex}
+\input{tikz.tex}
+
+\DeclareMathOperator{\Si}{Si}
+
+\everymath{\displaystyle}
+
+\begin{document}
+
+\setcounter{chapter}{1}
+
+\chapter*{Ολοκλήρωμα Fourier}
+
+\section*{Ολοκληρωτική Αναπαράσταση Fourier}
+
+Γνωρίζουμε ότι αν μια συνάρτηση είναι περιοδική με περίοδο $ 2L $, τότε αναπτύσσεται 
+σε σειρά Fourier. Θα δούμε τώρα, ότι αν η συνάρτηση δεν είναι περιοδική, ή ισοδύναμα, 
+αν $ L \to \infty $, ότι η σειρά Fourier γίνεται ένα ολοκλήρωμα Fourier.
+
+\begin{thm}
+  Έστω $ f \colon (- \infty, \infty) \to \mathbb{R} $, συνάρτηση για την οποία ισχύουν:
+  \begin{myitemize}
+    \item $ \int _{- \infty}^{\infty} \abs{f(t)} \,{dt} < \infty $, \textbf{απολύτως
+      ολοκληρώσιμη} στο $ (- \infty, \infty) $
+    \item $f$ τμηματικά λεία σε κάθε πεπερασμένο διάστημα
+  \end{myitemize}
+  Τότε, σύμφωνα με το ολοκληρωτικό θεώρημα του Fourier, το ολοκλήρωμα
+  \[
+    f(t) = \int _{0}^{\infty} [A(w) \cos{(wt)} + B(w) \sin{(wt)}] \,{dw} 
+  \] 
+  όπου
+  \[
+    A(w) = \frac{1}{\pi} \int _{0}^{\infty} f(t) \cos{(wt)} \,{dt} \quad \text{και}
+    \quad B(w) = \frac{1}{\pi} \int _{0}^{\infty} f(t) \sin{(wt)} \,{dt} 
+  \] 
+  \textbf{υπάρχει} και λέγεται \textcolor{Col1}{ολοκλήρωμα Fourier} και η ισότητα, 
+  η οποία ισχύει για κάθε $ t $ που είναι σημείο \textbf{συνέχειας} της $f$, 
+  καλείται \textcolor{Col1}{αναπαράσταση} της $f$ με ολοκλήρωμα Fourier. Επίσης
+  \[
+    \frac{f(x_{0}^{-}+f(x_{0}^{+}))}{2} = \int_{0}^{\infty} [A(w) \cos{(wt)} + B(w) 
+    \sin{(wt)}] \,{dw} \quad \text{για κάθε $t$ σημείο \textbf{ασυνέχειας} της $f$} 
+  \]
+\end{thm}
+
+
+
+\section*{Άρτιες και Περιττές Συναρτήσεις}
+
+\begin{myitemize}
+  \item Αν $f$ \textbf{άρτια} συνάρτηση, τότε:
+    \[
+      B(w) = 0 \quad \text{και} \quad A(w) = \frac{2}{\pi} \int _{0}^{\infty} f(t)
+      \cos{(wt)} \,{dt } 
+    \] 
+    και το ολοκλήρωμα Fourier γίνεται:
+    \[
+      f(t) = \int _{0}^{\infty} A(w) \cos{(wt)}  \,{dw}  \quad
+      \text{\textcolor{Col1}{Συνημιτονικό Ολοκλήϱωμα Fourier}}
+    \] 
+  \item Αν $f$ \textbf{περιττή} συνάρτηση, τότε:
+    \[
+      A(w) = 0 \quad \text{και} \quad B(w) = \frac{2}{\pi} \int _{0}^{\infty} f(t)
+      \sin{(wt)} \,{dt } 
+    \] 
+    και το ολοκλήρωμα Fourier γίνεται:
+    \[
+      f(t) = \int _{0}^{\infty} B(w) \sin{(wt)}  \,{dw}  \quad
+      \text{\textcolor{Col1}{Ημιτονικό Ολοκλήρωμα Fourier}}
+    \] 
+\end{myitemize}
+
+
+
+\subsection*{Ιδιότητες του Συνημιτονικού Ολοκληρώματος Fourier}
+
+Αν $ f(t) = \int _{0}^{\infty} A(w) \cos{(wt)} \,{dw} $ με $ A(w) = \frac{2}{\pi}
+\int _{0}^{\infty} f(t) \cos{(wt)} \,{dt} $, τότε:
+\begin{myitemize}
+  \item $ f(at) = \frac{1}{a} \int _{0}^{\infty} A(\frac{w}{a} ) \cos{(wt)} \,{dw} $
+  \item $ t f(t) = - \int _{0}^{\infty} \dv{A(w)}{w} \sin{(wt)} \,{dw} $
+  \item $ t^{2}f(t) = - \int _{0}^{\infty} \dv[2]{A(w)}{w} \cos{(wt)} \,{dw} $
+\end{myitemize}
+
+\begin{example}
+  Έστω η συνάρτηση $ f(t) = \mathrm{e}^{-kt} $, όπου $ k>0 $ και $ t \geq 0 $. 
+  Να βρεθούν η συνημιτονική και η ημιτονική αναπαράσταση της $f$.
+\end{example}
+\begin{solution}
+\item {}
+  \subsubsection*{Συνημιτονική Αναπαράσταση}
+  Επεκτείνουμε την $f$ κατάλληλα στο διάστημα $ (- \infty, 0) $, ώστε η συνάρτηση να
+  είναι άρτια. 
+  \begin{align*}
+    A(w) &= \frac{2}{\pi} \int _{0}^{\infty} \mathrm{e}^{-kt} \cos{(wt)} \,{dw} = 
+    \frac{2}{\pi} \left[\frac{w \mathrm{e}^{-kt} \sin{(kt)}}{k^{2}+w^{2}} - \frac{k
+    \mathrm{e}^{-kt} \cos{(wt)}}{k^{2}+w^{2}}\right]_{0}^{\infty} \\
+         &= \frac{2}{\pi} \left[\lim_{t \to \infty} \left(\frac{w
+               \cancelto{0}{\mathrm{e}^{-kt}} \sin{(kt)}}{k^{2}+w^{2}} - \frac{k 
+             \cancelto{0}{\mathrm{e}^{-kt}} \cos{(wt)}}{k^{2}+w^{2}} 
+         \right)+ \frac{k}{k^{2}+w^{2}}\right] = \frac{2}{\pi} \frac{k}{k^{2}+w^{2}}
+  \end{align*} 
+  Επομένως 
+  \[
+    \boxed{f(t) = \frac{2k}{\pi} \int _{0}^{\infty} \frac{\cos{(wt)}}{k^{2}+w^{2}} 
+    \,{dw}}
+  \] 
+
+
+
+  \subsubsection*{Ημιτονική Αναπαράσταση}
+  Επεκτείνουμε την $f$ κατάλληλα στο διάστημα $ (- \infty, 0) $, ώστε η συνάρτηση να
+  είναι περιττή. 
+  \begin{align*}
+    B(w) &= \frac{2}{\pi} \int _{0}^{\infty} \mathrm{e}^{-kt} \sin{(wt)} \,{dw} = 
+    \frac{2}{\pi} \left[-\frac{w \mathrm{e}^{-kt} \cos{(kt)}}{k^{2}+w^{2}} - \frac{k
+    \mathrm{e}^{-kt} \sin{(wt)}}{k^{2}+w^{2}}\right]_{0}^{\infty} \\
+         &= \frac{2}{\pi} \left[\lim_{t \to \infty} \left(-\frac{w
+               \cancelto{0}{\mathrm{e}^{-kt}} \cos{(kt)}}{k^{2}+w^{2}} - \frac{k 
+             \cancelto{0}{\mathrm{e}^{-kt}} \sin{(wt)}}{k^{2}+w^{2}} 
+         \right)+ \frac{w}{k^{2}+w^{2}}\right] = \frac{2}{\pi} \frac{w}{k^{2}+w^{2}}
+  \end{align*} 
+  Επομένως 
+  \[
+    \boxed{f(t) = \frac{2}{\pi} \int _{0}^{\infty} \frac{w\sin{(wt)}}{k^{2}+w^{2}} 
+    \,{dw}}
+  \] 
+\end{solution}
+
+\begin{rem}
+  Από τις ολοκληρωτικές αναπαραστάσεις της συνάρτησης 
+  $ f(t) = \mathrm{e}^{-kt} $, με $ k>0 $, προκύπτουν οι παρακάτω τύποι, για τα 
+  \textbf{ολοκληρώματα Laplace}.
+  \[
+    \int _{0}^{\infty} \frac{\cos{(wt)}}{k^{2}+w^{2}} \, dw = 
+    \left\{
+      \renewcommand{\arraystretch}{2}
+      \begin{matrix*}
+        \frac{\pi}{2k} \mathrm{e}^{-kt} , & t \geq 0 \\
+        \frac{\pi}{2k} \mathrm{e}^{kt} , & t<0
+      \end{matrix*}
+    \right. \quad \text{και} \quad
+    \int _{0}^{\infty} \frac{w\sin{(wt)}}{k^{2}+w^{2}} \, dw = 
+    \left\{
+      \renewcommand{\arraystretch}{2}
+      \begin{matrix}
+        \frac{\pi}{2} \mathrm{e}^{-kt} , & t > 0 \\
+        -\frac{\pi}{2} \mathrm{e}^{kt} , & t< 0, & t=0
+      \end{matrix} 
+    \right.
+  \] 
+\end{rem}
+
+\begin{example}
+  Έστω $ f(t) = 
+  \begin{cases}
+    1, & \abs{t} \leq 1 \\
+    0, & \abs{t} > 1
+  \end{cases}$.  Να βρεθεί η ολοκληρωτική αναπαράσταση.
+\end{example}
+\begin{solution}
+  Παρατηρούμε ότι η συνάρτηση είναι άρτια, επομένως θα βρούμε τη 
+  συνημιτονική αναπαράσταση.
+  \[
+    A(w) = \frac{2}{\pi} \int _{0}^{\infty} f(t) \cos{(wt)} \,{dt} = \frac{2}{\pi}
+    \int _{0}^{1} \cos{(wt)} \,{dt} = \frac{2}{\pi} \left[\frac{\sin{(wt)}}{w}\right]
+    _{0}^{1} = \frac{2 \sin{w}}{\pi w} 
+  \] 
+  Άρα η ολοκληρωτική αναπαράσταση της $f$ είναι
+  \begin{align*}
+    f(t) &= \frac{2}{\pi} \int _{0}^{\infty} \frac{\sin{w} \cos{(wt)}}{w} \,{dw}, 
+    \quad t \neq \pm 1 
+    \intertext{και}
+    \frac{(1^{-})+f(1^{+})}{2} &= \frac{1}{2} = \frac{2}{\pi} 
+    \int _{0}^{\infty} \frac{\sin{w} \cos{(wt)}}{w} \,{dw}, 
+    \quad t= \pm  1
+  \end{align*} 
+  Επομένως, προκύπτει το παρακάτω ολοκλήρωμα 
+  \[
+    \int _{)}^{\infty} \frac{\sin{w} \cos{(wt)}}{w} \,{dw} = 
+    \begin{cases}
+      \pi /2, & \abs{t} < 1 \\
+      \pi /4, & \abs{t} = 1 \\
+      0, & \abs{t} > 1
+    \end{cases}
+  \] 
+  στο οποίο, αν θέσουμε $ t=0 $, παίρνουμε την τιμή του ολοκληρώματος
+  \[
+    \int _{0}^{\infty} \frac{\sin{w}}{w} \,{dw} = \lim_{u \to \infty} \int _{0}^{u}
+    \frac{\sin{w}}{w} \,{dw} = \lim_{u \to \infty} \Si (u) = \pi /2
+  \] 
+\end{solution}
+
+
+
+\section*{Μιγαδική Μορφή Ολοκληρώματος Fourier}
+
+Είδαμε ότι για μια συνάρτηση $ f \colon (- \infty, \infty) \to \mathbb{R} $, η οποία 
+είναι τμηματικά λεία σε κάθε πεπερασμένο διάστημα και απολύτως ολοκληρώσιμη στο 
+$ (- \infty, \infty) $, υπάρχει το ολοκλήρωμα Fourier, και ισχύει;
+\[
+  f(t) = \int _{0}^{\infty} A(w) \cos{(wt)} + B(w) \sin{(wt)} \,{dw} 
+\] 
+όπου
+\[
+  A(w) = \frac{1}{\pi} \int _{- \infty}^{\infty}f(t) \cos{(wt)} \,{dt} \quad \text{και}
+  \quad
+  B(w) = \frac{1}{\pi} \int _{- \infty}^{\infty}f(t) \sin{(wt)} \,{dt} 
+\] 
+Η παραπάνω σχέση, γράφεται:
+\[
+  f(t) = \int _{0}^{\infty} \left[A(w) \frac{\mathrm{e}^{iwt} + 
+  \mathrm{e}^{-iwt} }{2} - iB(w) \frac{\mathrm{e}^{iwt} - \mathrm{e}^{-iwt}}{2}\right] 
+  \,{dw} 
+  = \int _{0}^{\infty} \left(\frac{A-iB}{2} \mathrm{e}^{iwt} + \frac{A+iB}{2}
+  \mathrm{e}^{-iwt}\right) \,{dw} 
+\]
+όπου 
+\[
+  \frac{A-iB}{2} = \frac{1}{2 \pi} \int _{- \infty}^{\infty} f(t) \mathrm{e}^{-iwt}
+  \,{dt} \quad \text{και} \quad \frac{A+iB}{2} = \frac{1}{2 \pi} \int _{-
+  \infty}^{\infty} f(t) \mathrm{e}^{iwt} \,{dt}
+\] 
+και με αντικατάσταση, έχουμε
+\begin{align*}
+  f(t) &= \frac{1}{2 \pi} \left[\int _{0}^{\infty}\left(\int _{- \infty}^{\infty} f(t) \mathrm{e}^{-iwt} \,{dt} \right) \mathrm{e}^{iwt} \,{dw} + \int _{0}^{\infty} \left(\int _{- \infty}^{\infty} f(t)\mathrm{e}^{iwt}\,{dt} \right)\mathrm{e}^{-iwt} \,{dw}\right] \\ 
+       &= \frac{1}{2 \pi} \left[\int _{0}^{\infty}\left(\int _{- \infty}^{\infty} f(t) \mathrm{e}^{-iwt} \,{dt} \right) \mathrm{e}^{iwt} \,{dw} + \int _{- \infty}^{0} \left(\int _{- \infty}^{\infty} f(t) \mathrm{e}^{-iwt}\,{dt} \right) \mathrm{e}^{iwt} \,{dw}\right] \\
+       &= \frac{1}{2 \pi} \int _{- \infty}^{\infty}\left(\int _{- \infty}^{\infty} f(t) \mathrm{e}^{-iwt} \,{dt} \right) \mathrm{e}^{iwt} \,{dw} \intertext{ή ισοδύναμα}
+  \boxed{f(t) &= \frac{1}{\sqrt{2 \pi}} \int _{- \infty}^{\infty} \left( \frac{1}{\sqrt{2 \pi}} \int _{- \infty}^{\infty} f(t) \mathrm{e}^{-iwt} \,{dt} \right) \mathrm{e}^{iwt} \,{dw}}
+\end{align*} 
+που είναι και η μιγαδική μορφή του ολοκληρώματος Fourier.
+
+\begin{rem}.
+  Το Ολοκλήρωμα Fourier, αποτελεί γενίκευση της σειράς Fourier για συνεχή μεταβλητή.
+
+  \twocolumnsidess{
+    \subsection*{$n$ Διακριτή Μεταβλητή}
+    \renewcommand{\arraystretch}{2.5}
+    \begin{tabular}{l}
+      $
+      f(t) = \textcolor{Col1}{\sum_{n=1}^{\infty}} [a_{\textcolor{Col2}{n}} 
+      \cos{(nt)} + b_{n} \sin{(\textcolor{Col2}{nt})}] $ \\
+      $ f(t) = \textcolor{Col1}{\sum_{n=- \infty}^{\infty}} 
+      \underbrace{ \left(\frac{1}{2 \pi} \int _{- \pi }^{\pi} f(t) \mathrm{e}^{-int} 
+      \,{dt}\right)}_{c_{n}} \mathrm{e}^{\-int} $
+    \end{tabular}
+    }{
+    \subsection*{$w$ Συνεχής Μεταβλητή}
+    \renewcommand{\arraystretch}{2.7}
+    \begin{tabular}{l}
+      $
+      f(t) = \textcolor{Col1}{\int _{0}^{\infty}} [A(w) \cos{(\textcolor{Col1}{w}t)} + 
+      B(w) \sin{(\textcolor{Col1}{w}t)}] \, \textcolor{Col1}{dw} $ \\
+      $ f(t) = \frac{1}{\sqrt{2 \pi}} 
+      \textcolor{Col1}{\int _{- \infty}^{\infty}}\underbrace{\left( \frac{1}{\sqrt{2 
+      \pi}} \int _{- \infty}^{\infty} f(t) \mathrm{e}^{-iwt} \,{dt} \right)} 
+      \mathrm{e}^{iwt} \, \textcolor{Col1}{dw} $
+    \end{tabular}
+  }
+\end{rem}
+
+
+%todo να ελεγξω για λαθη κ να φτιάξω σχήματα για τα παραδείγματα (δες σημ Μαρκακη)
+
+
+
+
+
+
+\end{document}
+
