@@ -31,8 +31,8 @@
   \] 
   όπου
   \[
-    A(w) = \frac{1}{\pi} \int _{0}^{\infty} f(t) \cos{(wt)} \,{dt} \quad \text{και}
-    \quad B(w) = \frac{1}{\pi} \int _{0}^{\infty} f(t) \sin{(wt)} \,{dt} 
+    A(w) = \frac{1}{\pi} \int _{- \infty}^{\infty} f(t) \cos{(wt)} \,{dt} \quad \text{και}
+    \quad B(w) = \frac{1}{\pi} \int _{- \infty}^{\infty} f(t) \sin{(wt)} \,{dt} 
   \] 
   \textbf{υπάρχει} και λέγεται \textcolor{Col1}{ολοκλήρωμα Fourier} και η ισότητα, 
   η οποία ισχύει για κάθε $ t $ που είναι σημείο \textbf{συνέχειας} της $f$, 
@@ -72,15 +72,15 @@
 
 
 
-\subsection*{Ιδιότητες του Συνημιτονικού Ολοκληρώματος Fourier}
+% \subsection*{Ιδιότητες του Συνημιτονικού Ολοκληρώματος Fourier}
 
-Αν $ f(t) = \int _{0}^{\infty} A(w) \cos{(wt)} \,{dw} $ με $ A(w) = \frac{2}{\pi}
-\int _{0}^{\infty} f(t) \cos{(wt)} \,{dt} $, τότε:
-\begin{myitemize}
-  \item $ f(at) = \frac{1}{a} \int _{0}^{\infty} A(\frac{w}{a} ) \cos{(wt)} \,{dw} $
-  \item $ t f(t) = - \int _{0}^{\infty} \dv{A(w)}{w} \sin{(wt)} \,{dw} $
-  \item $ t^{2}f(t) = - \int _{0}^{\infty} \dv[2]{A(w)}{w} \cos{(wt)} \,{dw} $
-\end{myitemize}
+% Αν $ f(t) = \int _{0}^{\infty} A(w) \cos{(wt)} \,{dw} $ με $ A(w) = \frac{2}{\pi}
+% \int _{0}^{\infty} f(t) \cos{(wt)} \,{dt} $, τότε:
+% \begin{myitemize}
+%   \item $ f(at) = \frac{1}{a} \int _{0}^{\infty} A(\frac{w}{a} ) \cos{(wt)} \,{dw} $
+%   \item $ t f(t) = - \int _{0}^{\infty} \dv{A(w)}{w} \sin{(wt)} \,{dw} $
+%   \item $ t^{2}f(t) = - \int _{0}^{\infty} \dv[2]{A(w)}{w} \cos{(wt)} \,{dw} $
+% \end{myitemize}
 
 \begin{example}
   Έστω η συνάρτηση $ f(t) = \mathrm{e}^{-kt} $, όπου $ k>0 $ και $ t \geq 0 $. 
@@ -225,8 +225,11 @@ $ (- \infty, \infty) $, υπάρχει το ολοκλήρωμα Fourier, και
 \begin{align*}
   f(t) &= \frac{1}{2 \pi} \left[\int _{0}^{\infty}\left(\int _{- \infty}^{\infty} f(t) \mathrm{e}^{-iwt} \,{dt} \right) \mathrm{e}^{iwt} \,{dw} + \int _{0}^{\infty} \left(\int _{- \infty}^{\infty} f(t)\mathrm{e}^{iwt}\,{dt} \right)\mathrm{e}^{-iwt} \,{dw}\right] \\ 
        &= \frac{1}{2 \pi} \left[\int _{0}^{\infty}\left(\int _{- \infty}^{\infty} f(t) \mathrm{e}^{-iwt} \,{dt} \right) \mathrm{e}^{iwt} \,{dw} + \int _{- \infty}^{0} \left(\int _{- \infty}^{\infty} f(t) \mathrm{e}^{-iwt}\,{dt} \right) \mathrm{e}^{iwt} \,{dw}\right] \\
-       &= \frac{1}{2 \pi} \int _{- \infty}^{\infty}\left(\int _{- \infty}^{\infty} f(t) \mathrm{e}^{-iwt} \,{dt} \right) \mathrm{e}^{iwt} \,{dw} \intertext{ή ισοδύναμα}
-  \boxed{f(t) &= \frac{1}{\sqrt{2 \pi}} \int _{- \infty}^{\infty} \left( \frac{1}{\sqrt{2 \pi}} \int _{- \infty}^{\infty} f(t) \mathrm{e}^{-iwt} \,{dt} \right) \mathrm{e}^{iwt} \,{dw}}
+       &= \frac{1}{2 \pi} \int _{- \infty}^{\infty}\left(\int _{- \infty}^{\infty} f(t) \mathrm{e}^{-iwt} \,{dt} \right) \mathrm{e}^{iwt} \,{dw} 
+       \intertext{ή ισοδύναμα}
+  f(t) &= \frac{1}{\sqrt{2 \pi}} \int _{- \infty}^{\infty} \left( \frac{1}{\sqrt{2
+    \pi}} \int _{- \infty}^{\infty} f(t) \mathrm{e}^{-iwt} \,{dt} \right) \mathrm{e}^{iwt}
+  \,{dw}
 \end{align*} 
 που είναι και η μιγαδική μορφή του ολοκληρώματος Fourier.
 
