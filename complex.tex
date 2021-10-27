@@ -16,6 +16,13 @@
   \end{minipage}
 }
 
+\newcommand{\twocolumnsidell}[2]{\begin{minipage}[t]{0.55\linewidth}\raggedright
+        #1
+        \end{minipage}\hfill\begin{minipage}[t]{0.40\linewidth}\raggedright
+        #2
+    \end{minipage}
+}
+
 \newcommand{\threecolumnsidess}[3]{\begin{minipage}[c]{0.30\linewidth}\raggedright
     #1
     \end{minipage}\hfill\begin{minipage}[c]{0.35\linewidth}\raggedright
@@ -130,7 +137,7 @@
   }
   \begin{enumerate}[start=3]
     \item $ \abs{z} = \abs{-z} = \abs{\overline{z}} = \abs{- \overline{z}} $
-    \item $ \abs{\abs{z_{1}- z_{2}}} \leq \abs{z_{1}- z_{2}} \leq \abs{z_{1}} - 
+  \item $ \abs{\abs{z_{1}}- \abs{z_{2}}} \leq \abs{z_{1} \pm z_{2}} \leq \abs{z_{1}} + 
       \abs{z_{2}} $
   \end{enumerate}
 }
@@ -159,7 +166,7 @@
   \subsubsection*{Διαίρεση}
   \begin{align*}
     \frac{z_{1}}{z_{2}}&=\frac{(a+bi)}{(c+di)}     =\frac{(a+bi)(c-di)}{(c+di)(c-di)} \\
-                       &=\frac{ac+bd+(-ad+bc)}{b^{2}+d^{2}} \\
+                       &=\frac{ac+bd+(-ad+bc)}{c^{2}+d^{2}} \\
                        &=\frac{ac+bd}{c^2+d^2}+\frac{bc-ad}{c^2+d^2}
   \end{align*}
 }
@@ -228,7 +235,7 @@
 
 Έστω $ z_{1}, z_{2} $ και $ z $ μιγαδικοί αριθμοί. Τότε 
 
-\twocolumnsides{
+\twocolumnsidell{
   \begin{enumerate}
     \item $ \overline{\overline{z}} = z $
     \item $ \overline{z_{1}+ z_{2}} = \overline{z_{1}} + \overline{z_{2}} \quad
@@ -356,7 +363,7 @@
 Έστω $r=\abs{z}$ και $\theta$ η γωνία που σχηματίζει ο \textbf{θετικός} ημιάξονας $x$ 
 με το διάνυσμα θέσης του $z$ και η οποία μετριέται σε ακτίνια. 
 Τότε $a=r\cos \theta$ και $b=r\sin \theta$ και επομένως ο μιγαδικός $z$ μπορεί να γραφεί 
-σε \textcolor{Col1}{τριγωνομετρική} ή \textcolor{Col1}{πολική} μορφή ως:
+σε \textcolor{Col1}{τριγωνομετρική} ή \textcolor{Col1}{πολική} μορφή ως
 \[
   \boxed{z=r(\cos\theta+i\sin\theta)}
 \]
@@ -563,9 +570,8 @@ $2\pi$. Αν $z=0$ τότε δεν ορίζεται το όρισμα του $z$
 
   \section*{Ισότητα σε Πολική μορφή}
 
-  Έστω $z_{1}=r_{1}(\cos\theta_{1}+i\sin\theta_{1}), \; z_{2}
-  =r_{2}(\cos\theta_{2}+i\sin\theta_{2})$ και $z=r(\cos\theta+i\sin\theta)$
-
+  Έστω $z_{1}=r_{1}(\cos\theta_{1}+i\sin\theta_{1}) $ και $ z_{2}
+  =r_{2}(\cos\theta_{2}+i\sin\theta_{2})$.
   \[
     z_{1}=z_{2}\Leftrightarrow r_{1}=r_{2} \quad\text{και}\quad 
     \Arg z_{1}=\Arg z_{2}\quad \text{ή}\quad \theta_{1}=\theta_{2}+2k\pi,
@@ -573,6 +579,8 @@ $2\pi$. Αν $z=0$ τότε δεν ορίζεται το όρισμα του $z$
   \]
 
   \section*{Πράξεις σε Πολική μορφή}
+  Έστω $z_{1}=r_{1}(\cos\theta_{1}+i\sin\theta_{1}) $, $ z_{2}
+  =r_{2}(\cos\theta_{2}+i\sin\theta_{2})$ και $ z= r (\cos{\theta} + i \sin{\theta}) $.
 
   \begin{center}
     \begin{Mytable}    
@@ -580,10 +588,11 @@ $2\pi$. Αν $z=0$ τότε δεν ορίζεται το όρισμα του $z$
       \begin{tabular}{|c|c|}
         \TabCellHead Τριγωνομετρική Μορφή  &  \TabCellHead Εκθετική Μορφή \\ \hline
         $z_{1}\cdot
-        z_{2}=r_{1}r_{2}[\cos(\theta_{1}+\theta_{2})+i\sin(\theta_{1}+\theta_{2})]$ &
+        z_{2}=r_{1}r_{2}
+        \left[\cos(\theta_{1}+\theta_{2})+i\sin(\theta_{1}+\theta_{2})\right]$ &
         $z_{1}\cdot z_{2}=r_{1}r_{2}e^{i(\theta_{1}+\theta_{2})}$ \\ \hline
-        $\frac{z_{1}}{z_{2}}=\frac{r_{1}}{r_{2}}[(\cos(\theta_{1}-\theta_{2})+
-        i(\sin\theta_{1}-\theta_{2}))]$ & $\frac{z_{1}}{z_{2}}=
+        $\frac{z_{1}}{z_{2}}=\frac{r_{1}}{r_{2}}\left[\cos(\theta_{1}-\theta_{2})+
+        i\sin(\theta_{1}-\theta_{2})\right]$ & $\frac{z_{1}}{z_{2}}=
         \frac{r_{1}}{r_{2}}e^{i(\theta_{1}-\theta_{2})}$ \\[5pt] \hline
         $z^{-1}=\frac{1}{z}=\frac{1}{r}(\cos\theta-i\sin\theta)$ &
         $z^{-1}=\frac{1}{r}e^{-i\theta}$ \\[5pt] \hline
@@ -604,14 +613,14 @@ $2\pi$. Αν $z=0$ τότε δεν ορίζεται το όρισμα του $z$
 
       \section*{Νιοστές Ρίζες μιγαδικών αριθμών}
       \begin{dfn}
-        Έστω $ a \in \mathbb{C} $ με $ a \neq 0 $. Νιοστή ρίζα του $a$, ονομάζεται
-        κάθε μιγαδικός αριθμός $ z $ που επαληθεύει την εξίσωση $ z^{n}=a $ με 
-        $ n \in \mathbb{N}- \{ 0,1 \} $.
+        Έστω $ a \in \mathbb{C} $ με $ a \neq 0 $. \textcolor{Col1}{Νιοστή ρίζα} 
+        του $a$, ονομάζεται κάθε μιγαδικός αριθμός $ z $ που επαληθεύει την εξίσωση 
+        $ z^{n}=a $ με $ n \in \mathbb{N}- \{ 0,1 \} $.
       \end{dfn}
 
       \begin{thm}\label{thm:niost}
         Κάθε μιγαδικός αριθμός της μορφής $a=r(\cos\theta+i\sin\theta), \; a\neq 0$,
-        όπου $ a \in \mathbb{C} $, τις: 
+        όπου $ a \in \mathbb{C} $, έχει $n$ ακριβώς $n$-οστές ρίζες, τις: 
         \[
           \boxed{z_{k}=\sqrt[n]{r}\left[ \cos\left(\frac{\theta+2k\pi}{n}\right)+i
           \sin\left(\frac{\theta+2k\pi}{n}\right) \right], \quad k=0,1,\ldots, n-1}
