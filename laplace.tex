@@ -1,5 +1,6 @@
 \input{preamble_ask.tex}
 \input{definitions_ask.tex}
+\input{myboxes.tex}
 
 \geometry{left=15.63mm,right=15.63mm,top=30.25mm, bottom=36.25mm,footskip=24.16mm,
   headsep=24.16mm}
@@ -26,6 +27,7 @@
 
 \section*{Ορισμός και Παραδείγματα}
 
+\begin{mybox1}
 \begin{dfn}
   Έστω $ f(t) $ συνάρτηση, ορισμένη για $ t \geq 0 $. Τότε ο μετασχηματισμός Laplace 
   της $f$, είναι
@@ -35,10 +37,13 @@
   \end{equation} 
   οποτεδήποτε το γενικευμένο ολοκλήρωμα συγκλίνει.
 \end{dfn}
+\end{mybox1}
 
+\begin{mybox3}
 \begin{example}
-  $ \boldsymbol{\mathcal{L}\left[1\right] = \frac{1}{s}, \quad s > 0} $
+  $ {\mathcal{L}\left[1\right] = \frac{1}{s}, \quad s > 0} $
 \end{example}
+\end{mybox3}
 \begin{proof}
   \[
     \mathcal{L}\left[1\right] = \int_{0}^{+\infty} 1\cdot \mathrm{e}^{-st} \,{dt} =  
@@ -48,9 +53,11 @@
   \] 
 \end{proof}
 
+\begin{mybox3}
 \begin{example}
-  $ \boldsymbol{\mathcal{L}\left[t\right] = \frac{1}{s^{2}}, \quad s>0} $
+  $ {\mathcal{L}\left[t\right] = \frac{1}{s^{2}}, \quad s>0} $
 \end{example}
+\end{mybox3}
 \begin{proof}
   \[
     \mathcal{L}\left[t\right] = \int_{0}^{+\infty} t \cdot \mathrm{e}^{-st} \,{dt} = 
@@ -62,9 +69,11 @@
   \] 
 \end{proof}
 
+\begin{mybox3}
 \begin{example}
-  $ \boldsymbol{\mathcal{L}\left[\mathrm{e}^{at}\right] = \frac{1}{s-a}, \quad s > a} $ 
+  $ {\mathcal{L}\left[\mathrm{e}^{at}\right] = \frac{1}{s-a}, \quad s > a} $ 
 \end{example}
+\end{mybox3}
 \begin{proof}
   \[
     \mathcal{L}\left[\mathrm{e}^{at}\right] = \int_{0}^{+\infty} \mathrm{e}^{at} 
@@ -75,21 +84,23 @@
   \]
 \end{proof}
 
+\begin{mybox3}
 \begin{example}
-  $ \boldsymbol{\mathcal{L}\left[\sin{at}\right] = \frac{a}{s^{2}+a^{2}}} $
+  $ \mathcal{L}\left[\sin{at}\right] = \frac{a}{s^{2}+a^{2}} $
 \end{example}
+\end{mybox3}
 \begin{proof}
   \begin{align*}
-    \mathcal{L}\left[\sin{at}\right] &= \int_{0}^{+\infty} \sin{at} \cdot
+    \mathcal{L}\left[\sin{at}\right] &= \int_{0}^{+\infty}\!\! \sin{at} \cdot
     \mathrm{e}^{-st} \,{dt} = {\left[- \frac{\mathrm{e}^{-st}}{s^{2}+a^{2}} 
-    (a \cos{at} + s \sin{at})\right]} _{0}^{+\infty} = \lim_{t \to \infty} 
+    (a \cos{at} + s \sin{at})\right]} _{0}^{+\infty} \!\!= \lim_{t \to \infty} 
     \cancelto{0}{\left[- \frac{\mathrm{e}^{-st}}{s^{2}+a^{2}} (a \cos{at} + s
-    \sin{at})\right]} + \frac{a}{s^{2}+a^{2}} \\
+    \sin{at})\right]} \!\! + \frac{a}{s^{2}+a^{2}} \\
   \end{align*} 
-  \begin{description}
+  \begin{description}[leftmargin=!]
     \item [Β Τρόπος:]
       \begin{align*}
-        \mathcal{L}\left[\sin{at}\right] = \mathcal{L}\left(\frac{\mathrm{e}^{iat} -
+        \mathcal{L}\left[\sin{at}\right] &= \mathcal{L}\left(\frac{\mathrm{e}^{iat} -
         \mathrm{e}^{-iat}}{2i}\right) = \frac{1}{2i} 
         \left(\mathcal{L}[\mathrm{e}^{iat}] - \mathcal{L}[\mathrm{e}^{-iat}]\right) = 
         \frac{1}{2i} \left(\frac{1}{s-ia} - \frac{1}{s+ia}\right) = 
@@ -98,9 +109,11 @@
   \end{description}
 \end{proof}
 
+\begin{mybox3}
 \begin{example}
-  $ \boldsymbol{\mathcal{L}\left[\sinh{at}\right] = \frac{a}{s^{2}-a^{2}}} $
+  $ \mathcal{L}\left[\sinh{at}\right] = \frac{a}{s^{2}-a^{2}} $
 \end{example}
+\end{mybox3}
 \begin{proof}
   \begin{align*}
     \mathcal{L}\left[\sin{at}\right] = \mathcal{L}\left(\frac{\mathrm{e}^{at} -
@@ -111,9 +124,11 @@
   \end{align*}
 \end{proof}
 
+\begin{mybox3}
 \begin{example}\label{ex:nonex}
-  Η συνάρτηση $ \boldsymbol{f(t)= \mathrm{e}^{t^{2}}} $ δεν έχει μετασχηματισμό Laplace.
+  Η συνάρτηση $ f(t)= \mathrm{e}^{t^{2}} $ \textbf{δεν} έχει μετασχηματισμό Laplace.
 \end{example}
+\end{mybox3}
 \begin{proof}
 \item {}
   Αν $ s \leq 0 $ τότε $ t^{2}-st \geq 0 \Rightarrow
@@ -152,16 +167,16 @@
 \section*{Ικανές και Αναγκαίες συνθήκες ύπαρξης του μετασχηματισμού Laplace}
 
 Από το παράδειγμα~\ref{ex:nonex} καταλαβαίνουμε ότι δεν έχουν όλες οι συναρτήσεις 
-μετασχηματισμό Laplace. Στο επόμενο θεώρημα, μετά από κάποιους χρήσιμους ορισμούς,  
-διατυπώνουμε \textbf{ικανές} συνθήκες για την ύπαρξη του μετασχηματισμού Laplace 
-μιας συνάρτησης. 
+μετασχηματισμό Laplace. Στο επόμενο θεώρημα, διατυπώνουμε \textbf{ικανές} συνθήκες για 
+την ύπαρξη του μετασχηματισμού Laplace μιας συνάρτησης. 
 
+\begin{mybox1}
 \begin{dfn}
   Μια συνάρτηση $ f(t) $ λέμε ότι είναι \textcolor{Col1}{εκθετικού τύπου $a$}, όπου 
   $a>0$, στο $ 0 \leq t < \infty $, αν υπάρχει $ M>0$ και $ t_{0}>0 $, ώστε για κάθε 
   $ t \geq t_{0} $ να ισχύει $ \abs{f(t)} \leq M \mathrm{e}^{at} $.
 \end{dfn}
-
+\end{mybox1}
 \begin{rem}
   Ουσιαστικά, μια συνάρτηση εκθετικού τύπου $a$, δεν αυξάνει ταχύτερα από την 
   συνάρτηση $ M \mathrm{e}^{at} $ καθώς $ t \to \infty $. Αυτό σημαίνει ότι η 
@@ -180,9 +195,11 @@
   \] 
 \end{proof}
 
+\begin{mybox3}
 \begin{example}
-  Η Βηματική συνάρτηση $ \boldsymbol{H(t)} $ είναι εκθετικού τύπου 0.
+  Η Βηματική συνάρτηση $ H(t) $ είναι εκθετικού τύπου 0.
 \end{example}
+\end{mybox3}
 \begin{proof}
   \[
     \abs{H(t)} \leq 1 = \mathrm{e}^{0t} 
@@ -201,9 +218,11 @@
   \]
 \end{proof}
 
+\begin{mybox3}
 \begin{example}
-  Η συνάρτηση $ \boldsymbol{f(t) = \mathrm{e}^{5t} \sin{2t}} $ είναι εκθετικού τύπου 5.
+  Η συνάρτηση $ f(t) = \mathrm{e}^{5t} \sin{2t} $ είναι εκθετικού τύπου 5.
 \end{example}
+\end{mybox3}
 \begin{proof}
   \[
     \abs{f(t)} = \abs{\mathrm{e}^{5t} \sin{2t}} = \abs{\mathrm{e}^{5t}} \cdot 
@@ -222,6 +241,7 @@
   τότε η $f$ δεν είναι εκθετικού τύπου.
 \end{rem}
 
+\begin{mybox3}
 \begin{example}
   Η συνάρτηση του παραδείγματος~\ref{ex:nonex}, δεν είναι εκθετικού τύπου, αφού
   \[
@@ -230,24 +250,28 @@
     \lim_{t \to \infty} \mathrm{e}^{t(t-a)} = \infty, \quad \forall a
   \]
 \end{example}
+\end{mybox3}
 
+\begin{mybox1}
 \begin{dfn}
   Μια συνάρτηση $ f \colon [a,b] \to \mathbb{R} $ ονομάζεται 
   \textcolor{Col1}{τμηματικά συνεχής}, αν το σύνολο των σημείων 
   ασυνέχειας είναι πεπερασμένο και \textbf{σε κάθε} σημείο ασυνέχειας της $f$ 
   υπάρχουν τα πλευρικά όρια και είναι πεπερασμένα.
 \end{dfn}
-
+\end{mybox1}
 \begin{rem}
   Προφανώς αν μια συνάρτηση είναι συνεχής, είναι και τμηματικά συνεχής.
 \end{rem}
 
+\begin{mybox2}
 \begin{thm}\label{thm:sygklisi}
   Έστω $f$ μια συνάρτηση, που είναι \textbf{τμηματικά συνεχής} και 
   \textbf{εκθετικού τύπου $a$}. Τότε ο μετασχηματισμός Laplace 
   $ \mathcal{L}\left[f(t)\right] = F(s) $ της $ f(t) $, όπως ορίστηκε 
   στη σχέση~\eqref{eq:laplace}, \textbf{υπάρχει} για κάθε $ s>a $.
 \end{thm}
+\end{mybox2}
 \begin{proof}
   ισχύει ότι
   \[
@@ -292,7 +316,7 @@
   \[
     \lim_{s \to \infty} \abs{F(s)} \leq \lim_{s \to \infty} \frac{M}{s-a} = 0
   \] 
-  από όπου, με το κριτήριο παρεμβολής, έπεται ότι
+  από όπου, έπεται ότι
   \[
     \lim_{s \to \infty} F(s) = 0 
   \]

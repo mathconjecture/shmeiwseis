@@ -1,6 +1,20 @@
 \input{preamble_ask.tex}
 \input{definitions_ask.tex}
 \input{tikz.tex}
+\input{myboxes.tex}
+
+\newtcbox{\mathboxrr}[1][]{nobeforeafter, math upper,tcbox raise base,size=small,
+          enhanced, sharp corners, colback=Col1!40, colframe=Col1!75,
+        %left=1ex, top=1ex, right=1ex, bottom=1ex,
+        }
+
+\newcommand{\twocolumnsidescc}[2]{\begin{minipage}[c]{0.72\linewidth}\raggedright
+        #1
+        \end{minipage}\hfill\begin{minipage}[c]{0.27\linewidth}\raggedright
+        #2
+    \end{minipage}
+}
+
 
 \input{insbox}
 \usepackage{wrapfig}
@@ -95,21 +109,25 @@
 του Πεδίου Ορισμού της $f$ η κλίση $ \grad f(x_{0}, y_{0}) $ είναι κάθετη στην 
 ισοσταθμική καμπύλη που διέρχεται από το $ (x_{0}, y_{0}) $.
 
+\begin{mybox1}
 \begin{dfn}
   Η \textcolor{Col1}{εφαπτόμενη ευθεία}, μιας ισοσταθμικής καμπύλης
   $ f(x,y)=c $, της διαφορίσιμης συνάρτησης $ f(x,y) $, στο σημείο 
   $ P_{0}(x_{0}, y_{0}) $, είναι η ευθεία που διέρχεται από το σημείο 
   $ P_{0} $ και είναι \textbf{κάθετη} στο διάνυσμα της κλίσης $ \grad f(P_{0}) $. 
   Η εξίσωσή της, δίνεται από τον τύπο:
-  \begin{empheq}[box=\mathboxr]{equation*}
+  \begin{empheq}[box=\mathboxrr]{equation*}
     f_{x}(x_{0}, y_{0}) (x- x_{0}) + f_{y}(x_{0}, y_{0}) (y- y_{0}) = 0
   \end{empheq}
 \end{dfn} 
+\end{mybox1}
 
+\begin{mybox3}
 \begin{example}
   Να βρείτε την εξίσωση της εφαπτομένης της έλλειψης $ x^{2}+4y^{2}=8 $ στο σημείο 
   $ (-2,1) $.
 \end{example}
+\end{mybox3}
 \begin{solution}
   Η δοσμένη έλλειψη είναι μια ισοσταθμική καμπύλη της επιφάνειας $ f(x,y)=x^{2}+4y^{2}
   $. Η κλίση της $f$, είναι $ \grad f = (2x,8y) $ και στο σημείο $ (-2,1) $ 
@@ -151,61 +169,65 @@ $ P_{0} $. Άρα οι εφαπτόμενες ευθείες στο σημείο
 $S$, περιέχονται στο επίπεδο που διέρχεται από το $ P_{0} $ και είναι κάθετο στο 
 $ \grad f(P_{0}) $. 
 
+\twocolumnsidescc{
+  \begin{mybox1}
+  \item {}
 \begin{dfn}
-\item 
-  \InsertBoxR{0}{\parbox[b][4\baselineskip][c]{0.32\textwidth}
-    {\begin{tikzpicture}[scale=0.62]
-        \begin{scope}[yshift=-20pt]
-          \node (a) at (-1.25, 0.75) {};
-          \node (b) at (3.5, 1.5) {};
-          \node (c) at (5.5, 3.25) {};
-          \node (g) at (-0.25, 4.25) {};
-          \node (d) at (-1.75, 1.75) {};
-          \node (f) at (5, 5.5) {};
-          \node (e) at (3.5, 3) {};
-          \begin{pgfonlayer}{main}
-            \path[shading=ball,shading angle=90,ball color=Col1!85,opacity=.8] 
-              (c.center)[out=135, in=75, looseness=1.25] to 
-              (a.center)[out=60, in=135, looseness=0.75] to node[pos=0.65,below=5pt]
-              {\small$f(x,y,z)=c$} (b.center) to [in=135, out=90] (c.center) ;
-          \end{pgfonlayer}
-          % \draw [in=135, out=90] (b.center) to (c.center);
-          % \draw [out=60, in=135, looseness=0.75] (a.center) to (b.center);
-          % \draw [out=135, in=75, looseness=1.25] (c.center) to (a.center);
-          \begin{pgfonlayer}{fg}
-            \path[shading=axis,fill=blue!55,opacity=.55] (d.center) to (e.center) to 
-              (f.center) to (g.center) --cycle;
-            \coordinate (p) at (1.5, 3.5) ;
-            \coordinate (p1) at (0.6, 5.0) ;
-            \fill (p) node[right] {\small$P_{0}$} circle (1.5pt) ;
-            \draw[-latex,thick] (p) -- (p1) node[right] {\small$\grad f$} ;
-            \coordinate (l) at ($(p)!0.15!(p1)$) ;
-            \draw (l) -- ++ (-.19,-.14) -- ++(.14,-.21) {} ;
-          \end{pgfonlayer}
-        \end{scope}
-        \begin{pgfonlayer}{bg}
-          \node (o) at (0, 0) {};
-          \node (x) at (-2.0, -1.25) {};
-          \node (y) at (5, 0) {};
-          \node (z) at (0, 5) {};
-          \draw[-latex,blue!50,thick] (o.center) to (z.center) node[left]{$z$};
-          \draw[-latex,blue!50,thick] (o.center) to (x.center) node[left]{$x$};
-          \draw[-latex,blue!50,thick] (o.center) to (y.center) node[below]{$y$};
-        \end{pgfonlayer}
-  \end{tikzpicture}}}
-
   Το \textcolor{Col1}{εφαπτόμενο επίπεδο}, μιας ισοσταθμικής επιφάνειας 
   $ f(x,y,z)=c $, της διαφορίσιμης συνάρτησης $ f(x,y,z) $, στο σημείο 
   $ P_{0}(x_{0}, y_{0}, z_{0}) $, είναι το επίπεδο που διέρχεται από το σημείο 
   $ P_{0} $ και είναι \textbf{κάθετο} στο διάνυσμα της κλίσης $ \grad f(P_{0}) $. 
   Η εξίσωσή του, δίνεται από τον τύπο:
-  \begin{empheq}[box=\mathboxr]{equation*}
+  \begin{empheq}[box=\mathboxrr]{equation*}
     \label{eq:tan}
     \!f_{x}(x_{0}, y_{0}, z_{0}) (x- x_{0}) +\! f_{y}(x_{0}, y_{0}, z_{0}) (y- y_{0}) 
     +\! f_{z}(x_{0}, y_{0}, z_{0}) (z- z_{0}) \!= 0
   \end{empheq}
 \end{dfn}
+\end{mybox1}
+}{
+\begin{tikzpicture}[scale=0.53]
+  \begin{scope}[yshift=-20pt]
+    \node (a) at (-1.25, 0.75) {};
+    \node (b) at (3.5, 1.5) {};
+    \node (c) at (5.5, 3.25) {};
+    \node (g) at (-0.25, 4.25) {};
+    \node (d) at (-1.75, 1.75) {};
+    \node (f) at (5, 5.5) {};
+    \node (e) at (3.5, 3) {};
+    \begin{pgfonlayer}{main}
+      \path[shading=ball,shading angle=90,ball color=Col1!85,opacity=.8] 
+        (c.center)[out=135, in=75, looseness=1.25] to 
+        (a.center)[out=60, in=135, looseness=0.75] to node[pos=0.65,below=5pt]
+        {\small$f(x,y,z)=c$} (b.center) to [in=135, out=90] (c.center) ;
+    \end{pgfonlayer}
+    % \draw [in=135, out=90] (b.center) to (c.center);
+    % \draw [out=60, in=135, looseness=0.75] (a.center) to (b.center);
+    % \draw [out=135, in=75, looseness=1.25] (c.center) to (a.center);
+    \begin{pgfonlayer}{fg}
+      \path[shading=axis,fill=blue!55,opacity=.55] (d.center) to (e.center) to 
+        (f.center) to (g.center) --cycle;
+      \coordinate (p) at (1.5, 3.5) ;
+      \coordinate (p1) at (0.6, 5.0) ;
+      \fill (p) node[right] {\small$P_{0}$} circle (1.5pt) ;
+      \draw[-latex,thick] (p) -- (p1) node[right] {\small$\grad f$} ;
+      \coordinate (l) at ($(p)!0.15!(p1)$) ;
+      \draw (l) -- ++ (-.19,-.14) -- ++(.14,-.21) {} ;
+    \end{pgfonlayer}
+  \end{scope}
+  \begin{pgfonlayer}{bg}
+    \node (o) at (0, 0) {};
+    \node (x) at (-2.0, -0.85) {};
+    \node (y) at (5, 0) {};
+    \node (z) at (0, 5) {};
+    \draw[-latex,blue!50,thick] (o.center) to (z.center) node[left]{$z$};
+    \draw[-latex,blue!50,thick] (o.center) to (x.center) node[left]{$x$};
+    \draw[-latex,blue!50,thick] (o.center) to (y.center) node[below]{$y$};
+  \end{pgfonlayer}
+\end{tikzpicture}
+}
 
+  
 \begin{rem}
   Αν $ S: z=f(x,y) $ τότε θέτουμε $ g(x,y,z) =  f(x,y) - z = 0 $ και έχουμε ότι $ z_{0}=
   f(x_{0}, y_{0}) $ και 
@@ -224,16 +246,18 @@ $ \grad f(P_{0}) $.
 
 \section*{Κάθετη Ευθεία}
 
+\begin{mybox1}
 \begin{dfn} Η \textcolor{Col1}{κάθετη ευθεία}, μιας ισοσταθμικής επιφάνειας 
   $ f(x,y,z)=c  $, της διαφορίσιμης συνάρτησης $ f(x,y,z) $, στο σημείο 
   $ P_{0}(x_{0}, y_{0}, z_{0}) $ είναι η ευθεία που διέρχεται από το σημείο 
   $ P_{0} $ και είναι κάθετη στο εφαπτόμενο επίπεδο, και άρα είναι \textbf{παράλληλη} 
   στο διάνυσμα της κλίσης $ \grad f(P_{0}) $. Η εξίσωσή της, δίνεται από τον τύπο:
-  \begin{empheq}[box=\mathboxr]{equation}
+  \begin{empheq}[box=\mathboxrr]{equation}
     \label{eq:kath}
     \mathbf{r}(t) = (x_{0}, y_{0}, z_{0}) + t \grad f(x_{0}, y_{0}, z_{0})
   \end{empheq} 
 \end{dfn}
+\end{mybox1}
 Η εξίσωση~\eqref{eq:kath}, ισοδύναμα, γράφεται:
 \begin{equation}
   \label{eq:kath2}
@@ -280,10 +304,12 @@ enhanced, sharp corners, colback=Col2!20, colframe=Col2!50}}
 \end{rem}
 
 
+\begin{mybox3}
 \begin{example}
   Βρείτε την εξίσωση του εφαπτόμενου επιπέδου και της κάθετης ευθείας της επιφάνειας 
   $ x^{2}+y^{2}+z=0 $ στο σημείο $ P_{0}(1,2,4) $.
 \end{example}
+\end{mybox3}
 \begin{solution}
   Το εφαπτόμενο επίπεδο, θα είναι το επίπεδο που διέρχεται από το σημείο $ P_{0} $ 
   και είναι κάθετο στο διάνυσμα της κλίσης $ \grad f(P_{0}) $, όπου $
@@ -305,10 +331,12 @@ enhanced, sharp corners, colback=Col2!20, colframe=Col2!50}}
 
 \subsection*{Εφαπτόμενο επίπεδο, παράλληλο σε δοσμένο επίπεδο}
 
+\begin{mybox3}
 \begin{example}
   Να βρεθεί σημείο πάνω στο παραβολοειδές $ y=x^{2}+z^{2} $, στο οποίο το εφαπτόμενο 
   επίπεδο, είναι παράλληλο προς το επίπεδο $ x+2y+3z=1 $.
 \end{example}
+\end{mybox3}
 \begin{solution}
   Έστω $ P_{0}(x_{0}, y_{0}, z_{0}) $ το σημείο πάνω στο παραβολοειδές στο οποίο το 
   εφαπτόμενο επίπεδο είναι παράλληλο προς το δοσμένο επίπεδο. Αν το παραβολοειδές 
@@ -340,11 +368,13 @@ enhanced, sharp corners, colback=Col2!20, colframe=Col2!50}}
 
 \subsection*{Εφαπτομένη καμπύλης, τομής δύο επιφανειών}
 
+\begin{mybox3}
 \begin{example}
   Οι επιφάνειες $ f(x,y,z)=x^{2}+y^{2}-2=0 $ και $ g(x,y,z) = x+z-4 $ τέμνονται σε 
   μία έλλειψη. Να βρείτε την εξίσωση της εφαπτομένης της έλλειψης, στο σημείο 
   $ P_{0}(1,1,3) $. 
 \end{example}
+\end{mybox3}
 \begin{solution}
   Η εφαπτομένη της έλλειψης, στο σημείο $ P_{0} $ θα είναι κάθετη στα διανύσματα των 
   κλίσεων $ \grad f({P_{0}}) $ και $ \grad g(P_{0}) $. Άρα, η εφαπτομένη θα είναι 
@@ -372,4 +402,5 @@ enhanced, sharp corners, colback=Col2!20, colframe=Col2!50}}
 
 
 \end{document}
+
 

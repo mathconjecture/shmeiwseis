@@ -79,7 +79,7 @@
           \] 
       \end{myitemize}
     \end{proof}
-  % \item $ \binom{n}{k} = \binom{n}{n-k}, \quad 0 \leq k \leq n $
+    % \item $ \binom{n}{k} = \binom{n}{n-k}, \quad 0 \leq k \leq n $
 \end{enumerate}
 
 \enlargethispage{2\baselineskip}
@@ -97,24 +97,24 @@
     προηγούμενη γραμμή.
 \end{enumerate}
 \twocolumnsidescc{
-\begin{gather*}
-  (a+b)^{0}={\color{Col1}1} \\
-  (a+b)^{1}={\color{Col1}1}a+b{\color{Col1}1} \\
-  (a+b)^{2}={\color{Col1}1}a^{2}+{\color{Col1}2}ab
-  +b^{2}{\color{Col1}1} \\
-  (a+b)^{3}={\color{Col1}1}a^{3}+{\color{Col1}3}a^{2}b
-  +{\color{Col1}3}ab^{2}+b^{3}{\color{Col1}1} \\
-  (a+b)^{4}={\color{Col1}1}a^{4}+{\color{Col1}4}a^{3}b
-  +{\color{Col1}6}a^{2}b^{2}+{\color{Col1}4}ab^{3}
-  +b^{4}{\color{Col1}1} 
-\end{gather*}
-}{
-\begin{myitemize}
-  \item Η ιδlότητα~\ref{it:pascii} του Τριγώνου Pascal, είναι ακριβώς η
-    ιδιότητα~\ref{it:idiii} των διωνυμικών συντελεστών. 
-    \[ \binom{n+1}{k} = \binom{n}{k-1} + \binom{n}{k} \]
-  \item Προφανώς $ \binom{n}{k} = \binom{n}{n-k}, \quad 0 \leq k \leq n $
-\end{myitemize}
+  \begin{gather*}
+    (a+b)^{0}={\color{Col1}1} \\
+    (a+b)^{1}={\color{Col1}1}a+b{\color{Col1}1} \\
+    (a+b)^{2}={\color{Col1}1}a^{2}+{\color{Col1}2}ab
+    +b^{2}{\color{Col1}1} \\
+    (a+b)^{3}={\color{Col1}1}a^{3}+{\color{Col1}3}a^{2}b
+    +{\color{Col1}3}ab^{2}+b^{3}{\color{Col1}1} \\
+    (a+b)^{4}={\color{Col1}1}a^{4}+{\color{Col1}4}a^{3}b
+    +{\color{Col1}6}a^{2}b^{2}+{\color{Col1}4}ab^{3}
+    +b^{4}{\color{Col1}1} 
+  \end{gather*}
+  }{
+  \begin{myitemize}
+    \item Η ιδlότητα~\ref{it:pascii} του Τριγώνου Pascal, είναι ακριβώς η
+      ιδιότητα~\ref{it:idiii} των διωνυμικών συντελεστών. 
+      \[ \binom{n+1}{k} = \binom{n}{k-1} + \binom{n}{k} \]
+    \item Προφανώς $ \binom{n}{k} = \binom{n}{n-k}, \quad 0 \leq k \leq n $
+  \end{myitemize}
 }
 
 
@@ -184,11 +184,13 @@ $ με $ \binom{p}{0} \overset{\text{ορ.}}{=} 1 $.
   Ισχύει ότι αν $ \abs{\frac{b}{a}} < < 1  $ τότε  
   $ (a+b)^{p} \approx a^{p}\left(1+p\left(\frac{b}{a}\right)\right)  $. 
 \end{rem}
-Επίσης,
+Επίσης, αν $ \abs{x} < 1 $, τότε
 \[
-  \boxed{(1+x)^p = 1 + px + \frac{p(p-1)}{2!} x^2 + \cdots + \frac{p(p-1)\cdots
-  (p-k+1)}{k!} x^n + \cdots}   
-\] 
+  \boxed{(1+x)^{p} = 
+   1 + \binom{p}{1} x + \binom{p}{2} x^{2} + \binom{p}{3} x^{3} + 
+  \cdots + \binom{p}{k} x^{k} + \cdots = 
+  \sum_{k=0}^{\infty} \binom{p}{k} x^{k}}
+\]
 \begin{rem}
 \item {}
   \begin{myitemize}
@@ -198,7 +200,5 @@ $ με $ \binom{p}{0} \overset{\text{ορ.}}{=} 1 $.
     \item Αν $p \leq -1$, τότε η σειρά συγκλίνει για $ -1 < x < 1 $
   \end{myitemize}
 \end{rem}
-
-
 
 \end{document}
