@@ -4,6 +4,7 @@
 \input{myboxes.tex}
 \input{insbox}
 
+\pagestyle{vangelis}
 \geometry{top=2.5cm}
 
 \DeclareMathOperator{\Arg}{Arg}
@@ -58,8 +59,9 @@
 Το σύνολο των μιγαδικών αριθμών συμβολίζεται με $ \mathbb{C} $, ενώ με $ \mathbb{I} $ 
 συμβολίζουμε το σύνολο των φανταστικών αριθμών.
 \begin{align*}
-  \mathbb{C} = \{ a+bi \; : \; a,b \in \mathbb{R} \; \text{και} \; i = \sqrt{-1}
-    \} \quad \text{και} \quad \mathbb{I} = \{ bi \; : \; b \in \mathbb{R} 
+  \mathbb{C} = \{ a+bi \; : \; a,b \in \mathbb{R} \; 
+  \text{και} \; i = \sqrt{-1} \} \quad 
+  \text{και} \quad \mathbb{I} = \{ bi \; : \; b \in \mathbb{R} 
   \; \text{και} \; i = \sqrt{-1} \}  
 \end{align*}
 
@@ -73,7 +75,6 @@
     $
   \end{dfn}
 \end{mybox1}
-
 
 \twocolumnsides{
   \subsection*{Γεωμετρική Αναπαράσταση Μιγαδικών}
@@ -95,7 +96,7 @@
         node[below]{$a$} ;
     \end{tikzpicture}
   \]
-  }{
+}{
   \subsection*{Μέτρο Μιγαδικών}
   Ονομάζουμε \textcolor{Col1}{μέτρο} ενός μιγαδικού αριθμού $ z=a+bi $, και το 
   συμβολίζουμε με $ \abs{z} $, την τιμή 
@@ -127,7 +128,7 @@
     \abs{z_{1}- z_{2}} = \sqrt{(a_{1}- a_{2})^{2} + (b_{1}- b_{2})^{2}} 
   \] 
   παριστάνει την απόσταση των μιγαδικών αριθμών, $ z_{1} $ και $ z_{2} $.
-  }{
+}{
   \subsection*{Ιδιότητες του Μέτρου}
   \twocolumnsidess{
     \begin{enumerate}
@@ -135,15 +136,15 @@
       \item $ \abs{\frac{z_{1}}{z_{2}}} = \frac{\abs{z_{1}}}{\abs{z_{2}}}, 
         \; z_{2} \neq 0 $
     \end{enumerate}
-    }{
+  }{
     \begin{enumerate}[start=5]
       \item $ \abs{z^{k}} = \abs{z} ^{k} $
     \end{enumerate}
   }
   \begin{enumerate}[start=3]
     \item $ \abs{z} = \abs{-z} = \abs{\overline{z}} = \abs{- \overline{z}} $
-    \item $ \abs{\abs{z_{1}}- \abs{z_{2}}} \leq \abs{z_{1} \pm z_{2}} \leq \abs{z_{1}} + 
-      \abs{z_{2}} $
+    \item $ \abs{\abs{z_{1}}- \abs{z_{2}}} \leq \abs{z_{1} \pm z_{2}} \leq 
+      \abs{z_{1}} + \abs{z_{2}} $
   \end{enumerate}
 }
 
@@ -154,7 +155,7 @@
 \twocolumnsides{
   \subsubsection*{Πρόσθεση}
   $z_{1}+z_{2}=(a+bi)+(c+di)=(a+c)+(b+d)i$
-  }{
+}{
   \subsubsection*{Αφαίρεση}
   $z_{1}-z_{2}=(a+bi)-(c+di)=(a-c)+(b-d)i$
 }
@@ -162,33 +163,37 @@
 
 \twocolumnsides{
   \subsubsection*{Πολλαπλασιασμός}
-  \begin{align*}
+  $
+  \begin{aligned}
     z_{1}\cdot z_{2}&=(a+bi)\cdot (c+di) \\
                     &=ac+adi+bci+bdi^{2} \\
                     &=ac-bd+(ad+bc)i \\
-  \end{align*}
-  }{
+  \end{aligned}
+  $
+}{
   \subsubsection*{Διαίρεση}
-  \begin{align*}
+  $
+  \begin{aligned}
     \frac{z_{1}}{z_{2}}&=\frac{(a+bi)}{(c+di)}     =\frac{(a+bi)(c-di)}{(c+di)(c-di)} \\
                        &=\frac{ac+bd+(-ad+bc)}{c^{2}+d^{2}} \\
                        &=\frac{ac+bd}{c^2+d^2}+\frac{bc-ad}{c^2+d^2}
-  \end{align*}
+  \end{aligned}
+  $
 }
 
-\subsection*{Συνοπτικά οι Πράξεις}
+% \subsection*{Συνοπτικά οι Πράξεις}
 
-\twocolumnsides{
-  \begin{myitemize}
-    \item $z_{1}+z_{2}=(a+c)+(b+d)i$
-    \item $z_{1}-z_{2}=(a-c)+(b-d)i$
-  \end{myitemize}
-  }{
-  \begin{myitemize}
-    \item $z_{1}\cdot z_{2}=(ac-bd)+(ad+bc)i$
-    \item $\frac{z_{1}}{z_{2}}=\frac{ac+bd}{c^2+d^2}+\frac{bc-ad}{c^2+d^2}i$
-  \end{myitemize}
-}
+% \twocolumnsides{
+%   \begin{myitemize}
+%     \item $z_{1}+z_{2}=(a+c)+(b+d)i$
+%     \item $z_{1}-z_{2}=(a-c)+(b-d)i$
+%   \end{myitemize}
+%   }{
+%   \begin{myitemize}
+%     \item $z_{1}\cdot z_{2}=(ac-bd)+(ad+bc)i$
+%     \item $\frac{z_{1}}{z_{2}}=\frac{ac+bd}{c^2+d^2}+\frac{bc-ad}{c^2+d^2}i$
+%   \end{myitemize}
+% }
 
 \vspace{\baselineskip}
 
@@ -211,7 +216,7 @@
       \draw[dashed,Col2] (O|-q) node[right]{$-b$} -- (q) -- (q|-O) node[above]{$-a$} ;
     \end{tikzpicture}
   \]
-  }{
+}{
   \section*{Συζυγής}
   Έστω ο μιγαδικός $ z=a+bi $. Ονομάζουμε \textcolor{Col1}{συζυγή} του 
   $z$ τον μιγαδικό αριθμό $ \overline{z}=a-bi $.
@@ -250,7 +255,7 @@
     \item $ \overline{\left(\frac{z_{1}}{z_{2}}\right)} =
       \frac{\overline{z_{1}}}{\overline{z_{2}}} $, αν $ z_{2} \neq 0 $
   \end{enumerate}
-  }{
+}{
   \begin{enumerate}[start=5]
     \item $ z \cdot \overline{z} = a^{2}+b^{2} = \abs{z} ^{2} $
     \item $ \frac{z+ \overline{z}}{2} = \Re(z) \quad \text{και} \quad 
@@ -264,18 +269,19 @@
   Για να υπολογίσουμε το πηλίκο δύο μιγαδικών αριθμών, θα πολλαπλασιάζουμε τον αριθμητή
   και τον παρονομαστή με τον συζυγή αριθμό του \textbf{παρονομαστή}.
 \end{rem}
-\begin{mybox3}
-  \begin{example} 
-    Να υπολογιστεί το πηλίκο των μιγαδικών αριθμών $ z_{1}=1+i $ και $ z_{2}=2+3i $.
-  \end{example}
-\end{mybox3}
+\begin{example} 
+  Να υπολογιστεί το πηλίκο των μιγαδικών αριθμών $ z_{1}=1+i $ και $ z_{2}=2+3i $.
+\end{example}
 \begin{solution}
   \begin{align*}
     \frac{1+i}{2+3i} = \frac{(1+i)(2-3i)}{(2+3i)(2-3i)} =
-    \frac{2+2i-3i-3i^{2}}{2^{2}+3^{2}} = \frac{5}{2^{2}+3^{2}} - \frac{1}{2^{2}+3^{2}}i =
-    \frac{5}{13} - \frac{1}{13} i
+    \frac{2+2i-3i-3i^{2}}{2^{2}+3^{2}} = \frac{5}{2^{2}+3^{2}} - 
+    \frac{1}{2^{2}+3^{2}}i = \frac{5}{13} - \frac{1}{13} i
   \end{align*}
 \end{solution}
+
+
+\vspace{\baselineskip}
 
 \twocolumnsider{
   \section*{Δυνάμεις}
@@ -286,7 +292,7 @@
     \item $z^{0}=1$
     \item $z^{n}=(z^{-1})^{-n}, \; n<0$
   \end{myitemize}
-  }{
+}{
   \section*{Ιδιότητες των Δυνάμεων}
 
   \twocolumnsiderr{
@@ -295,7 +301,7 @@
       \item $\frac{z^{m}}{z^{n}}=z^{m-n}$
       \item $(z^{m})^{n}=z^{m\cdot n}$
     \end{myitemize}
-    }{
+  }{
     \begin{myitemize}
       \item $(z_{1}\cdot z_{2})^{n}=z_{1}^{n}\cdot z_{2}^{n}$
       \item $\left(\frac{z_{1}}{z_{2}}\right)^{n}=\frac{z_{1}^{n}}{z_{2}^{n}}$
@@ -313,7 +319,7 @@
     \item $i^{2}=-1$
     \item $i^{3}=i^{2}\cdot i=-i$
   \end{myitemize}
-  }{
+}{
   \begin{myitemize}
     \item $i^{4}=i^{3}\cdot i=1$
     \item $i^{5}=i^{4}\cdot i=i$
@@ -333,22 +339,17 @@
     \item $i^{4n+2}=-1$
     \item $i^{4n+3}=-i$
   \end{myitemize}
-  }{
+}{
   \begin{myitemize}
     \item $i^{n}=(i^{-1})^{-n}=\left(\frac{1}{i}\right)^{-n}=(-i)^{-n}, \; n<0$
   \end{myitemize}
 }
 
-\begin{mybox3}
-  \begin{example}
-    Να υπολογιστεί η δύναμη του μιγαδικού $ i^{27} $.
-  \end{example}
-\end{mybox3}
-\begin{solution}
-  \[
-    i^{27} = i^{4\cdot 6 +3} = (i^{4})^{6} \cdot i ^{3} = 1^{6} \cdot -i = -i \quad
-    \text{ή πιο απλά} \quad i^{27} = i^{4\cdot 6+3} = i^{3} = -i
-  \] 
+\begin{example}
+  Να υπολογιστεί η δύναμη του μιγαδικού $ i^{27} $.
+\end{example}
+\begin{solution} $i^{27} = i^{4\cdot 6 +3} = (i^{4})^{6} \cdot i ^{3} = 1^{6} 
+  \cdot -i = -i \quad \text{ή πιο απλά} \quad i^{27} = i^{4\cdot 6+3} = i^{3} = -i$ 
 \end{solution}
 
 \section*{Πολική μορφή Μιγαδικού αριθμού}
@@ -373,8 +374,8 @@
 Έστω $z=a+bi$ μιγαδικός αριθμός και $M$ η εικόνα του $z$ στο μιγαδικό επίπεδο. 
 Έστω $r=\abs{z}$ και $\theta$ η γωνία που σχηματίζει ο \textbf{θετικός} ημιάξονας $x$ 
 με το διάνυσμα θέσης του $z$ και η οποία μετριέται σε ακτίνια. 
-Τότε $a=r\cos \theta$ και $b=r\sin \theta$ και επομένως ο μιγαδικός $z$ μπορεί να γραφεί 
-σε \textcolor{Col1}{τριγωνομετρική} ή \textcolor{Col1}{πολική} μορφή: ως
+Τότε $a=r\cos \theta$ και $b=r\sin \theta$ και επομένως ο μιγαδικός $z$ μπορεί να 
+γραφεί σε \textcolor{Col1}{τριγωνομετρική} ή \textcolor{Col1}{πολική} μορφή: ως
 \[
   \boxed{z=r(\cos\theta+i\sin\theta)}
 \]
@@ -385,9 +386,9 @@
 \]
 
 Οι τιμές των $r, \theta$ λέγονται \textcolor{Col1}{πολικές συντεταγμένες} του $z$. Κάθε
-τιμή του $\theta$ λέγεται \textcolor{Col1}{όρισμα} του $z$, και με $\arg z$ συμβολίζουμε
-το σύνολο των ορισμάτων του $z$, που προφανώς είναι άπειρα και διαφέρουν μεταξύ τους κατά
-$2\pi$. Αν $z=0$ τότε δεν ορίζεται το όρισμα του $z$. Ισχύει:
+τιμή του $\theta$ λέγεται \textcolor{Col1}{όρισμα} του $z$, και με $\arg z$ 
+συμβολίζουμε το σύνολο των ορισμάτων του $z$, που προφανώς είναι άπειρα και διαφέρουν 
+μεταξύ τους κατά $2\pi$. Αν $z=0$ τότε δεν ορίζεται το όρισμα του $z$. Ισχύει:
 \[
   \tan\theta=\frac{b}{a}
 \]
@@ -433,7 +434,6 @@ $2\pi$. Αν $z=0$ τότε δεν ορίζεται το όρισμα του $z$
     μιγαδικού αριθμού $z$ στο μιγαδικό επίπεδο.
   \end{dfn}
 \end{mybox1}
-
 \begin{rem}
   Το πρωτεύον όρισμα του $z$ είναι η μοναδική τιμή του 
   $\theta\in \arg z$ ώστε $ - \pi < \theta \leq \pi$. 
@@ -443,21 +443,23 @@ $2\pi$. Αν $z=0$ τότε δεν ορίζεται το όρισμα του $z$
   \]
 \end{rem}
 
+\enlargethispage*{\baselineskip}
 
 \begin{examples}
-  \item {}
+  \item{}
     \fourcolumnsides{
       \begin{tikzpicture}[scale=0.8]
         \draw[-stealth] (0,0) coordinate (O) -- (2.2,0) node[below] {$x$} ;
         \node at (O) [left] {$O$} ;
         \draw[-stealth] (0,0) -- (0,2.2) node[left] {$y$} ;
         \coordinate (p) at (1.4,1.4) ;
-        \fill[Col1] (p) node[above=5pt,font=\small,xshift=-5pt,Col2] {$z=1+i$} circle (1.5pt) ;
+        \fill[Col1] (p) node[above=5pt,font=\small,xshift=-5pt,Col2] {$z=1+i$} 
+          circle (1.5pt) ;
         \draw (O) --  (p) node[right,Col1] {$M$} ;
         \fill pic[draw,fill=Col1!55,-latex,angle radius=18pt] {angle=x--0--p} ;
         \node[fill=Col2!25] at (1,0.5) [right,draw,inner sep=2pt] {$\Arg= \pi /4$} ;
       \end{tikzpicture}
-      }{
+    }{
       \begin{tikzpicture}[scale=0.8]
         \draw[-stealth] (0,0) coordinate (O) -- (2.2,0) node[right] {$x$} ;
         \draw[-stealth] (0,0) coordinate (O) -- (-1.7,0) node[left] {$x'$} ;
@@ -467,10 +469,11 @@ $2\pi$. Αν $z=0$ τότε δεν ορίζεται το όρισμα του $z$
         \fill (p) node[above=5pt,font=\small,xshift=-5pt,Col2] {$z=-1+i$} 
           circle (1.5pt) ;
         \draw (O) --  (p) node[left,Col1] {$M$} ;
-        \fill pic[draw,fill=Col1!55,-latex,opacity=0.7,angle radius=11pt] {angle=x--0--p} ;
+        \fill pic[draw,fill=Col1!55,-latex,opacity=0.7,angle radius=11pt] 
+          {angle=x--0--p} ;
         \node[fill=Col2!25] at (0.5,0.7) [right,draw,inner sep=2pt] {$\Arg= 3\pi /4$} ;
       \end{tikzpicture}
-      }{
+    }{
       \begin{tikzpicture}[scale=0.8]
         \draw[-stealth] (0,0) coordinate (O) -- (1.7,0) node[right] {$x$} ;
         \draw[-stealth] (0,0) coordinate (O) -- (-2.2,0) node[left] {$x'$} ;
@@ -481,8 +484,10 @@ $2\pi$. Αν $z=0$ τότε δεν ορίζεται το όρισμα του $z$
         \fill (p) node[below=5pt,font=\small,xshift=-5pt,Col2] {$z=-1-i$} 
           circle (1.5pt) ;
         \draw (O) --  (p) node[left,Col1] {$M$} ;
-        \fill pic[draw,fill=Col1!55,-latex,opacity=0.7,angle radius=11pt,latex-] {angle=p--0--x} ;
-        \node[fill=Col2!25] at (-0.5,0.7) [left,draw,inner sep=2pt] {$\Arg= -3\pi /4$} ;
+        \fill pic[draw,fill=Col1!55,-latex,opacity=0.7,angle radius=11pt,latex-] 
+          {angle=p--0--x} ;
+        \node[fill=Col2!25] at (-0.5,0.7) [left,draw,inner sep=2pt] 
+          {$\Arg= -3\pi /4$} ;
       \end{tikzpicture}
     }
     {
@@ -496,7 +501,8 @@ $2\pi$. Αν $z=0$ τότε δεν ορίζεται το όρισμα του $z$
           circle (1.5pt) ;
         \draw (O) --  (p) node[right,Col1] {$M$} ;
         \fill pic[draw,fill=Col1!55,latex-,angle radius=18pt] {angle=p--0--x} ;
-        \node[fill=Col2!25] at (1.0,-0.5) [right,draw,inner sep=2pt] {$\Arg= -\pi /4$} ;
+        \node[fill=Col2!25] at (1.0,-0.5) [right,draw,inner sep=2pt] 
+          {$\Arg= -\pi /4$} ;
       \end{tikzpicture}
     }
   \end{examples}
@@ -504,35 +510,36 @@ $2\pi$. Αν $z=0$ τότε δεν ορίζεται το όρισμα του $z$
 
   \subsection*{Υπολογισμός Πρωτεύοντος Ορίσματος}
 
-  \begin{enumerate}
-    \item Αν $ z \in \mathbb{R}_{+}^{*} $ τότε $ \Arg z = 0 $.
-    \item Αν $ z \in \mathbb{R}_{-}^{*} $ τότε $ \Arg z = \pi $.
-    \item Αν $ z \in \mathbb{C}- \mathbb{R} $ τότε $ \Arg z = - \Arg \overline{z} $
-    \item Αν $ z \in \mathbb{R}^{*} $ τότε $ \Arg z = \Arg \overline{z} $
-    \item Αν $a\neq 0$ τότε έχουμε:
-      $
-      \Arg z=\arctan\frac{b}{a}+k\pi, \; \text{με}\; k=
-      \begin{cases}
-        0, & a>0 \\
-        1, & a<0, \; b \geq 0 \\
-        -1, & a<0, \; b<0
-      \end{cases}
-      $
-    \item Αν $a=0$ και $b\neq 0$ τότε
-      $ 
-      \Arg= 
-      \begin{cases}
-        \frac{\pi}{2},  &\text{για}\quad   b>0 \\[10pt]
-        -\frac{\pi}{2}, &\text{για}\quad   b<0
-      \end{cases}
-      $
-  \end{enumerate}
+  \begin{mybox2}
+  \item {}
+    \begin{enumerate}
+      \item Αν $ z \in \mathbb{R}_{+}^{*} $ τότε $ \Arg z = 0 $.
+      \item Αν $ z \in \mathbb{R}_{-}^{*} $ τότε $ \Arg z = \pi $.
+      \item Αν $ z \in \mathbb{C}- \mathbb{R} $ τότε $ \Arg z = - \Arg \overline{z} $
+      \item Αν $ z \in \mathbb{R}^{*} $ τότε $ \Arg z = \Arg \overline{z} $
+      \item Αν $a\neq 0$ τότε έχουμε:
+        $
+        \Arg z=\arctan\frac{b}{a}+k\pi, \; \text{με}\; k=
+        \begin{cases}
+          0, & a>0 \\
+          1, & a<0, \; b \geq 0 \\
+          -1, & a<0, \; b<0
+        \end{cases}
+        $
+      \item Αν $a=0$ και $b\neq 0$ τότε
+        $ 
+        \Arg= 
+        \begin{cases}
+          \frac{\pi}{2},  &\text{για}\quad   b>0 \\[10pt]
+          -\frac{\pi}{2}, &\text{για}\quad   b<0
+        \end{cases}
+        $
+    \end{enumerate}
+  \end{mybox2}
 
-  \begin{mybox3}
-    \begin{example}
-      Να βρεθεί η τριγωνομετρική μορφή του μιγαδικού αριθμού $ z=1+i $ . 
-    \end{example}
-  \end{mybox3}
+  \begin{example}
+    Να βρεθεί η τριγωνομετρική μορφή του μιγαδικού αριθμού $ z=1+i $ . 
+  \end{example}
   \begin{solution}
     Ξέρουμε ότι η τριγωνομετρική μορφή δίνεται από τον τύπο 
     $ z = \abs{z} [\cos{(\theta)} + i \sin{(\theta)}] $. 
@@ -541,7 +548,7 @@ $2\pi$. Αν $z=0$ τότε δεν ορίζεται το όρισμα του $z$
     \[
       \left.
         \begin{matrix}
-          \cos{\theta} = \frac{1}{\sqrt{2}} \\
+          \cos{\theta} = \frac{1}{\sqrt{2}} \\[10pt]
           \sin{\theta} = \frac{1}{\sqrt{2}} 
         \end{matrix} 
       \right\} 
@@ -556,12 +563,10 @@ $2\pi$. Αν $z=0$ τότε δεν ορίζεται το όρισμα του $z$
     \]
   \end{solution}
 
-  \begin{mybox3}
-    \begin{example}
-      Να γραφεί σε τριγωνομετρική μορφή ο μιγαδικός $ z=- \cos{\theta} + i \sin{\theta}
-      $, αν $ \theta \in [0, \pi /2] $.
-    \end{example}
-  \end{mybox3}
+  \begin{example}
+    Να γραφεί σε τριγωνομετρική μορφή ο μιγαδικός $ z=- \cos{\theta} + i \sin{\theta}
+    $, αν $ \theta \in [0, \pi /2] $.
+  \end{example}
   \begin{solution}
     Προφανώς ο δοσμένος μιγαδικός αριθμός, δεν είναι σε τριγωνομετρική μορφή, γιατί 
     μπροστά από το $ \cos{\theta} $ υπάρχει αρνητικό πρόσημο. Άρα, εργαζόμαστε όπως 
@@ -624,10 +629,15 @@ $2\pi$. Αν $z=0$ τότε δεν ορίζεται το όρισμα του $z$
 
 \section*{Θεώρημα De Moivre}
 
-Αν $z=r(\cos\theta+i\sin\theta)$ και $n\in\mathbb{Z}$ τότε
-$
-\boxed{z^{n}=r^{n}[\cos (n\theta)+i\sin (n\theta)]}
-$
+\begin{mybox2}
+  \begin{thm}
+    Αν $z=r(\cos\theta+i\sin\theta)$ και $n\in\mathbb{Z}$ τότε
+    $
+    \boxed{z^{n}=r^{n}[\cos (n\theta)+i\sin (n\theta)]}
+    $
+  \end{thm}
+\end{mybox2}
+
 
 \section*{Νιοστές Ρίζες μιγαδικών αριθμών}
 \begin{mybox1}
@@ -649,11 +659,9 @@ $
   \end{thm}
 \end{mybox2}
 
-\begin{mybox3}
-  \begin{example}
-    Να λυθεί η εξίσωση $ z^{4} = -16 $. 
-  \end{example}
-\end{mybox3}
+\begin{example}
+  Να λυθεί η εξίσωση $ z^{4} = -16 $. 
+\end{example}
 \begin{solution}
   Αρχικά, γράφουμε τον αριθμό $ a = -16 $ σε τριγωνομετρική μορφή. Έχουμε 
   $ a=-16=-16+0i $, άρα 
@@ -677,10 +685,9 @@ $
     \sin{\left(\frac{2k \pi + \pi}{ 4}\right)}\right], 
     \quad \text{με} \quad k=0,1,2,3
   \] 
-
-
 \end{solution}
 
 
 
 \end{document}
+
