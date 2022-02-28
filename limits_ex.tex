@@ -1,0 +1,239 @@
+\input{preamble_typ.tex}
+\input{definitions_typ.tex}
+\input{tikz.tex}
+\input{myboxes.tex}
+
+
+\input{insbox}
+
+
+
+\everymath{\displaystyle}
+\pagestyle{vangelis}
+
+
+\usetikzlibrary{shadings,patterns,arrows.meta,angles,quotes,shapes,
+decorations.pathmorphing, decorations.shapes,decorations.text}
+
+\tikzset{vangelis/.style = {ultra thick,magenta,dashed}, mystyle/.style={line width=3pt,blue!55,double,rounded corners}}
+
+\pgfplotsset{
+  myaxis/.style={axis lines=center,axis line style={thick,blue!50,-stealth},tick label
+  style={font=\small,blue!50},xtick=\empty,ytick=\empty,tick style={blue!50}},
+  myplot/.style={Col1!75,ultra thick,samples=500,no marks,smooth,},
+  dashed lines/.style={dashed,blue!50,ultra thin},
+  polax/.style={grid=none},
+}
+
+
+
+\begin{document}
+
+\setcounter{chapter}{1}
+
+\chapter{Όρια Βασικών Συναρτήσεων}
+
+\threecolumnside{
+  \section{Άρτια Πολυωνυμική}
+ \begin{tikzpicture}
+    \draw[-stealth,blue!50] (-2,0) -- (2,0) node[right] {};
+    \draw[-stealth,blue!50] (0,-2) -- (0,2) node[above] {};
+    \draw[domain=-1.4:1.4,smooth,variable=\x,Col1!75,very thick] plot ({\x},{\x*\x})
+        node[right,left=2.5cm,yshift=-20pt,xshift=-2pt]{\small $y=x^{2}$};
+\end{tikzpicture} 
+\begin{myitemize*}
+  \item $ \lim_{x \to \infty} x^{2} = \infty $ 
+  \item $ \lim_{x \to -\infty} x^{2} = \infty $ 
+    \end{myitemize*}
+  }{
+  \section{Περιττή Πολυωνυμική}
+\begin{tikzpicture}
+    \draw[-stealth,blue!50] (-2,0) -- (2,0) node[right] {};
+    \draw[-stealth,blue!50] (0,-2) -- (0,2) node[above] {};
+    \draw[domain=-1.25:1.25,smooth,variable=\x,Col1!75,very thick] 
+        plot ({\x},{\x*\x*\x}) node[below right]{\small $y=x^{3}$};
+\end{tikzpicture}
+\begin{myitemize*}
+  \item $ \lim_{x \to \infty} x^{3} = \infty $ 
+  \item $ \lim_{x \to -\infty} x^{3} = -\infty $ 
+    \end{myitemize*}
+  }{
+  \section{Υπερβολή}
+ \begin{tikzpicture}[scale=0.8]
+    \draw[-stealth,blue!50] (-2.5,0) -- (2.5,0) node[right] {};
+    \draw[-stealth,blue!50] (0,-2.5) -- (0,2.5) node[above] {};
+    \draw[domain=0.4:2.5,smooth,variable=\x,Col1!75,very thick] 
+        plot (\x,{1/(\x)}) node[above left,xshift=7pt,yshift=10pt]{\small $y=\frac{1}{x}$};
+    \draw[domain=-0.4:-2.5,smooth,variable=\x,Col1!75,very thick] plot (\x,{1/(\x)});
+\end{tikzpicture} 
+\begin{myitemize*}
+  \item $ \lim_{x \to 0^{-}} \frac{1}{x}= -\infty $ 
+  \item $ \lim_{x \to \infty} \frac{1}{x} = 0 $ 
+    \end{myitemize*}
+}
+
+\vspace{\baselineskip}
+
+
+\threecolumnside{
+  \section{Άρτια Ρίζα}
+\begin{tikzpicture}
+    \draw[-stealth,blue!50] (-2,0) -- (2,0) node[right] {};
+    \draw[-stealth,blue!50] (0,-2) -- (0,2) node[above] {};
+    \draw[domain=0:2,smooth,variable=\x,Col1!75,very thick] 
+        plot (\x,{sqrt(\x)}) node[above,xshift=-5pt]{\small $y=\sqrt{x}$};
+\end{tikzpicture}
+\begin{myitemize*}
+  \item $ \lim_{x \to \infty} \sqrt{x} = \infty $ 
+  \item $ \lim_{x \to 0^{+}} \sqrt{x} = 0 $ 
+    \end{myitemize*}
+  }{
+  \section{Περιττή Ρίζα}
+\begin{tikzpicture}
+    \draw[-stealth,blue!50] (-2,0) -- (2,0) node[right] {};
+    \draw[-stealth,blue!50] (0,-2) -- (0,2) node[above] {};
+    \draw[domain=-2:0,smooth,variable=\x,Col1!75,very thick] plot (\x,{-sqrt(abs(\x))});
+    \draw[domain=0:2,smooth,variable=\x,Col1!75,very thick] plot (\x,{sqrt(\x)})
+        node[yshift=10pt,xshift=5pt]{\small $y=\sqrt[3]{x}$};
+\end{tikzpicture}
+\begin{myitemize*}[itemjoin={\hspace{0.5cm}}]
+  \item $ \lim_{x \to \infty} \sqrt[3]{x} = \infty $ 
+  \item $ \lim_{x \to -\infty} \sqrt[3]{x} = -\infty $ 
+    \end{myitemize*}
+  }{
+  \section{Λογαριθμική}
+ \begin{tikzpicture}[scale=0.85]
+    \draw[-stealth,blue!50] (-3,0) -- (3,0) node[right] {};
+    \draw[-stealth,blue!50] (0,-2.5) -- (0,2.5) node[above] {};
+    \fill (1,0) circle (2pt) node[below=2pt] {1} ;
+    \draw[domain=0.2:3,smooth,variable=\x,Col1!75,very thick] plot (\x,{log2(\x)})
+        node[left,xshift=-10pt,yshift=5pt]{\begin{tabular}{c}
+        \small $y =\log_{a}{x}$ \\ \small $a >1$ \\ \text{π.χ.} $ y= \ln{x}$ \end{tabular}};
+\end{tikzpicture} 
+\begin{myitemize*}[itemjoin={\hspace{0.4cm}}]
+  \item $ \lim_{x \to \infty} \ln{x} = \infty $ 
+  \item $ \lim_{x \to 0^{-}} \ln{x} = -\infty $ 
+    \end{myitemize*}
+}
+
+
+\vspace{\baselineskip}
+
+
+\threecolumnside{
+  \section{Αύξουσα Εκθετική}
+ \begin{tikzpicture}[scale=0.8]
+    \draw[-stealth,blue!50] (-3.2,0) -- (3.8,0) node[right] {};
+    \draw[-stealth,blue!50] (0,-1) -- (0,4.3) node[above] {};
+    \draw[domain=-3:1.4,smooth,variable=\x,Col1!75,very thick] plot ({\x},{exp{\x}})
+    node[below right,xshift=-10pt]{\begin{tabular}{c} \small $y=a^{x}$ \\ 
+    \small $ a>1 $ \\ \text{π.χ.} $ y= \mathrm{e}^{x} $ \end{tabular}};
+    \fill (0,1) circle (2pt) node[left=2pt] {1} ;
+\end{tikzpicture} 
+\begin{myitemize*}
+  \item $ \lim_{x \to \infty} a^{x} = \infty $ 
+  \item $ \lim_{x \to -\infty} a^{x} = 0 $ 
+    \end{myitemize*}
+  }{
+  \section{Φθίνουσα Εκθετική}
+ \begin{tikzpicture}[scale=0.8]
+    \draw[-stealth,blue!50] (-3.2,0) -- (3.8,0) node[right] {};
+    \draw[-stealth,blue!50] (0,-1) -- (0,4.3) node[above] {};
+    \draw[domain=3:-1.4,smooth,variable=\x,Col1!75,very thick] plot ({\x},{exp{-\x}})
+    node[below left,xshift=26pt,yshift=-25pt]{\begin{tabular}{c} \small $y=a^{x}$ \\ 
+    \small $ 0<a<1 $ \\ \text{π.χ.} $ y= \mathrm{e}^{-x} $ \end{tabular}};
+    \fill (0,1) circle (2pt) node[left=2pt] {1} ;
+\end{tikzpicture} 
+\begin{myitemize*}
+  \item $ \lim_{x \to \infty} a^{x} = 0 $ 
+  \item $ \lim_{x \to -\infty} a^{x} = \infty $ 
+    \end{myitemize*}
+  }{
+  \section{Ημίτονο}
+  \centering
+  \begin{tikzpicture}[scale=0.8]
+    \begin{axis}[myaxis,
+      ymin=-1.5,ymax=1.5,
+      xmin=-7,xmax=7,
+      extra x ticks={-6.28318,-4.7123889,-3.14159,-1.5708,1.5708,3.14159,4.7123889,6.28318},
+      extra x tick labels={$-2\pi$, $-\frac{3\pi}{2}$, $-\pi$, $\frac{\pi}{2}$,$\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, $2\pi$},
+      domain=-2*pi:2*pi,
+      ]
+      \addplot[myplot] {sin(deg(x))} node[above right,pos=0.65]{$\sin x$} ;
+    \end{axis}
+  \end{tikzpicture}
+\begin{myitemize*}
+  \item $ \lim_{x \to \infty} \sin{x} $ δεν υπάρχει 
+    \end{myitemize*}
+}
+
+\vspace{\baselineskip}
+
+\threecolumnside{
+  \section{Εφαπτομένη}
+ \begin{tikzpicture}[scale=0.8]
+    \begin{axis}[myaxis,
+      ymin=-6,ymax=6,
+      xmin=-6,xmax=6,
+      extra x ticks={-4.71,-3.14159,-1.5708,0,1.57,3.14,4.71},
+      extra x tick labels={$-\frac{3\pi}{2}$,$-\pi$,$-\frac{\pi}{2}$,0,$\frac{\pi}{2}$,$\pi$,$\frac{3\pi}{2}$},
+      domain=-1.8*pi:1.8*pi,
+      ]
+      \addplot [myplot,dashed lines] {tan(deg(x))};
+      \addplot [myplot,restrict y to domain=-10:10] {tan(deg(x))} node
+        [right,pos=0.55,xshift=5pt] {$\tan x$};
+    \end{axis}
+  \end{tikzpicture} 
+\begin{myitemize*}[itemjoin={\hspace{0.5cm}}]
+  \item $ \lim_{x \to \frac{\pi}{2}} \tan{x} = \infty $ 
+  \item $ \lim_ {x \to \frac{\pi}{2}} \tan{x}= -\infty $ 
+    \end{myitemize*}
+  }{
+  \section{Συνεφαπτομένη}
+ \begin{tikzpicture}[scale=0.8]
+    \begin{axis}[myaxis,
+      ymin=-6,ymax=6,
+      xmin=-6,xmax=6,
+      extra x ticks={-4.71,-3.14159,-1.5708,0,1.57,3.14,4.71},
+      extra x tick labels={$-\frac{3\pi}{2}$,$-\pi$,$-\frac{\pi}{2}$,0,$\frac{\pi}{2}$,$\pi$,$\frac{3\pi}{2}$},
+      domain=-1.7*pi:1.7*pi
+      ]
+      \addplot [myplot,dashed lines] {cot(deg(x))};
+      \addplot [myplot,restrict y to domain=-10:10] {cot(deg(x))}
+        node [right,pos=0.59,xshift=5pt] {$\cot x$};
+    \end{axis}
+  \end{tikzpicture} 
+\begin{myitemize*}[itemjoin={\hspace{0.5cm}}]
+  \item $ \lim_{x \to \pi} \cot{x} = -\infty $ 
+  \item $ \lim_ {x \to \pi} \cot{x}= \infty $ 
+    \end{myitemize*}
+  }{
+  \section{Αντίστροφη Εφαπτομένη}
+ \begin{tikzpicture}[scale=0.75]
+    \begin{axis}[myaxis,
+      ymin=-2.5,ymax=2.5,
+      xmin=-3.8,xmax=3.8,
+      extra y ticks={-1.57,1.57},
+      extra y tick labels={\raisebox{-20pt}{$-\pi/2$},\raisebox{18pt}{$\pi/2$}},
+      x=1cm,
+      y=1.2cm,
+      domain=-3.5:3.5,
+      ]
+      \addplot[myplot] {rad(atan(x))} node[below,pos=0.85,xshift=5pt]
+        {$\arctan x$} ;
+      \addplot[dashed lines] {1.57}  ;
+      \addplot[dashed lines] {-1.57}  ;
+    \end{axis}
+  \end{tikzpicture} 
+\begin{myitemize*}[itemjoin={\hspace{0.5cm}}]
+  \item $ \lim_{x \to \infty } \arctan{x} = \frac{\pi}{2} $ 
+  % \item $ \lim_ {x \to \infty } \arctan{x}= - \frac{\pi}{2} $ 
+    \end{myitemize*}
+}
+
+
+
+
+
+
+\end{document}

@@ -1,9 +1,10 @@
 \input{preamble_ask.tex}
-\input{definitions_ask.tex}
+\input{definitions.tex}
 \input{tikz.tex}
 \input{myboxes.tex}
 
-\geometry{top=1.5cm}
+
+\geometry{top=2.0cm,left=1.5cm,right=1.5cm}
 
 \input{insbox}
 
@@ -37,14 +38,27 @@
   },
 }
 
+\usetikzlibrary{shadings,patterns,arrows.meta,angles,quotes,shapes,
+decorations.pathmorphing, decorations.shapes,decorations.text}
+
+\tikzset{vangelis/.style = {ultra thick,magenta,dashed}, mystyle/.style={line width=3pt,blue!55,double,rounded corners}}
+
+\pgfplotsset{
+  myaxis/.style={axis lines=center,axis line style={thick,blue!50,-stealth},tick label
+  style={font=\small,blue!50},xtick=\empty,ytick=\empty,tick style={blue!50}},
+  myplot/.style={Col1!75,ultra thick,samples=500,no marks,smooth,},
+  dashed lines/.style={dashed,blue!50,ultra thin},
+  polax/.style={grid=none},
+}
+
 
 \begin{document}
 
 
 \chapter*{Όριο Συνάρτησης}
 
-\section*{Η έννοια του ορίου}
 
+\section*{Η έννοια του ορίου}
 
 \InsertBoxL{2}{\parbox[b][7\baselineskip][c]{0.33\textwidth}{
     \begin{tikzpicture}
@@ -90,7 +104,6 @@
   $ x_{0} $.
 \end{rem}
 
-
 \threecolumnsides{
   \begin{tikzpicture}
     \draw[->,blue!55,>=stealth] (-1,0) -- (3,0) node[right] {$x$} ;
@@ -106,23 +119,6 @@
     \fill[Col1] (c) circle (1pt) node[left=1pt] {$a$} ;
     \draw[dashed] (c) -| (b);
     \node at (2,1) {$(a)$} ;
-  \end{tikzpicture}
-}{
-  \begin{tikzpicture}[]
-    \draw[->,blue!55,>=stealth] (-1,0) -- (3,0) node[right] {$x$} ;
-    \draw[->,blue!55,>=stealth] (0,-0.7) -- (0,2.5) node [above] {$y$} ;
-    \draw[color=Col1,samples=200,domain=-0.6:1.4,thick] plot (\x, {\x*\x}) 
-      node[right] (f) {$y=f(x)$} [arrow inside={}{0.60}] ;
-    \path[color=Col1,samples=200,domain=1.4:-0.6,thick] plot (\x, {\x*\x}) 
-      [arrow inside={}{0.27}] ;
-    \coordinate (b) at (1,0) ;
-    \coordinate (c) at (0,1) ;
-    \coordinate (p) at (1,1) ;
-    \fill[Col1] (b) circle (1pt) node[below] {$ x_{0} $} ;
-    \fill[Col1] (c) circle (1pt) node[left=1pt] {$a$} ;
-    \draw[dashed] (c) -| (b);
-    \node[draw,Col1,circle,inner sep=1.5pt,fill=white] (p) at (1,1) {} ;
-    \node at (2,1) {$(b)$} ;
   \end{tikzpicture}
 }{
   \begin{tikzpicture}
@@ -144,6 +140,23 @@
     \fill[Col1] (e) circle (1pt) ;
     \draw[dashed] (c) -| (b);
     \node[draw,Col1,circle,inner sep=1.5pt,fill=white] (p) at (1,1) {} ;
+    \node at (2,1) {$(b)$} ;
+  \end{tikzpicture}
+}{
+\begin{tikzpicture}[]
+    \draw[->,blue!55,>=stealth] (-1,0) -- (3,0) node[right] {$x$} ;
+    \draw[->,blue!55,>=stealth] (0,-0.7) -- (0,2.5) node [above] {$y$} ;
+    \draw[color=Col1,samples=200,domain=-0.6:1.4,thick] plot (\x, {\x*\x}) 
+      node[right] (f) {$y=f(x)$} [arrow inside={}{0.60}] ;
+    \path[color=Col1,samples=200,domain=1.4:-0.6,thick] plot (\x, {\x*\x}) 
+      [arrow inside={}{0.27}] ;
+    \coordinate (b) at (1,0) ;
+    \coordinate (c) at (0,1) ;
+    \coordinate (p) at (1,1) ;
+    \fill[Col1] (b) circle (1pt) node[below] {$ x_{0} $} ;
+    \fill[Col1] (c) circle (1pt) node[left=1pt] {$a$} ;
+    \draw[dashed] (c) -| (b);
+    \node[draw,Col1,circle,inner sep=1.5pt,fill=white] (p) at (1,1) {} ;
     \node at (2,1) {$(c)$} ;
   \end{tikzpicture}
 }
@@ -151,9 +164,9 @@
 \begin{myitemize}
   \item Στην περίπτωση $ (a) $ παρατηρούμε ότι $ f(x_{0}) = a $ και 
     $ \lim_{x \to x_{0}} f(x) = a $.
-  \item Στην περίπτωση $ (b) $ παρατηρούμε ότι $ f(x_{0}) $ δεν είναι ορισμένο, αλλά
+  \item Στην περίπτωση $ (b) $ παρατηρούμε ότι $ f(x_{0}) = b $, όμως 
     $ \lim_{x \to x_{0}} f(x) = a $.
-  \item Στην περίπτωση $ (c) $ παρατηρούμε ότι $ f(x_{0}) = b $, όμως 
+  \item Στην περίπτωση $ (c) $ παρατηρούμε ότι $ f(x_{0}) $ δεν είναι ορισμένο, αλλά
     $ \lim_{x \to x_{0}} f(x) = a $.
 \end{myitemize}
 
@@ -218,30 +231,70 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
 \end{prop}
 
 
-
 \section*{Ιδιότητες των Ορίων}
 
 \begin{prop}
-  Έστω $ c, x_{0} \in \mathbb{R} $, $ \lim_{x\to x_{0}} f(x) = a \in \mathbb{R}$ και 
-  $ \lim_{x\to x_{0}} g(x) = b \in \mathbb{R}$.
+  Έστω $ c, x_{0} \in \mathbb{R} $ και έστω ότι τα όρια 
+  $ \smash{\lim_{x\to x_{0}} f(x)} $ και $ \smash{\lim_{x\to x_{0}} g(x)} $, υπάρχουν. 
+  Έστω επίσης, $ p(x), q(x) $ πολυώνυμα.
   \begin{empheq}[box=\mathboxg]{equation*}
     \twocolumnsidesc{
       \begin{enumerate}
         \item $ \lim_{x \to x_{0}} c = c, \; \forall a \in \mathbb{R} $
         \item $ \lim_{x\to x_{0}} x = x_{0} $
-        \item $ \lim_{x\to x_{0}} (f(x) \pm g(x)) = a \pm b $
+        \item $ \lim_{x\to x_{0}} (f(x) \pm g(x)) = \lim_{x \to x_{0}} f(x) \pm
+          \lim_{x \to x_{0}} g(x) $
+        \item $ \lim_{x\to x_{0}} (c \cdot f(x)) = c\cdot \lim_{x \to x_{0}} f(x), \; 
+          \forall c \in \mathbb{R} $
+        \item $ \lim_{x\to x_{0}} (f(x) \cdot g(x)) = \lim_{x \to x_{0}} f(x) \cdot 
+          \lim_{x \to x_{0}} g(x) $
+        \item $ \lim_{x\to x_{0}} \Bigl(\frac{f(x)}{g(x)}\Bigr) = 
+          \frac{\lim\limits_{x \to x_{0}} f(x)}{\lim\limits_{x \to x_{0}} g(x)}, 
+          \;  \lim_{x \to x_{0}} g(x) \neq 0 $
       \end{enumerate}
     }{
-      \begin{enumerate}[start=4]
-        \item $ \lim_{x\to x_{0}} (c \cdot f(x)) = c\cdot a, \; \forall c \in 
-          \mathbb{R} $
-        \item $ \lim_{x\to x_{0}} (f(x) \cdot g(x)) = a\cdot b $
-        \item $ \lim_{x\to x_{0}} \left(\frac{f(x)}{g(x)}\right) = \frac{a}{b}, 
-          \;  b\neq 0 $
+      \begin{enumerate}[start=7]
+        \item $ \lim_{x \to x_{0}} p(x) = p(x_{0}) $
+        \item $ \lim_{x \to x_{0}} \frac{p(x)}{q(x)} = \frac{p(x_{0})}{q(x_{0})} , \;
+          q(x_{0}) \neq 0 $
+        \item $ \lim_{x \to x_{0}} \abs{f(x)} = \Bigl|\lim_{x \to x_{0}} f(x)\Bigr| $
+        \item $ \lim_{x \to x_{0}} [f(x)]^{n} = 
+          \Bigl[\lim_{x \to x_{0}} f(x)\Bigr]^{n}, \; n \in \mathbb{N}- \{ 0 \} $ 
+        \item  $ \lim_{x \to x_{0}} \sqrt[n]{f(x)} = 
+          \sqrt[n]{\lim_{x \to x_{0}} f(x)}, \; n \in \mathbb{N}, n \geq 2 $ 
       \end{enumerate}
     }
   \end{empheq}
 \end{prop}
+
+\begin{rem}
+  Στην ιδιότητα 11, όταν $ n $ άρτιος,  προυποθέτουμε ότι $ f(x) \geq 0, \; \forall x $, 
+  σε μια περιοχή του $ x_{0} $.
+  \end{rem}
+
+\begin{rem}
+  Προσοχή! Το αντίστροφο της ιδιότητας 9, δεν ισχύει πάντα. Για παράδειγμα, 
+  έστω $ \smash{f(x) = \frac{\abs{x}}{x}} $. Τότε,
+  \begin{myitemize}
+    \item $ \lim_{x \to 0} \abs{f(x)} = \lim_{x \to 0} \abs{\frac{\abs{x}}{x}} =
+      \lim_{x \to 0} \frac{\abs{x}}{\abs{x}} = 1 $
+    \item $ \lim_{x \to 0} f(x) = \lim_{x \to 0} \frac{\abs{x}}{x} $, δεν
+      υπάρχει, γιατί: $\lim_{x \to 0^{-}} f(x) = \lim_{x \to 0^{-}} \frac{-x}{x} = -1$ ενώ $\lim_{x \to 0^{+}} f(x) = \lim_{x \to 0^{+}} \frac{x}{x} = 1 $
+  \end{myitemize}
+\end{rem}
+
+\begin{rem}
+  Προσοχή! Το αντίστροφο της ιδιότητας 10 δεν ισχύει πάντα. Αν θεωρήσουμε το 
+  ίδιο παράδειγμα, έχουμε 
+  \[
+    \lim_{x \to 0} \Bigl(\frac{\abs{x}}{x}\Bigr)^{2} = \lim_{x \to 0}
+    \frac{x^{2}}{x^{2}} =1 \quad \text{όμως} \quad \lim_{x \to 0} f(x) = \lim_{x \to 0}
+    \frac{\abs{x}}{x} \quad \text{δεν υπάρχει}
+  \]
+\end{rem}
+
+
+\subsection*{Παραδείγματα}
 
 \begin{example}
   $ \lim_{x \to -3} 5 = 5 $
@@ -272,38 +325,19 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
   \mathrm{e}^{-1} = - \frac{1}{\mathrm{e}} $  
 \end{example}
 
-\begin{prop}
-  Αν $ p(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \cdots + a_{1}x + a_{0} $,
-  \textbf{πολυώνυμο}, τότε 
-  $ \lim_{x \to x_{0}} p(x) = a_{n} x_{0}^{n} + a_{n-1} x_{0}^{n-1} + \cdots + a_{1}
-  x_{0} = p(x_{0}) $, δηλαδή
-  \begin{empheq}[box=\mathboxg]{equation*}
-    \lim_{x \to x_{0}} p(x) = p(x_{0})
-  \end{empheq}
-\end{prop}
-
 \begin{example}
   $ \lim_{x \to 2} (x^{3}+4x^{2}-3) = 2^{3}+ 4 \cdot 2^{2} -3 = 8+16-3 = 21 $  
 \end{example}
-
-\begin{prop}
-  Αν $ p(x) $, $ q(x) $ πολυώνυμα, με $ q(x_{0}) \neq 0 $, τότε 
-  \begin{empheq}[box=\mathboxg]{equation*}
-    \lim_{x \to x_{0}} \frac{p(x)}{q(x)} = \frac{p(x_{0})}{q(x_{0})}
-  \end{empheq}
-\end{prop}
 
 \begin{example}
   $ \lim_{x \to 1} \frac{x^{4}+x^{2}-1}{x^{2}+5} = \lim_{x \to 1}
   \frac{1^{4}+1^{2}-1}{1^{2}+5} = \frac{1}{6} $
 \end{example}
 
-\begin{prop}
-  Αν $ \lim_{x \to x_{0}} f(x) = a $ και $ n \in \mathbb{N} - \{ 0 \} $, τότε 
-  \begin{empheq}[box=\mathboxg]{equation*}
-    \lim_{x \to x_{0}} \bigl[f(x)\bigr]^{n} = a^{n}. 
-  \end{empheq}
-\end{prop}
+\begin{example}
+  $ \lim_{x \to -2} \abs{-x^{3}+2x-7} = \abs{\lim_{x \to -2} (-x^{3}+2x-7)} = \abs{-3}
+  = 3$ 
+\end{example}
 
 \begin{example}
   $ \lim_{x \to \pi} \cos^{4}{x} = \bigl(\lim_{x \to \pi} \cos{x} \bigr)^{4} =
@@ -314,14 +348,6 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
   $\lim_{x \to -1} (2x^{2}-1)^{4} = \bigl[\lim_{x \to -1}
   (2x^{2}-1)\bigr]^{4} = \bigl(2(-1)^{2}-1\bigr)^{4} = 1^{4} = 1 $ 
 \end{example}
-
-\begin{prop}
-  Αν $ \lim_{x \to x_{0}} f(x) = a \in \mathbb{R} $ και $ f(x) \geq 0 $ για κάθε $x$ σε 
-  μια περιοχή του $ x_{0} $, όταν $n$ άρτιος, τότε
-  \begin{empheq}[box=\mathboxg]{equation*}
-    \lim_{x\to x_{0}} \sqrt[n]{f(x)} = \sqrt[n]{a}, \; n \in \mathbb{N}, \; n \geq 2 
-  \end{empheq}
-\end{prop}
 
 \begin{example}
   $ \lim_{x \to -2} \sqrt{4x^{2}-3} = \sqrt{\lim_{x \to -2} (4x^{2}-3)} =
@@ -335,6 +361,11 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
 
 
 \section*{Χρήσιμες Προτάσεις}
+
+\begin{prop}
+  Αν μια συνάρτηση $ f $ έχει όριο στο σημείο $ x_{0} $, τότε αυτό είναι
+  \textbf{μοναδικό}.
+\end{prop}
 
 %todo να τα γράψω-μαζεψω καλύτερα
 
@@ -361,6 +392,7 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
 
 \begin{prop}
 Ισχύουν οι παρακάτω ισοδυναμίες
+
 \begin{empheq}[box=\mathboxg]{equation*}
   \twocolumnsidesc{
     \begin{enumerate}
@@ -379,29 +411,6 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
 \end{empheq}
   \end{prop}
 
-\begin{prop}
-  Αν $ \lim_{x \to x_{0}} f(x) = a \in \mathbb{R} $ τότε 
-  $ \lim_{x \to x_{0}} \abs{f(x)} = \abs{a} $ 
-\end{prop}
-
-\begin{example}
-  $ \lim_{x \to -2} \abs{-x^{3}+2x-7} = \abs{\lim_{x \to -2} (-x^{3}+2x-7)} = \abs{-3}
-  = 3$ 
-\end{example}
-
-\begin{rem}
-  Προσοχή, το αντίστροφο της προηγούμενης πρότασης, δεν ισχύει πάντα. Για παράδειγμα, 
-  αν θεωρήσουμε τη συνάρτηση $ f(x) = \abs{x}/x $, τότε έχουμε:
-  \begin{myitemize}
-    \item $ \lim_{x \to 0} \abs{f(x)} = \lim_{x \to 0} \abs{\frac{\abs{x}}{x}} =
-      \lim_{x \to 0} \frac{\abs{x}}{\abs{x}} = 1 $
-    \item $ \lim_{x \to 0} f(x) = \lim_{x \to 0} \frac{\abs{x}}{x} $, το οποίο, δεν
-      υπάρχει, γιατί: $\lim_{x \to 0^{-}} f(x) = \lim_{x \to 0^{-}} \frac{-x}{x} = -1$ ενώ $\lim_{x \to 0^{+}} f(x) = \lim_{x \to 0^{+}} \frac{x}{x} = 1 $
-
-  \end{myitemize}
-\end{rem}
-
-
 
 \begin{prop}[Κριτήριο Παρεμβολής]
 \item {}
@@ -415,6 +424,24 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
   \end{minipage}
   \mybrace{a}{b}[ $ \lim_{x \to x_{0}} f(x) = l $ ]
 \end{prop}
+
+\begin{example}
+  Να δείξετε ότι $ \lim_{x \to 0} \Bigl(x^{2} \sin{\frac{1}{x}}\Bigr) = 0  $ 
+\end{example}
+\begin{solution}
+Καταρχάς, παρατηρούμε ότι δεν μπορούμε να εφαρμόσουμε τις ιδιότητες των ορίων, και να 
+«σπάσουμε» ενδεχομένως, το όριο, στο γινόμενο των ορίων, γιατί, το όριο 
+$ \lim_{x \to 0} \sin{1/x} $, δεν υπάρχει.
+  Επομένως, έχουμε, ότι
+  \[
+    - x^{2} \leq x^{2} \sin{\frac{1}{x}} \leq x^{2}, \; \forall x \in \mathbb{R}^{*}
+  \]
+  και επειδή $ \lim_{x \to 0} (-x^{2}) = \lim_{x \to 0} x^{2} = 0 $, σύμφωνα με το 
+  Κριτήριο Παρεμβολής, προκύπτει ότι 
+  \[
+    \lim_{x \to 0} \left(x^{2} \sin{\frac{1}{x}}\right)  = 0
+  \]
+\end{solution}
 
 \begin{prop}[Όριο Μηδενικής επί Φραγμένης]
 \item {}
@@ -430,33 +457,13 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
 \end{prop}
 
 
-\begin{example}
-  Να δείξετε ότι $ \lim_{x \to 0} \left(x^{2} \sin{\frac{1}{x}}\right) = 0  $ 
-\end{example}
-\begin{solution}
-  Έχουμε, ότι
-  \[
-    - x^{2} \leq x^{2} \sin{\frac{1}{x}} \leq x^{2}, \; \forall x \in \mathbb{R}^{*}
-  \]
-  και επειδή $ \lim_{x \to 0} (-x^{2}) = \lim_{x \to 0} x^{2} = 0 $, σύμφωνα με το 
-  Κριτήριο Παρεμβολής, προκύπτει ότι 
-  \[
-    \lim_{x \to 0} \left(x^{2} \sin{\frac{1}{x}}\right)  = 0
-  \]
-\end{solution}
-
-%todo να προσθεσω μηδενικη επι φραγμενη
 %todo να βαλω πινακακι με χρησιμα γνωστά ορια
 
-\begin{prop}
-  Αν μια συνάρτηση $ f $ έχει όριο στο σημείο $ x_{0} $, τότε αυτό είναι
-  \textbf{μοναδικό}.
-\end{prop}
 
+\newpage
 
 
 \section*{Απροσδιόριστες Μορφές}
-
 
 \subsection*{Όριο Ρητής συνάρτησης που είναι απροσδιόριστο της μορφής $\Bigl(\frac{0}{0}\Bigr) $}
  
@@ -743,3 +750,6 @@ $ (1^{\infty}) $, $ (0^0) $ ή $ (\infty^{0}) $
 
 
 \end{document}
+
+
+
