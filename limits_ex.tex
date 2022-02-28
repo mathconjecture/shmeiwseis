@@ -1,67 +1,16 @@
-\input{preamble_ask.tex}
-\input{definitions_ask.tex}
+\input{preamble_typ.tex}
+\input{definitions_typ.tex}
 \input{tikz.tex}
 \input{myboxes.tex}
 
-% \setcounter{chapter}{1}
-
-\geometry{top=2.0cm,left=1.5cm,right=1.5cm}
 
 \input{insbox}
-
-\newcommand{\twocolumnsidescc}[2]{\begin{minipage}[c]{0.30\linewidth}\raggedright
-        #1
-        \end{minipage}\quad\begin{minipage}[c]{0.30\linewidth}\raggedright
-        #2
-    \end{minipage}
-}
-
-\newcommand{\twocolumnsidesr}[2]{\begin{minipage}[t]{0.38\linewidth}\raggedright
-        #1
-        \end{minipage}\hfill\begin{minipage}[t]{0.60\linewidth}\raggedright
-        #2
-    \end{minipage}
-}
-
-\newcommand{\twocolumnsidesrr}[2]{\begin{minipage}[t]{0.45\linewidth}\raggedright
-        #1
-        \end{minipage}\hfill\begin{minipage}[t]{0.51\linewidth}\raggedright
-        #2
-    \end{minipage}
-}
-
-\newcommand{\twocolumnsidesll}[2]{\begin{minipage}[b]{0.68\linewidth}\raggedright
-        #1
-        \end{minipage}\hfill\begin{minipage}[b]{0.28\linewidth}\raggedright
-        #2
-    \end{minipage}
-}
 
 
 
 \everymath{\displaystyle}
-\pagestyle{askhseis}
+\pagestyle{vangelis}
 
-\usetikzlibrary{decorations.markings}
-
-\tikzset{
-  set arrow inside/.code={\pgfqkeys{/tikz/arrow inside}{#1}},
-  set arrow inside={end/.initial=stealth, opt/.initial=},
-  /pgf/decoration/Mark/.style={
-    mark/.expanded=at position #1 with
-    {
-      \noexpand\arrow[\pgfkeysvalueof{/tikz/arrow inside/opt}]{\pgfkeysvalueof{/tikz/arrow inside/end}}
-    }
-  },
-  arrow inside/.style 2 args={
-    set arrow inside={#1},
-    postaction={
-      decorate,decoration={
-        markings,Mark/.list={#2}
-      }
-    }
-  },
-}
 
 \usetikzlibrary{shadings,patterns,arrows.meta,angles,quotes,shapes,
 decorations.pathmorphing, decorations.shapes,decorations.text}
@@ -77,876 +26,212 @@ decorations.pathmorphing, decorations.shapes,decorations.text}
 }
 
 
+
 \begin{document}
 
+\setcounter{chapter}{1}
 
-\chapter*{Όριο Συνάρτησης}
+\chapter{Όρια Βασικών Συναρτήσεων}
 
-
-\section*{Η έννοια του ορίου}
-
-\InsertBoxL{2}{\parbox[b][7\baselineskip][c]{0.33\textwidth}{
-    \begin{tikzpicture}
-      \draw[->,blue!55,>=stealth] (-2,0) -- (3,0) node[below] {$x$} ;
-      \draw[->,blue!55,>=stealth] (0,-0.5) -- (0,2.5) node [left] {$y$} ;
-      \draw[color=Col1,samples=200,domain=-1.4:1.4,thick] plot (\x, {\x*\x}) 
-        node[right] (f) {$y=f(x)$} [arrow inside={}{0.75}] ;
-      \path[color=Col1,samples=200,domain=1.4:-1.4,thick] plot (\x, {\x*\x}) 
-        [arrow inside={}{0.165}] ;
-      \node[draw,Col1,circle,inner sep=1.5pt,fill=white] (a) at (1,1) {} ;
-      \coordinate (b) at (1,0) ;
-      \coordinate (c) at (0,1) ;
-      \fill[Col1] (b) circle (1pt) node[below] {$ x_{0}$} ;
-      \fill[Col1] (c) circle (1pt) node[left] {$a$} ;
-      \draw[dashed] (a) -- (b) ;
-      \draw[dashed] (a) -- (c) ;
-      \node at (b) [Col2,below left,yshift=-2pt,xshift=-3pt] {$\rightarrow$} ;
-      \node at (b) [Col2,below right,yshift=-2pt,xshift=3pt] {$\leftarrow$} ;
-      \node at (c) [Col2,above left,yshift=2pt] {$\downarrow$} ;
-      \node at (c) [Col2,below left,yshift=-2pt] {$\uparrow$} ;
-    \end{tikzpicture}
-}}
-
-Έστω συνάρτηση $ f(x) $, η οποία είναι ορισμένη για τις διάφορες τιμές του $x$,
-\textbf{κοντά} στο $ x_{0} $. Αυτό σημαίνει, ότι η $f$ είναι ορισμένη σε μια 
-ανοιχτή \textbf{περιοχή} του $ x_{0} $, εκτός ίσως από το ίδιο το $ x_{0} $. 
-
-Παρατηρούμε ότι για τις διάφορες τιμές του $x$ \textcolor{Col1}{κοντά} στο $ x_{0} $, 
-οι τιμές του $y$, δηλαδή της $ f(x) $, είναι \textcolor{Col1}{κοντά} στο $a$. Μάλιστα, 
-φαίνεται ότι καθώς το $x$ πλησιάζει \textbf{οσοδήποτε} κοντά στο $ x_{0} $ (και από τις 
-δύο πλευρές), οι τιμές της $ f(x) $ πλησιάζουν \textbf{οσοδήποτε} κοντά στην τιμή $ a $. 
-Αυτό, το εκφράζουμε λέγοντας ότι το \textcolor{Col1}{όριο} της $ f(x) $, καθώς το $x$ τείνει στο $ x_{0} $, είναι ίσο με $a$ και γράφουμε
-\begin{empheq}[box=\mathboxg]{equation*}
-  \lim_{x \to x_{0}} f(x) = a \quad \text{ή} \quad f(x) \to a \; \text{καθώς} \; x \to
-  x_{0}
-\end{empheq}
-
-\begin{rem}
-  Για τον υπολογισμό του ορίου, κάποιας συνάρτησης, καθώς το $ x $ τείνει στο $ x_{0} $, 
-  εξετάζουμε τις τιμές της συνάρτησης κοντά στο $ x_{0} $ και ποτέ στο ίδιο το 
-  $ x_{0} $. Μάλιστα, η συνάρτηση, δεν είναι απαραίτητο, να είναι ορισμένη στο $ x_{0} $.
-  Το μόνο που μας ενδιαφέρει είναι η συμπεριφορά της συνάρτησης, \textbf{κοντά} στο 
-  $ x_{0} $.
-\end{rem}
-
-\threecolumnsides{
-  \begin{tikzpicture}
-    \draw[->,blue!55,>=stealth] (-1,0) -- (3,0) node[right] {$x$} ;
-    \draw[->,blue!55,>=stealth] (0,-0.7) -- (0,2.5) node [above] {$y$} ;
-    \draw[color=Col1,samples=200,domain=-0.6:1.4,thick] plot (\x, {\x*\x}) 
-      node[right] (f) {$y=f(x)$} [arrow inside={}{0.60}] ;
-    \path[color=Col1,samples=200,domain=1.4:-0.6,thick] plot (\x, {\x*\x}) 
-      [arrow inside={}{0.27}] ;
-    \coordinate (b) at (1,0) ;
-    \coordinate (c) at (0,1) ;
-    \coordinate (p) at (1,1) ;
-    \fill[Col1] (b) circle (1pt) node[below] {$ x_{0} $} ;
-    \fill[Col1] (c) circle (1pt) node[left=1pt] {$a$} ;
-    \draw[dashed] (c) -| (b);
-    \node at (2,1) {$(a)$} ;
-  \end{tikzpicture}
-}{
-  \begin{tikzpicture}
-    \draw[->,blue!55,>=stealth] (-1,0) -- (3,0) node[right] {$x$} ;
-    \draw[->,blue!55,>=stealth] (0,-0.7) -- (0,2.5) node [above] {$y$} ;
-    \draw[color=Col1,samples=200,domain=-0.6:1.4,thick] plot (\x, {\x*\x}) 
-      node[right] (f) {$y=f(x)$} [arrow inside={}{0.60}] ;
-    \path[color=Col1,samples=200,domain=1.4:-0.6,thick] plot (\x, {\x*\x}) 
-      [arrow inside={}{0.27}] ;
-    \coordinate (b) at (1,0) ;
-    \coordinate (c) at (0,1) ;
-    \coordinate (e) at (0,2) ;
-    \coordinate (d) at (1,2) ;
-    \coordinate (p) at (1,1) ;
-    \fill[Col1] (b) circle (1pt) node[below] {$ x_{0} $} ;
-    \fill[Col1] (c) circle (1pt) node[left=1pt] {$a$} ;
-    \fill[Col1] (e) circle (1pt) node[left=1pt] {$b$} ;
-    \fill[Col1] (d) circle (2pt) ;
-    \fill[Col1] (e) circle (1pt) ;
-    \draw[dashed] (c) -| (b);
-    \node[draw,Col1,circle,inner sep=1.5pt,fill=white] (p) at (1,1) {} ;
-    \node at (2,1) {$(b)$} ;
-  \end{tikzpicture}
-}{
-  \begin{tikzpicture}[]
-    \draw[->,blue!55,>=stealth] (-1,0) -- (3,0) node[right] {$x$} ;
-    \draw[->,blue!55,>=stealth] (0,-0.7) -- (0,2.5) node [above] {$y$} ;
-    \draw[color=Col1,samples=200,domain=-0.6:1.4,thick] plot (\x, {\x*\x}) 
-      node[right] (f) {$y=f(x)$} [arrow inside={}{0.60}] ;
-    \path[color=Col1,samples=200,domain=1.4:-0.6,thick] plot (\x, {\x*\x}) 
-      [arrow inside={}{0.27}] ;
-    \coordinate (b) at (1,0) ;
-    \coordinate (c) at (0,1) ;
-    \coordinate (p) at (1,1) ;
-    \fill[Col1] (b) circle (1pt) node[below] {$ x_{0} $} ;
-    \fill[Col1] (c) circle (1pt) node[left=1pt] {$a$} ;
-    \draw[dashed] (c) -| (b);
-    \node[draw,Col1,circle,inner sep=1.5pt,fill=white] (p) at (1,1) {} ;
-    \node at (2,1) {$(c)$} ;
-  \end{tikzpicture}
+\threecolumnside{
+  \section{Άρτια Πολυωνυμική}
+ \begin{tikzpicture}
+    \draw[-stealth,blue!50] (-2,0) -- (2,0) node[right] {};
+    \draw[-stealth,blue!50] (0,-2) -- (0,2) node[above] {};
+    \draw[domain=-1.4:1.4,smooth,variable=\x,Col1!75,very thick] plot ({\x},{\x*\x})
+        node[right,left=2.5cm,yshift=-20pt,xshift=-2pt]{\small $y=x^{2}$};
+\end{tikzpicture} 
+\begin{myitemize*}
+  \item $ \lim_{x \to \infty} x^{2} = \infty $ 
+  \item $ \lim_{x \to -\infty} x^{2} = \infty $ 
+    \end{myitemize*}
+  }{
+  \section{Περιττή Πολυωνυμική}
+\begin{tikzpicture}
+    \draw[-stealth,blue!50] (-2,0) -- (2,0) node[right] {};
+    \draw[-stealth,blue!50] (0,-2) -- (0,2) node[above] {};
+    \draw[domain=-1.25:1.25,smooth,variable=\x,Col1!75,very thick] 
+        plot ({\x},{\x*\x*\x}) node[below right]{\small $y=x^{3}$};
+\end{tikzpicture}
+\begin{myitemize*}
+  \item $ \lim_{x \to \infty} x^{3} = \infty $ 
+  \item $ \lim_{x \to -\infty} x^{3} = -\infty $ 
+    \end{myitemize*}
+  }{
+  \section{Υπερβολή}
+ \begin{tikzpicture}[scale=0.8]
+    \draw[-stealth,blue!50] (-2.5,0) -- (2.5,0) node[right] {};
+    \draw[-stealth,blue!50] (0,-2.5) -- (0,2.5) node[above] {};
+    \draw[domain=0.4:2.5,smooth,variable=\x,Col1!75,very thick] 
+        plot (\x,{1/(\x)}) node[above left,xshift=7pt,yshift=10pt]{\small $y=\frac{1}{x}$};
+    \draw[domain=-0.4:-2.5,smooth,variable=\x,Col1!75,very thick] plot (\x,{1/(\x)});
+\end{tikzpicture} 
+\begin{myitemize*}
+  \item $ \lim_{x \to 0^{-}} \frac{1}{x}= -\infty $ 
+  \item $ \lim_{x \to \infty} \frac{1}{x} = 0 $ 
+    \end{myitemize*}
 }
-
-\begin{myitemize}
-  \item Στην περίπτωση $ (a) $ παρατηρούμε ότι $ f(x_{0}) = a $ και 
-    $ \lim_{x \to x_{0}} f(x) = a $.
-  \item Στην περίπτωση $ (b) $ παρατηρούμε ότι $ f(x_{0}) = b $, όμως 
-    $ \lim_{x \to x_{0}} f(x) = a $.
-  \item Στην περίπτωση $ (c) $ παρατηρούμε ότι $ f(x_{0}) $ δεν είναι ορισμένο, αλλά
-    $ \lim_{x \to x_{0}} f(x) = a $.
-\end{myitemize}
-
-
-\section*{Πλευρικά Όρια Συνάρτησης}
-
-\InsertBoxL{2}{\parbox[b][7.5\baselineskip][c]{0.33\textwidth}{
-    \begin{tikzpicture}
-      \draw[->,blue!55,>=stealth] (-2,0) -- (3,0) node[right] {$x$} ;
-      \draw[->,blue!55,>=stealth] (0,-0.5) -- (0,2.8) node [left] {$y$} ;
-      \draw[color=Col1,samples=200,domain=-1.35:1,thick] plot (\x, {\x*\x+1})
-        node[right=10pt] (f) {$y=f(x)$} [arrow inside={}{0.90}] ;
-      % \draw[color=Col1,samples=200,domain=2.5:1,thick] plot (\x, {-\x+1.5}) 
-      %   [arrow inside={}{0.85}] ;
-      \node[draw,Col1,circle,inner sep=1.5pt,fill=white] (b) at (1,2) {} ;
-      \node[draw,Col1,circle,inner sep=1.5pt,fill=white] (c) at (1,0.5) {} ;
-      \coordinate (e) at (0,0.5) ;
-      \coordinate (g) at (0,2) ;
-      \coordinate (d) at (1,0) ;
-      \node (k) at (d) [Col1,below right] {$ x_{0} $} ;
-      \draw[dashed] (b) -- (c) ;
-      \draw[dashed] (c) -- (d) ;
-      \draw[dashed] (a) -- (d) ;
-      % \draw[dashed] (a) -- (h) ;
-      \draw[dashed] (b) -- (g) ;
-      \draw[dashed] (c) -- (e) ;
-      \node at (d) [above left,yshift=-2pt] {$\rightarrow$} ;
-      \node at (d) [Col2,above right,yshift=-2pt] {$\leftarrow$} ;
-      \node at (e) [Col2,above left] {$\downarrow$} ;
-      \node at (g) [below left,yshift=-3pt] {$\uparrow$} ;
-      \fill[Col1] (e) circle (1pt) node[below left] {$a$} ;
-      \fill[Col1] (g) circle (1pt) node[left] {$b$} ;
-      \fill[Col1] (d) circle (1pt) ;
-      \coordinate (k) at (2.5,1.5) ;
-      \begin{scope}[decoration={markings,mark=at position 0.85 with {\arrow{stealth}}}]
-        \draw[color=Col1,thick,postaction={decorate}] (k) -- (c) ;
-      \end{scope}
-    \end{tikzpicture}
-}}
-
-Στο διπλανό σχήμα, παρατηρούμε ότι η συνάρτηση $f$ πλησιάζει την τιμή $b$, καθώς το 
-$x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{αριστερά} αλλά η $f$ πλησιάζει την τιμή 
-$a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{δεξιά}. Συμβολίζουμε
-\begin{empheq}[box=\mathboxg]{equation*}
-  \lim_{x \to x_{0}^{-}} f(x) = b \quad \text{και} \quad \lim_{x \to x_{0}^{+}} f(x) = a 
-\end{empheq}
-Ο συμβολισμός $ x \to x_{0}^{-} $ διαβάζεται ως «$x$ τείνει στο $ x_{0} $ από τα 
-αριστερά» και σημαίνει ότι μας ενδιαφέρουν οι τιμές του $x$ κοντά στο $ x_{0} $, 
-που είναι \textbf{μικρότερες} από το $ x_{0} $. Αντίστοιχα, 
-ο συμβολισμός $ x \to x_{0}^{+} $ διαβάζεται ως «$x$ τείνει στο $ x_{0} $ από τα 
-δεξιά» και σημαίνει ότι μας ενδιαφέρουν οι τιμές του $x$ κοντά στο $ x_{0} $, που
-είναι \textbf{μεγαλύτερες} από το $ x_{0} $. 
-
-\begin{prop}
-  Το όριο μιας συνάρτησης υπάρχει, αν και μόνον αν, υπάρχουν τα πλευρικά όρια και είναι
-  ίσα. Δηλαδή
-  \begin{empheq}[box=\mathboxr]{equation*}
-    \lim_{x \to x_{0}} f(x) = a \Leftrightarrow 
-    \lim_{x \to x_{0}^{-}} f(x) = a \quad \text{και} \quad \lim_{x \to x_{0}^{+}} f(x) 
-    = a
-  \end{empheq}
-\end{prop}
-
-
-\section*{Ιδιότητες των Ορίων}
-
-\begin{prop}
-  Έστω $ c, x_{0} \in \mathbb{R} $ και έστω ότι τα όρια 
-  $ \smash{\lim_{x\to x_{0}} f(x)} $ και $ \smash{\lim_{x\to x_{0}} g(x)} $,
-  \textbf{υπάρχουν}. Έστω επίσης, $ p(x), q(x) $ πολυώνυμα.
-  \begin{empheq}[box=\mathboxg]{equation*}
-    \twocolumnsidesc{
-      \begin{enumerate}
-        \item $ \lim_{x \to x_{0}} c = c, \; \forall a \in \mathbb{R} $
-        \item $ \lim_{x\to x_{0}} x = x_{0} $
-        \item $ \lim_{x\to x_{0}} (f(x) \pm g(x)) = \lim_{x \to x_{0}} f(x) \pm
-          \lim_{x \to x_{0}} g(x) $
-        \item $ \lim_{x\to x_{0}} (c \cdot f(x)) = c\cdot \lim_{x \to x_{0}} f(x), \; 
-          \forall c \in \mathbb{R} $
-        \item $ \lim_{x\to x_{0}} (f(x) \cdot g(x)) = \lim_{x \to x_{0}} f(x) \cdot 
-          \lim_{x \to x_{0}} g(x) $
-        \item $ \lim_{x\to x_{0}} \Bigl(\frac{f(x)}{g(x)}\Bigr) = 
-          \frac{\lim\limits_{x \to x_{0}} f(x)}{\lim\limits_{x \to x_{0}} g(x)}, 
-          \;  \lim_{x \to x_{0}} g(x) \neq 0 $
-      \end{enumerate}
-    }{
-      \begin{enumerate}[start=7]
-        \item $ \lim_{x \to x_{0}} p(x) = p(x_{0}) $
-        \item $ \lim_{x \to x_{0}} \frac{p(x)}{q(x)} = \frac{p(x_{0})}{q(x_{0})} , \;
-          q(x_{0}) \neq 0 $
-        \item $ \lim_{x \to x_{0}} \abs{f(x)} = \Bigl|\lim_{x \to x_{0}} f(x)\Bigr| $
-        \item $ \lim_{x \to x_{0}} [f(x)]^{n} = 
-          \Bigl[\lim_{x \to x_{0}} f(x)\Bigr]^{n}, \; n \in \mathbb{N}- \{ 0 \} $ 
-        \item  $ \lim_{x \to x_{0}} \sqrt[n]{f(x)} = 
-          \sqrt[n]{\lim_{x \to x_{0}} f(x)}, \; n \in \mathbb{N}, n \geq 2 $ 
-      \end{enumerate}
-    }
-  \end{empheq}
-\end{prop}
-
-\begin{rem}
-  Στην ιδιότητα 11, όταν $ n $ \textbf{άρτιος}, προϋποθέτουμε ότι 
-  $ f(x) \geq 0, \; \forall x $, σε μια περιοχή του $ x_{0} $.
-\end{rem}
-
-\begin{rem}
-  Προσοχή! Το αντίστροφο της ιδιότητας 9, δεν ισχύει πάντα. Για παράδειγμα, 
-  έστω $ \smash{f(x) = \frac{\abs{x}}{x}} $. Τότε,
-  \begin{myitemize}
-    \item $ \lim_{x \to 0} \abs{f(x)} = \lim_{x \to 0} \abs{\frac{\abs{x}}{x}} =
-      \lim_{x \to 0} \frac{\abs{x}}{\abs{x}} = 1 $
-    \item $ \lim_{x \to 0} f(x) = \lim_{x \to 0} \frac{\abs{x}}{x} $, δεν
-      υπάρχει, γιατί: $\lim_{x \to 0^{-}} f(x) = \lim_{x \to 0^{-}} \frac{-x}{x} = -1$ ενώ $\lim_{x \to 0^{+}} f(x) = \lim_{x \to 0^{+}} \frac{x}{x} = 1 $
-  \end{myitemize}
-\end{rem}
-
-\begin{rem}
-  Προσοχή! Το αντίστροφο της ιδιότητας 10 δεν ισχύει πάντα. Αν θεωρήσουμε την
-  ίδια συνάρτηση, έχουμε 
-  \[
-    \lim_{x \to 0} \Bigl(\frac{\abs{x}}{x}\Bigr)^{2} = \lim_{x \to 0}
-    \frac{x^{2}}{x^{2}} =1 \quad \text{όμως} \quad \lim_{x \to 0} f(x) = \lim_{x \to 0}
-    \frac{\abs{x}}{x} \quad \text{δεν υπάρχει}
-  \]
-\end{rem}
-
-
-\section*{Παραδείγματα}
-
-\begin{example}
-  $ \lim_{x \to -3} 5 = 5 $
-\end{example}
-
-\begin{example}
-  $ \lim_{x \to 2} x = 2 $
-\end{example}
-
-\begin{example}
-  $ \lim_{x \to -1} \Bigl(\frac{1}{x} - x^{3}\Bigr) = \lim_{x \to -1} \frac{1}{x}
-  - \lim_{x \to -1} x^{3} = \frac{1}{-1} - (-1)^{3} = -1-(-1)=-1+1=0  $
-\end{example}
-
-\begin{example}
-  $ \lim_{x \to 4} \bigl(3 \sqrt{x}\bigr) = 3 \lim_{x \to 4} \sqrt{x} = 3 \cdot \sqrt{4} 
-  = 3\cdot 2 = 6$
-\end{example}
-
-\begin{example}
-  $ \lim_{x \to 1} \bigl(\sqrt{x} \cdot \ln{x}\bigr) = \lim_{x \to 1} \sqrt{x} \cdot \lim_{x \to 1}
-  \ln{x} = \sqrt{1} \cdot \ln{1} = 1 \cdot 0 = 0 $
-\end{example}
-
-\begin{example}
-  $ \lim_{x \to -1} \Bigl(\frac{\mathrm{e}^{x}}{x}\Bigr) = \frac{\lim\limits_{x \to -1}
-  \mathrm{e}^{x}}{\lim\limits_{x \to -1}x} = \frac{\mathrm{e}^{-1}}{-1} = -
-  \mathrm{e}^{-1} = - \frac{1}{\mathrm{e}} $  
-\end{example}
-
-\begin{example}
-  $ \lim_{x \to 2} (x^{3}+4x^{2}-3) = 2^{3}+ 4 \cdot 2^{2} -3 = 8+16-3 = 21 $  
-\end{example}
-
-\begin{example}
-  $ \lim_{x \to 1} \frac{x^{4}+x^{2}-1}{x^{2}+5} = \lim_{x \to 1}
-  \frac{1^{4}+1^{2}-1}{1^{2}+5} = \frac{1}{6} $
-\end{example}
-
-\begin{example}
-  $ \lim_{x \to -2} \abs{-x^{3}+2x-7} = \abs{\lim_{x \to -2} (-x^{3}+2x-7)} = \abs{-3}
-  = 3$ 
-\end{example}
-
-\begin{example}
-  $ \lim_{x \to \pi} \cos^{4}{x} = \bigl(\lim_{x \to \pi} \cos{x} \bigr)^{4} =
-  (\cos{\pi} )^{4} = (-1)^{4}=1 $
-\end{example}
-
-\begin{example} 
-  $\lim_{x \to -1} (2x^{2}-1)^{4} = \bigl[\lim_{x \to -1}
-  (2x^{2}-1)\bigr]^{4} = \bigl(2(-1)^{2}-1\bigr)^{4} = 1^{4} = 1 $ 
-\end{example}
-
-\begin{example}
-  $ \lim_{x \to -2} \sqrt{4x^{2}-3} = \sqrt{\lim_{x \to -2} (4x^{2}-3)} =
-  \sqrt{4(-2)^{2}-3} = \sqrt{16-3} = \sqrt{13} $    
-\end{example}
-
-\begin{example}
-  $ \lim_{x \to 1} \sqrt[3]{x-2} = \sqrt[3]{\lim_{x \to 1} (x-2)} = \sqrt[3]{1-2} =
-  \sqrt[3]{-1} = -1 $
-\end{example}
-
-
-\section*{Όρια με παρονομαστή 0}
-
-\begin{prop}
-\item {}
-  \begin{myitemize}
-    \item Αν $ \lim_{x \to x_{0}} g(x) = 0 $ με $ g(x)>0 $ σε μια περιοχή του $ x_{0} $ 
-      τότε $ \lim_{x \to x_{0}} \frac{1}{g(x)} = + \infty $
-    \item Αν $ \lim_{x \to x_{0}} g(x) = 0 $ με $ g(x)<0 $ σε μια περιοχή του $ x_{0} $ 
-      τότε $ \lim_{x \to x_{0}} \frac{1}{g(x)} = - \infty $
-  \end{myitemize}
-\end{prop}
-
-\begin{rem}
-  Η παραπάνω πρόταση ισχύει και όταν $ x_{0} = + \infty $ ή $ - \infty $.
-\end{rem}
-
-\twocolumnsidesll{
-\begin{example}
-  $ \lim_{x \to 2^{-}} \frac{1}{x-2} = - \infty $, γιατί αφού $ x \to 2^{-} 
-  \Rightarrow x < 2 $, άρα $ x-2<0 $ 
-\end{example}
-\begin{example}
-  $ \lim_{x \to 2^{+}} \frac{1}{x-2} = + \infty $, γιατί αφού $ x \to 2^{+} 
-  \Rightarrow x > 2 $, άρα $ x-2>0 $ 
-\end{example}
-}{
-  \smash{\begin{tikzpicture}[scale=0.6]
-    \draw[-stealth,blue!50] (-1.5,0) -- (4.5,0) node[below] {$x$};
-    \draw[-stealth,blue!50] (0,-2.5) -- (0,2.5) node[left] {$y$};
-    \draw[Col2] (2,-2.5) -- (2,2.5) ;
-    \fill[Col2] (2,0) node[below right,Col1] {$2$} circle (2pt) ;
-    \draw[domain=2.4:4.5,smooth,variable=\x,Col1!75,very thick] 
-      plot (\x,{1/(\x-2)}) node[above left,xshift=10pt,yshift=10pt] 
-      {\small$\frac{1}{x-2}$} ;
-    \draw[domain=-1.3:1.6,smooth,variable=\x,Col1!75,very thick] plot (\x,{1/(\x-2)});
-  \end{tikzpicture}
-}}
 
 \vspace{\baselineskip}
 
-\twocolumnsidesr{
-  \section*{Όρια στο άπειρο}
-  \begin{prop}Έστω $ n \in \mathbb{N} $. Τότε
-    \begin{mybox2}
-    \item {}
-      \begin{myitemize}
-        \item $ \lim_{x \to +\infty} x^{n} = + \infty, \; n \in \mathbb{N} $ 
-        \item $ \lim_{x \to -\infty} x^{n} = 
-          \begin{cases}
-            + \infty, & n \; \text{άρτιος} \\ 
-            - \infty, & n \; \text{περιττός} \\ 
-          \end{cases} $ 
-        \item $ \lim_{x \to \pm \infty} \frac{1}{x^{n}} = 0 $
-      \end{myitemize}
-    \end{mybox2}
-  \end{prop}
-}{
-  \section*{Πράξεις στο $ \overline{\mathbb{R}}=\mathbb{R} \cup \{+\infty, -\infty \}$}
-  \begin{mybox3}
-    \begin{myitemize}
-      \item $ - \infty< \infty $ και $ - \infty < a < + \infty, \; \forall a \in 
-        \mathbb{R} $
-      \item $ + \infty + (+ \infty) = + \infty $ και $ - \infty + (- \infty) = - \infty $
-      \item $ + \infty \pm a = + \infty $ και $ - \infty \pm a = - \infty, \; \forall a 
-        \in \mathbb{R} $ 
-    \end{myitemize}
-  \end{mybox3} 
-  \twocolumnsidesrr{
-    \begin{mybox3}
-      \begin{myitemize}
-        \item $ (+ \infty)\cdot (+ \infty) = + \infty $
-        \item $ (- \infty)\cdot (- \infty) = + \infty $
-        \item $ (+ \infty)\cdot (- \infty) = - \infty $
-        \item $ \frac{a}{\pm \infty} = 0, \; \forall a \in \mathbb{R} $
-      \end{myitemize}
-    \end{mybox3}
+
+\threecolumnside{
+  \section{Άρτια Ρίζα}
+\begin{tikzpicture}
+    \draw[-stealth,blue!50] (-2,0) -- (2,0) node[right] {};
+    \draw[-stealth,blue!50] (0,-2) -- (0,2) node[above] {};
+    \draw[domain=0:2,smooth,variable=\x,Col1!75,very thick] 
+        plot (\x,{sqrt(\x)}) node[above,xshift=-5pt]{\small $y=\sqrt{x}$};
+\end{tikzpicture}
+\begin{myitemize*}
+  \item $ \lim_{x \to \infty} \sqrt{x} = \infty $ 
+  \item $ \lim_{x \to 0^{+}} \sqrt{x} = 0 $ 
+    \end{myitemize*}
   }{
-    \begin{mybox3}
-      \begin{myitemize}
-        \item $ a \cdot (+ \infty) = 
-          \begin{cases}
-            + \infty, & a>0 \\
-            - \infty, & a<0 
-          \end{cases}$ 
-        \item $ a \cdot (- \infty) = 
-          \begin{cases}
-            - \infty, & a>0 \\
-            + \infty, & a<0 
-          \end{cases}$ 
-      \end{myitemize}
-    \end{mybox3}
-}}
+  \section{Περιττή Ρίζα}
+\begin{tikzpicture}
+    \draw[-stealth,blue!50] (-2,0) -- (2,0) node[right] {};
+    \draw[-stealth,blue!50] (0,-2) -- (0,2) node[above] {};
+    \draw[domain=-2:0,smooth,variable=\x,Col1!75,very thick] plot (\x,{-sqrt(abs(\x))});
+    \draw[domain=0:2,smooth,variable=\x,Col1!75,very thick] plot (\x,{sqrt(\x)})
+        node[yshift=10pt,xshift=5pt]{\small $y=\sqrt[3]{x}$};
+\end{tikzpicture}
+\begin{myitemize*}[itemjoin={\hspace{0.5cm}}]
+  \item $ \lim_{x \to \infty} \sqrt[3]{x} = \infty $ 
+  \item $ \lim_{x \to -\infty} \sqrt[3]{x} = -\infty $ 
+    \end{myitemize*}
+  }{
+  \section{Λογαριθμική}
+ \begin{tikzpicture}[scale=0.85]
+    \draw[-stealth,blue!50] (-3,0) -- (3,0) node[right] {};
+    \draw[-stealth,blue!50] (0,-2.5) -- (0,2.5) node[above] {};
+    \fill (1,0) circle (2pt) node[below=2pt] {1} ;
+    \draw[domain=0.2:3,smooth,variable=\x,Col1!75,very thick] plot (\x,{log2(\x)})
+        node[left,xshift=-10pt,yshift=5pt]{\begin{tabular}{c}
+        \small $y =\log_{a}{x}$ \\ \small $a >1$ \\ \text{π.χ.} $ y= \ln{x}$ \end{tabular}};
+\end{tikzpicture} 
+\begin{myitemize*}[itemjoin={\hspace{0.4cm}}]
+  \item $ \lim_{x \to \infty} \ln{x} = \infty $ 
+  \item $ \lim_{x \to 0^{-}} \ln{x} = -\infty $ 
+    \end{myitemize*}
+}
+
+
+\vspace{\baselineskip}
+
+
+\threecolumnside{
+  \section{Αύξουσα Εκθετική}
+ \begin{tikzpicture}[scale=0.8]
+    \draw[-stealth,blue!50] (-3.2,0) -- (3.8,0) node[right] {};
+    \draw[-stealth,blue!50] (0,-1) -- (0,4.3) node[above] {};
+    \draw[domain=-3:1.4,smooth,variable=\x,Col1!75,very thick] plot ({\x},{exp{\x}})
+    node[below right,xshift=-10pt]{\begin{tabular}{c} \small $y=a^{x}$ \\ 
+    \small $ a>1 $ \\ \text{π.χ.} $ y= \mathrm{e}^{x} $ \end{tabular}};
+    \fill (0,1) circle (2pt) node[left=2pt] {1} ;
+\end{tikzpicture} 
+\begin{myitemize*}
+  \item $ \lim_{x \to \infty} a^{x} = \infty $ 
+  \item $ \lim_{x \to -\infty} a^{x} = 0 $ 
+    \end{myitemize*}
+  }{
+  \section{Φθίνουσα Εκθετική}
+ \begin{tikzpicture}[scale=0.8]
+    \draw[-stealth,blue!50] (-3.2,0) -- (3.8,0) node[right] {};
+    \draw[-stealth,blue!50] (0,-1) -- (0,4.3) node[above] {};
+    \draw[domain=3:-1.4,smooth,variable=\x,Col1!75,very thick] plot ({\x},{exp{-\x}})
+    node[below left,xshift=26pt,yshift=-25pt]{\begin{tabular}{c} \small $y=a^{x}$ \\ 
+    \small $ 0<a<1 $ \\ \text{π.χ.} $ y= \mathrm{e}^{-x} $ \end{tabular}};
+    \fill (0,1) circle (2pt) node[left=2pt] {1} ;
+\end{tikzpicture} 
+\begin{myitemize*}
+  \item $ \lim_{x \to \infty} a^{x} = 0 $ 
+  \item $ \lim_{x \to -\infty} a^{x} = \infty $ 
+    \end{myitemize*}
+  }{
+  \section{Ημίτονο}
+  \centering
+  \begin{tikzpicture}[scale=0.8]
+    \begin{axis}[myaxis,
+      ymin=-1.5,ymax=1.5,
+      xmin=-7,xmax=7,
+      extra x ticks={-6.28318,-4.7123889,-3.14159,-1.5708,1.5708,3.14159,4.7123889,6.28318},
+      extra x tick labels={$-2\pi$, $-\frac{3\pi}{2}$, $-\pi$, $\frac{\pi}{2}$,$\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, $2\pi$},
+      domain=-2*pi:2*pi,
+      ]
+      \addplot[myplot] {sin(deg(x))} node[above right,pos=0.65]{$\sin x$} ;
+    \end{axis}
+  \end{tikzpicture}
+\begin{myitemize*}
+  \item $ \lim_{x \to \infty} \sin{x} $ δεν υπάρχει 
+    \end{myitemize*}
+}
+
+\vspace{\baselineskip}
+
+\threecolumnside{
+  \section{Εφαπτομένη}
+ \begin{tikzpicture}[scale=0.8]
+    \begin{axis}[myaxis,
+      ymin=-6,ymax=6,
+      xmin=-6,xmax=6,
+      extra x ticks={-4.71,-3.14159,-1.5708,0,1.57,3.14,4.71},
+      extra x tick labels={$-\frac{3\pi}{2}$,$-\pi$,$-\frac{\pi}{2}$,0,$\frac{\pi}{2}$,$\pi$,$\frac{3\pi}{2}$},
+      domain=-1.8*pi:1.8*pi,
+      ]
+      \addplot [myplot,dashed lines] {tan(deg(x))};
+      \addplot [myplot,restrict y to domain=-10:10] {tan(deg(x))} node
+        [right,pos=0.55,xshift=5pt] {$\tan x$};
+    \end{axis}
+  \end{tikzpicture} 
+\begin{myitemize*}[itemjoin={\hspace{0.5cm}}]
+  \item $ \lim_{x \to \frac{\pi}{2}} \tan{x} = \infty $ 
+  \item $ \lim_ {x \to \frac{\pi}{2}} \tan{x}= -\infty $ 
+    \end{myitemize*}
+  }{
+  \section{Συνεφαπτομένη}
+ \begin{tikzpicture}[scale=0.8]
+    \begin{axis}[myaxis,
+      ymin=-6,ymax=6,
+      xmin=-6,xmax=6,
+      extra x ticks={-4.71,-3.14159,-1.5708,0,1.57,3.14,4.71},
+      extra x tick labels={$-\frac{3\pi}{2}$,$-\pi$,$-\frac{\pi}{2}$,0,$\frac{\pi}{2}$,$\pi$,$\frac{3\pi}{2}$},
+      domain=-1.7*pi:1.7*pi
+      ]
+      \addplot [myplot,dashed lines] {cot(deg(x))};
+      \addplot [myplot,restrict y to domain=-10:10] {cot(deg(x))}
+        node [right,pos=0.59,xshift=5pt] {$\cot x$};
+    \end{axis}
+  \end{tikzpicture} 
+\begin{myitemize*}[itemjoin={\hspace{0.5cm}}]
+  \item $ \lim_{x \to \pi} \cot{x} = -\infty $ 
+  \item $ \lim_ {x \to \pi} \cot{x}= \infty $ 
+    \end{myitemize*}
+  }{
+  \section{Αντίστροφη Εφαπτομένη}
+ \begin{tikzpicture}[scale=0.75]
+    \begin{axis}[myaxis,
+      ymin=-2.5,ymax=2.5,
+      xmin=-3.8,xmax=3.8,
+      extra y ticks={-1.57,1.57},
+      extra y tick labels={\raisebox{-20pt}{$-\pi/2$},\raisebox{18pt}{$\pi/2$}},
+      x=1cm,
+      y=1.2cm,
+      domain=-3.5:3.5,
+      ]
+      \addplot[myplot] {rad(atan(x))} node[below,pos=0.85,xshift=5pt]
+        {$\arctan x$} ;
+      \addplot[dashed lines] {1.57}  ;
+      \addplot[dashed lines] {-1.57}  ;
+    \end{axis}
+  \end{tikzpicture} 
+\begin{myitemize*}[itemjoin={\hspace{0.5cm}}]
+  \item $ \lim_{x \to \infty } \arctan{x} = \frac{\pi}{2} $ 
+  % \item $ \lim_ {x \to \infty } \arctan{x}= - \frac{\pi}{2} $ 
+    \end{myitemize*}
+}
 
 
-\section*{Όρια Ρητών Συναρτήσεων στο άπειρο}
-
-\begin{prop}
-  Αν $ p(x) = a_{n} x^{n} + a_{n-1}x^{n-1}+\cdots + a_{1}x + a_{0}, \; a_{n} \neq 0  $ 
-  και $ q(x) = b_{m} x^{m} + b_{m-1}x^{m-1}+\cdots + b_{1}x + b_{0}, \; b_{m} \neq 0 $, 
-  τότε, ισχύει 
-  \begin{center}
-    \twocolumnsidescc{
-      \begin{empheq}[box=\mathboxg]{equation*}
-        \lim_{x \to \pm\infty} p(x) = \lim_{x \to \pm \infty} a_{n}x^{n}
-      \end{empheq}
-    }{
-      \begin{empheq}[box=\mathboxg]{equation*}
-        \lim_{x \to \pm\infty} \frac{p(x)}{q(x)} = \lim_{x \to \pm \infty}
-        \frac{a_{n}x^{n}}{b_{m}x^{m}}
-      \end{empheq}
-    }
-  \end{center}
-\end{prop}
-
-\begin{example}
-  $ \lim_{x \to \infty} (-2x^{3}+x^{2-1}) = \lim_{x \to \infty} (-2x^{3}) = -2
-  \lim_{x \to \infty} x^{3} = -2 \cdot \infty = - \infty $
-\end{example}
-\begin{example}
-  $ \lim_{x \to - \infty} \frac{2x^{2}-x+2}{x^{3}-x+1} = \lim_{x \to - \infty}
-  \frac{2 x^{2}}{x^{3}} = \lim_{x \to - \infty} \frac{2}{x} = 0 $
-\end{example}
-\begin{example}
-  $ \lim_{x \to \infty} \frac{-2x^{2}-x+1}{3x^{2}-2} = \lim_{x \to \infty}
-  \frac{-2 x^{2}}{3 x^{2}} = \lim_{x \to \infty} \frac{-2}{3} = - 
-  \frac{2}{3} $ 
-\end{example}
-\begin{example}
-  $ \lim_{x \to - \infty} \frac{-3x^{5}+2x-1}{x^{2}+1} = \lim_{x \to - \infty}
-  \frac{-3x^{5}}{x^{2}} = \lim_{x \to - \infty} (-3x^{3}) = -3 \lim_{x \to - \infty}
-  x^{3} = -3 \cdot (- \infty) = + \infty $
-\end{example}
-\begin{example}
-$ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
-\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty} \frac{x^{2}}{x}} = \sqrt{\lim_{x \to 
-  \infty} x} = \infty $
-  \end{example}
-
-
-\newpage
-
-
-\section*{Χρήσιμες Προτάσεις}
-
-\begin{prop}
-  Αν μια συνάρτηση $ f $ έχει όριο στο σημείο $ x_{0} $, τότε αυτό είναι
-  \textbf{μοναδικό}.
-\end{prop}
-
-
-\begin{prop}
-  Αν $ \lim_{x \to x_{0}} f(x) = a \in \mathbb{R} - {\{ 0 \}} $, τότε υπάρχει 
-  περιοχή του $ x_{0} $ ώστε οι τιμές της $ f(x) $ να είναι \textbf{ομόσημες} του $a$ 
-  για κάθε $x$ σε αυτή την περιοχή, δηλαδή:
-  \begin{myitemize}
-    \item Αν $ a > 0 $ τότε $ f(x)>0 $ 
-    \item Αν $ a < 0 $ τότε $ f(x)<0 $ 
-  \end{myitemize}
-\end{prop}
-
-\begin{prop}
-\item {}
-  \begin{myitemize}
-    \item Αν $ \lim_{x \to x_{0}} f(x) = a \in \mathbb{R} $ και $ f(x) \geq 0 $ για κάθε 
-      $x$ σε μια περιοχή του $ x_{0} $, τότε $ a \geq 0 $ 
-    \item Αν $ \lim_{x \to x_{0}} f(x) = a \in \mathbb{R} $ και $ \lim_{x \to x_{0}} g(x)
-      = b \in \mathbb{R}$ και $ f(x) \geq g(x) $ για κάθε $x$ σε μια περιοχή του 
-      $ x_{0} $, τότε $ a \geq b $ 
-  \end{myitemize}
-\end{prop}
-
-\begin{prop}
-  Ισχύουν οι παρακάτω ισοδυναμίες
-  \begin{empheq}[box=\mathboxg]{equation*}
-    \twocolumnsidesc{
-      \begin{enumerate}
-        \item $ \lim_{x \to x_{0}} f(x) = a \Leftrightarrow \lim_{x \to x_{0}} (f(x)-a)=0 $
-        \item $ \lim_{x \to x_{0}} f(x) = a \Leftrightarrow \lim_{x \to x_{0}} \abs{f(x)-a}=0 $
-        \item $ \lim_{x \to x_{0}} f(x) = 0 \Leftrightarrow \lim_{x \to x_{0}} \abs{f(x)}=0 $ 
-      \end{enumerate}
-    }{
-      \begin{enumerate}[start=4]
-        \item $ \lim_{x \to x_{0}} f(x) = a \Leftrightarrow \lim_{x \to x_{0}} (-f(x))=-a $ 
-        \item $ \lim_{x \to x_{0}} f(x) = a \Leftrightarrow \lim_{h \to 0} f(x_{0}+h)=a  $
-        \item $ \lim_{x \to x_{0}} f(x) = a \Leftrightarrow \lim_{h \to 1} f(x_{0}\cdot
-          h)=a, \; x_{0} \neq 0 $
-      \end{enumerate}
-    }
-  \end{empheq}
-\end{prop}
-
-
-\begin{prop}[\textcolor{Col1}{Κριτήριο Παρεμβολής}]
-\item {}
-  \begin{minipage}[t]{8.0 cm}
-    \begin{myitemize}
-      \item $ h(x) \leq f(x) \leq g(x), \; \forall x$ σε μια περιοχή του $ x_{0} $
-        \hfill\tikzmark{a}
-      \item $ \lim_{x \to x_{0}} h(x) = \lim_{x \to x_{0}} g(x) = l \in \mathbb{R} $
-        \hfill\tikzmark{b}
-    \end{myitemize}
-  \end{minipage}
-  \mybrace{a}{b}[ $ \lim_{x \to x_{0}} f(x) = l $ ]
-\end{prop}
-
-\begin{rem}
-  Η παραπάνω πρόταση ισχύει και όταν $ x_{0} = + \infty $ ή $ - \infty $.
-\end{rem}
-
-\begin{example}
-  Να δείξετε ότι $ \lim_{x \to 0} \Bigl(x^{2} \sin{\frac{1}{x}}\Bigr) = 0  $ 
-\end{example}
-\begin{solution}
-  Καταρχας, παρατηρούμε ότι δεν μπορούμε να εφαρμόσουμε τις ιδιότητες των ορίων, και να 
-  «σπάσουμε» ενδεχομένως, το όριο, στο γινόμενο των ορίων, γιατί, το όριο 
-  $ \lim_{x \to 0} \sin{1/x} $, δεν υπάρχει.
-  Επομένως, έχουμε, ότι
-  \[
-    - x^{2} \leq x^{2} \sin{\frac{1}{x}} \leq x^{2}, \; \forall x \in \mathbb{R}^{*}
-  \]
-  και επειδή $ \lim_{x \to 0} (-x^{2}) = \lim_{x \to 0} x^{2} = 0 $, σύμφωνα με το 
-  Κριτήριο Παρεμβολής, προκύπτει ότι 
-  \[
-    \lim_{x \to 0} \Bigl(x^{2} \sin{\frac{1}{x}}\Bigr)  = 0
-  \]
-\end{solution}
-
-\begin{cor}
-\item {}
-  \begin{minipage}[t]{6.5 cm}
-    \begin{myitemize}
-      \item $ \abs{f(x)} \leq g(x) $ σε μια περιοχή του $ x_{0} $
-        \hfill\tikzmark{a}
-      \item $ \lim_{x \to x_{0}} g(x) = 0 $
-        \hfill\tikzmark{b}
-    \end{myitemize}
-  \end{minipage}
-  \mybrace{a}{b}[ $ \lim_{x \to x_{0}} f(x) = 0 $ ]
-\end{cor}
-
-\begin{example}
-  Να δείξετε ότι $ \lim_{x \to 0} \Bigl(x \cos{\frac{1}{x}}\Bigr) = 0 $
-\end{example}
-\begin{solution}
-  Έχουμε ότι
-  \[
-    \Bigl|x \cos{\frac{1}{x}}\Bigr| = \abs{x} \cdot 
-    \Bigl|\cos{\frac{1}{x}}\Bigr| \leq \abs{x} \cdot 1 = 
-    \abs{x}, \; \forall x \in \mathbb{R}
-  \] 
-  Όμως $ \lim_{x \to 0} \abs{x} = 0 $
-  Επομένως από το πόρισμα του Κριτηρίου Παρεμβολής, έχουμε ότι 
-  \[
-    \lim_{x \to 0} \Bigl(x \cos{\frac{1}{x}}\Bigr) = 0 
-  \] 
-\end{solution}
-
-
-\section*{Απροσδιόριστες Μορφές}
-
-
-\subsection*{Όριο Ρητής συνάρτησης της μορφής $\Bigl(\frac{0}{0}\Bigr) $}
-
-Μπορούμε να κάνουμε άρση της απροσδιοριστίας, παραγοντοποιώντας αριθμητή και παρονομαστή.
-
-\begin{example}
-  $ \lim_{x \to 1} \frac{x^{2}-3x+2}{x^{2}-1} \overset{(\frac{0}{0})}{=} \lim_{x \to 1}
-  \frac{(x-2)\cancel{(x-1)}}{\cancel{(x-1)}(x+1)} = \lim_{x \to 1} \frac{x-2}{x+1} = 
-  \frac{1-2}{1+1} = - \frac{1}{2} $
-\end{example}
-
-
-\subsection*{Όριο συνάρτησης $ \frac{f(x)}{g(x)} $ με ρίζα της μορφής $\Bigl(\frac{0}{0}\Bigr)$}
-
-Μπορούμε να κάνουμε άρση της απροσδιοριστίας, πολλαπλασιάζοντας με την κατάλληλη 
-συζυγή παράσταση.
-
-\begin{center}
-  \setcounter{chapter}{2}
-  \begin{Mytable}
-    \renewcommand{\arraystretch}{1.5}
-    \begin{tabular}{|c|c||c|c|}
-      \TabCellHead Ρίζα  &  \TabCellHead Συζυγής Παράσταση & 
-      \TabCellHead Ρίζα  &  \TabCellHead Συζυγής Παράσταση \\ \hline
-      $ \sqrt{a} $ & $ \sqrt{a} $ & $ a + \sqrt{b} $ & $ a - \sqrt{b} $ \\ \hline
-      $ \sqrt{a} + \sqrt{b} $ & $ \sqrt{a} - \sqrt{b} $ &
-      $ \sqrt{a} - \sqrt{b} $ & $ \sqrt{a} + \sqrt{b} $ \\ \hline 
-      $ \sqrt[3]{a} $ & $ \sqrt[3]{a^{2}} $ &
-      $ \sqrt[n]{a^{m}} $ & $ \sqrt[n]{a^{n-m}} $ \\ \hline 
-      $ \sqrt[3]{a} - \sqrt[3]{b} $ & $ \sqrt[3]{a^{2}} + \sqrt[3]{ab} +
-      \sqrt[3]{b^{2}} $ &
-      $ \sqrt[3]{a} + \sqrt[3]{b} $ & $ \sqrt[3]{a^{2}} - \sqrt[3]{ab} +
-      \sqrt[3]{b^{2}} $ \\ \hline
-    \end{tabular}
-  \end{Mytable}
-\end{center}
-
-\begin{example}
-  \begin{align*}
-    \lim_{x \to 0} \frac{\sqrt{x^{2}+4} - 2}{x^{2}} 
-    &\overset{(\frac{0}{0})}{=}  
-    \lim_{x \to 0} \frac{(\sqrt{x^{2}+4} -2)(\sqrt{x^{2}+4} +2)}{x^{2}(\sqrt{x^{2}+4} +2)}
-    = \lim_{x \to 0} \frac{(\sqrt{x^{2}+4})^{2}-2^{2}}{x^{2}(\sqrt{x^{2}+4} +2)} \\ 
-    &= \lim_{x \to 0} \frac{x^{2}+\cancel{4}-\cancel{4}}{x^{2}(\sqrt{x^{2}+4} +2)} =
-    \lim_{x \to 0} \frac{\cancel{x}^{2}}{\cancel{x}^{2}(\sqrt{x^{2}+4} +2)} = \lim_{x \to 0} \frac{1}{\sqrt{x^{2}+4} +2} = \frac{1}{4}  
-  \end{align*}
-\end{example}
-
-\begin{rem}
-  Φυσικά, και για τις δύο προηγούμενες περιπτώσεις, όπου κάνουμε άρση της
-  απροσδιοριστίας με αλγεβρικό τρόπο, θα μπορούσαμε να εφαρμόσουμε τον κανόνα 
-  L'H\^{o}pital.
-\end{rem}
-
-\section*{Κανόνας L'H\^{o}pital}
-
-\begin{thm}
-  Έστω $ f, g $ παραγωγίσιμες συναρτήσεις, με $ g'(x) \neq 0 $ σε μια ανοιχτή περιοχή
-  του $ x_{0} $ (εκτός ίσως από το ίδιο το $ x_{0} $). Έστω επίσης, ότι
-  \begin{gather*}
-    \lim_{x \to x_{0}} f(x) = 0 \quad \text{και} \quad \lim_{x \to x_{0}} g(x) = 0
-    \qquad \color{Col1}{\text{Περίπτωση $ \Bigl(\frac{0}{0}\Bigr) $}} \\
-    \text{ή} \\
-    \lim_{x \to x_{0}} f(x) = \pm \infty \quad \text{και} \quad \lim_{x \to x_{0}} g(x)
-    = \pm \infty \qquad \color{Col1}{\text{Περίπτωση $ \Bigl(\frac{\infty}{\infty}\Bigr) $}}
-  \end{gather*}
-  Τότε
-  \begin{empheq}[box=\mathboxg]{equation*}
-    \lim_{x \to x_{0}} \frac{f(x)}{g(x)} = \lim_{x \to x_{0}} \frac{f'(x)}{g'(x)} 
-  \end{empheq}
-  με την προϋπόθεση ότι υπάρχει το όριο $ \lim_{x \to x_{0}} \frac{f'(x)}{g'(x)} $, 
-  και είναι πεπερασμένο ή άπειρο.
-\end{thm}
-
-\begin{rem}
-\item {}
-  \begin{enumerate}
-    \item Αν $ x_{0} \in \mathbb{R} $, τότε ο κανόνας ισχύει, και όταν 
-      $ x \to x_{0}^{-} $ ή $ x \to x_{0}^{+} $.
-    \item Ο κανόνας ισχύει, ακόμη και όταν $ x_{0} = \infty $ ή $ x_{0} = - \infty $.
-  \end{enumerate}
-\end{rem}
-
-
-\section*{Παραδείγματα}
-
-\subsection*{Περίπτωση $ \Bigl(\frac{0}{0}\Bigr) $}
-
-Σε αυτήν την περίπτωση, εφαρμόζουμε τον κανόνα L' H\^{o}pital.
-
-\begin{example}
-  Να υπολογιστεί το όριο $ \lim_{x \to 1} \frac{\ln{x}}{x-1} $
-\end{example}
-\begin{solution}
-  $ \lim_{x \to 1} \frac{\ln{x}}{x-1}
-  \overset{\left(\frac{0}{0}\right)}{\underset{\mathrm{LH}}{=}}  \lim_{x \to 1} 
-  \frac{(\ln{x} )'}{(x-1)'} = \lim_{x \to 1} \frac{\frac{1}{x}}{1} = 
-  \lim_{x \to 1} \frac{1}{x} = 1 $
-\end{solution}
-
-\begin{example}
-  Να υπολογιστεί το όριο $ \lim_{x \to 0} \frac{3x- \sin{x}}{x} $
-\end{example}
-\begin{solution}
-  $ \lim_{x \to 0} \frac{3x- \sin{x}}{x} \overset{(\frac{0}{0})}{=} \lim_{x \to 0}
-  \frac{(3x- \sin{x} )'}{(x)'} = \lim_{x \to 0} \frac{3- \cos{x}}{1} = \frac{3- 1}{1}
-  = 2 $
-\end{solution}
-
-\begin{example}
-  Να υπολογιστεί το όριο $ \lim_{x \to 0} \frac{\sqrt{1+x} -1}{x} $
-\end{example}
-\begin{solution}
-  $ \lim_{x \to 0} \frac{\sqrt{1+x} -1}{x} \overset{(\frac{0}{0})}{=} \lim_{x \to 0}
-  \frac{(\sqrt{1+x} -1)'}{(x)'} = \lim_{x \to 0} \frac{\frac{1}{2 \sqrt{1+x}}}{1} = 
-  \lim_{x \to 0} \frac{1}{2 \sqrt{1+x}} = \frac{1}{2} $
-\end{solution}
-
-\begin{example}
-  Να υπολογιστεί το όριο $ \lim_{x \to 0} \frac{x- \sin{x}}{x^{3}} $
-\end{example}
-\begin{solution} 
-  $\lim_{x \to 0} \frac{x - \sin{x}}{x^{3}}
-  \overset{\left(\frac{0}{0}\right)}{\underset{\mathrm{LH}}{=}} 
-  \lim_{x \to 0} \frac{1 - \cos{x}}{3x^{2}}
-  \overset{\left(\frac{0}{0}\right)}{\underset{\mathrm{LH}}{=}} 
-  \lim_{x \to 0} \frac{\sin{x}}{6x} 
-  \overset{\left(\frac{0}{0}\right)}{\underset{\mathrm{LH}}{=}} 
-  \lim_{x \to 0} \frac{\cos{x}}{6} = \frac{1}{6}$ 
-\end{solution}
-
-
-\subsection*{Περίπτωση $ \bigl(\frac{\infty}{\infty}\bigr) $}
-
-Σε αυτήν την περίπτωση, εφαρμόζουμε τον κανόνα L' H\^{o}pital.
-
-\begin{example}
-  Να υπολογιστεί το όριο $ \lim_{x \to \infty} \frac{\mathrm{e}^{x}}{x^{2}} $
-\end{example}
-\begin{solution}
-  $ \lim_{x \to \infty} \frac{\mathrm{e}^{x}}{x^{2}}
-  \overset{\left(\frac{\infty}{\infty}\right)}{\underset{\mathrm{LH}}{=}} \lim_{x \to
-  \infty} \frac{(\mathrm{e}^{x} )'}{(x^{2})'} = \lim_{x \to \infty}
-  \frac{\mathrm{e}^{x}}{2x}
-  \overset{\left(\frac{\infty}{\infty}\right)}{\underset{\mathrm{LH}}{=}} 
-  \lim_{x \to \infty} \frac{(\mathrm{e}^{x})'}{(2x)'} = \lim_{x \to \infty}
-  \frac{\mathrm{e}^{x}}{2} = \infty
-  $ 
-\end{solution}
-
-\begin{example}
-  Να υπολογιστεί το όριο $ \lim_{x \to \infty} \frac{\ln{x}}{\sqrt{x}} $
-\end{example}
-\begin{solution}
-  $ \lim_{x \to \infty} \frac{\ln{x}}{\sqrt{x}}
-  \overset{\left(\frac{\infty}{\infty}\right)}{\underset{\mathrm{LH}}{=}} 
-  \lim_{x \to \infty} \frac{(\ln{x} )'}{(\sqrt{x} )'} = \lim_{x \to \infty}
-  \frac{\frac{1}{x}}{\frac{1}{2 \sqrt{x}}} = \lim_{x \to \infty} 
-  \frac{2 \sqrt{x} }{x} = \lim_{x \to \infty} \frac{2}{\sqrt{x}} = 0
-  $
-\end{solution}
-
-
-\subsection*{Περίπτωση $ (0 \cdot \infty) $}
-
-Αν το όριο $ \lim_{x \to x_{0}} \left(f(x)\cdot g(x)\right) $, όπου $ x_{0} \in
-\mathbb{R} $ ή $ x_{0}= \pm \infty $, είναι απροσδιόριστο της μορφής $ (0 \cdot \pm
-\infty) $, τότε μετατρέπουμε το γινόμενο $ f(x) \cdot g(x) $ σε πηλίκο, όπως παρακάτω:
-\[
-  f(x)\cdot g(x) = \frac{f(x)}{\frac{1}{g(x)}} \quad \text{ή} \quad
-  f(x) \cdot g(x) = \frac{g(x)}{\frac{1}{f(x)}}  
-\] 
-και έτσι αναγόμστε σε όριο της μορφής $ (\frac{0}{0}) $ ή $
-(\frac{\infty}{\infty}) $ όπου μπορούμε να εφαρμόσουμε τον κανόνα L' H\^{o}pital.
-
-\begin{example}
-  Να υπολογιστεί το όριο $ \lim_{x \to 0^{+}} (x \ln{x}) $
-\end{example}
-\begin{solution}
-  $ \lim_{x \to 0^{+}} (x \ln{x}) \overset{(0 \cdot (-\infty))}{=} \lim_{x \to 0^{+}}
-  \frac{\ln{x}}{\frac{1}{x}}
-  \overset{\left(\frac{\infty}{\infty}\right)}{\underset{\mathrm{LH}}{=}} 
-  \lim_{x \to 0^{+}} \frac{(\ln{x} )'}{(\frac{1}{x} )'} = \lim_{x \to 0^{+}}
-  \frac{\frac{1}{x}}{- \frac{1}{x{2}}} = \lim_{x \to 0^{+}} \Bigl(-\frac{x^{2}}{x}\Bigr) 
-  = \lim_{x \to 0^{+}} (-x) = 0 $
-\end{solution}
-
-\begin{example}
-  Να υπολογιστεί το όριο $ \lim_{x \to \infty} (x \mathrm{e}^{-x}) $
-\end{example}
-\begin{solution}
-  $ \lim_{x \to \infty} (x \mathrm{e}^{-x} ) \overset{(\infty\cdot 0)}{=} \lim_{x \to
-  \infty} \frac{x}{\mathrm{e}^{x}}
-  \overset{\left(\frac{\infty}{\infty}\right)}{\underset{\mathrm{LH}}{=}} 
-  \lim_{x \to \infty} \frac{(x)'}{(\mathrm{e}^{x} )'} = \lim_{x \to \infty}
-  \frac{1}{\mathrm{e}^{x}} = 0 $
-\end{solution}
-
-
-\subsection*{Περίπτωση $ (\infty - \infty)$}
-
-Αν το όριο $ \lim_{x \to x_{0}} \left(f(x) \pm g(x)\right) $, όπου $ x_{0} \in
-\mathbb{R} $ ή $ x_{0}= \pm \infty $, είναι απροσδιόριστο της μορφής $ (\infty-
-\infty) $, τότε βγάζουμε κοινό παράγοντα μία εκ των δύο συναρτήσεων, όπως παρακάτω: 
-\[
-  f(x) \pm g(x) = f(x)\Bigl(1 \pm \frac{g(x)}{f(x)}\Bigr) \quad \text{ή} \quad f(x) \pm g(x) =
-  g(x)\Bigl(\frac{f(x)}{g(x)} - 1\Bigr)
-\] 
-και έτσι αναγόμστε σε όριο της μορφής $ \Bigl(\frac{0}{0}\Bigr) $ ή $
-\Bigl(\frac{\infty}{\infty}\Bigr) $ όπου μπορούμε να εφαρμόσουμε τον κανόνα L' H\^{o}pital.
-
-
-\begin{example}
-  Να υπολογιστεί το όριο $ \lim_{x \to \infty} (\mathrm{e}^{x} -x) $
-\end{example}
-\begin{solution}
-  $ \lim_{x \to \infty} (\mathrm{e}^{x} - x) = \lim_{x \to \infty} x(\mathrm{e}^{x}
-  - 1) = \lim_{x \to \infty} x \cdot \lim_{x \to \infty} \Bigl(\frac{\mathrm{e}^{x}}{x}
-  -1\Bigr) $
-  \begin{myitemize}
-    \item $ \lim_{x \to \infty} x = \infty $
-    \item $ \lim_{x \to \infty} \left(\frac{\mathrm{e}^{x}}{x} -1\right) = 
-      \lim_{x \to \infty} \frac{\mathrm{e}^{x}}{x} -1
-      \overset{\left(\frac{\infty}{\infty}\right)}{\underset{\mathrm{LH}}{=}} 
-      \lim_{x \to \infty} \frac{(\mathrm{e}^{x} )'}{(x)'} -1 = \lim_{x \to \infty}
-      \frac{\mathrm{e}^{x}}{1} -1 = \lim_{x \to \infty} \mathrm{e}^{x} -1 = \infty- 1 
-      = \infty$
-  \end{myitemize}
-  Επομένως $ \lim_{x \to \infty} x \cdot \lim_{x \to \infty}
-  \Bigl(\frac{\mathrm{e}^{x}}{x} -1 \Bigr) = \infty\cdot \infty = \infty$ 
-\end{solution}
-
-\begin{example}
-  Να υπολογιστεί το όριο $ \lim_{x \to 1^{+}} \left(\frac{1}{\ln{x}} -
-  \frac{1}{x-1}\right) $
-\end{example}
-\begin{solution} 
-  $\lim_{x \to 1^{+}} \frac{x-1- \ln{x}}{(x-1) \ln{x}})
-    \overset{\left(\frac{0}{0}\right)}{\underset{\mathrm{LH}}{=}} \!
-    \lim_{x \to 1^{+}} \frac{1- \frac{1}{x}}{\ln{x} + (x-1) \frac{1}{x}} = \!
-    \lim_{x \to 1^{+}} \frac{x-1}{ x \ln{x} + x-1} 
-    \overset{\left(\frac{0}{0}\right)}{\underset{\mathrm{LH}}{=}} \!
-    \lim_{x \to 1^{+}} \frac{1}{\ln{x} +x \frac{1}{x}+1} =
-    \lim_{x \to 1^{+}} \frac{1}{\ln{x}+2} = \frac{1}{2}$ 
-\end{solution}
-
-
-\subsection*{Περιπτώσεις $ (1^{\infty}), \; (0^{0}), \; (\infty^{0}) $}
-
-Αν το όριο $ \lim_{x \to x_{0}} f(x)^{g(x)} $, όπου $ x_{0} \in
-\mathbb{R} $ ή $ x_{0}= \pm \infty $, είναι απροσδιόριστο της μορφής 
-$ (1^{\infty}) $, $ (0^0) $ ή $ (\infty^{0}) $ 
-τότε εφαρμόζουμε την παρακάτω διαδικασία, των 3 βημάτων:
-\begin{myitemize}
-  \item \textcolor{Col1}{Λογαριθμίζουμε τη συνάρτηση $ f(x)^{g(x)} $:} $ \ln{\bigl[f(x)^{g(x)}\bigr]} = g(x)\cdot \ln{f(x)} $
-  \item \textcolor{Col1}{Υπολογίζουμε το όριο της λογαριθμισμένης συνάρτησης:} 
-    $ \lim_{\smash{x \to x_{0}}} \left[g(x)\cdot \ln{f(x)}\right] = \ldots = a $
-  \item \textcolor{Col1}{Υπολογίζουμε το ζητούμενο όριο:} 
-    $ \lim_{x \to x_{0}} \smash{f(x)^{g(x)}} = \mathrm{e}^{a} $
-\end{myitemize}
-
-
-\begin{example}
-  Να υπολογιστεί το όριο $ \lim_{x \to 0^{+}} x^{x} $
-\end{example}
-\begin{solution}
-  Παρατηρούμε ότι το όριο $ \lim_{x \to 0^{+}} x^{x} $ είναι απροσδιόριστο, της μορφής 
-  $ 0^{0} $ . Επομένως:
-  \begin{myitemize}
-    \item \textbf{Λογαριθμίζουμε:} $ \ln{x^{x}} = x \ln{x} $
-    \item \textbf{Όριο Λογαριθμισμένης:} $ \lim_{x \to 0^{+}} x \ln{x} \overset{(0 \cdot
-      \infty)}{=} \lim_{x \to 0^{+}} \frac{\ln{x}}{\frac{1}{x}}
-      \overset{\left(\frac{\infty}{\infty}\right)}{\underset{\mathrm{LH}}{=}}  
-      \lim_{x \to 0^{+}} \frac{(\ln{x} )'}{(\frac{1}{x} )'} = \lim_{x \to 0^{+}}
-      \frac{\frac{1}{x}}{- \frac{1}{x^{2}}} = \lim_{x \to 0^{+}} (-x) = 0 $
-    \item \textbf{Ζητούμενο όριο:} $ \lim_{x \to 0^{+}} x^{x} = \lim_{x \to 0^{+}} = 
-      \mathrm{e}^{0} = 1 $ 
-  \end{myitemize}
-\end{solution}
-
-\begin{example}
-  Να υπολογιστεί το όριο $ \lim_{x \to \infty} \Bigl(1+ \frac{1}{x}\Bigr)^{x} $
-\end{example}
-\begin{solution}
-  Παρατηρούμε ότι το όριο $ \lim_{x \to \infty} \Bigl(1+ \frac{1}{x}\Bigr)^{x} $ 
-  είναι απροσδιόριστο, της μορφής $ 1^{\infty} $ . Επομένως:
-  \begin{myitemize}
-    \item \textbf{Λογαριθμίζουμε:} $ \ln{\Bigl(1+ \frac{1}{x}\Bigr)^{x}} = 
-      x \ln{\Bigl(1 + \frac{1}{x}\Bigr)} $
-    \item \textbf{Όριο Λογαριθμισμένης:} $ \lim_{x \to \infty}\Bigl[x \ln{\Bigl(1+
-      \frac{1}{x}\Bigr)}\Bigr] = \lim_{x \to \infty} x \cdot \lim_{x \to \infty} 
-      \ln{\Bigl(1+ \frac{1}{x}\Bigr)}$
-      \begin{myitemize}
-        \item $ \lim_{x \to \infty} x = \infty $
-        \item $ \lim_{x \to \infty} \ln{\Bigl(1+ \frac{1}{x}\Bigr)} = \ln{1} = 0 $, 
-          γιατί $ \lim_{x \to \infty} \Bigl(1+ \frac{1}{x}\Bigr) = 
-          1 + \lim_{x \to \infty} \frac{1}{x} = 1+0=1 $
-      \end{myitemize}
-    \item \textbf{Ζητούμενο όριο:} $ \lim_{x \to \infty} 
-      \Bigl(1+ \frac{1}{x}\Bigr)^{x} = \mathrm{e}^{1} = \mathrm{e} $
-  \end{myitemize}    
-\end{solution}
 
 
 
