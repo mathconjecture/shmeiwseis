@@ -1,5 +1,5 @@
 \input{preamble_ask.tex}
-\input{definitions.tex}
+\input{definitions_ask.tex}
 \input{tikz.tex}
 \input{myboxes.tex}
 
@@ -8,11 +8,28 @@
 
 \input{insbox}
 
-\newcommand{\twocolumnsidesch}[2]{\begin{minipage}[c]{0.45\linewidth}\raggedright
-    #1
-    \end{minipage}\hfill\begin{minipage}[c]{0.45\linewidth}\raggedright
-    #2
-\end{minipage}}
+\newcommand{\twocolumnsidescc}[2]{\begin{minipage}[c]{0.30\linewidth}\raggedright
+        #1
+        \end{minipage}\quad\begin{minipage}[c]{0.30\linewidth}\raggedright
+        #2
+    \end{minipage}
+}
+
+\newcommand{\twocolumnsidesr}[2]{\begin{minipage}[t]{0.38\linewidth}\raggedright
+        #1
+        \end{minipage}\hfill\begin{minipage}[t]{0.60\linewidth}\raggedright
+        #2
+    \end{minipage}
+}
+
+\newcommand{\twocolumnsidesrr}[2]{\begin{minipage}[t]{0.45\linewidth}\raggedright
+        #1
+        \end{minipage}\hfill\begin{minipage}[t]{0.51\linewidth}\raggedright
+        #2
+    \end{minipage}
+}
+
+
 
 \everymath{\displaystyle}
 \pagestyle{askhseis}
@@ -143,7 +160,7 @@ decorations.pathmorphing, decorations.shapes,decorations.text}
     \node at (2,1) {$(b)$} ;
   \end{tikzpicture}
 }{
-\begin{tikzpicture}[]
+  \begin{tikzpicture}[]
     \draw[->,blue!55,>=stealth] (-1,0) -- (3,0) node[right] {$x$} ;
     \draw[->,blue!55,>=stealth] (0,-0.7) -- (0,2.5) node [above] {$y$} ;
     \draw[color=Col1,samples=200,domain=-0.6:1.4,thick] plot (\x, {\x*\x}) 
@@ -270,7 +287,7 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
 \begin{rem}
   Στην ιδιότητα 11, όταν $ n $ άρτιος,  προυποθέτουμε ότι $ f(x) \geq 0, \; \forall x $, 
   σε μια περιοχή του $ x_{0} $.
-  \end{rem}
+\end{rem}
 
 \begin{rem}
   Προσοχή! Το αντίστροφο της ιδιότητας 9, δεν ισχύει πάντα. Για παράδειγμα, 
@@ -284,8 +301,8 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
 \end{rem}
 
 \begin{rem}
-  Προσοχή! Το αντίστροφο της ιδιότητας 10 δεν ισχύει πάντα. Αν θεωρήσουμε το 
-  ίδιο παράδειγμα, έχουμε 
+  Προσοχή! Το αντίστροφο της ιδιότητας 10 δεν ισχύει πάντα. Αν θεωρήσουμε την
+  ίδια συνάρτηση, έχουμε 
   \[
     \lim_{x \to 0} \Bigl(\frac{\abs{x}}{x}\Bigr)^{2} = \lim_{x \to 0}
     \frac{x^{2}}{x^{2}} =1 \quad \text{όμως} \quad \lim_{x \to 0} f(x) = \lim_{x \to 0}
@@ -391,25 +408,24 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
 \end{prop}
 
 \begin{prop}
-Ισχύουν οι παρακάτω ισοδυναμίες
-
-\begin{empheq}[box=\mathboxg]{equation*}
-  \twocolumnsidesc{
-    \begin{enumerate}
-      \item $ \lim_{x \to x_{0}} f(x) = a \Leftrightarrow \lim_{x \to x_{0}} (f(x)-a)=0 $
-      \item $ \lim_{x \to x_{0}} f(x) = a \Leftrightarrow \lim_{x \to x_{0}} \abs{f(x)-a}=0 $
-      \item $ \lim_{x \to x_{0}} f(x) = 0 \Leftrightarrow \lim_{x \to x_{0}} \abs{f(x)}=0 $ 
-    \end{enumerate}
-  }{
-    \begin{enumerate}
-      \item $ \lim_{x \to x_{0}} f(x) = a \Leftrightarrow \lim_{x \to x_{0}} (-f(x))=-a $ 
-      \item $ \lim_{x \to x_{0}} f(x) = a \Leftrightarrow \lim_{h \to 0} f(x_{0}+h)=a  $
-      \item $ \lim_{x \to x_{0}} f(x) = a \Leftrightarrow \lim_{h \to 1} f(x_{0}\cdot
-        h)=a, \; x_{0} \neq 0 $
-    \end{enumerate}
-  }
-\end{empheq}
-  \end{prop}
+  Ισχύουν οι παρακάτω ισοδυναμίες
+  \begin{empheq}[box=\mathboxg]{equation*}
+    \twocolumnsidesc{
+      \begin{enumerate}
+        \item $ \lim_{x \to x_{0}} f(x) = a \Leftrightarrow \lim_{x \to x_{0}} (f(x)-a)=0 $
+        \item $ \lim_{x \to x_{0}} f(x) = a \Leftrightarrow \lim_{x \to x_{0}} \abs{f(x)-a}=0 $
+        \item $ \lim_{x \to x_{0}} f(x) = 0 \Leftrightarrow \lim_{x \to x_{0}} \abs{f(x)}=0 $ 
+      \end{enumerate}
+    }{
+      \begin{enumerate}[start=4]
+        \item $ \lim_{x \to x_{0}} f(x) = a \Leftrightarrow \lim_{x \to x_{0}} (-f(x))=-a $ 
+        \item $ \lim_{x \to x_{0}} f(x) = a \Leftrightarrow \lim_{h \to 0} f(x_{0}+h)=a  $
+        \item $ \lim_{x \to x_{0}} f(x) = a \Leftrightarrow \lim_{h \to 1} f(x_{0}\cdot
+          h)=a, \; x_{0} \neq 0 $
+      \end{enumerate}
+    }
+  \end{empheq}
+\end{prop}
 
 
 \begin{prop}[Κριτήριο Παρεμβολής]
@@ -429,9 +445,9 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
   Να δείξετε ότι $ \lim_{x \to 0} \Bigl(x^{2} \sin{\frac{1}{x}}\Bigr) = 0  $ 
 \end{example}
 \begin{solution}
-Καταρχάς, παρατηρούμε ότι δεν μπορούμε να εφαρμόσουμε τις ιδιότητες των ορίων, και να 
-«σπάσουμε» ενδεχομένως, το όριο, στο γινόμενο των ορίων, γιατί, το όριο 
-$ \lim_{x \to 0} \sin{1/x} $, δεν υπάρχει.
+  Καταρχάς, παρατηρούμε ότι δεν μπορούμε να εφαρμόσουμε τις ιδιότητες των ορίων, και να 
+  «σπάσουμε» ενδεχομένως, το όριο, στο γινόμενο των ορίων, γιατί, το όριο 
+  $ \lim_{x \to 0} \sin{1/x} $, δεν υπάρχει.
   Επομένως, έχουμε, ότι
   \[
     - x^{2} \leq x^{2} \sin{\frac{1}{x}} \leq x^{2}, \; \forall x \in \mathbb{R}^{*}
@@ -439,24 +455,169 @@ $ \lim_{x \to 0} \sin{1/x} $, δεν υπάρχει.
   και επειδή $ \lim_{x \to 0} (-x^{2}) = \lim_{x \to 0} x^{2} = 0 $, σύμφωνα με το 
   Κριτήριο Παρεμβολής, προκύπτει ότι 
   \[
-    \lim_{x \to 0} \left(x^{2} \sin{\frac{1}{x}}\right)  = 0
+    \lim_{x \to 0} \Bigl(x^{2} \sin{\frac{1}{x}}\Bigr)  = 0
   \]
 \end{solution}
 
-\begin{prop}[Όριο Μηδενικής επί Φραγμένης]
+\begin{cor}
 \item {}
-  \begin{minipage}[t]{7.5 cm}
+  \begin{minipage}[t]{6.5 cm}
     \begin{myitemize}
-      \item $ \lim_{x \to x_{0}} f(x) = 0 $
+      \item $ \abs{f(x)} \leq g(x) $ σε μια περιοχή του $ x_{0} $
         \hfill\tikzmark{a}
-      \item $ m \leq g(x) \leq M, \; \forall x $ σε μια περιοχή του $ x_{0} $
+      \item $ \lim_{x \to x_{0}} g(x) = 0 $
         \hfill\tikzmark{b}
     \end{myitemize}
   \end{minipage}
-  \mybrace{a}{b}[ $ \lim_{x \to x_{0}} f(x) \cdot g(x) = 0 $ ]
+  \mybrace{a}{b}[ $ \lim_{x \to x_{0}} f(x) = 0 $ ]
+\end{cor}
+
+\begin{example}
+  Να δείξετε ότι $ \lim_{x \to 0} \Bigl(x \cos{\frac{1}{x}}\Bigr) = 0 $
+\end{example}
+\begin{solution}
+  Έχουμε ότι
+  \[
+    \Bigl|x \cos{\frac{1}{x}}\Bigr| = \abs{x} \cdot 
+    \Bigl|\cos{\frac{1}{x}}\Bigr| \leq \abs{x} \cdot 1 = 
+    \abs{x}, \; \forall x \in \mathbb{R}
+  \] 
+  Όμως $ \lim_{x \to 0} \abs{x} = 0 $
+  Επομένως από το πόρισμα του Κριτηρίου Παρεμβολής, έχουμε ότι 
+  \[
+    \lim_{x \to 0} \Bigl(x \cos{\frac{1}{x}}\Bigr) = 0 
+  \] 
+\end{solution}
+
+
+\section*{Όρια με παρονομαστή 0}
+
+\begin{prop}
+\item {}
+  \begin{myitemize}
+    \item Αν $ \lim_{x \to x_{0}} g(x) = 0 $ με $ g(x)>0 $ σε μια περιοχή του $ x_{0} $ 
+      τότε $ \lim_{x \to x_{0}} \frac{1}{g(x)} = + \infty $
+    \item Αν $ \lim_{x \to x_{0}} g(x) = 0 $ με $ g(x)<0 $ σε μια περιοχή του $ x_{0} $ 
+      τότε $ \lim_{x \to x_{0}} \frac{1}{g(x)} = - \infty $
+  \end{myitemize}
 \end{prop}
 
+\begin{rem}
+  Στην παραπάνω πρόταση, θα μπορούσε $ x_{0} = +\infty $ ή $ - \infty $.
+\end{rem}
 
+\begin{example}
+  $ \lim_{x \to 2^{-}} \frac{1}{x-2} = - \infty $, γιατί αφού $ x \to 2^{-} 
+  \Rightarrow x < 2 $, άρα $ x-2<0 $ 
+\end{example}
+\begin{example}
+  $ \lim_{x \to 2^{+}} \frac{1}{x-2} = + \infty $, γιατί αφού $ x \to 2^{+} 
+  \Rightarrow x > 2 $, άρα $ x-2>0 $ 
+\end{example}
+
+% \begin{example}
+%   $ \lim_{x \to -2^{-}} \frac{1}{x+2} = - \infty $, γιατί αφού $ x \to -2^{-} 
+%   \Rightarrow x < -2 $, άρα $ x+2<0 $ 
+% \end{example}
+% \begin{example}
+%   $ \lim_{x \to -2^{+}} \frac{1}{x+2} = + \infty $, γιατί αφού $ x \to -2^{+} 
+%   \Rightarrow x > -2 $, άρα $ x+2>0 $ 
+% \end{example}
+% \section*{Όρια Ρητών Συναρτήσεων στο άπειρο}
+
+
+
+\twocolumnsidesr{
+  \section*{Όρια στο άπειρο}
+    \begin{prop}Έστω $ n \in \mathbb{N} $. Τότε
+  \begin{mybox1}
+    \item {}
+      \begin{myitemize}
+        \item $ \lim_{x \to +\infty} x^{n} = + \infty, \; n \in \mathbb{N} $ 
+        \item $ \lim_{x \to -\infty} x^{n} = 
+          \begin{cases}
+            + \infty, & n \; \text{άρτιος} \\ 
+            - \infty, & n \; \text{περιττός} \\ 
+          \end{cases} $ 
+        \item $ \lim_{x \to \pm \infty} \frac{1}{x^{n}} = 0 $
+      \end{myitemize}
+  \end{mybox1}
+    \end{prop}
+}{
+  \section*{Πράξεις στο $ \overline{\mathbb{R}} = \mathbb{R} \cup \{ +\infty, -\infty \} $}
+  \begin{mybox3}
+    \begin{myitemize}
+      \item $ - \infty< \infty $ και $ - \infty < a < + \infty, \; \forall a \in \mathbb{R} $
+      \item $ + \infty + (+ \infty) = + \infty $ και $ - \infty + (- \infty) = - \infty $
+      \item $ + \infty \pm a = + \infty $ και $ - \infty \pm a = - \infty, \; \forall a \in
+        \mathbb{R} $ 
+    \end{myitemize}
+  \end{mybox3}
+  \twocolumnsidesrr{
+    \begin{mybox3}
+      \begin{myitemize}
+        \item $ (+ \infty)\cdot (+ \infty) = + \infty $
+        \item $ (- \infty)\cdot (- \infty) = + \infty $
+        \item $ (+ \infty)\cdot (- \infty) = - \infty $
+        \item $ \frac{a}{\pm \infty} = 0, \; \forall a \in \mathbb{R} $
+      \end{myitemize}
+    \end{mybox3}
+  }{
+    \begin{mybox3}
+      \begin{myitemize}
+        \item $ a \cdot (+ \infty) = 
+          \begin{cases}
+            + \infty, & a>0 \\
+            - \infty, & a<0 
+          \end{cases}$ 
+        \item $ a \cdot (- \infty) = 
+          \begin{cases}
+            - \infty, & a>0 \\
+            + \infty, & a<0 
+          \end{cases}$ 
+      \end{myitemize}
+    \end{mybox3}
+}}
+
+
+\section*{Όρια Ρητών Συναρτήσεων στο άπειρο}
+
+\begin{prop}
+  Αν $ p(x) = a_{n} x^{n} + a_{n-1}x^{n-1}+\cdots + a_{1}x + a_{0}, \; a_{n} \neq 0  $ 
+  και $ q(x) = b_{m} x^{m} + b_{m-1}x^{m-1}+\cdots + b_{1}x + b_{0}, \; b_{m} \neq 0 $, 
+  τότε, ισχύει 
+  \begin{center}
+    \twocolumnsidescc{
+      \begin{empheq}[box=\mathboxg]{equation*}
+        \lim_{x \to \pm\infty} p(x) = \lim_{x \to \pm \infty} a_{n}x^{n}
+      \end{empheq}
+    }{
+      \begin{empheq}[box=\mathboxg]{equation*}
+        \lim_{x \to \pm\infty} \frac{p(x)}{q(x)} = \lim_{x \to \pm \infty}
+        \frac{a_{n}x^{n}}{b_{m}x^{m}}
+      \end{empheq}
+    }
+  \end{center}
+\end{prop}
+
+\begin{example}
+  $ \lim_{x \to \infty} (-2x^{3}+x^{2-1}) = \lim_{x \to \infty} (-2x^{3}) = -2
+  \lim_{x \to \infty} x^{3} = -2 \cdot \infty = - \infty $
+\end{example}
+\begin{example}
+  $ \lim_{x \to - \infty} \frac{2x^{2}-x+2}{x^{3}-x+1} = \lim_{x \to - \infty}
+  \frac{2 x^{2}}{x^{3}} = \lim_{x \to - \infty} \frac{2}{x} = 0 $
+\end{example}
+\begin{example}
+  $ \lim_{x \to \infty} \frac{-2x^{2}-x+1}{3x^{2}-2} = \lim_{x \to \infty}
+  \frac{-2 x^{2}}{3 x^{2}} = \lim_{x \to \infty} \frac{-2}{3} = - 
+  \frac{2}{3} $ 
+\end{example}
+\begin{example}
+  $ \lim_{x \to - \infty} \frac{-3x^{5}+2x-1}{x^{2}+1} = \lim_{x \to - \infty}
+  \frac{-3x^{5}}{x^{2}} = \lim_{x \to - \infty} (-3x^{3}) = -3 \lim_{x \to - \infty}
+  x^{3} = -3 \cdot (- \infty) = + \infty $
+\end{example}
 %todo να βαλω πινακακι με χρησιμα γνωστά ορια
 
 
@@ -466,7 +627,7 @@ $ \lim_{x \to 0} \sin{1/x} $, δεν υπάρχει.
 \section*{Απροσδιόριστες Μορφές}
 
 \subsection*{Όριο Ρητής συνάρτησης που είναι απροσδιόριστο της μορφής $\Bigl(\frac{0}{0}\Bigr) $}
- 
+
 Μπορούμε να κάνουμε άρση της απροσδιοριστίας, παραγοντοποιώντας αριθμητή και παρονομαστή.
 
 \begin{example}
@@ -481,9 +642,6 @@ $ \lim_{x \to 0} \sin{1/x} $, δεν υπάρχει.
 
 Μπορούμε να κάνουμε άρση της απροσδιοριστίας, πολλαπλασιάζοντας με την κατάλληλη 
 συζυγή παράσταση.
-
-
- 
 
 \begin{example}
   \begin{align*}
@@ -646,8 +804,8 @@ $ \lim_{x \to 0} \sin{1/x} $, δεν υπάρχει.
 \mathbb{R} $ ή $ x_{0}= \pm \infty $, προκύψει απροσδιόριστο της μορφής $ (\infty-
 \infty) $, τότε βγάζουμε κοινό παράγοντα μία εκ των δύο συναρτήσεων, όπως παρακάτω: 
 \[
-f(x) \pm g(x) = f(x)\Bigl(1 \pm \frac{g(x)}{f(x)}\Bigr) \quad \text{ή} \quad f(x) \pm g(x) =
-g(x)\Bigl(\frac{f(x)}{g(x)} - 1\Bigr)
+  f(x) \pm g(x) = f(x)\Bigl(1 \pm \frac{g(x)}{f(x)}\Bigr) \quad \text{ή} \quad f(x) \pm g(x) =
+  g(x)\Bigl(\frac{f(x)}{g(x)} - 1\Bigr)
 \] 
 και έτσι αναγόμστε σε απροσδιόριστο όριο της μορφής $ (\frac{0}{0}) $ ή $
 (\frac{\infty}{\infty}) $ όπου μπορούμε να εφραρμόσουμε τον κανόνα L' Hospital.
@@ -748,8 +906,114 @@ $ (1^{\infty}) $, $ (0^0) $ ή $ (\infty^{0}) $
   \end{myitemize}    
 \end{solution}
 
+\begin{prop}
+  Ισχύουν οι παρακάτω ιδιότητες.
+  \begin{enumerate}
+    \item $\lim_{x \to x_{0}} f(x) = - \infty \Leftrightarrow \lim_{x \to x_{0}} [-f(x)] = + \infty$ 
+    \item $\lim_{x \to x_{0}} f(x) = \pm \infty \Rightarrow \lim_{x \to x_{0}} \abs{f(x)} = + \infty$
+    \item $\lim_{x \to x_{0}} f(x) = \pm \infty \Rightarrow \lim_{x \to x_{0}} \sqrt[n]{\abs{f(x)}} = + 
+      \infty$
+    \item $\lim_{x \to x_{0}} f(x) = + \infty \; \text{και} \; \lim_{x \to x_{0}} g(x) = + \infty
+      \Rightarrow \lim_{x \to x_{0}} [f(x)+g(x)] = + \infty$
+    \item $\lim_{x \to x_{0}} f(x) = - \infty \; \text{και} \; \lim_{x \to x_{0}} g(x) = - \infty
+      \Rightarrow \lim_{x \to x_{0}} [f(x)+g(x)] = - \infty$
+    \item $\lim_{x \to x_{0}} f(x) = + \infty \; \text{και} \; \lim_{x \to x_{0}} g(x) = a \in \mathbb{R}
+      \Rightarrow \lim_{x \to x_{0}} [f(x)+g(x)] = + \infty$
+    \item $\lim_{x \to x_{0}} f(x) = - \infty \; \text{και} \; \lim_{x \to x_{0}} g(x) = a \in \mathbb{R}
+      \Rightarrow \lim_{x \to x_{0}} [f(x)+g(x)] = - \infty$
+    \item $\lim_{x \to x_{0}} f(x) = + \infty \; \text{και} \; \lim_{x \to x_{0}} g(x) = + \infty
+      \Rightarrow \lim_{x \to x_{0}} [f(x)\cdot g(x)] = + \infty$
+    \item $\lim_{x \to x_{0}} f(x) = - \infty \; \text{και} \; \lim_{x \to x_{0}} g(x) = - \infty
+      \Rightarrow \lim_{x \to x_{0}} [f(x)\cdot g(x)] = + \infty$
+    \item $\lim_{x \to x_{0}} f(x) = + \infty \; \text{και} \; \lim_{x \to x_{0}} g(x) = - \infty
+      \Rightarrow \lim_{x \to x_{0}} [f(x)\cdot g(x)] = - \infty$
+    \item $\lim_{x \to x_{0}} f(x) = + \infty \; \text{και} \; \lim_{x \to x_{0}} g(x) = a \in \mathbb{R}- \{
+      0 \} \Rightarrow \lim_{x \to x_{0}} [f(x)\cdot g(x)] = 
+      \begin{cases}
+        + \infty & a>0 \\
+        - \infty & a<0
+      \end{cases}$
+    \item $\lim_{x \to x_{0}} f(x) = - \infty \; \text{και} \; \lim_{x \to x_{0}} g(x) = a \in \mathbb{R}- \{
+      0 \} \Rightarrow \lim_{x \to x_{0}} [f(x)\cdot g(x)] = 
+      \begin{cases}
+        - \infty & a>0 \\
+        + \infty & a<0
+      \end{cases}$
+    \item $ \lim_{x \to x_{0}} g(x) = \pm \infty \Rightarrow \lim_{x \to x_{0}} \frac{1}{g(x)} = 0 $
+    \item $ \lim_{x \to x_{0}} f(x) = a \in \mathbb{R} \; \text{και} \lim_{x \to x_{0}} g(x) = 0 $ με $ g(x)>0
+      \Rightarrow \lim_{x \to x_{0}} \frac{f(x)}{g(x)} = 
+      \begin{cases}
+        + \infty & a>0 \\
+        - \infty & a<0
+      \end{cases}$
+    \item $ \lim_{x \to x_{0}} f(x) = a \in \mathbb{R} \; \text{και} \lim_{x \to x_{0}} g(x) = 0 $ με $ g(x)<0
+      \Rightarrow \lim_{x \to x_{0}} \frac{f(x)}{g(x)} = 
+      \begin{cases}
+        - \infty & a>0 \\
+        + \infty & a<0
+      \end{cases}$
+    \item $f(x) \leq g(x) $ και $ \lim_{x \to x_{0}} f(x) = + \infty \Rightarrow \lim_{x \to x_{0}} g(x) = +
+      \infty $ 
+    \item $f(x) \leq g(x) $ και $ \lim_{x \to x_{0}} g(x) = - \infty \Rightarrow \lim_{x \to x_{0}} f(x) = -
+      \infty $ 
+  \end{enumerate}
+\end{prop}
+
+\section*{Χρήσιμα Όρια}
+
+%todo check wikipedia
+
+\begin{enumerate}
+  \item $ \lim_{x \to \infty} x^{a} = 
+    \begin{cases}
+      \infty & a>0 \\
+      1 & a=0 \\
+      0 & a<0
+    \end{cases}$
+  \item $ \lim_{x \to \infty} x{1/a} = \lim_{x \to \infty} \sqrt[a]{x} = \infty, \;
+    \forall a >0 $
+  \item $ \lim_{x \to \infty} a^{x} = 
+    \begin{cases}
+      \infty & a>1 \\
+      1 & a=1 \\
+      0 & 0<a<1
+    \end{cases}$
+  \item $ \lim_{x \to \infty} a^{-x} = 
+    \begin{cases}
+      0 & a>1 \\
+      1 & a=1 \\
+      \infty & 0<a<1
+    \end{cases}$
+  \item $ \lim_{x \to \infty} a^{1/x} = \lim_{x \to \infty} \sqrt[x]{a} = 
+    \begin{cases}
+      1 & a>0 \\
+      0 & a=0 \\
+      \text{δεν υπάρχει} & a<0
+    \end{cases}$
+  \item $ \lim_{x \to \infty} χ^{1/x} = \lim_{x \to \infty} \sqrt[x]{χ} = 1 $
+  \item $ \lim_{x \to \infty} (\frac{x}{x+a})^{x} = e^{_a} $
+  \item $ \lim_{x \to 0} (1+x)^{1/x} = \mathrm{e} $ 
+  \item $ \lim_{x \to 0} (1+ax)^{b/x} = \mathrm{e}^{\mathbb{A}} $
+  \item $ \lim_{x \to \infty} (1+ \frac{1}{x})^{x} = \mathrm{e} $
+  \item $ \lim_{x \to \infty} (1- \frac{1}{x})^{x} = \frac{1}{\mathrm{e}} $
+  \item $ \lim_{x \to \infty} (1+ \frac{a}{x})^{bx} = \mathrm{e}^{ba} $
+  \item $ \lim_{x \to 0} \frac{a^{x}-1}{x} = \ln{a}, \; \forall a>0 $ 
+  \item $ \lim_{x \to 0} \frac{\mathrm{e}^{x}-1}{x} = 1 $ 
+  \item $ \lim_{x \to 0} \frac{\mathrm{e}^{ax}-1}{x} = a $ 
+  \item $ \lim_{x \to 1} \frac{\ln{x}}{x-1} = 1 $ 
+  \item $ \lim_{x \to 0} \frac{\ln{(x+1)}}{x} = 1 $ 
+  \item $ \lim_{x \to 0^+} x \ln{x} = 0 $ 
+  \item $ \lim_{x \to \infty} \frac{\ln{x}}{x} = 0  $
+  \item $ \lim_{x \to 0} \frac{\sin{x}}{x} = 1 $
+  \item $ \lim_{x \to 0} \frac{\sin{x}}{x} = 1 $
+  \item $ \lim_{x \to 0} \frac{\sin{ax}}{ax} = 1, \; \forall a \neq 0 $
+  \item $ \lim_{x \to 0} \frac{\sin{ax}}{x} = a $
+  \item $ \lim_{x \to 0} \frac{\sin{ax}}{bx} = a/b \; \forall b \neq 0 $
+  \item $ \lim_{x \to \infty} \Bigl(x \sin{\frac{1}{x}}\Bigr) = 1 $
+  \item $ \lim_{x \to 0} \frac{1 - \cos{x}}{x} = 0 $
+  \item $ \lim_{x \to 0} \frac{1 - \cos{x}}{x^{2}} = 1/2 $
+\end{enumerate}
+
 
 \end{document}
-
-
 
