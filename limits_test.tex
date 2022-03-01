@@ -808,6 +808,83 @@ $ (1^{\infty}) $, $ (0^0) $ ή $ (\infty^{0}) $
 \end{mybox2}
 
 
+
+\section*{Έξτρα Παραδειγματα Απροσδιοριστα}
+
+
+
+\begin{example}
+  $ \lim_{x \to \infty} \frac{\ln{x}}{x^{2}+1}
+  \overset{\left(\frac{0}{0}\right)}{\underset{\mathrm{LH}}{=}} \lim_{x \to
+  \infty} \frac{\frac{1}{x}}{2x} = \lim_{x \to \infty} \frac{1}{2x^{2}}
+  \overset{\left(\frac{1}{\infty}\right)}{=} 0 $ 
+\end{example}
+
+\begin{example}
+  $ \lim_{x \to 0} \frac{\arctan{x}}{2x}
+  \overset{\left(\frac{0}{0}\right)}{\underset{\mathrm{LH}}{=}} \lim_{x \to 0}
+  \frac{\frac{1}{1+x^{2}}}{2} = \lim_{x \to 0} \frac{1}{2(1+x^{2})} = \frac{1}{2}
+  $ 
+\end{example}
+
+\begin{example}
+  $ \lim_{x \to 0} \frac{\mathrm{e}^{x^{2}} -1}{1- \cos{x}}
+  \overset{\left(\frac{0}{0}\right)}{\underset{\mathrm{LH}}{=}} \lim_{x \to 0}
+  \frac{2x \mathrm{e}^{x^{2}}}{\sin{x}} =
+  \overset{\left(\frac{0}{0}\right)}{\underset{\mathrm{LH}}{=}} \lim_{x \to 0}
+  \frac{2 \mathrm{e}^{x^{2}}+4x^{2} \mathrm{e}^{x^{2}}}{\cos{x}} = 2 $  
+\end{example}
+
+\begin{example}
+  $ \lim_{x \to 0^{+}} x^{2} \ln{x} \overset{(0\cdot \infty)}{=} \lim_{x \to 0^{+}} 
+  \frac{\ln{x}}{\frac{1}{x^{2}}}
+  \overset{\left(\frac{0}{0}\right)}{\underset{\mathrm{LH}}{=}}
+  \lim_{x \to 0^{+}} \frac{\frac{1}{x}
+  }{- \frac{2}{x^{3}}} = \lim_{x \to 0^{+}} \left(-\frac{x^{2}}{2}\right) = 0 $
+\end{example}
+
+\begin{example}
+  $ \lim_{x \to \pm \infty} x \sin{\frac{1}{x}} \overset{(0\cdot \infty)}{=}
+  \lim_{x \to \pm \infty} \frac{\sin{\frac{1}{ x}}}{\frac{1}{x}}
+  \overset{\left(\frac{0}{0}\right)}{\underset{\mathrm{LH}}{=}} \lim_{x \to \pm
+  \infty} \frac{\cos{\frac{1}{x}} \cdot (- \frac{1}{x^{2}})}{- \frac{1}{x^{2}}} =
+  \lim_{x \to \pm \infty} \cos{x} = 1 $
+\end{example}
+
+\begin{example}
+  \begin{align*}
+    \lim_{x \to \infty} (\ln{x} - \sqrt{x}) \overset{(\infty- \infty)}{=} \lim_{x \to
+    \infty} \sqrt{x} \left(\frac{\ln{x}}{\sqrt{x}}-1\right) = 
+    \lim_{x \to \infty} \sqrt{x} \cdot
+    \lim_{x \to \infty} \left(\frac{\ln{x}}{\sqrt{x}} - 1\right)
+  \end{align*}
+  \begin{myitemize}
+    \item $ \lim_{x \to \infty} \sqrt{x} = \infty $
+    \item $ \lim_{x \to \infty} \frac{\ln{x}}{\sqrt{x}}
+      \overset{\left(\frac{0}{0}\right)}{\underset{\mathrm{LH}}{=}} \lim_{x \to \infty}
+      \frac{\frac{1}{x}}{\frac{1}{2 \sqrt{x}}} = \lim_{x \to \infty}
+      \frac{2}{\sqrt{x}} = 0 $
+  \end{myitemize}
+  Άρα 
+  $ \lim_{x \to \infty} \sqrt{x} \cdot \lim_{x \to \infty}
+  \left(\frac{\ln{x}}{\sqrt{x}} -1\right) = \infty\cdot (0-1) = - \infty $
+\end{example}
+
+\begin{example}
+  \begin{align*}
+    \lim_{x \to 1} (\frac{x}{x-1} - \frac{1}{\ln{x}}) 
+    &= \overset{(\infty- \infty)}{=}
+    \lim_{x \to 1} \frac{x \ln{x} - (x-1)}{(x-1) \ln{x}}
+    \overset{\left(\frac{0}{0}\right)}{\underset{\mathrm{LH}}{=}} \lim_{x \to 1}
+    \frac{\ln{x} + \frac{1}{x} \cdot x -1}{\ln{x} + (x-1) \frac{1}{x}} \\
+    &= \lim_{x \to 1} \frac{x \ln{x}}{x \ln{x} +(x-1)}
+    \overset{\left(\frac{0}{0}\right)}{\underset{\mathrm{LH}}{=}} \lim_{x \to 1}
+    \frac{\ln{x} +1}{\ln{x} +2} = \frac{1}{2}
+  \end{align*}
+  \end{example}
+	
+
+
 \section*{Χρήσιμα Όρια}
 
 %todo check wikipedia
@@ -862,6 +939,9 @@ $ (1^{\infty}) $, $ (0^0) $ ή $ (\infty^{0}) $
   \item $ \lim_{x \to 0} \frac{1 - \cos{x}}{x} = 0 $
   \item $ \lim_{x \to 0} \frac{1 - \cos{x}}{x^{2}} = 1/2 $
 \end{enumerate}
+
+
+
 
 
 \end{document}

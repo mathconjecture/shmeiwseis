@@ -26,10 +26,9 @@ decorations.pathmorphing, decorations.shapes,decorations.text}
 }
 
 
+\setcounter{chapter}{1}
 
 \begin{document}
-
-\setcounter{chapter}{1}
 
 \chapter{Όρια Βασικών Συναρτήσεων}
 
@@ -105,14 +104,14 @@ decorations.pathmorphing, decorations.shapes,decorations.text}
  \begin{tikzpicture}[scale=0.85]
     \draw[-stealth,blue!50] (-3,0) -- (3,0) node[right] {};
     \draw[-stealth,blue!50] (0,-2.5) -- (0,2.5) node[above] {};
-    \fill (1,0) circle (2pt) node[below=2pt] {1} ;
+    \fill[Col1] (1,0) circle (2pt) node[below=2pt] {1} ;
     \draw[domain=0.2:3,smooth,variable=\x,Col1!75,very thick] plot (\x,{log2(\x)})
         node[left,xshift=-10pt,yshift=5pt]{\begin{tabular}{c}
         \small $y =\log_{a}{x}$ \\ \small $a >1$ \\ \text{π.χ.} $ y= \ln{x}$ \end{tabular}};
 \end{tikzpicture} 
 \begin{myitemize*}[itemjoin={\hspace{0.4cm}}]
   \item $ \lim_{x \to \infty} \ln{x} = \infty $ 
-  \item $ \lim_{x \to 0^{-}} \ln{x} = -\infty $ 
+  \item $ \lim_{x \to 0^{+}} \ln{x} = -\infty $ 
     \end{myitemize*}
 }
 
@@ -128,11 +127,11 @@ decorations.pathmorphing, decorations.shapes,decorations.text}
     \draw[domain=-3:1.4,smooth,variable=\x,Col1!75,very thick] plot ({\x},{exp{\x}})
     node[below right,xshift=-10pt]{\begin{tabular}{c} \small $y=a^{x}$ \\ 
     \small $ a>1 $ \\ \text{π.χ.} $ y= \mathrm{e}^{x} $ \end{tabular}};
-    \fill (0,1) circle (2pt) node[left=2pt] {1} ;
+    \fill[Col1] (0,1) circle (2pt) node[left=2pt] {1} ;
 \end{tikzpicture} 
 \begin{myitemize*}
-  \item $ \lim_{x \to \infty} a^{x} = \infty $ 
-  \item $ \lim_{x \to -\infty} a^{x} = 0 $ 
+  \item $ \lim_{x \to \infty} \mathrm{e}^{x} = \infty $ 
+  \item $ \lim_{x \to -\infty} \mathrm{e}^{x} = 0 $ 
     \end{myitemize*}
   }{
   \section{Φθίνουσα Εκθετική}
@@ -142,11 +141,11 @@ decorations.pathmorphing, decorations.shapes,decorations.text}
     \draw[domain=3:-1.4,smooth,variable=\x,Col1!75,very thick] plot ({\x},{exp{-\x}})
     node[below left,xshift=26pt,yshift=-25pt]{\begin{tabular}{c} \small $y=a^{x}$ \\ 
     \small $ 0<a<1 $ \\ \text{π.χ.} $ y= \mathrm{e}^{-x} $ \end{tabular}};
-    \fill (0,1) circle (2pt) node[left=2pt] {1} ;
+    \fill[Col1] (0,1) circle (2pt) node[left=2pt] {1} ;
 \end{tikzpicture} 
 \begin{myitemize*}
-  \item $ \lim_{x \to \infty} a^{x} = 0 $ 
-  \item $ \lim_{x \to -\infty} a^{x} = \infty $ 
+  \item $ \lim_{x \to \infty} \mathrm{e}^{-x} = 0 $ 
+  \item $ \lim_{x \to -\infty} \mathrm{e}^{-x} = \infty $ 
     \end{myitemize*}
   }{
   \section{Ημίτονο}
@@ -159,7 +158,7 @@ decorations.pathmorphing, decorations.shapes,decorations.text}
       extra x tick labels={$-2\pi$, $-\frac{3\pi}{2}$, $-\pi$, $\frac{\pi}{2}$,$\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, $2\pi$},
       domain=-2*pi:2*pi,
       ]
-      \addplot[myplot] {sin(deg(x))} node[above right,pos=0.65]{$\sin x$} ;
+      \addplot[myplot] {sin(deg(x))} node[above right,pos=0.65]{$y=\sin x$} ;
     \end{axis}
   \end{tikzpicture}
 \begin{myitemize*}
@@ -181,12 +180,12 @@ decorations.pathmorphing, decorations.shapes,decorations.text}
       ]
       \addplot [myplot,dashed lines] {tan(deg(x))};
       \addplot [myplot,restrict y to domain=-10:10] {tan(deg(x))} node
-        [right,pos=0.55,xshift=5pt] {$\tan x$};
+        [right,pos=0.55,xshift=5pt] {$y=\tan x$};
     \end{axis}
   \end{tikzpicture} 
-\begin{myitemize*}[itemjoin={\hspace{0.5cm}}]
-  \item $ \lim_{x \to \frac{\pi}{2}} \tan{x} = \infty $ 
-  \item $ \lim_ {x \to \frac{\pi}{2}} \tan{x}= -\infty $ 
+\begin{myitemize*}[itemjoin={\hspace{0.2cm}}]
+  \item $ \lim_{x \to \frac{\pi}{2}^{-}}\!\! \tan{x} = \infty $ 
+  \item $ \lim_ {x \to -\frac{\pi}{2}^{+}}\!\! \tan{x}= -\infty $ 
     \end{myitemize*}
   }{
   \section{Συνεφαπτομένη}
@@ -200,12 +199,12 @@ decorations.pathmorphing, decorations.shapes,decorations.text}
       ]
       \addplot [myplot,dashed lines] {cot(deg(x))};
       \addplot [myplot,restrict y to domain=-10:10] {cot(deg(x))}
-        node [right,pos=0.59,xshift=5pt] {$\cot x$};
+        node [right,pos=0.59] {$y=\cot x$};
     \end{axis}
   \end{tikzpicture} 
-\begin{myitemize*}[itemjoin={\hspace{0.5cm}}]
-  \item $ \lim_{x \to \pi} \cot{x} = -\infty $ 
-  \item $ \lim_ {x \to \pi} \cot{x}= \infty $ 
+\begin{myitemize*}[itemjoin={\hspace{0.3cm}}]
+  \item $ \lim_{x \to \pi^{-}} \cot{x} = -\infty $ 
+  \item $ \lim_ {x \to 0^{+}} \cot{x}= \infty $ 
     \end{myitemize*}
   }{
   \section{Αντίστροφη Εφαπτομένη}
@@ -219,8 +218,8 @@ decorations.pathmorphing, decorations.shapes,decorations.text}
       y=1.2cm,
       domain=-3.5:3.5,
       ]
-      \addplot[myplot] {rad(atan(x))} node[below,pos=0.85,xshift=5pt]
-        {$\arctan x$} ;
+      \addplot[myplot] {rad(atan(x))} node[below,pos=0.85,xshift=10pt,yshift=-5pt]
+        {$y=\arctan x$} ;
       \addplot[dashed lines] {1.57}  ;
       \addplot[dashed lines] {-1.57}  ;
     \end{axis}
@@ -230,10 +229,7 @@ decorations.pathmorphing, decorations.shapes,decorations.text}
   % \item $ \lim_ {x \to \infty } \arctan{x}= - \frac{\pi}{2} $ 
     \end{myitemize*}
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> parent of 272d16b... update limits
 
 
 
