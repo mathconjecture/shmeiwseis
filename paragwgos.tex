@@ -1,0 +1,215 @@
+\input{preamble_ask.tex}
+\input{definitions_ask.tex}
+\input{tikz.tex}
+\input{myboxes.tex}
+
+\geometry{top=2.0cm,left=1.5cm,right=1.5cm}
+
+\input{insbox}
+
+
+
+\everymath{\displaystyle}
+\pagestyle{vangelis}
+
+
+\tikzset{tangent/.style=
+  {decoration=
+    {markings, mark=at position #1 with
+      {\coordinate (tangent point-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,0pt);
+        \coordinate (tangent unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (1,0pt);
+        \coordinate (tangent orthogonal unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,1);
+      }
+    },
+  postaction=decorate},
+  use tangent/.style={shift=(tangent point-#1),
+    x=(tangent unit vector-#1),
+  y=(tangent orthogonal unit vector-#1)},
+  use tangent/.default=1}
+
+
+\newcommand{\twocolumnsiderr}[2]{\begin{minipage}[c]{0.30\linewidth}\raggedright
+        #1
+       \end{minipage}\hfill\begin{minipage}[c]{0.68\linewidth}\raggedright
+        #2
+    \end{minipage}
+}
+
+\newcommand{\twocolumnsidell}[2]{\begin{minipage}[c]{0.68\linewidth}\raggedright
+        #1
+        \end{minipage}\hfill\begin{minipage}[c]{0.30\linewidth}\raggedright
+        #2
+    \end{minipage}
+}
+
+
+
+
+\begin{document}
+
+
+
+\chapter*{Παράγωγος}
+
+
+\section*{Η Έννοια της Παραγώγου}
+
+Το πρόβλημα της εύρεσης της εφαπτομένης μιας καμπύλης και του υπολογισμού της 
+ταχύτητας ενός κινητού σώματος, ανάγονται στον υπολογισμό του ίδιου τύπου ορίου, 
+όπως θα δούμε στη συνέχεια. Αυτό το όριο, ονομάζεται \textbf{παράγωγος} και ερμηνεύεται 
+ως ρυθμός μεταβολής κάποιου μεγέθους.
+
+\subsection*{Εφαπτομένη Καμπύλης}
+
+Για τον υπολογισμό της εφαπτομένης μιας καμπύλης με εξίσωση $ y=f(x) $, στο 
+σημείο $P( x_{0}, f(x_{0})) $, θεωρούμε ένα γειτονικό σημείο $ Q(x,f(x)) $, με 
+$ x \neq x_{0} $ και υπολογίζουμε την κλίση της τέμνουσας $ PQ $
+
+\twocolumnsiderr{
+  \begin{tikzpicture}[scale=0.8]
+    \draw[-stealth,axis] (-0.5,0) -- (5,0) node[below] (x) {\smaller$x$} ;
+    \draw[-stealth,axis] (0,-0.5) -- (0,3.7) node[left] (y) {\smaller$y$} ;
+    \coordinate (o) at (0,0) ;
+    \begin{scope}[yshift=-15pt]
+      \draw[graph,tangent=0.28,Col1] (0.2,0.0) to[out=80, in=180] (2.2,3.0) coordinate 
+        (q) to[out=0,in=-180] node[above=20pt,pos=0.7,xshift=7pt] {$y=f(x)$} (5,0.7) ;
+      \fill[use tangent] (0,0) coordinate (p) circle (1.5pt);
+      \fill (p) node[above,xshift=-2pt] {$P$} circle (1.5pt);
+      \fill (q) node[above] {$Q$} circle (1.5pt);
+      \draw[dashed] (o|-p) node[left,Col2] {\smaller$f(x_{0})$} -- (p) -- (o-|p)
+        node[below,Col2] {\smaller$x_{0}$} ;
+      \draw (p) -- (q) ;
+      \draw[dashed] (o|-q) node[left,Col2] {\smaller$f(x)$} -- (q) -- (o-|q) 
+        node[below,Col2] {\smaller$x$} ;
+      \draw (p) -- (q) ;
+      \coordinate (a) at (p-|q) ; 
+      \draw (p) -- (a) node[below=3pt,midway,Col2] {\smaller$x- x_{0}$} ;
+      \draw[decorate,decoration={brace,amplitude=3pt,raise=3pt,mirror},Col2] (p) -- (a) ;
+      \draw (a) -- (q) node[midway,xshift=5pt,yshift=-2pt,pin={[pin
+        edge={black,latex-},Col2]75:\smaller$f(x)-f(x_{0})$}]{} ;
+      \draw[decorate,decoration={brace,amplitude=3pt,raise=3pt,mirror},Col2] (a) -- (q) ;
+    \end{scope}
+  \end{tikzpicture}
+}{
+  \[
+    \lambda _{PQ} = \frac{f(x)-f(x_{0})}{x- x_{0}} 
+  \] 
+  Στη συνέχεια, επιτρέπουμε στο σημείο $Q$ να πλησιάσει το $P$, κατά μήκος της 
+  καμπύλης, επιτρέποντας στο $x$ να πλησιάσει το $ x_{0} $. Αν η κλίση $\lambda_{PQ}$ 
+  πλησιάζει κάποιον αριθμό $ \lambda $, τότε ορίζουμε την εφαπτομένη στο σημείο $P$ να 
+  είναι η ευθεία που διέρχεται από το $P$ με κλίση $ \lambda $. Με άλλα λόγια, η 
+  εφαπτομένη της καμπύλης στο σημείο $P$, είναι το όριο της κλίσης της τέμνουσας $ PQ $, 
+  καθώς το $Q$ τείνει στο $P$.
+}
+
+\vspace{\baselineskip}
+
+\twocolumnsiderr{
+  \begin{tikzpicture}[scale=0.8]
+    \draw[-stealth,axis] (-0.5,0) -- (5,0) node[below] (x) {\smaller$x$} ;
+    \draw[-stealth,axis] (0,-0.5) -- (0,3.7) node[left] (y) {\smaller$y$} ;
+    \coordinate (o) at (0,0) ;
+    \begin{scope}[yshift=-15pt]
+      \draw[thick,tangent=0.28,Col2] (0.2,0.0) to[out=80, in=180] (2.2,3.0) coordinate 
+        (q) to[out=0,in=-180] coordinate[pos=0.23] (q1) coordinate[pos=0.4] (q2) (5,0.7) ;
+      \fill[use tangent] (0,0) coordinate (p) circle (1.5pt);
+      \fill (p) node[above,xshift=-2pt] {$P$} circle (1.5pt);
+      \fill (q) node[above=3pt] {\smaller$Q$} circle (1.5pt);
+      \fill (q1) node[above right] {\smaller$Q$} circle (1.5pt);
+      \fill (q2) node[above right] {\smaller$Q$} circle (1.5pt);
+      \draw[very thick,use tangent,Col1] (-1.8,0) -- (2,0) ;
+      \draw[shorten <=-1.3cm,blue!50] (p) -- ($ (p)!4cm!(q) $) ;
+      \draw[shorten <=-1.3cm,blue!50] (p) -- ($ (p)!4cm!(q1) $) ;
+      \draw[shorten <=-1.3cm,blue!50] (p) -- ($ (p)!4cm!(q2) $) ;
+      \node  at (q) [above] (f) {} ;
+      \node  at (p) [above right=20pt,yshift=4pt] (g) {} ;
+      \node  at (q1) [above] (a) {} ;
+      \node  at (q1) [right,xshift=1pt] (d) {} ;
+      \node at (q) [above right,xshift=3pt,yshift=-1pt] (b) {} ;
+      \node  at (q2) [above,xshift=1pt] (c) {} ;
+      \node  at (q2) [right] (e) {} ;
+      \draw (a.center) edge[-stealth] (b.center) ;
+      \draw (c.center) edge[-stealth] (d.center) ;
+      \draw (f.center) edge[-stealth] (g.center) ;
+      \node at (o|-p) [left,Col2]{\phantom{\smaller$f(x_{0})$}} ;
+      \draw[dashed] (p) -- (o-|p) node[below,Col2] {\smaller$x_{0}$} ;
+      \draw[dashed] (q2) -- (o-|q2) node[below,Col2] {\smaller$x$} ;
+      \node at (o-|q2) [below left=2pt] (r1) {} ;
+      \node at (o-|q1) [below left=2pt] (r2) {} ;
+      \node at (o-|q)[below left=2pt] (r3) {} ;
+      \node at (o-|p)[below right=2pt] (r4) {} ;
+      \path[draw,Col2] (r1.center) edge[-stealth] (r2.center) ;
+      \path[draw,Col2] (r2.center) edge[-stealth,xshift=-6pt] (r3.center) ;
+      \path[draw,Col2] (r3.center) edge[-stealth,xshift=-6pt] (r4.east) ;
+    \end{scope}
+  \end{tikzpicture}
+}{
+  \begin{dfn}
+    Η \textcolor{Col1}{εφαπτομένη} της καμπύλης $ y=f(x) $ στο σημείο 
+    $ P(x_{0}, f(x_{0})) $, είναι η ευθεία που διέρχεται από το $P$ με κλίση 
+    \[
+      \lambda = \lim_{x \to x_{0}} \frac{f(x)-f(x_{0})}{x- x_{0}} 
+    \]
+  \end{dfn}
+}
+
+
+
+\subsection*{Ταχύτητα κινητού σώματος}
+
+%todo να το ξαναγράψω... δες έννοιες, θεση, μετατοπιση, κλπ
+
+Έστω, ένα σώμα το οποίο κινείται σε ευθεία γραμμή, σύμφωνα με την εξίσωση κίνησης, 
+$ s=f(t) $, όπου $s$ είναι η απομάκρυνση του σώματος από την αρχή, τη χρονική στιγμή
+$t$. Η συνάρτηση $f$ που περιγράφει την κίνηση του σώματος, λέγεται 
+\textbf{συνάρτηση θέσης}. Κατά τη χρονική διάρκεια από $ t_{0} $ έως $ t $, η μεταβολή 
+της θέσης του σώματος είναι $ f(t)-f(t_{0}) $ και η μέση ταχύτητα του σώματος είναι
+\[
+  \text{μέση ταχύτητα} = \frac{\text{μετατόπιση}}{\text{χρόνος}} = 
+  \frac{f(t)-f(t_{0})}{t- t_{0}}  
+\] 
+που είναι ίση με την κλίση της τέμνουσας $ PQ $.
+
+Στη συνέχεια, υποθέτουμε ότι υπολογίζουμε τη μέση ταχύτητα του σώματος, σε όλα και 
+μικρότερα χρονικά διαστήματα. Με άλλα λόγια, επιτρέπουμε στο $t$ να πλησιάσει το 
+$ t_{0} $, και ορίζουμε την ταχύτητα (ή στιγμιαία ταχύτητα) του σώματος, $ v(t_{0}) $, 
+τη χρονική στιγμή $ t_{0} $ να είναι το όριο της μέσης ταχύτητας
+\[
+  v(t_{0}) = \lim_{t \to t_{0}} \frac{f(t)-f(t_{0})}{t- t_{0}}  
+\] 
+Αυτό σημαίνει, ότι η ταχύτητα του σώματος, τη χρονική στιγμή $ t_{0} $ είναι ίση με την 
+κλίση της εφαπτομένης στο σημείο $P$.
+
+
+\subsection*{Παράγωγος}
+
+Είδαμε, ότι ο ίδιος τύπος ορίου, εμφανίζεται κατά τον υπολογισμό της εφαπτομένης 
+καμπύλης και της ταχύτητας ενός σώματος. Πιο συγκεκριμένα, όρια της μορφής 
+\[
+  \lim_{x \to x_{0}} \frac{f(x)-f(x_{0})}{x- x_{0}} 
+\] 
+εμφανίζονται, κατά τον υπολογισμό του ρυθμού μεταβολής κάποιου μεγέθους.
+
+\begin{dfn}
+  Η παράγωγος μιας συνάρτησης $f$ στο σημείο $ x_{0} $, συμβολίζεται με $ f'(x_{0}) $ 
+και ορίζεται να είναι το όριο
+  \[
+    f'(x_{0}) = \lim_{x \to x_{0}} \frac{f(x)-f(x_{0})}{x- x_{0}}
+  \] 
+  οποτεδήποτε αυτό το όριο υπάρχει.
+\end{dfn}
+
+\begin{rem}
+  Αν θέσουμε $ x- x_{0}=h $ τότε έχουμε $ x = x_{0}+h $ και $ h \to 0 $ καθώς $ x \to
+  x_{0} $, οπότε με αντικατάσταση, το παραπάνω όριο, γράφεται στη μορφή
+  \[
+    f'(x_{0}) = \lim_{h \to 0} \frac{f(x_{0}+h)-f(x_{0})}{h}
+  \] 
+\end{rem}
+
+
+\end{document}
+
+
+
+
