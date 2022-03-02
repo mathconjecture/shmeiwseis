@@ -905,13 +905,12 @@ $ (1^{\infty}) $, $ (0^0) $ ή $ (\infty^{0}) $
     $ \lim_{x \to x_{0}} \smash{f(x)^{g(x)}} = \mathrm{e}^{a} $
 \end{myitemize}
 
-
 \begin{example}
   Να υπολογιστεί το όριο $ \lim_{x \to 0^{+}} x^{x} $
 \end{example}
 \begin{solution}
   Παρατηρούμε ότι το όριο $ \lim_{x \to 0^{+}} x^{x} $ είναι απροσδιόριστο, της μορφής 
-  $ 0^{0} $ . Επομένως:
+  $( 0^{0}) $ . Επομένως:
   \begin{myitemize}
     \item \textbf{Λογαριθμίζουμε:} $ \ln{x^{x}} = x \ln{x} $
     \item \textbf{Όριο Λογαριθμισμένης:} $ \lim_{x \to 0^{+}} x \ln{x} \overset{(0 \cdot
@@ -928,23 +927,25 @@ $ (1^{\infty}) $, $ (0^0) $ ή $ (\infty^{0}) $
   Να υπολογιστεί το όριο $ \lim_{x \to \infty} \Bigl(1+ \frac{1}{x}\Bigr)^{x} $
 \end{example}
 \begin{solution}
-  Παρατηρούμε ότι το όριο $ \lim_{x \to \infty} \Bigl(1+ \frac{1}{x}\Bigr)^{x} $ 
-  είναι απροσδιόριστο, της μορφής $ 1^{\infty} $ . Επομένως:
-  \begin{myitemize}
-    \item \textbf{Λογαριθμίζουμε:} $ \ln{\Bigl(1+ \frac{1}{x}\Bigr)^{x}} = 
-      x \ln{\Bigl(1 + \frac{1}{x}\Bigr)} $
-    \item \textbf{Όριο Λογαριθμισμένης:} $ \lim_{x \to \infty}\Bigl[x \ln{\Bigl(1+
-      \frac{1}{x}\Bigr)}\Bigr] = \lim_{x \to \infty} x \cdot \lim_{x \to \infty} 
-      \ln{\Bigl(1+ \frac{1}{x}\Bigr)}$
-      \begin{myitemize}
-        \item $ \lim_{x \to \infty} x = \infty $
-        \item $ \lim_{x \to \infty} \ln{\Bigl(1+ \frac{1}{x}\Bigr)} = \ln{1} = 0 $, 
-          γιατί $ \lim_{x \to \infty} \Bigl(1+ \frac{1}{x}\Bigr) = 
-          1 + \lim_{x \to \infty} \frac{1}{x} = 1+0=1 $
-      \end{myitemize}
-    \item \textbf{Ζητούμενο όριο:} $ \lim_{x \to \infty} 
-      \Bigl(1+ \frac{1}{x}\Bigr)^{x} = \mathrm{e}^{1} = \mathrm{e} $
-  \end{myitemize}    
+Παρατηρούμε ότι το όριο $ \lim_{x \to \infty} \Bigl(1+ \frac{1}{x}\Bigr)^{x} $ 
+είναι απροσδιόριστο, της μορφής $ (1^{\infty}) $. Επομένως:
+\begin{myitemize}
+  \item \textbf{Λογαριθμίζουμε:} $ \ln{\Bigl(1+ \frac{1}{x}\Bigr)^{x}} = 
+    x \ln{\Bigl(1 + \frac{1}{x}\Bigr)} $
+  \item \textbf{Όριο Λογαριθμισμένης:}
+    \begin{align*}
+      \lim_{x \to \infty}\Bigl[x \ln{\Bigl(1+
+      \frac{1}{x}\Bigr)}\Bigr] \overset{(0 \cdot \infty)}{=}  \lim_{x \to \infty}
+      \frac{\ln(1+ \frac{1}{x})}{\frac{1}{x}}
+      \overset{\left(\frac{0}{0}\right)}{\underset{\mathrm{LH}}{=}} 
+      \lim_{x \to \infty} \frac{\frac{1}{1 + \frac{1}{x}} (- \frac{1}{x^{2}})}{-
+        \frac{1}{x^{2}}} = 
+      \lim_{x \to \infty} \frac{1}{\frac{x+1}{x}} = 
+      \lim_{x \to \infty} \frac{x}{x+1} = 1 
+    \end{align*}
+  \item \textbf{Ζητούμενο όριο:} $ \lim_{x \to \infty} 
+    \Bigl(1+ \frac{1}{x}\Bigr)^{x} = \mathrm{e}^{1} = \mathrm{e} $
+\end{myitemize}    
 \end{solution}
 
 
