@@ -1,0 +1,684 @@
+\chapter*{Εισαγωγικές Έννοιες}
+
+
+\section*{Η Έννοια του Συνόλου}
+
+Με την έννοια \textcolor{Col1}{σύνολο}, αναφερόμαστε σε μια συλλογή αντικειμένων που τα 
+θεωρούμε ως μία \textit{ολότητα}. 
+Τα αντικείμενα αυτά ονομάζονται \textcolor{Col1}{στοιχεία} του 
+συνόλου. Δεχόμαστε την ύπαρξη συνόλου που δεν έχει κανένα στοιχείο, το \textbf{κενό} 
+σύνολο και το συμβολίζουμε με $ \emptyset $. Τα σύνολα τα συμβολίζουμε με κεφαλαία
+γράμματα, $ A, B, \ldots, X, Y, \ldots $ και τα στοιχεία τους με πεζά γράμματα $ a,b,
+\ldots, x,y, \ldots $. Χρησιμοποιούμε συχνά τα σύμβολα $ \forall $:
+«\textcolor{Col1}{για κάθε}» και $ \exists $: «\textcolor{Col1}{υπάρχει}», 
+καθώς και τις παρακάτω εκφράσεις:
+\begin{center}
+  \begin{myitemize}
+    \item $ \textcolor{Col2}{x \in A} : $ «το στοιχείο $x$ \textcolor{Col1}{ανήκει} στο 
+      σύνολο $A$» \\
+    \item $ \textcolor{Col2}{x \not\in A} : $ «το στοιχείο $x$ \textcolor{Col1}{δεν 
+      ανήκει} στο σύνολο $A$» \\
+    \item $\textcolor{Col2}{A \subseteq B} :$ «το σύνολο $A$ είναι
+      \textcolor{Col1}{υποσύνολο} του $B$, Δηλαδή, \textbf{όλα} τα στοιχεία του $A$ είναι
+      και στοιχεία του $B$»
+  \end{myitemize}
+\end{center}
+
+\begin{example}
+  Έστω το σύνολο $ A = \{ 1,2,3,5,8 \} $. Παρατηρούμε ότι $ 2 \in A $ και $ 3 \in A $, 
+  αλλά $ 4 \not \in A $. Επίσης, παρατηρούμε ότι $ B \subseteq A $, γιατί κάθε στοιχείο 
+  του $B$ είναι και στοιχείο του $A$.
+\end{example}
+
+
+\section*{Πραγματικοί αριθμοί} 
+
+\enlargethispage{3\baselineskip}
+
+Θα χρησιμοποιούμε συχνά τα παρακάτω σύνολα αριθμών.
+\begin{myitemize}
+  \item Το σύνολο των \textcolor{Col1}{Φυσικών} αριθμών 
+    $ \mathbb{N} = \{ 0,1,2,3,\ldots \} $
+  \item Το σύνολο των \textcolor{Col1}{Ακεραίων} αριθμών 
+    $ \mathbb{Z} = \{\ldots,-3,-2,-1, 0,1,2,3,\ldots \} $
+  \item Το σύνολο των \textcolor{Col1}{Ρητών} αριθμών $ \mathbb{Q} = 
+    \{ m/n \; : \; m,n \in \mathbb{Z}, \; n \neq 0 \} $
+  \item Το σύνολο των \textcolor{Col1}{Άρρητων} αριθμών όπως οι 
+    $ \sqrt{2} = 1,414\ldots, \sqrt{3} = 1, 732\ldots, \pi = 3,1415\ldots, \mathrm{e} = 
+    2,718\ldots $  
+  \item Το σύνολο των \textbf{Ρητών} και \textbf{Άρρητων} ονομάζεται σύνολο των
+    \textcolor{Col1}{Πραγματικών} αριθμών και συμοβλίζεται με $ \mathbb{R} $.
+\end{myitemize}
+\begin{rem}
+  Ισχύει ότι $ \mathbb{N} \subseteq \mathbb{Z} \subseteq\mathbb{Q}\subseteq\mathbb{R} $. 
+\end{rem}
+\begin{rem}
+  Όταν τα παραπάνω σύνολα, έχουν έναν \textbf{αστερίσκο}, τότε στα σύνολα αυτά
+  \textbf{δεν} ανήκει το 0. Για παράδειγμα, 
+  $ \mathbb{Z}^{*} = \mathbb{Z}- \{ 0 \} $.
+\end{rem}
+
+
+\twocolumnsidess{
+  \subsection*{Ιδιότητες Γινομένου} 
+  \begin{myitemize}
+    \item $ a\cdot b = 0 \Leftrightarrow a = 0 \quad \text{ή} \quad b=0, 
+      \quad \forall a,b \in \mathbb{R} $ 
+    \item $ a\cdot b \neq 0 \Leftrightarrow a \neq 0 \quad \text{ή} \quad b \neq 0,
+      \quad \forall a,b \in \mathbb{R} $
+  \end{myitemize}
+  \subsection*{Πράξεις με Κλάσματα} 
+  \begin{myitemize}
+    \item $ \frac{a}{c} \pm \frac{b}{c} = \frac{a \pm b}{c} \quad \text{ή} \quad  
+      \frac{a}{b} \pm \frac{c}{d} = \frac{a\cdot d \pm b\cdot c}{b \cdot d} $
+    \item $ \frac{a}{b} \cdot \frac{c}{d} = \frac{a\cdot c}{b\cdot d} \quad \text{και}
+      \quad \frac{a}{b} : \frac{c}{d} = \frac{a}{b} \cdot \frac{d}{c} = \frac{a\cdot d}{b
+      \cdot c} $
+    \item $ \dfrac{\dfrac{a}{b}}{\dfrac{c}{d}} = \frac{a\cdot d}{b\cdot c} \; \text{και}
+      \; \frac{\dfrac{a}{b}}{c} = \frac{\dfrac{a}{b}}{\dfrac{c}{1}} = \frac{a}{b\cdot c}
+      \; \text{ή} \; \frac{a}{\dfrac{b}{c}} = \frac{\dfrac{a}{1}}{\dfrac{b}{c}} =
+      \frac{a\cdot c}{b} $ 
+  \end{myitemize}
+}{
+  \subsection*{Ιδιότητες διάταξης πραγματικών αριθμών} 
+  \begin{myitemize}
+    \item Αν $ a \leq b $ και $ b \leq c $ τότε $ a \leq c $ 
+    \item Αν $ a \leq b $ και $ c \leq d $ τότε $ a + c \leq b + d $
+    \item $ a \leq b \Leftrightarrow a \cdot c \leq b \cdot c $, όταν $ c>0 $ 
+    \item $ a \leq b \Leftrightarrow a \cdot c \geq b \cdot c $, όταν $ c<0 $ 
+    \item Αν $ 0 < a \leq b $ και $ 0 < c \leq d $ τότε $ a \cdot c \leq b \cdot d $
+    \item Αν $ a, b $ \textbf{ομόσημοι}, τότε $ a \leq b \Leftrightarrow \frac{1}{a} \geq
+      \frac{1}{b} $
+    \item Αν $ a,b $ \textbf{θετικοί} και $ n \in \mathbb{N}^{*} $ τότε 
+      $ a<b \Leftrightarrow   a^{n} < b^{n} $ 
+    \item Αν $ 0<a \leq b $ και $ n \in \mathbb{N} $ τότε $ \frac{1}{a^{n}} \geq
+      \frac{1}{b^{n}} $
+\end{myitemize}}
+
+
+\section*{Απόλυτη Τιμή}
+
+\twocolumnsidesrr{
+  \subsection*{Ορισμός} 
+  \begin{empheq}[box=\mathboxg]{equation*}
+    \abs{a} = 
+    \begin{cases}
+      a, & \text{όταν } a \geq 0 \\
+      -a, & \text{όταν } a<0 
+    \end{cases} 
+  \end{empheq}
+  \begin{myitemize}
+    \item Ισχύει $ \abs{a} \geq 0, \quad \forall a \in \mathbb{R} $
+    \item Ισχύει $ - \abs{a} \leq a \leq \abs{a}, \quad \forall a \in \mathbb{R} $
+  \end{myitemize}
+}{
+  \subsection*{Ιδιότητες απόλυτης τιμής} 
+  \twocolumnsidesrr{
+    \begin{myitemize}
+      \item $ \sqrt{a^{2}} = \abs{a} $
+      \item $ \abs{a\cdot b} = \abs{a} \cdot \abs{b} $
+      \item $ \abs{\frac{a}{b}} = \frac{\abs{a}}{\abs{b}} $
+  \end{myitemize}}{
+  \begin{myitemize}
+    \item $ \abs{\abs{a} - \abs{b}} \leq \abs{a \pm b} \leq \abs{a} + \abs{b} $
+    \item $ \abs{x} < a \Leftrightarrow -a < x < a $
+    \item $ \abs{x} > a \Leftrightarrow x > a \; \text{και} \; x < -a $
+  \end{myitemize}
+}}
+\begin{example}
+  Ισχύει ότι $ \abs{3} = 3 $ και $ \abs{-3} = 3 $. Δηλαδή η απόλυτη τιμή «τρώει» το 
+  πρόσημο.
+\end{example}
+\begin{example}
+  $ \abs{x-3} = 
+  \begin{cases}
+    x-3, & x \geq 3 \\
+    -(x-3), & x < 3
+  \end{cases} = 
+  \begin{cases}
+    x-3, & x \geq 3 \\
+    3-x, & x <3
+  \end{cases}$
+\end{example}
+\begin{rem}
+  Η απόλυτη τιμή $ \abs{a} $, ενός αρίθμού, παριστάνει την \textbf{απόσταση} 
+  του σημείου με συντεταγμένη $ a $ από την αρχή του άξονα. 
+  Η \textbf{απόσταση} δύο σημείων πάνω στον πραγματικό άξονα, 
+  με συντεταγμένες $ a $ και $ b $ αντίστοιχα, είναι $d = \abs{b-a}$ 
+\end{rem}
+\begin{center}
+  \begin{tikzpicture}
+    \draw[-latex] (-0.6,0) -- (0,0) coordinate (o) to coordinate[pos=0.3] (a) 
+      coordinate[pos=0.8] (b) (5,0) ;
+    \draw[Col1,ultra thick] (a) -- (b) ;
+    \fill (o) node[above] {$0$} circle (2pt) ;  
+    \fill[Col1] (a) node[above] {$a$} circle (2pt) ;  
+    \fill[Col1] (b) node[above] {$b$} circle (2pt) ;  
+    \coordinate (o1) at ($(o)-(0,0.4)$) ;
+    \coordinate (a1) at ($(a)-(0,0.4)$) ;
+    \coordinate (o2) at ($(o)-(0,0.8)$) ;
+    \coordinate (b2) at ($(b)-(0,0.8)$) ;
+    \coordinate (a3) at ($(a)-(0,0.4)$) ;
+    \coordinate (b3) at ($(b)-(0,0.4)$) ;
+    \draw[{Stealth}-{Stealth}] (o1) node {$|$} --
+      node[fill=white]{\smaller$\abs{a}$} (a1) node {$|$} ;
+    \draw[{Stealth}-{Stealth}] (o2) node {$|$} --
+      node[fill=white]{\smaller$\abs{b}$} (b2) node {$|$} ;
+    \draw[{Stealth}-{Stealth},Col1] (a3) node {$|$} --
+      node[fill=white]{\smaller$\abs{b-a}$} (b3) node {$|$} ;
+  \end{tikzpicture}
+  \hspace{6\baselineskip}
+  \begin{tikzpicture}
+    \draw[-latex] (-2,0) -- (0,0) coordinate (o) to coordinate[pos=-0.4] (a)
+      coordinate[pos=0.7] (b) (3.5,0) ;
+    \draw[Col1,ultra thick] (a) -- (b) ;
+    \fill (o) node[above] {$0$} circle (2pt) ;  
+    \fill[Col1] (a) node[above] {$a$} circle (2pt) ;  
+    \fill[Col1] (b) node[above] {$b$} circle (2pt) ;  
+    \coordinate (o1) at ($(o)-(0,0.4)$) ;
+    \coordinate (a1) at ($(a)-(0,0.4)$) ;
+    \coordinate (o2) at ($(o)-(0,0.4)$) ;
+    \coordinate (b2) at ($(b)-(0,0.4)$) ;
+    \coordinate (a3) at ($(a)-(0,0.8)$) ;
+    \coordinate (b3) at ($(b)-(0,0.8)$) ;
+    \draw[{Stealth}-{Stealth}] (o1) node {$|$} --
+      node[fill=white]{\smaller$\abs{a}$} (a1) node {$|$} ;
+    \draw[{Stealth}-{Stealth}] (o2) node {$|$} --
+      node[fill=white]{\smaller$\abs{b}$} (b2) node {$|$} ;
+    \draw[{Stealth}-{Stealth},Col1] (a3) node {$|$} --
+      node[fill=white]{\smaller$\abs{b-a}$} (b3) node {$|$} ;
+  \end{tikzpicture}
+\end{center}
+
+
+
+\section*{Διαστήματα}
+
+Αν $ a,b \in \mathbb{R} $ με $ a<b $, τότε ονομάζουμε \textcolor{Col1}{διαστήματα} του 
+$ \mathbb{R} $ κάθε ένα από τα παρακάτω σύνολα.
+\begin{myitemize}
+  \item $ (a,b) = \{ x \in \mathbb{R} \; : \; a<x<b \} $ \textbf{ανοιχτό} διάστημα 
+    \hfill
+    \begin{tikzpicture}
+      \draw[-latex] (0,0) to coordinate[pos=0.2] (a) coordinate[pos=0.8] (b) (4,0) ;
+      \draw[ultra thick,Col1] (a) -- (b) ;
+      \draw[Col1,fill=white] (a) node[above] {$a$} circle (2pt) ;  
+      \draw[Col1,fill=white] (b) node[above] {$b$} circle (2pt) ;  
+    \end{tikzpicture}
+  \item $ [a,b] = \{ x \in \mathbb{R} \; : \; a \leq x \leq b \} $ \textbf{κλειστό} 
+    διάστημα
+    \hfill
+    \begin{tikzpicture}
+      \draw[-latex] (0,0) to coordinate[pos=0.2] (a) coordinate[pos=0.8] (b) (4,0) ;
+      \draw[ultra thick,Col1] (a) -- (b) ;
+      \fill[Col1] (a) node[above] {$a$} circle (2pt) ;  
+      \fill[Col1] (b) node[above] {$b$} circle (2pt) ;  
+    \end{tikzpicture}
+  \item $ [a,b) = \{ x \in \mathbb{R} \; : \; a \leq x < b \} $ \textbf{κλειστό-ανοιχτό} 
+    διάστημα
+    \hfill
+    \begin{tikzpicture}
+      \draw[-latex] (0,0) to coordinate[pos=0.2] (a) coordinate[pos=0.8] (b) (4,0) ;
+      \draw[ultra thick,Col1] (a) -- (b) ;
+      \fill[Col1] (a) node[above] {$a$} circle (2pt) ;  
+      \draw[Col1,fill=white] (b) node[above] {$b$} circle (2pt) ;  
+    \end{tikzpicture}
+  \item $ (a,b] = \{ x \in \mathbb{R} \; : \; a < x \leq b \} $ \textbf{ανοιχτό-κλειστό} 
+    διάστημα
+    \hfill
+    \begin{tikzpicture}
+      \draw[-latex] (0,0) to coordinate[pos=0.2] (a) coordinate[pos=0.8] (b) (4,0) ;
+      \draw[ultra thick,Col1] (a) -- (b) ;
+      \draw[Col1,fill=white] (a) node[above] {$a$} circle (2pt) ;  
+      \fill[Col1] (b) node[above] {$b$} circle (2pt) ;  
+    \end{tikzpicture}
+\end{myitemize}
+
+Αν $ a \in \mathbb{R} $ τότε ονομάζουμε \textcolor{Col1}{μη φραγμένα} διαστήματα του 
+$ \mathbb{R} $ με άκρο $a$ κάθε ένα από τα παρακάτω σύνολα.
+\begin{myitemize}
+  \item $ (- \infty, a) = \{ x \in \mathbb{R} \; : \; x<a \} $
+    \hfill
+    \begin{tikzpicture}
+      \draw[-latex] (0,0) coordinate (o) to coordinate[pos=0.2] (a) 
+        coordinate[pos=0.8] (b) (4,0) coordinate (p) ;
+      \draw[ultra thick,Col1] (o) -- (b) ;
+      \draw[Col1,fill=white] (b) node[above] {$a$} circle (2pt) ;  
+    \end{tikzpicture}
+  \item $ (- \infty, a] = \{ x \in \mathbb{R} \; : \; x \leq a \} $
+    \hfill
+    \begin{tikzpicture}
+      \draw[-latex] (0,0) coordinate (o) to coordinate[pos=0.2] (a) 
+        coordinate[pos=0.8] (b) (4,0) coordinate (p) ;
+      \draw[ultra thick,Col1] (o) -- (b) ;
+      \fill[Col1] (b) node[above] {$a$} circle (2pt) ;  
+    \end{tikzpicture}
+  \item $ (a, +\infty) = \{ x \in \mathbb{R} \; : \; x>a \} $
+    \hfill
+    \begin{tikzpicture}
+      \draw (0,0) coordinate (o) to coordinate[pos=0.2] (a) coordinate[pos=0.8] (b)
+        (4,0) coordinate (p) ;
+      \draw[ultra thick,Col1] (a) -- (p) ;
+      \draw[Col1,fill=white] (a) node[above] {$a$} circle (2pt) ;  
+    \end{tikzpicture}
+  \item $ [a, +\infty) = \{ x \in \mathbb{R} \; : \; x \geq a \} $
+    \hfill
+    \begin{tikzpicture}
+      \draw (0,0) coordinate (o) to coordinate[pos=0.2] (a) coordinate[pos=0.8] (b)
+        (4,0) coordinate (p) ;
+      \draw[ultra thick,Col1] (a) -- (p) ;
+      \fill[Col1] (a) node[above] {$a$} circle (2pt) ;  
+    \end{tikzpicture}
+\end{myitemize}
+Ορίζουμε ακόμη $ (- \infty, + \infty) = \mathbb{R} $
+
+
+\twocolumnsidess{
+  \section*{Χρήσιμες Ταυτότητες}
+  \begin{myitemize}
+    \item $ (a\pm b)^{2} = a^{2} \pm 2ab + b^{2} $ 
+    \item $ (a\pm b)^{3} = a^{3} \pm 3a^{2}b + 3ab^{2} \pm b^{2} $ 
+    \item $ a^{2}-b^{2} = (a-b)(a+b) $
+    \item $ a^{3}-b^{3} = (a-b)(a^{2}+ab+b^{2}) $ 
+    \item $ a^{3}+b^{3} = (a+b)(a^{2}-ab+b^{2}) $ 
+    \item $ (a+b+c)^{2}=a^{2}+b^{2}+c^{2}+2ab+2bc+2ca $
+  \end{myitemize}
+}{
+  \section*{Παραγοντοποίηση Τριωνύμου}
+  Έστω \textbf{τριώνυμο} $ ax^{2}+bx+c $, με $ \Delta = b^{2}-4ac $ και 
+  \textbf{ρίζες}
+  \begin{empheq}[box=\mathboxg]{equation*}
+    x_{1,2} = \frac{-b \pm \sqrt{\Delta}}{2a}, \; \text{αν } \Delta >0 \;\;
+    \text{και} \;\; x_{1} = \frac{-b}{2a}, \; \text{αν } \Delta =0 
+  \end{empheq}
+  \begin{myitemize}
+    \item $ \Delta > 0 \Rightarrow ax^{2}+bx+c = a(x- x_{1})(x- x_{2}) $
+    \item $ \Delta = 0 \Rightarrow ax^{2}+bx+c = a(x- x_{1})^{2} $
+    \item $ \Delta < 0 \Rightarrow ax^{2}+bx+c \; $ δεν παραγοντοποιείται
+  \end{myitemize}
+}
+
+
+\section*{Η Έννοια της Πραγματικής Συνάρτησης}
+
+\twocolumnsidell{
+  \begin{dfn}
+    Μια \textcolor{Col1}{συνάρτηση} με \textbf{πεδίο ορισμού} το σύνολο 
+    $A \subseteq \mathbb{R}$, συμβολίζεται $ f \colon A \to \mathbb{R} $ και είναι μια 
+    \textit{διαδικασία}, με την οποία σε \textbf{κάθε} στοιχείο $ x \in A $ 
+    αντιστοιχίζουμε ένα \textbf{μοναδικό} στοιχείο $ y \in \mathbb{R} $. Το $ y $ 
+    ονομάζεται τιμή της $f$ στο $x$ και συμβολίζεται $ y= f(x) $.
+  \end{dfn}
+  Το σύνολο όλων των τιμών της $f$, για τις διάφορες τιμές του $x$ στο πεδίο ορισμού, 
+  ονομάζεται \textcolor{Col1}{σύνολο τιμών} της συνάρτησης.
+}{
+  \begin{tikzpicture}[scale=0.7]
+    \node (0) at (0.8, 0.8) {};
+    \node (1) at (3, 2.8) {};
+    \node (2) at (4, 2) {};
+    \coordinate (o) at (0, 0) {};
+    \coordinate (y) at (0, 3.8) ;
+    \coordinate (x) at (4.7, 0) ;
+    \fill[Col1] (0) circle (1.5pt) ;
+    \fill[Col1] (2) circle (1.5pt) ;
+    \draw[-latex,axis] (o) -- (x) node[below] {$x$} ;
+    \draw[-latex,axis] (o) -- (y) node[left] {$y$} ;
+    \draw [in=180, out=45, looseness=0.75,graph] (0.center) to
+      node[pos=0.9,above right=2pt]%[right=5pt] 
+      {\small$f(x)$} (1.center);
+    \draw [bend left=45,graph] (1.center) to (2.center);
+    \draw[dashed lines] (o|-0) -- (0) -- (0|-o)  ;
+    \draw[dashed lines] (2) -- (2|-o)  ;
+    \draw[dashed lines] (1) -- (o|-1)  ;
+    \draw[very thick, Col2] (o|-0) -- (o|-1) ;
+    \draw[ultra thick, Col2] (o|-0) -- (o|-1) ;
+    \draw[ultra thick, Col1] (o-|0) -- (o-|2) ;
+    \draw[decorate,decoration={brace,amplitude=5pt,raise=5pt}] (o|-0) -- (o|-1) 
+      node[midway,align=center,xshift=-1cm,Col2] {σύνολο \\ τιμών} ;
+    \draw[decorate,decoration={brace,amplitude=5pt,raise=5pt,mirror}] (o-|0) -- (o-|2) 
+      node[midway,yshift=-0.6cm,Col1] {πεδίο ορισμού} ;
+  \end{tikzpicture}
+}
+
+
+\subsection*{Γραφική Παράσταση Συνάρτησης}
+
+
+\twocolumnsidell{
+  Έστω  μια συνάρτηση $ f(x) $ με πεδίο ορισμού $A$. Η 
+  \textcolor{Col1}{γραφική παράσταση} της $f$, είναι το σύνολο των σημείων 
+  $(x, f(x))$ του καρτεσιανού επιπέδου, για τις διάφορες τιμές του $ x $ στο πεδίο 
+  ορισμού της. Δηλαδή
+  \begin{empheq}[box=\mathboxg]{equation*}
+    C_{f} = \{ (x,f(x)) \; : \; x \in A \} 
+  \end{empheq}
+}{
+  \begin{tikzpicture}[scale=0.7]
+    \node (0) at (0.8, 1) {};
+    \node (1) at (3, 3) {};
+    \node (2) at (4, 2) {};
+    \coordinate (o) at (0, 0) {};
+    \coordinate (y) at (0, 3.8) ;
+    \coordinate (x) at (4.7, 0) ;
+    \draw[-latex,axis] (o) -- (x) node[below] {$x$} ;
+    \draw[-latex,axis] (o) -- (y) node[left] {\smash{$y$}} ;
+    \draw [in=180, out=45, looseness=0.75,graph] (0.center) to coordinate[pos=0.5] (p) 
+      node[above=3pt,pos=0.8,xshift=15pt]{$C_{f}$} (1.center) ;
+    \draw [bend left=45,graph] (1.center) to (2.center);
+    \draw[dashed lines] (o|-p) node[left] {\phantom{σύνο}$f(x)$} -- (p) -- (p|-o) 
+      node[below] {$x$} ;
+    \draw[decorate,decoration={brace,amplitude=5pt,raise=5pt}] (p) -- (p|-o) 
+      node[midway,right=10pt] {$f(x)$} ;
+    \node at (p) [pin={[pin edge={black,latex-},Col1,xshift=10pt]93:
+      {\small$\bigl(x,f(x)\bigr)$}}]{} ;
+    \fill[Col1] (p) circle (2.0pt) ;
+  \end{tikzpicture}
+}
+
+
+\subsection*{Άυξουσες - Φθίνουσες Συναρτήσεις}
+
+Αν η γραφική παράσταση μιας συνάρτησης \textbf{ανηφορίζει} καθώς την παρατηρούμε από τα 
+αριστερά προς τα δεξιά, τότε λέμε ότι η συνάρτηση είναι αύξουσα, ενώ αν 
+\textbf{κατηφορίζει}, τότε λέμε ότι είναι φθίνουσα. Πιο συγκεκριμένα
+\begin{dfn}
+  Έστω $f$ συνάρτηση ορισμένη σε ένα διάστημα $\Delta$ και έστω $ x_{1}, x_{2} $ 
+  τυχαία στοιχεία του $\Delta$. Η $f$ είναι
+  \begin{myitemize}
+    \item \textcolor{Col1}{γνησίως αύξουσα} στο 
+      $\Delta \Leftrightarrow f(x_{1}) < f(x_{2}) \; \text{για κάθε } x_{1}, x_{2} 
+      \in \Delta \; \text{με } x_{1} < x_{2} $ 
+    \item \textcolor{Col1}{γνησίως φθίνουσα} στο 
+      $\Delta \Leftrightarrow f(x_{1}) > f(x_{2}) \; \text{για κάθε } x_{1}, x_{2} 
+      \in \Delta \; \text{με } x_{1} < x_{2} $ 
+  \end{myitemize}
+\end{dfn}
+
+\begin{center}
+  \begin{tikzpicture}[scale=0.7]
+    \coordinate (o) at (0, 0) {};
+    \coordinate (y) at (0, 4.0) ;
+    \coordinate (x) at (4.5, 0) ;
+    \draw[-latex,axis] (o) -- (x) node[below] {$x$} ;
+    \draw[-latex,axis] (o) -- (y) node[left] {$y$} ;
+    \draw[graph] (0.5,0.5) to[out=0, in=-90] node[pos=0.6,left=5pt] {$f(x)$} 
+      coordinate[pos=0.4] (p) coordinate[pos=0.8] (q) (3.7,3.7) ;
+    \draw[dashed lines] (o|-p) node[left] {$f(x_{1})$} -- (p) -- (p|-o) node[below]
+      {$x_{1}$} ;
+    \draw[dashed lines] (o|-q) node[left] {$f(x_{2})$} -- (q) -- (q|-o) node[below]
+      {$x_{2}$} ;
+    \node at (3,2) [right=15pt,align=center] {γνησίως\\αύξουσα} ;
+  \end{tikzpicture}
+  \hspace{6\baselineskip}
+  \begin{tikzpicture}[scale=0.7]
+    \coordinate (o) at (0, 0) {};
+    \coordinate (y) at (0, 4.0) ;
+    \coordinate (x) at (4.5, 0) ;
+    \draw[-latex,axis] (o) -- (x) node[below] {$x$} ;
+    \draw[-latex,axis] (o) -- (y) node[left] {$y$} ;
+    \draw[graph] (0.5,3.5) to[out=-90, in=180] node[pos=0.4,right=5pt] {$f(x)$} 
+      coordinate[pos=0.35] (p) coordinate[pos=0.8] (q) (3.7,0.5) ;
+    \draw[dashed lines] (o|-p) node[left] {$f(x_{1})$} -- (p) -- (p|-o) node[below]
+      {$x_{1}$} ;
+    \draw[dashed lines] (o|-q) node[left] {$f(x_{2})$} -- (q) -- (q|-o) node[below]
+      {$x_{2}$} ;
+    \node at (3,2) [right=5pt,align=center] {γνησίως\\φθίνουσα} ;
+  \end{tikzpicture}
+\end{center}
+
+
+\subsection*{Άρτιες - Περιττές Συναρτήσεις}
+
+\begin{dfn}
+  Μια συνάρτηση $f$ λέγεται \textcolor{Col1}{άρτια}, αν 
+  $f(-x) = f(x), \; \text{για κάθε } x \; \text{στο πεδίο ορισμού της}$ 
+\end{dfn}
+\begin{dfn}
+  Μια συνάρτηση $f$ λέγεται \textcolor{Col1}{περιττή}, αν 
+$f(-x) = -f(x), \; \text{για κάθε } x \; \text{στο πεδίο ορισμού της}$ \end{dfn}
+
+\begin{rem}
+  Η γραφική παράσταση μιας άρτιας συνάρτησης, είναι \textbf{συμμετρική ως προς τον άξονα
+  $y$}, ενώ, η γραφική παράστση μιας περιττής συνάρτησης είναι \textbf{συμμετρική ως 
+  προς την άρχή των αξόνων}.
+\end{rem}
+
+\begin{examples}
+Οι συναρτήσεις $ y=x^{2} $ και $ y= \cos{x} $ είναι άρτιες, ενώ
+οι συναρτήσεις $ y=x^{3} $ και  $ y= \sin{x} $ είναι περιττές.
+\end{examples}
+\enlargethispage{2\baselineskip}
+
+\begin{center}
+  \begin{tikzpicture}[scale=0.8]
+    \coordinate (o) at (0,0) ;
+    \node at (o) [below left,blue!75] {$0$} ;
+    \coordinate (a) at (-1.1,1.1*1.1) ;
+    \coordinate (b) at (1.1,1.1*1.1) ;
+    \draw[domain=-1.4:1.4,smooth,variable=\x,Col1,graph] plot ({\x},{\x*\x})
+      node[right]{$y=x^{2}$};
+    \draw[axis,-stealth] (-2,0) -- (2,0) node[below] {$x$};
+    \draw[axis,-stealth] (0,-2) -- (0,2.5) node[left] {$y$};
+    \draw[dashed] (a) -- (a|-o) node[below] {$-x$} ;
+    \draw[dashed] (b) -- (b|-o) node[below] {$x$} ;
+    \draw[dashed] (a) -- (b) ;
+    \node [above left] at (o|-a) {$f(x)$} ;
+    \node at (1.5,1.0) [right] {άρτια} ;
+  \end{tikzpicture} 
+  \hfill
+  \begin{tikzpicture}
+    \begin{axis}[scale=0.6,
+      axis lines=none,
+      ymin=-2,ymax=2,
+      xmin=-7,xmax=7,
+      domain=-2*pi:2*pi,
+      xtick=\empty,
+      ytick=\empty,
+      ]
+      \addplot[myplot] {cos(deg(x))} node[right=3pt,pos=0.55]{$\cos x$} 
+        node[above=20pt,pos=0.90,black]{άρτια} ; 
+      \coordinate (o) at (0,0) ;
+    \end{axis}
+    \node[below left,blue!75] at (o) {$0$} ;
+    \draw[axis,-stealth]  (o)+(-2,0) -- +(2,0) node[below] {$x$};
+    \draw[axis,-stealth]  (o)+(0,-1.8) -- +(0,1.8) node[left] {$y$};
+  \end{tikzpicture}
+  \hfill
+  \begin{tikzpicture}[scale=0.8]
+    \coordinate (o) at (0,0) ;
+    \node at (o) [below left,blue!75] {$0$} ;
+    \coordinate (a) at (-1.1,-1.1*1.1*1.1) ;
+    \coordinate (b) at (1.1,1.1*1.1*1.1) ;
+    \draw[domain=-1.25:1.25,smooth,variable=\x,Col1,graph] 
+      plot ({\x},{\x*\x*\x}) node[right]{$y=x^{3}$};
+    \draw[axis,-stealth] (-2,0) -- (2,0) node[below] {$x$};
+    \draw[axis,-stealth] (0,-2) -- (0,2.5) node[left] {$y$};
+    \draw[dashed] (a) -- (a|-o) node[above,xshift=-5pt] {$-x$} ;
+    \draw[dashed] (a) -- (a-|o) node[right] {$-f(x)$} ;
+    \draw[dashed] (b) -- (b|-o) node[below] {$x$} ;
+    \draw[dashed] (b) -- (o|-b) node[left] {$f(x)$} ;
+    \node at (1.5,1.0) [right] {περιττή} ;
+  \end{tikzpicture}
+  \hfill
+  \begin{tikzpicture}
+    \begin{axis}[scale=0.6,
+      axis lines=none,
+      ymin=-2,ymax=2,
+      xmin=-7,xmax=7,
+      domain=-2*pi:2*pi,
+      xtick=\empty,
+      ytick=\empty,
+      ]
+      \addplot[myplot] {sin(deg(x))} node[above right,pos=0.62]{$\sin x$} 
+        node[above=25pt,pos=0.90,black]{περιττή} ; 
+      \coordinate (o) at (0,0) ;
+    \end{axis}
+    \node[below left,xshift=-3pt,blue!75] at (o) {$0$} ;
+    \draw[axis,-stealth]  (o)+(-2,0) -- +(2,0) node[below] {$x$};
+    \draw[axis,-stealth]  (o)+(0,-1.8) -- +(0,1.8) node[left] {$y$};
+  \end{tikzpicture}
+\end{center}
+
+
+% \subsection*{Πράξεις μεταξύ Συναρτήσεων}
+
+% Αν $ f \colon A \to \mathbb{R} $ και $ g \colon B \to \mathbb{R} $ είναι συναρτήσεις 
+% και $ A \cap B $ είναι το σύνολο των \textbf{κοινών} στοιχείων των $A$ και $B$, τότε
+% \begin{myitemize}
+%   \item $ (f+g)(x) = f(x) + g(x) $ με πεδίο ορισμού το σύνολο $ A \cap B $
+%   \item $ (f-g)(x) = f(x) - g(x) $ με πεδίο ορισμού το σύνολο $ A \cap B $
+%   \item $ (f\cdot g)(x) = f(x) \cdot  g(x) $ με πεδίο ορισμού το σύνολο$ A \cap B $
+%   \item $ \Bigl(\frac{f}{g}\Bigr)(x) = \frac{f(x)}{g(x)} $ με πεδίο ορισμού το σύνολο
+%     $ \{ x \in  A \cap B \; : \; g(x) \neq 0 \} $ 
+% \end{myitemize}
+
+\subsection*{Σύνθεση Συναρτήσεων}
+
+\begin{dfn}
+  Αν $f$ και $g$ συναρτήσεις, τότε η \textcolor{Col1}{σύνθεση της $f$ με τη $g$},
+  συμβολίζεται με $ g \circ f $ και ορίζεται ως 
+  \begin{empheq}[box=\mathboxr]{equation*}
+    (g \circ f) (x) = g(f(x))
+  \end{empheq}
+  Το πεδίο ορισμού της $ g \circ f $ είναι το σύνολο όλων των $x$ που ανήκουν στο 
+  πεδίο ορισμού της $f$ ώστε το $ f(x) $ να ανήκει στο πεδίο ορισμού της $g$. 
+  Δηλαδή, η συνάρτηση $ g \circ f $ ορίζεται όταν ορίζονται, τόσο το $ f(x) $ όσο 
+  και το $ g(f(x)) $.
+\end{dfn}
+
+\begin{example}
+Αν $ f(x) = \sin{x} $ και $ g(x) = 5x^{2}-3x $ τότε ορίζεται η σύνθεση της $f$ με τη 
+$g$ για κάθε $ x \in \mathbb{R} $, γιατί
+\[
+  -1 \leq \sin{x} \leq 1, \; \forall x \in \mathbb{R}
+\]
+που σημαίνει ότι όλες οι τιμές της $ f(x)$, ανήκουν στο πεδίο ορισμού της $g$ που 
+είναι το $ \mathbb{R} $, επομένως 
+\[
+  (gof)(x) = g(f(x)) = g(\sin{x}) = 5(\sin{x} )^{2}-3(\sin{x}) = 5 \sin^{2}{x} - 3
+  \sin{x}
+\]
+\end{example}
+
+\vspace{\baselineskip}
+
+\twocolumnsidesss{
+\subsection*{Κάθετη και Οριζόντια μετατόπιση}
+  Έστω $ c>0 $. Τότε η γραφική παράσταση της 
+  \begin{myitemize}
+    \item $ y= f(x) + c $ είναι η γραφ. παράσταση της $ y=f(x) $ 
+      \textbf{μετατοπισμένη κατά \boldsymbol{$c$} προς τα \textcolor{Col1}{πάνω}.}
+    \item $ y= f(x) - c $ είναι η γραφ. παράσταση της $ y=f(x) $ 
+      \textbf{μετατοπισμένη κατά \boldsymbol{$c$} προς τα \textcolor{Col1}{κάτω}.}
+    \item $ y= f(x-c) $ είναι η γραφ. παράσταση της $ y=f(x) $ 
+      \textbf{μετατοπισμένη κατά \boldsymbol{$c$} προς τα \textcolor{Col1}{δεξιά}.}
+    \item $ y= f(x+c) $ είναι η γραφ. παράσταση της $ y=f(x) $ 
+      \textbf{μετατοπισμένη κατά \boldsymbol{$c$} προς τα \textcolor{Col1}{αριστερά}.}
+  \end{myitemize}
+}{
+  \begin{tikzpicture}
+    \begin{scope}[scale=0.7]
+      \coordinate  (o) at (-1, 0) node[below left] {$0$};
+      \draw[-latex,axis] (-2.5,0) -- (o) -- (8.5,0) node[below] (x) {$x$} ;
+      \draw[-latex,axis] (-1,-2) -- (o) -- (-1,5.5) node[left] (y) {$y$} ;
+      \path [in=-180, out=90, looseness=0.75] (2.3,1) to coordinate[pos=0.2] (p) 
+        (3.55,2.75) node[above,Col1] {$y=f(x)$} ;
+      \draw [name path=cent,Col1, ultra thick] (0,0) pic {mygraph} ;
+      \draw [name path=up,Col2, thick] (0,3) pic {mygraph} ;
+      \draw [name path=down,black!50, thick] (0,-3) pic {mygraph} ;
+      \draw [name path=right,black, thick] (3,0) pic {mygraph} ;
+      \draw [name path=left,blue!75, thick] (-3,0) pic {mygraph} ;
+      \fill (p) circle (1.5pt) ;
+      \draw[dashed] (p) -- node[pos=0.5,below] {$c$} +(-3,0) coordinate (pl) ;
+      \draw[dashed] (p) -- node[pos=0.5,below] {$c$} +(3,0) coordinate (pr) ;
+      \draw[dashed] (p) -- node[pos=0.5,left] {$c$} +(0,3) coordinate (pu) ;
+      \draw[dashed] (p) -- node[pos=0.6,left] {$c$} +(0,-3) coordinate (pd) ;
+      \fill (pu) circle (1.5pt) ;
+      \fill (pd) circle (1.5pt) ;
+      \fill (pl) circle (1.5pt) ;
+      \fill (pr) circle (1.5pt) ;
+      \node at (pl) [above=1.0cm,blue!75,xshift=0.8cm] {$y=f(x+c)$} ;
+      \node at (pr) [above=1.0cm,xshift=1.0cm] {$y=f(x-c)$} ;
+      \node at (pu) [Col2,yshift=20pt,xshift=3cm] {$y=f(x)+c$} ;
+      \node at (pd) [right=0.4,black!75] {$y=f(x)-c$} ;
+    \end{scope}
+  \end{tikzpicture}
+}
+
+\subsection*{Χρήσιμοι Μετασχηματισμοί}
+
+\twocolumnsidesss{
+  Έστω $ c>1 $. Τότε η γραφική παράσταση της 
+  \begin{myitemize}
+    \item $ y= cf(x) $ είναι η γραφ. παράσταση της $ y=f(x) $ 
+      \textbf{τεντωμένη κάθετα} κατά $c$.
+    \item $ y= \frac{1}{c}f(x) $ είναι η γραφ. παράσταση της $ y=f(x) $
+      \textbf{συμπιεσμένη κάθετα} κατά $c$.
+    \item $ y= f(cx) $ είναι η γραφ. παράσταση της $ y=f(x) $
+      \textbf{συμπιεσμένη οριζόντια} κατά $c$.
+    \item $ y=  f\Bigl(\frac{1}{c}x\Bigr) $ είναι η γραφ. παράσταση της $ y=f(x) $
+      \textbf{τεντωμένη οριζόντια} κατά $c$.
+    \item $ y=  -f(x) $ είναι η γραφ. παράσταση της $ y=f(x) $
+      \linebreak η οποία έχει \textbf{ανακλαστεί} γύρω από τον 
+      \textcolor{Col1}{άξονα $x$}.
+    \item $ y=  f(-x) $ είναι η γραφ. παράσταση της $ y=f(x) $
+      \linebreak η οποία έχει \textbf{ανακλαστεί} γύρω από τον 
+      \textcolor{Col1}{άξονα $y$}.
+  \end{myitemize}
+}{
+\begin{tikzpicture}[scale=0.7]
+    \coordinate (0) at (0.75, 1.5) {};
+    \coordinate (1) at (2, 3.25) {};
+    \coordinate (2) at (2.925, 2.5) {};
+    \coordinate (3) at (3.375, 3) {};
+    \coordinate (o) at (0, 0) {};
+    \coordinate (5) at (0.875, 3.75) {};
+    \coordinate (6) at (2.125, 6.25) {};
+    \coordinate (7) at (3.05, 4.75) {};
+    \coordinate (8) at (3.5, 5.5) {};
+    \coordinate (9) at (0.75, 0.25) {};
+    \coordinate (10) at (2, 1.425) {};
+    \coordinate (11) at (2.925, 1.2) {};
+    \coordinate (12) at (3.375, 1.5) {};
+    \coordinate (13) at (-0.625, 1.5) {};
+    \coordinate (14) at (-1.875, 3.25) {};
+    \coordinate (15) at (-2.8, 2.5) {};
+    \coordinate (16) at (-3.25, 3) {};
+    \coordinate (17) at (0.75, -1.5) {};
+    \coordinate (18) at (2, -3.25) {};
+    \coordinate (19) at (2.925, -2.5) {};
+    \coordinate (20) at (3.375, -3) {};
+    \draw [ultra thick,Col1,in=-180, out=90, looseness=0.75] (0.center) to (1.center);
+    \draw [ultra thick,Col1,in=180, out=0] (1.center) to (2.center);
+    \draw [ultra thick,Col1,in=-90, out=0] (2.center) to (3.center) 
+      node[above right] {\boldsymbol{$y=f(x)$}};
+    \draw [Col2,in=-180, out=90, looseness=0.75] (5.center) to (6.center);
+    \draw [Col2,in=180, out=0] (6.center) to (7.center);
+    \draw [Col2,in=-90, out=0] (7.center) to (8.center) node[above right,align={center}] 
+      {$y=cf(x)$};
+    \draw [in=-180, out=90, looseness=0.75] (9.center) to (10.center);
+    \draw [in=180, out=0] (10.center) to (11.center);
+    \draw [in=-90, out=0] (11.center) to (12.center) 
+      node[black,right,align={center}] {$y= \dfrac{1}{c}f(x)$};
+    \draw [blue!75,in=0, out=90, looseness=0.75] (13.center) to (14.center);
+    \draw [blue!75,in=0, out=180] (14.center) to (15.center);
+    \draw [blue!75,in=-90, out=180] (15.center) to (16.center) node[above
+      right,yshift=8pt] {$y=f(-x)$};
+    \draw [black!75,in=180, out=-90, looseness=0.75] (17.center) to (18.center);
+    \draw [black!75,in=-180, out=0] (18.center) to (19.center);
+    \draw [black!75,in=90, out=0] (19.center) to (20.center) 
+      node[above right,yshift=15pt] {$y=-f(x)$};
+    \draw[-latex,axis] (-3.5,0) -- (o) -- (6.0,0) node[below] (x) {$x$} ;
+    \draw[-latex,axis] (0,-3.5) -- (o) -- (0,7.0) node[left] (y) {$y$} ;
+    \draw [thick,orange!75,in=-180, out=90, looseness=0.75] 
+      (0.75,1.5) to (1.3,3.25) ;
+    \draw [thick,orange!75,in=180, out=0] (1.3,3.25) to (1.925,2.5);
+    \draw [thick,orange!75,in=-90, out=0] (1.925,2.5) to (2.175,3) 
+      node[above=5pt,orange!75!black] {$y=f(cx)$};
+    \draw [thick,blue!50,in=-180, out=90, looseness=0.75] 
+      (0.75,1.5) to (3.3,3.25) ;
+    \draw [thick,blue!50,in=180, out=0] (3.3,3.25) to (4.925,2.5);
+    \draw [thick,blue!50,in=-90, out=0] (4.925,2.5) to (5.375,3) 
+      node[right=5pt,blue!75] {$y=f\Bigl(\frac{1}{c}x\Bigr)$};
+    \end{tikzpicture}
+}

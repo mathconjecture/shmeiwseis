@@ -1,0 +1,682 @@
+\chapter*{Παράγωγος}
+
+
+\section*{Η Έννοια της Παραγώγου}
+
+Τα προβλήματα. της εύρεσης της εφαπτομένης μιας καμπύλης και του υπολογισμού της 
+ταχύτητας ενός κινητού σώματος, ανάγονται στον υπολογισμό του ίδιου τύπου ορίου, 
+όπως θα δούμε στη συνέχεια. Αυτό το όριο, ονομάζεται \textbf{παράγωγος} και ερμηνεύεται 
+ως ο ρυθμός μεταβολής κάποιου μεγέθους.
+
+\subsection*{Εφαπτομένη Καμπύλης}
+
+Για τον υπολογισμό της εφαπτομένης μιας καμπύλης με εξίσωση $ y=f(x) $, στο 
+σημείο $P( x_{0}, f(x_{0})) $, θεωρούμε ένα γειτονικό σημείο $ Q(x,f(x)) $, με 
+$ x \neq x_{0} $ και υπολογίζουμε την κλίση $\lambda$ της \textbf{τέμνουσας} $ PQ $
+(Σχήμα~\ref{fig:slope_sec})
+
+\twocolumnsiderrp{
+  \begin{tikzpicture}[scale=0.8]
+    \draw[-stealth,axis] (-0.5,0) -- (5,0) node[below] (x) {\smaller$x$} ;
+    \draw[-stealth,axis] (0,-0.5) -- (0,3.7) node[left] (y) {\smaller$y$} ;
+    \coordinate (o) at (0,0) ;
+    \begin{scope}[yshift=-15pt]
+      \draw[graph,tangent=0.28,Col1] (0.2,0.0) to[out=80, in=180] (2.2,3.0) coordinate 
+        (q) to[out=0,in=-180] node[above=20pt,pos=0.7,xshift=7pt] {$y=f(x)$} (5,0.7) ;
+      \fill[use tangent] (0,0) coordinate (p) circle (1.5pt);
+      \fill (p) node[above,xshift=-2pt] {$P$} circle (1.5pt);
+      \fill (q) node[above] {$Q$} circle (1.5pt);
+      \draw[dashed] (o|-p) node[left,Col2] {\smaller$f(x_{0})$} -- (p) -- (o-|p)
+        node[below,Col2] {\smaller$x_{0}$} ;
+      \draw[dashed] (o|-q) node[left,Col2] {\smaller$f(x)$} -- (q) -- (o-|q) 
+        node[below,Col2] {\smaller$x$} ;
+      \coordinate (a) at (p-|q) ; 
+      \draw[decorate,decoration={brace,amplitude=3pt,raise=3pt,mirror},Col2] (p) -- (a) ;
+      \draw (a) -- (q) node[midway,xshift=5pt,yshift=-2pt,pin={[pin
+        edge={black,latex-},Col2]75:\smaller$f(x)-f(x_{0})$}]{} ;
+      \draw[decorate,decoration={brace,amplitude=3pt,raise=3pt,mirror},Col2] (a) -- (q) ;
+      \draw[Col1] pic["$\phi$",fill=Col1!50,angle eccentricity=1.4] {angle={a--p--q}} ;
+      \draw (p) -- (q) ;
+      \draw (p) -- (a) node[below=3pt,midway,Col2] {\smaller$x- x_{0}$} ;
+    \end{scope}
+  \end{tikzpicture}
+  \captionof{figure}{Κλίση τέμνουσας}
+  \label{fig:slope_sec}
+}{
+  \[
+    \lambda _{PQ} = \tan{\phi} = \frac{f(x)-f(x_{0})}{x- x_{0}} 
+  \] 
+  Στη συνέχεια, αφήνουμε το σημείο $Q$ να πλησιάσει το $P$, κατά μήκος της 
+  καμπύλης, επιτρέποντας στο $x$ να πλησιάσει το $ x_{0} $. Αν η κλίση $\lambda_{PQ}$ 
+  τείνει σε κάποιον αριθμό, έστω $ \lambda $, τότε ορίζουμε την εφαπτομένη στο σημείο 
+  $P$ να είναι η ευθεία που διέρχεται από το $P$ και έχει κλίση $ \lambda $. Με άλλα 
+  λόγια, η εφαπτομένη της καμπύλης στο σημείο $P$, είναι το όριο (οριακή θέση) της 
+  τέμνουσας $ PQ $, καθώς το $Q$ τείνει στο $P$ (Σχήμα~\ref{fig:lim_sec}).
+}
+
+\twocolumnsiderrp{
+  \begin{tikzpicture}[scale=0.8]
+    \draw[-stealth,axis] (-0.5,0) -- (5,0) node[below] (x) {\smaller$x$} ;
+    \draw[-stealth,axis] (0,-0.5) -- (0,3.7) node[left] (y) {\smaller$y$} ;
+    \coordinate (o) at (0,0) ;
+    \begin{scope}[yshift=-15pt]
+      \draw[thick,tangent=0.28,Col2] (0.2,0.0) to[out=80, in=180] (2.2,3.0) coordinate 
+        (q) to[out=0,in=-180] coordinate[pos=0.23] (q1) coordinate[pos=0.4] (q2) (5,0.7) ;
+      \fill[use tangent] (0,0) coordinate (p) circle (1.5pt);
+      \fill (p) node[above,xshift=-2pt] {$P$} circle (1.5pt);
+      \fill (q) node[above=3pt] {\smaller$Q$} circle (1.5pt);
+      \fill (q1) node[above right] {\smaller$Q$} circle (1.5pt);
+      \fill (q2) node[above right] {\smaller$Q$} circle (1.5pt);
+      \draw[very thick,use tangent,Col1] (-1.8,0) -- (2,0) node[right] {$\varepsilon$} ;
+      \draw[shorten <=-1.3cm,blue!50] (p) -- ($ (p)!4cm!(q) $) ;
+      \draw[shorten <=-1.3cm,blue!50] (p) -- ($ (p)!4cm!(q1) $) ;
+      \draw[shorten <=-1.3cm,blue!50] (p) -- ($ (p)!4cm!(q2) $) ;
+      \node  at (q) [above] (f) {} ;
+      \node  at (p) [above right=20pt,yshift=4pt] (g) {} ;
+      \node  at (q1) [above] (a) {} ;
+      \node  at (q1) [right,xshift=1pt] (d) {} ;
+      \node at (q) [above right,xshift=3pt,yshift=-1pt] (b) {} ;
+      \node  at (q2) [above,xshift=1pt] (c) {} ;
+      \node  at (q2) [right] (e) {} ;
+      \draw (a.center) edge[-stealth] (b.center) ;
+      \draw (c.center) edge[-stealth] (d.center) ;
+      \draw (f.center) edge[-stealth] (g.center) ;
+      \node at (o|-p) [left,Col2]{\phantom{\smaller$f(x_{0})$}} ;
+      \draw[dashed] (p) -- (o-|p) node[below,Col2] {\smaller$x_{0}$} ;
+      \draw[dashed] (q2) -- (o-|q2) node[below,Col2] {\smaller$x$} ;
+      \node at (o-|q2) [below left=2pt] (r1) {} ;
+      \node at (o-|q1) [below left=2pt] (r2) {} ;
+      \node at (o-|q)[below left=2pt] (r3) {} ;
+      \node at (o-|p)[below right=2pt] (r4) {} ;
+      \path[draw,Col2] (r1.center) edge[-stealth] (r2.center) ;
+      \path[draw,Col2] (r2.center) edge[-stealth,xshift=-6pt] (r3.center) ;
+      \path[draw,Col2] (r3.center) edge[-stealth,xshift=-6pt] (r4.east) ;
+    \end{scope}
+  \end{tikzpicture}
+  \captionof{figure}{Όριο τέμνουσας}
+  \label{fig:lim_sec}
+}{
+  \begin{dfn}
+    Η \textcolor{Col1}{εφαπτομένη} της καμπύλης $ y=f(x) $ στο σημείο 
+    $ P(x_{0}, f(x_{0})) $, είναι η ευθεία που διέρχεται από το $P$ με κλίση 
+    \begin{empheq}[box=\mathboxg]{equation}
+      \label{eq:slope}
+      \lambda = \lim_{x \to x_{0}} \frac{f(x)-f(x_{0})}{x- x_{0}} 
+    \end{empheq}
+    υπό την προϋπόθεση ότι το όριο, υπάρχει. Τότε η εξίσωσή της εφαπτομένης, δίνεται 
+    από την σχέση:
+    \begin{empheq}[box=\mathboxr]{equation*}
+      \textcolor{Col1}{\varepsilon} \colon y- f(x_{0}) = \lambda (x- x_{0})
+    \end{empheq}
+  \end{dfn}
+}
+
+\subsection*{Ταχύτητα σώματος}
+
+Έστω, ένα σώμα το οποίο κινείται \textbf{ευθύγραμμα}, σύμφωνα με την εξίσωση 
+κίνησης, $ x=f(t) $, όπου $x$ είναι η απομάκρυνση του σώματος από την αρχή του
+συστήματος συντεταγμένων, κατά τη χρονική στιγμή $t$. Η συνάρτηση $f$ που περιγράφει 
+την κίνηση του σώματος, λέγεται 
+\textbf{συνάρτηση θέσης} του σώματος. 
+
+\twocolumnsiderrp{
+  \begin{tikzpicture}[scale=0.8]
+    \draw[-latex] (0,0) -- coordinate[pos=0.5] (a1) coordinate[pos=0.90] (a2) 
+    (6.0,0) node [below] {$x$} ;
+    \node at (a1) [above,xshift=2pt] {$P$} ;
+    \node at (a2) [above] {$Q$} ;
+    \fill (0.5,0) node[below] (o) {$0$} circle (1.5pt) ;
+    \coordinate (b) at (0.5,-0.8) ;
+    \coordinate (b') at (0.5,-1.5) ;
+    \coordinate (b1) at ($(a1)-(0,0.8)$) ;
+    \coordinate (b2) at ($(a2)-(0,1.5)$) ;
+    \fill[Col1] (a1) circle (1.5pt) ;
+    \fill[Col1] (a2) circle (1.5pt) ;
+    \draw[decorate,decoration={brace,amplitude=4pt,raise=5pt,mirror},Col2] (a1) -- (a2) ;
+    \draw (a1) -- (a2) node[below=10pt,midway,Col2] {\smaller$f(t)- f(t_{0})$} ;
+    \draw (a1) node[pin={[pin edge={black,latex-},Col2,align=center]100:\small{θέση τη
+      χρον.} \\ \small{στιγμή $ t_{0} $}}]{} ;
+    \draw (a2) node[pin={[pin edge={black,latex-},Col2,align=center]100:\small{θέση τη
+      χρον.} \\ \small{στιγμή $ t $}}]{} ;
+    \draw[very thick,Col1] (a1) -- (a2) ;
+    \draw[{Stealth}-{Stealth}] (b) node {$|$} -- node[fill=white]{\smaller$f(t_{0})$} (b1)
+      node {$|$} ;
+    \draw[{Stealth}-{Stealth}] (b') node {$|$} -- node[fill=white]{\smaller$f(t)$} (b2) 
+      node {$|$} ;
+    % \draw[||{Stealth}-{Stealth}||] (0, 1) -- (1, 1);    %% || will produce thicker pipe
+  \end{tikzpicture}
+}{
+  \vspace*{0.5\baselineskip}
+  Κατά τη χρονική διάρκεια από $ t_{0} $ έως $ t $, 
+  η μεταβολή της θέσης του σώματος (μετατόπιση), από τη θέση $ P $ στη θέση $ Q $,  
+  είναι $ f(t)-f(t_{0}) $ και άρα η μέση ταχύτητα του σώματος είναι
+  \[
+    \text{μέση ταχύτητα} = \frac{\text{μετατόπιση}}{\text{χρόνος}} = 
+    \frac{f(t)-f(t_{0})}{t- t_{0}}  
+  \] 
+  που είναι ίση με την κλίση της \textbf{τέμνουσας} $ PQ $ (Σχήμα~\ref{fig:speed}).
+}
+
+\twocolumnsiderrp{
+  \begin{tikzpicture}[scale=0.8]
+    \draw[-stealth,axis] (-0.5,0) -- (5,0) node[below] (x) {\smaller$t$} ;
+    \draw[-stealth,axis] (0,-0.5) -- (0,4) node[left] (y) {\smaller$x$} ;
+    \coordinate (o) at (0,0) ;
+    \node (0) at (0.25, 0.25) {};
+    \node (1) at (0.75, 1.25) {};
+    \node (2) at (1.25, 0.75) {};
+    \node (p) at (1.95, 2.175) {};
+    \node (q) at (3.175, 3.25) {};
+    \node (5) at (3.575, 3.225) {};
+    \draw [thick,Col2,in=180, out=90, looseness=0.75] (0.center) to (1.center);
+    \draw [thick,Col2,in=-180, out=0] (1.center) to (2.center);
+    \draw [thick,Col2,in=-120, out=0, looseness=0.75] (2.center) to (p.center);
+    \draw [thick,Col2,bend left,tangent=0.15] (p.center) to (q.center);
+    \draw [thick,Col2,in=165, out=0, looseness=0.75] (q.center) to (5.center);
+    \draw[very thick,use tangent,Col1] (-1.1,0) -- (1.2,0) ;
+    \fill[use tangent] (0,0) coordinate (p) circle (1.5pt);
+    \fill (p) node[above left,xshift=3pt] {$P$} circle (1.5pt);
+    \fill (q) node[above] {$Q$} circle (1.5pt);
+    \draw[dashed,Col2] (o) -- (o|-p) node[left] {\smaller$f(t_{0})$} -- (p) -- (o-|p)
+      node[below,Col2] {\smaller$t_{0}$} ;
+    \draw (p.center) -- (q.center) ;
+    \draw[dashed,Col2] (o) -- (o|-q) node[left]{\smaller$f(t)$} -- (q) -- (o-|q) 
+      node[below,Col2] {\smaller$t$} ;
+    \coordinate (a) at (p-|q) ; 
+    \draw (p) -- (a) node[below=3pt,midway,Col2] {\smaller$t- t_{0}$} ;
+    \draw[decorate,decoration={brace,amplitude=3pt,raise=3pt,mirror},Col2] (p) -- (a) ;
+    \draw (a) -- (q.center) node[midway,xshift=5pt,pin={[pin edge={black,latex-},Col2]-85:\smaller$\!\!\!\!f(t)\!-\!f(t_{0})$}]{} ;
+    \draw[decorate,decoration={brace,amplitude=3pt,raise=3pt,mirror},Col2] (a) -- (q) ;
+    \node[Col2,xshift=-2pt] at (1,2) {$x=f(t)$} ;
+  \end{tikzpicture}
+  \captionof{figure}{ταχύτητα σώματος}
+  \label{fig:speed}
+}{
+  Στη συνέχεια, υποθέτουμε ότι υπολογίζουμε τη μέση ταχύτητα του σώματος, σε όλο και 
+  μικρότερα χρονικά διαστήματα. Με άλλα λόγια, επιτρέπουμε στο $t$ να πλησιάσει το 
+  $ t_{0} $, και ορίζουμε την \textcolor{Col1}{ταχύτητα} (ή στιγμιαία ταχύτητα) του 
+  σώματος, τη χρονική στιγμή $ t_{0} $ να είναι το \textbf{όριο} της μέσης ταχύτητας
+  \begin{empheq}[box=\mathboxg]{equation}
+    \label{eq:speed}
+    v(t_{0}) = \lim_{t \to t_{0}} \frac{f(t)-f(t_{0})}{t- t_{0}}  
+  \end{empheq}
+  Αυτό σημαίνει, ότι η ταχύτητα του σώματος, τη χρονική στιγμή $ t_{0} $ είναι ίση με 
+  την \textbf{κλίση της εφαπτομένης} στο σημείο $P$, όπως φαίνεται από τις 
+  εξισώσεις~\eqref{eq:slope} και~\eqref{eq:speed}.
+}
+
+
+\section*{Ορισμός Παραγώγου}
+
+Είδαμε, ότι ο ίδιος τύπος ορίου, εμφανίζεται κατά τον υπολογισμό της εφαπτομένης 
+καμπύλης και της ταχύτητας ενός σώματος. Ακριβέστερα, όρια της μορφής 
+\[
+  \lim_{x \to x_{0}} \frac{f(x)-f(x_{0})}{x- x_{0}} 
+\] 
+εμφανίζονται, όπως θα δούμε, κατά τον υπολογισμό του \textcolor{Col1}{ρυθμού μεταβολής} 
+κάποιου μεγέθους.
+
+\begin{dfn}
+  Η \textcolor{Col1}{παράγωγος} μιας συνάρτησης $f(x)$ στο σημείο $ x_{0} $, 
+  συμβολίζεται με $ f'(x_{0}) $ και είναι ίση με 
+  \begin{empheq}[box=\mathboxr]{equation*}
+    f'(x_{0}) = \lim_{x \to x_{0}} \frac{f(x)-f(x_{0})}{x- x_{0}}
+  \end{empheq}
+  οποτεδήποτε αυτό το όριο υπάρχει. Τότε λέμε ότι η συνάρτηση $f$ είναι
+  \textcolor{Col1}{παραγωγίσιμη} στο $ x_{0} $.
+\end{dfn}
+
+\begin{rem}
+  Αν θέσουμε $ x- x_{0}=h $ τότε έχουμε $ x = x_{0}+h $ και $ h \to 0 $ καθώς $ x \to
+  x_{0} $, οπότε με αντικατάσταση, το παραπάνω όριο, γράφεται στην ισοδύναμη μορφή
+  \begin{empheq}[box=\mathboxr]{equation*}
+    f'(x_{0}) = \lim_{h \to 0} \frac{f(x_{0}+h)-f(x_{0})}{h}
+  \end{empheq}
+\end{rem}
+
+
+\subsection*{Ρυθμός Μεταβολής}
+
+Έστω $y$ κάποια ποσότητα η οποία εξαρτάται από κάποια άλλη ποσότητα $x$. 
+Επομένως το $y$ είναι συνάρτηση του $x$ και γράφουμε $ y=f(x) $.
+
+\twocolumnsiderrp{
+\begin{tikzpicture}[scale=0.8]
+    \draw[-stealth,axis] (-0.5,0) -- (4.5,0) node[below] (x) {\smaller$x$} ;
+    \draw[-stealth,axis] (0,-0.5) -- (0,4) node[left] (y) {\smaller$y$} ;
+    \coordinate (O) at (0,0) ;
+    \draw[thick,tangent=0.30,Col2] (0.8,0.8) to[out=90, in=180] coordinate[pos=0.7] (p1) 
+      (3.5,3.5) node[right]{$f(x)$} ;
+    \filldraw[use tangent] (0,0) node (p) {} circle (1.5pt);
+    \draw[very thick,use tangent,Col1!50] (-1.7,0) node (a) {} -- (1.8,0) node (d) {} ;
+    \draw[dashed,Col2] (O|-p) node[left]{\smaller$f(x_{1})$} -- (p) -- (O-|p)
+      node[below]{\smaller$x_{1}$};
+    \filldraw (p1) circle (1.5pt);
+    \node at (p1) [above right,yshift=3pt] {$Q$} ;
+    \node at (p) [above left,xshift=3pt] {$P$} ;
+    % \draw[dashed] (O|-p1) node[left]{\smaller$f(x_{2})$} -- (p1) -- (O-|p1) 
+    %   node[below]{\smaller$x_{2}$};
+    \draw[dashed,Col2] (O|-p) -- (p) ;
+    \node at (p-|p1) (x){} ;
+    \draw (p.center) -- (x.center) ;
+    \draw (x.center) -- (p1) ;
+    \draw (p.center) -- (p1) ;
+    \draw[dashed,Col2] (x) -- (O-|x) node[below] {\smaller$x_{2}$} ;
+    \draw[dashed,Col2] (O|-p1) node[left] {\smaller$f(x_{2})$} -- (p1) ;
+    \draw[decorate,decoration={brace,amplitude=3pt,raise=4pt,mirror}] (p.center) -- (x)
+      node[midway,below=5pt,Col2] {\smaller{$\Delta x$}} ;
+    \draw[decorate,decoration={brace,amplitude=3pt,raise=4pt}] (p1.center) -- (x)
+      node[midway,right=5pt,Col2] {\smaller{$\Delta y$}} ;
+  \end{tikzpicture}
+  \captionof{figure}{ρυθμός μεταβολής}
+  \label{fig:rate}
+}{
+  Καθώς το $x$ μεταβάλλεται από την τιμή $ x_{1} $ στην τιμή $ x_{2} $, λέμε ότι η 
+  μεταβολή του $x$, είναι $\Delta x = x_{2}- x_{1} $ και η αντίστοιχη μεταβολή του $y$ 
+  είναι $ \Delta y = f(x_{2}) - f(x_{1})$. Τότε, ο λόγος
+  \[
+    \frac{\Delta y}{\Delta x} = \frac{f(x_{2} )-f(x_{1})}{x_{2}- x_{1}}
+  \] 
+  λέγεται \textcolor{Col1}{μέσος ρυθμός μεταβολής} του $y$ ως προς $x$, επί του 
+  διαστήματος $ [x_{1}, x_{2}] $ και αναπαρίσταται γεωμετρικά από την κλίση της 
+  τέμνουσας $ PQ $, όπως φαίνεται στο σχήμα~\ref{fig:rate}.
+}
+
+\vspace{0.5\baselineskip}
+Κατά αναλογία με τη διαδικασία του υπολογισμού της ταχύτητας ενός σώματος, που είδαμε 
+προηγουμένως, θεωρούμε το μέσο ρυθμό μεταβολής σε όλο και μικρότερα διαστήματα,
+επιτρέποντας το $ x_{2} $ να πλησιάσει το $ x_{1} $, και άρα η ποσότητα $ \Delta x $ 
+να πλησιάσει το 0. Το όριο, αυτών των μέσων ρυθμών μεταβολής, καθώς το $ x_{2} $ τείνει 
+στο $ x_{1} $, ονομάζεται (στιγμιαίος) \textcolor{Col1}{ρυθμός μεταβολής} του $y$ ως 
+προς $x$ στο σημείο $ x= x_{1} $, και αναπαρίσταται γεωμετρικά από την \textbf{κλίση της 
+εφαπτομένης} της καμπύλης $ y=f(x) $ στο σημείο $ P(x_{1}, f(x_{1})) $. Δηλαδή
+\[
+  \text{ρυθμός μεταβολής του $y$ ως προς $x$} = \lim_{\Delta x \to 0} \frac{\Delta
+  y}{\Delta x} = \lim_{x_{2} \to x_{1}} \frac{f(x_{2} )-f(x_{1})}{x_{2}- x_{1}} 
+\] 
+Αναγνωρίζουμε αυτό το όριο! Είναι η παράγωγος της συνάρτησης $f$ στο σημείο $ x_{1} $.
+
+
+
+
+
+\section*{Παράγωγοι Βασικών Συναρτήσεων}
+
+Με τη βοήθεια του ορισμού της παραγώγου, που είδαμε σε προηγούμενη ενότητα,
+αποδεικνύονται οι τύποι για τις παραγώγους των βασικών συναρτήσεων, στον πίνακα που 
+ακολουθεί.
+
+\begin{center}
+\begin{Mytable}
+  \renewcommand{\arraystretch}{2.0}
+  \begin{tabular}{|c||c|}
+    \TabCellHead Βασικές Συναρτήσεις & \TabCellHead Τριγωνομετρικές Συναρτήσεις \\[4pt] \hline
+    $ (c)' = 0, \quad c \in \mathbb{R} $ & $ (\sin{x})' = \cos{x} $ \\[4pt] \hline
+    $ (x)' = 1 $ & $ (\cos{x})' = - \sin{x} $ \\[4pt] \hline 
+    $ (x^{a})' = a x^{a-1},\quad a \in \mathbb{R}\setminus \{-1\} $ & $ (\tan{x})' = \frac{1}{\cos^{2}{x}}$ \\[4pt] \hline
+    $ \Bigl(\frac{1}{x}\Bigr)' = - \frac{1}{x^{2}} $ & $ (\cot{x})' = - \frac{1}{\sin^{2}{x}}  $ \\[4pt] \hline
+    $ \Bigl(\frac{1}{x^{2}}\Bigr)' = - \frac{2}{x^{3}} $ & $ (\arctan{x})' = \frac{1}{1 + x^{2}} $ \\[4pt] \hline
+    $ (a^{x})' = a^{x}\cdot \ln{a} $ & $ (\arccot{x})' = \frac{-1}{1 + x^{2}} $ \\[4pt] \hline
+    $ (e^{x})' = e^{x} $ &  $ (\arcsin{x})' = \frac{1}{\sqrt{1 - x^{2}}} $ \\[4pt] \hline
+    $ (\ln{x})' = \frac{1}{x} $ & $ (\arccos{x})' = \frac{-1}{\sqrt{1 - x^{2}}} $ \\[4pt] \hline
+    $ (\sqrt[n]{x^{m}})' = (x^{\frac{m}{n}})'= \frac{m}{n} x^{\frac{m}{n} -1} $ & $ (\sinh{x})' = \cosh{x} $ \\[4pt] \hline
+    $ (\sqrt{x})' = \frac{1}{2 \sqrt{x}} $ & $ (\cosh{x})' = \sinh{x} $ \\[4pt] \hline
+  \end{tabular}
+\end{Mytable}
+\end{center}
+
+
+
+
+\section*{Κανόνες Παραγώγισης}
+
+Οι προτάσεις του, επόμενου πίνακα, γνωστές ως \textcolor{Col1}{κανόνες παραγώγισης}, 
+σε συνδυασμό με τους τύπους του προηγούμενου πίνακα, μας δίνουν τη δυνατότητα να
+υπολογίζουμε τις παραγώγους, πιο πολύπλοκων συναρτήσεων.
+
+\begin{center}
+\begin{Mytable}
+  \renewcommand{\arraystretch}{2.0}
+  \begin{tabular}{|c|c|}
+    \TabCellHead Αθροίσματος & $ (f(x)+g(x))' = f'(x)+ g'(x) $ \\[4pt] \hline 
+    \TabCellHead Σταθεράς & $ (a f(x))' = a f'(x)$ \\[4pt] \hline
+    \TabCellHead Γινομένου & $ (f(x)\cdot g(x))' = f'(x)\cdot g(x) 
+      + f(x) g'(x) $ \\[4pt] \hline
+    \TabCellHead Πηλίκου & $ \Bigl(\frac{f(x)}{g(x)}\Bigr)' = \frac{f'(x)\cdot
+    g(x) - f(x) g'(x)}{g^{2}(x)} $ \\[4pt] \hline
+  \end{tabular}
+\end{Mytable}
+\end{center}
+
+
+
+\section*{Παραδείγματα}
+
+\subsection*{Παράγωγος βασικών συναρτήσεων}
+
+\begin{example}
+  $ (x^{3})' = 3x^{2} $
+\end{example}
+\begin{example}
+  $ \Bigl(\frac{1}{x^{4}}\Bigr)' = (x^{-4})' = -4x^{-5} $
+\end{example}
+\begin{example}
+  $ (3^{x})' = 3^{x} \ln{3} $
+\end{example}
+\begin{example}
+  $ ( \sqrt[3]{x} )' = (x^{\frac{1}{3} })' = \frac{1}{3} x^{\frac{1}{3} - 1} =
+  \frac{1}{3} x^{-\frac{2}{3} } = \frac{1}{3 x^{\frac{2}{3}}} = \frac{1}{3
+  \sqrt[3]{x^{2}}} $
+\end{example}
+
+\subsection*{Κανόνας Αθροίσματος}
+\begin{example}
+  $( \cos{x} + \sqrt{x})' = (\cos{x} )' + (\sqrt{x} )' = - \sin{x} + \frac{1}{2
+  \sqrt{x}} $
+\end{example}
+\begin{example}
+  $ \Bigl(\frac{1}{x} - \tan{x} \Bigr)' = \Bigl(\frac{1}{x}\Bigr)' - (\tan{x} )' = - \frac{1}{x^{2}} -
+  \frac{1}{\cos^{2}{x}} $
+\end{example}
+
+\subsection*{Κανόνας Σταθεράς}
+\begin{example}
+  $( 3 \ln{x})' = 3 \cdot (\ln{x} )' = 3 \cdot \frac{1}{x} = \frac{3}{x} $
+\end{example}
+\begin{example}
+  $\Bigl(\frac{2}{x}\Bigr)' = 2 \cdot \Bigl(\frac{1}{x}\Bigr)' = 2 \cdot
+  \Bigl(-\frac{1}{x}\Bigr) = \frac{1}{x^{2}} $
+\end{example}
+
+\subsection*{Κανόνας Γινομένου}
+\begin{example}
+  $ (x^{2}\cdot \ln{x})' = (x^{2})' \cdot \ln{x} + x^{2}\cdot (\ln{x})' = 2x \cdot
+  \ln{x} + x^{2} \cdot \frac{1}{x} = 2x \ln{x} + x = x(2 \ln{x} +1) $
+\end{example}
+\begin{example}
+  $ (\mathrm{e}^{x} \cdot \sin{x})' = (\mathrm{e}^{x} )'\cdot \sin{x} +
+  \mathrm{e}^{x} \cdot (\sin{x} )' = \mathrm{e}^{x} \cdot \sin{x} + \mathrm{e}^{x}
+  \cos{x} = \mathrm{e}^{x} \cdot (\sin{x} + \cos{x} ) $
+\end{example}
+
+\subsection*{Κανόνας Πηλίκου}
+\begin{example}
+  $ \Bigl(\frac{x^{2}}{\mathrm{e}^{x}}\Bigr)' = \frac{(x^{2})' \cdot \mathrm{e}^{x} 
+  - x^{2}\cdot (\mathrm{e}^{x} )'}{(\mathrm{e}^{x})^{2}}' 
+  = \frac{2x \cdot \mathrm{e}^{x} - x^{2}\cdot \mathrm{e}^{x}}{(\mathrm{e}^{x}) ^{2}} 
+  = \frac{\mathrm{e}^{x} (2x-x^{2})}{(\mathrm{e}^{x})^2} = 
+  \frac{2x - x^{2}}{\mathrm{e}^{x}} $
+\end{example}
+\begin{example}
+  $\Bigl( \frac{\ln{x}}{x}\Bigr)' = \frac{(\ln{x} )' \cdot x- \ln{x} \cdot (x)'}{x^{2}} 
+  = \frac{\frac{1}{x} \cdot x - \ln{x} \cdot 1}{x^{2}} = \frac{1- \ln{x}}{x^{2}} $
+\end{example}
+
+
+\section*{Ασκήσεις}
+
+\begin{exercise} Να υπολογιστεί η παράγωγος της συνάρτησης 
+  $ f(x) = \sqrt{x} \cdot \ln{x} $.
+  \begin{align*}
+    (\sqrt{x} \cdot \ln{x} )' 
+        &= (\sqrt{x} )'\cdot \ln{x} + \sqrt{x} \cdot (\ln{x}
+        )' = \frac{1}{2 \sqrt{x} } \cdot \ln{x} + \sqrt{x} \cdot \frac{1}{x} =
+        \frac{\ln{x}}{2 \sqrt{x}} + \frac{\sqrt{x}}{x} = 
+        \frac{x \ln{x}+ 2 (\sqrt{x})^{2}}{2 x \sqrt{x} } \\
+        &= \frac{x (\ln{x} + 2)}{2x \sqrt{x}} = \frac{\ln{x} +2}{2 \sqrt{x}}
+  \end{align*}
+\end{exercise}
+
+\begin{exercise} Να υπολογιστεί η παράγωγος της συνάρτησης 
+$ f(x) = \sqrt[3]{x^{2}} \cdot \tan{x} $
+  \begin{align*}
+    (\sqrt[3]{x^{2}} \cdot \tan{x} )' 
+  &= (\sqrt[3]{x^{2}} )' \cdot \tan{x} +
+  \sqrt[3]{x^{2}} \cdot (\tan{x} )' = (x^{\frac{2}{3}})' \cdot \tan{x} +
+  \sqrt[3]{x^{2}} \cdot \frac{1}{\cos^{2}{x}} = \frac{2}{3} \cdot x^{\frac{2}{3}
+  -1} \cdot \tan{x} + \frac{\sqrt[3]{x^{2}}}{\cos^{2}{x}} \\
+  &= \frac{2}{3} \cdot x^{- \frac{1}{3} } \cdot \tan{x} + 
+  \frac{\sqrt[3]{x^{2}}}{\cos^{2}{x}} = \frac{2 \tan{x}}{3 \sqrt[3]{x}} +
+  \frac{\sqrt[3]{x^{2}}}{\cos^{2}{x}} 
+  \end{align*}
+\end{exercise}
+
+\begin{exercise} Να υπολογιστεί η παράγωγος της συνάρτησης 
+  $ f(x) = 2^{x} \cdot \cot{x} $
+  \begin{align*}
+    (2^{x}\cdot \cot{x})' 
+      &= (2^{x})' \cdot \cot{x} + 2^{x} \cdot (\cot{x} )' =
+      2^{x}\cdot \ln{2} \cdot \cot{x} + 2^{x}\cdot (- \frac{1}{\sin^{2}{x}}) = 
+      2^{x} \ln{2} \cdot \cot{x} - \frac{2^{x}}{\sin^{2}{x}} 
+  \end{align*}
+\end{exercise}
+
+\begin{exercise} Να υπολογιστεί η παράγωγος της συνάρτησης 
+  $ f(x) = x^{3} \cdot \arcsin{x} $
+  \[
+    \Bigl(x^{3}\cdot \arcsin{x}\Bigr)' = (x^{3})' \cdot \arcsin{x} + x^{3} \cdot (\arcsin{x} )' = 
+    3x^{2} \cdot \arcsin{x} + x^{3} \cdot \frac{1}{\sqrt{1-x^{2}}} = 3x^{2} \arcsin{x}
+    + \frac{x^{3}}{\sqrt{1 - x^{2}}} 
+  \]
+\end{exercise}
+
+\begin{exercise} Να υπολογιστεί η παράγωγος της συνάρτησης 
+  $ f(x) = \frac{\sin{x}}{x^{3}} $
+  \[
+    \Bigl(\frac{\sin{x}}{x^{3}} \Bigr)' = \frac{(\sin{x} )' \cdot x^{3}- \sin{x} \cdot
+    (x^{3})'}{(x^{3})^{2}} = \frac{\cos{x} \cdot x^{3}- \sin{x} \cdot 3x^{2}}{x^{6}} = 
+    \frac{x^{2}(x \cos{x} - 3 \sin{x})}{x^{6}} = \frac{x \cos{x} - 3 \sin{x}}{x^{4}}
+  \]  
+\end{exercise}
+
+\begin{exercise} Να υπολογιστεί η παράγωγος της συνάρτησης 
+  $ f(x) = \frac{x^{2}+5}{\ln{x}} $
+  \begin{align*}
+    \Bigl(\frac{x^{2}+5}{\ln{x}} \Bigr)' 
+    & = \frac{(x^{2}+5)'\cdot \ln{x} - (x^{2}+5)\cdot
+      (\ln{x} )'}{(\ln{x} )^{2}} = \frac{2x \cdot \ln{x} - (x^{2}+5) \cdot
+    \frac{1}{x}}{\ln^{2}{x}} = \frac{2x \cdot \ln{x}}{\ln^{2}{x}} - \frac{x^{2}+5}{x
+  \ln^{2}{x}} = \frac{2x}{\ln{x}} - \frac{x^{2}+5}{x \ln^{2}{x}} 
+  \end{align*}
+\end{exercise}
+
+\begin{exercise} Να υπολογιστεί η παράγωγος της συνάρτησης 
+  $ f(x) = \frac{x \mathrm{e}^{x}}{5-x^{2}} $
+  \begin{align*}
+    \Bigl(\frac{x \mathrm{e}^{x}}{5-x^{2}} \Bigr)' 
+    &= \frac{(x \mathrm{e}^{x} )'\cdot
+    (5-x^{2})- x \mathrm{e}^{x} \cdot (5-x^{2})'}{(5-x^{2})^{2}} = \frac{[(x)'
+    \mathrm{e}^{x} + x( \mathrm{e}^{x} )']\cdot (5-x^{2}) - x \mathrm{e}^{x}\cdot 
+  (-2x)}{(5-x^{2})^{2}} \\ 
+    &= \frac{(\mathrm{e}^{x} + x \mathrm{e}^{x})(5-x^{2})+2x^{2} 
+    \mathrm{e}^{x}}{(5-x^{2})^{2}} 
+    = \frac{\mathrm{e}^{x} (1+x)(5-x^{2})+2x^{2} \mathrm{e}^{x}}{(5-x^{2})^{2}} 
+    = \frac{\mathrm{e}^{x} (5-x^{2}+5x-x^{3}+2x^{2})}{(5-x^{2})^{2}} \\
+    &= \frac{\mathrm{e}^{x} (-x^{3}+x^{2}+5x+5)}{(5-x^{2})^{2}} 
+  \end{align*}
+\end{exercise}
+
+
+
+
+
+\section*{Συμβολισμός Leibniz}
+
+Αν με $ y= f(x) $ συμβολίζουμε κάποια συνάρτηση, τότε για την παράγωγό της, 
+χρησιμοποιούμε συνήθως τους συμβολισμούς,
+\[
+  y' = f'(x) = \color{Col1}{\dv{\color{black}{y}}{x}} =
+  \color{Col1}{\dv{\color{black}{f}}{x}} =
+  \color{Col1}{\dv{}{x}} \color{black}{f (x)} 
+\] 
+όπου με το σύμβολο $\color{Col1}{\mathrm{d}/\mathrm{d}x}$ δηλώνουμε την πράξη της 
+\textbf{παραγώγισης ως προς $x$}. Για το συμβολισμό της παραγώγου, σε κάποια 
+συγκεκριμένη τιμή $ x= a $, γράφουμε
+\[
+  f'(a) = \eval{\dv{y}{x}}_{x= a} = \eval{\dv{f}{x}}_{x=a} 
+\] 
+\begin{example}
+  Να υπολογιστεί η παράγωγος της συνάρτησης $ y= x^{3} $, όταν $ x=2 $.
+\end{example}
+\begin{solution}
+  $ f'(2) = \dv{}{x}\eval{(x^{3})}_{x=2} = \eval{3x^{2}}_{x=2} = 3\cdot (2)^{2} = 3\cdot
+  4 = 12 $
+\end{solution}
+\begin{rem}
+  Ο συμβολισμός $ y' $ και $ f' $ για την παράγωγο μιας συνάρτησης, συναντάται στις
+  σημειώσεις του \textbf{Νεύτωνα}, ενώ ο συμβολισμός $ \mathrm{d}y/\mathrm{d}x $ και 
+  $ \mathrm{d}f/\mathrm{d}x $, στις αντίστοιχες σημειώσεις του \textbf{Leibniz}, όπου 
+  την ίδια περίοδο, αλλά ανεξάρτητα ο ένας από τον άλλον, εργάστηκαν πάνω στις ιδέες του 
+  διαφορικού λογισμού.
+\end{rem}
+\begin{rem}
+  Αν η ανεξάρτητη μεταβλητή είναι ο \textbf{χρόνος}, αν δηλαδή, για παράδειγμα 
+  $ y=f(t) $, τότε για την παράγωγο χρησιμοποιούμε αρκετά συχνά και τους συμβολισμούς
+  \[
+    \dot y = \dot f
+  \] 
+  όπου με την τελεία, δηλώνουμε την πράξη της \textbf{παραγώγισης ως προς $t$}. 
+\end{rem}
+
+
+\section*{Παράγωγοι Ανώτερης τάξης}
+
+Αν $f$ είναι μια \textbf{παραγωγίσιμη} συνάρτηση, τότε η παράγωγός της $ f' $, είναι 
+επίσης μία συνάρτηση, η οποία αν ξαναπαραγωγιστεί, συμβολίζεται με $ (f')' = f'' $ 
+και λέγεται \textcolor{Col1}{2η παράγωγος} ή \textcolor{Col1}{παράγωγος 2ης τάξης}, της 
+συνάρτησης $f$. Με το συμβολισμό του Leibniz γράφουμε αντίστοιχα, για τη 2η παράγωγο
+\[
+  \dv{}{x} {\Bigl(\dv{f}{x}\Bigr)} = \color{Col1}{\dv[2]{\color{black}{f}}{x}}  
+\] 
+Με ανάλογο τρόπο, προκύπτουν και οι υπόλοιπες παράγωγοι, \textbf{ανώτερης τάξης}, 
+της συνάρτησης $f$. Για τη $n$-οστή παράγωγο της συνάρτησης $f$, γράφουμε
+\[
+  f^{(n)}(x) = \dv[n]{f}{x} %, \quad \text{όπου} \; n=2,3,4,\ldots
+\] 
+\begin{example}
+  Να υπολογιστούν η 2η και 3η παράγωγος για τη συνάρτηση $ y=x^{4}+3x^{2}-1 $.
+\end{example}
+\begin{solution}
+  Αρχικά, υπολογίζουμε την 1η παράγωγο.
+  \[
+    f'(x) = (x^{4}+3x^{2}-1)' = 4x^{3}+6x 
+  \] 
+  Υπολογίζουμε τη 2η παράγωγο, ξαναπαραγωγίζοντας την 1η παράγωγο.
+  \[
+    f''(x) = (4x^{3}+6x)' = 12x^{2}+6 
+  \] 
+  Επομένως, για την 3η παράγωγο, έχουμε
+  \[
+    f'''(x) = (12x^{2}+6)' = 24x 
+  \]
+\end{solution}
+
+
+\section*{Παράγωγος Σύνθετων Συναρτήσεων}
+
+\subsection*{Κανόνας Αλυσίδας - Τύπος Leibniz}
+
+\begin{prop}[Κανόνας Αλυσίδας]
+  Αν η $g$ είναι παραγωγίσιμη συνάρτηση στο $x$ και η $f$ είναι παραγωγίσιμη στο $ g(x)
+  $, τότε η \textbf{σύνθετη} συνάρτηση $ f(g(x)) $ είναι επίσης παραγωγίσιμη στο $x$ 
+  και η παράγωγός της δίνεται από τη σχέση
+  \begin{equation}\label{eq:chain}
+    \bigl[f(g(x))\bigr]' = f'(g(x)) \cdot g'(x)
+  \end{equation} 
+  Με το συμβολισμό του Leibniz, αν $ y=f(u) $ και $ u=g(x) $ είναι παραγωγίσιμες
+  συναρτήσεις, τότε 
+  \begin{equation}\label{eq:leib}
+    \dv{y}{x} = \dv{y}{u} \cdot \dv{u}{x} 
+  \end{equation} 
+\end{prop}
+
+\section*{Πίνακας Παραγώγων Σύνθετων Συναρτήσεων}
+
+\begin{center}
+\begin{Mytable}
+  \renewcommand{\arraystretch}{2.4}
+  \begin{tabular}{|c||c|}
+    \TabCellHead Βασικές Συναρτήσεις & \TabCellHead Τριγωνομετρικές Συναρτήσεις \\[5pt] \hline
+    -- & $ \bigl(\sin{g(x)}\bigr)' = \cos{g(x)} \cdot g'(x) $ \\[5pt] \hline
+    -- & $ \bigl(\cos{g(x)}\bigr)' = - \sin{g(x)}\cdot g'(x) $ \\[5pt] \hline 
+    $ \bigl(g(x)^{a}\bigr)' = a g(x)^{a-1}\cdot g'(x),\quad a \in \mathbb{R}\setminus
+    \{-1\} $ & $ \bigl(\tan{g(x)}\bigr)' = \frac{1}{\cos^{2}{g(x)}} \cdot g'(x) $ \\[5pt] \hline
+    $ \Bigl(\frac{1}{g(x)}\Bigr)' = - \frac{1}{g^{2}(x)}\cdot g'(x) $ & $
+    \bigl(\cot{g(x)}\bigr)' = - \frac{1}{\sin^{2}{g(x)}} \cdot g'(x) $ \\[5pt] \hline
+    $ \Bigl(\frac{1}{g^{2}(x)}\Bigr)' = - \frac{2}{g^{3}(x)} \cdot g'(x) $ & $
+    \bigl(\arctan{g(x)}\bigr)' = \frac{1}{1 + g^{2}(x)} \cdot g'(x) $ \\[5pt] \hline
+    $ \bigl(a^{g(x)}\bigr)' = a^{g(x)}\cdot \ln{a} \cdot g'(x) $ & $
+    \bigl(\arccot{g(x)}\bigr)' = \frac{-1}{1 + g^{2}(x)} \cdot g'(x) $ \\[5pt] \hline
+    $ \bigl(e^{g(x)}\bigr)' = e^{g(x)} \cdot g'(x) $ &  $ \bigl(\arcsin{g(x)}\bigr)' =
+    \frac{1}{\sqrt{1 - g^{2}(x)}} \cdot g'(x) $ \\[5pt] \hline
+    $ \bigl(\ln{g(x)}\bigr)' = \frac{1}{g(x)} \cdot g'(x) $ & $ \bigl(\arccos{g(x)}\bigr)'
+    = \frac{-1}{\sqrt{1 - g^{2}(x)}} \cdot g'(x) $ \\[5pt] \hline
+    $ \bigl(\sqrt[n]{g(x)^{m}}\bigr)' = \bigl(g(x)^{\frac{m}{n}}\bigr)'= \frac{m}{n}
+    g(x)^{\frac{m}{n} -1} \cdot g'(x) $ & $ \bigl(\sinh{g(x)}\bigr)' = \cosh{g(x)}
+    \cdot g'(x) $ \\[5pt] \hline
+    $ \bigl(\sqrt{g(x)}\bigr)' = \frac{1}{2 \sqrt{g(x)}} \cdot g'(x) $ & $
+    \bigl(\cosh{g(x)}\bigr)' = \sinh{g(x)} \cdot g'(x) $ \\[5pt] \hline
+  \end{tabular}
+\end{Mytable}
+\end{center}
+
+
+\subsection*{Παραδείγματα}
+
+\begin{example}
+  $ (\ln^{2}x)' = [(\ln{x} )^{2}]' = 2 \ln{x} \cdot (\ln{x} )' = 2 \ln{x} \cdot
+  \frac{1}{x} = \frac{2 \ln{x}}{x} $
+\end{example}
+\begin{example}
+  $ \Bigl(\frac{1}{\ln{x}} \Bigr)' = - \frac{1}{(\ln{x} )^{2}} \cdot (\ln{x} )' 
+  = - \frac{1}{\ln^{2}{x}} \cdot \frac{1}{x} = - \frac{1}{x \ln^{2}{x}} $ 
+\end{example}
+\begin{example}
+  $ \Bigl(\frac{1}{x^{2}+1} \Bigr)' = - \frac{1}{(x^{2}+1)^{2}} \cdot (x^{2}+1)' = 
+  - \frac{1}{(x^{2}+1)^{2}} \cdot 2x = - \frac{2x}{(x^{2}+1)^{2}} $ 
+\end{example}
+
+\begin{exercise}
+  Έστω $ y= \ln{\bigl(\sqrt{x^{2}+1}\bigr)} $. Να υπολογιστεί η παράγωγος της 
+  συνάρτησης.  
+\end{exercise}
+\begin{solution}
+  Χρησιμοποιώντας τη σχέση~\eqref{eq:chain}, έχουμε:
+  \[
+    \Bigl[\ln{\bigl(\sqrt{x^{2}+1}\bigr)} \Bigr]' = \frac{1}{\sqrt{x^{2}+1}} \cdot 
+    \bigl(\sqrt{x^{2}+1} \bigr)' = \frac{1}{\sqrt{x^{2}+1}} \cdot 
+    \frac{1}{2 \sqrt{x^{2}+1}} \cdot (x^{2}+1)' = \frac{1}{2 
+    \bigl(\sqrt{x^{2}+1}\bigr)^{2}} \cdot 2x = \frac{x}{x^{2}+1}
+  \]  
+
+  \twocolumnsiderrr{
+    Αν θέλουμε να χρησιμοποιήσουμε τη σχέση~\eqref{eq:leib}, τότε \textbf{αναλύουμε} 
+    τη σύνθετη συνάρτηση, σε απλούστερες, ξεκινώντας από <<μέσα>> και πηγαίνοντας 
+    διαδοχικά προς τα <<έξω>>. Έτσι, θέτουμε $ u=x^{2}+1 $ και 
+    $v= \sqrt{x^{2}+1} = \sqrt{u} $ και άρα η συνάρτηση μας, γίνεται
+    \[
+      y= \ln{\bigl(\sqrt{x^{2}+1}\bigr)} \longrightarrow 
+      \begin{cases}
+        y= \ln{v} \\
+        v= \sqrt{u}  \\
+        u= x^{2}+1  
+      \end{cases}
+    \]
+    Οπότε, για την παράγωγο, σύμφωνα με τον τύπο του Leibniz, θα ισχύει
+    \[
+      \dv{y}{x} = \dv{y}{v} \cdot \dv{v}{u} \cdot \dv{u}{x} = \frac{1}{v} \cdot
+      \frac{1}{2 \sqrt{u}} \cdot 2x = \frac{1}{\sqrt{x^{2}+1}} \cdot \frac{1}{2
+      \sqrt{x^{2}+1}} \cdot 2x = \frac{x}{x^{2}+1}
+    \] 
+  }{
+    \begin{tikzpicture}
+      \node (a) at (0,0) {$y$} ;
+      \node (b) at (0,-1) {$v$} ;
+      \node (c) at (0,-2) {$u$} ;
+      \node (d) at (0,-3) {$x$} ;
+      \draw (a) -- node[right,Col1]{$\dv{y}{v}$} (b) ;
+      \draw (b) -- node[right,Col1]{$\dv{v}{u}$} (c) ;
+      \draw (c) -- node[right,Col1]{$\dv{u}{x}$} (d) ;
+    \end{tikzpicture}       
+  }
+\end{solution}

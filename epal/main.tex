@@ -1,0 +1,175 @@
+\input{preamble_ask.tex}
+\input{definitions_ask.tex}
+\input{tikz.tex}
+\input{myboxes.tex}
+
+\everymath{\displaystyle}
+\pagestyle{vangelis}
+
+%%%%%%%%%%%%%%%% WATERMARK above pictures with opacity %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[printwatermark]{xwatermark}
+%\newsavebox\mybox
+%\savebox\mybox{\tikz[color=Col1,opacity=0.7]\node{ΠΡΟΣΗΜΟ};}
+%\newwatermark*[
+%allpages,
+%fontfamily=lmr,
+%fontseries=m,
+%angle=45,
+%scale=14,
+%xpos=-40,
+%ypos=40,
+%]{\usebox\mybox} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%adds a rectangle background box behind every picture
+ % \tikzset{every picture/.append style={background rectangle/.style={fill=blue!05,rounded
+ %   corners},show background rectangle}}
+
+
+\usepackage[font={color=Col1},labelfont={bf},hypcap=false]{caption}
+
+
+\geometry{top=2.0cm,left=1.5cm,right=1.5cm}
+
+\input{insbox}
+
+%limits
+\newcommand{\twocolumnsidescc}[2]{\begin{minipage}[c]{0.30\linewidth}
+        #1
+        \end{minipage}\quad\begin{minipage}[c]{0.30\linewidth}
+        #2
+    \end{minipage}
+}
+
+\newcommand{\twocolumnsidesr}[2]{\begin{minipage}[t]{0.35\linewidth}
+        #1
+        \end{minipage}\hfill\begin{minipage}[t]{0.60\linewidth}
+        #2
+    \end{minipage}
+}
+
+\newcommand{\twocolumnsidesrrl}[2]{\begin{minipage}[t]{0.45\linewidth}
+        #1
+        \end{minipage}\hfill\begin{minipage}[t]{0.51\linewidth}
+        #2
+    \end{minipage}
+}
+
+\newcommand{\twocolumnsidesll}[2]{\begin{minipage}[b]{0.68\linewidth}
+        #1
+        \end{minipage}\hfill\begin{minipage}[b]{0.28\linewidth}
+        #2
+    \end{minipage}
+}
+
+%paragwgos
+\newcommand{\twocolumnsiderrp}[2]{\begin{minipage}[c]{0.30\linewidth}
+    #1
+    \end{minipage}\hfill\begin{minipage}[c]{0.68\linewidth}
+    #2
+  \end{minipage}
+}
+
+\newcommand{\twocolumnsidell}[2]{\begin{minipage}[c]{0.68\linewidth}
+    #1
+    \end{minipage}\hfill\begin{minipage}[c]{0.30\linewidth}
+    #2
+  \end{minipage}
+}
+
+\newcommand{\twocolumnsiderrr}[2]{\begin{minipage}[c]{0.80\linewidth}
+    #1
+    \end{minipage}\hfill\begin{minipage}[c]{0.15\linewidth}
+    #2
+  \end{minipage}
+}
+
+\newcommand{\threecolumnside}[3]{\begin{minipage}[t]{0.30\linewidth}\raggedright
+        #1
+        \end{minipage}\hfill\begin{minipage}[t]{0.30\linewidth}\raggedright
+        #2
+        \end{minipage}\hfill\begin{minipage}[t]{0.30\linewidth}\raggedright
+        #3
+    \end{minipage}
+}
+
+\newcommand{\twocolumnsidesrr}[2]{\begin{minipage}[t]{0.35\linewidth}
+    #1
+    \end{minipage}\hfill\begin{minipage}[t]{0.60\linewidth}
+    #2
+  \end{minipage}
+}
+
+
+\newcommand{\twocolumnsiderr}[2]{\begin{minipage}[c]{0.30\linewidth}
+    #1
+    \end{minipage}\hfill\begin{minipage}[c]{0.68\linewidth}
+    #2
+  \end{minipage}
+}
+
+\newcommand{\twocolumnsidesss}[2]{\begin{minipage}[c]{0.48\linewidth}\raggedright
+    #1
+    \end{minipage}\hfill\begin{minipage}[c]{0.48\linewidth}\raggedright
+    #2
+  \end{minipage}
+}
+
+
+
+\tikzset{
+  set arrow inside/.code={\pgfqkeys{/tikz/arrow inside}{#1}},
+  set arrow inside={end/.initial=stealth, opt/.initial=},
+  /pgf/decoration/Mark/.style={
+    mark/.expanded=at position #1 with
+    {
+      \noexpand\arrow[\pgfkeysvalueof{/tikz/arrow inside/opt}]{\pgfkeysvalueof{/tikz/arrow inside/end}}
+    }
+  },
+  arrow inside/.style 2 args={
+    set arrow inside={#1},
+    postaction={
+      decorate,decoration={
+        markings,Mark/.list={#2}
+      }
+    }
+  },
+}
+
+\tikzset{vangelis/.style = {ultra thick,magenta,dashed}, mystyle/.style={line width=3pt,blue!55,double,rounded corners}}
+
+\pgfplotsset{
+  myaxis/.style={axis lines=center,axis line style={thick,blue!50,-stealth},tick label
+  style={font=\small,blue!50},xtick=\empty,ytick=\empty,tick style={blue!50}},
+  myplot/.style={Col1!75,ultra thick,samples=500,no marks,smooth,},
+  dashed lines/.style={dashed,blue!50,ultra thin},
+  polax/.style={grid=none},
+}
+
+\tikzset{mygraph/.pic={\begin{scope}[scale=0.7]
+    \draw [in=-180, out=90, looseness=0.75] (2.3,1) to (3.55,2.75);
+    \draw [in=180, out=0] (3.55,2.75) to (4.475,2);
+    \draw [in=-90, out=0] (4.475,2) to (4.925,2.5);
+    \end{scope}
+}}
+
+
+\begin{document}
+
+\input{eisagwgh.tex}
+
+\input{limits_test.tex}
+
+% \newgeometry{top=5mm,bottom=8mm,left=5mm,right=5mm,footskip=4pt}
+
+% \input{limits_ex.tex}
+
+% \restoregeometry
+
+\input{paragwgos.tex}
+
+
+
+\end{document}
+

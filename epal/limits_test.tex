@@ -1,91 +1,9 @@
-\input{preamble_ask.tex}
-\input{definitions_ask.tex}
-\input{tikz.tex}
-\input{myboxes.tex}
-
-% \setcounter{chapter}{1}
-
-\geometry{top=2.0cm,left=1.5cm,right=1.5cm}
-
-\input{insbox}
-
-\newcommand{\twocolumnsidescc}[2]{\begin{minipage}[c]{0.30\linewidth}
-        #1
-        \end{minipage}\quad\begin{minipage}[c]{0.30\linewidth}
-        #2
-    \end{minipage}
-}
-
-\newcommand{\twocolumnsidesr}[2]{\begin{minipage}[t]{0.38\linewidth}
-        #1
-        \end{minipage}\hfill\begin{minipage}[t]{0.60\linewidth}
-        #2
-    \end{minipage}
-}
-
-\newcommand{\twocolumnsidesrr}[2]{\begin{minipage}[t]{0.45\linewidth}
-        #1
-        \end{minipage}\hfill\begin{minipage}[t]{0.51\linewidth}
-        #2
-    \end{minipage}
-}
-
-\newcommand{\twocolumnsidesll}[2]{\begin{minipage}[b]{0.68\linewidth}
-        #1
-        \end{minipage}\hfill\begin{minipage}[b]{0.28\linewidth}
-        #2
-    \end{minipage}
-}
-
-
-
-\everymath{\displaystyle}
-\pagestyle{askhseis}
-
-\usetikzlibrary{decorations.markings}
-
-\tikzset{
-  set arrow inside/.code={\pgfqkeys{/tikz/arrow inside}{#1}},
-  set arrow inside={end/.initial=stealth, opt/.initial=},
-  /pgf/decoration/Mark/.style={
-    mark/.expanded=at position #1 with
-    {
-      \noexpand\arrow[\pgfkeysvalueof{/tikz/arrow inside/opt}]{\pgfkeysvalueof{/tikz/arrow inside/end}}
-    }
-  },
-  arrow inside/.style 2 args={
-    set arrow inside={#1},
-    postaction={
-      decorate,decoration={
-        markings,Mark/.list={#2}
-      }
-    }
-  },
-}
-
-\usetikzlibrary{shadings,patterns,arrows.meta,angles,quotes,shapes,
-decorations.pathmorphing, decorations.shapes,decorations.text}
-
-\tikzset{vangelis/.style = {ultra thick,magenta,dashed}, mystyle/.style={line width=3pt,blue!55,double,rounded corners}}
-
-\pgfplotsset{
-  myaxis/.style={axis lines=center,axis line style={thick,blue!50,-stealth},tick label
-  style={font=\small,blue!50},xtick=\empty,ytick=\empty,tick style={blue!50}},
-  myplot/.style={Col1!75,ultra thick,samples=500,no marks,smooth,},
-  dashed lines/.style={dashed,blue!50,ultra thin},
-  polax/.style={grid=none},
-}
-
-
-\begin{document}
-
-
 \chapter*{Όριο Συνάρτησης}
 
 
 \section*{Η έννοια του ορίου}
 
-\InsertBoxL{2}{\parbox[b][7\baselineskip][c]{0.33\textwidth}{
+\InsertBoxL{2}{\parbox[b][7.25\baselineskip][b]{0.33\textwidth}{
     \begin{tikzpicture}
       \draw[->,blue!55,>=stealth] (-2,0) -- (3,0) node[below] {$x$} ;
       \draw[->,blue!55,>=stealth] (0,-0.5) -- (0,2.5) node [left] {$y$} ;
@@ -198,7 +116,7 @@ decorations.pathmorphing, decorations.shapes,decorations.text}
 
 \section*{Πλευρικά Όρια Συνάρτησης}
 
-\InsertBoxL{2}{\parbox[b][7.5\baselineskip][c]{0.33\textwidth}{
+\InsertBoxL{2}{\parbox[b][8\baselineskip][b]{0.33\textwidth}{
     \begin{tikzpicture}
       \draw[->,blue!55,>=stealth] (-2,0) -- (3,0) node[right] {$x$} ;
       \draw[->,blue!55,>=stealth] (0,-0.5) -- (0,2.8) node [left] {$y$} ;
@@ -430,30 +348,30 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
   \begin{prop}Έστω $ n \in \mathbb{N} $. Τότε
     \begin{mybox2}
     \item {}
-      \begin{myitemize}
-        \item $ \lim_{x \to +\infty} x^{n} = + \infty, \; n \in \mathbb{N} $ 
-        \item $ \lim_{x \to -\infty} x^{n} = 
+      \begin{myitemize}[leftmargin=1em]
+        \item $ \lim\limits_{x \to +\infty} x^{n} = + \infty, \; n \in \mathbb{N} $ 
+        \item $ \lim\limits_{x \to -\infty} x^{n} = 
           \begin{cases}
             + \infty, & n \; \text{άρτιος} \\ 
             - \infty, & n \; \text{περιττός} \\ 
           \end{cases} $ 
-        \item $ \lim_{x \to \pm \infty} \frac{1}{x^{n}} = 0 $
+        \item $ \lim\limits_{x \to \pm \infty} \frac{1}{x^{n}} = 0 $
       \end{myitemize}
     \end{mybox2}
   \end{prop}
 }{
   \section*{Πράξεις στο $ \overline{\mathbb{R}} = \mathbb{R} \cup \{ +\infty, -\infty \} $}
   \begin{mybox2}
-    \begin{myitemize}
+    \begin{myitemize}[leftmargin=1em]
       \item $ - \infty< \infty $ και $ - \infty < a < + \infty, \; \forall a \in \mathbb{R} $
       \item $ + \infty + (+ \infty) = + \infty $ και $ - \infty + (- \infty) = - \infty $
       \item $ + \infty \pm a = + \infty $ και $ - \infty \pm a = - \infty, \; \forall a \in
         \mathbb{R} $ 
     \end{myitemize}
   \end{mybox2}
-  \twocolumnsidesrr{
+  \twocolumnsidesrrl{
     \begin{mybox2}
-      \begin{myitemize}
+      \begin{myitemize}[leftmargin=1em]
         \item $ (+ \infty)\cdot (+ \infty) = + \infty $
         \item $ (- \infty)\cdot (- \infty) = + \infty $
         \item $ (+ \infty)\cdot (- \infty) = - \infty $
@@ -462,7 +380,7 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
     \end{mybox2}
   }{
     \begin{mybox2}
-      \begin{myitemize}
+      \begin{myitemize}[leftmargin=1em]
         \item $ a \cdot (+ \infty) = 
           \begin{cases}
             + \infty, & a>0 \\
@@ -576,18 +494,18 @@ $ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
 \end{prop}
 
 
-\begin{prop}[\textcolor{Col1}{Κριτήριο Παρεμβολής}]
-\item {}
-  \begin{minipage}[t]{8.0 cm}
-    \begin{myitemize}
-      \item $ h(x) \leq f(x) \leq g(x), \; \forall x$ σε μια περιοχή του $ x_{0} $
-        \hfill\tikzmark{a}
-      \item $ \lim_{x \to x_{0}} h(x) = \lim_{x \to x_{0}} g(x) = l \in \mathbb{R} $
-        \hfill\tikzmark{b}
-    \end{myitemize}
-  \end{minipage}
-  \mybrace{a}{b}[ $ \lim_{x \to x_{0}} f(x) = l $ ]
-\end{prop}
+% \begin{prop}[\textcolor{Col1}{Κριτήριο Παρεμβολής}]
+% \item {}
+%   \begin{minipage}[t]{8.0 cm}
+%     \begin{myitemize}
+%       \item $ h(x) \leq f(x) \leq g(x), \; \forall x$ σε μια περιοχή του $ x_{0} $
+%         \hfill\tikzmark{a}
+%       \item $ \lim_{x \to x_{0}} h(x) = \lim_{x \to x_{0}} g(x) = l \in \mathbb{R} $
+%         \hfill\tikzmark{b}
+%     \end{myitemize}
+%   \end{minipage}
+%   \mybrace{a}{b}[ $ \lim_{x \to x_{0}} f(x) = l $ ]
+% \end{prop}
 
 \begin{rem}
   Η παραπάνω πρόταση ισχύει και όταν $ x_{0} = + \infty $ ή $ - \infty $.
@@ -611,18 +529,18 @@ $ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
   \]
 \end{solution}
 
-\begin{cor}
-\item {}
-  \begin{minipage}[t]{6.5 cm}
-    \begin{myitemize}
-      \item $ \abs{f(x)} \leq g(x) $ σε μια περιοχή του $ x_{0} $
-        \hfill\tikzmark{a}
-      \item $ \lim_{x \to x_{0}} g(x) = 0 $
-        \hfill\tikzmark{b}
-    \end{myitemize}
-  \end{minipage}
-  \mybrace{a}{b}[ $ \lim_{x \to x_{0}} f(x) = 0 $ ]
-\end{cor}
+% \begin{cor}
+% \item {}
+%   \begin{minipage}[t]{6.5 cm}
+%     \begin{myitemize}
+%       \item $ \abs{f(x)} \leq g(x) $ σε μια περιοχή του $ x_{0} $
+%         \hfill\tikzmark{a}
+%       \item $ \lim_{x \to x_{0}} g(x) = 0 $
+%         \hfill\tikzmark{b}
+%     \end{myitemize}
+%   \end{minipage}
+%   \mybrace{a}{b}[ $ \lim_{x \to x_{0}} f(x) = 0 $ ]
+% \end{cor}
 
 \begin{example}
   Να δείξετε ότι $ \lim_{x \to 0} \Bigl(x \cos{\frac{1}{x}}\Bigr) = 0 $
@@ -951,4 +869,3 @@ $ (1^{\infty}) $, $ (0^0) $ ή $ (\infty^{0}) $
 
 
 
-\end{document}
