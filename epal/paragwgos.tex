@@ -3,7 +3,7 @@
 
 \section*{Η Έννοια της Παραγώγου}
 
-Τα προβλήματα. της εύρεσης της εφαπτομένης μιας καμπύλης και του υπολογισμού της 
+Τα προβλήματα, της εύρεσης της εφαπτομένης μιας καμπύλης και του υπολογισμού της 
 ταχύτητας ενός κινητού σώματος, ανάγονται στον υπολογισμό του ίδιου τύπου ορίου, 
 όπως θα δούμε στη συνέχεια. Αυτό το όριο, ονομάζεται \textbf{παράγωγος} και ερμηνεύεται 
 ως ο ρυθμός μεταβολής κάποιου μεγέθους.
@@ -237,8 +237,7 @@ $ x \neq x_{0} $ και υπολογίζουμε την κλίση $\lambda$ τ�
 
 \subsection*{Ρυθμός Μεταβολής}
 
-Έστω $y$ κάποια ποσότητα η οποία εξαρτάται από κάποια άλλη ποσότητα $x$. 
-Επομένως το $y$ είναι συνάρτηση του $x$ και γράφουμε $ y=f(x) $.
+Έστω ότι η μεταβλητή $y$ είναι συνάρτηση του $x$, δηλαδή $ y=f(x) $.
 
 \twocolumnsiderrp{
 \begin{tikzpicture}[scale=0.8]
@@ -313,7 +312,7 @@ $ x \neq x_{0} $ και υπολογίζουμε την κλίση $\lambda$ τ�
     \TabCellHead Βασικές Συναρτήσεις & \TabCellHead Τριγωνομετρικές Συναρτήσεις \\[4pt] \hline
     $ (c)' = 0, \quad c \in \mathbb{R} $ & $ (\sin{x})' = \cos{x} $ \\[4pt] \hline
     $ (x)' = 1 $ & $ (\cos{x})' = - \sin{x} $ \\[4pt] \hline 
-    $ (x^{a})' = a x^{a-1},\quad a \in \mathbb{R}\setminus \{-1\} $ & $ (\tan{x})' = \frac{1}{\cos^{2}{x}}$ \\[4pt] \hline
+    $ (x^{a})' = a x^{a-1} $ & $ (\tan{x})' = \frac{1}{\cos^{2}{x}}$ \\[4pt] \hline
     $ \Bigl(\frac{1}{x}\Bigr)' = - \frac{1}{x^{2}} $ & $ (\cot{x})' = - \frac{1}{\sin^{2}{x}}  $ \\[4pt] \hline
     $ \Bigl(\frac{1}{x^{2}}\Bigr)' = - \frac{2}{x^{3}} $ & $ (\arctan{x})' = \frac{1}{1 + x^{2}} $ \\[4pt] \hline
     $ (a^{x})' = a^{x}\cdot \ln{a} $ & $ (\arccot{x})' = \frac{-1}{1 + x^{2}} $ \\[4pt] \hline
@@ -325,8 +324,39 @@ $ x \neq x_{0} $ και υπολογίζουμε την κλίση $\lambda$ τ�
 \end{Mytable}
 \end{center}
 
+\subsection*{Παραδείγματα}
 
+\twocolumnsidesr{
+  \begin{example}
+    $ (3)'= 0 $
+  \end{example}
+  \begin{example}
+    $ (x^{3})' = 3x^{2} $
+  \end{example}
+  \begin{example}
+    $ (3^{x})' = 3^{x} \ln{3} $
+  \end{example}
+  \begin{example}
+    $ \Bigl(\frac{1}{x^{4}}\Bigr)'\! = (x^{-4})'\! =  -4x^{-5} \! $
+  \end{example}
+}{
+  \begin{example}
+    $ (x^{2/3})' = \frac{2}{3}x^{\frac{2}{3} - 1} = \frac{2}{3} x^{- \frac{1}{3}} = 
+    \frac{2}{3} \frac{1}{x^{\frac{1}{3}}} = \frac{2}{3 \sqrt[3]{x}}$
+  \end{example}
+  \begin{example}
+    $ ( \sqrt[3]{x} )' = (x^{\frac{1}{3} })' = \frac{1}{3} x^{\frac{1}{3} - 1} =
+    \frac{1}{3} x^{-\frac{2}{3} } = \frac{1}{3 x^{\frac{2}{3}}} = \frac{1}{3
+    \sqrt[3]{x^{2}}} $
+  \end{example}
+  \begin{example}
+    $ \bigl(\sqrt[4]{x^{3}}\bigr)' = \bigl(x^{\frac{3}{4}}\bigr)' 
+    = \frac{3}{4} x^{\frac{3}{4} -1} = \frac{3}{4} x^{-\frac{1}{4}} = \frac{3}{4}
+    \frac{1}{x^{\frac{1}{4}}} = \frac{3}{4 \sqrt[4]{x}} $
+  \end{example}
+}
 
+\enlargethispage{\baselineskip}
 
 \section*{Κανόνες Παραγώγισης}
 
@@ -335,102 +365,85 @@ $ x \neq x_{0} $ και υπολογίζουμε την κλίση $\lambda$ τ�
 υπολογίζουμε τις παραγώγους, πιο πολύπλοκων συναρτήσεων.
 
 \begin{center}
-\begin{Mytable}
-  \renewcommand{\arraystretch}{2.0}
-  \begin{tabular}{|c|c|}
-    \TabCellHead Αθροίσματος & $ (f(x)+g(x))' = f'(x)+ g'(x) $ \\[4pt] \hline 
-    \TabCellHead Σταθεράς & $ (a f(x))' = a f'(x)$ \\[4pt] \hline
-    \TabCellHead Γινομένου & $ (f(x)\cdot g(x))' = f'(x)\cdot g(x) 
+  \begin{Mytable}
+    \renewcommand{\arraystretch}{2.0}
+    \begin{tabular}{|c|c|}
+      \TabCellHead Αθροίσματος & $ (f(x)+g(x))' = f'(x)+ g'(x) $ \\[4pt] \hline 
+      \TabCellHead Σταθεράς & $ (a f(x))' = a f'(x)$ \\[4pt] \hline
+      \TabCellHead Γινομένου & $ (f(x)\cdot g(x))' = f'(x)\cdot g(x) 
       + f(x) g'(x) $ \\[4pt] \hline
-    \TabCellHead Πηλίκου & $ \Bigl(\frac{f(x)}{g(x)}\Bigr)' = \frac{f'(x)\cdot
-    g(x) - f(x) g'(x)}{g^{2}(x)} $ \\[4pt] \hline
-  \end{tabular}
-\end{Mytable}
-\end{center}
+      \TabCellHead Πηλίκου & $ \Bigl(\frac{f(x)}{g(x)}\Bigr)' = \frac{f'(x)\cdot
+      g(x) - f(x) g'(x)}{g^{2}(x)} $ \\[4pt] \hline
+      \end{tabular}
+    \end{Mytable}
+  \end{center}
 
 
+  \section*{Παραδείγματα}
 
-\section*{Παραδείγματα}
-
-\subsection*{Παράγωγος βασικών συναρτήσεων}
-
-\begin{example}
-  $ (x^{3})' = 3x^{2} $
-\end{example}
-\begin{example}
-  $ \Bigl(\frac{1}{x^{4}}\Bigr)' = (x^{-4})' = -4x^{-5} $
-\end{example}
-\begin{example}
-  $ (3^{x})' = 3^{x} \ln{3} $
-\end{example}
-\begin{example}
-  $ ( \sqrt[3]{x} )' = (x^{\frac{1}{3} })' = \frac{1}{3} x^{\frac{1}{3} - 1} =
-  \frac{1}{3} x^{-\frac{2}{3} } = \frac{1}{3 x^{\frac{2}{3}}} = \frac{1}{3
-  \sqrt[3]{x^{2}}} $
-\end{example}
-
-\subsection*{Κανόνας Αθροίσματος}
-\begin{example}
-  $( \cos{x} + \sqrt{x})' = (\cos{x} )' + (\sqrt{x} )' = - \sin{x} + \frac{1}{2
-  \sqrt{x}} $
-\end{example}
-\begin{example}
-  $ \Bigl(\frac{1}{x} - \tan{x} \Bigr)' = \Bigl(\frac{1}{x}\Bigr)' - (\tan{x} )' = - \frac{1}{x^{2}} -
-  \frac{1}{\cos^{2}{x}} $
-\end{example}
-
-\subsection*{Κανόνας Σταθεράς}
-\begin{example}
-  $( 3 \ln{x})' = 3 \cdot (\ln{x} )' = 3 \cdot \frac{1}{x} = \frac{3}{x} $
-\end{example}
-\begin{example}
-  $\Bigl(\frac{2}{x}\Bigr)' = 2 \cdot \Bigl(\frac{1}{x}\Bigr)' = 2 \cdot
-  \Bigl(-\frac{1}{x}\Bigr) = \frac{1}{x^{2}} $
-\end{example}
-
-\subsection*{Κανόνας Γινομένου}
-\begin{example}
-  $ (x^{2}\cdot \ln{x})' = (x^{2})' \cdot \ln{x} + x^{2}\cdot (\ln{x})' = 2x \cdot
-  \ln{x} + x^{2} \cdot \frac{1}{x} = 2x \ln{x} + x = x(2 \ln{x} +1) $
-\end{example}
-\begin{example}
-  $ (\mathrm{e}^{x} \cdot \sin{x})' = (\mathrm{e}^{x} )'\cdot \sin{x} +
-  \mathrm{e}^{x} \cdot (\sin{x} )' = \mathrm{e}^{x} \cdot \sin{x} + \mathrm{e}^{x}
-  \cos{x} = \mathrm{e}^{x} \cdot (\sin{x} + \cos{x} ) $
-\end{example}
-
-\subsection*{Κανόνας Πηλίκου}
-\begin{example}
-  $ \Bigl(\frac{x^{2}}{\mathrm{e}^{x}}\Bigr)' = \frac{(x^{2})' \cdot \mathrm{e}^{x} 
-  - x^{2}\cdot (\mathrm{e}^{x} )'}{(\mathrm{e}^{x})^{2}}' 
-  = \frac{2x \cdot \mathrm{e}^{x} - x^{2}\cdot \mathrm{e}^{x}}{(\mathrm{e}^{x}) ^{2}} 
-  = \frac{\mathrm{e}^{x} (2x-x^{2})}{(\mathrm{e}^{x})^2} = 
-  \frac{2x - x^{2}}{\mathrm{e}^{x}} $
-\end{example}
-\begin{example}
-  $\Bigl( \frac{\ln{x}}{x}\Bigr)' = \frac{(\ln{x} )' \cdot x- \ln{x} \cdot (x)'}{x^{2}} 
-  = \frac{\frac{1}{x} \cdot x - \ln{x} \cdot 1}{x^{2}} = \frac{1- \ln{x}}{x^{2}} $
-\end{example}
+  \subsection*{Κανόνας Αθροίσματος}
+  \begin{example}
+    $( \cos{x} + \sqrt{x})' = (\cos{x} )' + (\sqrt{x} )' = - \sin{x} + \frac{1}{2
+    \sqrt{x}} $
+  \end{example}
+  \begin{example}
+    $ \Bigl(\frac{1}{x} - \tan{x} \Bigr)' = \Bigl(\frac{1}{x}\Bigr)' - (\tan{x} )' 
+    = - \frac{1}{x^{2}} - \frac{1}{\cos^{2}{x}} $
+  \end{example}
 
 
-\section*{Ασκήσεις}
+  \subsection*{Κανόνας Σταθεράς}
+  \begin{example}
+    $( 3 \ln{x})' = 3 \cdot (\ln{x} )' = 3 \cdot \frac{1}{x} = \frac{3}{x} $
+  \end{example}
+  \begin{example}
+    $\Bigl(\frac{2}{x}\Bigr)' = 2 \cdot \Bigl(\frac{1}{x}\Bigr)' = 2 \cdot
+    \Bigl(-\frac{1}{x^{2}}\Bigr) = -\frac{2}{x^{2}} $
+  \end{example}
 
-\begin{exercise} Να υπολογιστεί η παράγωγος της συνάρτησης 
-  $ f(x) = \sqrt{x} \cdot \ln{x} $.
-  \begin{align*}
-    (\sqrt{x} \cdot \ln{x} )' 
+  \subsection*{Κανόνας Γινομένου}
+  \begin{example}
+    $ (x^{2}\cdot \ln{x})' = (x^{2})' \cdot \ln{x} + x^{2}\cdot (\ln{x})' = 2x \cdot
+    \ln{x} + x^{2} \cdot \frac{1}{x} = 2x \ln{x} + x = x(2 \ln{x} +1) $
+  \end{example}
+  \begin{example}
+    $ (\mathrm{e}^{x} \cdot \sin{x})' = (\mathrm{e}^{x} )'\cdot \sin{x} +
+    \mathrm{e}^{x} \cdot (\sin{x} )' = \mathrm{e}^{x} \cdot \sin{x} + \mathrm{e}^{x}
+    \cos{x} = \mathrm{e}^{x} \cdot (\sin{x} + \cos{x} ) $
+  \end{example}
+
+  \subsection*{Κανόνας Πηλίκου}
+  \begin{example}
+    $ \Bigl(\frac{x^{2}}{\mathrm{e}^{x}}\Bigr)' = \frac{(x^{2})' \cdot \mathrm{e}^{x} 
+    - x^{2}\cdot (\mathrm{e}^{x} )'}{(\mathrm{e}^{x})^{2}} 
+    = \frac{2x \cdot \mathrm{e}^{x} - x^{2}\cdot \mathrm{e}^{x}}{(\mathrm{e}^{x}) ^{2}} 
+    = \frac{\mathrm{e}^{x} (2x-x^{2})}{(\mathrm{e}^{x})^2} = 
+    \frac{2x - x^{2}}{\mathrm{e}^{x}} $
+  \end{example}
+  \begin{example}
+    $\Bigl( \frac{\ln{x}}{x}\Bigr)' = \frac{(\ln{x} )' \cdot x- \ln{x} \cdot (x)'}{x^{2}} 
+    = \frac{\frac{1}{x} \cdot x - \ln{x} \cdot 1}{x^{2}} = \frac{1- \ln{x}}{x^{2}} $
+  \end{example}
+
+
+  \section*{Ασκήσεις Παραγώγισης}
+
+  \begin{exercise}  Να υπολογιστεί η παράγωγος της συνάρτησης 
+    $f(x) = \sqrt{x} \cdot \ln{x} $.
+    \begin{align*}
+      (\sqrt{x} \cdot \ln{x} )' 
         &= (\sqrt{x} )'\cdot \ln{x} + \sqrt{x} \cdot (\ln{x}
         )' = \frac{1}{2 \sqrt{x} } \cdot \ln{x} + \sqrt{x} \cdot \frac{1}{x} =
         \frac{\ln{x}}{2 \sqrt{x}} + \frac{\sqrt{x}}{x} = 
         \frac{x \ln{x}+ 2 (\sqrt{x})^{2}}{2 x \sqrt{x} } \\
         &= \frac{x (\ln{x} + 2)}{2x \sqrt{x}} = \frac{\ln{x} +2}{2 \sqrt{x}}
-  \end{align*}
-\end{exercise}
+    \end{align*}
+  \end{exercise}
 
-\begin{exercise} Να υπολογιστεί η παράγωγος της συνάρτησης 
-$ f(x) = \sqrt[3]{x^{2}} \cdot \tan{x} $
-  \begin{align*}
-    (\sqrt[3]{x^{2}} \cdot \tan{x} )' 
+  \begin{exercise}  Να υπολογιστεί η παράγωγος της συνάρτησης 
+    $ f(x) = \sqrt[3]{x^{2}} \cdot \tan{x} $
+    \begin{align*}
+      (\sqrt[3]{x^{2}} \cdot \tan{x} )' 
   &= (\sqrt[3]{x^{2}} )' \cdot \tan{x} +
   \sqrt[3]{x^{2}} \cdot (\tan{x} )' = (x^{\frac{2}{3}})' \cdot \tan{x} +
   \sqrt[3]{x^{2}} \cdot \frac{1}{\cos^{2}{x}} = \frac{2}{3} \cdot x^{\frac{2}{3}
@@ -438,52 +451,52 @@ $ f(x) = \sqrt[3]{x^{2}} \cdot \tan{x} $
   &= \frac{2}{3} \cdot x^{- \frac{1}{3} } \cdot \tan{x} + 
   \frac{\sqrt[3]{x^{2}}}{\cos^{2}{x}} = \frac{2 \tan{x}}{3 \sqrt[3]{x}} +
   \frac{\sqrt[3]{x^{2}}}{\cos^{2}{x}} 
-  \end{align*}
-\end{exercise}
+    \end{align*}
+  \end{exercise}
 
-\begin{exercise} Να υπολογιστεί η παράγωγος της συνάρτησης 
-  $ f(x) = 2^{x} \cdot \cot{x} $
-  \begin{align*}
-    (2^{x}\cdot \cot{x})' 
+  \begin{exercise} Να υπολογιστεί η παράγωγος της συνάρτησης 
+    $ f(x) = 2^{x} \cdot \cot{x} $
+    \begin{align*}
+      (2^{x}\cdot \cot{x})' 
       &= (2^{x})' \cdot \cot{x} + 2^{x} \cdot (\cot{x} )' =
-      2^{x}\cdot \ln{2} \cdot \cot{x} + 2^{x}\cdot (- \frac{1}{\sin^{2}{x}}) = 
+      2^{x}\cdot \ln{2} \cdot \cot{x} + 2^{x}\cdot \Bigl(- \frac{1}{\sin^{2}{x}}\Bigr) = 
       2^{x} \ln{2} \cdot \cot{x} - \frac{2^{x}}{\sin^{2}{x}} 
-  \end{align*}
-\end{exercise}
+    \end{align*}
+  \end{exercise}
 
-\begin{exercise} Να υπολογιστεί η παράγωγος της συνάρτησης 
-  $ f(x) = x^{3} \cdot \arcsin{x} $
-  \[
-    \Bigl(x^{3}\cdot \arcsin{x}\Bigr)' = (x^{3})' \cdot \arcsin{x} + x^{3} \cdot (\arcsin{x} )' = 
-    3x^{2} \cdot \arcsin{x} + x^{3} \cdot \frac{1}{\sqrt{1-x^{2}}} = 3x^{2} \arcsin{x}
-    + \frac{x^{3}}{\sqrt{1 - x^{2}}} 
-  \]
-\end{exercise}
+  \begin{exercise} Να υπολογιστεί η παράγωγος της συνάρτησης 
+    $ f(x) = x^{3} \cdot \arcsin{x} $
+    \[
+      \Bigl(x^{3}\cdot \arcsin{x}\Bigr)' = (x^{3})' \cdot \arcsin{x} + x^{3} \cdot (\arcsin{x} )' = 
+      3x^{2} \cdot \arcsin{x} + x^{3} \cdot \frac{1}{\sqrt{1-x^{2}}} = 3x^{2} \arcsin{x}
+      + \frac{x^{3}}{\sqrt{1 - x^{2}}} 
+    \]
+  \end{exercise}
 
-\begin{exercise} Να υπολογιστεί η παράγωγος της συνάρτησης 
-  $ f(x) = \frac{\sin{x}}{x^{3}} $
-  \[
-    \Bigl(\frac{\sin{x}}{x^{3}} \Bigr)' = \frac{(\sin{x} )' \cdot x^{3}- \sin{x} \cdot
-    (x^{3})'}{(x^{3})^{2}} = \frac{\cos{x} \cdot x^{3}- \sin{x} \cdot 3x^{2}}{x^{6}} = 
-    \frac{x^{2}(x \cos{x} - 3 \sin{x})}{x^{6}} = \frac{x \cos{x} - 3 \sin{x}}{x^{4}}
-  \]  
-\end{exercise}
+  \begin{exercise} Να υπολογιστεί η παράγωγος της συνάρτησης 
+    $ f(x) = \frac{\sin{x}}{x^{3}} $
+    \[
+      \Bigl(\frac{\sin{x}}{x^{3}} \Bigr)' = \frac{(\sin{x} )' \cdot x^{3}- \sin{x} \cdot
+      (x^{3})'}{(x^{3})^{2}} = \frac{\cos{x} \cdot x^{3}- \sin{x} \cdot 3x^{2}}{x^{6}} = 
+      \frac{x^{2}(x \cos{x} - 3 \sin{x})}{x^{6}} = \frac{x \cos{x} - 3 \sin{x}}{x^{4}}
+    \]  
+  \end{exercise}
 
-\begin{exercise} Να υπολογιστεί η παράγωγος της συνάρτησης 
-  $ f(x) = \frac{x^{2}+5}{\ln{x}} $
-  \begin{align*}
-    \Bigl(\frac{x^{2}+5}{\ln{x}} \Bigr)' 
+  \begin{exercise} Να υπολογιστεί η παράγωγος της συνάρτησης 
+    $ f(x) = \frac{x^{2}+5}{\ln{x}} $
+    \begin{align*}
+      \Bigl(\frac{x^{2}+5}{\ln{x}} \Bigr)' 
     & = \frac{(x^{2}+5)'\cdot \ln{x} - (x^{2}+5)\cdot
       (\ln{x} )'}{(\ln{x} )^{2}} = \frac{2x \cdot \ln{x} - (x^{2}+5) \cdot
     \frac{1}{x}}{\ln^{2}{x}} = \frac{2x \cdot \ln{x}}{\ln^{2}{x}} - \frac{x^{2}+5}{x
   \ln^{2}{x}} = \frac{2x}{\ln{x}} - \frac{x^{2}+5}{x \ln^{2}{x}} 
-  \end{align*}
-\end{exercise}
+    \end{align*}
+  \end{exercise}
 
-\begin{exercise} Να υπολογιστεί η παράγωγος της συνάρτησης 
-  $ f(x) = \frac{x \mathrm{e}^{x}}{5-x^{2}} $
-  \begin{align*}
-    \Bigl(\frac{x \mathrm{e}^{x}}{5-x^{2}} \Bigr)' 
+  \begin{exercise} Να υπολογιστεί η παράγωγος της συνάρτησης 
+    $ f(x) = \frac{x \mathrm{e}^{x}}{5-x^{2}} $
+    \begin{align*}
+      \Bigl(\frac{x \mathrm{e}^{x}}{5-x^{2}} \Bigr)' 
     &= \frac{(x \mathrm{e}^{x} )'\cdot
     (5-x^{2})- x \mathrm{e}^{x} \cdot (5-x^{2})'}{(5-x^{2})^{2}} = \frac{[(x)'
     \mathrm{e}^{x} + x( \mathrm{e}^{x} )']\cdot (5-x^{2}) - x \mathrm{e}^{x}\cdot 
@@ -493,190 +506,218 @@ $ f(x) = \sqrt[3]{x^{2}} \cdot \tan{x} $
     = \frac{\mathrm{e}^{x} (1+x)(5-x^{2})+2x^{2} \mathrm{e}^{x}}{(5-x^{2})^{2}} 
     = \frac{\mathrm{e}^{x} (5-x^{2}+5x-x^{3}+2x^{2})}{(5-x^{2})^{2}} \\
     &= \frac{\mathrm{e}^{x} (-x^{3}+x^{2}+5x+5)}{(5-x^{2})^{2}} 
-  \end{align*}
-\end{exercise}
+    \end{align*}
+  \end{exercise}
 
 
 
+  \section*{Συμβολισμός Leibniz}
 
-
-\section*{Συμβολισμός Leibniz}
-
-Αν με $ y= f(x) $ συμβολίζουμε κάποια συνάρτηση, τότε για την παράγωγό της, 
-χρησιμοποιούμε συνήθως τους συμβολισμούς,
-\[
-  y' = f'(x) = \color{Col1}{\dv{\color{black}{y}}{x}} =
-  \color{Col1}{\dv{\color{black}{f}}{x}} =
-  \color{Col1}{\dv{}{x}} \color{black}{f (x)} 
-\] 
-όπου με το σύμβολο $\color{Col1}{\mathrm{d}/\mathrm{d}x}$ δηλώνουμε την πράξη της 
-\textbf{παραγώγισης ως προς $x$}. Για το συμβολισμό της παραγώγου, σε κάποια 
-συγκεκριμένη τιμή $ x= a $, γράφουμε
-\[
-  f'(a) = \eval{\dv{y}{x}}_{x= a} = \eval{\dv{f}{x}}_{x=a} 
-\] 
-\begin{example}
-  Να υπολογιστεί η παράγωγος της συνάρτησης $ y= x^{3} $, όταν $ x=2 $.
-\end{example}
-\begin{solution}
-  $ f'(2) = \dv{}{x}\eval{(x^{3})}_{x=2} = \eval{3x^{2}}_{x=2} = 3\cdot (2)^{2} = 3\cdot
-  4 = 12 $
-\end{solution}
-\begin{rem}
-  Ο συμβολισμός $ y' $ και $ f' $ για την παράγωγο μιας συνάρτησης, συναντάται στις
-  σημειώσεις του \textbf{Νεύτωνα}, ενώ ο συμβολισμός $ \mathrm{d}y/\mathrm{d}x $ και 
-  $ \mathrm{d}f/\mathrm{d}x $, στις αντίστοιχες σημειώσεις του \textbf{Leibniz}, όπου 
-  την ίδια περίοδο, αλλά ανεξάρτητα ο ένας από τον άλλον, εργάστηκαν πάνω στις ιδέες του 
-  διαφορικού λογισμού.
-\end{rem}
-\begin{rem}
-  Αν η ανεξάρτητη μεταβλητή είναι ο \textbf{χρόνος}, αν δηλαδή, για παράδειγμα 
-  $ y=f(t) $, τότε για την παράγωγο χρησιμοποιούμε αρκετά συχνά και τους συμβολισμούς
+  Αν $ y= f(x) $ είναι κάποια συνάρτηση, τότε για την παράγωγό της, χρησιμοποιούμε 
+  συνήθως τους συμβολισμούς,
   \[
-    \dot y = \dot f
+    y' = f'(x) = \color{Col1}{\dv{\color{black}{y}}{x}} =
+    \color{Col1}{\dv{\color{black}{f}}{x}} =
+    \color{Col1}{\dv{}{x}} \color{black}{f (x)} 
   \] 
-  όπου με την τελεία, δηλώνουμε την πράξη της \textbf{παραγώγισης ως προς $t$}. 
-\end{rem}
-
-
-\section*{Παράγωγοι Ανώτερης τάξης}
-
-Αν $f$ είναι μια \textbf{παραγωγίσιμη} συνάρτηση, τότε η παράγωγός της $ f' $, είναι 
-επίσης μία συνάρτηση, η οποία αν ξαναπαραγωγιστεί, συμβολίζεται με $ (f')' = f'' $ 
-και λέγεται \textcolor{Col1}{2η παράγωγος} ή \textcolor{Col1}{παράγωγος 2ης τάξης}, της 
-συνάρτησης $f$. Με το συμβολισμό του Leibniz γράφουμε αντίστοιχα, για τη 2η παράγωγο
-\[
-  \dv{}{x} {\Bigl(\dv{f}{x}\Bigr)} = \color{Col1}{\dv[2]{\color{black}{f}}{x}}  
-\] 
-Με ανάλογο τρόπο, προκύπτουν και οι υπόλοιπες παράγωγοι, \textbf{ανώτερης τάξης}, 
-της συνάρτησης $f$. Για τη $n$-οστή παράγωγο της συνάρτησης $f$, γράφουμε
-\[
-  f^{(n)}(x) = \dv[n]{f}{x} %, \quad \text{όπου} \; n=2,3,4,\ldots
-\] 
-\begin{example}
-  Να υπολογιστούν η 2η και 3η παράγωγος για τη συνάρτηση $ y=x^{4}+3x^{2}-1 $.
-\end{example}
-\begin{solution}
-  Αρχικά, υπολογίζουμε την 1η παράγωγο.
+  όπου με το σύμβολο $\color{Col1}{\mathrm{d}/\mathrm{d}x}$ δηλώνουμε την πράξη της 
+  \textbf{παραγώγισης ως προς $x$}. Για το συμβολισμό της παραγώγου, σε κάποια 
+  \textbf{συγκεκριμένη τιμή} $ x= a $, γράφουμε
   \[
-    f'(x) = (x^{4}+3x^{2}-1)' = 4x^{3}+6x 
+    f'(a) = \eval{\dv{y}{x}}_{x= a} = \eval{\dv{f}{x}}_{x=a} 
   \] 
-  Υπολογίζουμε τη 2η παράγωγο, ξαναπαραγωγίζοντας την 1η παράγωγο.
+  \begin{example}
+    Να υπολογιστεί η παράγωγος της συνάρτησης $ y= x^{3} $, όταν $ x=2 $.
+  \end{example}
+  \begin{solution}
+    $ f'(2) = \dv{}{x}\eval{(x^{3})}_{x=2} = \eval{3x^{2}}_{x=2} = 3\cdot (2)^{2} = 3\cdot
+    4 = 12 $
+  \end{solution}
+  \begin{rem}
+    Ο συμβολισμός $ y' $ και $ f' $ για την παράγωγο μιας συνάρτησης, συναντάται στις
+    σημειώσεις του \textbf{Νεύτωνα}, ενώ ο συμβολισμός $ \mathrm{d}y/\mathrm{d}x $ και 
+    $ \mathrm{d}f/\mathrm{d}x $, στις αντίστοιχες σημειώσεις του \textbf{Leibniz}, όπου 
+    την ίδια περίοδο, αλλά ανεξάρτητα ο ένας από τον άλλον, εργάστηκαν πάνω στις ιδέες του 
+    διαφορικού λογισμού.
+  \end{rem}
+  \begin{rem}
+    Αν η ανεξάρτητη μεταβλητή είναι ο \textbf{χρόνος}, αν δηλαδή, για παράδειγμα 
+    $ y=f(t) $, τότε για την παράγωγο χρησιμοποιούμε αρκετά συχνά και τους συμβολισμούς
+    \[
+      \dot y = \dot f
+    \] 
+    όπου με την τελεία, δηλώνουμε την πράξη της \textbf{παραγώγισης ως προς $t$}. 
+  \end{rem}
+
+
+  \section*{Παράγωγοι Ανώτερης τάξης}
+
+  Αν $f$ είναι μια \textbf{παραγωγίσιμη} συνάρτηση, τότε η παράγωγός της $ f' $, είναι 
+  επίσης μία συνάρτηση, η οποία αν ξαναπαραγωγιστεί, συμβολίζεται με $ (f')' = f'' $ 
+  και λέγεται \textcolor{Col1}{2η παράγωγος} ή \textcolor{Col1}{παράγωγος 2ης τάξης}, της 
+  συνάρτησης $f$. Με το συμβολισμό του Leibniz γράφουμε αντίστοιχα, για τη 2η παράγωγο
   \[
-    f''(x) = (4x^{3}+6x)' = 12x^{2}+6 
+    \dv{}{x} {\Bigl(\dv{f}{x}\Bigr)} = \color{Col1}{\dv[2]{\color{black}{f}}{x}}  
   \] 
-  Επομένως, για την 3η παράγωγο, έχουμε
+  Με ανάλογο τρόπο, προκύπτουν και οι υπόλοιπες παράγωγοι, \textbf{ανώτερης τάξης}, 
+  της συνάρτησης $f$. Για τη $n$-οστή παράγωγο της συνάρτησης $f$, γράφουμε
   \[
-    f'''(x) = (12x^{2}+6)' = 24x 
-  \]
-\end{solution}
+    f^{(n)}(x) = \dv[n]{f}{x} %, \quad \text{όπου} \; n=2,3,4,\ldots
+  \] 
+  \begin{example}
+    Να υπολογιστούν η 2η και 3η παράγωγος για τη συνάρτηση $ y=x^{4}+3x^{2}-1 $.
+  \end{example}
+  \begin{solution}
+    Αρχικά, υπολογίζουμε την 1η παράγωγο.
+    \[
+      f'(x) = (x^{4}+3x^{2}-1)' = 4x^{3}+6x 
+    \] 
+    Υπολογίζουμε τη 2η παράγωγο, ξαναπαραγωγίζοντας την 1η παράγωγο.
+    \[
+      f''(x) = (4x^{3}+6x)' = 12x^{2}+6 
+    \] 
+    Επομένως, για την 3η παράγωγο, έχουμε
+    \[
+      f'''(x) = (12x^{2}+6)' = 24x 
+    \]
+  \end{solution}
 
 
-\section*{Παράγωγος Σύνθετων Συναρτήσεων}
+  \section*{Παράγωγος Σύνθετων Συναρτήσεων}
 
-\subsection*{Κανόνας Αλυσίδας - Τύπος Leibniz}
+  \subsection*{Κανόνας Αλυσίδας - Τύπος Leibniz}
 
-\begin{prop}[Κανόνας Αλυσίδας]
-  Αν η $g$ είναι παραγωγίσιμη συνάρτηση στο $x$ και η $f$ είναι παραγωγίσιμη στο $ g(x)
-  $, τότε η \textbf{σύνθετη} συνάρτηση $ f(g(x)) $ είναι επίσης παραγωγίσιμη στο $x$ 
-  και η παράγωγός της δίνεται από τη σχέση
-  \begin{equation}\label{eq:chain}
-    \bigl[f(g(x))\bigr]' = f'(g(x)) \cdot g'(x)
-  \end{equation} 
-  Με το συμβολισμό του Leibniz, αν $ y=f(u) $ και $ u=g(x) $ είναι παραγωγίσιμες
-  συναρτήσεις, τότε 
-  \begin{equation}\label{eq:leib}
-    \dv{y}{x} = \dv{y}{u} \cdot \dv{u}{x} 
-  \end{equation} 
-\end{prop}
+  \begin{prop}[\textcolor{Col1}{Κανόνας Αλυσίδας}]
+    Αν η $g$ είναι παραγωγίσιμη συνάρτηση στο $x$ και η $f$ είναι παραγωγίσιμη στο $ g(x)
+    $, τότε η \textbf{σύνθετη} συνάρτηση $ y= f(g(x)) $ είναι επίσης παραγωγίσιμη στο $x$ 
+    και η παράγωγός της δίνεται από τη σχέση
+    \begin{empheq}[box=\mathboxr]{equation}
+      \label{eq:chain}
+      \bigl[f(g(x))\bigr]' = f'(g(x)) \cdot g'(x)
+    \end{empheq}
+    Με το συμβολισμό του Leibniz, αν $ y=f(u) $ και $ u=g(x) $ είναι παραγωγίσιμες
+    συναρτήσεις, τότε 
+    \begin{equation}\label{eq:leib}
+      \dv{y}{x} = \dv{y}{u} \cdot \dv{u}{x} 
+    \end{equation} 
+  \end{prop}
 
-\section*{Πίνακας Παραγώγων Σύνθετων Συναρτήσεων}
+  \section*{Πίνακας Παραγώγων Σύνθετων Συναρτήσεων}
 
-\begin{center}
-\begin{Mytable}
-  \renewcommand{\arraystretch}{2.4}
-  \begin{tabular}{|c||c|}
-    \TabCellHead Βασικές Συναρτήσεις & \TabCellHead Τριγωνομετρικές Συναρτήσεις \\[5pt] \hline
-    -- & $ \bigl(\sin{g(x)}\bigr)' = \cos{g(x)} \cdot g'(x) $ \\[5pt] \hline
-    -- & $ \bigl(\cos{g(x)}\bigr)' = - \sin{g(x)}\cdot g'(x) $ \\[5pt] \hline 
-    $ \bigl(g(x)^{a}\bigr)' = a g(x)^{a-1}\cdot g'(x),\quad a \in \mathbb{R}\setminus
-    \{-1\} $ & $ \bigl(\tan{g(x)}\bigr)' = \frac{1}{\cos^{2}{g(x)}} \cdot g'(x) $ \\[5pt] \hline
-    $ \Bigl(\frac{1}{g(x)}\Bigr)' = - \frac{1}{g^{2}(x)}\cdot g'(x) $ & $
-    \bigl(\cot{g(x)}\bigr)' = - \frac{1}{\sin^{2}{g(x)}} \cdot g'(x) $ \\[5pt] \hline
-    $ \Bigl(\frac{1}{g^{2}(x)}\Bigr)' = - \frac{2}{g^{3}(x)} \cdot g'(x) $ & $
-    \bigl(\arctan{g(x)}\bigr)' = \frac{1}{1 + g^{2}(x)} \cdot g'(x) $ \\[5pt] \hline
-    $ \bigl(a^{g(x)}\bigr)' = a^{g(x)}\cdot \ln{a} \cdot g'(x) $ & $
-    \bigl(\arccot{g(x)}\bigr)' = \frac{-1}{1 + g^{2}(x)} \cdot g'(x) $ \\[5pt] \hline
-    $ \bigl(e^{g(x)}\bigr)' = e^{g(x)} \cdot g'(x) $ &  $ \bigl(\arcsin{g(x)}\bigr)' =
-    \frac{1}{\sqrt{1 - g^{2}(x)}} \cdot g'(x) $ \\[5pt] \hline
-    $ \bigl(\ln{g(x)}\bigr)' = \frac{1}{g(x)} \cdot g'(x) $ & $ \bigl(\arccos{g(x)}\bigr)'
-    = \frac{-1}{\sqrt{1 - g^{2}(x)}} \cdot g'(x) $ \\[5pt] \hline
-    $ \bigl(\sqrt[n]{g(x)^{m}}\bigr)' = \bigl(g(x)^{\frac{m}{n}}\bigr)'= \frac{m}{n}
-    g(x)^{\frac{m}{n} -1} \cdot g'(x) $ & $ \bigl(\sinh{g(x)}\bigr)' = \cosh{g(x)}
-    \cdot g'(x) $ \\[5pt] \hline
-    $ \bigl(\sqrt{g(x)}\bigr)' = \frac{1}{2 \sqrt{g(x)}} \cdot g'(x) $ & $
-    \bigl(\cosh{g(x)}\bigr)' = \sinh{g(x)} \cdot g'(x) $ \\[5pt] \hline
-  \end{tabular}
-\end{Mytable}
-\end{center}
+  \begin{center}
+    \begin{Mytable}
+      \renewcommand{\arraystretch}{2.4}
+      \begin{tabular}{|c||c|}
+        \TabCellHead Βασικές Συναρτήσεις & \TabCellHead Τριγωνομετρικές Συναρτήσεις \\[5pt] \hline
+        -- & $ \bigl(\sin{g(x)}\bigr)' = \cos{g(x)} \cdot g'(x) $ \\[5pt] \hline
+        -- & $ \bigl(\cos{g(x)}\bigr)' = - \sin{g(x)}\cdot g'(x) $ \\[5pt] \hline 
+        $ \bigl(g(x)^{a}\bigr)' = a g(x)^{a-1}\cdot g'(x) $ & $ \bigl(\tan{g(x)}\bigr)' = \frac{1}{\cos^{2}{g(x)}} \cdot g'(x) $ \\[5pt] \hline
+        $ \Bigl(\frac{1}{g(x)}\Bigr)' = - \frac{1}{g^{2}(x)}\cdot g'(x) $ & $
+        \bigl(\cot{g(x)}\bigr)' = - \frac{1}{\sin^{2}{g(x)}} \cdot g'(x) $ \\[5pt] \hline
+        $ \Bigl(\frac{1}{g^{2}(x)}\Bigr)' = - \frac{2}{g^{3}(x)} \cdot g'(x) $ & $
+        \bigl(\arctan{g(x)}\bigr)' = \frac{1}{1 + g^{2}(x)} \cdot g'(x) $ \\[5pt] \hline
+        $ \bigl(a^{g(x)}\bigr)' = a^{g(x)}\cdot \ln{a} \cdot g'(x) $ & $
+        \bigl(\arccot{g(x)}\bigr)' = \frac{-1}{1 + g^{2}(x)} \cdot g'(x) $ \\[5pt] \hline
+        $ \bigl(e^{g(x)}\bigr)' = e^{g(x)} \cdot g'(x) $ &  $ \bigl(\arcsin{g(x)}\bigr)' =
+        \frac{1}{\sqrt{1 - g^{2}(x)}} \cdot g'(x) $ \\[5pt] \hline
+        $ \bigl(\ln{g(x)}\bigr)' = \frac{1}{g(x)} \cdot g'(x) $ & $ \bigl(\arccos{g(x)}\bigr)'
+        = \frac{-1}{\sqrt{1 - g^{2}(x)}} \cdot g'(x) $ \\[5pt] \hline
+        $ \bigl(\sqrt[n]{g(x)^{m}}\bigr)' = \bigl(g(x)^{\frac{m}{n}}\bigr)'= \frac{m}{n}
+        g(x)^{\frac{m}{n} -1} \cdot g'(x) $ & $ \bigl(\sinh{g(x)}\bigr)' = \cosh{g(x)}
+        \cdot g'(x) $ \\[5pt] \hline
+        $ \bigl(\sqrt{g(x)}\bigr)' = \frac{1}{2 \sqrt{g(x)}} \cdot g'(x) $ & $
+        \bigl(\cosh{g(x)}\bigr)' = \sinh{g(x)} \cdot g'(x) $ \\[5pt] \hline
+      \end{tabular}
+    \end{Mytable}
+  \end{center}
 
 
-\subsection*{Παραδείγματα}
+  \subsection*{Παραδείγματα}
 
-\begin{example}
-  $ (\ln^{2}x)' = [(\ln{x} )^{2}]' = 2 \ln{x} \cdot (\ln{x} )' = 2 \ln{x} \cdot
-  \frac{1}{x} = \frac{2 \ln{x}}{x} $
-\end{example}
-\begin{example}
-  $ \Bigl(\frac{1}{\ln{x}} \Bigr)' = - \frac{1}{(\ln{x} )^{2}} \cdot (\ln{x} )' 
-  = - \frac{1}{\ln^{2}{x}} \cdot \frac{1}{x} = - \frac{1}{x \ln^{2}{x}} $ 
-\end{example}
-\begin{example}
-  $ \Bigl(\frac{1}{x^{2}+1} \Bigr)' = - \frac{1}{(x^{2}+1)^{2}} \cdot (x^{2}+1)' = 
-  - \frac{1}{(x^{2}+1)^{2}} \cdot 2x = - \frac{2x}{(x^{2}+1)^{2}} $ 
-\end{example}
+  \begin{example}
+    $ \bigl(\mathrm{e}^{3x^{2}}\bigr)' = \mathrm{e}^{3x^{2}} \cdot (3x^{2})' =
+    \mathrm{e}^{3x^{2}} \cdot 6x = 6x \mathrm{e}^{3x^{2}} $
+  \end{example}
+  \begin{example}
+    $ \bigl(\sin{(\sqrt{x})} \bigr)' = \cos{(\sqrt{x})} \cdot (\sqrt{x})' =
+    \cos{(\sqrt{x})} \cdot \frac{1}{2 \sqrt{x}} = \frac{\cos{(\sqrt{x})}}{2 \sqrt{x}} $
+  \end{example}
+  \begin{example}
+    $ \bigl(\tan{(2x-3)}\bigr)' = \frac{1}{\cos^{2}{(2x-3)}} \cdot (2x-3)' =
+    \frac{1}{\cos^{2}{(2x-3)}} \cdot 2 = \frac{2}{\cos^{2}{(2x-3)}} $
+  \end{example}
+  \begin{example}
+    $ \bigl(\sqrt{x^{3}+2x}\bigr)' = \frac{1}{2 \sqrt{x^{3}+2x}} 
+    \cdot \bigl(x^{3}+2x\bigr)' = \frac{3x^{2}+2}{2 \sqrt{x^{3}+2x}} $
+  \end{example}
+  \begin{example}
+    $ \bigl((x^{3}+1)^{3}\bigr)' = 3 (x^{3}+1)^{2} \cdot (x^{3}+1)' = 3 (x^{3}+1)^{2}
+    \cdot 3x^{2} = 9 x^{2} (x^{3}+1)^{2} $
+  \end{example}
+  \begin{example}
+    $ (\ln^{2}x)' = [(\ln{x} )^{2}]' = 2 \ln{x} \cdot (\ln{x} )' = 2 \ln{x} \cdot
+    \frac{1}{x} = \frac{2 \ln{x}}{x} $
+  \end{example}
+  \begin{example}
+    $ \bigl(\sin^{2}{(3x)}\bigr)' \! = 2 \sin{(3x)} \cdot \bigl(\sin{(3x)}\bigr)' 
+    \! = 2 \sin{(3x)} \cos{(3x)} (3x)' 
+    \! = 2 \sin{(3x)} \cos{(3x)} \cdot 3 
+    \! = 6 \sin{(3x)} \cos{(3x)} \!\! $
+  \end{example}
+  \begin{example}
+    $ \Bigl(\frac{1}{\ln{x}} \Bigr)' = - \frac{1}{(\ln{x} )^{2}} \cdot (\ln{x} )' 
+    = - \frac{1}{\ln^{2}{x}} \cdot \frac{1}{x} = - \frac{1}{x \ln^{2}{x}} $ 
+  \end{example}
+  \begin{example}
+    $ \Bigl(\frac{1}{\sqrt{x}}\Bigr)' = - \frac{1}{(\sqrt{x} )^{2}} \cdot (\sqrt{x})' = 
+    = - \frac{1}{x} \cdot \frac{1}{2 \sqrt{x}} = - \frac{1}{2 x \sqrt{x}} $
+  \end{example}
+  \begin{example}
+    $ \Bigl(\frac{1}{x^{2}+1} \Bigr)' = - \frac{1}{(x^{2}+1)^{2}} \cdot (x^{2}+1)' = 
+    - \frac{1}{(x^{2}+1)^{2}} \cdot 2x = - \frac{2x}{(x^{2}+1)^{2}} $ 
+  \end{example}
 
-\begin{exercise}
-  Έστω $ y= \ln{\bigl(\sqrt{x^{2}+1}\bigr)} $. Να υπολογιστεί η παράγωγος της 
-  συνάρτησης.  
-\end{exercise}
-\begin{solution}
-  Χρησιμοποιώντας τη σχέση~\eqref{eq:chain}, έχουμε:
-  \[
-    \Bigl[\ln{\bigl(\sqrt{x^{2}+1}\bigr)} \Bigr]' = \frac{1}{\sqrt{x^{2}+1}} \cdot 
-    \bigl(\sqrt{x^{2}+1} \bigr)' = \frac{1}{\sqrt{x^{2}+1}} \cdot 
-    \frac{1}{2 \sqrt{x^{2}+1}} \cdot (x^{2}+1)' = \frac{1}{2 
-    \bigl(\sqrt{x^{2}+1}\bigr)^{2}} \cdot 2x = \frac{x}{x^{2}+1}
-  \]  
-
-  \twocolumnsiderrr{
+  \begin{exercise}
+    Έστω η σύνθετη συναϱτηση $ y= \ln{\bigl(\sqrt{x^{2}+1}\bigr)} $. 
+    Να υπολογιστεί η παράγωγος της συνάρτησης.  
+  \end{exercise}
+  \begin{solution}
+    Χρησιμοποιώντας τη σχέση~\eqref{eq:chain}, έχουμε:
+    \[
+      \Bigl[\ln{\bigl(\sqrt{x^{2}+1}\bigr)} \Bigr]' = \frac{1}{\sqrt{x^{2}+1}} \cdot 
+      \bigl(\sqrt{x^{2}+1} \bigr)' = \frac{1}{\sqrt{x^{2}+1}} \cdot 
+      \frac{1}{2 \sqrt{x^{2}+1}} \cdot (x^{2}+1)' = \frac{1}{2 
+      \bigl(\sqrt{x^{2}+1}\bigr)^{2}} \cdot 2x = \frac{x}{x^{2}+1}
+    \]  
     Αν θέλουμε να χρησιμοποιήσουμε τη σχέση~\eqref{eq:leib}, τότε \textbf{αναλύουμε} 
     τη σύνθετη συνάρτηση, σε απλούστερες, ξεκινώντας από <<μέσα>> και πηγαίνοντας 
-    διαδοχικά προς τα <<έξω>>. Έτσι, θέτουμε $ u=x^{2}+1 $ και 
+    διαδοχικά προς τα <<έξω>>. Έτσι, θέτουμε $ u=x^{2}+1 $ και στη συνέχεια
     $v= \sqrt{x^{2}+1} = \sqrt{u} $ και άρα η συνάρτηση μας, γίνεται
-    \[
-      y= \ln{\bigl(\sqrt{x^{2}+1}\bigr)} \longrightarrow 
-      \begin{cases}
-        y= \ln{v} \\
-        v= \sqrt{u}  \\
-        u= x^{2}+1  
-      \end{cases}
-    \]
-    Οπότε, για την παράγωγο, σύμφωνα με τον τύπο του Leibniz, θα ισχύει
-    \[
-      \dv{y}{x} = \dv{y}{v} \cdot \dv{v}{u} \cdot \dv{u}{x} = \frac{1}{v} \cdot
-      \frac{1}{2 \sqrt{u}} \cdot 2x = \frac{1}{\sqrt{x^{2}+1}} \cdot \frac{1}{2
-      \sqrt{x^{2}+1}} \cdot 2x = \frac{x}{x^{2}+1}
-    \] 
-  }{
-    \begin{tikzpicture}
-      \node (a) at (0,0) {$y$} ;
-      \node (b) at (0,-1) {$v$} ;
-      \node (c) at (0,-2) {$u$} ;
-      \node (d) at (0,-3) {$x$} ;
-      \draw (a) -- node[right,Col1]{$\dv{y}{v}$} (b) ;
-      \draw (b) -- node[right,Col1]{$\dv{v}{u}$} (c) ;
-      \draw (c) -- node[right,Col1]{$\dv{u}{x}$} (d) ;
-    \end{tikzpicture}       
-  }
-\end{solution}
+
+    \twocolumnsiderrr{
+      \[
+        y= \ln{\bigl(\sqrt{x^{2}+1}\bigr)} \longrightarrow 
+        \begin{cases}
+          y= \ln{v} \\
+          v= \sqrt{u}  \\
+          u= x^{2}+1  
+        \end{cases}
+      \]
+      Οπότε, για την παράγωγο, σύμφωνα με τον τύπο του Leibniz, θα ισχύει
+      \[
+        \dv{y}{x} = \dv{y}{v} \cdot \dv{v}{u} \cdot \dv{u}{x} = \frac{1}{v} \cdot
+        \frac{1}{2 \sqrt{u}} \cdot 2x = \frac{1}{\sqrt{x^{2}+1}} \cdot \frac{1}{2
+        \sqrt{x^{2}+1}} \cdot 2x = \frac{x}{x^{2}+1}
+      \] 
+    }{
+      \begin{tikzpicture}
+        \node (a) at (0,0) {$y$} ;
+        \node (b) at (0,-1) {$v$} ;
+        \node (c) at (0,-2) {$u$} ;
+        \node (d) at (0,-3) {$x$} ;
+        \draw (a) -- node[right,Col1]{$\dv{y}{v}$} (b) ;
+        \draw (b) -- node[right,Col1]{$\dv{v}{u}$} (c) ;
+        \draw (c) -- node[right,Col1]{$\dv{u}{x}$} (d) ;
+      \end{tikzpicture}       
+    }
+  \end{solution}

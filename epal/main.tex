@@ -6,25 +6,25 @@
 \everymath{\displaystyle}
 \pagestyle{vangelis}
 
-%%%%%%%%%%%%%%%% WATERMARK above pictures with opacity %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\usepackage[printwatermark]{xwatermark}
-%\newsavebox\mybox
-%\savebox\mybox{\tikz[color=Col1,opacity=0.7]\node{ΠΡΟΣΗΜΟ};}
-%\newwatermark*[
-%allpages,
-%fontfamily=lmr,
-%fontseries=m,
-%angle=45,
-%scale=14,
-%xpos=-40,
-%ypos=40,
-%]{\usebox\mybox} 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%% WATERMARK above pictures with opacity %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[printwatermark]{xwatermark}
+\newsavebox\mybox
+\savebox\mybox{\tikz[color=Col1,opacity=0.7]\node{ΠΡΟΣΗΜΟ};}
+\newwatermark*[
+allpages,
+fontfamily=lmr,
+fontseries=m,
+angle=45,
+scale=14,
+xpos=-40,
+ypos=40,
+]{\usebox\mybox} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %adds a rectangle background box behind every picture
  % \tikzset{every picture/.append style={background rectangle/.style={fill=blue!05,rounded
- %   corners},show background rectangle}}
+   % corners},show background rectangle}}
 
 
 \usepackage[font={color=Col1},labelfont={bf},hypcap=false]{caption}
@@ -42,7 +42,7 @@
     \end{minipage}
 }
 
-\newcommand{\twocolumnsidesr}[2]{\begin{minipage}[t]{0.35\linewidth}
+\newcommand{\twocolumnsidesr}[2]{\begin{minipage}[t]{0.36\linewidth}
         #1
         \end{minipage}\hfill\begin{minipage}[t]{0.60\linewidth}
         #2
@@ -166,6 +166,8 @@
 % \input{limits_ex.tex}
 
 % \restoregeometry
+
+% \setcounter{chapter}{1}
 
 \input{paragwgos.tex}
 

@@ -33,7 +33,8 @@
 οι τιμές του $y$, δηλαδή της $ f(x) $, είναι \textcolor{Col1}{κοντά} στο $a$. Μάλιστα, 
 φαίνεται ότι καθώς το $x$ πλησιάζει \textbf{οσοδήποτε} κοντά στο $ x_{0} $ (και από τις 
 δύο πλευρές), οι τιμές της $ f(x) $ πλησιάζουν \textbf{οσοδήποτε} κοντά στην τιμή $ a $. 
-Αυτό, το εκφράζουμε λέγοντας ότι το \textcolor{Col1}{όριο} της $ f(x) $, καθώς το $x$ τείνει στο $ x_{0} $, είναι ίσο με $a$ και γράφουμε
+Αυτό, το εκφράζουμε λέγοντας ότι το \textcolor{Col1}{όριο} της $ f(x) $, καθώς το $x$
+τείνει στο $ x_{0} $, \textbf{υπάρχει} και είναι ίσο με $a \in \mathbb{R} $ και γράφουμε
 \begin{empheq}[box=\mathboxg]{equation*}
   \lim_{x \to x_{0}} f(x) = a \quad \text{ή} \quad f(x) \to a \; \text{καθώς} \; x \to
   x_{0}
@@ -164,8 +165,8 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
 είναι \textbf{μεγαλύτερες} από το $ x_{0} $. 
 
 \begin{prop}
-  Το όριο μιας συνάρτησης υπάρχει, αν και μόνον αν, υπάρχουν τα πλευρικά όρια και είναι
-  ίσα. Δηλαδή
+  Το όριο μιας συνάρτησης \textbf{υπάρχει}, αν και μόνον αν, 
+  υπάρχουν τα πλευρικά όρια και είναι ίσα. Δηλαδή
   \begin{empheq}[box=\mathboxr]{equation*}
     \lim_{x \to x_{0}} f(x) = a \Leftrightarrow 
     \lim_{x \to x_{0}^{-}} f(x) = a \quad \text{και} \quad \lim_{x \to x_{0}^{+}} f(x) 
@@ -183,7 +184,7 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
   \begin{empheq}[box=\mathboxg]{equation*}
     \twocolumnsidesc{
       \begin{enumerate}
-        \item $ \lim_{x \to x_{0}} c = c, \; \forall a \in \mathbb{R} $
+        \item $ \lim_{x \to x_{0}} c = c, \; \forall c \in \mathbb{R} $
         \item $ \lim_{x\to x_{0}} x = x_{0} $
         \item $ \lim_{x\to x_{0}} (f(x) \pm g(x)) = \lim_{x \to x_{0}} f(x) \pm
           \lim_{x \to x_{0}} g(x) $
@@ -202,7 +203,7 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
           q(x_{0}) \neq 0 $
         \item $ \lim_{x \to x_{0}} \abs{f(x)} = \Bigl|\lim_{x \to x_{0}} f(x)\Bigr| $
         \item $ \lim_{x \to x_{0}} [f(x)]^{n} = 
-          \Bigl[\lim_{x \to x_{0}} f(x)\Bigr]^{n}, \; n \in \mathbb{N}- \{ 0 \} $ 
+          \Bigl[\lim_{x \to x_{0}} f(x)\Bigr]^{n}, \; n \in \mathbb{N}^{*} $ 
         \item  $ \lim_{x \to x_{0}} \sqrt[n]{f(x)} = 
           \sqrt[n]{\lim_{x \to x_{0}} f(x)}, \; n \in \mathbb{N}, n \geq 2 $ 
       \end{enumerate}
@@ -447,13 +448,13 @@ $ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
 \section*{Χρήσιμες Προτάσεις}
 
 \begin{prop}
-  Αν μια συνάρτηση $ f $ έχει όριο στο σημείο $ x_{0} $, τότε αυτό είναι
-  \textbf{μοναδικό}.
+  % Αν μια συνάρτηση $ f $ έχει όριο στο σημείο $ x_{0} $, τότε αυτό είναι
+  Αν το όριο μιας συνάρτησης, υπάρχει, τότε αυτό είναι \textbf{μοναδικό}.
 \end{prop}
 
 
 \begin{prop}
-  Αν $ \lim_{x \to x_{0}} f(x) = a \in \mathbb{R} - {\{ 0 \}} $, τότε υπάρχει 
+  Αν $ \lim_{x \to x_{0}} f(x) = a \in \mathbb{R}^{*} $, τότε υπάρχει 
   περιοχή του $ x_{0} $ ώστε οι τιμές της $ f(x) $ να είναι \textbf{ομόσημες} του $a$ 
   για κάθε $x$ σε αυτή την περιοχή, δηλαδή:
   \begin{myitemize}
@@ -493,19 +494,18 @@ $ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
   \end{empheq}
 \end{prop}
 
-
-% \begin{prop}[\textcolor{Col1}{Κριτήριο Παρεμβολής}]
-% \item {}
-%   \begin{minipage}[t]{8.0 cm}
-%     \begin{myitemize}
-%       \item $ h(x) \leq f(x) \leq g(x), \; \forall x$ σε μια περιοχή του $ x_{0} $
-%         \hfill\tikzmark{a}
-%       \item $ \lim_{x \to x_{0}} h(x) = \lim_{x \to x_{0}} g(x) = l \in \mathbb{R} $
-%         \hfill\tikzmark{b}
-%     \end{myitemize}
-%   \end{minipage}
-%   \mybrace{a}{b}[ $ \lim_{x \to x_{0}} f(x) = l $ ]
-% \end{prop}
+\begin{prop}[\textcolor{Col1}{Κριτήριο Παρεμβολής}]
+\item {}
+  \begin{minipage}[t]{8.0 cm}
+    \begin{myitemize}
+      \item $ h(x) \leq f(x) \leq g(x), \; \forall x$ σε μια περιοχή του $ x_{0} $
+        \hfill\tikzmark{a}
+      \item $ \lim_{x \to x_{0}} h(x) = \lim_{x \to x_{0}} g(x) = a \in \mathbb{R} $
+        \hfill\tikzmark{b}
+    \end{myitemize}
+  \end{minipage}
+  \mybrace{a}{b}[ $ \lim_{x \to x_{0}} f(x) = a $ ]
+\end{prop}
 
 \begin{rem}
   Η παραπάνω πρόταση ισχύει και όταν $ x_{0} = + \infty $ ή $ - \infty $.
@@ -516,9 +516,9 @@ $ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
 \end{example}
 \begin{solution}
   Καταρχας, παρατηρούμε ότι δεν μπορούμε να εφαρμόσουμε τις ιδιότητες των ορίων, και να 
-  «σπάσουμε» ενδεχομένως, το όριο, στο γινόμενο των ορίων, γιατί, το όριο 
+  «σπάσουμε» ενδεχομένως, το όριο στο γινόμενο των ορίων, γιατί το όριο 
   $ \lim_{x \to 0} \sin{1/x} $, δεν υπάρχει.
-  Επομένως, έχουμε, ότι
+  Επομένως, αφού $ -1 \leq \sin{x} \leq 1, \; \forall x \in \mathbb{R} $ έχουμε ότι
   \[
     - x^{2} \leq x^{2} \sin{\frac{1}{x}} \leq x^{2}, \; \forall x \in \mathbb{R}^{*}
   \]
@@ -529,24 +529,25 @@ $ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
   \]
 \end{solution}
 
-% \begin{cor}
-% \item {}
-%   \begin{minipage}[t]{6.5 cm}
-%     \begin{myitemize}
-%       \item $ \abs{f(x)} \leq g(x) $ σε μια περιοχή του $ x_{0} $
-%         \hfill\tikzmark{a}
-%       \item $ \lim_{x \to x_{0}} g(x) = 0 $
-%         \hfill\tikzmark{b}
-%     \end{myitemize}
-%   \end{minipage}
-%   \mybrace{a}{b}[ $ \lim_{x \to x_{0}} f(x) = 0 $ ]
-% \end{cor}
+\begin{cor}
+\item {}
+  \begin{minipage}[t]{7.0 cm}
+    \begin{myitemize}
+      \item $ \abs{f(x)} \leq g(x), \; \forall x $ σε μια περιοχή του $ x_{0} $
+        \hfill\tikzmark{a}
+      \item $ \lim_{x \to x_{0}} g(x) = 0 $
+        \hfill\tikzmark{b}
+    \end{myitemize}
+  \end{minipage}
+  \mybrace{a}{b}[ $ \lim_{x \to x_{0}} f(x) = 0 $ ]
+\end{cor}
 
 \begin{example}
   Να δείξετε ότι $ \lim_{x \to 0} \Bigl(x \cos{\frac{1}{x}}\Bigr) = 0 $
 \end{example}
 \begin{solution}
-  Έχουμε ότι
+  Από τη γνωστή ανισότητα $ \abs{\cos{x}} \leq 1, \; \forall x \in \mathbb{R} $, 
+  έχουμε ότι 
   \[
     \Bigl|x \cos{\frac{1}{x}}\Bigr| = \abs{x} \cdot 
     \Bigl|\cos{\frac{1}{x}}\Bigr| \leq \abs{x} \cdot 1 = 
@@ -572,13 +573,20 @@ $ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
   \frac{(x-2)\cancel{(x-1)}}{\cancel{(x-1)}(x+1)} = \lim_{x \to 1} \frac{x-2}{x+1} = 
   \frac{1-2}{1+1} = - \frac{1}{2} $
 \end{example}
-
+\begin{example}
+  \begin{align*}
+    \lim_{x \to 2} \frac{x^{4}-16}{x^{3}-8} 
+  &\overset{(\frac{0}{0})}{=} \lim_{x \to 2} \frac{(x^{2})^{2}-4^{2}}{x^{3}-2^{3}} 
+  = \lim_{x \to 2} \frac{(x^{2}-4)(x^{2}+4)}{(x-2)(x^{2}+2x+2^{2})} 
+  = \lim_{x \to 2} \frac{\cancel{(x-2)}(x+2)(x^{2}+4)}{\cancel{(x-2)}(x^{2}+2x+4)} \\
+  &= \lim_{x \to 2} \frac{(x+2)(x^{2}+4)}{x^{2}+2x+4} = \frac{4\cdot 8}{12} = \frac{8}{3} 
+  \end{align*}
+\end{example}
 
 \subsection*{Όριο συνάρτησης $ \frac{f(x)}{g(x)} $ με ρίζα της μορφής $\Bigl(\frac{0}{0}\Bigr)$}
 
 Μπορούμε να κάνουμε άρση της απροσδιοριστίας, πολλαπλασιάζοντας με την κατάλληλη 
 συζυγή παράσταση.
-
 \begin{center}
   \setcounter{chapter}{2}
   \begin{Mytable}
@@ -598,7 +606,6 @@ $ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
     \end{tabular}
   \end{Mytable}
 \end{center}
-
 \begin{example}
   \begin{align*}
     \lim_{x \to 0} \frac{\sqrt{x^{2}+4} - 2}{x^{2}} 
@@ -609,33 +616,40 @@ $ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
     \lim_{x \to 0} \frac{\cancel{x}^{2}}{\cancel{x}^{2}(\sqrt{x^{2}+4} +2)} = \lim_{x \to 0} \frac{1}{\sqrt{x^{2}+4} +2} = \frac{1}{4}  
   \end{align*}
 \end{example}
+\begin{example}
+  \begin{align*}
+    \lim_{x \to 4} \frac{\sqrt{x} -2}{x^{2}-5x+4} 
+    &= \lim_{x \to 4} \frac{(\sqrt{x} - 2) (\sqrt{x}+2)}{(x-1)(x-4)(\sqrt{x} +2)} 
+    = \lim_{x \to 4} \frac{(\sqrt{x} )^{2}- 2^{2}}{(x-1)(x-4)(\sqrt{x} +2)} \\ 
+    &= \lim_{x \to 4} \frac{\cancel{x-4}}{(x-1)\cancel{(x-4)}(\sqrt{x} +2)} 
+    = \lim_{x \to 4} \frac{1}{(x-1)(\sqrt{x} +2)} = \frac{1}{3\cdot 4} = \frac{1}{12}
+  \end{align*}
+\end{example}
 
-\begin{rem}
-  Φυσικά, και για τις δύο προηγούμενες περιπτώσεις, όπου κάνουμε άρση της
-  απροσδιοριστίας με αλγεβρικό τρόπο, θα μπορούσαμε να εφαρμόσουμε τον κανόνα 
-  L'H\^{o}pital.
-\end{rem}
 
 \section*{Κανόνας L'H\^{o}pital}
 
+\enlargethispage{\baselineskip}
+
 \begin{thm}
   Έστω $ f, g $ παραγωγίσιμες συναρτήσεις, με $ g'(x) \neq 0 $ σε μια ανοιχτή περιοχή
-  του $ x_{0} $ (εκτός ίσως από το ίδιο το $ x_{0} $). Έστω επίσης, ότι
+  του $ x_{0} $ (εκτός ίσως από το ίδιο το $ x_{0} $). Έστω επίσης, ότι υπάρχει το 
+  $ \lim_{x \to x_{0}} (f'(x))/(g'(x)) $ και είναι πεπερασμένο ή άπειρο. καθώς και
+  ότι 
   \begin{gather*}
     \lim_{x \to x_{0}} f(x) = 0 \quad \text{και} \quad \lim_{x \to x_{0}} g(x) = 0
-    \qquad \color{Col1}{\text{Περίπτωση $ \Bigl(\frac{0}{0}\Bigr) $}} \\
-    \text{ή} \\
+    \qquad \color{Col1}{\text{Περίπτωση $ \Bigl(\frac{0}{0}\Bigr) $}}
+    \\[-0.3\baselineskip]
+    \text{ή} 
+    \\[-0.3\baselineskip]
     \lim_{x \to x_{0}} f(x) = \pm \infty \quad \text{και} \quad \lim_{x \to x_{0}} g(x)
     = \pm \infty \qquad \color{Col1}{\text{Περίπτωση $ \Bigl(\frac{\infty}{\infty}\Bigr) $}}
   \end{gather*}
-  Τότε
+ Τότε 
   \begin{empheq}[box=\mathboxr]{equation*}
-    \lim_{x \to x_{0}} \frac{f(x)}{g(x)} = \lim_{x \to x_{0}} \frac{f'(x)}{g'(x)} 
+  \lim_{x \to x_{0}} \frac{f(x)}{g(x)} = \lim_{x \to x_{0}} \frac{f'(x)}{g'(x)} 
   \end{empheq}
-  με την προϋπόθεση ότι υπάρχει το όριο $ \lim_{x \to x_{0}} \frac{f'(x)}{g'(x)} $, 
-  και είναι πεπερασμένο ή άπειρο.
 \end{thm}
-
 \begin{rem}
 \item {}
   \begin{enumerate}
@@ -800,12 +814,12 @@ $ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
 \end{example}
 \begin{solution} 
   $\lim_{x \to 1^{+}} \frac{x-1- \ln{x}}{(x-1) \ln{x}})
-    \overset{\left(\frac{0}{0}\right)}{\underset{\mathrm{LH}}{=}} \!
-    \lim_{x \to 1^{+}} \frac{1- \frac{1}{x}}{\ln{x} + (x-1) \frac{1}{x}} = \!
-    \lim_{x \to 1^{+}} \frac{x-1}{ x \ln{x} + x-1} 
-    \overset{\left(\frac{0}{0}\right)}{\underset{\mathrm{LH}}{=}} \!
-    \lim_{x \to 1^{+}} \frac{1}{\ln{x} +x \frac{1}{x}+1} =
-    \lim_{x \to 1^{+}} \frac{1}{\ln{x}+2} = \frac{1}{2}$ 
+  \overset{\left(\frac{0}{0}\right)}{\underset{\mathrm{LH}}{=}} \!
+  \lim_{x \to 1^{+}} \frac{1- \frac{1}{x}}{\ln{x} + (x-1) \frac{1}{x}} = \!
+  \lim_{x \to 1^{+}} \frac{x-1}{ x \ln{x} + x-1} 
+  \overset{\left(\frac{0}{0}\right)}{\underset{\mathrm{LH}}{=}} \!
+  \lim_{x \to 1^{+}} \frac{1}{\ln{x} +x \frac{1}{x}+1} =
+  \lim_{x \to 1^{+}} \frac{1}{\ln{x}+2} = \frac{1}{2}$ 
 \end{solution}
 
 
@@ -845,27 +859,23 @@ $ (1^{\infty}) $, $ (0^0) $ ή $ (\infty^{0}) $
   Να υπολογιστεί το όριο $ \lim_{x \to \infty} \Bigl(1+ \frac{1}{x}\Bigr)^{x} $
 \end{example}
 \begin{solution}
-Παρατηρούμε ότι το όριο $ \lim_{x \to \infty} \Bigl(1+ \frac{1}{x}\Bigr)^{x} $ 
-είναι απροσδιόριστο, της μορφής $ (1^{\infty}) $. Επομένως:
-\begin{myitemize}
-  \item \textbf{Λογαριθμίζουμε:} $ \ln{\Bigl(1+ \frac{1}{x}\Bigr)^{x}} = 
-    x \ln{\Bigl(1 + \frac{1}{x}\Bigr)} $
-  \item \textbf{Όριο Λογαριθμισμένης:}
-    \begin{align*}
-      \lim_{x \to \infty}\Bigl[x \ln{\Bigl(1+
-      \frac{1}{x}\Bigr)}\Bigr] \overset{(0 \cdot \infty)}{=}  \lim_{x \to \infty}
-      \frac{\ln(1+ \frac{1}{x})}{\frac{1}{x}}
-      \overset{\left(\frac{0}{0}\right)}{\underset{\mathrm{LH}}{=}} 
-      \lim_{x \to \infty} \frac{\frac{1}{1 + \frac{1}{x}} (- \frac{1}{x^{2}})}{-
+  Παρατηρούμε ότι το όριο $ \lim_{x \to \infty} \Bigl(1+ \frac{1}{x}\Bigr)^{x} $ 
+  είναι απροσδιόριστο, της μορφής $ (1^{\infty}) $. Επομένως:
+  \begin{myitemize}
+    \item \textbf{Λογαριθμίζουμε:} $ \ln{\Bigl(1+ \frac{1}{x}\Bigr)^{x}} = 
+      x \ln{\Bigl(1 + \frac{1}{x}\Bigr)} $
+    \item \textbf{Όριο Λογαριθμισμένης:}
+      \begin{align*}
+        \lim_{x \to \infty}\Bigl[x \ln{\Bigl(1+
+        \frac{1}{x}\Bigr)}\Bigr] \overset{(0 \cdot \infty)}{=}  \lim_{x \to \infty}
+        \frac{\ln(1+ \frac{1}{x})}{\frac{1}{x}}
+        \overset{\left(\frac{0}{0}\right)}{\underset{\mathrm{LH}}{=}} 
+        \lim_{x \to \infty} \frac{\frac{1}{1 + \frac{1}{x}} (- \frac{1}{x^{2}})}{-
         \frac{1}{x^{2}}} = 
-      \lim_{x \to \infty} \frac{1}{\frac{x+1}{x}} = 
-      \lim_{x \to \infty} \frac{x}{x+1} = 1 
-    \end{align*}
-  \item \textbf{Ζητούμενο όριο:} $ \lim_{x \to \infty} 
-    \Bigl(1+ \frac{1}{x}\Bigr)^{x} = \mathrm{e}^{1} = \mathrm{e} $
-\end{myitemize}    
+        \lim_{x \to \infty} \frac{1}{\frac{x+1}{x}} = 
+        \lim_{x \to \infty} \frac{x}{x+1} = 1 
+      \end{align*}
+    \item \textbf{Ζητούμενο όριο:} $ \lim_{x \to \infty} 
+      \Bigl(1+ \frac{1}{x}\Bigr)^{x} = \mathrm{e}^{1} = \mathrm{e} $
+  \end{myitemize}    
 \end{solution}
-
-
-
-
