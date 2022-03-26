@@ -1,7 +1,7 @@
-\chapter*{Όριο Συνάρτησης}
+\chapter{Όριο Συνάρτησης}
 
 
-\section*{Η έννοια του ορίου}
+\section{Η έννοια του ορίου}
 
 \InsertBoxL{2}{\parbox[b][7.25\baselineskip][b]{0.33\textwidth}{
     \begin{tikzpicture}
@@ -115,7 +115,7 @@
 \end{myitemize}
 
 
-\section*{Πλευρικά Όρια Συνάρτησης}
+\section{Πλευρικά Όρια Συνάρτησης}
 
 \InsertBoxL{2}{\parbox[b][8\baselineskip][b]{0.33\textwidth}{
     \begin{tikzpicture}
@@ -164,6 +164,8 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
 δεξιά» και σημαίνει ότι μας ενδιαφέρουν οι τιμές του $x$ κοντά στο $ x_{0} $, που
 είναι \textbf{μεγαλύτερες} από το $ x_{0} $. 
 
+\enlargethispage{\baselineskip}
+
 \begin{prop}
   Το όριο μιας συνάρτησης \textbf{υπάρχει}, αν και μόνον αν, 
   υπάρχουν τα πλευρικά όρια και είναι ίσα. Δηλαδή
@@ -175,7 +177,7 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
 \end{prop}
 
 
-\section*{Ιδιότητες των Ορίων}
+\section{Ιδιότητες των Ορίων}
 
 \begin{prop}
   Έστω $ c, x_{0} \in \mathbb{R} $ και έστω ότι τα όρια 
@@ -238,7 +240,7 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
 \end{rem}
 
 
-\section*{Παραδείγματα}
+\section{Παραδείγματα}
 
 \begin{example}
   $ \lim_{x \to -3} 5 = 5 $
@@ -304,7 +306,7 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
 \end{example}
 
 
-\section*{Όρια με παρονομαστή μηδέν}
+\section{Όρια με παρονομαστή μηδέν}
 
 \begin{prop}
 \item {}
@@ -323,7 +325,7 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
 \twocolumnsidesll{
 \begin{example}
   $ \lim_{x \to 2^{-}} \frac{1}{x-2} = - \infty $, γιατί αφού $ x \to 2^{-} 
-  \Rightarrow x < 2 $, άρα $ x-2<0 $ 
+  \Rightarrow x < 2 $, άρα $ x-2<0 \!$ 
 \end{example}
 \begin{example}
   $ \lim_{x \to 2^{+}} \frac{1}{x-2} = + \infty $, γιατί αφού $ x \to 2^{+} 
@@ -345,7 +347,7 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
 \vspace{\baselineskip}
 
 \twocolumnsidesr{
-  \section*{Όρια στο άπειρο}
+  \section{Όρια στο άπειρο}
   \begin{prop}Έστω $ n \in \mathbb{N} $. Τότε
     \begin{mybox2}
     \item {}
@@ -361,7 +363,7 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
     \end{mybox2}
   \end{prop}
 }{
-  \section*{Πράξεις στο $ \overline{\mathbb{R}} = \mathbb{R} \cup \{ +\infty, -\infty \} $}
+  \section{Πράξεις στο $ \overline{\mathbb{R}} = \mathbb{R}\texorpdfstring{\cup}{U}\{+\texorpdfstring{\infty}{oo},-\texorpdfstring{\infty}{oo}\} $}
   \begin{mybox2}
     \begin{myitemize}[leftmargin=1em]
       \item $ - \infty< \infty $ και $ - \infty < a < + \infty, \; \forall a \in \mathbb{R} $
@@ -397,7 +399,7 @@ $a$, καθώς το $x$ τείνει στο $ x_{0} $ από \textcolor{Col1}{�
 }}
 
 
-\section*{Όρια Ρητών Συναρτήσεων στο άπειρο}
+\section{Όρια Ρητών Συναρτήσεων στο άπειρο}
 
 \begin{prop}
   Αν $ p(x) = a_{n} x^{n} + a_{n-1}x^{n-1}+\cdots + a_{1}x + a_{0}, \; a_{n} \neq 0  $ 
@@ -442,10 +444,7 @@ $ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
   \end{example}
 
 
-\newpage
-
-
-\section*{Χρήσιμες Προτάσεις}
+\section{Χρήσιμες Προτάσεις}
 
 \begin{prop}
   % Αν μια συνάρτηση $ f $ έχει όριο στο σημείο $ x_{0} $, τότε αυτό είναι
@@ -515,7 +514,7 @@ $ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
   Να δείξετε ότι $ \lim_{x \to 0} \Bigl(x^{2} \sin{\frac{1}{x}}\Bigr) = 0  $ 
 \end{example}
 \begin{solution}
-  Καταρχας, παρατηρούμε ότι δεν μπορούμε να εφαρμόσουμε τις ιδιότητες των ορίων, και να 
+  Αρχικά, παρατηρούμε ότι δεν μπορούμε να εφαρμόσουμε τις ιδιότητες των ορίων, και να 
   «σπάσουμε» ενδεχομένως, το όριο στο γινόμενο των ορίων, γιατί το όριο 
   $ \lim_{x \to 0} \sin{1/x} $, δεν υπάρχει.
   Επομένως, αφού $ -1 \leq \sin{x} \leq 1, \; \forall x \in \mathbb{R} $ έχουμε ότι
@@ -561,10 +560,11 @@ $ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
 \end{solution}
 
 
-\section*{Απροσδιόριστες Μορφές}
+\section{Απροσδιόριστες Μορφές}
 
 
-\subsection*{Όριο Ρητής συνάρτησης της μορφής $\Bigl(\frac{0}{0}\Bigr) $}
+\subsection{Όριο Ρητής συνάρτησης της μορφής
+$\texorpdfstring{\Bigl(}{(}\texorpdfstring{\frac{0}{0}}{0/0}\texorpdfstring{\Bigr)}{)} $}
 
 Μπορούμε να κάνουμε άρση της απροσδιοριστίας, παραγοντοποιώντας αριθμητή και παρονομαστή.
 
@@ -583,12 +583,12 @@ $ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
   \end{align*}
 \end{example}
 
-\subsection*{Όριο συνάρτησης $ \frac{f(x)}{g(x)} $ με ρίζα της μορφής $\Bigl(\frac{0}{0}\Bigr)$}
+\subsection{Όριο συνάρτησης $ \texorpdfstring{\frac{f(x)}{g(x)}}{f(x)/g(x)} $ 
+με ρίζα, της μορφής $\texorpdfstring{\Bigl(}{(}\texorpdfstring{\frac{0}{0}}{0/0}\texorpdfstring{\Bigr)}{)}$}
 
 Μπορούμε να κάνουμε άρση της απροσδιοριστίας, πολλαπλασιάζοντας με την κατάλληλη 
 συζυγή παράσταση.
 \begin{center}
-  \setcounter{chapter}{2}
   \begin{Mytable}
     \renewcommand{\arraystretch}{1.5}
     \begin{tabular}{|c|c||c|c|}
@@ -627,14 +627,14 @@ $ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
 \end{example}
 
 
-\section*{Κανόνας L'H\^{o}pital}
+\section{Κανόνας L\texorpdfstring{'}{`}H\^{o}pital}
 
 \enlargethispage{\baselineskip}
 
 \begin{thm}
   Έστω $ f, g $ παραγωγίσιμες συναρτήσεις, με $ g'(x) \neq 0 $ σε μια ανοιχτή περιοχή
   του $ x_{0} $ (εκτός ίσως από το ίδιο το $ x_{0} $). Έστω επίσης, ότι υπάρχει το 
-  $ \lim_{x \to x_{0}} (f'(x))/(g'(x)) $ και είναι πεπερασμένο ή άπειρο. καθώς και
+  $ \lim_{x \to x_{0}} (f'(x))/(g'(x)) $ και είναι πεπερασμένο ή άπειρο, καθώς και
   ότι 
   \begin{gather*}
     \lim_{x \to x_{0}} f(x) = 0 \quad \text{και} \quad \lim_{x \to x_{0}} g(x) = 0
@@ -660,9 +660,9 @@ $ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
 \end{rem}
 
 
-\section*{Παραδείγματα}
+\section{Παραδείγματα}
 
-\subsection*{Περίπτωση $ \Bigl(\frac{0}{0}\Bigr) $}
+\subsection{Περίπτωση $ \texorpdfstring{\Bigl(}{(}\texorpdfstring{\frac{0}{0}}{0/0}\texorpdfstring{\Bigr)}{)}$}
 
 Σε αυτήν την περίπτωση, εφαρμόζουμε τον κανόνα L' H\^{o}pital.
 
@@ -708,7 +708,8 @@ $ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
 \end{solution}
 
 
-\subsection*{Περίπτωση $ \bigl(\frac{\infty}{\infty}\bigr) $}
+\subsection{Περίπτωση $
+\texorpdfstring{\bigl(}{(}\texorpdfstring{\frac{\infty}{\infty}}{oo/oo}\texorpdfstring{\bigr)}{)} $}
 
 Σε αυτήν την περίπτωση, εφαρμόζουμε τον κανόνα L' H\^{o}pital.
 
@@ -739,7 +740,7 @@ $ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
 \end{solution}
 
 
-\subsection*{Περίπτωση $ (0 \cdot \infty) $}
+\subsection{Περίπτωση $ (0\texorpdfstring{\cdot}{.}\texorpdfstring{\infty}{oo}) $}
 
 Αν το όριο $ \lim_{x \to x_{0}} \left(f(x)\cdot g(x)\right) $, όπου $ x_{0} \in
 \mathbb{R} $ ή $ x_{0}= \pm \infty $, είναι απροσδιόριστο της μορφής $ (0 \cdot \pm
@@ -748,7 +749,7 @@ $ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
   f(x)\cdot g(x) = \frac{f(x)}{\frac{1}{g(x)}} \quad \text{ή} \quad
   f(x) \cdot g(x) = \frac{g(x)}{\frac{1}{f(x)}}  
 \] 
-και έτσι αναγόμστε σε όριο της μορφής $ (\frac{0}{0}) $ ή $
+και έτσι αναγόμαστε σε όριο της μορφής $ (\frac{0}{0}) $ ή $
 (\frac{\infty}{\infty}) $ όπου μπορούμε να εφαρμόσουμε τον κανόνα L' H\^{o}pital.
 
 \begin{example}
@@ -775,7 +776,7 @@ $ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
 \end{solution}
 
 
-\subsection*{Περίπτωση $ (\infty - \infty)$}
+\subsection{Περίπτωση $ (\texorpdfstring{\infty}{oo} - \texorpdfstring{\infty}{oo})$}
 
 Αν το όριο $ \lim_{x \to x_{0}} \left(f(x) \pm g(x)\right) $, όπου $ x_{0} \in
 \mathbb{R} $ ή $ x_{0}= \pm \infty $, είναι απροσδιόριστο της μορφής $ (\infty-
@@ -784,8 +785,8 @@ $ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
   f(x) \pm g(x) = f(x)\Bigl(1 \pm \frac{g(x)}{f(x)}\Bigr) \quad \text{ή} \quad f(x) \pm g(x) =
   g(x)\Bigl(\frac{f(x)}{g(x)} - 1\Bigr)
 \] 
-και έτσι αναγόμστε σε όριο της μορφής $ \Bigl(\frac{0}{0}\Bigr) $ ή $
-\Bigl(\frac{\infty}{\infty}\Bigr) $ όπου μπορούμε να εφαρμόσουμε τον κανόνα L' H\^{o}pital.
+και έτσι αναγόμαστε σε όριο της μορφής $ \Bigl(\frac{0}{0}\Bigr) $ ή 
+$ \Bigl(\frac{\infty}{\infty}\Bigr) $ όπου μπορούμε να εφαρμόσουμε τον κανόνα L' H\^{o}pital.
 
 
 \begin{example}
@@ -823,7 +824,8 @@ $ \lim_{x \to \infty} \sqrt{\frac{x^{2}+x-1}{x+2}} = \sqrt{\lim_{x \to \infty}
 \end{solution}
 
 
-\subsection*{Περιπτώσεις $ (1^{\infty}), \; (0^{0}), \; (\infty^{0}) $}
+\subsection{Περιπτώσεις $ (1\texorpdfstring{^}{*}{\texorpdfstring{\infty}{oo}}), \;
+(0\texorpdfstring{^}{*}{0}), \; (\texorpdfstring{\infty}{oo}\texorpdfstring{^}{*}{0}) $}
 
 Αν το όριο $ \lim_{x \to x_{0}} f(x)^{g(x)} $, όπου $ x_{0} \in
 \mathbb{R} $ ή $ x_{0}= \pm \infty $, είναι απροσδιόριστο της μορφής 

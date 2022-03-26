@@ -1,30 +1,14 @@
-\input{preamble_ask.tex}
-\input{definitions_ask.tex}
+\input{preamble2.tex}
+\input{definitions2.tex}
 \input{tikz.tex}
 \input{myboxes.tex}
 
 \everymath{\displaystyle}
 \pagestyle{vangelis}
 
-%%%%%%%%%%%%%%% WATERMARK above pictures with opacity %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[printwatermark]{xwatermark}
-\newsavebox\mybox
-\savebox\mybox{\tikz[color=Col1,opacity=0.7]\node{ΠΡΟΣΗΜΟ};}
-\newwatermark*[
-allpages,
-fontfamily=lmr,
-fontseries=m,
-angle=45,
-scale=14,
-xpos=-40,
-ypos=40,
-]{\usebox\mybox} 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 %adds a rectangle background box behind every picture
  % \tikzset{every picture/.append style={background rectangle/.style={fill=blue!05,rounded
-   % corners},show background rectangle}}
+ %   corners},show background rectangle}}
 
 
 \usepackage[font={color=Col1},labelfont={bf},hypcap=false]{caption}
@@ -116,8 +100,6 @@ ypos=40,
   \end{minipage}
 }
 
-
-
 \tikzset{
   set arrow inside/.code={\pgfqkeys{/tikz/arrow inside}{#1}},
   set arrow inside={end/.initial=stealth, opt/.initial=},
@@ -157,6 +139,7 @@ ypos=40,
 
 \begin{document}
 
+
 \input{eisagwgh.tex}
 
 \input{limits_test.tex}
@@ -166,8 +149,6 @@ ypos=40,
 % \input{limits_ex.tex}
 
 % \restoregeometry
-
-% \setcounter{chapter}{1}
 
 \input{paragwgos.tex}
 
