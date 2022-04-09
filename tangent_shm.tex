@@ -7,6 +7,11 @@
           enhanced, sharp corners, colback=Col1!40, colframe=Col1!75,
         %left=1ex, top=1ex, right=1ex, bottom=1ex,
         }
+\newtcbox{\mathboxrg}[1][]{nobeforeafter, math upper,tcbox raise base,size=small,
+          enhanced, sharp corners, colback=Col2!40, colframe=Col2!75,
+        %left=1ex, top=1ex, right=1ex, bottom=1ex,
+        }
+
 
 \newcommand{\twocolumnsidescc}[2]{\begin{minipage}[c]{0.72\linewidth}\raggedright
         #1
@@ -51,7 +56,7 @@
     \node (z) at (0, 5) {};
     \node (gp) at (1.260, -1) {};
     \node (hp) at (4.440, -1) {};
-    \begin{pgfonlayer}{fg}
+    \begin{pgfonlayer}{foreground}
       \path[name path=surf,shading=ball,ball color=Col1!55,opacity=.8] (a.center) 
         [in=180, out=-90, looseness=0.75] to 
         (w.center) to (w.center) [in=-90, out=0, looseness=0.75] to (b.center) to 
@@ -76,7 +81,7 @@
       \draw [bend left=75, looseness=0.50,very thick] (gp.center) 
         to (hp.center);
     \end{pgfonlayer}
-    \begin{pgfonlayer}{bg}
+    \begin{pgfonlayer}{background}
       \draw[-latex,blue!50,thick] (o.center) to (z.center) 
         node[left]{$z$};
       \draw[-latex,blue!50,thick] (o.center) to (x.center) node[left] {$x$};
@@ -109,18 +114,18 @@
 του Πεδίου Ορισμού της $f$ η κλίση $ \grad f(x_{0}, y_{0}) $ είναι κάθετη στην 
 ισοσταθμική καμπύλη που διέρχεται από το $ (x_{0}, y_{0}) $.
 
-\begin{mybox1}
+\begin{mybox2}
 \begin{dfn}
-  Η \textcolor{Col1}{εφαπτόμενη ευθεία}, μιας ισοσταθμικής καμπύλης
+  Η \textbf{εφαπτόμενη ευθεία}, μιας ισοσταθμικής καμπύλης
   $ f(x,y)=c $, της διαφορίσιμης συνάρτησης $ f(x,y) $, στο σημείο 
   $ P_{0}(x_{0}, y_{0}) $, είναι η ευθεία που διέρχεται από το σημείο 
   $ P_{0} $ και είναι \textbf{κάθετη} στο διάνυσμα της κλίσης $ \grad f(P_{0}) $. 
   Η εξίσωσή της, δίνεται από τον τύπο:
-  \begin{empheq}[box=\mathboxrr]{equation*}
+  \begin{empheq}[box=\mathboxrg]{equation*}
     f_{x}(x_{0}, y_{0}) (x- x_{0}) + f_{y}(x_{0}, y_{0}) (y- y_{0}) = 0
   \end{empheq}
 \end{dfn} 
-\end{mybox1}
+\end{mybox2}
 
 \begin{mybox3}
 \begin{example}
@@ -170,21 +175,21 @@ $S$, περιέχονται στο επίπεδο που διέρχεται απ
 $ \grad f(P_{0}) $. 
 
 \twocolumnsidescc{
-  \begin{mybox1}
+  \begin{mybox2}
   \item {}
 \begin{dfn}
-  Το \textcolor{Col1}{εφαπτόμενο επίπεδο}, μιας ισοσταθμικής επιφάνειας 
+  Το εφαπτόμενο επίπεδο, μιας ισοσταθμικής επιφάνειας 
   $ f(x,y,z)=c $, της διαφορίσιμης συνάρτησης $ f(x,y,z) $, στο σημείο 
   $ P_{0}(x_{0}, y_{0}, z_{0}) $, είναι το επίπεδο που διέρχεται από το σημείο 
   $ P_{0} $ και είναι \textbf{κάθετο} στο διάνυσμα της κλίσης $ \grad f(P_{0}) $. 
   Η εξίσωσή του, δίνεται από τον τύπο:
-  \begin{empheq}[box=\mathboxrr]{equation*}
+  \begin{empheq}[box=\mathboxrg]{equation*}
     \label{eq:tan}
     \!f_{x}(x_{0}, y_{0}, z_{0}) (x- x_{0}) +\! f_{y}(x_{0}, y_{0}, z_{0}) (y- y_{0}) 
     +\! f_{z}(x_{0}, y_{0}, z_{0}) (z- z_{0}) \!= 0
   \end{empheq}
 \end{dfn}
-\end{mybox1}
+\end{mybox2}
 }{
 \begin{tikzpicture}[scale=0.53]
   \begin{scope}[yshift=-20pt]
@@ -204,7 +209,7 @@ $ \grad f(P_{0}) $.
     % \draw [in=135, out=90] (b.center) to (c.center);
     % \draw [out=60, in=135, looseness=0.75] (a.center) to (b.center);
     % \draw [out=135, in=75, looseness=1.25] (c.center) to (a.center);
-    \begin{pgfonlayer}{fg}
+    \begin{pgfonlayer}{foreground}
       \path[shading=axis,fill=blue!55,opacity=.55] (d.center) to (e.center) to 
         (f.center) to (g.center) --cycle;
       \coordinate (p) at (1.5, 3.5) ;
@@ -215,7 +220,7 @@ $ \grad f(P_{0}) $.
       \draw (l) -- ++ (-.19,-.14) -- ++(.14,-.21) {} ;
     \end{pgfonlayer}
   \end{scope}
-  \begin{pgfonlayer}{bg}
+  \begin{pgfonlayer}{background}
     \node (o) at (0, 0) {};
     \node (x) at (-2.0, -0.85) {};
     \node (y) at (5, 0) {};
@@ -246,18 +251,18 @@ $ \grad f(P_{0}) $.
 
 \section*{Κάθετη Ευθεία}
 
-\begin{mybox1}
-\begin{dfn} Η \textcolor{Col1}{κάθετη ευθεία}, μιας ισοσταθμικής επιφάνειας 
+\begin{mybox2}
+\begin{dfn} Η \textbf{κάθετη ευθεία}, μιας ισοσταθμικής επιφάνειας 
   $ f(x,y,z)=c  $, της διαφορίσιμης συνάρτησης $ f(x,y,z) $, στο σημείο 
   $ P_{0}(x_{0}, y_{0}, z_{0}) $ είναι η ευθεία που διέρχεται από το σημείο 
   $ P_{0} $ και είναι κάθετη στο εφαπτόμενο επίπεδο, και άρα είναι \textbf{παράλληλη} 
   στο διάνυσμα της κλίσης $ \grad f(P_{0}) $. Η εξίσωσή της, δίνεται από τον τύπο:
-  \begin{empheq}[box=\mathboxrr]{equation}
+  \begin{empheq}[box=\mathboxrg]{equation}
     \label{eq:kath}
     \mathbf{r}(t) = (x_{0}, y_{0}, z_{0}) + t \grad f(x_{0}, y_{0}, z_{0})
   \end{empheq} 
 \end{dfn}
-\end{mybox1}
+\end{mybox2}
 Η εξίσωση~\eqref{eq:kath}, ισοδύναμα, γράφεται:
 \begin{equation}
   \label{eq:kath2}

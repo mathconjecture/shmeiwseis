@@ -1,3 +1,67 @@
+\input{preamble2.tex}
+\input{definitions2.tex}
+\input{tikz.tex}
+\input{myboxes.tex}
+
+\everymath{\displaystyle}
+\pagestyle{vangelis}
+
+%adds a rectangle background box behind every picture
+ % \tikzset{every picture/.append style={background rectangle/.style={fill=blue!05,rounded
+ %   corners},show background rectangle}}
+
+
+\usepackage[font={color=Col1},labelfont={bf},hypcap=false]{caption}
+
+
+\geometry{top=2.0cm,left=1.5cm,right=1.5cm}
+
+\input{insbox}
+
+
+\newcommand{\twocolumnsidell}[2]{\begin{minipage}[c]{0.68\linewidth}
+    #1
+    \end{minipage}\hfill\begin{minipage}[c]{0.30\linewidth}
+    #2
+  \end{minipage}
+}
+
+\newcommand{\twocolumnsidesrr}[2]{\begin{minipage}[t]{0.35\linewidth}
+    #1
+    \end{minipage}\hfill\begin{minipage}[t]{0.60\linewidth}
+    #2
+  \end{minipage}
+}
+
+\newcommand{\twocolumnsidesss}[2]{\begin{minipage}[c]{0.48\linewidth}\raggedright
+    #1
+    \end{minipage}\hfill\begin{minipage}[c]{0.48\linewidth}\raggedright
+    #2
+  \end{minipage}
+}
+
+
+\tikzset{vangelis/.style = {ultra thick,magenta,dashed}, mystyle/.style={line width=3pt,blue!55,double,rounded corners}}
+
+\pgfplotsset{
+  myaxis/.style={axis lines=center,axis line style={thick,blue!50,-stealth},tick label
+  style={font=\small,blue!50},xtick=\empty,ytick=\empty,tick style={blue!50}},
+  myplot/.style={Col1!75,ultra thick,samples=500,no marks,smooth,},
+  dashed lines/.style={dashed,blue!50,ultra thin},
+  polax/.style={grid=none},
+}
+
+\tikzset{mygraph/.pic={\begin{scope}[scale=0.7]
+    \draw [in=-180, out=90, looseness=0.75] (2.3,1) to (3.55,2.75);
+    \draw [in=180, out=0] (3.55,2.75) to (4.475,2);
+    \draw [in=-90, out=0] (4.475,2) to (4.925,2.5);
+    \end{scope}
+}}
+
+
+\begin{document}
+
+
 \chapter{Εισαγωγικές Έννοιες}
 
 
@@ -681,3 +745,6 @@ $g$ για κάθε $ x \in \mathbb{R} $, γιατί
       node[right=5pt,blue!75] {$y=f\Bigl(\frac{1}{c}x\Bigr)$};
     \end{tikzpicture}
 }
+
+
+\end{document}

@@ -3,6 +3,7 @@
 \input{tikz.tex}
 \input{myboxes.tex}
 
+\usepackage[font={color=Col1},labelfont={bf},hypcap=false]{caption}
 \pagestyle{vangelis}
 \everymath{\displaystyle}
 
@@ -15,19 +16,36 @@
 }
 
 
+\newcommand{\twocolumnsidesrr}[2]{\begin{minipage}[t]{0.40\linewidth}
+        #1
+        \end{minipage}\hfill\begin{minipage}[t]{0.55\linewidth}
+        #2
+    \end{minipage}
+}
+
+\newcommand{\twocolumnsidescc}[2]{\begin{minipage}[c]{0.50\linewidth}
+        #1
+        \end{minipage}\hfill\begin{minipage}[c]{0.45\linewidth}
+        #2
+    \end{minipage}
+}
+
+
+
+
 
 \begin{document}
 
 \section*{Η Έννοια του Διανύσματος}
 
 \twocolumnsidesll{
-Ένα \textbf{προσανατολισμένο} ευθύγραμμο τμήμα, δηλαδή ένα ευθύγραμμο τμήμα με ορισμένη 
-αρχή και τέλος (ή πέρας), ονομάζεται \textcolor{Col1}{διάνυσμα}. Το διάνυσμα με αρχή 
-$ A $ και τέλος $ B $ συμβολίζεται με $ \mathbf{AB} $. Το μήκος του ευθύγραμμου τμήματος 
-$ AB $, ονομάζεται \textcolor{Col1}{μέτρο} του διανύσματος $ \mathbf{AB} $ και 
-συμβολίζεται με $ \norm{\mathbf{AB}} $. Δυο \textbf{παράλληλα} διανύσματα με την ίδια 
-φορά, ονομάζονται \textbf{ομόρροπα,} ενώ αν έχουν αντίθετη φορά ονομάζονται 
-\textbf{αντίρροπα}.
+  Ένα \textbf{προσανατολισμένο} ευθύγραμμο τμήμα, δηλαδή ένα ευθύγραμμο τμήμα με 
+  ορισμένη αρχή και τέλος (ή πέρας), ονομάζεται \textcolor{Col1}{διάνυσμα}. Το διάνυσμα 
+  με αρχή $ A $ και τέλος $ B $ συμβολίζεται με $ \mathbf{AB} $. Το μήκος του 
+  ευθύγραμμου τμήματος $ AB $, ονομάζεται \textcolor{Col1}{μέτρο} του διανύσματος $ 
+  \mathbf{AB} $ και συμβολίζεται με $ \norm{\mathbf{AB}} $. Δυο \textbf{παράλληλα} 
+  διανύσματα με την ίδια φορά, ονομάζονται \textbf{ομόρροπα,} ενώ αν έχουν αντίθετη φορά 
+  ονομάζονται \textbf{αντίρροπα}.
 }{
   \begin{tikzpicture}
     \draw (0,0) -- coordinate[pos=0.1] (a) coordinate[pos=0.9] (b) (2,2) ;
@@ -35,70 +53,287 @@ $ AB $, ονομάζεται \textcolor{Col1}{μέτρο} του διανύσμ�
     \fill (b) node[left=5pt] {$B$} circle (1.5pt) ;
     \draw[ultra thick,-latex,Col1] (a) -- (b) ;
     \begin{scope}[xshift=35pt]
-    \draw (0,0) -- coordinate[pos=0.2] (a) coordinate[pos=0.8] (b) (2,2) ;
-    \draw[ultra thick,-latex,Col2] (a) -- (b) ;
+      \draw (0,0) -- coordinate[pos=0.2] (a) coordinate[pos=0.8] (b) (2,2) ;
+      \draw[ultra thick,-latex,Col2] (a) -- (b) ;
     \end{scope}
     \begin{scope}[xshift=50pt]
-    \draw (0,0) -- coordinate[pos=0.3] (a) coordinate[pos=0.7] (b) (2,2) ;
-    \draw[ultra thick,-latex,Col2] (a) -- (b) ;
+      \draw (0,0) -- coordinate[pos=0.3] (a) coordinate[pos=0.7] (b) (2,2) ;
+      \draw[ultra thick,-latex,Col2] (a) -- (b) ;
     \end{scope}
     \begin{scope}[xshift=80pt]
-    \draw (0,0) -- coordinate[pos=0.1] (a) coordinate[pos=0.7] (b) (2,2) ;
-    \draw[ultra thick,-latex,Col2] (a) -- (b) ;
+      \draw (0,0) -- coordinate[pos=0.1] (a) coordinate[pos=0.7] (b) (2,2) ;
+      \draw[ultra thick,-latex,Col2] (a) -- (b) ;
     \end{scope}
     \begin{scope}[xshift=95pt]
-    \draw (0,0) -- coordinate[pos=0.2] (a) coordinate[pos=0.9] (b) (2,2) ;
-    \draw[ultra thick,latex-,Col2] (a) -- (b) ;
+      \draw (0,0) -- coordinate[pos=0.2] (a) coordinate[pos=0.9] (b) (2,2) ;
+      \draw[ultra thick,latex-,Col2] (a) -- (b) ;
     \end{scope}
   \end{tikzpicture}
 }
 
-\twocolumnsidesll{
-Έστω τα διανύσματα του $ \mathbb{R}^{3} $
-\begin{myitemize}
-  \item $ \mathbf{u} = (u_{1}, u_{2}, u_{3}) \overset{\text{ή}}{=} u_{1} \mathbf{i} +
-    u_{2} \mathbf{j} + u_{3} \mathbf{k} $
-  \item $ \mathbf{v} = (v_{1}, v_{2}, v_{3}) $
-  \item $ \mathbf{w} = (w_{1}, w_{2}, w_{3}) $
-\end{myitemize}
+\vspace{\baselineskip}
+\twocolumnsides{
+  \subsection*{Ίσα και Αντίθετα Διανύσματα}
+  Δύο \textbf{ομόρροπα} διανύσματα με ίσα μέτρα, ονομάζονται \textcolor{Col1}{ίσα}, 
+  ενώ δύο \textbf{αντίρροπα} διανύσματα με ίσα μέτρα, ονομάζονται 
+  \textcolor{Col1}{αντίθετα}. 
+  \begin{myitemize}
+    \item $ \mathbf{a} = \mathbf{b} \Leftrightarrow \mathbf{a} \uparrow\uparrow 
+      \mathbf{b} $ και $ \norm{\mathbf{a}} = \norm{\mathbf{b}} $
+    \item $ \mathbf{a} = -\mathbf{b} \Leftrightarrow \mathbf{a} \uparrow 
+      \downarrow \mathbf{b} $ και $ \norm{\mathbf{a}} = \norm{\mathbf{b}} $
+  \end{myitemize}
+  \subsection*{Παράλληλα Διανύσματα}
+  \begin{myitemize}
+    \item $ \mathbf{a} \parallel \mathbf{b} \Leftrightarrow \exists \lambda \in
+      \mathbb{R} \; \text{ώστε} \; \mathbf{a} = \lambda \mathbf{b}, \; \mathbf{b} \neq
+      \vec{0} $
+  \end{myitemize}
 }{
-\begin{tikzpicture}[>=latex,scale=0.9]
-  \coordinate (o) at (0,0,0) ;
-  \coordinate (x) at (0,0,2.5) ;
-  \coordinate (y) at (2.5,0,0) ;
-  \coordinate (z) at (0,2.5,0) ;
-  \draw[axis,->] (o) -- (x) node[left] {$x$} ;
-  \draw[axis,->] (o) -- (y) node[below] {$y$} ;
-  \draw[axis,->] (o) -- (z) node[left] {$z$} ;
-  \coordinate (u) at (2.0,2.2,1.8) ;
-  \node (vu) at (u)[above right,Col1] {$\mathbf{u}$} ;
-  \draw[very thick,->,Col1] (o) -- node[pos=0.7,left,black,xshift=-1pt] 
-    {$\norm{\mathbf{u}}$} (u) ;
-  \coordinate (pr) at (2.0,0,1.7) ;
-  \draw[dashed] (u) -- (pr) ;
-  \draw[dashed] (xyz cs:z=1.7) node[left,yshift=3pt] {$u_{1}$} -- (pr) ;
-  \draw[dashed] (xyz cs:x=2.0) node[above] {$u_{2}$} -- (pr) ;
-  \draw[dashed] (xyz cs:y=2.0) node[left] {$u_{3}$} -- (u) ;
-  \coordinate (i) at (0,0,0.6) ;
-  \coordinate (j) at (0.6,0,0) ;
-  \coordinate (k) at (0,0.6,0) ;
-  \draw[thick,->] (o) -- (i) node[left,yshift=3pt] {$\mathbf{i}$} ;
-  \draw[thick,->] (o) -- (j) node[above] {$\mathbf{j}$} ;
-  \draw[thick,->] (o) -- (k) node[left] {$\mathbf{k}$} ;
-\end{tikzpicture}
+  \subsection*{Γωνία Διανυσμάτων}
+  Αν $ \mathbf{a}=\mathbf{OA} \neq \mathbf{0}$ και 
+  $ \mathbf{b}=\mathbf{OB} \neq \mathbf{0} $, τότε η \textbf{κυρτή} γωνία 
+  $ \phi =  A\widehat{O}B $, ονομάζεται \textcolor{Col1}{γωνία} των $ \mathbf{a} $ και 
+  $ \mathbf{b} $ και συμβολίζεται με $ \phi = (\widehat{\mathbf{a}, \mathbf{b}}) $. 
+  Ισχύει $ 0 \leq \phi \leq \pi $.
+
+  \twocolumnsidescc{
+    \begin{myitemize}
+      \item $ \mathbf{a} \uparrow\uparrow \mathbf{b} \Leftrightarrow \phi = 0 $
+      \item $ \mathbf{a} \uparrow\downarrow \mathbf{b} \Leftrightarrow \phi = \pi $
+      \item $ (\widehat{\mathbf{a}, \mathbf{b}}) + (\widehat{- \mathbf{a}, \mathbf{b}}) 
+        = \pi $
+    \end{myitemize}
+  }{
+    \begin{center}
+      \begin{tikzpicture}[scale=0.8]
+        \draw (2,0) -- coordinate[pos=0.2] (a) (0,0) coordinate (o) -- 
+          coordinate[pos=0.8] (b) (2.0,1.5) ; 
+        \draw (o) -- coordinate[pos=0.8] (c) (-2,0) ;
+        \node[Col1,below] at (o) {$O$} ; 
+        \draw (0,0) pic[fill=Col1!50,draw,-latex,"$\phi$",angle eccentricity=1.5] 
+          {angle=a--o--b} ;
+        \draw (o) edge[-latex,ultra thick,Col1] node[midway,below] {$ \mathbf{a} $} (a) ;
+        \draw (o) edge[-latex,ultra thick,Col1] node[midway,above] {$ \mathbf{b} $} (b) ;
+        \draw (o) edge[-latex,ultra thick,Col1] node[midway,below] {$ \mathbf{-a} $} 
+          (c) ;
+        \fill[Col1] (a) node[below] {$A$} circle (1.5pt) ;
+        \fill[Col1] (b) node[above left,xshift=3pt] {$B$} circle (1.5pt) ;
+      \end{tikzpicture}
+    \end{center}
+  }
 }
 
-\subsection*{Μέτρο Διανύσματος}
+\vspace{\baselineskip}
 
-\begin{myitemize}
-  \item $ \norm{\mathbf{u}} = \sqrt{u_{1}^{2} + u_{2}^{2} + u_{3}^{2}} $
-\end{myitemize}
+\twocolumnsides{
+  \subsection*{Άθροισμα - Διαφορά Διανυσμάτων}
+  \twocolumnsides{
+    \begin{tikzpicture}[>=latex]
+      \coordinate (o) at (0,0) ;
+      \coordinate (a) at (2.3,0.8) ;
+      \coordinate (b) at (2.6,2.2) ;
+      \coordinate (c) at (0.3,1.4) ;
+      \draw[->,Col2,very thick] (o) to node[midway,left] {$ \mathbf{b}$} (c) ;
+      \draw[->,thick] (c) to node[midway,above] {$ \mathbf{a}$} (b) ;
+      \draw[->,Col2,very thick] (o) to node[midway,below] {$ \mathbf{a} $} (a) ;
+      \draw[->,thick] (a) to (b) ;
+      \draw[->,thick] (a) to node[midway,right] {$ \mathbf{b} $} (b) ;
+      \draw[->,Col1,very thick] (o) to node[midway,below,sloped] 
+        {$ \mathbf{a}+ \mathbf{b} $} node[midway,above,sloped] 
+        {$ \mathbf{b}+ \mathbf{a} $} (b) ;
+    \end{tikzpicture}
+  }{
+    \begin{tikzpicture}[>=latex]
+      \coordinate (o) at (0,0) ;
+      \coordinate (a) at (2.3,0.8) ;
+      \coordinate (b) at (2.6,2.2) ;
+      \coordinate (c) at (0.3,1.4) ;
+      \draw[->,Col2,very thick] (o) to node[midway,left] {$ \mathbf{b}$} (c) ;
+      \draw (c) to (b) ;
+      \draw[->,Col2,very thick] (o) to node[midway,below] {$ \mathbf{a} $} (a) ;
+      \draw (a) to (b) ;
+      \draw[->,Col1,very thick] (c) to node[midway,above,sloped] 
+        {$ \mathbf{a}- \mathbf{b} $} (a) ;
+    \end{tikzpicture}
+  }
+}{
+  \subsection*{Πολλαπλασιασμός Αριθμού με Διάνυσμα}
+  \begin{tikzpicture}[>=latex]
+    \coordinate (o) at (0,0) ;
+    \coordinate (a) at (0.8,0.8) ;
+    \draw[->,ultra thick] (o) to node[midway,left=2pt] {$ \mathbf{a}$} (a) ;
+    \begin{scope}[xshift=30pt,scale=2]
+      \coordinate (o) at (0,0) ;
+      \coordinate (a) at (0.8,0.8) ;
+      \draw[->,Col1,ultra thick] (o) to node[midway,left=2pt] {$ 2\mathbf{a}$} (a) ;
+    \end{scope}
+    \begin{scope}[xshift=70pt,scale=0.5]
+      \coordinate (o) at (0,0) ;
+      \coordinate (a) at (0.8,0.8) ;
+      \draw[->,Col1,ultra thick] (o) to node[midway,left=2pt] 
+        {$ \mathsmaller{\frac{1}{2}} \mathbf{a}$} (a) ;
+    \end{scope}
+    \begin{scope}[xshift=120pt]
+      \coordinate (o) at (0.8,0.8) ;
+      \coordinate (a) at (0,0) ;
+      \draw[->,Col2,ultra thick] (o) to node[midway,left=2pt,yshift=5pt] 
+        {$ -\mathbf{a}$} (a) ;
+    \end{scope}
+    \begin{scope}[xshift=170pt,scale=1.5]
+      \coordinate (o) at (0.8,0.8) ;
+      \coordinate (a) at (0,0) ;
+      \draw[->,Col2,ultra thick] (o) to node[midway,left=2pt,yshift=5pt] 
+        {$ -1.5\mathbf{a}$} (a) ;
+    \end{scope}
+  \end{tikzpicture}
+}
 
-\subsection*{Μοναδιαίο Διάνυσμ α}
+\vspace{\baselineskip}
 
-\begin{myitemize}
-  \item $ \hat{\mathbf{u}} = \frac{1}{\norm{\mathbf{u}}} \cdot \mathbf{u} $
-    \end{myitemize}
- 
+\twocolumnsides{
+  \subsection*{Τριγωνική Ανισότητα} 
+  \begin{myitemize}[leftmargin=*]
+    \item Αν $ \mathbf{a} \nparallel \mathbf{b} $ τότε $\abs{\norm{\mathbf{a}} - \norm{\mathbf{b}}} < \norm{\mathbf{a}+ \mathbf{b}} <
+      \norm{\mathbf{a}} + \norm{\mathbf{b}}$
+      \begin{center}
+        \begin{tikzpicture}[>=latex]
+          \draw (0,0) coordinate (o) -- (2.0,1.0) coordinate (a) -- (3,0) coordinate 
+            (b) -- cycle ;
+          \draw[->,ultra thick,Col2] (o) -- (a) node[midway,above] {$ \mathbf{a}$} ;
+          \draw[->,ultra thick,Col2] (a) -- (b) node[midway,right,yshift=4pt] 
+            {$ \mathbf{b}$} ;
+          \draw[->,ultra thick,Col1] (o) -- (b) node[midway,below] {$ \mathbf{a+b}$} ;
+        \end{tikzpicture}
+      \end{center}
+    \item Αν $ \mathbf{a} \upuparrows \mathbf{b} $ τότε $\abs{\norm{\mathbf{a}} - \norm{\mathbf{b}}} < \norm{\mathbf{a}+ \mathbf{b}} =
+      \norm{\mathbf{a}} + \norm{\mathbf{b}}$
+      \begin{center}
+        \begin{tikzpicture}[>=latex]
+          \coordinate (o) at (0,0) ; 
+          \coordinate (a) at (2,0) ; 
+          \coordinate (b) at (3.5,0) ; 
+          \draw (o) edge[->,Col2,ultra thick] node[midway,above] {$ \mathbf{a}$} (a) ;
+          \draw (a) edge[->,Col2,ultra thick] node[midway,above] {$ \mathbf{b}$} (b) ;
+          \draw (0,-0.6) edge[->,Col1,ultra thick] node[midway,above] {$ \mathbf{a+b}$} 
+            (3.5,-0.6) ;
+        \end{tikzpicture}
+      \end{center}
+    \item Αν $ \mathbf{a} \uparrow\downarrow \mathbf{b} $ τότε $\abs{\norm{\mathbf{a}} - \norm{\mathbf{b}}} = \norm{\mathbf{a}+ \mathbf{b}} <
+      \norm{\mathbf{a}} + \norm{\mathbf{b}}$
+      \begin{center}
+        \begin{tikzpicture}[>=latex]
+          \coordinate (o) at (0,0) ; 
+          \coordinate (a) at (2,0) ; 
+          \coordinate (b) at (3.5,0) ; 
+          \draw (o) edge[->,Col2,ultra thick] node[midway,above] {$ \mathbf{a}$} (b) ;
+          \draw (3.5,-.5) edge[->,Col2,ultra thick] node[midway,above] {$ \mathbf{b}$} (2,-.5) ;
+          \draw (0,-1.1) edge[->,Col1,ultra thick] node[midway,above] {$ \mathbf{a+b}$} 
+            (2,-1.1) ;
+        \end{tikzpicture}
+      \end{center}
+  \end{myitemize}
+}{
+  \subsection*{Γραμμική Ανεξαρτησία}
+  \begin{myitemize}[leftmargin=*]
+    \item \textcolor{Col1}{Γραμμικός συνδυασμός} των διανυσμάτων $ \mathbf{v_{1}},
+      \mathbf{v_{2}}, \ldots, \mathbf{v_{n}} $ 
+      ονομάζεται κάθε διάνυσμα της μορφής 
+      $\lambda_{1} \mathbf{v_{1}}+ \lambda_{2} \mathbf{v_{2}} + \cdots
+      \lambda _{n}\mathbf{v_{n}} $ με 
+      $ \lambda_{1}, \lambda_{2}, \ldots, \lambda_{n} \in \mathbb{R} $ 
+    \item Τα διανύσματα $ \mathbf{v_{1}}, \mathbf{v_{2}}, \ldots, \mathbf{v_{n}} $ 
+      ονομάζονται \textcolor{Col1}{γραμμικώς ανεξάρτητα}, αν 
+      οποτεδήποτε $\lambda_{1} \mathbf{v_{1}} + \lambda_{2}
+      \mathbf{v_{2}} + \cdots + \lambda_{n} \mathbf{v_{n}} \! = \mathbf{0} $ τότε
+      $ \lambda_{1} = \cdots = \lambda_{n} \! = 0$. 
+    \item Το $ \mathbf{0} $ είναι γραμμικώς εξαρτημένο.
+    \item Αν $ \mathbf{a} \neq \mathbf{0} $ τότε $ \mathbf{a}$ 
+      είναι γραμμικώς ανεξάρτητο.
+    \item Αν $ \mathbf{a} \nparallel \mathbf{b} $ τότε $\mathbf{a}, \mathbf{b} $ 
+      είναι γραμμικώς ανεξάρτητα.
+    \item Αν $ \mathbf{a} \parallel \mathbf{b} $ τότε $\mathbf{a}, \mathbf{b} $ 
+      είναι γραμμικώς εξαρτημένα.
+    \item Τρία διανύσματα του $ \mathbb{R}^{3} $ είναι γραμμικώς ανεξάρτητα $
+      \Leftrightarrow $ δεν είναι συνεπίπεδα.
+    \item Τα $ \mathbf{v_{1}}, \mathbf{v_{2}}, \ldots, \mathbf{v_{n}} $ είναι
+      γραμμικώς εξαρτημένα $ \Leftrightarrow $ τουλάχιστον ένα από αυτά είναι γραμμικός 
+      συνδυασμός των υπολοίπων.
+  \end{myitemize}
+}
+
+\twocolumnsidesll{
+  \section*{Διανύσματα στον $ \mathbb{R}^{3}$}
+  Έστω $ \mathbf{u} \in \mathbb{R}^{3} $. Τότε υπάρχουν \textbf{μοναδικοί} αριθμοί, 
+  $ u_{1}, u_{2}, u_{3} \in \mathbb{R} $, ώστε 
+  $\mathbf{u} =  u_{1}\,\mathbf{i} + u_{2}\,\mathbf{j} + u_{3}\,\mathbf{k} $.
+  Τα διανύσματα $ u_{1}\, \mathbf{i} $, $ u_{2}\, \mathbf{j}, u_{3}\, \mathbf{k} $ 
+  ονομάζονται \textcolor{Col1}{συνιστώσες} του $ \mathbf{u} $ 
+  ενώ οι συντελεστές $ u_{1}, u_{2}, u_{3} $ ονομάζονται 
+  \textcolor{Col1}{συντεταγμένες} του $ \mathbf{u} $ και γράφουμε 
+  $ \mathbf{u} = (u_{1}, u_{2}, u_{3}) $.
+}{
+  \begin{center}
+    \begin{tikzpicture}[>=latex]
+      \coordinate (o) at (0,0,0) ;
+      \coordinate (x) at (0,0,2.5) ;
+      \coordinate (y) at (2.5,0,0) ;
+      \coordinate (z) at (0,2.5,0) ;
+      \draw[axis,->] (o) -- (x) node[left] {$x$} ;
+      \draw[axis,->] (o) -- (y) node[below] {$y$} ;
+      \draw[axis,->] (o) -- (z) node[left] {$z$} ;
+      \coordinate (u) at (1.8,2.2,1.8) ;
+      \node (vu) at (u)[above right,Col1] {$\mathbf{u}$} ;
+      \draw[very thick,->,Col1] (o) -- node[pos=0.7,left,black,xshift=-1pt] 
+        {$\norm{\mathbf{u}}$} (u) ;
+      \coordinate (pr) at (1.7,0,1.7) ;
+      \draw[ultra thin] (u) -- (pr) ;
+      \draw[dashed] (xyz cs:z=1.7) coordinate (u1) 
+        node[left,yshift=3pt] {$u_{1}$} -- (pr) ;
+      \draw[dashed] (xyz cs:x=1.7) coordinate (u2) node[above] {$u_{2}$} -- (pr) ;
+      \draw[dashed] (xyz cs:y=2.1) coordinate (u3) node[left] {$u_{3}$} -- (u) ;
+      \coordinate (i) at (0,0,0.6) ;
+      \coordinate (j) at (0.6,0,0) ;
+      \coordinate (k) at (0,0.6,0) ;
+      \draw[thick,->] (o) -- (i) node[left,yshift=3pt] {$\mathbf{i}$} ;
+      \draw[thick,->] (o) -- (j) node[above] {$\mathbf{j}$} ;
+      \draw[thick,->] (o) -- (k) node[left] {$\mathbf{k}$} ;
+      \draw[thin,Col1!50] (o) -- (pr) ;
+      \draw pic[draw,scale=0.5] {right angle=pr--u1--o} ;
+      \draw pic[draw,scale=0.5] {right angle=pr--u2--o} ;
+      \draw pic[draw,scale=0.5] {right angle=u--u3--o} ;
+      \draw pic[draw,scale=0.5] {right angle=u--pr--o} ;
+    \end{tikzpicture}
+  \end{center}
+}
+
+\twocolumnsidesrr{
+  \subsection*{Μέτρο Διανύσματος}
+  \begin{myitemize}
+    \item $ \norm{\mathbf{u}} = \sqrt{u_{1}^{2}+ u_{2}^{2} + u_{3}^{2}} \geq 0 $
+  \end{myitemize}
+  \subsection*{Μοναδιαίο Διάνυσμα}
+  \begin{myitemize}
+    \item $ \widehat{\mathbf{u}} = \frac{1}{\norm{\mathbf{u}}} \mathbf{u} $
+  \end{myitemize}
+}{
+  \subsection*{Ισότητα Διανυσμάτων}
+  Έστω $ \mathbf{u} = (a_{1}, a_{2}, a_{3}) $ και $ \mathbf{v}= (b_{1}, b_{2} , b_{3}) $ 
+  διανύσματα του $ \mathbb{R}^{3} $
+  \begin{myitemize}
+    \item $\mathbf{u} = \mathbf{v} \Leftrightarrow a_{1}= b_{1},\; a_{2}= b_{2}, 
+      \; a_{3}= b_{3} $
+  \end{myitemize}
+  \subsection*{Πράξεις Διανυσματών}
+  \begin{myitemize}[leftmargin=*]
+    \item $ \mathbf{u}+ \mathbf{v} = (a_{1}, a_{2}, a_{3}) + (b_{1}, b_{2},
+      b_{3}) = (a_{1}+ b_{1}, a_{2}+ b_{2}, a_{3}+ b_{3}) $
+    \item $ \mathbf{u}- \mathbf{v} = (a_{1}, a_{2}, a_{3}) - (b_{1}, b_{2},
+      b_{3}) = (a_{1}- b_{1}, a_{2}- b_{2}, a_{3}- b_{3}) $
+    \item $ \lambda \mathbf{u} = \lambda (a_{1}, a_{2}, a_{3}) = (\lambda a_{1}, \lambda
+      a_{2}, \lambda a_{3}) $
+  \end{myitemize}
+
+}
 
 \end{document}
