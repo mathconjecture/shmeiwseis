@@ -1,0 +1,60 @@
+\input{preamble_ask.tex}
+\input{definitions_ask.tex}
+
+
+\begin{document}
+
+
+
+
+
+\section*{Παράγωγος Αντίστροφης Συνάρτησης}
+
+\begin{thm}
+	Έστω $ f\colon A\subseteq \mathbb{R} \to \mathbb{R} $ με τύπο $ y = f(x) $.  
+	\[
+	\left.
+	\begin{tabular}{l}		
+		 $f$ συνεχής στο $ A $ \\
+		 $f$ γν. μονότονη στο $ A $ \\
+		 $f$ παραγωγίσιμη στο $ x_{0} \in A $ \\
+		 $ f'(x_{0}) \neq 0 $
+	\end{tabular}
+\right\} 
+\Rightarrow x = f^{-1}(y) \: \text{παραγωγίσιμη στο} \: y_{0} = f(x_{0})
+\]
+και ισχύει
+\[
+	\left[f^{-1}(y_{0})\right]' = \frac{1}{f'(x_{0})} \Leftrightarrow
+	\left.\dv{f^{-1}(y)}{y}\right|_{y=y_{0}} 
+		= \frac{1}{\left.\dv{f(x)}{x}\right|_{\mathrlap{x=x_{0}}}}
+      \quad \text{και γενικεύοντας} \quad 
+	\dv{x}{y} = \frac{1}{\dv{y}{x}} 	
+\]
+\end{thm}
+
+\begin{example}
+  Έστω $ y=x^3 $. Να βρεθεί η παράγωγος της αντίστροφης συνάρτησης.
+\end{example}
+\begin{solution}
+  Έστω $ y=x^{3}, \; \forall x \in \mathbb{R} $. Τότε η αντίστροφη συνάρτηση είναι 
+  εύκολο να υπολογιστεί και είναι $ x = \sqrt[3]{y} $.
+  \begin{description}
+    \item[Α᾽ τρόπος:] Με απευθείας παραγώγιση ως προς $y$, της αντίστροφης συνάρτησης 
+      έχουμε:
+      \[
+        \dv{x}{y} = \dv{(\sqrt[3]{y})}{y} = \dv{(y^{1/3})}{y} = \frac{1}{3} y^{-
+        \frac{2}{3}}  
+      \]
+    \item[Β᾽ τρόπος:] Με τη βοήθεια του θεωρήματος έχουμε:
+      \[
+        \dv{f^{-1}(y)}{y} = \frac{1}{\dv{f(x)}{x}} = \frac{1}{\dv{x^{3}}{x}} =
+        \frac{1}{3x^{2}} = \frac{1}{3(y^{1/3})^{2}} = \frac{1}{3y^{2/3}} =
+        \frac{1}{3} y^{- \frac{2}{3}}  
+      \]
+  \end{description}
+\end{solution}
+
+
+
+\end{document}

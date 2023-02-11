@@ -1,9 +1,11 @@
 \input{preamble_ask.tex}
 \input{definitions_ask.tex}
+\input{tikz.tex}
 
-\pagestyle{askhseis}
+\pagestyle{vangelis}
 
-\geometry{left=18mm,right=18mm,top=30.00mm,bottom=36.00mm,footskip=24.16mm,headsep=24.16mm}
+\geometry{left=18mm,right=18mm,top=10.00mm,bottom=30.00mm}
+% ,footskip=24.16mm,headsep=24.16mm}
 \everymath{\displaystyle}
 
 \begin{document}
@@ -12,10 +14,64 @@
   \minibox{\large\bfseries \textcolor{Col1}{Μετασχηματισμός Laplace}}
 \end{center}
 
-\vspace{\baselineskip}
+\vspace{0.1\baselineskip}
 
-\twocolumnsides{
-\section*{Laplace βασικών συναρτήσεων}
+\subsection*{Βηματική Συνάρτηση (Heaviside)}
+
+
+\begin{tikzpicture}[>=latex,scale=0.8]
+  \draw[very thin,->] (-0.5,0) -- (3,0) node[below] {$t$} ;
+  \draw[very thin,->] (0,-0.5) -- (0,2.5) node[left] {} ;
+  \fill[Col1] (0,1) coordinate (p) circle (2pt) ;
+  \draw[graph] (p) -- node[pos=0.7,above] {$u(t)$ ή $ H(t) $}  (2.5,1) ;
+  \node at (p) [left] {$1$} ;
+  \node at (0,0) [below left] {$0$} ;
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}[>=latex,scale=0.8]
+  \draw[very thin,->] (-0.5,0) -- (3,0) node[below] {$t$} ;
+  \draw[very thin,->] (0,-0.5) -- (0,2.5) node[left] {} ;
+  \fill[Col1] (1,1) coordinate (p) circle (2pt) ;
+  \draw[graph] (p) -- node[pos=0.7,above] {$u_{a}(t)$ ή $ H(t-a) $}  
+    (2.8,1) ;
+  \coordinate (o) at (0,0) ;
+  \draw[dashed] (o|-p) -- (p) ;
+  \draw[dashed] (p) -- (p|-o) node[below] {$a$} ;
+  \coordinate (a) at (0,1) ;
+  \node at (a) [left] {$1$} ;
+  \draw[graph] (o) -- (1,0) ;
+  \fill[Col1] (o) circle (2pt) ;
+  \draw[Col1,fill=white] (1,0) circle (2pt) ;
+  \node at (0,0) [below left] {$0$} ;
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}[>=latex,scale=0.8]
+  \draw[very thin,->] (-0.5,0) -- (3.5,0) node[below] {$t$} ;
+  \draw[very thin,->] (0,-0.5) -- (0,2.5) node[left] {} ;
+  \fill[Col1] (1,1) coordinate (a) circle (2pt) ;
+  \draw[graph] (a) -- node[near end,above,align=center] 
+    {$ H(t-a) - H(t-b) $ \\ ή $u_{ab}(t)$} (2.5,1) coordinate (b) ;
+  \draw[graph] (0,0) coordinate (o) -- (1,0) coordinate (c) ;
+  \fill[Col1] (o) circle (2pt) ;
+  \draw[Col1,fill=white] (c) circle (2pt) ;
+  \draw[graph] (2.5,0) coordinate (d) -- (3.4,0) coordinate (e) ;
+  \fill[Col1] (d) circle (2pt) ;
+  \draw[dashed] (o|-a) -- (a) ;
+  \draw[dashed] (a) -- (c) ;
+  \draw[dashed] (b) -- (d) ;
+  \fill[Col1] (a) circle (2pt) ;
+  \fill[Col1] (d) circle (2pt) ;
+  \node at (c) [below] {$a$} ;
+  \node at (d) [below] {$b$} ;
+  \node at (o) [below left] {$0$} ;
+  \node at (0,1) [left] {$1$} ;
+  \draw[Col1,fill=white] (b) circle (2pt) ;
+\end{tikzpicture}
+
+
+
+\twocolumnsidess{
+  \subsection*{Laplace βασικών συναρτήσεων}
   \begin{enumerate}
     \item $ \mathcal{L}\{1\} = \frac{1}{s}$
     \item $ \mathcal{L}\{t\} = \frac{1}{s^{2}}$
@@ -38,8 +94,18 @@
     \item $ \mathcal{L}\{e^{at} \sinh{bt}\} = \frac{b}{(s-a)^{2}-b^{2}}$
     \item $ \mathcal{L}\{e^{at} \cosh{bt}\} = \frac{s-a}{(s-a)^{2}-b^{2}}$
   \end{enumerate}
-  }{
-  \section*{Ιδιότητες}
+
+  \subsection*{Χρήσιμες Σχέσεις}
+
+  \begin{myitemize}
+    \item $ \mathcal{L}\{y'(t)\} = sY(s) - y(0) $
+    \item $ \mathcal{L}\{y''(t)\} = s^{2}Y(s) - sy(0) - y'(0) $
+    \item $ \mathcal{L}\{y'''(t)\} = s^{3}Y(s) - s^{2}y(0) - sy'(0) - y''(0) $
+      % \item $ \mathcal{L}\{f^{(n)}(t)\} = s^{n} F(s) - s^{n-1}f(0) - s^{n-2}f'(0) - 
+      %   \cdots - sf^{(n-2)}(0)- f^{(n-1)}(0) $
+  \end{myitemize}
+}{
+  \subsection*{Ιδιότητες}
   \begin{enumerate}
     \item $ \mathcal{L}\left\{t^{a}\right\} = \frac{\Gamma{(a+1)}}{s^{a+1}}, \quad a>-1 $
     \item $ \mathcal{L}\{tf(t)\} = -F'(s) $
@@ -58,28 +124,35 @@
       F(\tau) \,{d\tau} $
     \item $ \mathcal{L}\left\{\int\nolimits _{0}^{t} f(\tau) \,{d\tau}\right\} = 
       \frac{F(s)}{s} $
+    \item Αν $ f(t+T)=f(t) $ τότε $ \mathcal{L}\left\{f(t)\right\} = \frac{\int _{0}^{T}
+        f(t) \mathrm{e}^{-st}
+      \,{dt}}{1- \mathrm{e}^{-sT}} $
   \end{enumerate}
 
-  \section*{Συνάρτηση Γάμμα}
-  \[
-    \boxed{\Gamma (t) = \int _{0}^{\infty} \mathrm{e}^{-x} x^{t-1} \,{dx}}
-  \] 
+  \subsection*{Συνέλιξη Συναρτήσεων}
+
   \begin{myitemize}
+    \item $ (f\star g)(t) = \int _{0}^{t} f(t-\tau) g(\tau) \,{d\tau} $ 
+    \item $ \mathcal{L}\left\{(f\star g)(t)\right\} = \mathcal{L}\left\{f(t)\right\}
+      \cdot \mathcal{L}\left\{g(t)\right\} $
+  \end{myitemize}
+
+  \subsection*{Συνάρτηση Γάμμα}
+  % \[
+  %   \boxed{\Gamma (t) = \int _{0}^{\infty} \mathrm{e}^{-x} x^{t-1} \,{dx}}
+  % \] 
+  \begin{myitemize}
+    \item $ \Gamma (t) = \int _{0}^{\infty} \mathrm{e}^{-x} x^{t-1} \,{dx} $
     \item $\Gamma (t+1) = t \cdot \Gamma (t), \quad t \in \mathbb{R} $
     \item $\Gamma (n+1) = n \cdot \Gamma (n) = n!, \quad n \in \mathbb{N}$
-    \item $\Gamma \left(\frac{1}{2}\right) = \sqrt{\pi}$
+    \item $\Gamma \left({1}/{2}\right) = \sqrt{\pi}$
   \end{myitemize}
 }
-
-\section*{Χρήσιμες Σχέσεις}
-\centering
 \begin{myitemize}
-  \item $ \mathcal{L}\{y'(t)\} = sY(s) - y(0) $
-  \item $ \mathcal{L}\{y''(t)\} = s^{2}Y(s) - sy(0) - y'(0) $
-  \item $ \mathcal{L}\{y'''(t)\} = s^{3}Y(s) - s^{2}y(0) - sy'(0) - y''(0) $
   \item $ \mathcal{L}\{f^{(n)}(t)\} = s^{n} F(s) - s^{n-1}f(0) - s^{n-2}f'(0) - 
     \cdots - sf^{(n-2)}(0)- f^{(n-1)}(0) $
 \end{myitemize}
 
+% \enlargethispage*{2\baselineskip}
 
 \end{document}

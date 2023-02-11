@@ -1,0 +1,417 @@
+\input{preamble.tex}
+\input{definitions.tex}
+\input{tikz.tex}
+\input{myboxes.tex}
+
+\usepackage[cmtip,all]{xy}
+\usepackage{silence}
+\WarningsOff[catoptions]
+\usepackage{extarrows}
+
+\geometry{left=9mm,right=9mm,top=30.00mm,bottom=34.00mm,footskip=24.16mm,headsep=24.16mm}
+\everymath{\displaystyle}
+\pagestyle{vangelis}
+
+\begin{document}
+
+
+\chapter{Πεπλεγμένες Συναρτήσεις}
+
+
+\section{Θεωρήματα Πεπλεγμένων συναρτήσεων}
+
+\vspace{\baselineskip}
+
+\subsection{Η εξίσωση \ensuremath{F(x,y) = 0}}
+
+\subsubsection{Πεπλεγμένη συνάρτηση της μορφής \ensuremath{y=f(x)}}
+
+Έστω $ F(x,y) = 0 $, όπου $ F\colon D \to \mathbb{R} $ μια συνάρτηση με πεδίο
+ορισμού ένα ανοιχτό υποσύνολο $D$ του $\mathbb{R}^{2}$ και $ (x_0,y_0) $ ένα 
+εσωτερικό σημείο του $D$.  Αν 
+\begin{enumerate}[(i)]
+  \item $F(x_0,y_0) = 0$ 
+  \item $ F_x, F_y$ συνεχείς σε περιοχή του σημείου $ (x_0,y_0) $ 
+  \item $ F_{\textcolor{Col1}{y}}(x_0,y_0) \neq 0 $
+\end{enumerate}
+τότε υπάρχει μοναδική συνάρτηση $\textcolor{Col1}{y=y(x)} $ ορισμένη στο 
+$ I_0 \subseteq \mathbb{R} $ τέτοια ώστε:
+\begin{myitemize}
+  \item $y_0 = y(x_0)$
+  \item $F(x,y(x)) = 0, \quad \forall x \in I_0$
+  \item $ \dv{y}{x} = - \frac{F_x}{F_y}, \quad \forall x \in I_0  $
+\end{myitemize}
+
+\begin{rem}
+  Ο παραπάνω τύπος για την παράγωγο $ \dv{y}{x} $ προκύπτει ως λύση της εξίσωσης
+  \[
+    \pdv{F}{x} + \pdv{F}{y}\dv{y}{x} = 0 
+  \] 
+  η οποία προκύπτει με παραγώγιση της $ F(x,y) = 0$, αν θεωρήσουμε ότι $ y=y(x) $.
+\end{rem}
+
+\subsubsection{Πεπλεγμένη συνάρτηση της μορφής \ensuremath{x=f(y)}}
+
+Έστω $ F(x,y) = 0 $, όπου $ F\colon D \to \mathbb{R} $ μια συνάρτηση με πεδίο
+ορισμού ένα ανοιχτό υποσύνολο $D$ του $\mathbb{R}^{2}$ και $ (x_0,y_0) $ ένα 
+εσωτερικό σημείο του $D$.  Αν 
+\begin{enumerate}[(i)]
+  \item $F(x_0,y_0) = 0$ 
+  \item $ F_x, F_y$ συνεχείς σε περιοχή του σημείου $ (x_0,y_0) $ 
+  \item $ F_{\textcolor{Col1}{x}}(x_0,y_0) \neq 0 $
+\end{enumerate}
+τότε υπάρχει μοναδική συνάρτηση $ \textcolor{Col1}{x=x(y)} $ ορισμένη στο 
+$ I_0 \subseteq \mathbb{R} $ τέτοια ώστε:
+\begin{myitemize}
+  \item $x_0 = x(y_0)$
+  \item $F(x(y),y) = 0, \quad \forall y \in I_0$
+  \item $ \dv{x}{y} = - \frac{F_y}{F_x}, \quad \forall y \in I_0  $
+\end{myitemize}
+
+\begin{rem}
+  Ο παραπάνω τύπος για την παράγωγο $ \dv{x}{y} $ προκύπτει ως λύση της εξίσωσης
+  \[
+    \pdv{F}{y} + \pdv{F}{x}\dv{x}{y} = 0 
+  \] 
+  η οποία προκύπτει με παραγώγιση της $ F(x,y) = 0$, αν θεωρήσουμε ότι $ x=x(y) $.
+\end{rem}
+\begin{example}
+  Να υπολογίσετε τα σημεία της καμπύλης $ F(x,y) = x^{3}+y^{3}-6xy=0 $ για τα οποία 
+  ισχύει το θεώρημα πεπλεγμένης συνάρτησης.
+\end{example}
+\begin{solution}
+  Αρχικά εξετάζουμε αν το $ y $ μπορεί να είναι πεπλεγμένη συνάρτηση του $x$.   
+  Βρίσκουμε τα σημεία που επαληθεύουν την εξίσωση και για τα οποία $ F_{y}=0 $.
+  \[
+    F_{y} = 0 \Leftrightarrow 3y^{2}-6x=0 \Leftrightarrow \inlineequation[xsom]
+    {x = \frac{1}{2} y^{2}}
+  \] 
+  Βρίσκουμε ποια από αυτά τα σημεία επαληθεύουν την εξίσωση και έχουμε:
+  \[
+    \left(\frac{1}{2} y^{2}\right)^{3}+y^{3}-6 \frac{1}{2} y^{2}y=0 
+    \Leftrightarrow \frac{1}{8} y^{6}+y^{3} -3y^{3}=0 
+    \Leftrightarrow y^{3}\left(\frac{1}{8} y^{3}-2\right)=0 \Leftrightarrow y=0 \quad
+    \text{ή} \quad y= \sqrt[3]{16} = \sqrt[3]{8\cdot2} = 2 \sqrt[3]{2}
+  \] 
+  Άρα, από την εξίσωση~\eqref{xsom} έχουμε ότι 
+  \[ 
+    x=0  \quad \text{ή} \quad x = \frac{1}{2} \left(2 \sqrt[3]{2}\right)^{2} = 
+    \frac{1}{2} \left(2 \cdot 2^{\frac{1}{3}}\right)^{2} = 2 \cdot 2^{\frac{2}{3}} 
+    = 2 \sqrt[3]{2^{2}} = 2 \sqrt[3]{4}  
+  \]
+  Επομέvως το θεώρημα δεν εφαρμόζεται για τα σημεία $ (0,0) $ και $ (2 \sqrt[3]{4}
+  , 2 \sqrt[3]{2}) $.
+
+  Στη συνέχεια εξετάζουμε αν το $ x $ μπορεί να είναι πεπλεγμένη συνάρτηση του $y$.
+  Βρίσκουμε τα σημεία που επαληθεύουν την εξίσωση και για τα οποία $ F_{x}=0 $.
+  \[
+    F_{x}=0 \Leftrightarrow 3x^{2}-6y=0 \Leftrightarrow \inlineequation[ysom]
+    {y= \frac{1}{2} x^{2}}
+  \] 
+  Βρίσκουμε ποια από αυτά τα σημεία επαληθεύουν την εξίσωση και έχουμε:
+  \[
+    x^{3}+\left(\frac{1}{2} x^{2}\right)^{3}-6x \frac{1}{2} x^{2}=0 \Leftrightarrow 
+    x^{3}+ \frac{1}{8} x^{6}-3x^{3}=0 \Leftrightarrow \frac{1}{8} x^{6}-3x^{3}=0
+    \Leftrightarrow x^{3}\left(\frac{1}{8} x^{3}-2\right)=0 \Leftrightarrow x = 0 \quad
+    \text{ή} \quad x=2 \sqrt[3]{2} 
+  \] 
+  Άρα, από την εξίσωση~\eqref{ysom} έχουμε ότι 
+  \[ 
+    y=0  \quad \text{ή} \quad y = 2 \sqrt[3]{4} 
+  \]
+  Επομέvως το θεώρημα δεν εφαρμόζεται για τα σημεία $ (0,0) $ και $ (2 \sqrt[3]{2}
+  , 2 \sqrt[3]{4}) $.
+
+  Οπότε συνολικά, το θεώρημα δεν εφαρμόζεται για τα σημεία 
+  \[
+    \boxed{(0,0), \quad (2 \sqrt[3]{4} , 2 \sqrt[3]{2}), \quad (2 \sqrt[3]{2} , 2
+    \sqrt[3]{4})}
+  \] 
+\end{solution}
+
+\subsection{Η εξίσωση \ensuremath{F(x,y,z) = 0}}
+
+\subsubsection{Πεπλεγμένη συνάρτηση της μορφής \ensuremath{z=z(x,y)}}
+
+Έστω $ F(x,y,z) = 0 $, όπου $F\colon D \to \mathbb{R}$ μια συνάρτηση με πεδίο ορισμού 
+ένα ανοικτό υποσύνολο $ D $ του $ \mathbb{R}^{3}  $ και $ (x_0,y_0,z_0) $ ένα 
+εσωτερικό σημείο του $ D $. Αν
+\begin{enumerate}[(i)]
+  \item $ F(x_0,y_0,z_0) $
+  \item $ F_x, F_y, F_z $ συνεχείς σε περιοχή του σημείου $ (x_0,y_0,z_0) $
+  \item $ F_{\textcolor{Col1}{z}}(x_0,y_0,z_0) \neq 0 $
+\end{enumerate}
+τότε υπάρχει μοναδική συνάρτηση, $ \textcolor{Col1}{z=z(x,y)} $ ορισμένη στο 
+$ D_0 \subseteq \mathbb{R}^{2} $ τέτοια ώστε:
+\begin{myitemize}
+  \item $ z_0 = z(x_0,y_0) $
+  \item $ F(x,y,z(x,y)) = 0,  \quad \forall (x,y)\in  D_0 $
+  \item $ \pdv{z}{x} = - \frac{F_x}{F_z} $ και $ \pdv{z}{y} = - \frac{F_y}{F_z}, 
+    \quad \forall (x,y) \in D_0$
+\end{myitemize}
+
+\begin{rem}
+  Οι παραπάνω τύποι για τις παραγώγους $ \pdv{z}{x}, \pdv{z}{y} $ προκύπτουν 
+  ως λύσεις των εξισώσεων  
+  \begin{align*}	
+    \pdv{F}{x} + \pdv{F}{z}\pdv{z}{x} &= 0 \\
+    \pdv{F}{y} + \pdv{F}{z}\pdv{z}{y} &= 0 
+  \end{align*}
+  οι οποίες προκύπτουν με παραγώγιση της $ F(x,y,z) = 0 $, ως προς $x$ και $y$ 
+  αντίστοιχα και  αν θεωρήσουμε ότι $ z=z(x,y) $.
+\end{rem}
+
+\subsubsection{Πεπλεγμένη συνάρτηση της μορφής \ensuremath{y=y(x,z)}}
+
+Έστω $ F(x,y,z) = 0 $, όπου $F\colon D \to \mathbb{R}$ μια συνάρτηση με πεδίο ορισμού 
+ένα ανοικτό υποσύνολο $ D $ του $ \mathbb{R}^{3}  $ και $ (x_0,y_0,z_0) $ ένα 
+εσωτερικό σημείο του $ D $. Αν
+\begin{enumerate}[(i)]
+  \item $ F(x_0,y_0,z_0) $
+  \item $ F_x, F_y, F_z $ συνεχείς σε περιοχή του σημείου $ (x_0,y_0,z_0) $
+  \item $ F_{\textcolor{Col1}{y}}(x_0,y_0,z_0) \neq 0 $
+\end{enumerate}
+τότε υπάρχει μοναδική συνάρτηση, $ \textcolor{Col1}{y=y(x,z)} $ ορισμένη στο 
+$ D_0 \subseteq \mathbb{R}^{2} $ τέτοια ώστε:
+\begin{myitemize}
+  \item $ y_0 = y(x_0,z_0) $
+  \item $ F(x,y(x,z),z)) = 0,  \quad \forall (x,z) \in  D_0 $
+  \item $ \pdv{y}{x} = - \frac{F_x}{F_y} $ και $ \pdv{y}{z} = - \frac{F_z}{F_y}, 
+    \quad \forall (x,z) \in D_0$
+\end{myitemize}
+
+\begin{rem}
+  Οι παραπάνω τύποι για τις παραγώγους $ \pdv{y}{x}, \pdv{y}{z} $ προκύπτουν 
+  ως λύσεις των εξισώσεων  
+  \begin{align*}	
+    \pdv{F}{x} + \pdv{F}{y}\pdv{y}{x} &= 0 \\
+    \pdv{F}{z} + \pdv{F}{y}\pdv{y}{z} &= 0 
+  \end{align*}
+  οι οποίες προκύπτουν με παραγώγιση της $ F(x,y,z) = 0 $, ως προς $x$ και $z$ 
+  αντίστοιχα και  αν θεωρήσουμε ότι $ y=y(x,z) $.
+\end{rem}
+
+\subsubsection{Πεπλεγμένη συνάρτηση της μορφής \ensuremath{x=x(y,z)}}
+
+Έστω $ F(x,y,z) = 0 $, όπου $F\colon D \to \mathbb{R}$ μια συνάρτηση με πεδίο ορισμού 
+ένα ανοικτό υποσύνολο $ D $ του $ \mathbb{R}^{3}  $ και $ (x_0,y_0,z_0) $ ένα 
+εσωτερικό σημείο του $ D $. Αν
+\begin{enumerate}[(i)]
+  \item $ F(x_0,y_0,z_0) $
+  \item $ F_x, F_y, F_z $ συνεχείς σε περιοχή του σημείου $ (x_0,y_0,z_0) $
+  \item $ F_{\textcolor{Col1}{x}}(x_0,y_0,z_0) \neq 0 $
+\end{enumerate}
+τότε υπάρχει μοναδική συνάρτηση, $ \textcolor{Col1}{x=x(y,z)} $ ορισμένη στο 
+$ D_0 \subseteq \mathbb{R}^{2} $ τέτοια ώστε:
+\begin{myitemize}
+  \item $ x_0 = x(y_0,z_0) $
+  \item $ F(x(y,z),y,z)) = 0,  \quad \forall (y,z) \in  D_0 $
+  \item $ \pdv{x}{y} = - \frac{F_y}{F_x} $ και $ \pdv{x}{z} = - \frac{F_z}{F_x}, 
+    \quad \forall (y,z) \in D_0$
+\end{myitemize}
+
+\begin{rem}
+  Οι παραπάνω τύποι για τις παραγώγους $ \pdv{x}{y}, \pdv{x}{z} $ προκύπτουν 
+  ως λύσεις των εξισώσεων  
+  \begin{align*}	
+    \pdv{F}{y} + \pdv{F}{x}\pdv{x}{y} &= 0 \\
+    \pdv{F}{z} + \pdv{F}{x}\pdv{x}{z} &= 0 
+  \end{align*}
+  οι οποίες προκύπτουν με παραγώγιση της $ F(x,y,z) = 0 $, ως προς $y$ και $z$ 
+  αντίστοιχα και  αν θεωρήσουμε ότι $ x=x(x,z) $.
+\end{rem}
+\begin{example}
+  Έστω η εξίσωση $ F(x,y,z) = y^{2}+xz+z^{2}- \mathrm{e}^{z}-4 = 0$. 
+  Να εξετάσετε αν ισχύει το θεώρημα πεπλεγμένης συνάρτησης, για την 
+  $ z = z(x,y) $, στο σημείο $P(0,\mathrm{e},2) $ και να βρεθούν οι μερικές παράγωγοι 
+  1ης και 2ης τάξης της συνάρτησης $ z = z(x,y) $ στο σημείο $ (0, \mathrm{e}) $.
+\end{example}
+\begin{solution}
+\item {}
+  \begin{enumerate}[i)]
+    \item $ F(0, \mathrm{e}, 2) = \mathrm{e}^{2} + 0\cdot 2 + 2^{2} - 
+      \mathrm{e}^{2} - 4 = 0  $ 
+    \item 
+      \begin{tabular}{l}
+        $ F_{x} = z \phantom{\ +2z- \mathrm{e}^{z}} $ \tikzmark{a} \\
+        $ F_{y} = 2y $ \\
+        $ F_{z} = x+2z- \mathrm{e}^{z} \tikzmark{b} $
+      \end{tabular}
+      \mybrace{a}{b}[είναι συνεχείς ως πολυωνυμικές]
+    \item $ F_{z}(0, \mathrm{e},2) = 0+2\cdot 2- \mathrm{e}^{2} 
+      = 4- \mathrm{e}^{2} \neq 0 $
+  \end{enumerate}
+  Επομένως ικανοποιούνται οι προϋποθέσεις του θεωρήματος Πεπλεγμένης συνάρτησης 
+  και άρα υπάρχει μοναδική συνάρτηση $ z=z(x,y) $, για την οποία ισχύουν:
+  \begin{myitemize}
+    \item $ \inlineequation[eq:perplex1]{2=z(0, \mathrm{e})} $
+    \item $ z_{x} = - \frac{F_{x}}{F_{z}} = - \frac{z}{x+2z- \mathrm{e}^{z}} $ και 
+      $ z_{y} = - \frac{F_{y}}{F_{z}} - \frac{2y}{x+2z- \mathrm{e}^{z}} $ σε μια 
+      περιοχή του σημείου $ (0,\mathrm{e}) $.
+  \end{myitemize}
+  Επομένως στο σημείο $ (0, \mathrm{e}) $ έχουμε ότι $ z= z(0, \mathrm{e}) = 2 $ και 
+  άρα:
+  \[
+    z_{x}(0, \mathrm{e}) \overset{\eqref{eq:perplex1}}{=}  
+    - \frac{2}{0+2\cdot 2- e^{2}} = - \frac{2}{4-\mathrm{e}^{2}} \quad \text{και} 
+    \quad z_{y}(0, \mathrm{e}) \overset{\eqref{eq:perplex1}}{=}  
+    - \frac{2 \cdot \mathrm{e}}{0+2\cdot 2 - 
+    \mathrm{e}^{2}} = - \frac{2 \mathrm{e}}{4- \mathrm{e}^{2}} 
+  \]
+  Για να βρούμε τις μερικές παραγώγους 2ης τάξης της συνάρτησης $ z(x,y) $, 
+  παραγωγίζουμε ξανά, τις μερικές παραγώγους 1ης τάξης, θεωρούμε όμως ότι 
+  $z=z(x,y)$ είναι συνάρτηση.
+  \begin{align*}
+    z_{xx} &= \left(\frac{-z}{x+2z- \mathrm{e}^{z}}\right) _{x} =
+    \frac{(-z)_{x}(x+2z- \mathrm{e}^{z})-(-z)(x+2z- \mathrm{e}^{z} )_{x}}{(x+2z-
+      \mathrm{e}^{z})^{2}} = \frac{-z_{x}(x+2z- \mathrm{e}^{z})+z(1+2z_{x}- 
+    \mathrm{e}^{z} z_{x})}{(x+2z- \mathrm{e}^{z})^{2}}  \\ 
+    z_{yy} &= \left(\frac{-2y}{x+2z- \mathrm{e}^{z}}\right)_{y} = 
+    \frac{(-2y)_{y}(x+2z- \mathrm{e}^{z})- (-2y)(x+2z- \mathrm{e}^{z} )_{y}}{(x+2z-
+      \mathrm{e}^{z} )^{2}} = \frac{(-2)(x+2z- \mathrm{e}^{z} )+2y(2z_{y}-
+    \mathrm{e}^{z} z_{y})}{(x+2z- \mathrm{e}^{z})^{2}} \\  
+    z_{xy}&= \left(\frac{-z}{x+2z+ \mathrm{e}^{z}}\right)_{y} = 
+    \frac{(-z)_{y}(x+2z+ \mathrm{e}^{z})-(-z)(x+2z+ \mathrm{e}^{z} )_{y}}{(x+2z+
+      \mathrm{e}^{z})^{2}} = \frac{-z_{y}(x+2z+ \mathrm{e}^{z})+z(+2z_{y}+ 
+    \mathrm{e}^{z} z_{y})}{(x+2z+ \mathrm{e}^{z})^{2}}  \\ 
+  \end{align*} 
+\end{solution}
+
+Με αντικατάσταση, όπου $ (x,y,z)=(0, \mathrm{e}, 2) $ αλλά και όπου $ z_{x}$ και 
+$ z_{y} $ τις τιμές που μόλις βρήκαμε, υπολογίζουμε και τις τιμές των παραγώγων 2ης
+τάξης στο σημείο $ (0, \mathrm{e}) $.
+
+% \enlargethispage{\baselineskip}
+
+% Επομένως στο σημείο $ (0, \mathrm{e}) $ έχουμε ότι $ z= z(0, \mathrm{e}) = 2 $, 
+% $ z_{x}(0, \mathrm{e}) = - \frac{2}{4- \mathrm{e}^{2}} $ και $ z_{y}(0, \mathrm{e}) 
+% = - \frac{2 \mathrm{e}}{4 - \mathrm{e}^{2}}$ και άρα:
+% \begin{align*}
+%   z_{xx}(0, \mathrm{e}) &= \frac{ \frac{2}{4-\mathrm{e}^{2}}(0+2\cdot 2-
+%     \mathrm{e}^{2})+2[1+2 (-\frac{2}{4-\mathrm{e}^{2}}) - \mathrm{e}^{2}
+%   (-\frac{2}{4-\mathrm{e}^{2}})]}{(0+2 \cdot 2 - \mathrm{e}^{2})^{2}} = 
+%   \frac{2 + \frac{2 \mathrm{e}^{2}}{4- \mathrm{e}^{2}}}{(4- \mathrm{e}^{2})^{2}} 
+%   = \frac{8}{(4- \mathrm{e}^{2})^{3}} \\
+%     z_{yy}(0, \mathrm{e}) &= \frac{(-2)(0+2 \cdot 2 - \mathrm{e}^{2})+2 
+%       \mathrm{e}[2\cdot (-\frac{2 \mathrm{e}}{4- \mathrm{e}^{2}}) - 
+%       \mathrm{e}^{2} (-\frac{2 \mathrm{e}}{4- \mathrm{e}^{2}})]}{(4- 
+%       \mathrm{e}^{2})^{2}} = \frac{-8+2 \mathrm{e}^{2}-
+%       \frac{8e^{2}}{4- \mathrm{e}^{2}}+ \frac{4e^{3}}{4- \mathrm{e}^{2}}}{(4-
+%       \mathrm{e}^{2})^{2}} = \frac{2(\mathrm{e}^{4} + 4 \mathrm{e}^{2} -16)}{(4-
+%     \mathrm{e}^{2})^{2}} 
+%     \end{align*}
+
+
+\subsection{Συστήματα Εξισώσεων}
+
+\subsubsection{1η περίπτωση}
+
+Έστω το σύστημα εξισώσεων $(\Sigma):
+\begin{cases}
+  F(x,y,z) = 0  \\
+  G(x,y,z) = 0
+\end{cases}$
+και έστω το σημείο $ P_0(x_0,y_0,z_0) $, όπου ισχύει:
+\begin{enumerate}[(i)]
+  \item  
+    \begin{tabular}{l}
+      $F(x_0,y_0,z_0) = 0$ \\
+      $G(x_0,y_0,z_0) = 0$
+    \end{tabular}
+  \item Οι συναρτήσεις $ F, G $ είναι $ C^{1} $ τάξης 
+  \item $ \eval{\pdv{(F,G)}{(y,z)}} _{P_{0}} \neq 0 $
+\end{enumerate} 
+τότε υπάρχουν μοναδικές συναρτήσεις $ y = y(x) $ και $ z = z(x) $ τάξης $ C^{1} $ 
+τέτοιες ώστε:
+\begin{myitemize}
+  \item 
+    \begin{tabular}{l}
+      $ y_0 = y(x_0) $ \\
+      $ z_0 = z(x_0) $
+    \end{tabular}
+  \item 
+    \begin{tabular}{l}
+      $ F(x,y(x),z(x)) = 0 $ \\
+      $ G(x,y(x),z(x)) = 0 $
+    \end{tabular}
+  \item $ \dv{y}{x} = - \frac{\pdv{(F,G)}{(x,z)}}{\pdv{(F,G)}{(y,z)}} $ και 
+    $ \dv{z}{x} = - \frac{\pdv{(F,G)}{(y,x)}}{\pdv{(F,G)}{(y,z)}} $
+\end{myitemize}
+
+\begin{rem}
+  Οι παραπάνω τύποι για τις τιμές των μερικών παραγώγων $ \dv{y}{x}, \dv{z}{x}$ 
+  προκύπτουν ως λύσεις του ακόλουθου $ 2 \times 2 $ συστήματος εξισώσεων οι οποίες 
+  προκύπτουν με παραγώγιση των εξισώσεων του συστήματος $ (\Sigma) $, ως προς $x$.
+  \renewcommand{\arraystretch}{2}
+  \[
+    \begin{aligned}
+      (\Sigma_x): \left\{\begin{tabular}{l}
+          $\pdv{F}{x} + \pdv{F}{y}\dv{y}{x} + \pdv{F}{z}\dv{z}{x} = 0$ \\
+          $\pdv{G}{x} + \pdv{G}{y}\dv{y}{x} + \pdv{G}{z}\dv{z}{x} = 0$
+        \end{tabular}
+      \right.
+    \end{aligned}
+  \]
+\end{rem}
+
+\subsubsection{2η περίπτωση}
+
+Έστω το σύστημα εξισώσεων $(\Sigma):
+\begin{cases}
+  F(x,y,z,w) = 0  \\
+  G(x,y,z,w) = 0
+\end{cases}$
+και έστω το σημείο $ P_0(x_0,y_0,z_0,w_0) $, όπου ισχύει:
+\begin{enumerate}[(i)]
+  \item  \begin{tabular}{l}
+      $F(x_0,y_0,z_0,w_0) = 0$ \\
+      $G(x_0,y_0,z_0,w_0) = 0$
+    \end{tabular}
+  \item Οι συναρτήσεις $ F, G $ είναι $ C^{1} $ τάξης 
+  \item $ \eval{\pdv{(F,G)}{(z,w)}}_{P_0} \neq 0 $ 
+\end{enumerate}
+τότε υπάρχουν μοναδικές συναρτήσεις $ z = z(x,y) $ και $ w = w(x,y) $ τάξης 
+$ C^{1} $ τέτοιες ώστε:
+\begin{myitemize}
+  \item \begin{tabular}{l}
+      $ z_0 = z(x_0,y_0) $ \\
+      $ w_0 = w(x_0,y_0) $
+    \end{tabular}
+  \item \begin{tabular}{l}
+      $ F(x,y,z(x,y), w(x,y) = 0 $ \\
+      $ G(x,y,z(x,y), w(x,y)) = 0 $
+    \end{tabular}
+  \item $ \pdv{z}{x} = - \frac{\pdv{(F,G)}{(x,w)}}{\pdv{(F,G)}{(x,w)}} $, 
+    \; $ \pdv{z}{y} = - \frac{\pdv{(F,G)}{(y,w)}}{\pdv{(F,G)}{(z,w)}} $, 
+    \; $ \pdv{w}{x} = - \frac{\pdv{(F,G)}{(z,x)}}{\pdv{(F,G)}{(z,w)}} $ και 
+    $ \pdv{w}{y} = - \frac{\pdv{(F,G)}{(z,y)}}{\pdv{(F,G)}{(z,w)}} $
+\end{myitemize}
+
+\begin{rem}
+  Οι παραπάνω τύποι για τις τιμές των μερικών παραγώγων 
+  $ \pdv{z}{x}, \pdv{z}{y}, \pdv{w}{x}, \pdv{w}{y} $ προκύπτουν ως λύσεις των 
+  παρακάτω $ 2 \times 2 $ γραμμικών συστημάτων τα οποία προκύπτουν με παραγώγιση 
+  των εξισώσεων του συστήματος $ (\Sigma) $, ως προς $x$ και $y$ αντίστοιχα.
+  \renewcommand{\arraystretch}{2}
+  \[
+    \begin{aligned}
+      (\Sigma_x): 
+      \left\{\begin{tabular}{l}
+          $\pdv{F}{x} + \pdv{F}{z}\pdv{z}{x} + \pdv{F}{w}\pdv{w}{x} = 0$ \\
+          $\pdv{G}{x} + \pdv{G}{z}\pdv{z}{x} + \pdv{G}{w}\pdv{w}{x} = 0$
+        \end{tabular}
+      \right.  &\quad \text{και} \quad& (\Sigma_y): 
+      \left\{\begin{tabular}{l}
+          $\pdv{F}{y} + \pdv{F}{z}\pdv{z}{y} + \pdv{F}{w}\pdv{w}{y} = 0$ \\
+          $\pdv{G}{y} + \pdv{G}{z}\pdv{z}{y} + \pdv{G}{w}\pdv{w}{y} = 0$
+        \end{tabular}
+      \right.
+    \end{aligned}
+  \]
+\end{rem}
+
+
+
+
+
+\end{document}

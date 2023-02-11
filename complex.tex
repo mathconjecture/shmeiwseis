@@ -84,18 +84,33 @@
   μιγαδικού $z$.  
   % Επίσης στο σημείο $M(a,b)$ και άρα και στον μιγαδικό αριθμό $z$ 
   % αντιστοιχίζουμε το διάνυσμα θέσης $\vec{OM}$.
-  \[
+
+  \begin{center}
     \begin{tikzpicture}
       \draw[-stealth] (0,0) coordinate (O) -- (2.2,0) node[right] {$x$} ;
       \node at (O) [left] {$O$} ;
       \draw[-stealth] (0,0) -- (0,2.2) node[left] {$y$} ;
       \coordinate (p) at (1.4,1.4) ;
       \fill[Col1] (p) node[above right,font=\small,xshift=-5pt] {$z=a+bi$} 
-        node [right,Col2,yshift=-5pt,font=\small] {$M(a,b)$} circle (1pt) ;
+        node [right,Col2,yshift=-5pt,font=\small] {$M(a,b)$} circle (1.5pt) ;
       \draw[dashed,Col2] (O|-p) node[left]{$b$} -- (p) -- (p|-O) 
         node[below]{$a$} ;
     \end{tikzpicture}
-  \]
+    \hfill
+    \begin{tikzpicture}
+      \draw[-stealth] (0,0) coordinate (O) -- (2.2,0) node[right] {$x$} ;
+      \node at (O) [left] {$O$} ;
+      \draw[-stealth] (0,0) -- (0,2.2) node[left] {$y$} ;
+      \coordinate (p) at (1.8,1.4) ;
+      \coordinate (q) at (0.8,0.6) ;
+      \fill[Col1] (p) node[above,font=\small,xshift=-5pt] {$z_{1}=a_{1}+b_{1}i$} 
+        circle (1.5pt) ;
+      \fill[Col1] (q) node[below,font=\small,xshift=10pt] {$z_{2}=a_{2}+b_{2}i$} 
+        circle (1.5pt) ;
+      \draw (p) -- (q) ;
+      \node (r) at (2,0) {$\phantom{a}$} ;
+    \end{tikzpicture}
+  \end{center}
 }{
   \subsection*{Μέτρο Μιγαδικών}
   Ονομάζουμε \textcolor{Col1}{μέτρο} ενός μιγαδικού αριθμού $ z=a+bi $, και το 
@@ -111,7 +126,7 @@
       \node at (O) [left] {$O$} ;
       \draw[-stealth] (0,0) -- (0,2.2) node[left] {$y$} ;
       \coordinate (p) at (1.4,1.4) ;
-      \fill (p) node[above right,font=\small,xshift=-5pt] {$z=a+bi$} circle (1pt) ;
+      \fill (p) node[above right,font=\small,xshift=-5pt] {$z=a+bi$} circle (1.5pt) ;
       \draw[dashed,Col2] (O|-p) node[left]{$b$} -- (p) -- (p|-O) node[below]{$a$} ;
       \draw (O) -- node[above left,xshift=3pt,Col1] {$\abs{z}$} (p) ;
       \draw[Col2] (O-|p)++(0,0.25) -- ++(-0.25,0) -- ++ (0,-0.25) ; 
@@ -209,8 +224,8 @@
       \draw[-stealth] (0,-2) -- (0,2) node[left] {$y$} ;
       \coordinate (p) at (1.2,1.2) ;
       \coordinate (q) at (-1.2,-1.2) ;
-      \fill (p) node[above right,font=\small,xshift=-5pt] {$z=a+bi$} circle (1pt) ;
-      \fill[Col1] (q) node[below,font=\small,Col1] {$z=-a-bi$} circle (1pt) ;
+      \fill (p) node[above right,font=\small,xshift=-5pt] {$z=a+bi$} circle (1.5pt) ;
+      \fill[Col1] (q) node[below,font=\small,Col1] {$z=-a-bi$} circle (1.5pt) ;
       \draw[dashed,Col2] (O|-p) node[left]{$b$} -- (p) -- (p|-O) node[below]{$a$} ;
       \draw[Col2] (O-|p)++(0,0.25) -- ++(-0.25,0) -- ++ (0,-0.25) ; 
       \draw[dashed,Col2] (O|-q) node[right]{$-b$} -- (q) -- (q|-O) node[above]{$-a$} ;
@@ -228,8 +243,8 @@
       \draw[-stealth] (0,-2) -- (0,2) node[left] {$y$} ;
       \coordinate (p) at (1.2,1.2) ;
       \coordinate (q) at (1.2,-1.2) ;
-      \fill (p) node[above right,font=\small,xshift=-5pt] {$z=a+bi$} circle (1pt) ;
-      \fill[Col1] (q) node[below,font=\small,Col1] {$z=a-bi$} circle (1pt) ;
+      \fill (p) node[above right,font=\small,xshift=-5pt] {$z=a+bi$} circle (1.5pt) ;
+      \fill[Col1] (q) node[below,font=\small,Col1] {$z=a-bi$} circle (1.5pt) ;
       \draw[dashed,Col2] (O|-p) node[left]{$b$} -- (p) -- (p|-O) node[below right]{$a$} ;
       \draw[dashed,Col2] (O|-q) node[left]{$-b$} -- (q) -- (q|-O) 
         node[below right]{$a$} ;
@@ -354,14 +369,14 @@
 
 \section*{Πολική μορφή Μιγαδικού αριθμού}
 
-\InsertBoxL{4}{\parbox[b][4.5\baselineskip][c]{0.21\textwidth}{
+\InsertBoxL{4}{\parbox[b][5.5\baselineskip][c]{0.21\textwidth}{
     \begin{tikzpicture}
       \path[-stealth] (0,0) coordinate (O) -- (2.2,0) node[right] (x) {$x$} ;
       \node at (O) [left] {$O$} ;
       \draw[-stealth] (0,0) -- (0,2.2) node[left] {$y$} ;
       \coordinate (p) at (1.4,1.4) ;
       \fill[Col1] (p) node[above right,font=\small,xshift=-5pt] {$z=a+bi$} 
-        node [right,Col2,yshift=-5pt,font=\small] {$M(a,b)$} circle (1pt) ;
+        node [right,Col2,yshift=-5pt,font=\small] {$M(a,b)$} circle (1.5pt) ;
       \draw[dashed,Col2] (O|-p) node[left]{$b$} -- (p) -- (p|-O) 
         node[below]{$a$} ;
       \draw (0) -- node[left] {$r$} (p) pic[draw,fill=Col1!55,->,>=stealth,"$\theta$",
@@ -469,7 +484,7 @@
         \fill (p) node[above=5pt,font=\small,xshift=-5pt,Col2] {$z=-1+i$} 
           circle (1.5pt) ;
         \draw (O) --  (p) node[left,Col1] {$M$} ;
-        \fill pic[draw,fill=Col1!55,-latex,opacity=0.7,angle radius=11pt] 
+        \fill pic[draw,fill=Col1!55,-latex,opacity=0.7,angle radius=11.5pt] 
           {angle=x--0--p} ;
         \node[fill=Col2!25] at (0.5,0.7) [right,draw,inner sep=2pt] {$\Arg= 3\pi /4$} ;
       \end{tikzpicture}
@@ -484,7 +499,7 @@
         \fill (p) node[below=5pt,font=\small,xshift=-5pt,Col2] {$z=-1-i$} 
           circle (1.5pt) ;
         \draw (O) --  (p) node[left,Col1] {$M$} ;
-        \fill pic[draw,fill=Col1!55,-latex,opacity=0.7,angle radius=11pt,latex-] 
+        \fill pic[draw,fill=Col1!55,-latex,opacity=0.7,angle radius=11.5pt,latex-] 
           {angle=p--0--x} ;
         \node[fill=Col2!25] at (-0.5,0.7) [left,draw,inner sep=2pt] 
           {$\Arg= -3\pi /4$} ;

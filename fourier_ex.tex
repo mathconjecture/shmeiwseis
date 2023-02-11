@@ -29,7 +29,7 @@
 \item {}
   \begin{enumerate}[i)]
     \item 
-      \begin{minipage}[t]{0.65\textwidth}
+      \begin{minipage}[t]{0.57\textwidth}
         \begin{myitemize}
           \item $f$ συνεχής στο $ (0,2 \pi) $, με $ f(0^{+}) = 0 $ και 
             $ f(2 \pi ^{-}) = 2 \pi $ \hfill\tikzmark{a}
@@ -53,8 +53,8 @@
         \frac{\sin{(nt)}}{n} \,{dt}\right) \\ 
               &= \frac{1}{\pi} \left(0 - \left[- \frac{\cos{(nt)}}{n^{2}}\right]_{0}^{2 
                 \pi}\right) = \frac{1}{\pi} \left(\frac{\cos{(2 \pi n)}}{n^{2}} - 
-                \frac{1}{n^{2}}\right) = \frac{1}{\pi} \left(\frac{1}{n^{2}} - 
-              \frac{1}{n^{2}}\right) = 0
+                  \frac{1}{n^{2}}\right) = \frac{1}{\pi} \left(\frac{1}{n^{2}} - 
+                \frac{1}{n^{2}}\right) = 0
       \end{align*} 
       \begin{align*}
         b_{n} &= \frac{1}{\pi} \int _{0}^{2 \pi} t \sin{(nt)} \,{dt} = \frac{1}{\pi} 
@@ -80,7 +80,7 @@
         \pi - 2 \sum_{n=1}^{\infty} \frac{1}{n} \cdot 
         \begin{cases}
           1, & n=1,5,9,13,\ldots \\
-          0, &n=0.2,4,6,8,\ldots \\
+          0, &n=0,2,4,6,8,\ldots \\
           -1, & n=3,7,11,15,\ldots 
         \end{cases} \Leftrightarrow  
         \frac{\pi}{2} = \pi - 2 \sum_{\substack{n=1 \\ (n \; \text{περιτ.})}}^{\infty}
@@ -88,15 +88,16 @@
       \]
       Οπότε, θέτοντας $ n=2k-1, \; k=1,2,3,\ldots $, έχουμε ότι
       \[
-        \frac{\pi}{2} = \pi - 2 \sum_{k=1}^{\infty} \frac{(-1)^{k-1}}{2k-1} = 
-        \pi -2 \sum_{k=1}^{\infty} \frac{(-1)^{k-1}}{2k-1} \Leftrightarrow
-        \sum_{k=1}^{\infty} \frac{(-1)^{k-1}}{2k-1} = \frac{\pi}{4}
-      \]
-      Δηλαδή, ισοδύναμα 
-      \[
-        \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{2n-1} = \frac{\pi}{4}  
-      \]
-  \end{enumerate}
+        \frac{\pi}{2} = \pi - 2 \sum_{k=1}^{\infty} 
+        \frac{(-1)^{\frac{(2k-1)-1}{2}}}{2k-1} = \pi -2 
+          \sum_{k=1}^{\infty} \frac{(-1)^{k-1}}{2k-1} \Leftrightarrow
+          \sum_{k=1}^{\infty} \frac{(-1)^{k-1}}{2k-1} = \frac{\pi}{4}
+        \]
+        Δηλαδή, ισοδύναμα 
+        \[
+          \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{2n-1} = \frac{\pi}{4}  
+        \]
+    \end{enumerate}
 \end{solution}
 
 \begin{mybox3}
@@ -107,8 +108,8 @@
       \item Να βρείτε τη \textbf{συνημιτονική} σειρά Fourier της συνάρτησης 
         $ f(t)=t^{2} $ με $ 0 \leq t \leq 2 $.
       \item Να δείξετε ότι $ \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n^{2}} = 
-        \frac{n^{2}}{12} $, δηλαδή ότι $ 1 - \frac{1}{4} + \frac{1}{9} - \frac{1}{16}
-        + \cdots = \frac{n^{2}}{12} $.
+        \frac{\pi ^{2}}{12} $, δηλαδή ότι $ 1 - \frac{1}{4} + \frac{1}{9} - \frac{1}{16}
+        + \cdots = \frac{\pi ^{2}}{12} $.
       \item Να υπολογίσετε το άθροισμα $ \sum_{n=1}^{\infty} \frac{1}{n^{2}} $. 
     \end{enumerate}
   \end{example} 
@@ -124,7 +125,7 @@
       $ \mathbb{R} $ με $ T=4 \Leftrightarrow 2L=4 \Leftrightarrow \boxed{L=2} $.
 
       \vspace{\baselineskip}
-      \begin{minipage}[t]{0.72\textwidth}
+      \begin{minipage}[t]{0.67\textwidth}
         \begin{myitemize}
           \item $f$ συνεχής στο $ [-2,2] $ \hfill \tikzmark{a}
           \item $ f'(t)=2t $ συνεχής στο $ (-2,2) $ με  και $ f'(-2^{+}) = -4 $ και 
@@ -191,7 +192,7 @@
         $ f(t)=t $ με $ 0 \leq t \leq 2 $.
       \item Να δείξετε ότι $ \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{2n-1} = 
         \frac{\pi}{4} $, δηλαδή ότι $ 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7}
-        + \cdots = \frac{n^{2}}{12} $.
+        + \cdots = \frac{\pi}{4} $.
     \end{enumerate}
   \end{example}
 \end{mybox3}
@@ -207,7 +208,7 @@
       $ \mathbb{R} $ με $ T=4 \Leftrightarrow 2L=4 \Leftrightarrow \boxed{L=2} $.
 
       \vspace{\baselineskip}
-      \begin{minipage}[t]{0.65\textwidth}
+      \begin{minipage}[t]{0.58\textwidth}
         \begin{myitemize}
           \item $f$ συνεχής στο $ [-2,2] $ \hfill \tikzmark{a}
           \item $ f'(t)=1 $ συνεχής στο $ (-2,2) $ και $ f'(-2^{+}) = 
@@ -237,7 +238,7 @@
       \] 
       \[
         \frac{f(-2^{+})+ f(2^{-})}{2} = \frac{-2 + 2}{2} = 0 = \frac{4}{\pi}
-        \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n} \sin{0}, \quad \text{για} t = -2,2
+        \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n} \sin{0}, \quad \text{για } t = -2,2
       \] 
     \item 
       Για $ t=1 $ έχουμε
@@ -247,14 +248,14 @@
         1 = \frac{4}{\pi} \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n} \cdot 
         \begin{cases}
           1, & n=1,5,9,13,\ldots \\
-          0, &n=0.2,4,6,8,\ldots \\
+          0, &n=0,2,4,6,8,\ldots \\
           -1, & n=3,7,11,15,\ldots 
         \end{cases}
       \] 
       \[
         1 = \frac{4}{\pi} \sum_{\substack{n=1 \\ n \; \text{περιτ.}}}^{\infty} 
         \frac{(-1)^{n+1}}{n} (-1)^{\frac{n-1}{2}} \Leftrightarrow 1 = \frac{4}{\pi}
-        \sum_{n=1}^{\infty} \frac{(-1)^{2n-1+1}}{2n-1} (-1)^{n-1}
+        \sum_{n=1}^{\infty} \frac{(-1)^{2n}}{2n-1} (-1)^{n-1}
         \Leftrightarrow 
         \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{2n-1} = \frac{\pi}{4}
       \] 
@@ -418,10 +419,10 @@
   \begin{gather*}
     \int _{-L}^{L} f^{2}(x) \,{dx} 
     = \frac{a_{0}}{2} \underbrace{\int _{-L}^{L} f(x) \,{dx}}_{a_{0}L} + 
-    \sum_{n=1}^{\infty} \left[a_{n} \underbrace{\int _{-L}^{L} f(x) 
+    \sum_{n=1}^{\infty} \Biggl[a_{n} \underbrace{\int _{-L}^{L} f(x) 
       \cos{\left(\frac{n \pi x}{L}\right)} \,{dx}}_{a_{n}L} + b_{n} 
       \underbrace{\int _{-L}^{L} f(x) \sin{\left(\frac{n \pi x}{L}\right)} 
-    \,{dx}}_{b_{n}L} \right] \Leftrightarrow \\ 
+    \,{dx}}_{b_{n}L} \ \Biggr] \Leftrightarrow \\ 
     \int _{-L}^{L} f^{2}(x) \,{dx}  = \frac{a_{0}^{2}}{2} L + 
     \sum_{n=1}^{\infty} (a_{n}^{2}L+b_{n}^{2}L) \Leftrightarrow \\
     \frac{1}{L} \int _{-L}^{L} f^{2}(x) \,{dx}  = \frac{a_{0}^{2}}{2}
@@ -429,8 +430,109 @@
   \end{gather*}
 \end{solution}
 
+\enlargethispage*{\baselineskip}
+
+\begin{mybox3}
+  \begin{example}
+  \item{}
+  \item{}
+    \begin{enumerate}[i)]
+      \item Να βρείτε την \textbf{συνημιτονική} σειρά Fourier της συνάρτησης 
+        $ f(t)=t $ με $ 0 < t < 2 $.
+      \item Να δείξετε ότι $ \sum_{n=1}^{\infty} \frac{1}{(2n-1)^{4}} = 
+        \frac{\pi^{4}}{96} $, δηλαδή ότι $ 1 + \frac{1}{3^{4}} + \frac{1}{5^{4}} +
+        \frac{1}{7^{4}} + \cdots = \frac{\pi ^{4}}{96} $.
+      \item Να δείξετε ότι $ \sum_{n=1}^{\infty} \frac{1}{n^{4}} = 
+        \frac{\pi^{4}}{90} $, δηλαδή ότι $ 1 + \frac{1}{2^{4}} + \frac{1}{3^{4}} +
+        \frac{1}{4^{4}} + \cdots = \frac{\pi ^{4}}{90} $.
+    \end{enumerate}
+  \end{example}
+\end{mybox3}
+\begin{solution}
+\item {}
+  \begin{enumerate}[i)]
+    \item 
+      Επεκτείνουμε την $f$ στο διάστημα $ [-2,0] $, θέτοντας $ f(t)=-t, \; 
+      \forall t \in [-2,0] $ ώστε να είναι \textbf{άρτια} στο $ [-2.2] $.
+
+      Στη συνέχεια επεκτείνουμε κατάλληλα την $f$, ώστε ναι είναι 
+      \textbf{περιοδική} στο 
+      $ \mathbb{R} $ με $ T=4 \Leftrightarrow 2L=4 \Leftrightarrow \boxed{L=2} $.
+
+      \vspace{\baselineskip}
+      \begin{minipage}[t]{0.58\textwidth}
+        \begin{myitemize}
+          \item $f$ συνεχής στο $ [-2,2] $ \hfill \tikzmark{a}
+          \item $ f'(t)=1 $ συνεχής στο $ (-2,2) $ και $ f'(-2^{+}) = 
+            f'(2^{-}) = 1 $ \hfill \tikzmark{b}
+        \end{myitemize}
+        \mybrace{a}{b}[$f$ τμηματικά λεία στο $[-2,2]$]
+      \end{minipage}
+
+      Έχουμε ότι $ b_{n}=0 , \; \forall n \in \mathbb{N} $, 
+      αφού $f$ άρτια.  
+      \begin{align*}
+        a_{0} &= \frac{2}{2} \int _{0}^{2} t \,{dt} = 
+        \left[\frac{t^{2}}{2}\right]_{0}^{2} = 2
+      \end{align*}
+      \begin{align*}
+        a_{n} &= \frac{2}{2} \int _{0}^{2} t \cos{\left(\frac{n \pi t}{2}\right)}
+        \,{dt} = \int _{0}^{2} t \left(
+        \frac{\sin{(\frac{n \pi t}{2})}}{\frac{n \pi}{2}}\right)' \,{dt} =
+        \left(\left[ \frac{t \sin{(\frac{n \pi t}{2})}}{\frac{n \pi}{2}}
+          \right]_{0}^{2} - \frac{2}{n \pi}\int _{0}^{2}
+        \sin{\left(\frac{n \pi t}{2}\right)} \,{dt}\right) \\
+              &= -\frac{2}{n \pi}  
+              \left[\frac{-\cos{(\frac{n \pi t}{2})}}{\frac{n \pi}{2}}
+              \right]_{0}^{2} = \frac{4}{n^{2} \pi^{2}} (\cos{(n \pi)} - 1) = 
+              \frac{4}{n^{2} \pi^{2}} \bigl((-1)^{n}- 1\bigr) = 
+              \begin{cases}
+                \frac{4}{n^{2} \pi ^{2}} (-2) , & \text{$n$ περιττός} \\
+                0, & \text{$n$ άρτιος}
+              \end{cases}
+      \end{align*}
+      Επομένως, η σειρά Fourier
+      \[
+        t = 1 - \frac{8}{\pi^{2}} \sum_{n=1}^{\infty} \frac{1}{(2n-1)^{2}}
+        \cos{\left(\frac{(2n-1) \pi t}{2}\right)}, 
+        \quad \forall t \in \mathbb{R} 
+      \] 
+    \item Από την ταυτότητα Parseval έχουμε
+      \[
+        \frac{1}{2} \int _{-2}^{2} x^{2} \,{dx} = \frac{2^{2}}{2} +
+        \sum_{n=1}^{\infty} \frac{16}{n^{4} \pi ^{4}} (\cos{{ (n \pi )-1 }})^{2} 
+        \Leftrightarrow \frac{8}{3} = 2 + \frac{16}{\pi ^{4}}
+        \sum_{\substack{n=1 \\ n \; \text{περ.}}}^{\infty} 
+        \frac{4}{n^{4}}  
+        \Leftrightarrow \frac{2}{3} = \frac{64}{\pi ^{4}} \sum_{n=1}^{\infty}
+        \frac{1}{(2n-1)^{4}} 
+      \] 
+      άρα 
+      \[
+        \sum_{n=1}^{\infty} \frac{1}{(2n-1)^{4}} = \frac{\pi^{4}}{96}
+      \]
+    \item 
+      Για να βρούμε το άθροισμα 
+      $ S = \sum_{n=1}^{\infty} \frac{1}{n^{4}} = \frac{1}{1^{4}} + \frac{1}{2^{4}} +
+      \frac{1}{3{4}} + \cdots $, έχουμε ότι 
+      \[
+        S =   \frac{1}{1^{4}} + \frac{1}{2^{4}} + \frac{1}{3^{4}} + \cdots =
+        \Bigl(\frac{1}{1^{4}} + \frac{1}{3^{4}} + \frac{1}{5^{4}} + \cdots\Bigr) +
+        \Bigl(\frac{1}{2^{4}} + \frac{1}{4^{4}} + \frac{1}{6^{4}} + \cdots\Bigr) 
+        = \frac{\pi ^{4}}{96} + 
+        \frac{1}{2^{4}} \Bigl(\frac{1}{1^{4}} + \frac{1}{2^{4}} + \frac{1}{3^{4}} +
+        \cdots\Bigr) 
+      \]
+      Άρα
+      \[
+      S = \frac{\pi ^{4}}{96} + \frac{1}{2^{4}} S \Rightarrow \frac{15}{16}S
+      = \frac{\pi ^{4}}{96} \Rightarrow S = \frac{\pi ^{4}}{90}
+      \]
+  \end{enumerate}
+\end{solution} 
 
 
-%todo να γράψω παράδειγμα με Parseval δες επιστημη υλικων
 
 
+
+\end{document}

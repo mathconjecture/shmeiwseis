@@ -1,0 +1,144 @@
+\documentclass[a4paper,table]{report}
+\input{preamble.tex}
+\input{definitions.tex}
+\input{myboxes.tex}
+
+\geometry{left=20.63mm,right=20.63mm,top=30.25mm,bottom=20.25mm,footskip=14.16mm,headsep=24.16mm}
+
+
+\let\vec\mathbf
+
+\pagestyle{vangelis}
+
+\begin{document}
+
+
+\chapter{Εσωτερικό Γινόμενο}
+
+\section{Ορισμός του Εσωτερικού Γινομένου}
+
+\begin{dfn}
+  Έστω $V$ ένας διανυσματικός χώρος επί του σώματος $\mathbb{K}$, όπου $ \mathbb{K} =
+  \mathbb{R} $ ή $ \mathbb{C} $. \textcolor{Col1}{Εσωτερικό γινόμενο}, στο διανυσματικό 
+  χώρο $V$ ονομάζεται μια απεικόνιση 
+  \[
+    \langle \cdot , \cdot \rangle \colon V \times V \to \mathbb{K}
+  \] 
+  η οποία, $ \forall \mathbf{u}, \mathbf{v}, \mathbf{w} \in V $ και $ \forall a,b \in
+  \mathbb{K} $ ικανοποιεί τα παρακάτω αξιώματα:
+    \begin{description}
+      \item [Γραμμική Ιδιότητα:] 
+        \begin{enumerate}[(i)]
+          \item []
+          \item $ \langle \mathbf{u} + \mathbf{v}, \mathbf{w}\rangle = \langle 
+            \mathbf{u}, \mathbf{w}\rangle + \langle \mathbf{v}, \mathbf{w}\rangle $
+          \item $ \langle a \mathbf{u}, \mathbf{v}\rangle = a \langle \mathbf{u},
+            \mathbf{v}\rangle $
+        \end{enumerate}
+      \item [Συμμετρική Ιδιότητα:] $ \langle \mathbf{u}, \mathbf{v}\rangle = \langle
+        \mathbf{v} , \mathbf{u}\rangle^{*}, 
+        \quad \forall \mathbf{u}, \mathbf{v} \in V$
+      \item [Θετικά Ορισμένη Ιδιότητα] 
+        $ \langle \mathbf{u}, \mathbf{u}\rangle \geq 0 $ και $ \langle \mathbf{u},
+        \mathbf{u}\rangle = 0 \Leftrightarrow \mathbf{u} = \mathbf{0},
+        \quad \forall \mathbf{u} \in V $
+    \end{description}
+\end{dfn}
+
+\begin{rem}
+\item {}
+  \begin{myitemize}
+    \item Με $ a^{*} $ συμβολίζουμε το \textbf{συζυγή}\footnote{Αν $ z=a+ib 
+        \in \mathbb{C} $, τότε ο \textcolor{Col1}{συζυγής} του $ z $ είναι ο μιγαδικός 
+      αριθμός $ z^{*} = a- ib $.} μιγαδικό αριθμό του $ a \in \mathbb{C} $. 
+      Οπότε στην περίπτωση όπου $ \mathbb{K}= \mathbb{R} $, η σχέση $ \langle
+      \mathbf{u}, \mathbf{v}\rangle = \langle \mathbf{v}, \mathbf{u}\rangle ^{*} $ 
+      γίνεται $ \langle \mathbf{u}, \mathbf{v}\rangle = \langle \mathbf{v}, 
+      \mathbf{u}\rangle $.
+    \item Αν ορίζεται τέτοια απεικόνιση σε ένα διανυσματικό χώρο $V$, τότε ο χώρος 
+      $V$ ονομάζεται \textcolor{Col1}{χώρος εσωτερικού γινομένου}, 
+      \textbf{πραγματικός} αν $ \mathbb{K}= \mathbb{R} $ και \textbf{μιγαδικός} αν 
+      $ \mathbb{K}= \mathbb{C} $.
+    \item Αν επιπλέον $ \dim(V) < \infty $ τότε ο χώρος $ V $ ονομάζεται
+      \textcolor{Col1}{Ευκλείδιος} αν $ \mathbb{K} = \mathbb{R} $ και
+      \textcolor{Col1}{Μοναδιαίος} (Unitary) αν $ \mathbb{K}= \mathbb{C} $.
+  \end{myitemize}
+\end{rem}
+
+\begin{rem}
+  Στην περίπτωση όπου $ \mathbb{K}= \mathbb{C} $, τότε ένα εσωτερικό γινόμενο δεν μπορεί
+  να είναι γραμμική απεικόνιση και ως προς τη 2η μεταβλητή, γιατί τότε, αν 
+  $ \mathbf{u} \in V $, και $ \mathbf{u} \neq \mathbf{0} $ θα είχαμε 
+  $ \langle \mathbf{u}, \mathbf{u}\rangle > 0 $, όμως $ \langle i \mathbf{u}, i 
+  \mathbf{u}\rangle = i^{2} \langle \mathbf{u}, \mathbf{u}\rangle = - \langle 
+  \mathbf{u}, \mathbf{u}\rangle < 0 $, άτοπο. Αποδεικνύεται όμως ότι 
+  \[
+    \langle \mathbf{u}, \mathbf{v}+ \mathbf{w}\rangle = \langle \mathbf{u},
+    \mathbf{v}\rangle + \langle \mathbf{v}, \mathbf{w}\rangle \quad \text{και} \quad
+    \langle \mathbf{u}, a \mathbf{v}\rangle = a^{*} \langle \mathbf{u}, 
+    \mathbf{v}\rangle 
+  \] 
+  Οι σχέσεις αυτές μπορούν να αντικατασταθούν από τη σχέση 
+  \[
+    \langle \mathbf{u}, a \mathbf{v}+ b \mathbf{w}\rangle = a^{*} \langle \mathbf{u},
+    \mathbf{v}\rangle + b^{*} \langle \mathbf{u}, \mathbf{w}\rangle 
+  \] 
+  Πράγματι, 
+  \begin{align*}
+    \langle \mathbf{u}, a \mathbf{v}+ b \mathbf{w}\rangle 
+    &= \langle a \mathbf{v}+ b
+    \mathbf{w}, \mathbf{u}\rangle ^{*} = \bigl(a \langle \mathbf{v}, \mathbf{u}\rangle + 
+      b \langle \mathbf{w}, \mathbf{u}\rangle\bigr)^{*} = \bigl(a \langle \mathbf{v},
+    \mathbf{u}\rangle\bigr)^{*} + (b \langle \mathbf{w}, \mathbf{u}\rangle)^{*} \\ 
+    &= a^{*} \langle \mathbf{v}, \mathbf{u}\rangle^{*} + b^{*} \langle \mathbf{w},
+    \mathbf{u}\rangle^{*} 
+    = a^{*} \langle \mathbf{u}, \mathbf{v}\rangle + b^{*} \langle \mathbf{u}, 
+    \mathbf{w}\rangle
+  \end{align*} 
+\end{rem}
+
+\begin{rem}
+  Ισχύει ότι $ \langle \mathbf{u}, \vec{0}\rangle = \langle \vec{0},
+  \mathbf{u}\rangle = \vec{0}, \; \forall \mathbf{u} $ καθώς επίσης και ότι 
+  $ \langle \mathbf{u}, \mathbf{u}\rangle \in \mathbb{R}, \; \forall \mathbf{u} $, 
+  αφού 
+  $ \langle \mathbf{u}, \mathbf{u}\rangle = \langle \mathbf{u},
+  \mathbf{u}\rangle^{*}\footnote{Θυμόμαστε ότι $z \in \mathbb{R} \Leftrightarrow
+  z=z^{*} $.} $.
+\end{rem}
+
+
+\section*{Παραδείγματα}
+
+\begin{example}
+    Αν $ V = \mathbb{R}^{n} $ με συντελεστές από το σώμα $ \mathbb{R} $ και 
+      $ \mathbf{u} = (x_{1},\ldots,x_{n}) $, 
+      $ (y_{1},\ldots,y_{n}) \in \mathbb{R}^{n} $,  
+      τότε η πράξη
+      \[
+        \langle \mathbf{u}, \mathbf{v}\rangle = x_{1} y_{1} + x_{2} y_{2} +
+        \cdots + x_{n} y_{n} = \sum_{i=1}^{n} x_{i} y_{i}
+      \]
+      είναι εσωτερικό γινόμενο στον 
+      $ \mathbb{R}^{n} $ και ονομάζεται \textbf{κανονικό} εσωτερικό γινόμενο. 
+      Έτσι, ο $ \mathbb{R}^{n} $ γίνεται \textbf{Ευκλείδιος} χώρος.
+\end{example}
+\begin{example}
+    Αν $ V = \mathbb{C}^{n} $ με συντελεστές από το σώμα $ \mathbb{C} $ και 
+      $ \mathbf{u} = (x_{1},\ldots,x_{n}) $, 
+      $ (y_{1},\ldots,y_{n}) \in \mathbb{R}^{n} $,  
+      τότε η πράξη
+      \[
+        \langle \mathbf{u}, \mathbf{v}\rangle = x_{1} \overline{y_{1}} + x_{2}
+        \overline{y_{2}} + \cdots + x_{n} \overline{y_{n}} = 
+        \sum_{i=1}^{n} x_{i} \overline{y_{i}} 
+      \]
+      είναι εσωτερικό γινόμενο στον 
+      $ \mathbb{C}^{n} $ και ονομάζεται \textbf{κανονικό} εσωτερικό γινόμενο. 
+      Έτσι, ο $ \mathbb{C}^{n} $ γίνεται \textbf{Μοναδιαίος} χώρος.
+\end{example}
+
+%todo να συνεχίσω σημειώσεις για εσωτερικό γινόμενο με παραδείγματα
+
+\end{document}
+
