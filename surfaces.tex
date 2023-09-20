@@ -1,7 +1,10 @@
-\input{preamble.tex}
+\documentclass[a4paper,table]{report}
+\input{preamble_ask.tex}
 \input{definitions.tex}
 \input{tikz.tex}
 \input{myboxes.tex}
+
+\geometry{left=17mm,right=17mm,top=25.00mm,bottom=30.00mm,footskip=24.16mm,headsep=24.16mm}
 
 \everymath{\displaystyle}
 \pagestyle{askhseis}
@@ -13,37 +16,109 @@
 \setcounter{chapter}{1}
 
 \begin{center}
-\minibox{\large \bfseries \textcolor{Col1}{Επιφάνειες}}
+\minibox{\large \bfseries \textcolor{Col1}{Στοιχεία Θεωρίας για το Επιφανειακό
+Ολοκλήρωμα}}
 \end{center}
 
 \vspace{\baselineskip}
 
-\twocolumnsides{
-  \subsection*{Καμπύλες}
-  \begin{myitemize}
-    \item $ y=f(x) $ ή $ x=g(y) $
-    \item $ F(x,y)=0 $ 
-    \item $ r(t) = x(t) \mathbf{i} + y(t) \mathbf{j} + z(t) \mathbf{k} $ 
-  \end{myitemize}
-  }{
-  \subsection*{Επιφάνειες}
-  \begin{myitemize}
-    \item $ z=f(x,y) $ ή $ y=g(x,z) $ ή $ x=h(y,z) $ 
-    \item $ F(x,y,z)=0 $ 
-    \item $ r(u,v) = x(u,v) \mathbf{i} + y(u,v) \mathbf{j} + z(u,v) \mathbf{k} $ 
-  \end{myitemize}
-}
 
+
+\subsection*{Μοναδιαίο Διάνυσμα}
 
 \begin{dfn}
-  Μια επιφάνεια $S$ με διανυσματική παραμετρική μορϕή $ \mathbf{r}(u,v) $, όπου 
-  $ (u,v) \in D \subseteq \mathbb{R}^{2} $, λέγεται:
+  Το \textbf{μοναδιαίο} κάθετο διάνυσμα $ \mathbf{n} $ μιας επιφάνειας $ S $ μπορεί να 
+  προσδιοριστεί από τις παρακάτω σχέσεις, ανάλογα με τον τρόπο περιγραφής της επιφάνειας.
+  \begin{myitemize}
+    \item Αν $ S\colon \mathbf{r}(u,v) = x(u,v)\mathbf{i}+y(u,v)\mathbf{j}+
+      z(u,v)\mathbf{k} $ τότε $ \mathbf{\widehat{n}} = \frac{\mathbf{r_{u}} \times
+      \mathbf{r_{v}}}{\norm{\mathbf{r_{u}} \times \mathbf{r_{v}}}} $ 
+    \item Αν $ S\colon g(x,y,z)=0 $ τότε $ \mathbf{\widehat{n}} = 
+      \frac{\grad g}{\norm{\grad g}} $
+    \item Αν $ S\colon z=z(x,y) $ τότε θέτουμε $ g(x,y,z)=z-z(x,y)=0 $ οπότε
+      $ \mathbf{\widehat{n}} = \frac{\grad g}{\norm{\grad g}} = 
+      \frac{(-z_{x},-z_{y},1)}{\sqrt{1+(z_{x})^{2}+(z_{y})^{2}}} $ 
+    \item Αν $ S\colon y=y(x,z) $ τότε θέτουμε $ g(x,y,z)=y-y(x,z)=0 $ οπότε
+      $ \mathbf{\widehat{n}} = \frac{\grad g}{\norm{\grad g}} = 
+      \frac{(-y_{x},1,-y_{z})}{\sqrt{1+(y_{x})^{2}+(y_{z})^{2}}} $ 
+    \item Αν $ S\colon x=x(y,z) $ τότε θέτουμε $ g(x,y,z)=x-x(y,z)=0 $ οπότε
+      $ \mathbf{\widehat{n}} = \frac{\grad g}{\norm{\grad g}} = 
+      \frac{(1,-x_{y},-x_{z})}{\sqrt{1+(x_{y})^{2}+(x_{z})^{2}}} $ 
+  \end{myitemize}
+\end{dfn}
+
+\begin{rem}
+  Σε κάθε σημείο μίας λείας επιφάνειας, υπάρχουν δύο μοναδιαία διανύσματα, το $
+  \mathbf{\widehat{n}} $ και το $ -\mathbf{\widehat{n}} $.  
+\end{rem}
+
+
+\subsection*{Διαφορικό Στοιχείο}
+ 
+\begin{dfn}
+  Το διαφορικό $ dS $ μιας επιφάνειας $S$ μπορεί να προσδιοριστεί από τις παρακάτω 
+  σχέσεις, ανάλογα με τον τρόπο περιγραφής της επιφάνειας.
+  \begin{myitemize}
+    \item Αν $ S\colon \mathbf{r}(u,v) = x(u,v)\mathbf{i}+y(u,v)\mathbf{j}+z(u,v)\mathbf{k} $ 
+      τότε $ dS = \norm{\mathbf{r_{u}} \times \mathbf{r_{v}}} \, du dv $ 
+    \item Αν $ S\colon g(x,y,z)=0 $ τότε $dS = \frac{\norm{\grad g}}{\abs{\grad g \cdot 
+      \mathbf{p}}}\, dA $ όπου $ \mathbf{p} $ είναι το μοναδιαίο κάθετο διάνυσμα
+      στο επίπεδο κάτω από την $S$, συνήθως $ \mathbf{p} = \mathbf{i} $ 
+      ή $ \mathbf{j} $ ή $ \mathbf{k} $, $ dA $ είναι το στοιχειώδες εμβαδό σε αυτό το
+      επίπεδο και $ \grad(g)\cdot \mathbf{p} \neq 0 $ .  
+    \item Αν $ S\colon z=z(x,y) $ τότε θέτουμε $ g(x,y,z)=z-z(x,y)=0 $ οπότε $ dS =
+      \frac{\norm{\grad g}}{\abs{\grad g \cdot \mathbf{k}}}\, dxdy = 
+      \sqrt{1+(z_{x})^{2}+(z_{y})^{2}} \,dxdy $ 
+    \item Αν $ S\colon y=y(x,x) $ τότε θέτουμε $ g(x,y,z)=y-y(x,z)=0 $ οπότε $ dS =
+      \frac{\norm{\grad g}}{\abs{\grad g \cdot \mathbf{j}}}\, dxdz = 
+      \sqrt{1+(y_{x})^{2}+(y_{z})^{2}} \,dxdz $ 
+    \item Αν $ S\colon x=x(y,z) $ τότε θέτουμε $ g(x,y,z)=x-x(y,z)=0 $ οπότε $ dS =
+      \frac{\norm{\grad g}}{\abs{\grad g \cdot \mathbf{i}}}\, dydz = 
+      \sqrt{1+(x_{y})^{2}+(x_{z})^{2}} \,dydz $ 
+  \end{myitemize}
+\end{dfn}
+
+
+\subsection*{Διανυσματικό Διαφορικό Στοιχείο}
+
+\begin{dfn}
+  Για το διανυσματικό διαφορικό μιας επιφάνειας $S$ ισχύει $ \mathbf{dS} =
+  \mathbf{\widehat{n}}\,dS $, οπότε προσδιορίζεται από τις παρακάτω σχέσεις, ανάλογα με τον τρόπο περιγραφής της επιφάνειας.
+  \begin{myitemize}
+    \item Αν $ S\colon \mathbf{r}(u,v) = x(u,v)\mathbf{i}+y(u,v)\mathbf{j}+z(u,v)\mathbf{k} $ 
+      τότε $ \mathbf{dS} = \mathbf{\widehat{n}}\, dS = \frac{\mathbf{r_{u}} \times 
+      \mathbf{r_{v}}}{\norm{\cancel{\mathbf{r_{u}} \times \mathbf{r_{v}}}}}
+      \norm{\cancel{\mathbf{r_{u}} \times \mathbf{r_{v}}}} \, du dv = (\mathbf{r_{u}} \times 
+      \mathbf{r_{v}}) \,du dv $ 
+    \item Αν $ S\colon g(x,y,z)=0 $ τότε $ \mathbf{dS} = \mathbf{\widehat{n}}\, dS = 
+      \frac{\grad g}{\norm{\cancel{\grad g}}} \frac{\norm{\cancel{\grad g}}}{\abs{\grad g 
+      \cdot \mathbf{p}}}\, dA = \frac{\grad g}{\abs{\grad g \cdot \mathbf{p}}}\, dA$
+    \item Αν $ S\colon z=z(x,y) $ τότε θέτουμε $ g(x,y,z)=z-z(x,y)=0 \Rightarrow \mathbf{dS} 
+      = \frac{\grad g}{\abs{\grad g \cdot \mathbf{k}}}\, dxdy = (-z_{x},-z_{y},1) 
+      \, dx dy $
+    \item Αν $ S\colon y=y(x,z) $ τότε θέτουμε $ g(x,y,z)=z-z(x,y)=0 \Rightarrow \mathbf{dS} 
+      = \frac{\grad g}{\abs{\grad g \cdot \mathbf{j}}}\, dxdz = (-y_{x},1,-y_{z}) 
+      \, dx dz $
+    \item Αν $ S\colon x=x(y,z) $ τότε θέτουμε $ g(x,y,z)=z-z(x,y)=0 \Rightarrow \mathbf{dS} 
+      = \frac{\grad g}{\abs{\grad g \cdot \mathbf{i}}}\, dydz = (1,-x_{y},-x_{y}) 
+      \, dy dz $
+  \end{myitemize}
+\end{dfn}
+
+
+\subsection*{Διάφοροι Ορισμοί}
+ 
+\begin{dfn}
+  Μια επιφάνεια $S$ με διανυσματική παραμετρική μορϕή 
+  $ \mathbf{r} =  \mathbf{r}(u,v) $, όπου $ (u,v) \in D \subseteq 
+  \mathbb{R}^{2} $, λέγεται:
   \begin{myitemize}
     \item \textbf{απλή} αν η συνάρτηση $ \mathbf{r}(u,v) $ είναι 1-1 στο $D$ και άρα
       η επιφάνεια $S$ δεν τέμνει τον εαυτό της.
     \item \textbf{λεία} αν υπάρχουν και είναι συνεχείς οι μερικές παράγωγοι 
       $ \mathbf{r_{u}}$ και $ \mathbf{r_{v}} $ και ισχύει 
-      $ \mathbf{r_{u}} \times \mathbf{r_{v}} \neq \mathbf{0} $.
+      $ \mathbf{r_{u}} \times \mathbf{r_{v}} \neq \mathbf{0}, \; \forall (u,v) 
+      \in D \subseteq \mathbb{R}^{2} $.
     \item \textbf{κανονική} αν είναι απλή και λεία. 
     \item \textbf{προσανατολίσιμη} (ή δίπλευρη) όταν κινούμενοι συνέχεια σε αυτή δεν 
       είναι δυνατόν να μεταβούμε από τη μία πλευρά της στην άλλη χωρίς να συναντήσουμε 
@@ -53,62 +128,5 @@
 \end{dfn}
 
 
-\section*{Μοναδιαίο Διάνυσμα}
-
-\begin{dfn}
-  Το μοναδιαίο κάθετο διάνυσμα $ \mathbf{n} $ μιας επιφάνειας $ S $ μπορεί να 
-  προσδιοριστεί από τις παρακάτω σχέσεις, ανάλογα με τον τρόπο περιγραφής της επιφάνειας.
-  \begin{myitemize}
-    \item Αν $ \mathbf{r}(u,v) = x(u,v)\mathbf{i}+y(u,v)\mathbf{j}+z(u,v)\mathbf{k} $ 
-      τότε $ \mathbf{\widehat{n}} = \frac{\mathbf{r_{u}} \times
-      \mathbf{r_{v}}}{\norm{\mathbf{r_{u}} \times \mathbf{r_{v}}}} $ 
-    \item Αν $ g(x,y,z)=0 $ τότε $ \mathbf{\widehat{n}} = 
-      \frac{\grad g}{\norm{\grad g}} $
-    \item Αν $ z=z(x,y) $ τότε θέτουμε $ g(x,y,z)=z-z(x,y)=0 \Rightarrow 
-      \mathbf{\widehat{n}} = \frac{\grad g}{\norm{\grad g}} = 
-      \frac{(-z_{x},-z_{y},1)}{\sqrt{1+(z_{x})^{2}+(z_{y})^{2}}} $ 
-  \end{myitemize}
-\end{dfn}
-
-\begin{rem}
-  Σε κάθε ομαλό σημείο μίας επιφάνειας, υπάρχουν δύο μοναδιαία διανύσματα, το $
-  \mathbf{\widehat{n}} $ και το $ -\mathbf{\widehat{n}} $.  
-\end{rem}
-
-
-\section*{Διαφορικό Στοιχείο}
- 
-\begin{dfn}
-  Το διαφορικό $ dS $ μιας επιφάνειας $S$ μπορεί να προσδιοριστεί από τις παρακάτω 
-  σχέσεις, ανάλογα με τον τρόπο περιγραφής της επιφάνειας.
-  \begin{myitemize}
-    \item Αν $ \mathbf{r}(u,v) = x(u,v)\mathbf{i}+y(u,v)\mathbf{j}+z(u,v)\mathbf{k} $ 
-      τότε $ dS = \norm{\mathbf{r_{u}} \times \mathbf{r_{v}}} \, du dv $ 
-    \item Αν $ g(x,y,z)=0 $ τότε $dS = \frac{\norm{\grad g}}{\abs{\grad g \cdot 
-      \mathbf{p}}}\, dA $ όπου $ \mathbf{p} $ είναι συνήθως $ \mathbf{p} = \mathbf{i} $ 
-      ή $ \mathbf{j} $ ή $ \mathbf{k} $ και $ \grad(g)\cdot \mathbf{p} \neq 0 $ .  
-    \item Αν $ z=z(x,y) $ τότε θέτουμε $ g(x,y,z)=z-z(x,y)=0 \Rightarrow dS =
-      \frac{\norm{\grad g}}{\abs{\grad g \cdot \mathbf{p}}}\, dA = 
-      \sqrt{1+(z_{x})^{2}+(z_{y})^{2}} \,dxdy $ 
-  \end{myitemize}
-\end{dfn}
-
-
-\section*{Διανυσματικό Διαφορικό Στοιχείο}
-
-\begin{dfn}
-  Για το διανυσματικό διαφορικό μιας επιφάνειας $S$ ισχύει $ \mathbf{dS} =
-  \mathbf{\widehat{n}}dS $, οπότε προσδιορίζεται από τις παρακάτω σχέσεις, ανάλογα με τον τρόπο περιγραφής της επιφάνειας.
-  \begin{myitemize}
-    \item Αν $ \mathbf{r}(u,v) = x(u,v)\mathbf{i}+y(u,v)\mathbf{j}+z(u,v)\mathbf{k} $ 
-      τότε $ \mathbf{dS} = \mathbf{\widehat{n}} dS = (\mathbf{r_{u}} \times 
-      \mathbf{r_{v}}) \, du dv $ 
-    \item Αν $ g(x,y,z)=0 $ τότε $ \mathbf{dS} = \frac{\grad g}{\abs{\grad g 
-      \cdot \mathbf{p}}}\, dA $
-    \item Αν $ z=z(x,y) $ τότε θέτουμε $ g(x,y,z)=z-z(x,y)=0 \Rightarrow \mathbf{dS} 
-      = \frac{\grad g}{\abs{\grad g \cdot \mathbf{p}}}\, dA = (-z_{x},-z_{y},1) 
-      \, dx dy $
-  \end{myitemize}
-\end{dfn}
 
 \end{document}

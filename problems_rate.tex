@@ -1,0 +1,450 @@
+\documentclass[a4paper,table]{report}
+\input{preamble_ask.tex}
+\input{definitions_ask.tex}
+\input{tikz}
+\input{myboxes}
+
+\newcommand{\twocolumnsidescc}[2]{\begin{minipage}[c]{0.20\linewidth}\raggedright
+    #1
+    \end{minipage}\hfill\begin{minipage}[c]{0.75\linewidth}\raggedright
+    #2
+  \end{minipage}
+}
+
+\newcommand{\twocolumnsidescd}[2]{\begin{minipage}[c]{0.25\linewidth}\raggedright
+    #1
+    \end{minipage}\hfill\begin{minipage}[c]{0.75\linewidth}\raggedright
+    #2
+  \end{minipage}
+}
+
+\newcommand{\twocolumnsidescm}[2]{\begin{minipage}[c]{0.265\linewidth}\raggedright
+    #1
+    \end{minipage}\hfill\begin{minipage}[c]{0.71\linewidth}\raggedright
+    #2
+  \end{minipage}
+}
+
+\newcommand{\twocolumnsidescq}[2]{\begin{minipage}[c]{0.28\linewidth}\raggedright
+    #1
+    \end{minipage}\hfill\begin{minipage}[c]{0.70\linewidth}\raggedright
+    #2
+  \end{minipage}
+}
+
+
+
+
+
+
+
+\pagestyle{vangelis}
+
+
+\begin{document}
+
+% \chapter*{Ρυθμός Μεταβολής}
+
+\begin{center}
+  \large{\bfseries \textcolor{Col1}{Προβλήματα στο Ρυθμό Μεταβολής}}
+\end{center}
+
+\vspace{\baselineskip}
+
+\section*{Λύσεις των Προβλημάτων}
+
+% \vspace{\baselineskip}
+
+\begin{mybox3}
+  \begin{problem}
+    Φουσκώνουμε με αέρα ένα σφαιρικό μπαλόνι, έτσι
+    ώστε ο όγκος του να αυξάνει με ρυθμό $\SI{100}{cm^{3}\per s}$. Πόσο γρήγορα
+    αυξάνει η ακτίνα του μπαλονιού όταν η διάμετρος του είναι $\SI{50}{cm}$?
+  \end{problem}
+\end{mybox3}
+\begin{solution}
+  \item {}
+
+    \twocolumnsidescc{
+      \begin{tikzpicture}[scale=0.80]
+        \shade[ball color = Col1,opacity=0.55] (0,0) circle (2cm);
+        \draw (0,0) circle (2cm);
+        \draw (-2,0) arc (180:360:2 and 0.6);
+        \draw[dashed,opacity=0.6] (2,0) arc (0:180:2 and 0.6);
+        \fill[fill=black] (0,0) circle (1.2pt);
+        \draw[dashed,opacity=0.6] (0,0 ) -- node[above,opacity=1]{$r$} (2,0);
+      \end{tikzpicture}
+    }{
+      Έστω $V$ ο όγκος του μπαλονιού και $r$ η ακτίνα του.
+      Γνωρίζουμε ότι
+      \[
+        V=\frac{4}{3}\pi r^{3}
+      \]
+      Παραγωγίζοντας την παραπάνω σχέση ως προς $t$ έχουμε:
+      \[
+        \dv{V}{t} = 4\pi r^{2}\dv{r}{t} \Leftrightarrow
+        \dv{r}{t} = \frac{1}{4\pi r^{2}}\dv{V}{t}
+      \]
+    }
+
+    Με αντικατάσταση των τιμών $r=25$ και $\dv{V}{t}=100$ έχουμε
+    \[
+      \dv{r}{t} = \frac{1}{4\pi (25)^{2}}100 = \frac{1}{25\pi}.
+    \]
+    Επομένως, η ακτίνα του μπαλονιού αυξάνει με ρυθμό $\frac{1}{25\pi}\si{cm\per s}$.
+  \end{solution}
+
+  \begin{mybox3}
+    \begin{problem}
+      Μια σκάλα μήκους $\SI{10}{m}$ είναι ακουμπισμένη
+      σε ένα κατακόρυφο τοίχο. Εάν το κάτω μέρος (βάση) της σκάλας ολισθαίνει
+      οριζόντια, απομακρυνόμενη από τον τοίχο με ρυθμό $\SI{1}{m\per s}$, πόσο
+      γρήγορα η κορυφή της σκάλας πέφτει (ολισθαίνοντας κατακόρυφα στον τοίχο), όταν η
+      βάση της σκάλας απέχει $\SI{6}{m}$ από τον τοίχο?
+    \end{problem}
+  \end{mybox3}
+  \begin{solution}
+  \item {}
+
+    \twocolumnsidescd{
+      \begin{tikzpicture}[scale=0.85]
+        \node  (0) at (0.3, 0) {};
+        \node  (1) at (4, 0) {};
+        \node  (2) at (4, 4.2) {};
+        \node  (3) at (4, 3.5) {};
+        \node  (4) at (1.5, 0) {};
+        \node  (5) at (0.3, -0.25) {};
+        \node  (6) at (4.25, -0.25) {};
+        \node  (7) at (4.25, 4.2) {};
+        \coordinate (1a) at ($(1)-(0,0.6)$) ;
+        \coordinate (4a) at ($(4)-(0,0.6)$) ;
+        \coordinate (4b) at ($(4)+(-0.15,0.2)$) ;
+        \coordinate (4l) at ($(4b)-(0.8,0)$) ;
+        \draw (0.center) to (4.center);
+        \draw (4.center) to node[above] {$x$} (1.center);
+        \draw (1.center) to node[left] {$y$} (3.center);
+        \draw (3.center) to (2.center);
+        \draw[line width=2.5pt,Col1] (3.center) to node[above,sloped]{$\SI{10}{m}$} 
+          (4.center);
+        \draw (0.center) to (5.center);
+        \draw (5.center) to (6.center);
+        \draw (6.center) to (7.center);
+        \draw (2.center) to (7.center);
+        \draw[pattern=north west lines] (0.center) -- (1.center) -- 
+          (2.center) -- (7.center) -- (6.center) -- (5.center);
+        \path[fill=Col2!75,opacity=0.4] (0.center) -- (1.center) -- 
+          (2.center) -- (7.center) -- (6.center) -- (5.center);
+        \draw[{Stealth}-{Stealth}] (1a.center) node {$|$} --
+          node[below]{$\SI{6}{m}$} (4a.center) node {$|$} ;
+        \draw[yshift=10pt] (4b.center) edge[-stealth,Col1,ultra thick] 
+          node[above] {$\SI{1}{m \per s}$} (4l.center) ;
+      \end{tikzpicture}
+    }{
+      Έστω $x=x(t)$ η απόσταση της βάσης της σκάλας από τον τοίχο και $y=y(t)$ η 
+      απόσταση της κορυφής της σκάλας από το έδαφος.
+
+      Από το Πυθαγόρειο θεώρημα έχουμε ότι
+      \begin{align}\label{eq:pyth}
+        x^{2}+y^{2}&=10^{2}  \notag \Leftrightarrow \\
+        x^{2}+y^{2}&=100
+      \end{align}
+      Παραγωγίζοντας την σχέση~\eqref{eq:pyth} ως προς το χρόνο $t$ έχουμε
+      \[
+        2x\dv{x}{t} + 2y\dv{y}{t} = 0
+      \]
+    }
+    Λύνουμε ως προς το ζητούμενο ρυθμό μεταβολής και έχουμε
+    \begin{equation}\label{eq:rateofy}
+      \dv{y}{t} = -\frac{x}{y}\dv{x}{t}
+    \end{equation}
+
+    Όταν $x=6$, τότε από τη σχέση~\eqref{eq:pyth} έχουμε ότι $y=8$. Με αντικατάσταση 
+    αυτών των τιμών στη σχέση~\eqref{eq:rateofy} έχουμε
+    \[
+      \dv{y}{t} = -\frac{6}{8}(1) = -\SI[quotient-mode=fraction]{3/4}{m/s}
+    \]
+
+    Το γεγονός ότι ο ρυθμός μεταβολής $\dv*{y}{t}$ είναι αρνητικός σημαίνει
+    ότι η απόσταση $y$ της κορυφής της σκάλας από το έδαφος,
+    \emph{μειώνεται} με ρυθμό ${3}/{4}$ $\si{m\per s}$. Με άλλα λόγια η
+    κορυφή της σκάλας πέφτει με ρυθμό ${3}/{4}$ $\si{m\per s}$.
+  \end{solution}
+
+  \begin{mybox3}
+    \begin{problem}
+      Μια δεξαμενή νερού έχει το σχήμα ενός ανάποδου
+      κυκλικού κώνου με ακτίνα βάσης $2$ $\si{m}$ και ύψος $4$ $\si{m}.$ Αν
+      στη δεξαμενή εισέρχεται ποσότητα νερού με ρυθμό $2$ $\si{m^{3}/min}$, να
+      υπολογίσετε το ρυθμό με τον οποίο ανέρχεται η στάθμη του νερού στο εσωτερικό της
+      δεξαμενής, όταν το νερό έχει βάθος $3$ $\si{m}$.
+    \end{problem}
+  \end{mybox3}
+  \begin{solution}
+  \item {}
+
+    Ο όγκος του κυκλικού κώνου δίνεται από τη σχέση
+
+    \twocolumnsidescc{
+      \begin{tikzpicture}
+        \node (0) at (0, 0) {};
+        \node at (0) [below] {$A$};
+        \node (1) at (-1, 3) {};
+        \node (2) at (1, 3) {};
+        \node at (2) [right] {\smaller$C$};
+        \node (5) at (-0.5, 1.5) {};
+        \node (8) at (0.5, 1.5) {};
+        \node at (8) [right] {\smaller$E$};
+        \node (9) at (0, 3) {};
+        \node at (9) [left] {\smaller$B$};
+        \node (10) at (0, 1.5) {};
+        \node at (10) [left] {\smaller$D$};
+        \draw [bend left=90, looseness=0.50] (1.center) to (2.center);
+        \draw [bend right=90, looseness=0.50] (1.center) to (2.center);
+        \draw [bend left=90, looseness=0.75] (5.center) to (8.center);
+        \draw [bend right=90, looseness=0.75] (5.center) to (8.center);
+        \draw (0.center) to (5.center);
+        \draw (5.center) to (1.center);
+        \draw (0.center) to (8.center);
+        \draw (8.center) to (2.center);
+        \draw (9.center) to node[pos=0.5,fill=white] {\smaller$2$} (2.center);
+        \draw (10.center) to node[pos=0.5,fill=blue!25,inner sep=1.5pt] 
+          {\smaller$r$} (8.center);
+        \draw (9.center) to (10.center);
+        \draw (10.center) to (0.center);
+        \begin{scope}
+          \draw[{Stealth}-{Stealth}] ([xshift=-5pt]5.center) node {$-$} --
+            node[fill=white]{\smaller$h$} ([xshift=-5pt]5|-0) node {$-$} ;
+          \draw[{Stealth}-{Stealth}] ([xshift=-5pt]1.center) node {$-$} -- 
+            node[fill=white]{\smaller$4$} ([xshift=-5pt]1|-0) node {$-$} ;
+          \begin{pgfonlayer}{background}
+            \fill[blue!25] (0.center) -- (5.center) to [bend left=90, looseness=0.75] 
+              (8.center) -- (0.center) ;
+          \end{pgfonlayer}
+        \end{scope}
+      \end{tikzpicture}
+    }{
+      \begin{equation} \label{eq:cylvol}
+        V=\frac{1}{3}\pi r^{2} h
+      \end{equation}
+      όπου $r$ είναι η ακτίνα της βάσης και $h$ το ύψος του κώνου. 
+      Από την ομοιότητα των τριγώνων $ADE$ και $ABC$ έχουμε ότι
+      \[
+        \frac{r}{h} = \frac{2}{4} \Rightarrow r=\frac{h}{2}
+      \]
+      και έτσι η σχέση~\eqref{eq:cylvol} γίνεται
+      \[
+        V=\frac{1}{3}\pi\Bigl(\frac{h}{2}\Bigr)^{2}h = \frac{\pi}{12}h^{3}
+      \]
+    }
+    Παραγωγίζοντας, τώρα αυτή τη σχέση ως προς $t$ έχουμε
+    \begin{align}\label{eq:volrate}
+      \dv{V}{t}&=\frac{\pi}{4}h^{2}\dv{h}{t}  \notag \Leftrightarrow \\
+      \dv{h}{t}&=\frac{4}{\pi h^{2}}\dv{V}{t}
+    \end{align}
+    και αντικαθιστώντας $h=3$ και $\dv{V}{t}=2$ έχουμε τελικά
+    \[
+      \dv{h}{t}=\frac{4}{\pi (3)^{2}}\cdot 2 = \frac{8}{9\pi}
+    \]
+    Επομένως η στάθμη του νερού στο εσωτερικό της δεξαμενής ανεβαίνει με ρυθμό
+    $\frac{8}{9\pi}$ $\si{m/min}$.
+  \end{solution}
+
+  \begin{mybox3}
+    \begin{problem}
+      Αυτοκίνητο $A$ ταξιδεύει δυτικά με ταχύτητα $50$
+      $\si{km\per h}$ και αυτοκίνητο $B$ ταξιδεύει βόρεια με ταχύτητα $60$
+      $\si{km/h}$. Και τα δύο αυτοκίνητα κινούνται προς την διαστάυρωση των δύο δρόμων. 
+      Με τι ρυθμό τα δύο αυτοκίνητα πλησιάζουν το ένα το άλλο, όταν το $A$ βρίσκεται 
+      $0.3$ $\si{km}$ και το $B$ $0.4$ $\si{km}$ από τη διασταύρωση?
+    \end{problem}
+  \end{mybox3}
+  \begin{solution}
+  \item {}
+
+    Έστω $C$ η διασταύρωση των δύο δρόμων. Έστω επίσης $x=x(t)$ και $y=y(t)$ η 
+    απόσταση των $A$ και $B$ αντίστοιχα, από τη διασταύρωση και $s=s(t)$ η απόσταση 
+    των δύο αυτοκινήτων κατά την χρονική στιγμή $t$.
+
+    \twocolumnsidescm{
+      \begin{tikzpicture}
+        \node (0) at (0, 0) {};
+        \fill[Col1] (0) circle (3pt) ; 
+        \node (1) at (0, 4) {};
+        \node[Col1] at (1) {$\times$} ; 
+        \node at (1.west) [left] {$C$} ; 
+        \node (2) at (3, 4) {};
+        \coordinate (0a) at ($(0)+(0,1.0)$) ;
+        \coordinate (2a) at ($(2)-(1.0,0)$) ;
+        \coordinate (o) at ($(0)+(0,0.2)$) ;
+        \coordinate (b) at ($(2)-(0.2,0)$) ;
+        \fill[Col1] (2) circle (3pt) ; 
+        \draw[dashed,Col1,thick] (o) -- node[sloped,above,pos=0.6] {$\SI{0.4}{km}$}
+          node[black,right,pos=0.65] {$x$} (1) ;
+        \draw[dashed,Col1,thick] (b) -- node[sloped,above,pos=0.6] {$\SI{0.3}{km}$}
+          node[black,below,pos=0.6] {$y$} (1) ;
+        \draw[Col1] (o) edge[-latex,ultra thick] node[right] {$\SI{60}{km\per h}$} (0a) ;
+        \draw[Col1] (b) edge[-latex,ultra thick] node[below] {$\SI{50}{km\per h}$} (2a) ;
+        \node[left] at (0.west) {$B$} ;
+        \node[right] at (2.east) {$A$} ;
+      \end{tikzpicture}
+    }{
+      Από τα δεδομένα του προβλήματος έχουμε ότι $\dv{x}{t}=-50$ \si{km/h} και
+      $\dv{y}{t}=-60$ $\si{km/h}$. Οι παράγωγοι είναι αρνητικές γιατί οι αποστάσεις $x$ 
+      και $y$ συνεχώς μειώνονται. Ζητούμενο είναι ο ρυθμός $\dv{s}{t}$
+
+      Από το Πυθαγόρειο θεώρημα έχουμε
+      \[
+        s^{2}=x^{2}+y^{2}
+      \]
+      και παραγωγίζοντας ως προς $t$
+      \begin{align} \label{eq:distrate}
+        2s\dv{s}{t} &= 2x\dv{x}{t} + 2y\dv{y}{t} \notag \Rightarrow \\
+        \dv{s}{t} &= \frac{1}{s}\left(x\dv{x}{t}+y\dv{y}{t}\right)
+      \end{align}
+    }
+
+    Όταν $x=0.3$ και $y=0.4$ το Πυθαγόρειο θεώρημα δίνει $s=0.5$, οπότε με 
+    αντικατάσταση στη σχέση~\eqref{eq:distrate} έχουμε
+    \[
+      \dv{s}{t}=\frac{1}{0.5}[0.3(-50)+0.4(-60)] = \SI{-78}{km/h}
+    \]
+
+    Επομένως τα δύο αυτοκίνητα πλησιάζουν το ένα το άλλο με ρυθμό $\SI{78}{km/h}$.
+  \end{solution}
+
+  \begin{mybox3}
+    \begin{problem}
+      Πλοίο Α ξεκινάει από ένα λιμάνι στις 12 μ.μ. και 
+      κατευθύνεται δυτικά
+      με ταχύτητα  $\SI{9}{km/h}$. Πλοίο Β ξεκινάει από το ίδιο λιμάνι στη 1
+      μ.μ. και κατευθύνεται νότια με ταχύτητα $\SI{12}{km/h}$. Με τι ρυθμό
+      απομακρύνονται μεταξύ τους τα δύο πλοία στις 3 μ.μ.?
+    \end{problem}
+  \end{mybox3}
+  \begin{solution}
+  \item {}
+
+    Έστω $s$ η απόσταση των δύο πλοίων κατά τη χρονική στιγμή $ t $ και έστω 
+    $x$ και $y$ οι αποστάσεις των πλοίων $ A $ και $B$ αντίστοιχα, από το λιμάνι. 
+    Τότε
+
+    \twocolumnsidescq{
+      \begin{tikzpicture}
+        \node (0) at (0, 0) {};
+        \fill[Col1] (0) circle (3pt) ; 
+        \node (2) at (0, 0) {};
+        \node (w) at (-3,0) {} ;
+        \node (s) at (0,-3) {} ;
+        \coordinate (0a) at ($(0)-(0,1.0)$) ;
+        \coordinate (2a) at ($(2)-(1.0,0)$) ;
+        \coordinate (o) at ($(0)-(0,0.2)$) ;
+        \coordinate (b) at ($(2)-(0.2,0)$) ;
+        \fill[Col1] (2) circle (3pt) ; 
+        \draw[Col1] (o) edge[-latex,ultra thick] 
+          node[right] {$\SI{12}{km\per h}$} (0a) ;
+        \draw[Col1] (b) edge[-latex,ultra thick] 
+          node[above,xshift=-10pt] {$\SI{9}{km\per h}$} (2a) ;
+        \node[above] at (0.north) {$A$} ;
+        \node[right] at (2.east) {$B$} ;
+        \draw[dashed,Col1,thick] (0a) -- node[left] {$y$} (s) ;
+        \draw[dashed,Col1,thick] (2a) -- node[below] {$x$} (w) ;
+      \end{tikzpicture}
+    }{
+      \[
+        s^{2} = x^{2} + y^{2}
+      \]
+      Παραγωγίζοντας ως προς $t$ έχουμε
+      \begin{align*}
+        2s \dv{s}{t} & = 2x\dv{x}{t} + 2y\dv{y}{t} \Rightarrow \\
+        s \dv{s}{t} & = x\dv{x}{t} + y\dv{y}{t} \Rightarrow 
+      \end{align*}
+      Οι αποστάσεις που έχουν διανύσει τα δύο πλοία ως τις $3$ μ.μ. είναι
+      \begin{align*}
+        x &= v\cdot t = 9 \cdot 3 = 27 \\
+        y &= v\cdot t = 12 \cdot 2 = 24
+      \end{align*}
+    }
+
+    Έχουμε ότι $ s = \sqrt{x^{2} + y^{2}} = \sqrt{27^{2} + 24^{2}} =
+    \sqrt{729 + 576} = \sqrt{1305} = 36,12$.
+    Άρα 
+    \begin{align}
+      36,12 \cdot \dv{s}{t} &= 27\cdot 9 + 24 \cdot 12 \\
+      \dv{s}{t} &= \frac{243 + 288}{36,12} = \frac{531}{34,12} = 14,70
+    \end{align}
+    Επομένως τα δύο πλοία απομακρύνονται με ρυθμό $\SI{14,70}{km/h}$.
+  \end{solution}
+
+  \begin{mybox3}
+    \begin{problem}
+      Ένας άνδρας περπατά σε ευθύγραμμο μονοπάτι με
+      ταχύτητα $\SI{4}{m/s}$. Μια δέσμη leiser η οποία είναι τοποθετημένη σε απόσταση 
+      $\SI{20}{m}$ από το μονοπάτι, τον σημαδεύει συνεχώς. Με ποιο ρυθμό περιστρέφεται η 
+      δέσμη leiser οταν ο άνδρας βρίσκεται σε απόσταση $\SI{15}{m}$ από εκείνο το σημείο 
+      στο μονοπάτι το οποίο απέχει ελάχιστη απόσταση από την πηγή leiser?
+    \end{problem}
+  \end{mybox3}
+  \begin{solution}
+  \item {}
+
+    \twocolumnsidescm{
+      \begin{tikzpicture}
+        \node  (0) at (1.5, 0) {};
+        \node  (0b) at (1.5, -0.2) {};
+        \node  (1) at (2.5, 0) {};
+        \node  (2) at (4.5, 0) {};
+        \node at (2) [above right] {$O$} ;
+        \node  (3) at (5, 0) {};
+        \node  (3b) at (5, -0.2) {};
+        \node  (4) at (4.5, 2.5) {};
+        \draw[Col2,very thick] (0.center) to node[above,pos=0.6,black] {$x$} 
+          (3.center);
+        \draw[dashed] (4.center) to (1.center);
+        \draw[dashed] (4.center) to node[right] {$20$} (2.center);
+        \draw[pattern=north west lines] (0.center) -- (3.center) -- (3b.center) --
+          (0b.center) -- cycle ;
+        \fill[Col2!75,opacity=0.4] (0.center) -- (3.center) -- (3b.center) -- (0b.center) -- cycle;
+        \fill[Col1] (1) circle (3.0pt) ;
+        \fill[magenta!75] (4) circle (2.5pt) ;
+        \draw (4) pic[-latex,draw,fill=blue!25,angle radius=20pt,angle
+          eccentricity=1.35,"$\phi$"] {angle=1--4--2} ;
+        \draw (1) -- ++ (0,0.8) node (man) {} ;
+        \fill (man) circle (3.0pt) ;
+        \draw (man.south) -- +(-0.2,-0.30);
+        \draw (man.south) -- +(0.2,-0.30);
+        \draw (2) pic[angle radius=8pt,draw] {right angle=4--2--1} ;
+      \end{tikzpicture}
+    }{
+      Έστω $O$ το σημείο στο μονοπάτι που απέχει λιγότερο από την πηγή leiser.
+      Έστω $x$ η απόσταση του άνδρα από το σημείο $O$ και $\phi$ η γωνία που σχηματίζει 
+      η δέσμη που σημαδεύει τον άνδρα με την κάθετη ευθεία στο μονοπάτι.
+
+      Έχουμε
+      \[
+        \frac{x}{20}=\tan\phi \Rightarrow x=20\tan\phi
+      \]
+    }
+
+    Παραγωγίζοντας ως προς $t$ έχουμε
+    \begin{align*}
+      \dv{x}{t} &= 20\cdot \frac{1}{\cos^{2}\phi}\dv{\phi}{t} \notag \Rightarrow \\
+      \dv{\phi}{t}&=\frac{1}{20}\cos^{2}\phi \dv{x}{t} =\frac{1}{20}\cos^{2}\phi\cdot 4 =\frac{1}{5}\cos^{2}\phi
+    \end{align*}
+    Άρα
+    \begin{equation} \label{eq:anglerate}
+      \dv{\phi}{t}=\frac{1}{5}\cos^{2}\phi
+    \end{equation}
+    Όταν $x=15$ τότε το μήκος της δέσμης είναι $25$, όποτε $\cos\phi = \frac{4}{5}$ 
+    και επομένως
+    \[
+      \dv{\phi}{t} = \frac{1}{5}\Bigl(\frac{4}{5}\Bigr)^{2} = \frac{16}{125} = 0.128
+    \]
+    Επομένως η δέσμη περιστρέφεται με ρυθμό $\SI{0.128}{rad/s}$.
+
+  \end{solution}
+
+
+
+
+  \end{document}
+

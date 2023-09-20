@@ -1,3 +1,4 @@
+\documentclass[a4paper,table]{report}
 \input{preamble.tex}
 \input{definitions.tex}
 \input{tikz.tex}
@@ -33,7 +34,8 @@ $ \mathbf{F}(x,y,z) $ πάνω στην επιφάνεια $S$,
       $ \mathbf{\widehat{n}} $ και $ \mathbf{r}_{u} \times \mathbf{r}_{v} $ 
       είναι ομόρροπα και το πρόσημο $ - $ αντιστοιχεί στην περίπτωση που είναι 
       αντίρροπα. Με $ \mathbf{\widehat{n}} $ συμβολίζουμε το \textbf{μοναδιαίο} κάθετο 
-      διάνυσμα στο σημείο $ \mathbf{r}(u,v) $ της επιφάνειας $S$.
+      διάνυσμα στο σημείο $ \mathbf{r}(u,v) $ της επιφάνειας $S$, το οποίο μας δείχνει 
+      τη θετική πλευρά της.
     \item Το διάνυσμα $ \mathbf{dS} $ παριστάνει το στοιχειώδες διανυσματικό εμβαδό 
       της επιφάνειας $S$, που είναι ίσο με $ \mathbf{dS} = (\mathbf{r}_{u} \times
       \mathbf{r}_{v})\, du dv $. Ισχύει επίσης, ότι $ \mathbf{dS} = \mathbf{\widehat{n}}
@@ -86,6 +88,8 @@ $ (u,v) \in D \subseteq \mathbb{R}^{2} $, τότε:
     \mathbf{F}(x(u,v),y(u,v),z(u,v)) \cdot (\mathbf{r}_{u} \times \mathbf{r}_{v}) 
   \,{du}{dv}}
 \end{equation*}
+όπου $ + $ βάζουμε όταν $ \mathbf{\widehat{n}} \uparrow\uparrow (\mathbf{r}_{u} \times
+\mathbf{r}_{v}) $ (ομόρροπα), αλλιώς βάζουμε $ - $.
 
 \subsection*{Η επιφάνεια $S$ δίνεται ως συνάρτηση 2 μεταβλητών}
 
@@ -105,6 +109,7 @@ $ (u,v) \in D \subseteq \mathbb{R}^{2} $, τότε:
       \boxed{\iint_{S} \mathbf{F}(x,y,z) \cdot \,{\mathbf{dS}} = \pm\iint_{D} 
       \mathbf{F}(x,y,z(x,y)) \cdot (-z_{x},-z_{y},1) \,{dx}{dy}}
     \end{equation*} 
+    όπου $ + $ βάζουμε όταν $ \mathbf{\widehat{n}} \uparrow\uparrow (-z_{x},-z_{y},1) $ (ομόρροπα), αλλιώς βάζουμε $ - $.
 
   \item Αν η επιφάνεια $S$ είναι συνάρτηση της μορφής $ y=y(x,z) $ και $D$ είναι η 
     προβολή της $S$ στο επίπεδο $ xz $, τότε: 
@@ -112,6 +117,7 @@ $ (u,v) \in D \subseteq \mathbb{R}^{2} $, τότε:
       \boxed{\iint_{S} \mathbf{F}(x,y,z) \cdot \,{\mathbf{dS}} = \pm\iint_{D} 
       \mathbf{F}(x,y(x,z),z) \cdot (-y_{x},1,-y_{z}) \,{dx}{dz}}
     \end{equation*}
+    όπου $ + $ βάζουμε όταν $ \mathbf{\widehat{n}} \uparrow\uparrow (-y_{x},1,-y_{z}) $ (ομόρροπα), αλλιώς βάζουμε $ - $.
 
   \item Αν η επιφάνεια $S$ είναι συνάρτηση της μορφής $ x=x(y,z) $ και $D$ είναι η 
     προβολή της $S$ στο επίπεδο $ yz $, τότε: 
@@ -119,6 +125,7 @@ $ (u,v) \in D \subseteq \mathbb{R}^{2} $, τότε:
       \boxed{\iint_{S} \mathbf{F}(x,y,z) \cdot \,{\mathbf{dS}} = \pm\iint_{D} 
       \mathbf{F}(x(y,z),y,z) \cdot (1,-x_{y},-x_{z}) \,{dy}{dz}}
     \end{equation*}
+    όπου $ + $ βάζουμε όταν $ \mathbf{\widehat{n}} \uparrow\uparrow (1,-x_{y},-x_{z}) $ (ομόρροπα), αλλιώς βάζουμε $ - $.
 
 \end{enumerate}
 
@@ -143,6 +150,7 @@ $ (u,v) \in D \subseteq \mathbb{R}^{2} $, τότε:
 όπου $ \mathbf{p} $ είναι ένα μοναδιαίο κάθετο διάνυσμα στην περιοχή $D$ (συνήθως 
 $ \mathbf{p} = \mathbf{i} $ ή $ \mathbf{j} $ ή $ \mathbf{k} $) και 
 $ \grad(g)\cdot \mathbf{p} \neq 0 $ .  
+Πρόσημο $ + $ βάζουμε όταν $ \mathbf{\widehat{n}} \uparrow\uparrow \grad g $ (ομόρροπα), αλλιώς βάζουμε $ - $.
 
 Ειδικότερα, αν η επιφάνεια $S$ δίνεται από την εξίσωση $ g(x,y,z) = 0 $ και $D$ είναι η
 προβολή της $S$ στο επίπεδο $ xy $, τότε η εξίσωση~\eqref{eq:surface_int3} γίνεται:
@@ -154,21 +162,27 @@ $ \grad(g)\cdot \mathbf{p} \neq 0 $ .
 
 \section{Θεώρημα Stokes}
 
-Έστω $S$ μια προσανατολισμένη και τμηματικά λεία επιφάνεια που φράσσεται από μια απλή, 
-κλειστή και τμηματικά λεία καμπύλη $C$ με θετικό προσανατολισμό (ως προς το 
+Έστω $S$ μια απλή, προσανατολισμένη και τμηματικά λεία επιφάνεια που φράσσεται από μια απλή, κλειστή και τμηματικά λεία καμπύλη $c$ με θετικό προσανατολισμό (ως προς το 
 $ \mathbf{\widehat{n}} $).  Έστω επίσης, 
 $ \mathbf{F}(x,y,z) = P(x,y,z)\mathbf{i}+Q(x,y,z)\mathbf{j}+R(x,y,z)\mathbf{k} $ ένα 
 διανυσματικό πεδίο με συνεχώς παραγωγίσιμες συνιστώσες σε μια ανοιχτή περιοχή του 
 $ \mathbb{R}^{3} $ που περιέχει την επιφάνεια $S$, τότε:
 \[
-  \oint_{C} \mathbf{F} \cdot \mathbf{dr} = \iint_{S} (\curl \mathbf{F}) \cdot \,{ \mathbf{dS}} 
+  \oint_{c} \mathbf{F} \cdot \mathbf{dr} = \iint_{S} (\curl \mathbf{F}) \cdot \,{ \mathbf{dS}} 
 \]
+
+\begin{rem}
+  Με τον όρο θετικό προσανατολισμό της $c$ ως προς το $ \mathbf{\widehat{n}} $ εννοούμε ότι, 
+  ο προσανατολισμός της $S$ ορίζει τον θετικό προσανατολισμό της c, με την έννοια ότι 
+  αν περπατάμε κατά τη  θετική φορά της $c$ με το κεφάλι μας να δείχνει προς την 
+  κατεύθυνση του $ \mathbf{\widehat{n}} $, τότε η επιφάνεια $S$ βρίσκεται πάντα στα αριστερά μου.
+\end{rem}
 
 \subsection*{Φυσική Ερμηνεία του θεωρήματος Stokes}
 
 Η \textbf{κυκλοφορία} ενός διανυσματικού πεδίου $ \mathbf{F} $ κατά μήκος μιας κλειστής 
-καμπύλης $C$, ισούται με τη \textbf{ροή του στροβιλισμού} του πεδίου δια μέσου
-\textit{οποιασδήποτε} επιφάνειας $S$ με σύνορο την καμπύλη $C$. 
+καμπύλης $c$, ισούται με τη \textbf{ροή του στροβιλισμού} του πεδίου δια μέσου
+\textit{οποιασδήποτε} επιφάνειας $S$ με σύνορο την καμπύλη $c$. 
 
 \begin{rems}
 \item {}
@@ -179,7 +193,7 @@ $ \mathbb{R}^{3} $ που περιέχει την επιφάνεια $S$, τότ
       με θετικό προσανατολισμό "προς τα πάνω" ($ \mathbf{\widehat{n}}= \mathbf{k} $), 
       τότε έχουμε 
       \[
-        \oint_{C} \mathbf{F}\cdot {\mathbf{dr}} = \iint_{S} (\curl\mathbf{F}) \cdot
+        \oint_{c} \mathbf{F}\cdot {\mathbf{dr}} = \iint_{S} (\curl\mathbf{F}) \cdot
         \mathbf{dS} = \iint_{S} (\curl\mathbf{F}) \cdot \mathbf{\widehat{n}} \,{dS} = 
         \iint_{S} (\curl \mathbf{F}) \cdot \mathbf{k} \,{dS} = 
         \iint_{D} (Q_{x}-P_{y}) \,{dx}{dy}

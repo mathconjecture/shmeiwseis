@@ -1,0 +1,125 @@
+\documentclass[a4paper]{book}
+\input{preamble_ask.tex}
+\input{definitions_ask.tex}
+\input{myboxes.tex}
+\input{tikz}
+
+\newcommand{\twocolumnsiderr}[2]{\begin{minipage}[t]{0.35\linewidth}
+        #1
+        \end{minipage}\hfill\begin{minipage}[t]{0.65\linewidth}
+        #2
+    \end{minipage}
+}
+
+
+\geometry{left=1.4cm,right=1.4cm}
+\everymath{\displaystyle}
+\pagestyle{vangelis}
+
+
+
+\begin{document}
+
+
+\begin{center}
+  \minibox{\large \bfseries \textcolor{Col1}{Τύπος \textlatin{Leibniz}}}
+\end{center}
+
+\begin{mybox1}
+  \item {}
+Αν οι συναρτήσεις $ f(x) $ και $ g(x) $ είναι $n$ φορές παραγωγίσιμες, τότε το γινόμενό 
+τους, $ f(x) \cdot g(x) $ είναι επίσης $n$ φορές παραγωγίσιμη συνάρτηση και η $n$-οστή 
+της παράγωγος, δίνεται από τον τύπο:
+\begin{empheq}[box=\mathboxr]{equation*}
+  \bigl[f(x)\cdot g(x)\bigr]^{(n)} = \sum_{k=0}^{n} \binom{n}{k} f(x)^{(n-k)} \cdot
+  g(x)^{(k)}
+\end{empheq}
+όπου $ \; \binom{n}{k} = \frac{n!}{k!(n-k)!} = \frac{n(n-1)\cdots (n-k+1)}{k!}$
+οι \textbf{διωνυμικοί συντελεστές} και 
+$ f(x)^{(n)} $ η $n$-οστή παράγωγος της $ f(x) $. 
+\end{mybox1}
+
+\begin{rem}
+  \item {}
+    \begin{myitemize}
+      \item Για $ n=1 $ ο τύπος γίνεται: 
+        \[
+          \left[f(x)\cdot g(x)\right]' = \sum_{k=0}^{1} \binom{1}{k} 
+          f(x)^{(1-k)} \cdot g(x)^{k} = \binom{1}{0} f(x)' \cdot g(x) + 
+          \binom{1}{1} f(x) \cdot g(x)' = f(x)'\cdot g(x) + f(x) \cdot g(x)'
+        \]
+      \item Για $ n=2 $ ο τύπος γίνεται: 
+        \begin{align*}
+          \left[f(x)\cdot g(x)\right]' 
+          = \sum_{k=0}^{2} \binom{2}{k} f(x)^{(2-k)} \cdot
+          g(x)^{k} &= \binom{2}{0} f(x)'' \cdot g(x) + \binom{2}{1} f(x)' \cdot g(x)' + 
+          \binom{2}{2} f(x) \cdot g(x)'' \\
+                   &= f(x)''\cdot g(x) + 2 f(x)' \cdot g(x)' + f(x) \cdot g(x)''
+        \end{align*}
+    \end{myitemize}
+  \end{rem}
+
+  \begin{rem}
+  \item {}
+    \begin{enumerate}
+      \item Ο τύπος του \textlatin{Leibinz} αποδεικνύεται εύκολα με τη βοήθεια της
+        Μαθηματικής Επαγωγής.
+      \item Με Μαθηματική επαγωγή, αποδεικνύονται επίσης, οι παρακάτω τύποι:
+
+        \twocolumnsidess{
+          \begin{myitemize}[itemsep=\baselineskip]
+            \item $ (x^{m})^{(n)} = m(m-1)(m-2)\cdot (m-(n-1))x^{m-n} $
+            \item $ (\mathrm{e}^{x} )^{(n)} = \mathrm{e}^{x} $
+          \end{myitemize}
+        }{
+          \begin{myitemize}
+            \item $ (\sin{x})^{(n)} = \sin{\Bigl(x + \frac{n \pi}{2}\Bigr)} $
+            \item $ (\cos{x})^{(n)} = \cos{\Bigl(x + \frac{n \pi}{2}\Bigr)} $
+            \item $ (\ln{x} )^{(n)} = (-1)^{n-1} \frac{(n-1)!}{x^{n}} $
+          \end{myitemize}
+        }
+    \end{enumerate}
+  \end{rem}
+
+
+  \begin{mybox3}
+    \begin{example}
+      Με τη βοήθεια του τύπου \textlatin{Leibinz} να υπολογίσετε την παράγωγο της 
+      συνάρτησης $ \left[(\sin{x}) \cdot x^{2}\right]^{(25)} $.
+    \end{example}
+  \end{mybox3}
+  \begin{solution}
+    \begin{align*}
+      \left[(\sin{x}) \cdot x^{2}\right]^{(25)} 
+   &= \sum_{k=0}^{25} \binom{25}{k} (\sin{x}) ^{(25-k)} \cdot (x^{2})^{(k)} \\
+   &= \binom{25}{0} (\sin{x} )^{(25)}\cdot x^{2} + \binom{25}{1} (\sin{x} )^{(24)}\cdot
+   (x^{2})' + \binom{25}{2} (\sin{x} )^{(23)}\cdot (x^{2}) '' + \binom{25}{3}
+   (\sin{x} )^{22}\cdot \underbrace{(x^{2})'''}_{0} + 0 + \cdots 
+    \end{align*} 
+
+    \twocolumnsiderr{
+      Οι διωνυμικοί συντελεστές είναι:
+      \begin{myitemize}
+        \item $ \binom{25}{0} = 1 $
+        \item $ \binom{25}{1} = 25 $
+        \item $ \binom{25}{2} = \frac{25(25-1)}{2!} = 300 $
+      \end{myitemize}
+    }{
+      Άρα, με αντικατάσταση, έχουμε:
+      \begin{align*}
+        \left[(\sin{x}) \cdot x^{2}\right]^{(25)} 
+  &= \sin{x}^{(25)} \cdot x^{2} + 25 \sin{x}^{(24)} \cdot 2x + 300 \sin{x}^{(23)} 
+  \cdot 2 \\
+  &= x^{2} \sin{\Bigl(x + \frac{25 \pi}{2}\Bigr)} + 50 x 
+  \sin{\Bigl(x+ \frac{24 \pi }{2}\Bigr)} + 600 \sin{\Bigl(x + \frac{23 \pi}{ 2}\Bigr)} \\
+  &= x^{2} \sin{(x + \cancel{12 \pi} + \frac{\pi}{2})} + 50 x \sin{(x + \cancel{12
+  \pi})} + 600 \sin{(x+ \cancel{12 \pi} - \frac{\pi}{2})} \\
+  &= x^{2} \cos{x} + 50 x \sin{x} + 600  (-\cos{x}) \\
+  &=( x^{2}-600) \cos{x} + 50 x \sin{x} 
+      \end{align*} 
+    }
+  \end{solution}
+
+
+
+  \end{document}

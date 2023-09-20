@@ -1,0 +1,92 @@
+\documentclass[a4paper,table]{report}
+\input{preamble_ask.tex}
+\input{definitions_ask.tex}
+\input{myboxes.tex}
+\input{tikz}
+
+\newcommand{\twocolumnsiderc}[2]{\begin{minipage}[c]{0.25\linewidth}
+        #1
+        \end{minipage}\hfill\begin{minipage}[c]{0.50\linewidth}
+        #2
+    \end{minipage}
+}
+
+
+% \geometry{top=2.5cm}
+\everymath{\displaystyle}
+\pagestyle{vangelis}
+
+\begin{document}
+
+\setcounter{chapter}{1}
+
+\subsection*{Μέση Τιμή Συνάρτησης}
+
+\begin{dfn}
+  Αν $ f $ ολοκληρώσιμη στο $ [a,b] $, τότε η μέση τιμή της, δίνεται από τον τύπο:
+  \begin{empheq}[box=\mathboxr]{equation*}
+    \overline{f} = \frac{1}{b-a} \int _{a}^{b} f(x) \,{dx}  
+  \end{empheq}
+\end{dfn}
+ 
+
+\section*{Εμβαδά}
+ 
+
+\begin{center}
+  \minibox{\large \bfseries \textcolor{Col1}{Εμβαδά Επίπεδων Χωρίων}}
+\end{center}
+
+\begin{dfn}
+  Αν $ y=f(x) $ είναι μια θετική και ολοκληρώσιμη συνάρτηση, ορισμένη σ᾽ ένα κλειστό 
+  διάστημα $ [a,b] $, τότε το εμβαδό της περιοχής κάτω από τη γραφική παράσταση της 
+  $f$, στο $ [a,b] $, δίνεται από τον τύπο:
+\end{dfn}
+
+  \twocolumnsiderc{
+\begin{tikzpicture}[scale=0.8]
+\draw[thick,stealth-stealth,blue!50] (0,2.8) -- (0,0) node (O) {} -- (4.0,0) ;
+\draw[very thick,Col1,name path=curve] (0.7,1.5) node (A){} .. controls (2.0,3.5) 
+    and (2.4,0.5) ..  (3.3,1.7) node[above,black] (B){$f(x)$} ;
+\draw[dashed] (A) -- (A|-O) node[below]{$a$}  (B) -- (B|-O) node[below]{$b$};
+\path[name path=xaxis] (A|-O) -- (B|-O);
+\tikzfillbetween[of = curve and xaxis,on layer=background]{blue!10};
+\draw (1.7,1.3) node (E) {$E$};
+\end{tikzpicture}
+}{
+\begin{empheq}[box=\mathboxr]{equation*}
+  E = \int _{a}^{b} f(x) \,{dx} 
+\end{empheq}
+}
+
+
+\begin{dfn}
+  Άν $f$ και $g$ συνεχείς συναρτήσεις, με $ f(x) \leq g(x), \; \forall x \in [a,b] $, 
+  τότε το εμβαδό της περιοχής, ανάμεσα στις γραφικές παραστάσεις $ y=f(x) $ και $ y=g(x)
+  $ από $a$ έως $b$, δίνεται από τον τύπο:
+\end{dfn}
+
+  \twocolumnsiderc{
+    \begin{tikzpicture}[scale=0.8]
+      \draw[thick,stealth-stealth,blue!50] (0,2.8) -- (0,0) coordinate (O)  -- (4.0,0) ;
+      \draw[very thick,Col1,name path=curve1] (0.7,1.5) coordinate (A) .. controls (2.0,3.5) 
+        and (2.4,0.5) ..  (3.3,1.7) coordinate (B) node[above right,black] {$f(x)$} ;
+      \draw[very thick,Col2,name path=curve2] (0.7,0.5) coordinate (C){} .. controls (2.0,1.5) 
+        and (2.4,-0.5) ..  (3.3,0.7) coordinate (D) node[right,black] {$g(x)$} ;
+      \draw[dashed] (A) -- (A|-O) node[below]{$a$}  (B) -- (B|-O) node[below]{$b$};
+      \path[name path=xaxis] (A|-O) -- (B|-O);
+      \tikzfillbetween[of = curve1 and curve2,on layer=background]{blue!10};
+    \draw (1.7,1.5) node (E) {$E$};
+  \end{tikzpicture}
+
+}{
+  \begin{empheq}[box=\mathboxr]{equation*}
+    E = \int _{a}^{b} \bigl[f(x)-g(x)\bigr] \,{dx} 
+  \end{empheq}
+}
+
+
+
+
+
+\end{document}

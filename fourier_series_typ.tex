@@ -1,0 +1,32 @@
+\documentclass[a4paper,table]{report}
+\input{preamble_ask.tex}
+\input{definitions.tex}
+\input{tikz.tex}
+
+
+% \geometry{top=3.5cm}
+\pagestyle{vangelis}
+\everymath{\displaystyle}
+
+
+
+\begin{document}
+
+
+\begin{tabular}{ll}
+  $ f(x) = x, \; -2<x<2, \; T=4 $ & $ f(x) = \frac{4}{\pi} \sum_{n=1}^{\infty}
+  \frac{(-1)^{n+1}}{n} \sin{\frac{n \pi x}{2}} $ \\
+  $ f(x) = x, \; 0<x<4, \; T=4 $ & $ f(x) = 2 - \frac{4}{\pi} \sum_{n=1}^{\infty}
+  \frac{1}{n} \sin{\frac{n \pi x}{2}} $ \\
+  $ f(x) = \abs{x}, \; -2<x<2, \; T=4 $ & $ f(x) = 1 - \frac{8}{\pi^{2}} 
+  \sum_{n=1}^{\infty} \frac{1}{(2n-1)^{2}} \cos{\frac{(2n-1) \pi x}{2}} $ \\
+  $ f(x) = 
+  \begin{cases} -2 & -1 \leq x<0 \\ 2 & 0 \leq x < 1 \end{cases}, \; T=2$ & 
+  $ f(x) = \frac{8}{\pi} \sum_{n=1}^{\infty} \frac{1}{2n-1} \sin{(2n-1) \pi x} $
+\end{tabular}
+
+
+%todo να τελειωσω αυτο το τυπολογιο με γνωστες σειρες fourier
+
+\end{document}
+
