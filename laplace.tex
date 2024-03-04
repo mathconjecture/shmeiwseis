@@ -1,3 +1,4 @@
+\documentclass[a4paper,table]{report}
 \input{preamble_ask.tex}
 \input{definitions_ask.tex}
 \input{myboxes.tex}
@@ -33,7 +34,7 @@
   της $f$, είναι
   \begin{equation}\label{eq:laplace}
     \mathcal{L} \left[f(t)\right] = F(s) = \int _{0}^{+\infty} f(t) 
-    \mathrm{e}^{-st} \,{dt}, \quad s>0
+    \mathrm{e}^{-st} \,{dt}
   \end{equation} 
   οποτεδήποτε το γενικευμένο ολοκλήρωμα συγκλίνει.
 \end{dfn}
@@ -173,8 +174,8 @@
 \begin{mybox1}
 \begin{dfn}
   Μια συνάρτηση $ f(t) $ λέμε ότι είναι \textcolor{Col1}{εκθετικού τύπου $a$}, όπου 
-  $a>0$, στο $ 0 \leq t < \infty $, αν υπάρχει $ M>0$ και $ t_{0}>0 $, ώστε για κάθε 
-  $ t \geq t_{0} $ να ισχύει $ \abs{f(t)} \leq M \mathrm{e}^{at} $.
+  $a \geq 0$, αν υπάρχει $ M>0$ και $ t_{0} \geq 0 $, 
+  ώστε για κάθε $ t > t_{0} $ να ισχύει $ \abs{f(t)} \leq M \mathrm{e}^{at} $.
 \end{dfn}
 \end{mybox1}
 \begin{rem}
@@ -182,7 +183,7 @@
   συνάρτηση $ M \mathrm{e}^{at} $ καθώς $ t \to \infty $. Αυτό σημαίνει ότι η 
   γραφική της παράσταση, περιέχεται στην περιοχή που βρίσκεται ανάμεσα στις 
   γραφικές παραστάσεις των συναρτήσεων 
-  $ \pm M \mathrm{e}^{at}$, για κάθε $ t \geq t_{0} $.
+  $ \pm M \mathrm{e}^{at}$, για κάθε $ t > t_{0} $.
 \end{rem}
 
 \begin{prop}

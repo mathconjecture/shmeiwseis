@@ -1,0 +1,128 @@
+\documentclass[a4paper,table]{report}
+\input{preamble_ask.tex}
+\input{definitions_ask.tex}
+\input{myboxes.tex}
+
+\pgfdeclarelayer{bg}
+\pgfdeclarelayer{fg}
+\pgfsetlayers{bg,main,fg}
+
+\renewcommand{\qedsymbol}{}
+
+\pagestyle{askhseis}
+
+
+\begin{document}
+
+\begin{center}
+  \minibox{\large\bfseries \textcolor{Col1}{Γραμμικά Συστήματα 2 x 2}}
+\end{center}
+
+\vspace{\baselineskip}
+
+
+\section*{Μέθοδος Αντικατάστασης}
+
+\begin{mybox2}
+  \item {}
+\begin{myitemize}
+  \item Λύνουμε μία από τις εξισώσεις του συστήματος, ως προς έναν άγνωστο.
+  \item Αντικαθιστούμε στην άλλη εξίσωση του συστήματος τον άγνωστο αυτόν και έτσι 
+    προκύπτει μία νέα εξίσωση με έναν μόνο άγνωστο, την οποία και λύνουμε.
+  \item Την τιμή του αγνώστου που βρήκαμε την αντικαθιστούμε στην ισότητα που προέκυψε
+    στο πρώτο βήμα και βρίσκουμε τον άλλον άγνωστο.
+\end{myitemize}
+\end{mybox2}
+
+\begin{example} 
+  Να λυθεί το παρακάτω σύστημα με τη μέθοδο της αντικατάστασης.
+  \[
+    \left.
+      \begin{matrix}
+        2x+y=1 \\
+        3x+2y=0
+      \end{matrix} 
+    \right\} 
+  \] 
+\end{example}
+\begin{solution}
+  Λύνουμε την 1η εξίσωση ως προς $y$
+  \[
+    2x+y=1 \Rightarrow y=1-2x 
+  \]
+  Αντικαθιστούμε την $ y=1-2x $ στη 2η εξίσωση του συστήματος και έχουμε:
+  \[
+    3x+2(1-2x) = 0 \Leftrightarrow 3x+2-4x=0 \Leftrightarrow -x+2=0 \Leftrightarrow x=2 
+  \]
+  Από την σχέση $ y= 1-2x $ για $ x=2 $ έχουμε:
+  \[
+    y=1-2\cdot 2 \Leftrightarrow y = 1-4 \Leftrightarrow y = -3 
+  \] 
+  Άρα το σύστημα έχει μοναδική λύση, την $ x=2 $ και $ y=-3 $.
+\end{solution}
+
+
+\section*{Μέθοδος Αντίθετων Συντελεστών}
+
+\begin{mybox2}
+\item {}
+\begin{myitemize}
+  \item Πολλαπλασιάζουμε τα δύο μέλη κάθε εξίσωσης με κατάλληλους αριθμούς, ώστε σε έναν
+    από τους αγνώστους να προκύψουν αντίθετοι συντελεστές.
+  \item Προσθέτουμε κατά μέλη τις δύο εξισώσεις που προέκυψαν και έτσι απαλοίφουμε τον
+    άγνωστο με τους αντίθετους συντελεστές. Προκύπτει, έτσι μία εξίσωση με έναν άγνωστο 
+    την οποία και λύνουμε.
+  \item Αντικαθιστούμε την τιμή του αγνώστου που βρήκαμε σε μία από τις εξισώσεις του 
+    συστήματος και βρίσκουμε και τον άλλον άγνωστο.
+\end{myitemize}
+\end{mybox2}
+
+\begin{example}
+  Να λυθεί το παρακάτω σύστημα με τη μέθοδο των αντίθετων συντελεστών.
+  \[
+     \left.
+       \begin{matrix}
+         2x+3y=4 \\
+         3x+4y=5
+       \end{matrix} 
+     \right\} 
+   \] 
+\end{example}
+\begin{solution}
+  Θα προσπαθήσουμε να εμφανίσουμε αντίθετους συντελεστές στον άγνωστο $x$. 
+
+  Γι᾽ αυτό πολλαπλασιάζουμε την 1η εξίσωση με 3 και τη 2η εξίσωση με -2, και έχουμε:
+  \[
+    \left.
+      \begin{matrix}
+        2x+3y=4 \\
+        3x+4y=5 
+      \end{matrix} 
+    \right. 
+    \left.
+      \begin{matrix*}[l]
+        \textcolor{Col1}{| \cdot (3)} \\
+        \textcolor{Col1}{| \cdot (-2)}
+      \end{matrix*} 
+    \right\} \Leftrightarrow 
+    \left.
+      \begin{matrix}
+        \cancel{6x}+9y=12 \\
+        -\cancel{6x}-8y=-10
+      \end{matrix} 
+    \right\} \overset{(+)}{\Rightarrow} 
+    y=2
+  \]
+  Η 1η εξίσωση για $ y=2 $ γίνεται:
+  \[
+    2x+3\cdot 2 = 4 \Leftrightarrow 2x+6=4 \Leftrightarrow 2x=-2 \Leftrightarrow
+    x=-1 
+  \]
+  Άρα το σύστημα έχει μοναδική λύση, την $ x=-1 $ και $ y=2 $.
+\end{solution}
+
+
+
+\end{document}
+
+

@@ -1,3 +1,4 @@
+\documentclass[a4paper,table]{report}
 \input{preamble.tex}
 \input{definitions_ask.tex}
 
@@ -44,10 +45,6 @@
     \textit{Παράδειγμα}:
     \[
       \begin{vmatrix}
-        4 & 3 \\
-        -1 & 1
-      \end{vmatrix}=7 \Rightarrow 
-      \begin{vmatrix}
         8 & 6 \\
         -1 & 1 
       \end{vmatrix} =
@@ -57,7 +54,7 @@
         \end{vmatrix}=2 \begin{vmatrix}
         4 & 3 \\
         -1 & 1 
-      \end{vmatrix}2\cdot 7 = 14
+      \end{vmatrix}=2\cdot 7 = 14
     \]
 
 
@@ -190,8 +187,8 @@
 
     \twocolumnsides{
       \begin{enumerate}[i)]
-        \item $ \abs{\mathbb{O}}=0$
-        \item $\abs{\mathbb{I}}=1$
+        \item $ \abs{\mathbb{O}}=0, \quad $ όπου $\mathbb{O}$ ο μηδενικός πίνακας
+        \item $\abs{\mathbb{I}}=1,\quad $ όπου $\mathbb{I}$ ο μοναδιαίος πίνακας
         \item $|A|=|A^T|$
       \end{enumerate}
       }{
@@ -199,8 +196,8 @@
         \setcounter{enumi}{3}
       \item $|A\cdot B|=|A|\cdot |B|$
         % \item $|A^n|=|A|^n$
-      \item $ |(-A)| = (-1)^{n} |A|, \quad \text{όπου} A_{n \times n} $
-      \item $|A^{-1}|=\frac{1}{|A|}$
+      \item $ |(-A)| = (-1)^{n} |A|, \quad \text{όπου } A_{n \times n} $
+      \item $|A^{-1}|=\frac{1}{|A|}, \quad $ αν υπάρχει ο $ A^{-1} $
     \end{enumerate}
   }
 \end{description}
