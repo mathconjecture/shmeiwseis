@@ -1,0 +1,39 @@
+\documentclass[a4paper]{report}
+\input{preamble_ask.tex}
+\input{definitions.tex}
+% \input{tikz.tex}
+
+
+\begin{document}
+
+\begin{center}
+  \minibox{\textcolor{Col1}{\large\textbf{Σειρές Taylor και Maclaurin}}}
+\end{center}
+
+Αν για τη συνάρτηση $ f(x) $, υπάρχουν οι παράγωγοι όλων των τάξεων, σε μια περιοχή 
+$ I $ του σημείου $ x=a $, τότε για κάθε $ n \in \mathbb{N} $ και για κάθε $ x \in I $, 
+ισχύει: 
+\[
+  \textcolor{Col1}{\text{\textbf{Τύπος Taylor:}}} \quad f(x) = f(a) + \frac{f'(a)}{1!} (x-a) + \frac{f''(a)}{2!} (x-a)^{2} + 
+  \cdots + \frac{f^{(n)}(a)}{n!} (x-a)^{n} + \cdots 
+\] 
+Η παραπάνω έκφραση για την $ f(x) $ ονομάζεται (δυναμο) σειρά Taylor (ή απλώς ανάπτυγμα 
+Taylor) με κέντρο το σημείο $x=a$, και ισοδύναμα γράφεται:
+\[
+  f(x) = f(a) + \frac{f'(a)}{1!} (x-a) + \frac{f''(a)}{2!} (x-a)^{2} + \cdots +
+  \frac{f^{(n)}(a)}{n!} (x-a)^{n} + R_{n}(x)
+\]
+όπου 
+\[
+  \textcolor{Col1}{\text{\textbf{Υπόλοιπο Lagrange:}}} \quad  R_{n}(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} (x-a)^{n+1}, 
+  \quad \text{όπου $\xi \in (a,x)$ ή $\xi \in (x,a)$.}
+\]
+
+\[
+  f(x) \approx f(a) + \frac{f'(a)}{1!} (x-a) + \frac{f''(a)}{2!} (x-a)^{2} + \cdots +
+  \frac{f^{(n)}(a)}{n!} (x-a)^{n}. 
+\]
+
+%todo να τελειωσω σημειωσεις για σειρες Taylor
+
+\end{document}

@@ -1,10 +1,10 @@
+\documentclass[a4paper,table]{report}
 \input{preamble_ask.tex}
 \input{definitions_ask.tex}
 \input{tikz.tex}
 \input{myboxes.tex}
 \input{insbox}
 
-\pagestyle{vangelis}
 \geometry{top=2.5cm}
 
 \DeclareMathOperator{\Arg}{Arg}
@@ -46,6 +46,31 @@
     #4
   \end{minipage}
 }
+
+
+%%%%%%%%%%%%%%%% Fancy Tables %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{calc}
+\usepackage{array}
+\definecolor{TabLine}{RGB}{254,254,254}
+\newcommand{\TabRowHead}{\rowcolor{TabHeadRow}}
+\newcommand{\TabRowHeadCor}{\cellcolor{white}}
+\newcommand{\TabRowHCol}{\color{white}\bfseries\boldmath}
+\newcommand{\TabCellHead}{\cellcolor{TabHeadRow}\TabRowHCol}
+\newenvironment{Mytable}%
+{\begingroup\setlength{\arrayrulewidth}{2pt}\arrayrulecolor{TabLine}
+    \colorlet{TabHeadRow}{Col\thechapter}
+    \colorlet{TabRowOdd}{Col\thechapter!50!white}
+    \colorlet{TabRowEven}{Col\thechapter!25!white}
+    \rowcolors{1}{TabRowOdd}{TabRowEven}
+}%
+{\endgroup
+}%
+
+
+
+
+
+
 \begin{document}
 
 \chapter*{Μιγαδικοί Αριθμοί}
@@ -579,6 +604,34 @@
   \end{solution}
 
   \begin{example}
+    Να βρεθεί η τριγωνομετρική μορφή του μιγαδικού αριθμού $ z=1-i $ . 
+  \end{example}
+  \begin{solution}
+    Ξέρουμε ότι η τριγωνομετρική μορφή δίνεται από τον τύπο 
+    $ z = \abs{z} [\cos{(\theta)} - i \sin{(\theta)}] $. 
+    Επομένως, αρκεί να βρούμε το $ \abs{z} $ καθώς κ ένα όρισμα 
+    του $z$. Έχουμε ότι $ \abs{z} = \sqrt{1^{2}+(-1)^{2}} = \sqrt{2} $. Επίσης,
+    \[
+      \left.
+        \begin{matrix}
+          \cos{\theta} = \frac{1}{\sqrt{2}} \\[10pt]
+          \sin{\theta} = \frac{-1}{\sqrt{2}} 
+        \end{matrix} 
+      \right\} 
+      \Rightarrow 
+      \tan{\theta} = -1 \Leftrightarrow \theta = -\frac{\pi}{4} \quad \text{ή} \quad 
+      \theta = \pi - \frac{\pi}{4} = \frac{3 \pi}{4}
+    \] 
+    Επειδή όμως ο μιγαδικός $ z=1-i $ βρίσκεται στο 3ο τεταρτημόριο, έχουμε 
+    τελικά ότι $ \theta = -\frac{\pi}{4} $. Άρα 
+    \[
+      \boxed{z= \sqrt{2} \left[ \cos{(-\frac{\pi}{4})} + i 
+      \sin{(-\frac{\pi}{4})}\right]} = \sqrt{2} \left[ \cos{\frac{\pi}{4} - i
+  \sin{\frac{\pi}{4}}} \right]
+    \]
+  \end{solution}
+
+  \begin{example}
     Να γραφεί σε τριγωνομετρική μορφή ο μιγαδικός $ z=- \cos{\theta} + i \sin{\theta}
     $, αν $ \theta \in [0, \pi /2] $.
   \end{example}
@@ -702,6 +755,7 @@
   \] 
 \end{solution}
 
+%todo να γράψω αναλυτικά τις ν-οστες ρίζες του z
 
 
 \end{document}
